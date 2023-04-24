@@ -52,7 +52,7 @@ Ionicon
 ## Typography
 
 ``` css
---ff-league_spartan: 'League Spartan', sans-serif;
+    --ff-league_spartan: 'League Spartan', sans-serif;
 --ff-poppins: 'Poppins', sans-serif; 
 
 --fs-1: 4.2rem;
