@@ -41,6 +41,68 @@
   <link rel="preload" as="image" href="./assets/images/hero-shape-1.svg">
   <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
 
+  <script src="starfield.js"></script>
+
+  <style>
+    .starfield-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 1s ease;
+}
+
+.main-content {
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    justify-content: center;
+    z-index: 1;
+    padding: 1rem 1rem;
+    width: 85%; /* Adjust the content width */
+}
+
+.hero-section {
+    text-align: left; /* Align text to the left */
+}
+
+.hero-section h1 {
+    font-size: 72px; /* Increase font size */
+    margin-bottom: 1rem;
+    line-height: 1.2; /* Adjust line height */
+    color: white;
+}
+
+.hero-section p {
+    font-size: 24px;
+    color: #ccc;
+}
+
+#Starfield {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#b24eaa, black);
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+  </style>
 </head>
 
 <body id="top">
@@ -119,7 +181,7 @@
         - #HERO
       -->
 
-      <section class="section hero has-bg-image" id="home" aria-label="home"
+      <section class="section hero has-bg-image starfield-background" id="home" aria-label="home"
         style="background-image: url('./assets/images/hero-bg.svg')">
         <div class="container">
 
@@ -133,10 +195,10 @@
               We create doorstops: multimedia resources that help make change: from asking for an extension to schoolwide culture shift.
             </p>
 
-            <a href="#" class="btn has-before">
+            <button id="injectButton" class="btn has-before">
               <span class="span">Try Doorstops</span>
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
+            </button>
 
           </div>
 
@@ -168,8 +230,8 @@
         - #CATEGORY
       -->
 
-      <section class="section category" id="doorstops" aria-label="doorstops">
-        <div class="container">
+      <section class="section category starfield-background" id="doorstops" aria-label="doorstops">
+        <div class="container starfield-background">
 
           <p class="section-subtitle">Doorstops</p>
 
@@ -274,9 +336,8 @@
       <!-- 
         - #ABOUT
       -->
-
-      <section class="section about" id="programs" aria-label="programs">
-        <div class="container">
+      <section class="section about" id="programs" aria-label="programs" style="position:relative">
+        <div class="container" >
 
           <figure class="about-banner">
 
@@ -749,13 +810,41 @@ Authorizing peer perspectives, Acting on unmet needs with SEL strategies, Achiev
   </a>
 
 
+<script>
+  document.getElementById("injectButton").addEventListener("click", function() {
+  const newContent = `
+    <div>
+      <div id="Starfield"></div>
+      <div class="main-content">
+        <section class="hero-section">
+          <h1>Inspiring student agency nationwide with research-tested strategies</h1>
+          <p>Try Doorstops, our resources directly for students that grow their agency, self-esteem, and belonging: from how to ask for an extension to how to change school culture.</p>
+        </section>
+      </main>
+    </div>
+  `;
+  const targetElement = document.querySelector("main");
 
+  targetElement.classList.add("fade-out");
+
+setTimeout(() => {
+  targetElement.innerHTML = newContent;
+  targetElement.classList.remove("fade-out");
+  targetElement.classList.add("fade-in");
+
+  const script = document.createElement("script");
+  script.src = "starfield.js";
+  document.body.appendChild(script);
+}, 1000); // Match the duration of the transition in the CSS (1s)
+});
+</script>
 
 
   <!-- 
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
+
 
   <!-- 
     - ionicon link
