@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Board</title>
+  <style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 40px 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+}
+      
+h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666;
+    margin: 10px 0 30px;
+}
+
+.bingo-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bingo-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    perspective: 1000px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.bingo-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    transition: transform 0.6s;
+}
+
+.back {
+    transform: rotateX(180deg);
+    background-color: #209CEE;
+    color: #fff;
+}
+
+.front {
+    cursor: pointer;
+}
+
+.bingo-item:hover {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.bingo-item:hover .front {
+    transform: rotateX(180deg);
+}
+
+.bingo-item:hover .back {
+    transform: rotateX(0);
+}
+
+@media (max-width: 767px) {
+    .bingo-board {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .back {
+        font-size: 0.8rem;
+    }
+
+    .front {
+        font-size: 1.1rem; /* added */
+        display: none;
+    }
+
+    .back {
+        transform: rotateX(0);
+    }
+}
+
+@media (hover: none) {
+    .front {
+        display: none;
+    }
+
+    .back {
+        transform: rotateX(0);
+    }
+}
+  </style>
+</head>
+<body>
+        <header>
+        <h1>My school has way too much...</h1>
+        <h2>Click your problem, we'll take you to our solution</h2>
+    </header>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const bingoItems = document.querySelectorAll('.bingo-item');
+
+    bingoItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            const link = item.getAttribute('data-link');
+            if (link) {
+                window.location.href = link;
+            }
+        });
+
+        // Set cursor to the "link click" shape for the backside
+        const backFace = item.querySelector('.back');
+        backFace.style.cursor = 'pointer';
+    });
+});
+  </script>
+    
+    <div class="bingo-board">
+        <!-- Add your bingo board items here -->
+        <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Judgey People</div>
+            <div class="bingo-face back">Cliques and drama to an extreme</div>
+        </div>
+      <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Bullying</div>
+            <div class="bingo-face back">Straight up.</div>
+        </div>
+      <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Violence</div>
+            <div class="bingo-face back">People hiding in the bathroom</div>
+        </div>
+      <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Small jabs</div>
+            <div class="bingo-face back">insults in the halls, middle school shit</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Harrassment</div>
+            <div class="bingo-face back">Guys do awful shit to girls, nobody says anything.</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Nobody shows up</div>
+            <div class="bingo-face back">because the school is awful</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Emotional unavailability</div>
+            <div class="bingo-face back">*cough* men</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Boredom</div>
+            <div class="bingo-face back">Window-Staring 101</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Apathy</div>
+            <div class="bingo-face back">Nobody gives a fuck.</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Nobody respects teachers</div>
+            <div class="bingo-face back">So class gets loud</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Anxiety</div>
+            <div class="bingo-face back">()</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Insecurity</div>
+            <div class="bingo-face back">smart people think they’re dumb</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Competition</div>
+            <div class="bingo-face back">wha- wha- whadidya get?!</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Bullying</div>
+            <div class="bingo-face back">Straight up.</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Harrassment</div>
+            <div class="bingo-face back">Male teachers, female students</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Racism tolerated or endorsed.</div>
+            <div class="bingo-face back">People transfer schools because of it.</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Admin don't communicate</div>
+            <div class="bingo-face back">“a girl killed herself, they didn’t say anything”</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Gross bathrooms</div>
+            <div class="bingo-face back">Nobody poopin.</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">No mental health help</div>
+            <div class="bingo-face back">"Guidance" counselors</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">No money in the school</div>
+            <div class="bingo-face back">teachers are burnt out</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">"You're a try-hard"</div>
+            <div class="bingo-face back">You get put down for caring.</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">HS is a dead end</div>
+            <div class="bingo-face back">It’s McDonalds or fame</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Strictness</div>
+            <div class="bingo-face back">Trapped at your desk?</div>
+        </div>
+        <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">Why?</div>
+            <div class="bingo-face back">We're not learning what matters</div>
+        </div>
+              <div class="bingo-item" data-link="https://thelatepass.org">
+            <div class="bingo-face front">social divides</div>
+            <div class="bingo-face back">rich/poor, black/white</div>
+        </div>
+        <!-- Repeat the above div for each bingo board item -->
+    </div>
+</body>
+</html>
