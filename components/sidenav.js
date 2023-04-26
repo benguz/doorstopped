@@ -57,3 +57,4 @@ const toc = document.querySelector('#toc');
     `;
     toc.innerHTML = tocHtml;
   }
+ 
