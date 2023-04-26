@@ -55,8 +55,14 @@
         });
         </script>
         
-      <main>
-          <article justify-content: center;>
+      <main style="display:flex">
+        <div style="padding:3em;">
+        
+            <br><br>
+            <br><br>
+        <div id="sidenav"></div>
+        </div>
+          <article>
             <br><br>
             <div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
                 <iframe class="framebox" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="620em" max-width="calc(100% - 10em)" height="15500em" 
@@ -64,23 +70,15 @@
               </div>
               
             
-            </article>
-            
+        </article>
+        <div style="padding:3em;">
+            <br><br>
+            <br><br>
+            <div id="toc" ></div>
+        </div>
+        
       </main>
-      <script>const copyBtn = document.querySelector('.copy-btn');
-        const pre = document.querySelector('pre');
-        var codeBlock = document.querySelector('.code pre');
-        var numLines = codeBlock.textContent.split(/\r\n|\r|\n/).length;
-        codeBlock.style.setProperty('--lines', numLines);
-        copyBtn.addEventListener('click', () => {
-          navigator.clipboard.writeText(pre.textContent)
-            .then(() => {
-            })
-            .catch(err => {
-              console.error('Failed to copy: ', err);
-            });
-        });
-        </script>
+
   
   <div id="footer-placeholder">
 
@@ -89,6 +87,9 @@
       $(function(){
         $("#footer-placeholder").load("/footer.html");
       });
+      
+      </script>
+      <script src="/components/sidenav.js">
       </script>
 
 </body>

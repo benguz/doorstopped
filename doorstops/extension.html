@@ -76,6 +76,20 @@ Regards,
   <div id="footer-placeholder">
 
   </div>
+  <script>const copyBtn = document.querySelector('.copy-btn');
+    const pre = document.querySelector('pre');
+    var codeBlock = document.querySelector('.code pre');
+    var numLines = codeBlock.textContent.split(/\r\n|\r|\n/).length;
+    codeBlock.style.setProperty('--lines', numLines);
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(pre.textContent)
+        .then(() => {
+        })
+        .catch(err => {
+          console.error('Failed to copy: ', err);
+        });
+    });
+    </script>
   <script>
       $(function(){
         $("#footer-placeholder").load("/footer.html");

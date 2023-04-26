@@ -1141,7 +1141,6 @@ iframe {
 @media screen and (max-width: 1023px){
   #framebox {
   width: 100%;
-  height: transform: scaleY(2);
   }
 }
 
