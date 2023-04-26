@@ -1,0 +1,117 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- 
+      - primary meta tag
+    -->
+    <title>Doorstopped - Doorstop Education</title>
+    <meta name="title" content="Doorstop Education">
+    <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+  
+    <!-- 
+      - favicon
+    -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  
+    <!-- 
+      - custom css link
+    -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+  
+    <!-- 
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    
+    <style>
+        @media screen and (max-width: 1023px){
+  #framebox {
+  height: 34000;
+  }
+}
+
+    </style>
+    </head>
+  
+  <body id="top">
+    <div id="nav-placeholder">
+  
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("/nav.html");
+        });
+        </script>
+        
+      <main>
+          <article justify-content: center;>
+            <br><br>
+            <div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
+                <iframe class="framebox" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="620em" max-width="calc(100% - 10em)" height="15500em" 
+                src="https://docs.google.com/document/d/e/2PACX-1vRofb4UtEYsKcc_-yd-hlfeHkoAoRNTVb_Z3q2g1dqpus-kVAoLdhsO3IuCn0QF9Gt47NugmQPyuh3P/pub?embedded=true"></iframe>    
+              </div>
+              
+            
+            </article>
+            
+      </main>
+      <script>const copyBtn = document.querySelector('.copy-btn');
+        const pre = document.querySelector('pre');
+        var codeBlock = document.querySelector('.code pre');
+        var numLines = codeBlock.textContent.split(/\r\n|\r|\n/).length;
+        codeBlock.style.setProperty('--lines', numLines);
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(pre.textContent)
+            .then(() => {
+            })
+            .catch(err => {
+              console.error('Failed to copy: ', err);
+            });
+        });
+        </script>
+  
+  <div id="footer-placeholder">
+
+  </div>
+  <script>
+      $(function(){
+        $("#footer-placeholder").load("/footer.html");
+      });
+      </script>
+
+</body>
+
+  
+  <!-- 
+    - #BACK TO TOP
+  -->
+  
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+  
+    <!-- 
+      - custom js link
+    -->
+    <script src="/assets/js/script.js" defer></script>
+  
+  
+    <!-- 
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  </body>
