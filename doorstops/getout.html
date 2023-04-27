@@ -36,38 +36,109 @@
     
     <style>
         @media screen and (max-width: 1023px){
-  #framebox {
-  height: 34000;
+  .framebox {
+  height: 34000em;
   }
-  #sidenav {
+  .sidenavtotal {
 display:none;
+padding: 0em;
+  }
+  #sidenav{
+display:none;
+
   }
   #toc {
     display:none;
   }
+  .desktop {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    display:flex; 
+    justify-content:center;
+  }
+  .framebox {
+    height: 15500em;
+  }
 }
     </style>
+
     </head>
   
   <body id="top">
-    <div id="nav-placeholder">
+
+    <header class="header" data-header>
+      <div class="container" min-width="620em">
   
-    </div>
-    <script>
-        $(function(){
-          $("#nav-placeholder").load("/nav.html");
-        });
-        </script>
+        <a href="/index.html" class="logo">
+          <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+        </a>
+  
+        <nav class="navbar" data-navbar>
+  
+          <div class="wrapper">
+            <a href="/index.html" class="logo">
+              <img src="/assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
+            </a>
+  
+            <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+  
+          <ul class="navbar-list">
+  
+            <li class="navbar-item">
+              <a href="/mission.html" class="navbar-link" data-nav-link>Mission</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="/doorstops/index.html" class="navbar-link" data-nav-link>Doorstops</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="/programs/index.html" class="navbar-link" data-nav-link>Programs</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="/research/index.html" class="navbar-link" data-nav-link>Research</a>
+            </li>
+  
+          </ul>
+  
+        </nav>
+  
+        <div class="header-actions">
+  
+          <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
+            <span class="span">Try us out</span>
+  
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+  
+          <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+          </button>
+  
+        </div>
+  
+        <div class="overlay" data-nav-toggler data-overlay></div>
+  
+      </div>
+    </header>
+
         
-      <main style="display:flex">
-        <div style="padding:3em;">
+      <main>
+        <div class="sidenavtotal" style="padding:3em;">
         
-            <br><br>
-            <br><br>
+            <br class="desktop"><br class="desktop">
+            <br class="desktop"><br class="desktop">
         <div id="sidenav"></div>
         </div>
           <article>
-            <br><br>
+            <br class="desktop"><br class="desktop">
             <div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
                 <iframe class="framebox" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="620em" max-width="calc(100% - 10em)" height="15500em" 
                 src="https://docs.google.com/document/d/e/2PACX-1vRofb4UtEYsKcc_-yd-hlfeHkoAoRNTVb_Z3q2g1dqpus-kVAoLdhsO3IuCn0QF9Gt47NugmQPyuh3P/pub?embedded=true"></iframe>    
@@ -96,7 +167,6 @@ display:none;
       <script src="/components/sidenav.js">
       </script>
 
-</body>
 
   
   <!-- 
