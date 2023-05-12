@@ -110,6 +110,65 @@
 
   </style>
   -->
+  <style>
+
+.word {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  line-height: 40px;
+  width: 330px; /* Adjust this based on the width of your longest word */
+  padding: 0px 10px;
+  overflow: hidden;
+}
+
+
+.word div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.word div.out {
+  animation: fadeOut 0.5s forwards;
+
+}
+
+
+#another-div {
+  right: 0;
+  width: calc(33.333% - 10px); /* Adjust the width and padding as needed */
+}
+
+@media (max-width: 1023px){
+      .word {
+        width:230px;
+      }
+      #another-div {
+        width: 230px;
+      }
+    }
+
+
+.word div.in {
+  animation: fadeIn 0.5s forwards;
+
+}
+
+@keyframes fadeOut {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+  </style>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
@@ -146,11 +205,11 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#doorstops" class="navbar-link" data-nav-link>Doorstops</a>
+            <a href="/doorstops" class="navbar-link" data-nav-link>Doorstops</a>
           </li>
 
           <li class="navbar-item">
-            <a href="#programs" class="navbar-link" data-nav-link>Programs</a>
+            <a href="/programs" class="navbar-link" data-nav-link>Programs</a>
           </li>
 
           <li class="navbar-item">
@@ -243,7 +302,7 @@
       <section class="section category" id="doorstops" aria-label="doorstops">
         <div class="container">
 
-          <p class="section-subtitle">Doorstops</p>
+          <p class="section-subtitle">Resources for Students</p>
 
           <h2 class="h2 section-title">
             Doorstops are <span class="span">Individualized</span> Strategies
@@ -370,14 +429,14 @@
 
           <div class="about-content">
 
-            <p class="section-subtitle">Programs</p>
+            <p class="section-subtitle">Programs for Educators</p>
 
             <h2 class="h2 section-title">
-              Help students <span class="span">embrace</span> school goals
+              Turn students into <span class="span">change-makers</span>
             </h2>
 
             <p class="section-text">           
-We create spaces for dialogue, reflection, and decisions, authorizing student perspectives so they can identify their unmet needs.
+              We help foster school communities where reform is not done for students, but by students. We create spaces for dialogue, reflection, and decisions.
             </p>
 
             <ul class="about-list">
@@ -385,19 +444,19 @@ We create spaces for dialogue, reflection, and decisions, authorizing student pe
               <li class="about-item">
                 <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
 
-                <span class="span">Reduce phone use</span>
+                <span class="span">Reduce phone use by authorizing student perspectives</span>
               </li>
 
               <li class="about-item">
                 <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
 
-                <span class="span">Increase attendance</span>
+                <span class="span">Build safer school culture to reduce absenteeism </span>
               </li>
 
               <li class="about-item">
                 <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
 
-                <span class="span">Build trust</span>
+                <span class="span">Create intentional, collaborative feedback loops</span>
               </li>
 
               
@@ -416,7 +475,6 @@ We create spaces for dialogue, reflection, and decisions, authorizing student pe
               <span class="span">Find your perfect program</span>
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
             </a>
-
         </div>
         
       </section>
@@ -648,8 +706,46 @@ We create spaces for dialogue, reflection, and decisions, authorizing student pe
 
           <img src="./assets/images/blog-shape.png" width="186" height="186" loading="lazy" alt=""
             class="shape blog-shape">
+          <!--
 
-        </div>
+        <div>
+          <br></br>
+        <h2 class="h1 section-title" style="margin-bottom: 0; display: inline;">Partner with</h2>
+        <div id="word-rotator"><h2 class="h1 section-title word" id="another-div" style="margin-bottom: 0;"></h2>
+          </div>
+          <h2 class="h1 section-title" id="another-div">students.</h2>
+
+              <script>var words = ["at-risk", "anxious", "struggling", "bored", "absent"];
+        var currentIndex = 0;
+        
+        function changeWord() {
+          var wordContainer = document.querySelector(".word");
+          var currentWord = wordContainer.querySelector("div");
+          if (currentWord) currentWord.className = 'out';
+        
+          var newWord = document.createElement("div");
+          newWord.textContent = words[currentIndex];
+          newWord.className = 'in';
+          wordContainer.appendChild(newWord);
+        
+          setTimeout(function() {
+            newWord.className = '';
+          }, 250); // Half of 500ms to match the middle of transition
+        
+          if (currentWord) {
+            setTimeout(function() {
+              wordContainer.removeChild(currentWord);
+            }, 250); // Remove after full transition
+          }
+        
+          currentIndex = (currentIndex + 1) % words.length;
+        }
+        
+        setInterval(changeWord, 500);        
+      </script>
+      -->
+              </div>
+
       </section>
 
     </article>
@@ -714,6 +810,7 @@ setTimeout(() => {
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
+  
 
 
   <!-- 

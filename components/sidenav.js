@@ -46,9 +46,9 @@ const toc = document.querySelector('#toc');
   if (headings.length > 0) {
     const tocHtml = `
       <nav class="toc">
-        <ul class="flex column">
+        <ul class="flex column" style="font-size: 10pt">
           ${headings.map(heading => `
-            <li class="${heading.tagName.toLowerCase()}">
+            <li> <!--class="${heading.tagName.toLowerCase()}" --->
               <a href="#${heading.id}">${heading.textContent}</a>
             </li>
           `).join('')}
