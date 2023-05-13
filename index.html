@@ -168,6 +168,40 @@
   100% { transform: translateY(0); opacity: 1; }
 }
 
+.parallax-container {
+  height: 20vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.parallax-section {
+  height: 20vh;
+  position: relative;
+  scroll-snap-align: start;
+  background-attachment: fixed; /* Creates the parallax effect */
+}
+
+#step1 {
+  background-image: url('step1-image.jpg');
+}
+
+#step2 {
+  background-image: url('step2-image.jpg');
+}
+
+#step3 {
+  background-image: url('step3-image.jpg');
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
   </style>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -401,6 +435,35 @@
 
         </div>
       </section>
+
+      <!-- 
+        ADD SECTION EXPLAINING DOORSTOP USE CASES
+      
+      <div class="parallax-container">
+        <section class="parallax-section" id="step1">
+          <div class="content">
+            <h2>Discover Doorstops</h2>
+            <p>Doorstops come into your life via social media or through programs at your school. We're here to help you make a positive change!</p>
+          </div>
+        </section>
+      
+        <section class="parallax-section" id="step2">
+          <div class="content">
+            <h2>Find Your Doorstop</h2>
+            <p>Interact with our platform to find personalized resources. With Doorstops, you get help tailored to your interests and needs.</p>
+          </div>
+        </section>
+      
+        <section class="parallax-section" id="step3">
+          <div class="content">
+            <h2>Apply Your Doorstop</h2>
+            <p>Use what you've learned to build trust, navigate social tension, or shift your school's culture. Change starts with you!</p>
+          </div>
+        </section>
+      </div>
+      -->
+
+
       <!-- 
         - #ABOUT
       -->
