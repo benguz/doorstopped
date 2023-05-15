@@ -7,7 +7,7 @@ const toc = document.querySelector('#toc');
       title: 'Leveraged',
       links: [
         { href: '/doorstops', children: 'Realities' },
-        { href: '/pdfs/leveraged.pdf', children: 'Agency' },
+        { href: '/research/leveraged.pdf', children: 'Agency' },
         { href: '/stuco', children: 'Leadership'}
       ]
     },
@@ -30,8 +30,9 @@ const toc = document.querySelector('#toc');
           <h3>${item.title}</h3>
           <ul class="flex column">
             ${item.links.map(link => `
-              <li ${window.location.pathname === link.href ? 'class="active"' : ''}>
-                <a href="${link.href}">${link.children}</a>
+              <li> ${window.location.pathname === link.href ? "<em>" : ''}
+                <a class="scroll" href="${link.href}">${link.children}</a>
+                ${window.location.pathname === link.href ? "</em>" : ''}
               </li>
             `).join('')}
           </ul>
@@ -66,7 +67,7 @@ const toc = document.querySelector('#toc');
         #${heading.id} {
             scroll-margin-top: 4.5em;
         }</style>
-            <li class="active">
+            <li>
                 <a class="scroll" href="#${heading.id}">${heading.textContent}</a>
             </li>
           `).join('')}
