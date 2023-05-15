@@ -62,13 +62,21 @@ display:none;
 /* main {
   display:flex; 
   justify-content:center;
-} */
+} 
 .yonk {
-            width: 55%;  /* take up 1/3 of the container width */
-            margin-left: 22.5%; /* push it to the center */
+            width: 55%;  
+            margin-left: 22.5%; 
             padding: 0 10px;
             box-sizing: border-box;
-        }
+        }*/
+
+.yonk {
+  flex: 3;
+}
+.sidenavtotal {
+  flex: 1;
+}
+
 .framebox {
   height: 15500em;
 }
@@ -158,6 +166,7 @@ h2 {
   margin-top: 1em;
   font-size: 20pt;
 }
+
 .badonk {
   list-style-type: disc; /* or circle or square, depending on the bullet style you want */
   padding-left: 30px;
@@ -239,12 +248,14 @@ h2 {
 
       
     <main>
-      <!-- <div class="sidenavtotal" style="padding:3em;">
+      <div style="display: flex; flex-direction: row;">
+      <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
       
           <br class="desktop"><br class="desktop">
           <br class="desktop"><br class="desktop">
+          <br class="desktop">
       <div id="sidenav"></div>
-      </div> -->
+      </div> 
         <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center;">
           <br class="desktop"><br class="desktop">
           <br><br>
@@ -253,7 +264,7 @@ h2 {
 
 
 <p>
-<strong>Extension = extra time on your assignment</strong>. You might need it. Maybe the homework looks impossible, school's busy, or... life. <a href="https://doorstopped.org/doorstops/extension#i-just-want-to-email">Jump to an email template.</a>
+<strong>Extension = extra time on your assignment</strong>. You might need it. Maybe the homework looks impossible, school's busy, or... life. <a style="scroll-margin-top: 4.5em;" href="#i-just-want-to-email">Jump to an email template.</a>
 </p>
 <p>
 I (and all my friends in high school) never thought to ask for an extension. We just turned things in late or unfinished. After all, why bother?
@@ -301,18 +312,18 @@ Here is a form email you can use to ask your teacher for an extension:
 
 <div class="copy-paste-element">
   <div>
-    <p>Dear [Mr./Ms./Mrs. teacher last name],<br>
+    <p><strong>Subject:</strong> Asking for an extension on [assignment name]<br><br>
+Hello [Mr./Ms./Mrs. teacher last name],<br>
     <br>
-I am writing to ask for an extension on **[assignment name]** due [due date of assignment]. I am behind on this assignment because [1 or 2-sentence explanation of why you need an extension].<br>
+I am writing to ask for an extension on [assignment name] due [due date]. I am behind on this assignment because [1 or 2-sentence explanation of why you need an extension].<br>
     <br>
-I can complete this assignment by [the new due date you want—ideally 1-2 days after the original date].<br>
+I can complete this assignment by [new due date you want—maybe 1-2 days after the old one]. Would that be okay?<br>
     <br>
-Regards,</p>
-<p>
+Regards,<br>
 [Your first and last name]
   </p>
   </div>
-  <button class="copy-icon" onclick="copyText()">
+  <button class="copy-icon" onclick="copyText(event)">
     <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
       <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -325,7 +336,7 @@ This is what your email might look like once you fill in the blanks:
 </p>
 <div class="copy-paste-element">
   <div>
-    <p>Dear Ms. Harrison,<br>
+    <p>Hi Ms. Harrison,<br>
     <br>
 I am writing to ask for an extension on the To Kill A Mockingbird essay due Monday. I am behind on this assignment because I have my regional cross country meet on Saturday and have spent an unusual amount of time this week training. 
     <br><br>
@@ -333,12 +344,11 @@ I can finish the paper by Wednesday morning. I believe this extension would give
     <br><br>
 Thank you for considering my request, and please let me know if there’s anything else I can do!
     <br><br>
-Regards,</p>
-<p>
-  April Maddigan  
+Regards,<br>
+April Maddigan  
 </p>
   </div>
-  <button class="copy-icon" onclick="copyText()">
+  <button class="copy-icon" onclick="copyText(event)">
     <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
       <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -390,7 +400,7 @@ If you’re asking for an extension on the day of, or even later, then you’re 
     <p>"Success in this class is important to me: I've enjoyed learning the material, and doing well on exams and assignments is rewarding, it lets me show what I know. 
   </p>
   </div>
-  <button class="copy-icon" onclick="copyText()">
+  <button class="copy-icon" onclick="copyText(event)">
     <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
       <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -402,7 +412,7 @@ If you’re asking for an extension on the day of, or even later, then you’re 
     <p>Would it be possible to decrease the # of points/percentage this assignment is worth, and put more weight on [assignment you did well on/hope to do well on]?
     </p>
   </div>
-  <button class="copy-icon" onclick="copyText()">
+  <button class="copy-icon" onclick="copyText(event)">
     <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
       <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -414,7 +424,7 @@ If you’re asking for an extension on the day of, or even later, then you’re 
     <p>Completing this assignment was a high priority, but I couldn't because [short reason, eg "a personal issue" is the minimum you need].”
       </p>
   </div>
-  <button class="copy-icon" onclick="copyText()">
+  <button class="copy-icon" onclick="copyText(event)">
     <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
       <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -477,7 +487,7 @@ Also—there’s always the possibility that your teacher will understand.
       I had absolutely no respect for that teacher. 
       </p>
   </div>
-  <button class="copy-icon" onclick="copyText()">
+  <button class="copy-icon" onclick="copyText(event)">
     <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
       <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -512,7 +522,7 @@ What’s worse, a lot of people still don’t understand that mental health is r
       “A hispanic first gen student felt like he couldn't talk about or allude to mental health issues in class. He took an AP class where the teacher was notoriously mean. In a low point for his mental health, he plagiarized an essay. The teacher ripped it up in front of him in class, making him cry. He never cries.”
       </p>
   </div>
-  <button class="copy-icon" onclick="copyText()">
+  <button class="copy-icon" onclick="copyText(event)">
     <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
       <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -539,7 +549,7 @@ Your teacher needs some explanation, but not a play-by-play account. Here are so
       I’m wondering whether I could take an extra day on this assignment. I’ve been dealing with some mental health difficulties, and I’m having a hard time staying on top of my workload. A little extra time would really help.
       </p>
   </div>
-  <button class="copy-icon" onclick="copyText()">
+  <button class="copy-icon" onclick="copyText(event)">
     <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
       <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -552,7 +562,7 @@ Your teacher needs some explanation, but not a play-by-play account. Here are so
       I’m wondering whether I could take an extra day on this assignment. I’ve had a really hard time finding the motivation to do my work lately, and I’m a bit behind on some other assignments. A little extra time would really help.
       </p>
   </div>
-  <button class="copy-icon" onclick="copyText()">
+  <button class="copy-icon" onclick="copyText(event)">
     <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
       <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -651,18 +661,18 @@ If you're feeling malicious... one option: If your state is a <a href="https://e
 <p>
 You don't have to take exams at the scheduled time. [examples] It really, really doesn't hurt to ask.
 </p>
+<br><br>
 
 </div>
-      <!-- 
-
-      <div style="padding: 3em;">
-      <br><br>
-      <br><br>
-      <div id="toc">
-          </div>
-      </div>
-    -->
+<div class="sidenavtotal" style="padding:3em;">
       
+  <br class="desktop"><br class="desktop">
+  <br class="desktop"><br class="desktop">
+  <br class="desktop">
+<div id="toc"></div>
+</div>
+
+</div>
     </main>
 
 
@@ -675,11 +685,10 @@ You don't have to take exams at the scheduled time. [examples] It really, really
     });
     
     </script>
-    <!-- 
+    <!--       -->
 
-    <script src="/components/sidenavsmall.js">
+    <script src="/components/sidenavcustom.js">
     </script>
-      -->
 
 
 
@@ -702,8 +711,21 @@ You don't have to take exams at the scheduled time. [examples] It really, really
     
   -->
 <script>
-function copyText() {
-  const textToCopy = document.querySelector('.copy-paste-element p').textContent;
+function copyText(event) {
+  // Get the button that was clicked
+  const button = event.target;
+  
+  // Find its parent copy-paste-element div
+  const copyPasteElement = button.closest('.copy-paste-element');
+  
+  // Get all the p tags within that div
+  const paragraphs = copyPasteElement.querySelectorAll('p');
+  
+  let textToCopy = '';
+  paragraphs.forEach((p) => {
+    textToCopy += p.textContent + '\n';
+  });
+
   const textArea = document.createElement('textarea');
   textArea.value = textToCopy;
   document.body.appendChild(textArea);
@@ -711,13 +733,12 @@ function copyText() {
   document.execCommand('copy');
   document.body.removeChild(textArea);
 
-  const svg2 = document.querySelector('.svg2');
+  const svg2 = button.closest('.svg2');
   svg2.classList.toggle('hidden');
   setTimeout(() => {
     svg2.classList.toggle('hidden');
   }, 150);
 }
-
 
 </script>
 

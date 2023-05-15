@@ -168,29 +168,77 @@
   100% { transform: translateY(0); opacity: 1; }
 }
 
-.parallax-container {
-  height: 20vh;
+/* .parallax-container {
+  height: 70vh;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-}
+} */
 
 .parallax-section {
-  height: 20vh;
+  height: 70vh;
   position: relative;
   scroll-snap-align: start;
-  background-attachment: fixed; /* Creates the parallax effect */
+  /* background-attachment: fixed; Creates the parallax effect */
 }
 
+.parallax-small {
+  height: 30vh;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+@media screen and (max-width: 1023px){
+  .parallax-small {
+  height: 20vh;
+  
+
+}
+.parallax-section {
+  height: 40vh;
+  /* background-attachment: fixed; Creates the parallax effect */
+}
+.simple {
+  color: black;
+}
+}
+
+
+/* .parallax-break {
+  height: 30vh;
+  position: relative;
+  scroll-snap-align: start;
+  background-attachment: fixed; 
+} */
+
 #step1 {
-  background-image: url('step1-image.jpg');
+  background-image: url('/assets/images/youtube-cut.gif'); 
+  background-size: cover;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
 }
 
 #step2 {
-  background-image: url('step2-image.jpg');
+  background-image: url('/assets/images/selection.gif'); 
+  background-size: cover;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 #step3 {
-  background-image: url('step3-image.jpg');
+  background-image: url('/assets/images/extension-half.gif');
+  background-size: cover; 
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .content {
@@ -200,6 +248,12 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
+}
+
+.simple {
+  left: 50%;
+  transform: translate(0%, -50%);
+  text-align: center;
 }
 
   </style>
@@ -296,7 +350,7 @@
               We create Doorstops: multimedia resources that help with everything from asking for an extension to schoolwide culture shift.
             </p>
 
-            <a href="https://thelatepass.org/doorstops/extension" id="injectButton" class="btn has-before">
+            <a href="/doorstops/extension.html" id="injectButton" class="btn has-before">
               <span class="span">Try Doorstops</span>
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -438,31 +492,65 @@
 
       <!-- 
         ADD SECTION EXPLAINING DOORSTOP USE CASES
-      
-      <div class="parallax-container">
-        <section class="parallax-section" id="step1">
-          <div class="content">
-            <h2>Discover Doorstops</h2>
-            <p>Doorstops come into your life via social media or through programs at your school. We're here to help you make a positive change!</p>
-          </div>
-        </section>
-      
-        <section class="parallax-section" id="step2">
-          <div class="content">
-            <h2>Find Your Doorstop</h2>
-            <p>Interact with our platform to find personalized resources. With Doorstops, you get help tailored to your interests and needs.</p>
-          </div>
-        </section>
-      
-        <section class="parallax-section" id="step3">
-          <div class="content">
-            <h2>Apply Your Doorstop</h2>
-            <p>Use what you've learned to build trust, navigate social tension, or shift your school's culture. Change starts with you!</p>
-          </div>
-        </section>
+            -->
+            <section>
+      <div class="simple">
+        <br><br>
+        <h2 >Students discover us on social media</h2>
+        <br><br>
       </div>
-      -->
+        <!-- <section class="parallax-break" id="break">
+          <div class="content">
+          </div>
+        </section> -->
+        
+        <div class="parallax-small" id="step1">
+          <div class="content">
+            <!-- <h2>Students discover us on social media</h2> -->
+            <!-- <p style="color:black">Doorstops come into your life via social media or through programs at your school. We're here to help you make a positive change!</p> -->
+          </div>
+        </div>
+        <br class="desktop"><br class="desktop">
+        <br class="desktop"><br class="desktop">
+        <br class="desktop"><br class="desktop">
+        <div class="simple">
+          <br class="desktop"><br class="desktop">
+          <h2>They find the perfect Doorstop</h2>
+          <br class="desktop"><br class="desktop">
+        </div>
 
+        <div class="parallax-section" id="step2">
+          <div class="content">
+          </div>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+        <div class = "simple"> 
+          <br><br>
+          <h2>Using it to instantly destress, get help, or make change</h2>
+          <br><br>
+        </div>
+        <section class="parallax-section" id="step3" style="margin-bottom: 5em">
+          <div class="content"> 
+            <!-- <h2>Using it instantly to destress and make change</h2> -->
+            <!-- <p style="color:black">Use what you've learned to build trust, navigate social tension, or shift your school's culture. Change starts with you!</p> -->
+          </div>
+        </section>
+
+        <section class="section about" id="programs" aria-label="programs" style="position:relative">
+          <div class="container" >
+        <h2 class="h2 section-title">
+          <span class="span">Student?</span> Find the perfect Doorstop! 
+          </h2>
+          <a href="/programs/index.html" id="injectButton" class="btn has-before">
+            <span class="span">Upgrade your school day</span>
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+          </div>
+          <br><br>
+          <div class="simple"><h3>(educators, keep reading)</h3></div>
+          </section>
 
       <!-- 
         - #ABOUT
@@ -710,7 +798,7 @@
                     <li class="card-meta-item">
                       <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
 
-                      <span class="span">May 10, 2023</span>
+                      <span class="span">May 29, 2023</span>
                     </li>
 
 
