@@ -188,11 +188,17 @@ body {
 \*-----------------------------------*/
 
 a.scroll {
-  font-size: 1.4rem;
+  font-size: 1.47rem;
   line-height: 1.6;
 }
 a:hover.scroll {
   color: hsl(170, 75%, 41%);
+}
+
+r {
+  width:75%;
+  height:0.68em;
+  padding:0;
 }
 
 /*-----------------------------------*\
