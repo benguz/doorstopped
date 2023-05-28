@@ -78,13 +78,14 @@ body {
     transition: transform 0.3s;
     cursor: grab;
     position: absolute;
+    overflow: hidden; /* test feature */
 }
 
 /* Reset max-width and max-height for mobile devices */
 @media screen and (max-width: 600px) {
     #container {
         max-width: 100%;
-        max-height: 70%;
+        max-height: 80%;
     }
 
     .card {
@@ -208,7 +209,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
 
     hammertime.on('panend', function(e) {
         initialPos = currentPos;
-        if (Math.abs(e.deltaX) > 200) { // Change this threshold as you like
+        if (Math.abs(e.deltaX) > 100) { // Change this threshold as you like
             // If you swipe more than 100px to the right or left, take action
             card.classList.add('out');
             if (e.deltaX > 0) {
