@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Doorstop Education</title>
+    <meta name="title" content="Doorstop Education">
+    <meta name="description" content="Inspiring student agency nationwide.">
+    <meta property="og:url" content="https://doorstopped.org/">
+    <meta property="og:image" content="https://doorstopped.org/og.jpg">
+    <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="Doorstop Education">
+    <meta property="og:description" content="Inspiring student agency nationwide.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://doorstopped.org/">
+    <meta property="twitter:title" content="Doorstop Education">
+    <meta property="twitter:description" content="Inspiring student agency nationwide.">
+    <link href="./favicon.ico" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- include jQuery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Hammer JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    box-sizing: border-box;
+}
+
+#container {
+    position: relative;
+    width: 90%; 
+    height: 93%; 
+    max-width: 400px; 
+    max-height: 600px; 
+    box-sizing: border-box;
+}
+
+.card {
+    width: calc(100% - 40px); /* take full width of the container minus margins */
+    height: calc(100% - 40px); /* take full height of the container minus margins */
+}
+
+/* Style adjustments for larger screens */
+@media screen and (min-width: 2000px) {
+    #container {
+        width: 50%; 
+        height: 70%; 
+    }
+}
+
+.card {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 20px;
+    padding: 20px;
+    transition: transform 0.3s;
+    cursor: grab;
+    position: absolute;
+}
+
+/* Reset max-width and max-height for mobile devices */
+@media screen and (max-width: 600px) {
+    #container {
+        max-width: 100%;
+        max-height: 70%;
+    }
+
+    .card {
+        height: 100%;
+    }
+}
+
+.card img {
+    max-width: 80%;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-family: 'colfax-medium';
+    font-size: 25px;
+    color: #333;
+    text-align: left;
+}
+
+.card h3 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-family: 'colfax-medium';
+    font-size: 20px;
+    color: #333;
+    text-align: left;
+}
+
+.card p {
+    font-family: 'colfax-light';
+    font-size: 16px;
+    color: #666;
+    text-align: left;
+}
+
+.card a {
+    text-decoration: underline;
+}
+
+
+.card:active {
+    cursor: grabbing;
+}
+
+/* .card.out {
+    transform: translateX(-2000px);
+    transition: transform 1s;
+} */
+
+.card.out {
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+
+.card:first-of-type {
+    display: block;
+}
+
+    </style>
+  </head>
+
+<body>
+    <div id="container">
+<!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
+        <div class="card" data-link="https://link2.com">
+            <h2>More coming soon!</h2>
+            <img src="https://image2.com" alt="image2" />
+            <p></p>
+        </div>
+        <div class="card" data-link="/doorstops/listen.html">
+            <h2>Emotional Availability is Sexy</h2>
+            <!--<img src="/assets/images/moon.png" alt="image2" />-->
+            <p>Ever been injured where you can kind of play but it hurts more every game? You know you should stop but the season seems so close.<br>That’s hard. <strong>School can feel the same way</strong>: you’re stuck on an assignment or you have no idea what’s going on in class, but stick it out, head down, and make it to the end of the semester.<br>But school’s different. If you <strong>ask for help</strong>, you don’t get taken out of the game, <strong>you get back in</strong>. You get better. Your teacher respects you more.<br>Everyone's struggled like this. Wanna hear professional athletes say it?</p>
+        </div>
+        <div class="card" data-link="/doorstops/points.html">
+            <h2>If people arm wrestle for participation points at your school:</h2>
+            <!--<img src="https://image2.com" alt="image2" />-->
+            <p>That’s a problem. Seek help.<br><strong>How can we change GPA culture?</strong> Everyone is trying to get into college.<br><br>Organize a <strong>schoolwide participation point boycott</strong>. Nobody speaks in class until participation grading is equitable.<br><br>Build <a href="/trust.html">trust</a> then launch the <a href="/doorstops/points.html">boycott.</a>
+                </p>
+        </div>
+        <div class="card" data-link="/doorstops/points.html">
+            <h2>Essay due in two days? Haven’t started?</h2>
+            <img src="/assets/images/extension-half.gif" alt="image1" />
+            <p>We can help—not, like, in a plagiarism way.<br>You can and should ask for an extension.<br>
+            <h3>Me? I don’t need an extension. You must not be familiar with my game.</h3>
+            <p>In 5 years your boss is going to say, "Bestie, can you work until 10pm today?"<br>Don't say "Sure, Bestie!" <strong>Learn to set boundaries and ask for help now.</strong></p>
+        </div>
+        <div class="card special" data-link="/doorstops/points.html">
+            <h2>Cards against School.</h2>
+            <img src="/assets/images/moon.png" alt="image1" />
+            <p>It's like tinder, but for finding a way to be happier in school. Swipe left for something new, swipe right to try the one you're on!<br>
+            <br>Swipe left on this one!</p>
+        </div>
+    </div>
+    <script>
+// For each card
+document.querySelectorAll('.card').forEach((card, index) => {
+    let hammertime = new Hammer(card);
+    let initialPos = 0;
+    let currentPos = 0;
+    let rafId = null;
+
+    // Animate the card moving
+    function animate() {
+        let transform = `translateX(${currentPos}px)`;
+        card.style.transform = transform;
+        rafId = requestAnimationFrame(animate);
+    }
+
+    // Update position as you pan
+    hammertime.on('pan', function(e) {
+        currentPos = initialPos + e.deltaX;
+    });
+
+    hammertime.on('panstart', function() {
+        initialPos = currentPos;
+        card.classList.remove('out');
+        if (!rafId) animate();
+    });
+
+    hammertime.on('panend', function(e) {
+        initialPos = currentPos;
+        if (Math.abs(e.deltaX) > 200) { // Change this threshold as you like
+            // If you swipe more than 100px to the right or left, take action
+            card.classList.add('out');
+            if (e.deltaX > 0) {
+                let cardLink = card.dataset.link;
+                if (cardLink) {
+                    window.location.href = cardLink;
+                }
+            } else {
+                // let nextCard = card.nextElementSibling;
+                // if (nextCard) {
+                //     nextCard.style.display = 'block';
+                // }
+            }
+            card.style.opacity = '0';
+            // After the transition ends, remove the card
+            setTimeout(() => card.remove(), 500);
+        } else {
+            // If you don't swipe enough, the card springs back to center
+            currentPos = 0;
+        }
+        cancelAnimationFrame(rafId);
+        rafId = null;
+    });
+});
+
+    </script>
+
+</body>
+
+</html>
