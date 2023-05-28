@@ -81,17 +81,6 @@ body {
     overflow: hidden; /* test feature */
 }
 
-/* Reset max-width and max-height for mobile devices */
-@media screen and (max-width: 600px) {
-    #container {
-        max-width: 100%;
-        max-height: 80%;
-    }
-
-    .card {
-        height: 100%;
-    }
-}
 
 .card img {
     max-width: 80%;
@@ -145,6 +134,38 @@ body {
     display: block;
 }
 
+/* Reset max-width and max-height for mobile devices */
+@media screen and (max-width: 600px) {
+    
+    body {
+        align-items: flex-start; /* Aligns items to the top on mobile */
+        padding-top: 3em; /* You can adjust this value to suit your needs */
+    }
+
+    #container {
+        max-width: 100%;
+        min-height: 70%; 
+        /* top: 2.5em; */
+    }
+
+    .card {
+        height: 100%;
+        width: calc(100% - 30px);
+    }
+
+    .card h2 {
+    font-size: 28px;
+}
+
+.card h3 {
+    font-size: 22px;
+}
+
+.card p {
+    font-size: 18px;
+}
+}
+
     </style>
   </head>
 
@@ -174,6 +195,11 @@ body {
             <h3>Me? I don’t need an extension. You must not be familiar with my game.</h3>
             <p>In 5 years your boss is going to say, "Bestie, can you work until 10pm today?"<br>Don't say "Sure, Bestie!" <strong>Learn to set boundaries and ask for help now.</strong></p>
         </div>
+        <!--
+        <div class="card" data-link="/doorstops/points.html">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ahsokka_/video/7207198809548492037" data-video-id="7207198809548492037"  data-autoplay="true" style="min-width: 100%"> <section> <a target="_blank" title="@ahsokka_" href="https://www.tiktok.com/@ahsokka_?refer=embed">@ahsokka_</a> </section></blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+        -->
         <div class="card special" data-link="/doorstops/points.html">
             <h2>Cards against School.</h2>
             <img src="/assets/images/moon.png" alt="image1" />
@@ -215,14 +241,14 @@ document.querySelectorAll('.card').forEach((card, index) => {
             if (e.deltaX > 0) {
                 let cardLink = card.dataset.link;
                 if (cardLink) {
-                    window.location.href = cardLink;
+                    window.open(cardLink, '_blank'); // window.location.href = cardLink;
                 }
-            } else {
+            } // else {
                 // let nextCard = card.nextElementSibling;
                 // if (nextCard) {
                 //     nextCard.style.display = 'block';
                 // }
-            }
+            // }
             card.style.opacity = '0';
             // After the transition ends, remove the card
             setTimeout(() => card.remove(), 500);
