@@ -17,10 +17,37 @@ const addEventOnElem = function (elem, type, callback) {
 }
 
 /**
- * yonk it
+ * Copy text
  */
 
+function copyText(event) {
+  // Get the button that was clicked
+  const button = event.target;
+  
+  // Find its parent copy-paste-element div
+  const copyPasteElement = button.closest('.copy-paste-element');
+  
+  // Get all the p tags within that div
+  const paragraphs = copyPasteElement.querySelectorAll('p');
+  
+  let textToCopy = '';
+  paragraphs.forEach((p) => {
+    textToCopy += p.textContent + '\n';
+  });
 
+  const textArea = document.createElement('textarea');
+  textArea.value = textToCopy;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textArea);
+
+  const svg2 = button.closest('.svg2');
+  svg2.classList.toggle('hidden');
+  setTimeout(() => {
+    svg2.classList.toggle('hidden');
+  }, 150);
+}
 
 
 /**

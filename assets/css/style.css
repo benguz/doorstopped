@@ -1144,6 +1144,96 @@ h2 {
   } /* padding stuff */
 }
 
+/**
+* COPY-PASTE
+*/
+
+
+.copy-paste-element {
+  position: relative;
+  background-color: #f6f9fc;
+  border-radius: 3px;
+  border: 1px solid #dce6e9;
+  padding: 15px;
+  margin-bottom: 1rem;
+}
+
+.copy-paste-element p {
+  margin: 0;
+  /* margin-bottom: 0.5em; */
+  line-height: 1.5;
+}
+
+.copy-icon {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-icon:focus {
+  outline: none;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.svg2 path {
+  stroke-dasharray: 477;
+  stroke-dashoffset: 477;
+  animation: draw 150ms ease-out forwards;
+}
+
+/**
+* accordion
+*/
+
+.accordion-menu {
+  width: 100%;
+}
+
+.accordion-section {
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.accordion-header {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.accordion-header:after {
+  content: '\25BC';
+  position: absolute;
+  right: 10px;
+}
+
+.accordion-header.active:after {
+  content: '\25B2';
+}
+
+.accordion-content {
+  padding: 10px;
+  display: none;
+  background-color: #fff;
+}
+
+.accordion-content p {
+  font-size: 12pt;
+}
 
   /**
    * REUSED STYLE

@@ -236,11 +236,42 @@ p {
     }
 }
 
+.toggle-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    height: 50px;
+    background-color: lightgrey;
+    border-radius: 25px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.toggle-btn__side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn__side--left {
+    background-color: grey;
+}
+
     </style>
   </head>
 
 <body>
     <h2>Responding to toxic comments about how much food is on your plate.</h2>
+    <!--
+        <div class="toggle-btn" id="toggleBtn">
+    <div class="toggle-btn__side toggle-btn__side--left" id="leftSide">You're eating so little!</div>
+    <div class="toggle-btn__side toggle-btn__side--right" id="rightSide">Oh, that's a lot of food</div>
+</div>
+
+    -->
     <div class="slider-wrapper">
         <div class="card">
         <p id="slider-text">I’m happy with what’s on my plate right now — all the food looks great! We might have different cultural values around what a healthy body looks like.</p>
@@ -251,8 +282,28 @@ p {
           <label class="slider-label-right"><strong>girlboss, girlboss, girlboss</strong></label>
         </div>
       </div>
+      <!-- "HAVE A SUGGESTION?" interface-->
       
 <script>
+
+var toggleBtn = document.getElementById('toggleBtn');
+var leftSide = document.getElementById('leftSide');
+var rightSide = document.getElementById('rightSide');
+var flag = 'left'; // default flag
+
+toggleBtn.addEventListener('click', function(e) {
+    if (e.target.id === 'leftSide') {
+        leftSide.style.backgroundColor = 'grey';
+        rightSide.style.backgroundColor = 'lightgrey';
+        flag = 'left';
+    } else if (e.target.id === 'rightSide') {
+        rightSide.style.backgroundColor = 'grey';
+        leftSide.style.backgroundColor = 'lightgrey';
+        flag = 'right';
+    }
+    console.log("Flag is now: ", flag);
+});
+
 
 let slider = document.getElementById("myRange");
 let sliderText = document.getElementById("slider-text");
@@ -262,6 +313,40 @@ let sliderText = document.getElementById("slider-text");
 // }
 
 slider.oninput = function() {
+
+if (flag == 'left') {
+  if(this.value == 1) {
+    sliderText.innerHTML = "";
+  }
+  else if(this.value == 2) {
+    sliderText.innerHTML = "";
+  }
+  else if(this.value == 3) {
+    sliderText.innerHTML = "";
+  }
+
+  else if(this.value == 4) {
+    sliderText.innerHTML = "This is healthy for me.";
+  }
+  else if(this.value == 5) {
+    sliderText.innerHTML = "";
+  }
+  else if(this.value == 6) {
+    sliderText.innerHTML = "";
+  }
+
+  else if(this.value == 7) {
+    sliderText.innerHTML = "";
+  }
+  else if(this.value == 8) {
+    sliderText.innerHTML = "";
+  }
+  else if(this.value == 9) {
+    sliderText.innerHTML = "";
+  }
+}
+
+else {
   if(this.value == 1) {
     sliderText.innerHTML = "Thanks! I'm fine. How about you? Did you try the food? Was it good? Did you see (whatever) on TV last night? How is your (BFF/aunt/dog) these days?";
   }
@@ -291,6 +376,7 @@ slider.oninput = function() {
   else if(this.value == 9) {
     sliderText.innerHTML = "Wow. You were really comfortable saying that out loud.";
   }
+}
 }
 
 </script>
