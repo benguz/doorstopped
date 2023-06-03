@@ -414,10 +414,10 @@ p {
       <script>
         // Define the text for each row
 var columnText = [
-  "Hi Mr/Mrs._____, 1",
-  "Hi Mr/Mrs._____, 2",
-  "Hi Mr/Mrs._____, 3",
-  "Hi Mr/Mrs._____, 4",
+  "Hi Mr/Mrs._____, <br> This is an email template <br> for how to ask your teacher to think through their curriculum again in an intentional, collaborative way. <br>This template is specifically for students who sit in the front row.",
+  "Hi Mr/Mrs._____, <br> This is an email template <br> for how to ask your teacher to think through their curriculum again in an intentional, collaborative way. <br>This template is specifically for students who sit in the middle row.",
+  "Hi Mr/Mrs._____, <br> This is an email template <br> for how to ask your teacher to think through their curriculum again in an intentional, collaborative way. <br>This template is specifically for students who sit in the middle row.",
+  "Hi Mr/Mrs._____, <br> This is an email template <br> for how to ask your teacher to think through their curriculum again in an intentional, collaborative way. <br>This template is specifically for students who sit in the back row.",
 ];
 
 window.onload = function() {
@@ -473,7 +473,7 @@ function updateDeskColors(desks, deskStates) {
 }
 
 // was onload
-document.getElementById('start-button').addEventListener('click', function() {
+document.getElementById('dislike-button').addEventListener('click', function() {
   var desksDiv = document.getElementById('desks');
   var desks = Array(20).fill().map((_, i) => {
     var desk = document.createElement('div');
