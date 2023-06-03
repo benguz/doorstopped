@@ -107,6 +107,10 @@ h2 {
     .back {
         transform: rotateX(0);
     }
+
+    .bingo-face {
+        backface-visibility: hidden;
+    }
 }
 
 @media (hover: none) {
@@ -114,17 +118,25 @@ h2 {
         display: none;
     } */
 
+    /* .back {
+        transform: rotateX(0)
+        display: none; 
+    }*/
+
+    .front {
+        transform: rotateX(0);
+    }
+
     .back {
-        /* transform: rotateX(0); */
-        display: none;
+        transform: rotateX(180deg);
     }
 }
   </style>
 </head>
 <body>
         <header>
-        <h1>My school has way too much...</h1>
-        <h2>Click your problem, we'll take you to our solution</h2>
+        <h1>Toxic Vibes Bingo</h1>
+        <h2>Click your school's problem, we'll take you to a solution</h2>
     </header>
   <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -155,15 +167,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bingo-face front">Bullying</div>
             <div class="bingo-face back">Straight up.</div>
         </div>
-      <div class="bingo-item" data-link="/doorstops/shift.html">
+      <div class="bingo-item" data-link="/doorstops/shift.html#outlet">
             <div class="bingo-face front">Violence</div>
             <div class="bingo-face back">People hiding in the bathroom</div>
         </div>
-      <div class="bingo-item" data-link="/doorstops/shift.html">
+      <div class="bingo-item" data-link="/doorstops/shift.html#clout">
             <div class="bingo-face front">Small jabs</div>
             <div class="bingo-face back">insults in the halls, middle school shit</div>
         </div>
-              <div class="bingo-item" data-link="/doorstops/shift.html">
+              <div class="bingo-item" data-link="/doorstops/shift.html#referent">
             <div class="bingo-face front">Harrassment</div>
             <div class="bingo-face back">Guys do awful shit to girls, nobody says anything.</div>
         </div>
@@ -171,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bingo-face front">Nobody shows up</div>
             <div class="bingo-face back">because the school is awful</div>
         </div>
-              <div class="bingo-item" data-link="/doorstops/emotionwords.html">
+              <div class="bingo-item" data-link="/emotionwords.html">
             <div class="bingo-face front">Emotional unavailability</div>
             <div class="bingo-face back">*cough* men</div>
         </div>
@@ -179,7 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bingo-face front">Boredom</div>
             <div class="bingo-face back">Window-Staring 101</div>
         </div>
-              <div class="bingo-item" data-link="https://doorstopfellows.org">
+              <div class="bingo-item" data-link="doorstops/shift.html#enemy"> 
+                <!--link to doorstopfellows in the future-->
             <div class="bingo-face front">Apathy</div>
             <div class="bingo-face back">Nobody gives a fuck.</div>
         </div>
@@ -189,23 +202,24 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
               <div class="bingo-item" data-link="/doorstops/listen.html">
             <div class="bingo-face front">Anxiety</div>
-            <div class="bingo-face back">()</div>
+            <div class="bingo-face back">Feet tapping all class</div>
         </div>
               <div class="bingo-item" data-link="/doorstops/care.html">
             <div class="bingo-face front">Insecurity</div>
-            <div class="bingo-face back">smart people think they’re dumb</div>
+            <div class="bingo-face back">Smart people think they’re dumb</div>
         </div>
-              <div class="bingo-item" data-link="/doorstops/shift.html">
-            <div class="bingo-face front">Competition</div>
-            <div class="bingo-face back">wha- wha- whadidya get?!</div>
-        </div>
-              <div class="bingo-item" data-link="/doorstops/shift.html">
-            <div class="bingo-face front">Bullying</div>
+        <div class="bingo-item" data-link="/doorstops/shift.html">
+            <div class="bingo-face front">Students are all {negative emotion}</div>
             <div class="bingo-face back">Straight up.</div>
         </div>
-              <div class="bingo-item" data-link="/doorstops/shift.html">
-            <div class="bingo-face front">Harrassment</div>
-            <div class="bingo-face back">Male teachers, female students</div>
+              <div class="bingo-item" data-link="/doorstops/shift.html#">
+            <div class="bingo-face front">Competitiveness</div>
+            <div class="bingo-face back">wha- wha- whadidya get?!</div>
+        </div>
+            
+              <div class="bingo-item" data-link="/doorstops/radical.html">
+            <div class="bingo-face front">Powerlessness</div>
+            <div class="bingo-face back">You feel trapped at your desk</div>
         </div>
               <div class="bingo-item" data-link="/doorstops/shift.html">
             <div class="bingo-face front">Racism tolerated or endorsed.</div>
@@ -224,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bingo-face back">"Guidance" counselors</div>
         </div>
               <div class="bingo-item" data-link="/doorstops/fundraising.html">
-            <div class="bingo-face front">No money in the school</div>
+            <div class="bingo-face front">No money in the district</div>
             <div class="bingo-face back">teachers are burnt out</div>
         </div>
               <div class="bingo-item" data-link="/doorstops/shift.html">
@@ -232,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bingo-face back">You get put down for caring.</div>
         </div>
               <div class="bingo-item" data-link="/doorstops/othercareers.html">
-            <div class="bingo-face front">HS is a dead end</div>
+            <div class="bingo-face front">HS feels like a dead end</div>
             <div class="bingo-face back">It’s McDonalds or fame</div>
         </div>
               <div class="bingo-item" data-link="doorstops/dominance.html">
@@ -240,11 +254,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bingo-face back">Trapped at your desk?</div>
         </div>
         <div class="bingo-item" data-link="https://waitwhythough.com">
-            <div class="bingo-face front">Why?</div>
+            <div class="bingo-face front">What's the point of ____ class?</div>
             <div class="bingo-face back">We're not learning what matters</div>
         </div>
-              <div class="bingo-item" data-link="doorstops/shift.html">
-            <div class="bingo-face front">social divides</div>
+              <div class="bingo-item" data-link="/doorstops/shift.html#enemy">
+            <div class="bingo-face front">Social divides</div>
             <div class="bingo-face back">rich/poor, black/white</div>
         </div>
         <!-- Repeat the above div for each bingo board item -->

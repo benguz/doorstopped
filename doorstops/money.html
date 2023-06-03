@@ -488,17 +488,26 @@ Thank you so much for taking the time to read this message and considering our r
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
  <script>
-    $(document).ready(function() {
+$(document).ready(function() {
   $('.accordion-header').click(function() {
-    // Close all sections
-    $('.accordion-content').slideUp();
-    $('.accordion-header').removeClass('active');
+    var content = $(this).next('.accordion-content');
 
-    // Open this section
-    $(this).next('.accordion-content').slideDown();
-    $(this).addClass('active');
+    // If this section is already open, close it
+    if($(this).hasClass('active')) {
+      content.slideUp();
+      $(this).removeClass('active');
+    } else {
+      // Close all sections
+      $('.accordion-content').slideUp();
+      $('.accordion-header').removeClass('active');
+
+      // Open this section
+      content.slideDown();
+      $(this).addClass('active');
+    }
   });
 });
+
 
  </script>
 </body>
