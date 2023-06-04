@@ -267,6 +267,10 @@ p {
   height: 100vh;
 }
 
+#game-section {
+    height: 100vh;
+}
+
 #desks {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 columns */
@@ -281,6 +285,12 @@ p {
   background-color: #a0a0a0;
 }
 
+.desk:hover {
+    cursor: pointer;
+}
+
+
+
 .donk {
   width: 75px;
   height: 50px;
@@ -292,24 +302,37 @@ p {
 
 
 #text-section {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   max-width: 80%;
+  width: 100%; /* if you want to center it vertically too */
+  height: 100vh;
 }
 
 #textbox {
   width: 80%;
   font-size: 20px;
-  height: 600px;
+  height: 400px;
   min-width: 70%;
   background-color: transparent;
   border: 1px solid #000;
 }
-/* 
+
 #dislike-button {
-  bottom: 10px;
-  right: 10px;
-} */
+    background-color: #04AA6D;
+    color: white; /* Assuming you want the text color to be white */
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Optional: if you want to have rounded corners */
+}
+
 
 @media screen and (max-width: 600px) {
     #donks-section {
@@ -321,6 +344,7 @@ p {
 
 }
 
+
     </style>
   </head>
 
@@ -330,31 +354,31 @@ p {
 
     <section id="donks-section">   
 
-        <div>
+        <div class="row1">
             <div class="donk" id="desk1"></div>
             <div class="donk" id="desk2"></div>
             <div class="donk" id="desk3"></div>
             <div class="donk" id="desk4"></div>
             </div> 
-            <div>
+            <div class="row5">
             <div class="donk" id="desk5"></div>
             <div class="donk" id="desk6"></div>
             <div class="donk" id="desk7"></div>
             <div class="donk" id="desk8"></div>
             </div> 
-            <div>
+            <div class="row2">
             <div class="donk" id="desk9"></div>
             <div class="donk" id="desk10"></div>
             <div class="donk" id="desk11"></div>
             <div class="donk" id="desk12"></div>
             </div> 
-            <div>
+            <div class="row3"> 
             <div class="donk" id="desk13"></div>
             <div class="donk" id="desk14"></div>
             <div class="donk" id="desk15"></div>
             <div class="donk" id="desk16"></div>
             </div> 
-            <div>
+            <div class="row4">
             <div class="donk" id="desk17"></div>
             <div class="donk" id="desk18"></div>
             <div class="donk" id="desk19"></div>
@@ -363,12 +387,13 @@ p {
 
       </section>
     
-      <section id="text-section">
-        <div id="textbox" contenteditable="true">
-          <!-- Text here will be replaced based on desk selection -->
-        </div>
-        <button id="dislike-button">I don't like this</button>
-      </section>
+        <section id="text-section" style="flex-direction: column;">
+            <textarea id="textbox" name="textbox"></textarea>
+            <input type="submit" id="dislike-button" value="I don't like this">
+        </section>    
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSehZ8fAR-H_HWN1-jBIIGsXznjydMMeMfZvisojMrSbbWucSQ/viewform?embedded=true" width="640" height="760" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+
       <!-- <div class="card">
         <p></p>
 </div> -->
@@ -376,17 +401,17 @@ p {
         <h1>Classroom Simulator</h1>
         
         <div class="slider-wrapper">
-          <input type="range" min="0" max="80" value="0" class="slider" id="boredom">
+          <input type="range" min="0" max="45" value="0" class="slider" id="boredom">
           <label for="boredom">Boredom</label>
         </div>
         <br>
         <div class="slider-wrapper">
-          <input type="range" min="0" max="80" value="0" class="slider" id="anxiety">
+          <input type="range" min="0" max="45" value="0" class="slider" id="anxiety">
           <label for="anxiety">Anxiety</label>
         </div>
         <br>
         <div class="slider-wrapper">
-          <input type="range" min="0" max="80" value="0" class="slider" id="disruption">
+          <input type="range" min="0" max="45" value="0" class="slider" id="disruption">
           <label for="disruption">Disruption</label>
         </div>
         <br>
@@ -398,23 +423,11 @@ p {
         <div id="counter">Time spent learning: 0</div>
       </section>
     
-       <!-- 
-    <div class="slider-wrapper">
-        <div class="card">
-        <p id="slider-text">I’m happy with what’s on my plate right now — all the food looks great! We might have different cultural values around what a healthy body looks like.</p>
-    </div>
-        <input type="range" min="1" max="9" value="5" class="slider" id="myRange" step="1">
-        <div class="slider-labels">
-          <label class="slider-label-left"><strong>safe, clear, good boundaries</strong></label>
-          <label class="slider-label-right"><strong>girlboss, girlboss, girlboss</strong></label>
-        </div>
-      </div>
-     -->
-  
+
       <script>
         // Define the text for each row
 var columnText = [
-  "Hi Mr/Mrs._____, <br> This is an email template <br> for how to ask your teacher to think through their curriculum again in an intentional, collaborative way. <br>This template is specifically for students who sit in the front row.",
+  "<strong>Subject: </strong> <br>Hi Mr/Mrs._____, <br> This is an email template <br> for how to ask your teacher to think through their curriculum again in an intentional, collaborative way. <br>This template is specifically for students who sit in the front row.",
   "Hi Mr/Mrs._____, <br> This is an email template <br> for how to ask your teacher to think through their curriculum again in an intentional, collaborative way. <br>This template is specifically for students who sit in the middle row.",
   "Hi Mr/Mrs._____, <br> This is an email template <br> for how to ask your teacher to think through their curriculum again in an intentional, collaborative way. <br>This template is specifically for students who sit in the middle row.",
   "Hi Mr/Mrs._____, <br> This is an email template <br> for how to ask your teacher to think through their curriculum again in an intentional, collaborative way. <br>This template is specifically for students who sit in the back row.",
@@ -433,7 +446,6 @@ window.onload = function() {
       textbox.innerHTML = columnText[columnNumber - 1];
 
       // Scroll to the next section
-      textSection.style.display = "block";
       textSection.scrollIntoView({behavior: "smooth"});
     });
   }
@@ -473,7 +485,8 @@ function updateDeskColors(desks, deskStates) {
 }
 
 // was onload
-document.getElementById('dislike-button').addEventListener('click', function() {
+document.getElementById('dislike-button').addEventListener('click', function() 
+{
   var desksDiv = document.getElementById('desks');
   var desks = Array(20).fill().map((_, i) => {
     var desk = document.createElement('div');
@@ -489,9 +502,9 @@ document.getElementById('dislike-button').addEventListener('click', function() {
   });
 
   setInterval(function() {
-    var boredom = document.getElementById('boredom').value / 5;
-    var anxiety = document.getElementById('anxiety').value / 5;
-    var disruption = document.getElementById('disruption').value / 5;
+    var boredom = document.getElementById('boredom').value / 2;
+    var anxiety = document.getElementById('anxiety').value /2 ;
+    var disruption = document.getElementById('disruption').value /2;
     var events = 0;
 
     for (var i = 0; i < desks.length; i++) {
@@ -502,10 +515,13 @@ document.getElementById('dislike-button').addEventListener('click', function() {
         var rand = Math.random() * 100;
         if (rand < boredom) {
           deskStates[i] = 'boredom';
+          events++;
         } else if (rand < boredom + anxiety) {
           deskStates[i] = 'anxiety';
+          events++;
         } else if (rand < boredom + anxiety + disruption) {
           deskStates[i] = 'disruption';
+          events++;
         } else {
           deskStates[i] = null;
         }
@@ -517,8 +533,9 @@ document.getElementById('dislike-button').addEventListener('click', function() {
     if (events <= desks.length / 2) {
       learningTime++;
       updateLearningTime();
+      
     }
-  }, 1000); // every half-second
+  }, 1000); // every second
 })
 
 function updateLearningTime() {
