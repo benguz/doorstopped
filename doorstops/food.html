@@ -286,23 +286,23 @@ p {
       
 <script>
 
-var toggleBtn = document.getElementById('toggleBtn');
-var leftSide = document.getElementById('leftSide');
-var rightSide = document.getElementById('rightSide');
-var flag = 'left'; // default flag
+// var toggleBtn = document.getElementById('toggleBtn');
+// var leftSide = document.getElementById('leftSide');
+// var rightSide = document.getElementById('rightSide');
+// var flag = 'left'; // default flag
 
-toggleBtn.addEventListener('click', function(e) {
-    if (e.target.id === 'leftSide') {
-        leftSide.style.backgroundColor = 'grey';
-        rightSide.style.backgroundColor = 'lightgrey';
-        flag = 'left';
-    } else if (e.target.id === 'rightSide') {
-        rightSide.style.backgroundColor = 'grey';
-        leftSide.style.backgroundColor = 'lightgrey';
-        flag = 'right';
-    }
-    console.log("Flag is now: ", flag);
-});
+// toggleBtn.addEventListener('click', function(e) {
+//     if (e.target.id === 'leftSide') {
+//         leftSide.style.backgroundColor = 'grey';
+//         rightSide.style.backgroundColor = 'lightgrey';
+//         flag = 'left';
+//     } else if (e.target.id === 'rightSide') {
+//         rightSide.style.backgroundColor = 'grey';
+//         leftSide.style.backgroundColor = 'lightgrey';
+//         flag = 'right';
+//     }
+//     console.log("Flag is now: ", flag);
+// });
 
 
 let slider = document.getElementById("myRange");
@@ -314,7 +314,7 @@ let sliderText = document.getElementById("slider-text");
 
 slider.oninput = function() {
 
-if (flag == 'left') {
+// if (flag == 'left') {
   if(this.value == 1) {
     sliderText.innerHTML = "";
   }
@@ -344,9 +344,9 @@ if (flag == 'left') {
   else if(this.value == 9) {
     sliderText.innerHTML = "";
   }
-}
+// }
 
-else {
+// else {
   if(this.value == 1) {
     sliderText.innerHTML = "Thanks! I'm fine. How about you? Did you try the food? Was it good? Did you see (whatever) on TV last night? How is your (BFF/aunt/dog) these days?";
   }
@@ -377,7 +377,7 @@ else {
     sliderText.innerHTML = "Wow. You were really comfortable saying that out loud.";
   }
 }
-}
+//}
 
 </script>
 </body>
