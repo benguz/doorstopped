@@ -1,0 +1,110 @@
+[
+    {
+        "name": "care",
+        "h1": "proof your teacher cares",
+        "category": "classroom change",
+        "score": 8.746987951807228
+    },
+    {
+        "name": "dominance",
+        "h1": "how teachers control classrooms",
+        "category": "classroom change",
+        "score": 8.746987951807228
+    },
+    {
+        "name": "extension",
+        "h1": "how to ask for an extension",
+        "category": "classroom change",
+        "score": 8.746987951807228
+    },
+    {
+        "name": "feedback",
+        "h1": "give your teacher instant anonymous feedback",
+        "category": "classroom change",
+        "score": 8.746987951807228
+    },
+    {
+        "name": "food",
+        "h1": "handling toxic comments about food",
+        "category": "judgey people",
+        "score": 8.746987951807228
+    },
+    {
+        "name": "getout",
+        "h1": "escape the classroom",
+        "category": "classroom change",
+        "score": 8.746987951807228
+    },
+    {
+        "name": "lifehacks",
+        "h1": "school life hacks",
+        "category": "less boring",
+        "score": 4.746987951807228
+    },
+    {
+        "name": "leverage",
+        "h1": "your negotiating leverage",
+        "category": "schoolwide change",
+        "score": 4.746987951807228
+    },
+    {
+        "name": "listen",
+        "h1": "listen and change minds",
+        "category": "detoxifying vibes",
+        "score": 4.746987951807228
+    },
+    {
+        "name": "mentor",
+        "h1": "how to find a mentor",
+        "category": "support",
+        "score": 4.746987951807228
+    },
+    {
+        "name": "money",
+        "h1": "how to get funding for your school",
+        "category": "schoolwide change",
+        "score": 4.746987951807228
+    },
+    {
+        "name": "points",
+        "h1": "how to organize a participation point boycott",
+        "category": "classroom change",
+        "score": 4.746987951807228
+    },
+    {
+        "name": "poop",
+        "h1": "how to fix the disgusting bathrooms",
+        "category": "basic needs",
+        "score": 4.746987951807228
+    },
+    {
+        "name": "power",
+        "h1": "how school power structures work",
+        "category": "schoolwide change",
+        "score": 4.746987951807228
+    },
+    {
+        "name": "takingsteps",
+        "h1": "how to hold your admin accountable",
+        "category": "schoolwide change",
+        "score": 4.746987951807228
+    },
+    {
+        "name": "shift",
+        "h1": "schoolwide culture shift, end toxic vibes",
+        "category": "schoolwide change",
+        "score": 16.746987951807228
+    },
+    {
+        "name": "teachit",
+        "h1": "expand your school's course options by teaching one",
+        "category": "classroom change",
+        "score": 16.746987951807228
+    },
+    {
+        "name": "whack",
+        "h1": "lol don't click this one",
+        "category": "schoolwide change",
+        "score": 16.746987951807228
+    }
+]
