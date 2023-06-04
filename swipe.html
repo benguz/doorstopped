@@ -35,6 +35,7 @@
 body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -43,13 +44,17 @@ body {
     box-sizing: border-box;
 }
 
-#container {
+#container, #swiped-right-section {
     position: relative;
     width: 90%; 
     height: 93%; 
     max-width: 400px; 
     max-height: 600px; 
     box-sizing: border-box;
+}
+
+#swiped-right-section {
+    overflow: scroll;
 }
 
 .card {
@@ -59,7 +64,7 @@ body {
 
 /* Style adjustments for larger screens */
 @media screen and (min-width: 2000px) {
-    #container {
+    #container, #swiped-right-section {
         width: 50%; 
         height: 70%; 
     }
@@ -134,19 +139,68 @@ body {
     display: block;
 }
 
+#navbar {
+    position: relative;
+    bottom: 0;  
+    width: 90%;
+    max-width: 400px; 
+    height: 50px; /* adjust as needed */
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-icon {
+    width: 30px; /* adjust as needed */
+    height: 30px; /* adjust as needed */
+}
+
+/* #swiped-right-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+} */
+
+#swiped-right-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#swiped-right-list li {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#swiped-right-list li:hover {
+    cursor: pointer;
+}
+
+
 /* Reset max-width and max-height for mobile devices */
 @media screen and (max-width: 600px) {
     
     body {
-        align-items: flex-start; /* Aligns items to the top on mobile */
-        padding-top: 3em; /* You can adjust this value to suit your needs */
+        /* align-items: flex-start; Aligns items to the top on mobile */
         height: 100vh;
     }
 
-    #container {
+    
+
+    #container, #swiped-right-section {
         max-width: 100%;
         min-height: 70%; 
         /* top: 2.5em; */
+    }
+
+    #navbar {
+        max-width: 100%;
     }
 
     .card {
@@ -167,36 +221,176 @@ body {
 }
 }
 
+
+.liked {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
     </style>
   </head>
 
 <body>
     <div id="container">
 <!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
-        <div class="card" data-link="https://link2.com">
+        <div class="card" data-link="https://link2.com" style="display: none;">
             <h2>More coming soon!</h2>
             <img src="https://image2.com" alt="image2" />
             <p></p>
         </div>
-        <div class="card" data-link="/doorstops/listen.html">
+        <div class="card" data-link="/doorstops/shift.html" style="display: none;">
+            <h2>Judgey People</h2>
+            <p>Cliques and drama to an extreme</p>
+        </div>
+      <div class="card" data-link="/doorstops/shift.html" style="display: none;">
+            <h2>Bullying</h2>
+            <p>Straight up.</p>
+        </div>
+      <div class="card" data-link="/doorstops/shift.html#outlet" style="display: none;">
+            <h2>Violence</h2>
+            <p>People hiding in the bathroom</p>
+        </div>
+      <div class="card" data-link="/doorstops/shift.html#clout" style="display: none;">
+            <h2>Small jabs</h2>
+            <p>insults in the halls, middle school shit</p>
+        </div>
+              <div class="card" data-link="/doorstops/shift.html#referent" style="display: none;"> 
+            <h2>Harrassment</h2>
+            <p>Guys do awful shit to girls, nobody says anything.</p>
+        </div>
+              <div class="card" data-link="/time.html" style="display: none;">
+            <h2>Nobody shows up</h2>
+            <p>because the school is awful</p>
+        </div>
+              <div class="card" data-link="/emotionwords.html" style="display: none;">
+            <h2>Emotional unavailability</h2>
+            <p>*cough* men</p>
+        </div>
+              <div class="card" data-link="/doorstops/teachit.html" style="display: none;">
+            <h2>Boredom</h2>
+            <p>Window-Staring 101</p>
+        </div>
+              <div class="card" data-link="doorstops/shift.html#enemy" style="display: none;"> 
+                <!--link to doorstopfellows in the future-->
+            <h2>Apathy</h2>
+            <p>Nobody gives a fuck.</p>
+        </div>
+              <div class="card" data-link="/programs/conversations" style="display: none;">
+            <h2>Nobody respects teachers</h2>
+            <p>So class gets loud</p>
+        </div>
+              <div class="card" data-link="/doorstops/listen.html" style="display: none;">
+            <h2>Anxiety</h2>
+            <p>Feet tapping all class</p>
+        </div>
+              <div class="card" data-link="/doorstops/care.html" style="display: none;">
+            <h2>Insecurity</h2>
+            <p>Smart people think they’re dumb</p>
+        </div>
+        <div class="card" data-link="/doorstops/shift.html" style="display: none;">
+            <h2>Students are all {negative emotion}</h2>
+            <p>Straight up.</p>
+        </div>
+              <div class="card" data-link="/doorstops/shift.html#" style="display: none;">
+            <h2>Competitiveness</h2>
+            <p>wha- wha- whadidya get?!</p>
+        </div>
+            
+              <div class="card" data-link="/doorstops/radical.html" style="display: none;">
+            <h2>Powerlessness</h2>
+            <p>You feel trapped at your desk</p>
+        </div>
+              <div class="card" data-link="/doorstops/shift.html" style="display: none;">
+            <h2>Racism tolerated or endorsed.</h2>
+            <p>People transfer schools because of it.</p>
+        </div>
+              <div class="card" data-link="/programs/phones.html" style="display: none;">
+            <h2>Admin don't communicate</h2>
+            <p>“a girl killed herself, they didn’t say anything”</p>
+        </div>
+              <div class="card" data-link="/doorstops/poop.html" style="display: none;">
+            <h2>Gross bathrooms</h2>
+            <p>Nobody poopin.</p>
+        </div>
+              <div class="card" data-link="/programs/conversations" style="display: none;">
+            <h2>No mental health help</h2>
+            <p>"Guidance" counselors</p>
+        </div>
+              <div class="card" data-link="/doorstops/fundraising.html" style="display: none;">
+            <h2>No money in the district</h2>
+            <p>teachers are burnt out</p>
+        </div>
+              <div class="card" data-link="/doorstops/shift.html" style="display: none;">
+            <h2>"You're a try-hard"</h2>
+            <p>You get put down for caring.</p>
+        </div>
+              <div class="card" data-link="/doorstops/othercareers.html" style="display: none;">
+            <h2>HS feels like a dead end</h2>
+            <p>It’s McDonalds or fame</p>
+        </div>
+              <div class="card" data-link="doorstops/dominance.html" style="display: none;">
+            <h2>Strictness</h2>
+            <p>Trapped at your desk?</p>
+        </div>
+        <div class="card" data-link="https://waitwhythough.com" style="display: none;">
+            <h2>What's the point of ____ class?</h2>
+            <p>We're not learning what matters</p>
+        </div>
+              <div class="card" data-link="/doorstops/shift.html#enemy" style="display: none;">
+            <h2>Social divides</h2>
+            <p>rich/poor, black/white</p>
+        </div>
+        <div class="card culture" data-link="/doorstops/listen.html" style="display: none;">
             <h2>Emotional Availability is Sexy</h2>
             <!--<img src="/assets/images/moon.png" alt="image2" />-->
             <p>Ever been injured where you can kind of play but it hurts more every game? You know you should stop but the season seems so close.<br>That’s hard. <strong>School can feel the same way</strong>: you’re stuck on an assignment or you have no idea what’s going on in class, but stick it out, head down, and make it to the end of the semester.<br>But school’s different. If you <strong>ask for help</strong>, you don’t get taken out of the game, <strong>you get back in</strong>. You get better. Your teacher respects you more.<br>Everyone's struggled like this. Wanna hear professional athletes say it?</p>
         </div>
-        <div class="card" data-link="/doorstops/poop.html">
+        <div class="card needs" data-link="/doorstops/poop.html" style="display: none;">
             <h2>No urinal dividers?</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
             <p>Why is nobody poopin' at your school?</p>
             <p>Don't worry, we got you.</p>
         </div>
-        <div class="card" data-link="/programs/eat.html">
+        <div class="card classes" data-link="/doorstops/feedback.html" style="display: none;">
+            <h2>Boring classes?</h2>
+            <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+            <p>How to respond and change the culture.</p>
+        </div>
+        <div class="card" data-link="/doorstops/food.html" style="display: none;">
+            <h2>Show me more about making class less boring</h2>
+            <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+        </div>
+        <div class="card culture" data-link="/doorstops/food.html" style="display: none;">
+            <h2>Toxic comments about eating</h2>
+            <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+            <p>How to respond and change the culture.</p>
+        </div>
+        
+        <div class="card" id="more culture" data-link="/doorstops/food.html" style="display: none;">
+            <h2>Show me more about changing school culture</h2>
+            <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+        </div>
+        <div class="card" data-link="/programs/eat.html" style="display: none;">
             <h2>Lunch awful?</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
             <p>Pull out your mini waffle maker, or we'll buy one for you.</p>
         </div>
-        <div class="card" data-link="/time.html">
+        <div class="card" data-link="/time.html" style="display: none;">
             <h2>Is class a waste of time? Prove it and change it.</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
@@ -226,8 +420,22 @@ body {
             <p>Swipe left (not interested) and right (yes PLEASE) until you find the perfect strategy/cash grant/vibe check for being happier in school.<br>
         </div>
     </div>
+    <div id="swiped-right-section" style="display: none;">
+        <ul id="swiped-right-list"></ul>
+    </div>
+    <div id="left-section" style="display: none;">
+        <p>Nothing here yet! </p>
+    </div>
+    <div id="navbar">
+        <button id="nav1"><img class="nav-icon" src="/assets/svg/umbrella.svg" alt="Icon 1" /></button>
+        <button id="nav2"><img class="nav-icon" src="/assets/svg/school.svg" alt="Icon 2" /></button>
+        <button id="nav3"><img class="nav-icon" src="/assets/svg/star.svg" alt="Icon 3" /></button>
+    </div>
+    
     <script>
 // For each card
+let swipedRight = JSON.parse(localStorage.getItem('swipedRight')) || [];  // load swiped right cards from localStorage
+
 document.querySelectorAll('.card').forEach((card, index) => {
     let hammertime = new Hammer(card);
     let initialPos = 0;
@@ -260,15 +468,25 @@ document.querySelectorAll('.card').forEach((card, index) => {
             if (e.deltaX > 0) {
                 let cardLink = card.dataset.link;
                 if (cardLink) {
-                    window.open(cardLink, '_blank'); // window.location.href = cardLink;
+                    setTimeout(() => {
+                        window.open(cardLink, '_blank');
+                    })
+                    swipedRight.push({
+                    title: card.querySelector('h2').textContent,
+                    link: card.dataset.link
+                    });
+                    localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
+
+                    // window.open(cardLink, '_blank');  window.location.href = cardLink;
                 }
-            } // else {
-                // let nextCard = card.nextElementSibling;
-                // if (nextCard) {
-                //     nextCard.style.display = 'block';
-                // }
-            // }
+            }
+            let nextCard = card.previousElementSibling;
+            let followingCard = nextCard.previousElementSibling;
+            if (followingCard) {
+                followingCard.style.display = 'block';
+            }
             card.style.opacity = '0';
+            
             // After the transition ends, remove the card
             setTimeout(() => card.remove(), 500);
         } else {
@@ -279,6 +497,42 @@ document.querySelectorAll('.card').forEach((card, index) => {
         rafId = null;
     });
 });
+
+
+// Add event listeners to navbar icons
+document.getElementById('nav1').addEventListener('click', function() { showSection(1); });
+document.getElementById('nav2').addEventListener('click', function() { showSection(2); });
+document.getElementById('nav3').addEventListener('click', function() { showSection(3); });
+
+function showSection(n) {
+    if (n === 2) {
+        document.querySelector('#container').style.display = 'block';
+        document.querySelector('#swiped-right-section').style.display = 'none';
+        document.querySelector('#left-section').style.display = 'none';
+    } else if (n === 3) {
+        document.querySelector('#container').style.display = 'none';
+        document.querySelector('#left-section').style.display = 'none';
+        let list = document.querySelector('#swiped-right-list');
+        list.innerHTML = '';
+        swipedRight.forEach(card => {
+            let listItem = document.createElement('li');
+            let link = document.createElement('a');
+            let button = document.createElement('button');
+            link.href = card.link;
+            link.textContent = card.title;
+            link.target = '_blank';
+            listItem.className = 'liked'
+            listItem.appendChild(link);
+            list.appendChild(listItem);
+        });
+        document.querySelector('#swiped-right-section').style.display = 'block';
+    } else if (n === 1) {
+        document.querySelector('#container').style.display = 'none';
+        document.querySelector('#swiped-right-section').style.display = 'none';
+        document.querySelector('#left-section').style.display = 'block';
+    }
+    // Add cases for other sections as needed
+}
 
     </script>
 

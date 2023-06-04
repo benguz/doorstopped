@@ -1235,6 +1235,28 @@ h2 {
   font-size: 12pt;
 }
 
+/**
+* Textbox
+*/
+#text-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%; /* if you want to center it vertically too */
+}
+
+#textbox {
+  width: 100%;
+  font-size: 20px;
+  height: 200px;
+  min-width: 70%;
+  background-color: transparent;
+  border: 1px solid #000;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+}
+
   /**
    * REUSED STYLE
    */

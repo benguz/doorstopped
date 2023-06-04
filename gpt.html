@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Doorstopped - Doorstop Education</title>
+  <meta name="title" content="Doorstop Education">
+  <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <style>
+      @media screen and (max-width: 1023px){
+.framebox {
+height: 34000em;
+}
+.sidenavtotal {
+display:none;
+padding: 0em;
+}
+#sidenav{
+display:none;
+
+}
+#toc {
+  display:none;
+}
+.desktop {
+  display: none;
+}
+}
+.yonk {
+  width: 97%;
+  margin-left: 1.5%;
+}
+@media (min-width: 1024px) {
+/* main {
+  display:flex; 
+  justify-content:center;
+} 
+.yonk {
+            width: 55%;  
+            margin-left: 22.5%; 
+            padding: 0 10px;
+            box-sizing: border-box;
+        }*/
+
+.yonk {
+  flex: 3;
+}
+.sidenavtotal {
+  flex: 1;
+}
+
+.framebox {
+  height: 15500em;
+}
+}
+
+.copy-paste-element {
+  position: relative;
+  background-color: #f6f9fc;
+  border-radius: 3px;
+  border: 1px solid #dce6e9;
+  padding: 15px;
+  margin-bottom: 1rem;
+}
+
+.copy-paste-element p {
+  margin: 0;
+  /* margin-bottom: 0.5em; */
+  line-height: 1.5;
+}
+
+.copy-icon {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-icon:focus {
+  outline: none;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.svg2 path {
+  stroke-dasharray: 477;
+  stroke-dashoffset: 477;
+  animation: draw 150ms ease-out forwards;
+}
+
+/* flexbox shit  
+.sidenavtotal {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+article {
+  flex: 3;
+}
+
+.toc {
+  flex: 1;
+  /*max-width:60%;
+  /*word-wrap: break-word;
+  /* Add your toc styles here
+}
+*/
+
+.yonk p {
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+  font-size: 14pt;
+}
+
+.yonk p, h1, h2, h3, li {
+  color: black;
+}
+
+.yonk a {
+  text-decoration: underline;
+  display: inline;
+}
+h1 {
+  font-size: 25pt;
+  text-decoration: none;
+}
+h2 {
+  margin-top: 1em;
+  font-size: 20pt;
+}
+
+.badonk {
+  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+  padding-left: 30px;
+  font-size: 14pt;
+
+}
+.honk {
+  list-style-type: disc !important; 
+}
+
+#special-segment, #specialer-segment, .ed {
+    display: none;
+}
+
+
+.card {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+</style>
+
+
+  </style>
+
+  </head>
+
+<body id="top">
+
+  <header class="header" data-header>
+    <div class="container" min-width="620em">
+
+      <a href="/index.html" class="logo">
+        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="/index.html" class="logo">
+            <img src="/assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="/mission.html" class="navbar-link" data-nav-link>Mission</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/doorstops/index.html" class="navbar-link" data-nav-link>Doorstops</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/programs/index.html" class="navbar-link" data-nav-link>Programs</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/research/index.html" class="navbar-link" data-nav-link>Research</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
+          <span class="span">Try us out</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  
+  </header>
+
+      
+    <main>
+      <div style="display: flex; flex-direction: row;">
+      <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
+      
+          <br class="desktop"><br class="desktop">
+          <br class="desktop"><br class="desktop">
+          <br class="desktop">
+      <div id="sidenav"></div>
+      </div> 
+        <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center;">
+          <br class="desktop"><br class="desktop">
+          <br><br>
+          <br><br>
+<h1>Why billionaires don&rsquo;t donate to public schools&mdash;and how you can make them give to your school anyway.</h1>
+<div style="width:75%;height:0.68em;background-color:hsl(170, 75%, 41%); padding-bottom:0.22em"></div>
+
+<p></p><p>Mark Zuckerberg gave Newark Public Schools 100 million dollars and it changed nothing.&nbsp;</p>
+<p></p>
+<p>Teachers didn&rsquo;t get paid more. The gross bathrooms didn&rsquo;t get fixed. Money disappeared.</p>
+<p></p><p>Zuck messed up. He didn&rsquo;t really ask what the community needed&mdash;he threw money at them.&nbsp;</p>
+<p></p><p>Even if he had a smarter strategy, he would&rsquo;ve struggled. You can give schools money, but you have&nbsp;<a href="https://doorstopped.org/programs/radical">no idea how they&rsquo;ll spend it</a>. Budgets are negotiated between 10-15 groups, all with their own interests, and it is almost impossible to decipher spending data and school board meeting transcripts to find out what was actually done. We call this the&nbsp;transparency problem.</p>
+<p></p><p>That&rsquo;s scary for billionaires&mdash;they want their money to come with influence. So they give to charter schools instead, fronting 20% of the cash while the government subsidizes the other 70%&mdash;a high leverage way to donate.&nbsp;Their money turns into more money.</p>
+<p></p><p>But if you solve the transparency problem&mdash;reaching out directly to wealthy people with specific, simple asks that improve students&rsquo; lives&mdash;you can be a better charitable investment.&nbsp;</p>
+<p></p><p>Tell them exactly what&rsquo;s broken with your school&mdash;maybe there are no&nbsp;<a href="http://doorstopped.org/doorstops/poop">urinal dividers in the bathroom</a> or no bus drivers or no good basketballs or no good lunch food&mdash;</p>
+<p></p><p>Almost-billionaires, not-really-billionaires, and alums of your high school that made it out are&nbsp;great candidates.&nbsp;</p>
+<p></p><p>But if you outline straightforward asks and send cold emails/letters, you can make it happen. &nbsp;</p>
+<br>
+<div id="text-section" style="flex-direction: column;">
+    <div id="textbox" contenteditable="true">Has this been what you're looking for so far?
+    </div>
+    <br>
+
+</div>
+<button class="btn has-before" id="dislike-button">Change the content</button>
+
+<div id="special-segment">
+    <div class="card">
+        <p id="slider-text"><strong>Schoolwide culture shift with shaving cream.</strong></p>
+        <p> More text</p>
+    </div>
+    <br>
+    </div>
+    <div id="text-section" style="flex-direction: column; display: none;" class="ed">
+        <div id="textbox" contenteditable="true">Has this been what you're looking for so far?
+        </div>
+        <br>
+        <button class="btn has-before" id="change-button">Change the content</button>
+</div>
+<br>
+        <div id="specialer-segment">
+            <div class="card">
+                <p id="slider-text"><strong>Nah</strong></p>
+                <p> More text</p>
+            </div>
+</div>
+<script>
+    document.getElementById('dislike-button').addEventListener('click', function() 
+{
+    newcontent = document.getElementById('special-segment');
+    newcontent.style.display = "block";
+    const collection = document.getElementsByClassName('ed');
+    for (let i = 0; i < collection.length; i++) {
+    collection[i].style.display = "block";
+    }
+
+});
+
+document.getElementById('change-button').addEventListener('click', function() 
+{
+    newcontent = document.getElementById('specialer-segment');
+    newcontent.style.display = "block";
+});
+</script>
+
+<br><br>  
+<br><br>  
+            </div>
+            <div class="sidenavtotal" style="padding:3em;">
+      
+                <br class="desktop"><br class="desktop">
+                <br class="desktop"><br class="desktop">
+                <br class="desktop">
+              <div id="toc"></div>
+              </div>
+      
+    </main>
+
+
+<div id="footer-placeholder">
+
+</div>
+<script>
+    $(function(){
+      $("#footer-placeholder").load("/footer.html");
+    });
+    
+    </script>
+
+
+
+
+<!-- 
+  - #BACK TO TOP
+-->
+
+<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+  <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+</a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/assets/js/script.js" defer></script>
+  <script src="/components/sidenavcustom.js">
+</script>
+
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+ <script>
+$(document).ready(function() {
+  $('.accordion-header').click(function() {
+    var content = $(this).next('.accordion-content');
+
+    // If this section is already open, close it
+    if($(this).hasClass('active')) {
+      content.slideUp();
+      $(this).removeClass('active');
+    } else {
+      // Close all sections
+      $('.accordion-content').slideUp();
+      $('.accordion-header').removeClass('active');
+
+      // Open this section
+      content.slideDown();
+      $(this).addClass('active');
+    }
+  });
+});
+
+
+ </script>
+</body>
+<footer>
+
+</footer>
+
+
