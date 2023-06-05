@@ -100,7 +100,7 @@ body {
     box-sizing: border-box;
     padding: 5px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     font-family: 'colfax-medium';
     font-size: 12pt;
 }
@@ -113,7 +113,7 @@ body {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     background-color: white;
-    padding: 10px;
+    /* padding: 10px; */
     text-align: left;
     z-index: 2;
 }
@@ -255,7 +255,7 @@ body {
     #container, #swiped-right-section {
         max-width: 100%;
         min-height: 70%; 
-        /* top: 2.5em; */
+        bottom: 1.5em;
     }
 
     #navbar {
@@ -484,12 +484,19 @@ body {
         <ul id="swiped-right-list"></ul>
     </div>
     <div id="left-section" style="display: none;">
-        <br>
+        <br><br>
         <div id="search-container">
             <input type="text" id="search-input" placeholder="Search Doorstops..." autocomplete="off">
             <div id="results-container"></div>
         </div>
-        <svg id="bubble-chart"></svg>  
+        <br><br>
+        <!-- <ul id="swiped-right-list">
+            <li><div class="liked">fix class</div></li>
+            <li><div class="liked">fix school</div></li>
+            <li><div class="liked">fix the vibes</div></li>
+            <li><div class="liked">meet basic needs</div></li>
+            <li><div class="liked">get support</div></li>
+        </ul> -->
     </div>
     <div id="navbar">
         <button id="nav1"><img class="nav-icon" src="/assets/svg/umbrella.svg" alt="Icon 1" /></button>
@@ -511,11 +518,16 @@ searchInput.addEventListener('keyup', function(e) {
         .then(response => response.json())
         .then(data => {
             let matches = data.filter(page => {
-                // This assumes that you have the `h1` content of each page
-                // available on a `title` property. You may need to adjust this
-                // based on your actual data structure.
-                return page.h1.toLowerCase().includes(searchQuery.toLowerCase());
-            });
+    // Check if the search query is included in the h1 string
+    let h1Match = page.h1.toLowerCase().includes(searchQuery.toLowerCase());
+
+    // Check if the search query is included in any of the keywords
+    let keywordMatch = page.keywords.some(keyword => 
+        keyword.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    return h1Match || keywordMatch; // Return true if either match is found
+});
 
             displayResults(matches);
         });
