@@ -462,7 +462,7 @@ body {
             <p>That’s a problem. Seek help.<br><strong>How can we change GPA culture?</strong> Everyone is trying to get into college.<br><br>Organize a <strong>schoolwide participation point boycott</strong>. Nobody speaks in class until participation grading is equitable.<br><br>Build <a href="/trust.html">trust</a> then launch the <a href="/doorstops/points.html">boycott.</a>
                 </p>
         </div>
-        <div class="card" data-link="/doorstops/extension.html#i-just-want-to-email">
+        <div class="card" data-link="/doorstops/extension.html#i-just-want-to-email" contents="extension">
             <h2>Essay due in two days? Haven’t started?</h2>
             <img src="/assets/images/extension-half.gif" alt="image1" />
             <p>We can help—not, like, in a plagiarism way.<br>You can and should ask for an extension.<br>
@@ -564,6 +564,7 @@ function displayResults(matches) {
 
 
     </script>
+
     <script>
 // For each card
 let swipedRight = JSON.parse(localStorage.getItem('swipedRight')) || [];  // load swiped right cards from localStorage
@@ -601,15 +602,16 @@ document.querySelectorAll('.card').forEach((card, index) => {
                 let cardLink = card.dataset.link;
                 if (cardLink) {
                     setTimeout(() => {
-                        window.open(cardLink, '_blank');
+                        window.open(cardLink, '_blank');                        
                     })
                     swipedRight.push({
                     title: card.querySelector('h2').textContent,
                     link: card.dataset.link
                     });
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
+                    
+                    // showSection(3);
 
-                    // window.open(cardLink, '_blank');  window.location.href = cardLink;
                 }
             }
             let nextCard = card.previousElementSibling;
@@ -647,6 +649,7 @@ function showSection(n) {
         document.querySelector('#left-section').style.display = 'none';
         let list = document.querySelector('#swiped-right-list');
         list.innerHTML = '';
+        let l = 0;
         swipedRight.forEach(card => {
             let listItem = document.createElement('li');
             let link = document.createElement('a');
@@ -657,6 +660,19 @@ function showSection(n) {
             listItem.className = 'liked'
             listItem.appendChild(link);
             list.appendChild(listItem);
+            // let dropdown = document.createElement('div');
+            // if (l === 0) {
+            //     fetch('pages.json')
+            //     .then(response => response.json())
+            //     .then(data => { data.filter(page => {
+            //             if (page.name === card.contents) {
+            //                 dropdown.textContent = page.html;
+            //             }
+            //         });
+            //     });
+            //     l++;
+            // }
+            // listItem.appendChild(dropdown);
         });
         document.querySelector('#swiped-right-section').style.display = 'block';
     } else if (n === 1) {
@@ -668,7 +684,7 @@ function showSection(n) {
 }
 
     </script>
-
+  <script src="/assets/js/script.js" defer></script>
 </body>
 
 </html>
