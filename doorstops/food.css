@@ -29,7 +29,7 @@ body {
     }
 }
 
-.card {
+.nard {
     display: block;
     flex-direction: column;
     justify-content: center;
@@ -88,23 +88,13 @@ a {
 }
 
 
-.card:active {
-    cursor: grabbing;
-}
 
 /* .card.out {
     transform: translateX(-2000px);
     transition: transform 1s;
 } */
 
-.card.out {
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
 
-
-.card:first-of-type {
-    display: block;
-}
 
 /* Reset max-width and max-height for mobile devices */
 @media screen and (max-width: 600px) {
@@ -193,7 +183,7 @@ p {
     .slider-wrapper {
         width: 90%;
     }
-    .card {
+    .nard {
         height: 11em;
     }
 }

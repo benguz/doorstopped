@@ -14,9 +14,12 @@ body {
   position: relative;
   width: 90%; 
   height: 93%; 
-  max-width: 400px; 
   max-height: 600px;
   box-sizing: border-box;
+}
+
+#container, #swiped-right-section {
+  max-width: 400px; 
 }
 
 #swiped-right-section {
@@ -27,6 +30,7 @@ body {
   font-family: 'colfax-medium';
   font-size: 16px;
   overflow: scroll;
+  max-width: 55%;
 }
 
 #content-placeholder {
@@ -197,12 +201,25 @@ body {
   cursor: pointer;
 }
 
-//
-@media (min-width: 769px) {
-    #container, #left-section {
-        max-width: 100%;
-    }
-}    
+/* Swiping right transition */
+
+.fade-in {
+  animation: fadeIn .5s ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOut .5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
 
 
 /* Reset max-width and max-height for mobile devices */
@@ -217,7 +234,7 @@ body {
       width: 100%;
   }
 
-  #container, #swiped-right-section {
+  #container, #swiped-right-section, #left-section {
       max-width: 100%;
       min-height: 70%; 
       bottom: 1.5em;

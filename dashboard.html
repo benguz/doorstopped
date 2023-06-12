@@ -164,7 +164,7 @@
             <br>
             <p>How to respond and change the culture.</p>
         </div>
-        <div class="card" data-link="/doorstops/food.html" style="display: none;">
+        <div class="card" style="display: none;">
             <h2>Show me more about making class less boring</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
@@ -176,7 +176,7 @@
             <p>How to respond and change the culture.</p>
         </div>
         
-        <div class="card" id="more culture" data-link="/doorstops/food.html" style="display: none;">
+        <div class="card" id="more culture" style="display: none;">
             <h2>Show me more about changing school culture</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
@@ -333,6 +333,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
             card.classList.add('out');
             if (e.deltaX > 0) {
                 let cardLink = card.dataset.link;
+                let cardcss = card.dataset.css;
                 if (cardLink) {
                     setTimeout(() => {
                         fetch(cardLink)
@@ -353,11 +354,18 @@ document.querySelectorAll('.card').forEach((card, index) => {
                             // put the content of 'yonk' element inside the placeholder
                             document.querySelector("#content-placeholder").innerHTML = yonkElement.innerHTML;
                             loadStylesheet("/assets/css/style.css");
+
+                            // Remove the first five <br> tags
+                            let brTags = document.querySelectorAll("#content-placeholder > br");
+                            for (let i = 0; i < 5 && i < brTags.length; i++) {
+                                brTags[i].remove();
+                            }
                         } else if (aboutElement) {
                             document.querySelector("#content-placeholder").innerHTML = aboutElement.innerHTML;
                             loadStylesheet("/assets/css/style.css");
                         } else {
                             document.querySelector("#content-placeholder").innerHTML = body.innerHTML;
+                            loadStylesheet("/doorstops/food.css");
                         }
                     })
                     .catch(err => console.log('Failed to load page: ', err));
@@ -369,7 +377,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     });
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
                     
-                    showSection(1);
+                    showSection(3);
 
                 }
                 
@@ -420,7 +428,7 @@ function showSection(n) {
         document.querySelector('#swiped-right-section').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
         removeStylesheet("/assets/css/style.css");
-    } else if (n === 3) {
+    } else if (n === 1) {
         document.querySelector('#container').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
         let list = document.querySelector('#swiped-right-list');
@@ -452,16 +460,21 @@ function showSection(n) {
         });
         document.querySelector('#swiped-right-section').style.display = 'block';
         removeStylesheet("/assets/css/style.css");
-    } else if (n === 1) {
+    } else if (n === 3) {
+        document.querySelector('#left-section').classList.add("fade-in");
+        
         document.querySelector('#container').style.display = 'none';
         document.querySelector('#swiped-right-section').style.display = 'none';
         document.querySelector('#left-section').style.display = 'block';
-    }
+        setTimeout(() => {
+            document.querySelector('#left-section').classList.remove("fade-in");
+        }, 500);
+            }
     // Add cases for other sections as needed
 }
 
     </script>
-    <script src="/assets/js/food.js"></script>
+    <script src="/assets/js/food.js" defer></script>
   <script src="/assets/js/script.js" defer></script>
 </body>
 
