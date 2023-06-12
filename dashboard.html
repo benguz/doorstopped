@@ -232,9 +232,9 @@
     </div>
 
     <div id="navbar">
-        <button id="nav1"><img class="nav-icon" src="/assets/svg/umbrella.svg" alt="Icon 1" /></button>
-        <button id="nav2"><img class="nav-icon" src="/assets/svg/school.svg" alt="Icon 2" /></button>
-        <button id="nav3"><img class="nav-icon" src="/assets/svg/star.svg" alt="Icon 3" /></button>
+        <button id="nav1"><img class="nav-icon" id="img1" src="/assets/svg/Book_check.svg" alt="Icon 1" /></button>
+        <button id="nav2"><img class="nav-icon" id="img2" src="/assets/svg/Lamp_fill.svg" alt="Icon 2" /></button>
+        <button id="nav3"><img class="nav-icon" id="img3" src="/assets/svg/Favorite.svg" alt="Icon 3" /></button>
     </div>
     <script>
 
@@ -346,9 +346,9 @@ document.querySelectorAll('.card').forEach((card, index) => {
                         // select the element with class 'yonk'
                         let yonkElement = doc.querySelector(".yonk");
 
-                        let aboutElement = doc.querySelector(".about-content")
-
-                        let body = doc.querySelector("body")
+                        let aboutElement = doc.querySelector(".about-content");
+                        let article = doc.querySelector("article");
+                        let body = doc.querySelector("body");
 
                         if (yonkElement) {
                             // put the content of 'yonk' element inside the placeholder
@@ -360,6 +360,8 @@ document.querySelectorAll('.card').forEach((card, index) => {
                             for (let i = 0; i < 5 && i < brTags.length; i++) {
                                 brTags[i].remove();
                             }
+                        } else if (article) {
+                            document.querySelector("#content-placeholder").innerHTML = article.innerHTML;
                         } else if (aboutElement) {
                             document.querySelector("#content-placeholder").innerHTML = aboutElement.innerHTML;
                             loadStylesheet("/assets/css/style.css");
@@ -428,6 +430,9 @@ function showSection(n) {
         document.querySelector('#swiped-right-section').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
         removeStylesheet("/assets/css/style.css");
+        document.getElementById('img2').src = "/assets/svg/Lamp_fill.svg";
+        document.getElementById('img1').src = "/assets/svg/Book_check.svg";
+        document.getElementById('img3').src = "/assets/svg/Favorite.svg";
     } else if (n === 1) {
         document.querySelector('#container').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
@@ -460,6 +465,9 @@ function showSection(n) {
         });
         document.querySelector('#swiped-right-section').style.display = 'block';
         removeStylesheet("/assets/css/style.css");
+        document.getElementById('img2').src = "/assets/svg/Lamp.svg";
+        document.getElementById('img1').src = "/assets/svg/Book_check_fill.svg";
+        document.getElementById('img3').src = "/assets/svg/Favorite.svg";
     } else if (n === 3) {
         document.querySelector('#left-section').classList.add("fade-in");
         
@@ -469,6 +477,9 @@ function showSection(n) {
         setTimeout(() => {
             document.querySelector('#left-section').classList.remove("fade-in");
         }, 500);
+        document.getElementById('img2').src = "/assets/svg/Lamp.svg";
+        document.getElementById('img1').src = "/assets/svg/Book_check.svg";
+        document.getElementById('img3').src = "/assets/svg/Favorite_fill.svg";
             }
     // Add cases for other sections as needed
 }
