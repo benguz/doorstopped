@@ -1266,6 +1266,17 @@ button {
     }
 }
 
+// ADDED
+.left span {
+    text-align: left;
+}
+
+.right span {
+    text-align: right;
+}
+
+// ABOVE
+
 .cards {
     pointer-events: none;
     position: relative

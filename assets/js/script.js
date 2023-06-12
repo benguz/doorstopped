@@ -11,10 +11,12 @@ const addEventOnElem = function (elem, type, callback) {
     for (let i = 0; i < elem.length; i++) {
       elem[i].addEventListener(type, callback);
     }
-  } else {
+  } else if (elem) {
     elem.addEventListener(type, callback);
   }
 }
+
+
 
 /**
  * Copy text
@@ -93,3 +95,4 @@ const activeElem = function () {
 }
 
 addEventOnElem(window, "scroll", activeElem);
+

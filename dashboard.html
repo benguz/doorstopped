@@ -31,271 +31,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 
     <link href="css/styles.css" rel="stylesheet">
+    <link href="/essentialstyles.css" rel="stylesheet">
 
-    <script src="https://d3js.org/d3.v6.js"></script>
-
-
-    <style>
-
-#bubble-chart {
-      width: 100%;
-      height: 100%;
-    }
-#bubble-chart text {
-    text-anchor: middle;
-    font: 10px sans-serif;
-    pointer-events: none;
-    opacity: 0;
-}
-body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: #f5f5f5;
-    box-sizing: border-box;
-}
-
-#container, #swiped-right-section, #left-section {
-    position: relative;
-    width: 90%; 
-    height: 93%; 
-    max-width: 400px; 
-    max-height: 600px; 
-    box-sizing: border-box;
-}
-
-#swiped-right-section {
-    overflow: scroll;
-}
-
-#left-section {
-    font-family: 'colfax-medium';
-    font-size: 16px;
-}
-.card {
-    width: calc(100% - 40px); /* take full width of the container minus margins */
-    height: calc(100% - 40px); /* take full height of the container minus margins */
-}
-
-/* Style adjustments for larger screens */
-@media screen and (min-width: 2000px) {
-    #container, #swiped-right-section, #left-section {
-        width: 50%; 
-        height: 70%; 
-    }
-}
-
-#search-container {
-    position: relative;
-    width: 100%;
-}
-
-#search-input {
-    width: 100%;
-    height: 30px;
-    box-sizing: border-box;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-family: 'colfax-medium';
-    font-size: 12pt;
-}
-
-#results-container {
-    position: absolute;
-    width: 100%;
-    max-height: 200px; /* adjust as needed */
-    overflow-y: auto;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    background-color: white;
-    /* padding: 10px; */
-    text-align: left;
-    z-index: 2;
-}
-
-#results-container div {
-    padding: 5px;
-    cursor: pointer;
-}
-
-#results-container div:hover {
-    background-color: #f5f5f5;
-}
-
-.card {
-    display: block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    margin: 20px;
-    padding: 20px;
-    transition: transform 0.3s;
-    cursor: grab;
-    position: absolute;
-    overflow: hidden; /* test feature */
-}
-
-
-.card img {
-    max-width: 80%;
-    margin-bottom: 15px;
-}
-
-.card h2 {
-    margin-bottom: 15px;
-    font-family: 'colfax-medium';
-    font-size: 25px;
-    color: #333;
-    text-align: left;
-}
-
-.card h3 {
-    margin-top: 5px;
-    margin-bottom: 15px;
-    font-family: 'colfax-medium';
-    font-size: 20px;
-    color: #333;
-    text-align: left;
-}
-
-.card p {
-    font-family: 'colfax-light';
-    font-size: 16px;
-    color: #666;
-    text-align: left;
-}
-
-.card a {
-    text-decoration: underline;
-}
-
-
-.card:active {
-    cursor: grabbing;
-}
-
-/* .card.out {
-    transform: translateX(-2000px);
-    transition: transform 1s;
-} */
-
-.card.out {
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-
-
-.card:first-of-type {
-    display: block;
-}
-
-#navbar {
-    position: relative;
-    bottom: 0;  
-    width: 90%;
-    max-width: 400px; 
-    height: 50px; /* adjust as needed */
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav-icon {
-    width: 30px; /* adjust as needed */
-    height: 30px; /* adjust as needed */
-}
-
-/* #swiped-right-section {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    padding: 20px;
-    box-sizing: border-box;
-} */
-
-#swiped-right-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-#swiped-right-list li {
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-#swiped-right-list li:hover {
-    cursor: pointer;
-}
-
-
-/* Reset max-width and max-height for mobile devices */
-@media screen and (max-width: 600px) {
-    
-    body {
-        /* align-items: flex-start; Aligns items to the top on mobile */
-        height: 100vh;
-    }
-
-    #results-container, #search-container {
-        width: 100%;
-    }
-
-    #container, #swiped-right-section {
-        max-width: 100%;
-        min-height: 70%; 
-        bottom: 1.5em;
-    }
-
-    #navbar {
-        max-width: 100%;
-    }
-
-    .card {
-        height: 100%;
-        width: calc(100% - 30px);
-    }
-
-    .card h2 {
-    font-size: 28px;
-}
-
-.card h3 {
-    font-size: 22px;
-}
-
-.card p {
-    font-size: 18px;
-}
-}
-
-
-.liked {
-    display: block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-    </style>
   </head>
 
 <body>
@@ -487,17 +224,13 @@ body {
         <br><br>
         <div id="search-container">
             <input type="text" id="search-input" placeholder="Search Doorstops..." autocomplete="off">
-            <div id="results-container"></div>
+            <div id="results-container"></div>         
         </div>
+        <div id="content-placeholder"></div>
+
         <br><br>
-        <!-- <ul id="swiped-right-list">
-            <li><div class="liked">fix class</div></li>
-            <li><div class="liked">fix school</div></li>
-            <li><div class="liked">fix the vibes</div></li>
-            <li><div class="liked">meet basic needs</div></li>
-            <li><div class="liked">get support</div></li>
-        </ul> -->
     </div>
+
     <div id="navbar">
         <button id="nav1"><img class="nav-icon" src="/assets/svg/umbrella.svg" alt="Icon 1" /></button>
         <button id="nav2"><img class="nav-icon" src="/assets/svg/school.svg" alt="Icon 2" /></button>
@@ -602,17 +335,44 @@ document.querySelectorAll('.card').forEach((card, index) => {
                 let cardLink = card.dataset.link;
                 if (cardLink) {
                     setTimeout(() => {
-                        window.open(cardLink, '_blank');                        
+                        fetch(cardLink)
+                    .then(response => response.text())
+                    .then(html => {
+                        // create a new DOMParser
+                        let parser = new DOMParser();
+                        // parse the text to a new document
+                        let doc = parser.parseFromString(html, 'text/html');
+                        // select the element with class 'yonk'
+                        let yonkElement = doc.querySelector(".yonk");
+
+                        let aboutElement = doc.querySelector(".about-content")
+
+                        let body = doc.querySelector("body")
+
+                        if (yonkElement) {
+                            // put the content of 'yonk' element inside the placeholder
+                            document.querySelector("#content-placeholder").innerHTML = yonkElement.innerHTML;
+                            loadStylesheet("/assets/css/style.css");
+                        } else if (aboutElement) {
+                            document.querySelector("#content-placeholder").innerHTML = aboutElement.innerHTML;
+                            loadStylesheet("/assets/css/style.css");
+                        } else {
+                            document.querySelector("#content-placeholder").innerHTML = body.innerHTML;
+                        }
                     })
+                    .catch(err => console.log('Failed to load page: ', err));
+                                
+                    });
                     swipedRight.push({
                     title: card.querySelector('h2').textContent,
                     link: card.dataset.link
                     });
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
                     
-                    // showSection(3);
+                    showSection(1);
 
                 }
+                
             }
             let nextCard = card.previousElementSibling;
             let followingCard = nextCard.previousElementSibling;
@@ -633,6 +393,21 @@ document.querySelectorAll('.card').forEach((card, index) => {
     });
 });
 
+function loadStylesheet(url) {
+    var link = document.createElement("link");
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = url;
+    document.getElementsByTagName("head")[0].appendChild(link);
+} 
+
+function removeStylesheet(href) {
+    let link = document.querySelector(`link[href='${href}']`);
+    if (link) {
+        link.parentNode.removeChild(link);
+    }
+}
+
 
 // Add event listeners to navbar icons
 document.getElementById('nav1').addEventListener('click', function() { showSection(1); });
@@ -644,6 +419,7 @@ function showSection(n) {
         document.querySelector('#container').style.display = 'block';
         document.querySelector('#swiped-right-section').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
+        removeStylesheet("/assets/css/style.css");
     } else if (n === 3) {
         document.querySelector('#container').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
@@ -675,6 +451,7 @@ function showSection(n) {
             // listItem.appendChild(dropdown);
         });
         document.querySelector('#swiped-right-section').style.display = 'block';
+        removeStylesheet("/assets/css/style.css");
     } else if (n === 1) {
         document.querySelector('#container').style.display = 'none';
         document.querySelector('#swiped-right-section').style.display = 'none';
@@ -684,6 +461,7 @@ function showSection(n) {
 }
 
     </script>
+    <script src="/assets/js/food.js"></script>
   <script src="/assets/js/script.js" defer></script>
 </body>
 

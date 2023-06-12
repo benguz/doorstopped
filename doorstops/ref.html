@@ -19,7 +19,7 @@
     <meta property="twitter:title" content="Doorstop Education">
     <meta property="twitter:description" content="Inspiring student agency nationwide.">
     <link href="./favicon.ico" rel="apple-touch-icon">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- include jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -356,6 +356,37 @@ ul {
   color: #000;
 }
 
+.float {
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    position: absolute;
+    cursor: pointer; /* Changes the cursor to indicate that the box is clickable */
+    transition: background-color 0.3s ease; /* Adds a smooth transition effect */
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate 
+{
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  99% {
+    opacity: 1
+  }
+  100% {
+    transform: translateY(-1200%);
+    opacity: 0;
+  }
+}
+.float.selected {
+    background-color: #04AA6D;
+}
+
     </style>
   </head>
 
@@ -382,7 +413,7 @@ ul {
  
           <div class="deskrows">
           </div>    
-          <h1>We call these students <strong style="color: #2804aa">social referents</strong> because how they act shapes the school.</h1>
+          <h1>We call these students <strong style="color: #2804aa">social referents</strong>. How they act shapes the school.</h1>
           <br><br>
         <br><br>
 
@@ -438,7 +469,13 @@ ul {
               <span class="close-icon">&#215;</span>
             </button>       
           </div>
-          </div>    
+          </div>
+<!--
+          <div id="textBoxContainer">
+        </div>
+        <div id="selectedList">
+            Selected items will be added here 
+        </div>    -->
           <div style="color: black; max-width: 100%">
           <p>Convince them to change</p>
           <div id="strategies" width="100%">
@@ -482,7 +519,52 @@ ul {
       <!-- <div class="card">
         <p></p>
 </div> -->
+<script>
+  // Here's an example of a list of words. Replace this with your actual list.
+const words = ["Football Captain", "Class Clown", "Class Prez", "Chief Stoner", "Highest Snap Score", "Guy who groans when homework is anounced", "Journalism Club EIC", "Most Social Guy on Math Team", "Couple together since pre-k", "diva", "trend-setter"];
+// Maybe I should make a map of the lunch tables instead.
+const textBoxContainer = document.getElementById('textBoxContainer');
+const selectedList = document.getElementById('selectedList');
 
+const totalWidth = 100;
+
+// Calculate the number of slots
+const slots = Math.floor(window.innerWidth / totalWidth);
+
+// Generate the text boxes
+var i = 0;
+for (let word of words) {
+  setTimeout(function() {
+  
+    const textBox = document.createElement('div');
+    textBox.style.left = Math.random() * window.innerWidth + "px";
+    const slot = Math.floor(Math.random() * slots);
+    textBox.style.left = slot * totalWidth + "px";
+    textBox.classList.add('float');
+    textBox.textContent = word;
+
+    textBox.addEventListener('click', () => {
+        // Toggle the "selected" class
+        textBox.classList.toggle('selected');
+
+        // Add/remove the word to/from the list
+        if (textBox.classList.contains('selected')) {
+            const listItem = document.createElement('li');
+            listItem.textContent = word;
+            listItem.id = `listItem-${word}`;
+            selectedList.appendChild(listItem);
+        } else {
+            const listItemToRemove = document.getElementById(`listItem-${word}`);
+            selectedList.removeChild(listItemToRemove);
+        }
+    });
+
+    textBoxContainer.appendChild(textBox);
+  }, 500 * i);
+  i++;
+}
+
+</script>
   <script>
     
     const closeButtons = document.getElementsByClassName('close-button');
@@ -587,14 +669,6 @@ window.onload = function() {
 
 
 
-    // ...
-    // document.getElementById('dislike-button').addEventListener('click', function() {
-    //   // Scroll to the game section
-    //   var gameSection = document.getElementById('game-section');
-    //   gameSection.style.display = "block";
-    //   gameSection.scrollIntoView({behavior: "smooth"});
-    // });
-
 
 
   var desksDiv = document.getElementById('radiate');
@@ -627,12 +701,12 @@ window.onload = function() {
     for (var i = 0; i < desks2.length; i++) {
       deskStates[i] = null;
     }
-        var rand = Math.random() * 100;
-        if (rand < 75) {
-          deskStates[6] = 'hidden';
-        } else {
-          deskStates[6] = null;
-        }
+        // var rand = Math.random() * 100;
+        // if (rand < 75) {
+      deskStates[6] = 'hidden';
+        // } else {
+        //   deskStates[6] = null;
+        // }
     updateDeskColors(desks2, deskStates);
     
 
