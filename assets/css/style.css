@@ -1235,6 +1235,16 @@ h2 {
   font-size: 12pt;
 }
 
+@media screen and (max-width: 600px) {
+  .accordion-menu {
+    max-width: 100% - 20px;
+  }
+
+  .accordion-menu p {
+    /* ADD STYLES FOR MOBILE */
+  }
+}
+
 /**
 * Textbox
 */

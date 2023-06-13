@@ -6,7 +6,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: #f5f5f5;
+  background: white; // #f5f5f5 breaks gdocs pages. do we care?
   box-sizing: border-box;
 }
 
@@ -156,6 +156,10 @@ body {
 
 .card:first-of-type {
   display: block;
+}
+
+iframe {
+  background-color: 
 }
 
 #navbar {

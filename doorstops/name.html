@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Doorstop Education</title>
+    <meta name="title" content="Doorstop Education">
+    <meta name="description" content="Inspiring student agency nationwide.">
+    <meta property="og:url" content="https://doorstopped.org/">
+    <meta property="og:image" content="https://doorstopped.org/og.jpg">
+    <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="Doorstop Education">
+    <meta property="og:description" content="Inspiring student agency nationwide.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://doorstopped.org/">
+    <meta property="twitter:title" content="Doorstop Education">
+    <meta property="twitter:description" content="Inspiring student agency nationwide.">
+    <link href="./favicon.ico" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- include jQuery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Hammer JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="/assets/css/style.css" rel="stylesheet">
+
+
+    <style>
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#container {
+    position: relative;
+    width: 90%; 
+    height: 93%; 
+    max-width: 400px; 
+    max-height: 600px; 
+    box-sizing: border-box;
+}
+
+
+/* Style adjustments for larger screens */
+@media screen and (min-width: 2000px) {
+    #container {
+        width: 50%; 
+        height: 70%; 
+    }
+}
+
+.card {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+    height: 6em;
+}
+
+
+
+h1, h2, h3, p {
+    color: black;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+img {
+    max-width: 80%;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: #333;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.left span {
+    text-align: left;
+}
+
+.right span {
+    text-align: right;
+}
+
+a {
+    text-decoration: underline;
+}
+
+/* Reset max-width and max-height for mobile devices */
+@media screen and (max-width: 600px) {
+    .slider-wrapper {
+        width: 90%;
+    }
+    .card {
+        height: 11em;
+    }
+}
+
+/* Swiping right transition */
+
+.fade-in {
+  animation: fadeIn .5s ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOut .5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+#game-section {
+    height: 90%;
+    width: 90%;
+}
+
+
+.donk {
+  height: 50px;
+  background-color: #65d658;
+  border-radius: 15px;
+  margin: 10px;
+  cursor: pointer;
+  position: fixed;
+  text-align: center;
+  max-width: 330px;
+}
+
+
+#text-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 80%;
+}
+
+#textbox {
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 4px;
+  max-height: 2em;
+  padding-right: 1em;
+}
+
+#dislike-button {
+    background-color: #04AA6D;
+    color: white; /* Assuming you want the text color to be white */
+    border: none;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    width: 2em;
+    height: 2em;
+    padding: 5px;
+    justify-content:center;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
+
+.slink {
+    max-width: 80%;
+}
+
+
+@media screen and (max-width: 600px) {
+    #donks-section {
+        max-width: 100%;
+    }
+    #text-section {
+        max-width: 100%;
+    }
+    .slink {
+        max-width: 100%;
+
+    }
+
+}
+
+img {
+    width: 95%;
+    height: 95%;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+}
+
+canvas {
+    width: 80vh;
+    height: 80vh;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  </head>
+
+<body>
+    <br><br>
+    <div>
+        <h1>Don't let people mispronounce your name!</h1>
+        <h2>We've all gone through it.</h2>
+
+
+        <div>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        <h2>Video coming soon!</h2>
+        <!-- <video width="320" height="240" alt="Video coming soon!" autoplay>
+            <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+          
+          </video>-->
+
+            <br><br>
+        <div class="accordion-menu slink">
+
+        <div class="accordion-section" >
+            <div class="accordion-header">Best option: send your teacher an email before the school year starts.</div>
+            <div class="accordion-content">
+                <h3>Ask them to send out a pronounciation survey to every student in the class</h3>
+
+            <div class="copy-paste-element">
+              <div style="text-align: left;">
+                <p><strong>Subject:</strong> My name's hard to pronounce, can you <br><br>
+Dear [Teacher],<br><br>
+
+My name is [Your Name], and I'll be one of your students this year!<br><br>
+
+My name is hard to pronounce, and it's always stressful to correct a teacher's pronounciation on the first day.<br><br>
+
+Would you be open to sending out a name pronounciation survey to the whole class - I think it would make everyone feel more comfortable. You could use google forms or voiceform.<br><br>
+
+[optional two sentences if you're comfortable with them: If not, that's totally fine! Here's a short voice recording on how to pronounce my name.]<br>
+
+<br>Thanks so much,<br>
+[Your first and last name]<br>
+<br>
+</p>
+              </div>
+              <button class="copy-icon" onclick="copyText(event)">
+                <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                  <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+      </div>
+      <div class="accordion-section">
+      <div class="accordion-header">Super valuable: add pronounciation audio to your email footer</div>
+      <div class="accordion-content">
+        
+        <h3>This takes two minutes with namedrop.io</h3>
+        <div class="copy-paste-element">
+            <div style="text-align: left;">
+                <ul class="badonk">
+                    <li>
+                        <p>Go to this link: <a href="https://user.namedrop.io/signup">https://user.namedrop.io/signup</a></p>
+
+                    </li>
+                    <li>
+                        Make an account and record your name! Make sure to start saying it right when you hit record. (Here's my link: https://namedrop.io/benguzovsky)
+
+                    </li>
+                    <li>
+                        Copy that link into your email signoff, right below your name. On gmail, you can do that like this.
+                    </li>
+                    <li>
+                        Click <strong>settings</strong> then <strong>see all settings</strong> 
+                    </li>
+                    <li>In the <strong>general</strong> tab scroll down to <strong>signature</strong> </li>
+                    <li>Click <strong>create new</strong> and write:</li>
+                </ul>
+                <br>
+                <p>Regards,<br>[Your Name] <br><br> learn to pronounce my name!</p>
+                <p>Link that text to the custom link namedrop generated for you.</p>
+                <!--TODO: add gif-->
+    </div>
+        </div>
+    </div>
+</div>
+<br><br><br>
+<div>
+        <h2>But the hardest skill is correcting people when they make a mistake</h2>
+        <h3>You have to be BRAVE. BOLD. FEARLESS. Like a giraffe.</h3>
+        <h2>Here. Practice. We're going to throw mispronounciations of your name at you. Click on them to vanquish them.</h2>
+    </div>
+        <!-- SCRIPT EXPLAINING WHAT TO SAY AND VIDEO SHOWING THAT IT'S OKAy-->
+
+
+
+    <div style="display: flex; flex-direction: column;">
+        <div>
+            <h1>What's your name?</h1>
+        </div>
+        <br>
+        <div style="display: flex; flex-direction: row; justify-content: center;">
+            <div id="textbox" contenteditable="true">Jamarison</div> 
+              <button type="submit" id="dislike-button"><img src="/assets/svg/umbrella.svg"></img></button>
+        </div>
+    </div>
+
+    <section class="wrapper">
+        <div id="game-section">
+
+        </div>
+    </section>
+    
+    
+    <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Correcting the teacher once', 'Called the wrong name all year'],
+            datasets: [{
+              label: 'emotional damage', 
+              data: [5, 19],
+              backgroundColor: [
+    //   'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 99, 132, 0.2)',
+    ],
+    borderColor: [
+    //   'rgb(255, 159, 64)',
+      'rgb(255, 99, 132)',
+    ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: {
+                    drawTicks: false
+                }
+              }
+              
+            },
+          
+          plugins: {
+      legend: {
+        position: 'bottom',
+      },
+    },
+    }
+        });
+      </script>
+      <script>
+        // Define the text for each row
+
+window.onload = function() {
+  var textbox = document.getElementById('textbox');
+  var textSection = document.getElementById('text-section');
+  var prefix = ["scha", "uuuuuuhhh", "cra",];
+  var suffix = ["smowksy", "blonk", "ozzle", "AY"];
+  var mid = ["garbla", "shing", "gle"];
+
+    document.getElementById('dislike-button').addEventListener('click', function() {
+      // Scroll to the game section
+      var gameSection = document.getElementById('game-section');
+      gameSection.style.display = "block";
+      gameSection.scrollIntoView({behavior: "smooth"});
+        
+      for (let i = 0; i < prefix.length; i++) {
+        setTimeout(() => {
+
+            var desk = document.createElement('div');
+
+            desk.className = 'donk';
+            desk.classList.add("fade-in");
+            desk.addEventListener('click', function() {
+                this.classList.remove("fade-in");
+                this.classList.add("fade-out");
+                this.style.display = 'none';
+                var img = document.createElement('img');
+                img.src = '/assets/svg/no.png';
+                gameSection.appendChild(img);
+                setTimeout(() => {
+                    img.classList.add("fade-out");
+                    img.style.display = 'none';
+                }, 250);
+            });
+            var rand = Math.random();
+            if (rand < .33) {
+                var again = Math.floor(textbox.textContent.length * Math.random());
+                desk.textContent = textbox.textContent.substring(0, again) + mid[i].toString() + textbox.textContent.substring(again) + '?';
+            } else if (rand < .50) {
+                desk.textContent = textbox.textContent + suffix[i] + '?';
+            } else if (rand < .66) {
+                desk.textContent = textbox.textContent.substring(0, textbox.textContent.length - 3) + suffix[i] + '?';
+            } else if (rand < .80) {
+                desk.textContent = prefix[i] + textbox.textContent.substring(2) + '?';
+            } else if (rand < .99) {
+                desk.textContent = prefix[i] + textbox.textContent + '?';
+            } else {
+                desk.textContent = prefix[i] + textbox.textContent.substring(2, textbox.textContent.length - 3) + suffix[i] + '?';
+            }
+            $(desk).css({
+                left: Math.abs(Math.random() * ($(gameSection).width() - $(desk).outerWidth())),
+                top: Math.abs(Math.random() * ($(gameSection).height() - $(desk).outerHeight()))
+            });
+
+            gameSection.appendChild(desk);
+        }, 250);
+      }
+      
+    
+    });
+}
+
+      </script>
+    
+  <script src="/assets/js/script.js" defer></script>
+
+</body>
+
+</html>

@@ -16,6 +16,30 @@ const addEventOnElem = function (elem, type, callback) {
   }
 }
 
+/**
+ * Accordion
+ */
+
+$(document).ready(function() {
+  $('.accordion-header').click(function() {
+    var content = $(this).next('.accordion-content');
+
+    // If this section is already open, close it
+    if($(this).hasClass('active')) {
+      content.slideUp();
+      $(this).removeClass('active');
+    } else {
+      // Close all sections
+      $('.accordion-content').slideUp();
+      $('.accordion-header').removeClass('active');
+
+      // Open this section
+      content.slideDown();
+      $(this).addClass('active');
+    }
+  });
+});
+
 
 
 /**
