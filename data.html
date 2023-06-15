@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Board</title>
+    <style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 40px 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+}
+      
+h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666;
+    margin: 10px 0 30px;
+}
+
+.bingo-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bingo-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    perspective: 1000px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.bingo-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.front {
+    cursor: pointer;
+}
+
+.bingo-item:hover {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.clicked {
+    background-color: #209CEE;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .bingo-board {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .front {
+        font-size: 1.1rem; /* added */
+        /* display: none; */
+    }
+
+}
+
+
+.left span {
+    text-align: left;
+}
+
+.right span {
+    text-align: right;
+}
+
+a {
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slider-wrapper label.slider-label-left {
+  text-align: left;
+}
+
+.slider-wrapper label.slider-label-right {
+  text-align: right;
+}
+
+.slider {
+  width: 80%;
+  height: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  opacity: 0.7;
+  border-radius: 20px; /* This will give the slider rounded corners */
+  background: #d3d3d3; /* This will color the track */
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+  transition: .3s ease-in-out; 
+  border-radius: 50%; /* This will make the thumb (the part you move) round */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 12px;
+} 
+
+/* Reset max-width and max-height for mobile devices */
+@media screen and (max-width: 600px) {
+    .slider-wrapper {
+        width: 90%;
+    }
+}
+
+#submitBtn {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: #4CAF50; /* change as needed */
+        color: white; /* change as needed */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px; /* change as needed */
+        transition: background-color 0.3s ease;
+    }
+    
+    #submitBtn:hover {
+        background-color: #45a049;
+    }
+  </style>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+
+</head>
+<body>
+        <header>
+        <h1>What teaching strategies and values are most important to you?</h1>
+        <h2>Pick three or four. We'll help you make sure you're succeeding!</h2>
+    </header>
+  <script>
+    let three = JSON.parse(localStorage.getItem('three')) || [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const bingoItems = document.querySelectorAll('.bingo-item');
+        
+        bingoItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const correspondingForm = document.getElementById(`form-${item.id}`);
+                if (item.classList.contains('clicked')) {
+                    item.classList.remove('clicked');
+                    three.remove({
+                        title: item.id,
+                    });
+                    correspondingForm.style.display = "none";  // hide form when item is unselected
+                    
+                } else {
+                    item.classList.add('clicked');
+                    three.push({
+                        title: item.id,
+                        });
+                    correspondingForm.style.display = "block";  // show form when item is selected
+                }
+                localStorage.setItem('three', JSON.stringify(three));  // save to localStorage
+            });
+
+            
+        });
+    });
+  </script>
+    
+    <div class="bingo-board">
+        <!-- Add your bingo board items here -->
+        <div class="bingo-item" id="ESL">
+            <div class="bingo-face front">Supporting ESL Learners</div>
+        </div>
+      <div class="bingo-item" id="choice">
+            <div class="bingo-face front">Giving students choice</div>
+        </div>
+      <div class="bingo-item" id="STR">
+            <div class="bingo-face front">Building connections with students</div>
+        </div>
+      <div class="bingo-item" id="fun">
+            <div class="bingo-face front">Engaging, fun lessons</div>
+            
+        </div>
+              <div class="bingo-item" id="culture">
+            <div class="bingo-face front">Healthy classroom culture</div>
+    
+        </div>
+              <div class="bingo-item" id="SEL">
+            <div class="bingo-face front">Building social-emotional skills</div>
+ 
+        </div>
+              <div class="bingo-item" id="PBL">
+            <div class="bingo-face front">Project-Based Learning</div>
+            
+        </div>
+              <div class="bingo-item" id="Student-led">
+            <div class="bingo-face front">Student-led activities</div>
+            
+        </div>
+              <div class="bingo-item" id="peer"> 
+                <!--link to doorstopfellows in the future-->
+            <div class="bingo-face front">Growing student-student trust</div>
+            
+        </div>
+              <div class="bingo-item" id="stress">
+            <div class="bingo-face front">Reducing stress and anxiety</div>
+            
+        </div>
+              <div class="bingo-item" id="career">
+            <div class="bingo-face front">Career readiness</div>
+            
+        </div>
+              <div class="bingo-item" id="CBE">
+            <div class="bingo-face front">Competency-Based Education</div>
+            
+        </div>
+        <div class="bingo-item" id="deep">
+            <div class="bingo-face front">Deeper Learning</div>
+            
+        </div>
+              <div class="bingo-item" id="tech">
+            <div class="bingo-face front">Technology infusion</div>
+            
+        </div>
+            
+              <div class="bingo-item" id="special">
+            <div class="bingo-face front">Supporting special ed students</div>
+            
+        </div>
+              <div class="bingo-item" id="outside">
+            <div class="bingo-face front">Helping students outside of class</div>
+            
+        </div>
+              <div class="bingo-item" id="mgmt">
+            <div class="bingo-face front">Effective classroom management</div>
+            
+        </div>
+              <div class="bingo-item" id="success">
+            <div class="bingo-face front">Student academic success</div>
+            
+        </div>
+              <div class="bingo-item" id="inclusive">
+            <div class="bingo-face front">Inclusive Learning Spaces</div>
+            
+        </div>
+              <div class="bingo-item" id="responsive">
+            <div class="bingo-face front">Culturally Responsive Pedagogy</div>
+            
+        </div>
+        
+        <!-- Repeat the above div for each bingo board item -->
+    </div>
+    <br><br>
+    <div>
+        <h1 style="text-align: center;">Today's check-in </h1>
+        <div id="current_date"style="text-align: center;"></div>
+        <br>
+        <!-- BUILD 20 FORM QUESTIONS, EACH CORRESPONDING TO A BINGO ITEM AND ONLY SHOWN IF THAT ITEM IS SELECTED-->
+        <div class="form-question" id="form-ESL" style="display:none;">
+            <p>Were you able to pause and talk slowly so ESL learners could catch up?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-ESL">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not often enough</label>
+                <label class="slider-label-right">Yes! Yes! Yes!</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-question" id="form-choice" style="display:none;">
+            <p>Did students have the chance to choose something today? A book, an activity, a name for a character?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-choice">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not today</label>
+                <label class="slider-label-right">Absolutely, all day!</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-question" id="form-STR" style="display:none;">
+            <p>Did you get opportunities to strengthen connections with students? Shout out good work, ask about a sports game, hear about a student's weekend.</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-STR">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">I wish I had time for more!</label>
+                <label class="slider-label-right">I feel closer to my students.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-question" id="form-fun" style="display:none;">
+            <p>Did you have the luxury of planning a fun lesson?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-fun">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not today, too much to cover</label>
+                <label class="slider-label-right">Yes! There were water balloons</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-culture" style="display:none;">
+            <p>Were students less mean to each other, less competitive, or less disruptive?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-culture">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">No, they must've served sloppy joes for lunch</label>
+                <label class="slider-label-right">Yes! They're heading in the right direction</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-SEL" style="display:none;">
+            <p>Did students get time to practice SEL skills today? Asking for help, effective group work, self-advocating, etc.</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-SEL">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">For a few minutes</label>
+                <label class="slider-label-right">Yes! I saw a student step up today.</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-PBL" style="display:none;">
+            <p>Did students get the chance to work on something they're proud of?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-PBL">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not today, but it's coming soon!</label>
+                <label class="slider-label-right">Yes, and they made great progress!</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-Student-led" style="display:none;">
+            <p>Did students get to take the lead in class today, giving presentations, facilitating discussions, or leading an activity?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-Student-led">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">A little bit</label>
+                <label class="slider-label-right">All class long!</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-peer" style="display:none;">
+            <p>Were students nicer to each other? Are friendships getting stronger? Any... romances?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-peer">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">No, it was a stressful class today</label>
+                <label class="slider-label-right">Yes, my seating chart is paying off!</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-stress" style="display:none;">
+            <p>Did students get an opportunity to let out stress today? A quick break, a space to share, or a fun activity?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-stress">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not today.</label>
+                <label class="slider-label-right">Absolutely!</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-career" style="display:none;">
+            <p>Did students build skills today that'll help them succeed beyond the classroom? Thinking critically, pitching themselves, hard skills (eg. emailing).</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-career">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not today</label>
+                <label class="slider-label-right">Yup, and it was exciting to see!</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-deep" style="display:none;">
+            <p>Did students get the chance to really enga</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-deep">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not today.</label>
+                <label class="slider-label-right">Synapses were firing!</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-CBE" style="display:none;">
+            <p>How confident are you in supporting ESL Learners?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-CBE">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not confident</label>
+                <label class="slider-label-right">Very confident</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-special" style="display:none;">
+            <p>How confident are you in supporting ESL Learners?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-special">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not confident</label>
+                <label class="slider-label-right">Very confident</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-tech" style="display:none;">
+            <p>How confident are you in supporting ESL Learners?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-tech">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not confident</label>
+                <label class="slider-label-right">Very confident</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-outside" style="display:none;">
+            <p>Did a student feel comfortable reaching out for outside help today?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-outside">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not confident</label>
+                <label class="slider-label-right">Very confident</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-mgmt" style="display:none;">
+            <p>How confident are you in supporting ESL Learners?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-mgmt">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not confident</label>
+                <label class="slider-label-right">Very confident</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-success" style="display:none;">
+            <p>Did students learn a lot today? Did they do well on a quiz or formative assesment?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-success">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not confident</label>
+                <label class="slider-label-right">Very confident</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-responsive" style="display:none;">
+            <p>How confident are you in supporting ESL Learners?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-responsive">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not confident</label>
+                <label class="slider-label-right">Very confident</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-question" id="form-inclusive" style="display:none;">
+            <p>How confident are you in supporting ESL Learners?</p>
+            <div class="slider-wrapper">
+                <input type="range" min="0" max="10" value="5" class="slider" id="slider-inclusive">
+                <div class="slider-labels">
+
+                <label class="slider-label-left">Not confident</label>
+                <label class="slider-label-right">Very confident</label>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Repeat for the rest of the forms -->
+        <button id="submitBtn">Submit</button>
+
+    </div>
+    
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      <script>
+        date = new Date();
+        let options = { weekday: 'long', month: 'long', day: 'numeric' };
+        document.getElementById("current_date").innerHTML = date.toLocaleDateString('en-US', options);
+    </script>
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+    let sliders = document.querySelectorAll('input[type="range"]');
+    let data = JSON.parse(localStorage.getItem('data')) || [];
+
+    sliders.forEach(function(slider) {
+        let parent = slider.parentElement.parentElement;
+        if (window.getComputedStyle(parent).display !== 'none') {
+            let date = new Date();
+            let sliderData = {
+                id: slider.id,
+                value: slider.value,
+                date: date.toISOString()
+            };
+            data.push(sliderData);
+        }
+    });
+
+    localStorage.setItem('data', JSON.stringify(data));
+
+    // Process the data for chart.js
+    let chartData = {};
+
+    let colors = ['#4dc9f6',
+  '#f67019',
+  '#f53794',
+  '#537bc4',
+  '#acc236',
+  '#166a8f',
+  '#00a950',
+  '#58595b',
+  '#8549ba'];
+
+    // Loop through the data and group it by id
+    data.forEach(item => {
+        // Extract the second half of the id
+        let id = item.id.split('-')[1];
+        if(!chartData[id]) {
+            chartData[id] = {
+                label: id,
+                data: [],
+                fill: false,
+                borderColor: colors[Math.floor(Math.random()*colors.length)], // Generate random color
+            };
+        }
+        // Push the data for this id
+        chartData[id].data.push({
+            x: new Date(item.date),
+            y: item.value
+        });
+    });
+    let ctx = document.getElementById('myChart').getContext('2d');
+    let myChart = new Chart(ctx, {
+        type: 'line',
+
+        data: {
+            datasets: Object.values(chartData)
+        },
+        options: {
+            scales: {
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: 'day'
+                    }
+                },
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Your performance this year',
+                }
+            }
+        }
+    });
+});
+
+      </script>
+</body>
+</html>
