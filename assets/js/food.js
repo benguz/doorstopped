@@ -7,7 +7,6 @@ let sliderText = document.getElementById("slider-text");
 // }
 if (slider) {
 
-
 slider.oninput = function() {
 
 // if (flag == 'left') {

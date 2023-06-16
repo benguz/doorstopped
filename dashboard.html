@@ -369,6 +369,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
                             document.querySelector("#content-placeholder").innerHTML = body.innerHTML;
                             loadStylesheet("/doorstops/food.css");
                         }
+
                     })
                     .catch(err => console.log('Failed to load page: ', err));
                                 
@@ -393,7 +394,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
             card.style.opacity = '0';
             
             // After the transition ends, remove the card
-            setTimeout(() => card.remove(), 500);
+            setTimeout(() => card.remove(), 100);
         } else {
             // If you don't swipe enough, the card springs back to center
             currentPos = 0;

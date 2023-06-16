@@ -11,23 +11,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-#container {
-    position: relative;
-    width: 90%; 
-    height: 93%; 
-    max-width: 400px; 
-    max-height: 600px; 
-    box-sizing: border-box;
-}
 
-
-/* Style adjustments for larger screens */
-@media screen and (min-width: 2000px) {
-    #container {
-        width: 50%; 
-        height: 70%; 
-    }
-}
 
 .nard {
     display: block;
@@ -44,12 +28,12 @@ body {
 }
 
 
-img {
+.reset-styles img {
     max-width: 80%;
     margin-bottom: 15px;
 }
 
-h2 {
+.reset-styles h2 {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     margin-bottom: 15px;
@@ -57,7 +41,7 @@ h2 {
     color: #333;
 }
 
-h3 {
+.reset-styles h3 {
     font-family: 'Poppins', sans-serif;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -65,25 +49,25 @@ h3 {
     color: #333;
 }
 
-p {
+.reset-styles p {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
 
-span {
+.reset-styles span {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
 
-.left span {
+.reset-styles .left span {
     text-align: left;
 }
 
-.right span {
+.reset-styles .right span {
     text-align: right;
 }
 
-a {
+.reset-styles a {
     text-decoration: underline;
 }
 
@@ -104,21 +88,21 @@ a {
         padding-top: 3em; 
     } */
 
-    #container {
+    .reset-styles #container {
         max-width: 100%;
         min-height: 70%; 
         /* top: 2.5em; */
     }
 
-    h2 {
+    .reset-styles h2 {
     font-size: 28px;
 }
 
-h3 {
+.reset-styles h3 {
     font-size: 22px;
 }
 
-p {
+.reset-styles p {
     font-size: 18px;
 }
 }
@@ -129,15 +113,15 @@ p {
   text-align: center;
 }
 
-.slider-wrapper label.slider-label-left {
+.reset-styles .slider-wrapper label.slider-label-left {
   text-align: left;
 }
 
-.slider-wrapper label.slider-label-right {
+.reset-styles .slider-wrapper label.slider-label-right {
   text-align: right;
 }
 
-.slider {
+.reset-styles .slider {
   width: 80%;
   height: 15px;
   -webkit-appearance: none;
@@ -149,11 +133,11 @@ p {
   transition: opacity .2s;
 }
 
-.slider:hover {
+.reset-styles .slider:hover {
   opacity: 1;
 }
 
-.slider::-webkit-slider-thumb {
+.reset-styles .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
@@ -164,14 +148,14 @@ p {
   border-radius: 50%; /* This will make the thumb (the part you move) round */
 }
 
-.slider::-moz-range-thumb {
+.reset-styles .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
   background: #04AA6D;
   cursor: pointer;
   border-radius: 50%;
 }
-.slider-labels {
+.reset-styles .slider-labels {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -180,15 +164,15 @@ p {
 
 /* Reset max-width and max-height for mobile devices */
 @media screen and (max-width: 600px) {
-    .slider-wrapper {
+    .reset-styles .slider-wrapper {
         width: 90%;
     }
-    .nard {
+    .reset-styles .nard {
         height: 11em;
     }
 }
 
-.toggle-btn {
+.reset-styles .toggle-btn {
     display: flex;
     justify-content: space-between;
     width: 200px;
@@ -199,7 +183,7 @@ p {
     cursor: pointer;
 }
 
-.toggle-btn__side {
+.reset-styles .toggle-btn__side {
     width: 50%;
     height: 100%;
     display: flex;
@@ -208,6 +192,6 @@ p {
     transition: background-color 0.3s ease;
 }
 
-.toggle-btn__side--left {
+.reset-styles .toggle-btn__side--left {
     background-color: grey;
 }

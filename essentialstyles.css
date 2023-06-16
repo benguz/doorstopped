@@ -8,6 +8,7 @@ body {
   padding: 0;
   background: white; // #f5f5f5 breaks gdocs pages. do we care?
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 #container, #swiped-right-section, #left-section {
@@ -99,7 +100,7 @@ body {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   margin: 20px;
   padding: 20px;
-  transition: transform 0.3s;
+  transition: transform 0.1s;
   cursor: grab;
   position: absolute;
   overflow: hidden; /* test feature */
@@ -209,11 +210,11 @@ iframe {
 /* Swiping right transition */
 
 .fade-in {
-  animation: fadeIn .5s ease-in forwards;
+  animation: fadeIn .1s ease-in forwards;
 }
 
 .fade-out {
-  animation: fadeOut .5s ease-out forwards;
+  animation: fadeOut .1s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -225,6 +226,7 @@ iframe {
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
+
 
 
 /* Reset max-width and max-height for mobile devices */
@@ -280,4 +282,11 @@ iframe {
   margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
+}
+
+.reset-styles {
+  text-align: initial;
+  margin: initial;
+  padding: initial;
+  /* Add or remove properties as needed */
 }
