@@ -40,7 +40,6 @@ const toc = document.querySelector('#toc');
       `).join('')}
     </nav>
   `;
-  sidenav.innerHTML = sidenavHtml;
 
 
 //   const contents = [
@@ -75,7 +74,9 @@ const toc = document.querySelector('#toc');
       </div>
   </nav>
 `;
-
-  toc.innerHTML = tocHtml;
+  if (headings.length > 0) {
+    toc.innerHTML = tocHtml;
+    sidenav.innerHTML = sidenavHtml;
+  }
 
  
