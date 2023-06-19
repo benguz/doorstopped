@@ -104,8 +104,12 @@ a {
     text-decoration: underline;
 }
 
-p {
+p, strong, #submitted {
     text-align: center;
+}
+
+#submitted {
+    color: green;
 }
 
 .slider-wrapper {
@@ -113,6 +117,7 @@ p {
   width: 700px;
   margin: 0 auto;
   text-align: center;
+  margin-top: 10px;
 }
 
 .slider-wrapper label.slider-label-left {
@@ -133,6 +138,12 @@ p {
   border-radius: 20px; /* This will give the slider rounded corners */
   background: #d3d3d3; /* This will color the track */
   transition: opacity .2s;
+}
+
+.form-question {
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
 }
 
 .slider:hover {
@@ -164,11 +175,20 @@ p {
   padding: 0 12px;
 } 
 
+canvas {
+    max-width: 90%;
+    min-width: 85%;
+    margin: auto;
+}
+
 /* Reset max-width and max-height for mobile devices */
 @media screen and (max-width: 600px) {
     .slider-wrapper {
         width: 90%;
     }
+    .form-question, canvas {
+    max-width: 100%;
+}
 }
 
 #submitBtn {
@@ -198,36 +218,6 @@ p {
         <h1>What teaching strategies and values are most important to you?</h1>
         <h2>Pick three or four. We'll help you make sure you're succeeding!</h2>
     </header>
-  <script>
-    let three = JSON.parse(localStorage.getItem('three')) || [];
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const bingoItems = document.querySelectorAll('.bingo-item');
-        
-        bingoItems.forEach((item) => {
-            item.addEventListener('click', () => {
-                const correspondingForm = document.getElementById(`form-${item.id}`);
-                if (item.classList.contains('clicked')) {
-                    item.classList.remove('clicked');
-                    three.remove({
-                        title: item.id,
-                    });
-                    correspondingForm.style.display = "none";  // hide form when item is unselected
-                    
-                } else {
-                    item.classList.add('clicked');
-                    three.push({
-                        title: item.id,
-                        });
-                    correspondingForm.style.display = "block";  // show form when item is selected
-                }
-                localStorage.setItem('three', JSON.stringify(three));  // save to localStorage
-            });
-
-            
-        });
-    });
-  </script>
     
     <div class="bingo-board">
         <!-- Add your bingo board items here -->
@@ -320,7 +310,7 @@ p {
         <br>
         <!-- BUILD 20 FORM QUESTIONS, EACH CORRESPONDING TO A BINGO ITEM AND ONLY SHOWN IF THAT ITEM IS SELECTED-->
         <div class="form-question" id="form-ESL" style="display:none;">
-            <p>Were you able to pause and talk slowly so ESL learners could catch up?</p>
+            <strong>Were you able to pause and talk slowly so ESL learners could catch up?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-ESL">
                 <div class="slider-labels">
@@ -333,7 +323,7 @@ p {
         </div>
 
         <div class="form-question" id="form-choice" style="display:none;">
-            <p>Did students have the chance to choose something today? A book, an activity, a name for a character?</p>
+            <strong>Did students have the chance to choose something today? A book, an activity, a name for a character?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-choice">
                 <div class="slider-labels">
@@ -346,7 +336,7 @@ p {
         </div>
 
         <div class="form-question" id="form-STR" style="display:none;">
-            <p>Did you get opportunities to strengthen connections with students? Shout out good work, ask about a sports game, hear about a student's weekend.</p>
+            <strong>Did you get opportunities to strengthen connections with students? Shout out good work, ask about a sports game, hear about a student's weekend.</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-STR">
                 <div class="slider-labels">
@@ -359,7 +349,7 @@ p {
         </div>
 
         <div class="form-question" id="form-fun" style="display:none;">
-            <p>Did you have the luxury of planning a fun lesson?</p>
+            <strong>Did you have the luxury of planning a fun lesson?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-fun">
                 <div class="slider-labels">
@@ -371,7 +361,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-culture" style="display:none;">
-            <p>Were students less mean to each other, less competitive, or less disruptive?</p>
+            <strong>Were students less mean to each other, less competitive, or less disruptive?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-culture">
                 <div class="slider-labels">
@@ -383,7 +373,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-SEL" style="display:none;">
-            <p>Did students get time to practice SEL skills today? Asking for help, effective group work, self-advocating, etc.</p>
+            <strong>Did students get time to practice SEL skills today? Asking for help, effective group work, self-advocating, etc.</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-SEL">
                 <div class="slider-labels">
@@ -395,7 +385,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-PBL" style="display:none;">
-            <p>Did students get the chance to work on something they're proud of?</p>
+            <strong>Did students get the chance to work on something they're proud of?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-PBL">
                 <div class="slider-labels">
@@ -407,7 +397,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-Student-led" style="display:none;">
-            <p>Did students get to take the lead in class today, giving presentations, facilitating discussions, or leading an activity?</p>
+            <strong>Did students get to take the lead in class today, giving presentations, facilitating discussions, or leading an activity?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-Student-led">
                 <div class="slider-labels">
@@ -419,7 +409,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-peer" style="display:none;">
-            <p>Were students nicer to each other? Are friendships getting stronger? Any... romances?</p>
+            <strong>Were students nicer to each other? Are friendships getting stronger? Any... romances?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-peer">
                 <div class="slider-labels">
@@ -431,7 +421,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-stress" style="display:none;">
-            <p>Did students get an opportunity to let out stress today? A quick break, a space to share, or a fun activity?</p>
+            <strong>Did students get an opportunity to let out stress today? A quick break, a space to share, or a fun activity?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-stress">
                 <div class="slider-labels">
@@ -443,7 +433,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-career" style="display:none;">
-            <p>Did students build skills today that'll help them succeed beyond the classroom? Thinking critically, pitching themselves, hard skills (eg. emailing).</p>
+            <strong>Did students build skills today that'll help them succeed beyond the classroom? Thinking critically, pitching themselves, hard skills (eg. emailing).</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-career">
                 <div class="slider-labels">
@@ -455,7 +445,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-deep" style="display:none;">
-            <p>Did students get the chance to really enga</p>
+            <strong>Did students get the chance to really enga</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-deep">
                 <div class="slider-labels">
@@ -467,7 +457,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-CBE" style="display:none;">
-            <p>How confident are you in supporting ESL Learners?</p>
+            <strong>How confident are you in supporting ESL Learners?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-CBE">
                 <div class="slider-labels">
@@ -479,7 +469,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-special" style="display:none;">
-            <p>How confident are you in supporting ESL Learners?</p>
+            <strong>How confident are you in supporting ESL Learners?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-special">
                 <div class="slider-labels">
@@ -491,7 +481,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-tech" style="display:none;">
-            <p>How confident are you in supporting ESL Learners?</p>
+            <strong>How confident are you in supporting ESL Learners?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-tech">
                 <div class="slider-labels">
@@ -503,7 +493,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-outside" style="display:none;">
-            <p>Did a student feel comfortable reaching out for outside help today?</p>
+            <strong>Did a student feel comfortable reaching out for outside help today?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-outside">
                 <div class="slider-labels">
@@ -515,7 +505,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-mgmt" style="display:none;">
-            <p>How confident are you in supporting ESL Learners?</p>
+            <strong>How confident are you in supporting ESL Learners?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-mgmt">
                 <div class="slider-labels">
@@ -527,7 +517,7 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-success" style="display:none;">
-            <p>Did students learn a lot today? Did they do well on a quiz or formative assesment?</p>
+            <strong>Did students learn a lot today? Did they do well on a quiz or formative assesment?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-success">
                 <div class="slider-labels">
@@ -539,25 +529,25 @@ p {
             <br>
         </div>
         <div class="form-question" id="form-responsive" style="display:none;">
-            <p>How confident are you in supporting ESL Learners?</p>
+            <strong>Were you able to incorporate content relevant to students' different backgrounds?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-responsive">
                 <div class="slider-labels">
 
-                <label class="slider-label-left">Not confident</label>
-                <label class="slider-label-right">Very confident</label>
+                <label class="slider-label-left">Not today</label>
+                <label class="slider-label-right">A whole lot today!</label>
                 </div>
             </div>
             <br>
         </div>
         <div class="form-question" id="form-inclusive" style="display:none;">
-            <p>How confident are you in supporting ESL Learners?</p>
+            <strong>Did every student get a chance to participate today?</strong>
             <div class="slider-wrapper">
                 <input type="range" min="0" max="10" value="5" class="slider" id="slider-inclusive">
                 <div class="slider-labels">
 
-                <label class="slider-label-left">Not confident</label>
-                <label class="slider-label-right">Very confident</label>
+                <label class="slider-label-left">There wasn't a chance today.</label>
+                <label class="slider-label-right">Everyone was involved and comfortable!</label>
                 </div>
             </div>
             <br>
@@ -572,97 +562,151 @@ Stretch - explain student performance: find studies demonstrating lack of window
 
         <!-- Repeat for the rest of the forms -->
         <button id="submitBtn">Submit</button>
+        <div id="submitted"></div>
 
     </div>
     <br><br>
     <div>
         <canvas id="myChart"></canvas>
+        <img src="/assets/images/template.jpg" style="display:none;" id="template"></img>
       </div>
       <script>
-        date = new Date();
-        let options = { weekday: 'long', month: 'long', day: 'numeric' };
-        document.getElementById("current_date").innerHTML = date.toLocaleDateString('en-US', options);
-    </script>
-    <script>
-        document.getElementById('submitBtn').addEventListener('click', function() {
-    let sliders = document.querySelectorAll('input[type="range"]');
-    let data = JSON.parse(localStorage.getItem('data')) || [];
+        let three = JSON.parse(localStorage.getItem('three')) || [];
+        console.log("Loaded from localStorage:", three);
 
-    sliders.forEach(function(slider) {
-        let parent = slider.parentElement.parentElement;
-        if (window.getComputedStyle(parent).display !== 'none') {
-            let date = new Date();
-            let sliderData = {
-                id: slider.id,
-                value: slider.value,
-                date: date.toISOString()
-            };
-            data.push(sliderData);
-        }
-    });
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("DOM fully loaded and parsed");
+            const bingoItems = document.querySelectorAll('.bingo-item');
+            
+            bingoItems.forEach((item) => {
+                item.addEventListener('click', () => {
+                    const correspondingForm = document.getElementById(`form-${item.id}`);
+                    if (item.classList.contains('clicked')) {
+                        item.classList.remove('clicked');
+                        let index = three.findIndex((obj) => obj.title === item.id); // find the index
+                        if (index !== -1) {
+                            three.splice(index, 1); // remove item at found index
+                        }
+                        correspondingForm.style.display = "none";  // hide form when item is unselected
+                    } else {
+                        item.classList.add('clicked');
+                        three.push({
+                            title: item.id,
+                            });
+                        correspondingForm.style.display = "block";  // show form when item is selected
+                    }
+                    localStorage.removeItem('three');
+                    localStorage.setItem('three', JSON.stringify(three));  // save to localStorage
+                });
+    
+                
+            });
+            three.forEach((item) => {
+                const correspondingItem = document.getElementById(item.title);
+                if (correspondingItem) {
+                    correspondingItem.classList.add('clicked');
+                }
+                const correspondingForm = document.getElementById(`form-${item.title}`);
+                correspondingForm.style.display = "block";  // show form when item is selected
 
-    localStorage.setItem('data', JSON.stringify(data));
+            });
+            
+        });
+        
+      </script>
+      <script>
+    date = new Date();
+    let options = { weekday: 'long', month: 'long', day: 'numeric' };
+    document.getElementById("current_date").innerHTML = date.toLocaleDateString('en-US', options);
+
+    document.getElementById('submitBtn').addEventListener('click', function() {
+        document.getElementById('submitted').textContent = "Submitted! Don't forget to come back tomorrow."
+        let sliders = document.querySelectorAll('input[type="range"]');
+        let data = JSON.parse(localStorage.getItem('data')) || [];
+
+        sliders.forEach(function(slider) {
+            let parent = slider.parentElement.parentElement;
+            if (window.getComputedStyle(parent).display !== 'none') {
+                let date = new Date();
+                let sliderData = {
+                    id: slider.id,
+                    value: slider.value,
+                    date: date.toISOString()
+                };
+                data.push(sliderData);
+            }
+        });
+
+        localStorage.setItem('data', JSON.stringify(data));
 
     // Process the data for chart.js
-    let chartData = {};
+        let chartData = {};
 
-    let colors = ['#4dc9f6',
-  '#f67019',
-  '#f53794',
-  '#537bc4',
-  '#acc236',
-  '#166a8f',
-  '#00a950',
-  '#58595b',
-  '#8549ba'];
 
-    // Loop through the data and group it by id
-    data.forEach(item => {
-        // Extract the second half of the id
-        let id = item.id.split('-')[1];
-        if(!chartData[id]) {
-            chartData[id] = {
-                label: id,
-                data: [],
-                fill: false,
-                borderColor: colors[Math.floor(Math.random()*colors.length)], // Generate random color
-            };
-        }
-        // Push the data for this id
-        chartData[id].data.push({
-            x: new Date(item.date),
-            y: item.value
-        });
-    });
-    let ctx = document.getElementById('myChart').getContext('2d');
-    let myChart = new Chart(ctx, {
-        type: 'line',
 
-        data: {
-            datasets: Object.values(chartData)
-        },
-        options: {
-            scales: {
-                x: {
-                    type: 'time',
-                    time: {
-                        unit: 'day'
-                    }
+        let colors = ['#4dc9f6',
+                    '#f67019',
+                    '#f53794',
+                    '#537bc4',
+                    '#acc236',
+                    '#166a8f',
+                    '#00a950',
+                    '#58595b',
+                    '#8549ba'];
+
+        if (data.length < 9) {
+            document.getElementById('submitted').textContent = "Submitted! Submit for three days to see a graph like this one!";
+            document.getElementById('template').style.display = "block";
+        } else {
+        // Loop through the data and group it by id
+            data.forEach(item => {
+                // Extract the second half of the id
+                let id = item.id.split('-')[1];
+                if(!chartData[id]) {
+                    chartData[id] = {
+                        label: id,
+                        data: [],
+                        fill: false,
+                        borderColor: colors[Math.floor(Math.random()*colors.length)], // Generate random color
+                    };
+                }
+                // Push the data for this id
+                chartData[id].data.push({
+                    x: new Date(item.date),
+                    y: item.value
+                });
+            });
+            document.getElementById('template').style.display = "none";
+            let ctx = document.getElementById('myChart').getContext('2d');
+            let myChart = new Chart(ctx, {
+                type: 'line',
+
+                data: {
+                    datasets: Object.values(chartData)
                 },
-                y: {
-                    beginAtZero: true
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Your wins this year',
+                        }
+                    }
                 }
-            },
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Your wins this year',
-                }
-            }
+            });
         }
     });
-});
-
+    
       </script>
 </body>
 </html>
