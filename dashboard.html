@@ -130,6 +130,12 @@
             <h2>"You're a try-hard"</h2>
             <p>You get put down for caring.</p>
         </div>
+        <div class="card" data-link="https://blog.benguzovsky.com/college" style="display: none;">
+            <h2>COLLEGE APPLICATION STRESS</h2>
+            <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+            <p>Click for some resources on how to navigate college applications! <br> Unless you're a freshman. What are you doing still reading, freshman.</p>
+        </div>
               <div class="card" data-link="/doorstops/othercareers.html" style="display: none;">
             <h2>HS feels like a dead end</h2>
             <p>It’s McDonalds or fame</p>
@@ -145,6 +151,13 @@
               <div class="card" data-link="/doorstops/shift.html#enemy" style="display: none;">
             <h2>Social divides</h2>
             <p>rich/poor, black/white</p>
+        </div>
+        <div class="card" data-link="https://www.teenagegriefsucks.com/" style="display: none;">
+            <h2>Living with losing a friend or loved one</h2>
+            <img src="/assets/images/teengrief.png" alt="image1" />
+            <br>
+            <p></p>
+            <p>Swipe right to go to a website with stories from other teenagers who lost a loved one.</p>
         </div>
         <div class="card" data-link="/doorstops/listen.html" style="display: none;">
             <h2>Emotional Availability is Sexy</h2>
@@ -251,18 +264,22 @@ searchInput.addEventListener('keyup', function(e) {
         .then(response => response.json())
         .then(data => {
             let matches = data.filter(page => {
-    // Check if the search query is included in the h1 string
-    let h1Match = page.h1.toLowerCase().includes(searchQuery.toLowerCase());
+                // Check if any word in the search query is included in the h1 string
+                let h1Match = searchQuery.toLowerCase().split(" ").some(queryWord => 
+                page.h1.toLowerCase().includes(queryWord)
+            );
 
-    // Check if the search query is included in any of the keywords
-    let keywordMatch = page.keywords.some(keyword => 
-        keyword.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+            // Check if any word in the search query is included in any of the keywords
+            let keywordMatch = searchQuery.toLowerCase().split(" ").some(queryWord => 
+                page.keywords.some(keyword => 
+                    keyword.toLowerCase().includes(queryWord)
+                )
+            );
 
-    return h1Match || keywordMatch; // Return true if either match is found
-});
+            return h1Match || keywordMatch; // Return true if either match is found
+        });
 
-            displayResults(matches);
+        displayResults(matches);
         });
     } else {
         clearResults();
@@ -302,39 +319,59 @@ function displayResults(matches) {
 // For each card
 let swipedRight = JSON.parse(localStorage.getItem('swipedRight')) || [];  // load swiped right cards from localStorage
 
+let deltaSwipe = 100;
+// shortens swipe distance for mobile users
+if (window.innerWidth < 1000) {
+    deltaSwipe = 70;
+}
+
 document.querySelectorAll('.card').forEach((card, index) => {
     let hammertime = new Hammer(card);
     let initialPos = 0;
     let currentPos = 0;
     let rafId = null;
 
-    // Animate the card moving
+    // Animate the card moving - currently not being called
     function animate() {
-        let transform = `translateX(${currentPos}px)`;
-        card.style.transform = transform;
-        rafId = requestAnimationFrame(animate);
+        if(currentPos != 0) {
+            let transform = `translateX(${currentPos}px)`;
+            card.style.transform = transform;
+            rafId = requestAnimationFrame(animate);
+        }
     }
 
-    // Update position as you pan
+    // Update position as you pan and animate
     hammertime.on('pan', function(e) {
-        currentPos = initialPos + e.deltaX;
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) { // Only respond to mostly horizontal movements, fixes issues on mobile
+            currentPos = initialPos + e.deltaX;
+        let transform = `translateX(${currentPos}px)`;
+        card.style.transform = transform;
+        } else {
+        currentPos = 0;
+    }
+        
     });
 
     hammertime.on('panstart', function() {
         initialPos = currentPos;
         card.classList.remove('out');
-        if (!rafId) animate();
     });
 
     hammertime.on('panend', function(e) {
         initialPos = currentPos;
-        if (Math.abs(e.deltaX) > 100) { // Change this threshold as you like
+
+        if (Math.abs(e.deltaX) > deltaSwipe) { // Change this threshold as you like
             // If you swipe more than 100px to the right or left, take action
             card.classList.add('out');
             if (e.deltaX > 0) {
                 let cardLink = card.dataset.link;
                 let cardcss = card.dataset.css;
                 if (cardLink) {
+                    if (cardLink.startsWith('https://')) {
+                        // Open external link in the same tab
+                        window.location.href = cardLink;
+                    } 
+                    else {
                     setTimeout(() => {
                         fetch(cardLink)
                     .then(response => response.text())
@@ -351,37 +388,38 @@ document.querySelectorAll('.card').forEach((card, index) => {
                         let body = doc.querySelector("body");
 
                         if (yonkElement) {
+                            console.log("yonk");
                             // put the content of 'yonk' element inside the placeholder
-                            document.querySelector("#content-placeholder").innerHTML = yonkElement.innerHTML;
+                            document.querySelector("#content-placeholder").innerHTML = yonkElement.outerHTML;
                             loadStylesheet("/assets/css/style.css");
 
                             // Remove the first five <br> tags
-                            let brTags = document.querySelectorAll("#content-placeholder > br");
+                            let brTags = document.querySelectorAll(".yonk > br");
                             for (let i = 0; i < 5 && i < brTags.length; i++) {
                                 brTags[i].remove();
                             }
                         } else if (article) {
-                            document.querySelector("#content-placeholder").innerHTML = article.innerHTML;
+                            document.querySelector("#content-placeholder").innerHTML = article.outerHTML;
                         } else if (aboutElement) {
-                            document.querySelector("#content-placeholder").innerHTML = aboutElement.innerHTML;
+                            document.querySelector("#content-placeholder").innerHTML = aboutElement.outerHTML;
                             loadStylesheet("/assets/css/style.css");
                         } else {
-                            document.querySelector("#content-placeholder").innerHTML = body.innerHTML;
+                            document.querySelector("#content-placeholder").innerHTML = body.outerHTML;
                             loadStylesheet("/doorstops/food.css");
+                            loadScript("/assets/js/food.js");
                         }
-
+                        showSection(3);
                     })
                     .catch(err => console.log('Failed to load page: ', err));
                                 
                     });
+                }
                     swipedRight.push({
                     title: card.querySelector('h2').textContent,
                     link: card.dataset.link
                     });
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
                     
-                    showSection(3);
-
                 }
                 
             }
@@ -397,12 +435,20 @@ document.querySelectorAll('.card').forEach((card, index) => {
             setTimeout(() => card.remove(), 100);
         } else {
             // If you don't swipe enough, the card springs back to center
+            animate();
             currentPos = 0;
         }
         cancelAnimationFrame(rafId);
         rafId = null;
     });
 });
+
+function loadScript(src) {
+    let script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    document.head.appendChild(script);
+}
 
 function loadStylesheet(url) {
     var link = document.createElement("link");
@@ -486,7 +532,6 @@ function showSection(n) {
 }
 
     </script>
-    <script src="/assets/js/food.js"></script>
   <script src="/assets/js/script.js" defer></script>
 </body>
 

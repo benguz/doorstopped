@@ -9,12 +9,13 @@ body {
   background: white; // #f5f5f5 breaks gdocs pages. do we care?
   box-sizing: border-box;
   max-width: 100%;
+  overflow-y: hidden;
 }
 
 #container, #swiped-right-section, #left-section {
   position: relative;
   width: 90%; 
-  height: 93%; 
+  height: 93%;
   max-height: 600px;
   box-sizing: border-box;
 }
@@ -48,7 +49,7 @@ body {
 @media screen and (min-width: 2000px) {
   #container, #swiped-right-section, #left-section {
       width: 50%; 
-      height: 70%; 
+      height: 70%;
   }
 }
 
@@ -160,12 +161,13 @@ body {
 }
 
 iframe {
-  background-color: 
+  text-align: center;
+  width: 100%;
 }
 
 #navbar {
   position: relative;
-  bottom: 0;  
+  /* bottom: 0;   */
   width: 90%;
   max-width: 400px; 
   height: 50px; /* adjust as needed */
@@ -242,9 +244,13 @@ iframe {
   }
 
   #container, #swiped-right-section, #left-section {
+      
       max-width: 100%;
-      min-height: 70%; 
+      min-height: 80%; 
       bottom: 1.5em;
+      /* width: 100%;
+      height: calc(100% - 50px); Subtract the height of the navbar 
+      max-height: initial; */
   }
 
   #navbar {
@@ -252,8 +258,9 @@ iframe {
   }
 
   .card {
-      height: 100%;
+      height: 100%; 
       width: calc(100% - 30px);
+
   }
 
   .card h2 {
