@@ -448,7 +448,7 @@ r {
   #HERO
 \*-----------------------------------*/
 
-.hero { padding-block-start: calc(var(--section-padding) + 80px); }
+.hero { padding-block-start: calc(var(--section-padding) + 60px); }
 
 .hero .container {
   display: grid;
@@ -1297,7 +1297,7 @@ h2 {
    * HERO
    */
 
-  .hero { padding-block-start: calc(var(--section-padding) + 90px); }
+  .hero { padding-block-start: calc(var(--section-padding) + 60px); }
 
   .hero .container { gap: 50px; }
 
@@ -1571,7 +1571,7 @@ iframe {
    * HERO
    */
 
-  .hero { padding-block-start: calc(var(--section-padding) + 120px); }
+  .hero { padding-block-start: calc(var(--section-padding) + 90px); }
 
   .hero .container { gap: 80px; }
 
