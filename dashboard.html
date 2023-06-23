@@ -388,10 +388,9 @@ document.querySelectorAll('.card').forEach((card, index) => {
                         let body = doc.querySelector("body");
 
                         if (yonkElement) {
-                            console.log("yonk");
                             // put the content of 'yonk' element inside the placeholder
-                            document.querySelector("#content-placeholder").innerHTML = yonkElement.outerHTML;
                             loadStylesheet("/assets/css/style.css");
+                            document.querySelector("#content-placeholder").innerHTML = yonkElement.outerHTML;
 
                             // Remove the first five <br> tags
                             let brTags = document.querySelectorAll(".yonk > br");
@@ -401,11 +400,11 @@ document.querySelectorAll('.card').forEach((card, index) => {
                         } else if (article) {
                             document.querySelector("#content-placeholder").innerHTML = article.outerHTML;
                         } else if (aboutElement) {
-                            document.querySelector("#content-placeholder").innerHTML = aboutElement.outerHTML;
                             loadStylesheet("/assets/css/style.css");
+                            document.querySelector("#content-placeholder").innerHTML = aboutElement.outerHTML;
                         } else {
-                            document.querySelector("#content-placeholder").innerHTML = body.outerHTML;
                             loadStylesheet("/doorstops/food.css");
+                            document.querySelector("#content-placeholder").innerHTML = body.outerHTML;
                             loadScript("/assets/js/food.js");
                         }
                         showSection(3);
@@ -473,10 +472,10 @@ document.getElementById('nav3').addEventListener('click', function() { showSecti
 
 function showSection(n) {
     if (n === 2) {
+        removeStylesheet("/assets/css/style.css");
         document.querySelector('#container').style.display = 'block';
         document.querySelector('#swiped-right-section').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
-        removeStylesheet("/assets/css/style.css");
         document.getElementById('img2').src = "/assets/svg/Lamp_fill.svg";
         document.getElementById('img1').src = "/assets/svg/Book_check.svg";
         document.getElementById('img3').src = "/assets/svg/Favorite.svg";
@@ -510,8 +509,8 @@ function showSection(n) {
             // }
             // listItem.appendChild(dropdown);
         });
-        document.querySelector('#swiped-right-section').style.display = 'block';
         removeStylesheet("/assets/css/style.css");
+        document.querySelector('#swiped-right-section').style.display = 'block';
         document.getElementById('img2').src = "/assets/svg/Lamp.svg";
         document.getElementById('img1').src = "/assets/svg/Book_check_fill.svg";
         document.getElementById('img3').src = "/assets/svg/Favorite.svg";

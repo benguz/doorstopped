@@ -166,7 +166,7 @@ html {
 
 body {
   background-color: var(--white);
-  color: var(--gray-web);
+  /* color: var(--gray-web); */
   font-size: 1.6rem;
   line-height: 1.75;
 }
@@ -1093,7 +1093,7 @@ r {
   
   
 .yonk p {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5em; 
   margin-top: 0.7em;
   font-size: 14pt;
 }

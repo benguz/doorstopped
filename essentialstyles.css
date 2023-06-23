@@ -39,6 +39,120 @@ body {
   text-align: left;
 }
 
+#content-placeholder .yonk {
+  font-family: 'Poppins', sans-serif;
+}
+#content-placeholder .yonk p {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  margin-bottom: 0.5em; 
+  margin-top: 0.7em;
+  font-size: 14pt;
+}
+
+#content-placeholder .yonk p, h1, h2, h3, li {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+#content-placeholder .yonk a {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: underline;
+  display: inline;
+  font-size: 14pt;
+  line-height: 1.6;
+}
+#content-placeholder h1 {
+  font-size: 25pt;
+  line-height: 1;
+  font-weight: 600;
+  text-decoration: none;
+}
+#content-placeholder h2 {
+  margin-top: 1em;
+  font-weight: 600;
+  font-size: 20pt;
+}
+
+#content-placeholder h3 {
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 20pt;
+}
+
+#content-placeholder .yonk ul {
+  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+  padding-left: 30px;
+  font-size: 14pt;
+}
+
+#content-placeholder .yonk li {
+  list-style-type: disc !important; 
+}
+#content-placeholder .badonk {
+  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+  padding-left: 30px;
+  font-size: 14pt;
+
+}
+#content-placeholder .badonk li {
+  list-style-type: disc !important; 
+
+}
+#content-placeholder .honk {
+  list-style-type: disc !important; 
+}
+
+
+/**
+* COPY-PASTE
+*/
+
+
+.copy-paste-element {
+  position: relative;
+  background-color: #f6f9fc;
+  border-radius: 3px;
+  border: 1px solid #dce6e9;
+  padding: 15px;
+  margin-bottom: 1rem;
+}
+
+.copy-paste-element p {
+  margin: 0;
+  /* margin-bottom: 0.5em; */
+  line-height: 1.5;
+}
+
+.copy-icon {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-icon:focus {
+  outline: none;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.svg2 path {
+  stroke-dasharray: 477;
+  stroke-dashoffset: 477;
+  animation: draw 150ms ease-out forwards;
+}
+
 
 .card {
   width: calc(100% - 40px); /* take full width of the container minus margins */
