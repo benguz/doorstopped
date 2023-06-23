@@ -66,7 +66,7 @@
    * spacing
    */
 
-  --section-padding: 75px;
+  --section-padding: 55px; /* changed */
 
   /**
    * shadow
@@ -1509,7 +1509,7 @@ iframe {
      * spacing
      */
 
-    --section-padding: 120px;
+    --section-padding: 100px; /* changed */
 
   }
 
