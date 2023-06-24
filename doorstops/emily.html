@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quote {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const quotes = [
+            "oh shit i forgot time zones existed",
+            "bc i am blind like the sun god from bloons tower defense",
+            "SUPER MAX MAX MAX",
+            "FORMULA 1",
+            "the insanity is in my bones",
+            "I LOVE FUNCTIONLA PROGRAMMING BURNING PASSUON",
+            "ben i am in a phase of hating men i feel like you would be one of the most empathetic people to understand this disdain for the male species",
+            "I'm a backend monkey",
+            "do people under the age of 30 go by rob",
+            "sometimes i wonder if i have a touch of the 'tism or if im just weird",
+            "tornado??? did u turn into dorothy",
+            "stupid mf american tax code",
+            "could not give fewer fucks about <div>",
+            "maybe i should read more"
+        ];
+
+        setInterval(() => {
+            const quoteElement = document.createElement('div');
+            quoteElement.classList.add('quote');
+            quoteElement.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
+            const randomX = Math.random() * (window.innerWidth - quoteElement.offsetWidth);
+            const randomY = Math.random() * (window.innerHeight - quoteElement.offsetHeight);
+
+            quoteElement.style.left = `${randomX}px`;
+            quoteElement.style.top = `${randomY}px`;
+
+            document.body.appendChild(quoteElement);
+
+            // Ensure that quotes do not fade in until they have a position on the screen
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    quoteElement.style.opacity = 1;
+
+                    setTimeout(() => {
+                        quoteElement.style.opacity = 0;
+                        setTimeout(() => {
+                            document.body.removeChild(quoteElement);
+                        }, 2000);  // Fading out duration
+                    }, 2000);  // Duration quote stays visible
+                });
+            });
+        }, 4000);  // Interval between new quotes appearing
+    </script>
+</body>
+</html>
