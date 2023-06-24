@@ -17,8 +17,8 @@
         .quote {
             position: absolute;
             opacity: 0;
-            transition: opacity 2s ease-in-out;
-            font-size: 24px;
+            transition: opacity 1.75s ease-in-out;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -44,7 +44,9 @@
             "yeah me myself and my computer we chillin",
             "lol this is the second dating unit and we had to watch a chinese drama and i vomited",
             "chinese men are evil idk",
-            "hAtE cRiMe"
+            "hAtE cRiMe",
+            "HINGE AHAHAHAHAH this is embarrassing",
+            "SWAG"
         ];
 
         setInterval(() => {
@@ -52,8 +54,8 @@
             quoteElement.classList.add('quote');
             quoteElement.textContent = quotes[Math.floor(Math.random() * quotes.length)];
 
-            const randomX = Math.random() * (window.innerWidth - quoteElement.offsetWidth);
-            const randomY = Math.random() * (window.innerHeight - quoteElement.offsetHeight);
+            const randomX = Math.random() * (window.innerWidth - quoteElement.offsetWidth - 20);
+            const randomY = Math.random() * (window.innerHeight - quoteElement.offsetHeight - 20);
 
             quoteElement.style.left = `${randomX}px`;
             quoteElement.style.top = `${randomY}px`;
@@ -69,11 +71,11 @@
                         quoteElement.style.opacity = 0;
                         setTimeout(() => {
                             document.body.removeChild(quoteElement);
-                        }, 1500);  // Fading out duration
-                    }, 1500);  // Duration quote stays visible
+                        }, 1750);  // Fading out duration
+                    }, 1750);  // Duration quote stays visible
                 });
             });
-        }, 3000);  // Interval between new quotes appearing
+        }, 3500);  // Interval between new quotes appearing
     </script>
 </body>
 </html>
