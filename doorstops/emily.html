@@ -18,7 +18,7 @@
             position: absolute;
             opacity: 0;
             transition: opacity 1.75s ease-in-out;
-            font-size: 30px;
+            font-size: 25px;
         }
     </style>
 </head>
@@ -46,7 +46,13 @@
             "chinese men are evil idk",
             "hAtE cRiMe",
             "HINGE AHAHAHAHAH this is embarrassing",
-            "SWAG"
+            "SWAG",
+            "flat earthers are about to eat that shit up",
+            "my mom tries to take photos of me when i wear real clothes and i do not enjoy",
+            "im out here with a pink whale mouse",
+            "i am willing to float and let the waves eventually carry me to my destination",
+            "CLEAR GOGGLES no sir, that is where i draw the line",
+            "bahaha uhh i cant swim"
         ];
 
         setInterval(() => {
@@ -54,8 +60,8 @@
             quoteElement.classList.add('quote');
             quoteElement.textContent = quotes[Math.floor(Math.random() * quotes.length)];
 
-            const randomX = Math.random() * (window.innerWidth - quoteElement.offsetWidth - 20);
-            const randomY = Math.random() * (window.innerHeight - quoteElement.offsetHeight - 20);
+            const randomX = Math.random() * (window.innerWidth - quoteElement.offsetWidth - 40);
+            const randomY = Math.random() * (window.innerHeight - quoteElement.offsetHeight- 40);
 
             quoteElement.style.left = `${randomX}px`;
             quoteElement.style.top = `${randomY}px`;
