@@ -350,7 +350,7 @@ iframe {
   
   body {
       /* align-items: flex-start; Aligns items to the top on mobile */
-      height: 100vh;
+      height: 95vh;
   }
 
   #results-container, #search-container {
@@ -360,8 +360,10 @@ iframe {
   #container, #swiped-right-section, #left-section {
       
       max-width: 100%;
-      min-height: 80%; 
+      min-height: 80%;
+      height: 90% 
       bottom: 1.5em;
+      max-height: none;
       /* width: 100%;
       height: calc(100% - 50px); Subtract the height of the navbar 
       max-height: initial; */
@@ -369,6 +371,8 @@ iframe {
 
   #navbar {
       max-width: 100%;
+      /* position: absolute; */
+      bottom: 15px;
   }
 
   .card {
