@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Doorstopped - Doorstop Education</title>
+  <meta name="title" content="Doorstop Education">
+  <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,1000&display=swap" rel="stylesheet">
+  <style>
+      @media screen and (max-width: 1023px){
+.framebox {
+height: 34000em;
+}
+.sidenavtotal {
+display:none;
+padding: 0em;
+}
+#sidenav{
+display:none;
+
+}
+#toc {
+  display:none;
+}
+.desktop {
+  display: none;
+}
+}
+.yonk {
+  width: 97%;
+  margin-left: 1.5%;
+}
+@media (min-width: 1024px) {
+/* main {
+  display:flex; 
+  justify-content:center;
+} */
+.yonk {
+            width: 55%;  /* take up 1/3 of the container width */
+            margin-left: 22.5%; /* push it to the center */
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+.framebox {
+  height: 15500em;
+}
+}
+
+
+.flag {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+.stripe {
+  flex: 1;
+}
+
+.red { background: #FF0000; }
+.orange { background: #FF7F00; }
+.yellow { background: #FFFF00; }
+.green { background: #00FF00; }
+.blue { background: #0000FF; }
+.violet { background: #8B00FF; }
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    50% {transform: translateX(0%);}
+  100% { transform: translateX(100%); }
+}
+
+.career-container {
+    overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* Distributes spaces evenly between items */
+
+}
+.career-container span {
+  position: relative;
+  animation: marquee 15s linear infinite;
+  font-family: 'Nunito', sans-serif;
+  font-size: 55px;
+  width: 20%;
+}
+
+.career-container span:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .career-container span {
+  animation: marquee 10s linear infinite;
+  font-size: 25px;
+  width: 20%;
+}
+}
+
+.dinkydonk {
+  position: fixed; /* fixed positioning makes sure it always stays on top */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: rgba(141, 141, 141, 0.5); /* semi-transparent background */
+  backdrop-filter: blur(10px); /* blurred background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* high z-index to stay on top */
+}
+
+.content {
+  color: white;
+  text-align: center;
+  max-width: 90%; /* limit the width */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.content img {
+  width: 100%;
+  height: auto;
+}
+
+.content h1, .content p {
+  margin-top: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+</style>
+
+
+  </style>
+
+  </head>
+
+<body id="top">
+
+  <header class="header" data-header>
+    <div class="container" min-width="620em">
+
+      <a href="/index.html" class="logo">
+        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="/index.html" class="logo">
+            <img src="/assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="/mission.html" class="navbar-link" data-nav-link>Mission</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/doorstops/index.html" class="navbar-link" data-nav-link>Doorstops</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/programs/index.html" class="navbar-link" data-nav-link>Programs</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/research/index.html" class="navbar-link" data-nav-link>Research</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
+          <span class="span">Try us out</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  
+  </header>
+
+      
+
+<br><br>
+<br><br>
+<div class="dinkydonk" id="popup" style="display: none;">
+    <span class="close" id="closeBtn">&times;</span>
+
+    <div class="content" id="Doctor" style="display: none;">
+      <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+      <h1>DOCTOR</h1>
+      <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+    </div>
+    <div class="content" id="Architect" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>ARCHITECT</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Artist" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>ARTIST</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Lawyer" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>LAWYER</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Nurse" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>NURSE</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="CEO" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>CEO</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Singer" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>SINGER</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Writer" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>WRITER</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Scientist" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>ARCHITECT</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Mogul" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>MOGUL</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Engineer" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>ARCHITECT</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Teacher" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>TEACHER</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Athlete" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>ATHLETE</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="PhD" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>PHD</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Therapist" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>Therapist</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+      <div class="content" id="Assassin" style="display: none;">
+        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
+        <h1>Assassin</h1>
+        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      </div>
+  </div>
+  
+<div class="" id="Doctor"></div>
+<div class="flag">
+    <div class="stripe red"><div class="career-container"></div></div>
+    <div class="stripe orange"><div class="career-container"></div></div>
+    <div class="stripe yellow"><div class="career-container"></div></div>
+    <div class="stripe green"><div class="career-container"></div></div>
+    <div class="stripe blue"><div class="career-container"></div></div>
+    <div class="stripe violet"><div class="career-container"></div></div>
+  </div>
+  
+  
+</div>
+
+
+
+<div id="footer-placeholder">
+
+</div>
+<script>
+var lastclickedID;
+
+document.getElementById('closeBtn').addEventListener('click', function() {
+  document.getElementById('popup').style.display = 'none';
+  document.getElementById(lastclickedID).style.display = 'none';
+});
+
+
+// Array of careers
+var careers = ["Doctor", "Engineer", "Artist", "Teacher", "Lawyer", "Scientist", "Nurse", "Singer", "Writer", "Architect", "CEO", "Mogul", "PhD", "Athlete", "Therapist", "Assassin"];
+
+// Function to handle onclick event
+function handleClick(careerName) {
+    console.log(careerName);
+    var careerpage = document.getElementById(careerName);
+    var overlay = document.getElementById("popup");
+    overlay.style.display = "flex";
+    careerpage.style.display = "block";
+    lastclickedID = careerName;
+
+}
+
+// Get career containers
+var containers = document.querySelectorAll('.career-container');
+
+var paths = 5
+if (window.innerWidth < 600) {
+    console.log("less");
+    paths = 3
+}
+// Iterate over containers and inject career spans
+for(let i = 0; i < containers.length; i++) {
+    for (let j = 0; j < paths; j++) {
+    let careerSpan = document.createElement('span');
+    // Select random career
+    let career = careers[Math.floor(Math.random()*careers.length)];
+    if ( j % 2 === 0) {
+        careerSpan.style.textAlign = "center";
+    } else {
+        careerSpan.style.textAlign = "left";
+    }
+    careerSpan.innerText = career;
+    careerSpan.onclick = function() { handleClick(careerSpan.innerText) };
+    containers[i].appendChild(careerSpan);
+}
+}
+
+</script>
+<script>
+    $(function(){
+      $("#footer-placeholder").load("/footer.html");
+    });
+    
+    </script>
+    <!-- 
+
+    <script src="/components/sidenavsmall.js">
+    </script>
+      -->
+
+
+
+
+<!-- 
+  - #BACK TO TOP
+-->
+
+<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+  <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+</a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/assets/js/script.js" defer></script>
+
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
