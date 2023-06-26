@@ -1,0 +1,368 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+#container {
+    position: relative;
+    width: 90%; 
+    height: 93%; 
+    max-width: 400px; 
+    max-height: 600px; 
+    box-sizing: border-box;
+}
+
+.box {
+    max-width: 55%;
+}
+
+.players {
+    
+}
+
+@media screen and (max-width: 600px) {
+    .box {
+        max-width: 100%;
+    }
+
+    .players {
+        display: none;
+    }
+}
+
+/* Style adjustments for larger screens */
+@media screen and (min-width: 2000px) {
+    #container {
+        width: 50%; 
+        height: 70%; 
+    }
+}
+
+.card {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+img {
+    max-width: 80%;
+    margin-bottom: 15px;
+}
+
+h1 {
+  max-width: 80%
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: #333;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.left span {
+    text-align: left;
+}
+
+.right span {
+    text-align: right;
+}
+
+a {
+    text-decoration: underline;
+}
+
+
+.card:hover {
+    cursor: pointer;
+}
+
+
+
+ul {
+  max-width: 70%; 
+}
+
+/* Reset max-width and max-height for mobile devices */
+@media screen and (max-width: 600px) {
+    
+    /* body {
+        align-items: flex-start; 
+        padding-top: 3em; 
+    } */
+
+    #container {
+        max-width: 100%;
+        min-height: 70%; 
+        /* top: 2.5em; */
+    }
+
+    h2 {
+    font-size: 28px;
+
+}
+
+h3 {
+    font-size: 22px;
+}
+
+p {
+    font-size: 18px;
+}
+
+ul {
+  max-width: 100%;
+}
+
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slider-wrapper label.slider-label-left {
+  text-align: left;
+}
+
+.slider-wrapper label.slider-label-right {
+  text-align: right;
+}
+
+.slider {
+  width: 80%;
+  height: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  opacity: 0.7;
+  border-radius: 20px; /* This will give the slider rounded corners */
+  background: #d3d3d3; /* This will color the track */
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+  transition: .3s ease-in-out; 
+  border-radius: 50%; /* This will make the thumb (the part you move) round */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 12px;
+} 
+
+/* Reset max-width and max-height for mobile devices */
+@media screen and (max-width: 600px) {
+    .slider-wrapper {
+        width: 90%;
+    }
+
+}
+
+
+#donks-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 70%;
+  height: 100vh;
+}
+
+#game-section {
+  height: 80vh;
+}
+
+#desks {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-gap: 7px;
+}
+
+.deskrows, #radiate {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-gap: 15px;
+}
+
+.desk {
+  width: 75px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #a0a0a0;
+}
+
+.desk:hover {
+    cursor: pointer;
+}
+
+
+
+.donk {
+  width: 75px;
+  height: 50px;
+  background-color: #a0a0a0;
+  border-radius: 15px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+
+#text-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 80%;
+  width: 100%; /* if you want to center it vertically too */
+  height: 100vh;
+}
+
+.textbox {
+  display: flex;
+  font-size: 20px;
+  min-width: 90%;
+  background-color: transparent;
+  text-align: left;
+}
+
+#strategies {
+  background-image: url("/doorstops/swoosh.svg");  
+}
+
+@media screen and (max-width: 600px) {
+
+  .desk {
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #a0a0a0;
+}
+    #donks-section, #text-section, .deskrows, #radiate {
+        max-width: 100%;
+    }
+    #text-section {
+        max-width: 100%;
+    }
+
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.close-icon {
+  color: #999;
+  font-size: 18px;
+}
+
+.close-button:hover .close-icon {
+  color: #333;
+}
+
+.close-button:active .close-icon {
+  color: #000;
+}
+
+.float {
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    position: absolute;
+    cursor: pointer; /* Changes the cursor to indicate that the box is clickable */
+    transition: background-color 0.3s ease; /* Adds a smooth transition effect */
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate 
+{
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  99% {
+    opacity: 1
+  }
+  100% {
+    transform: translateY(-1200%);
+    opacity: 0;
+  }
+}
+.float.selected {
+    background-color: #04AA6D;
+}

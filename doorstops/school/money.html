@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Doorstopped - Doorstop Education</title>
+  <meta name="title" content="Doorstop Education">
+  <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <style>
+      @media screen and (max-width: 1023px){
+.framebox {
+height: 34000em;
+}
+.sidenavtotal {
+display:none;
+padding: 0em;
+}
+#sidenav{
+display:none;
+
+}
+#toc {
+  display:none;
+}
+.desktop {
+  display: none;
+}
+}
+.yonk {
+  width: 97%;
+  margin-left: 1.5%;
+}
+@media (min-width: 1024px) {
+/* main {
+  display:flex; 
+  justify-content:center;
+} 
+.yonk {
+            width: 55%;  
+            margin-left: 22.5%; 
+            padding: 0 10px;
+            box-sizing: border-box;
+        }*/
+
+.yonk {
+  flex: 3;
+}
+.sidenavtotal {
+  flex: 1;
+}
+
+.framebox {
+  height: 15500em;
+}
+}
+
+.copy-paste-element {
+  position: relative;
+  background-color: #f6f9fc;
+  border-radius: 3px;
+  border: 1px solid #dce6e9;
+  padding: 15px;
+  margin-bottom: 1rem;
+}
+
+.copy-paste-element p {
+  margin: 0;
+  /* margin-bottom: 0.5em; */
+  line-height: 1.5;
+}
+
+.copy-icon {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-icon:focus {
+  outline: none;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.svg2 path {
+  stroke-dasharray: 477;
+  stroke-dashoffset: 477;
+  animation: draw 150ms ease-out forwards;
+}
+
+/* flexbox shit  
+.sidenavtotal {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+article {
+  flex: 3;
+}
+
+.toc {
+  flex: 1;
+  /*max-width:60%;
+  /*word-wrap: break-word;
+  /* Add your toc styles here
+}
+*/
+
+.yonk p {
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+  font-size: 14pt;
+}
+
+.yonk p, h1, h2, h3, li {
+  color: black;
+}
+
+.yonk a {
+  text-decoration: underline;
+  display: inline;
+}
+h1 {
+  font-size: 25pt;
+  text-decoration: none;
+}
+h2 {
+  margin-top: 1em;
+  font-size: 20pt;
+}
+
+.badonk {
+  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+  padding-left: 30px;
+  font-size: 14pt;
+
+}
+.honk {
+  list-style-type: disc !important; 
+}
+.bingo-item {
+  position: relative;
+  /* width: 45%;
+  display: inline-block; */
+  margin-bottom: 10px;
+  height: 50px;
+  perspective: 1000px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.aesthetic-tab {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /* padding: 5px; */
+  background-color: #f2f2f2;
+  text-align: center;
+  border-radius: 5px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  font-size: 18px;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+}
+.bingo-item:hover .front {
+  transform: rotateX(180deg);
+  cursor: pointer;
+  z-index: -1;
+}
+
+.bingo-item:hover .back {
+  transform: rotateX(0);
+  z-index: 1;
+}
+
+.front {
+  z-index: 1;
+}
+
+.back {
+  transform: rotateX(180deg);
+  z-index: -1;
+}
+
+.aesthetic-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+
+</style>
+
+
+  </style>
+
+  </head>
+
+<body id="top">
+
+  <header class="header" data-header>
+    <div class="container" min-width="620em">
+
+      <a href="/index.html" class="logo">
+        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="/index.html" class="logo">
+            <img src="/assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="/mission.html" class="navbar-link" data-nav-link>Mission</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/doorstops/index.html" class="navbar-link" data-nav-link>Doorstops</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/programs/index.html" class="navbar-link" data-nav-link>Programs</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/research/index.html" class="navbar-link" data-nav-link>Research</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
+          <span class="span">Try us out</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  
+  </header>
+
+      
+    <main>
+      <div style="display: flex; flex-direction: row;">
+      <!-- --><div class="sidenavtotal" style="padding:3em;"> <!-- centered -->
+      
+          <br class="desktop"><br class="desktop">
+          <br class="desktop"><br class="desktop">
+          <br class="desktop">
+      <div id="sidenav"></div>
+      </div> 
+      <!-- centered -->
+<article>          <br class="desktop"><br class="desktop">
+    <br>
+
+    <div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
+        <iframe class="framebox" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="620em" max-width="calc(100% - 10em)" height="15500em" 
+        src="https://docs.google.com/document/d/e/2PACX-1vQmcY_W9bOoPcQMjIOyTCzE_9Ly2R1wFGJ4NM3-F8IpLFO8xGoz6uKZxpWdu19OSh0xfvoYoDIkzC2d/pub?embedded=true"></iframe>    
+      </div>
+    <!-- -->
+<p>
+  </p>
+  
+</article>
+            <div class="sidenavtotal" style="padding:3em;">
+      
+                <br class="desktop"><br class="desktop">
+                <br class="desktop"><br class="desktop">
+                <br class="desktop">
+              <div id="toc"></div>
+              </div>
+      
+    </main>
+
+
+<div id="footer-placeholder">
+
+</div>
+<script>
+    $(function(){
+      $("#footer-placeholder").load("/footer.html");
+    });
+    
+    </script>
+
+
+
+
+<!-- 
+  - #BACK TO TOP
+-->
+
+<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+  <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+</a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/assets/js/script.js" defer></script>
+  <script src="/components/sidenavschool.js">
+</script>
+
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+<footer>
+
+</footer>
+
+
