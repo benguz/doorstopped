@@ -37,6 +37,89 @@
 
 <body>
     
+    <div class="dinkydonk" id="popup" style="display: none;">
+        <span class="close" id="closeBtn">&times;</span>
+        <div class="content" id="content">
+          <!-- <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" /> -->
+          <h1>Get personalized Doorstops.</h1>
+          <form id="myForm">
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
+                <label for="identity">I identify as:</label><br>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                <div style="display: flex; flex-direction: row; justify-content: center;">
+                <input type="checkbox" id="identity1" name="identity" value="Male">
+                <label for="identity1"> Male</label><br>
+                <input type="checkbox" id="identity2" name="identity" value="Female">
+                <label for="identity2"> Female</label><br>
+                <input type="checkbox" id="identity3" name="identity" value="Non-Binary">
+                <label for="identity3"> Non-Binary</label><br>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: center">
+                <input type="checkbox" id="L" name="identity" value="L">
+                <label for="L"> L</label><br>
+                <input type="checkbox" id="G" name="identity" value="G">
+                <label for="G"> G</label><br>
+                <input type="checkbox" id="B" name="identity" value="B">
+                <label for="B"> B</label><br>
+                <input type="checkbox" id="T" name="identity" value="T">
+                <label for="T"> T</label><br>
+                <input type="checkbox" id="Q" name="identity" value="Q">
+                <label for="Q"> Q</label><br>
+                <input type="checkbox" id="identity8" name="identity" value="I">
+                <label for="identity8"> I</label><br>
+                <input type="checkbox" id="identity9" name="identity" value="A">
+                <label for="identity9"> A</label><br>
+                <input type="checkbox" id="identity10" name="identity" value="+">
+                <label for="identity10"> +</label><br>
+            </div>
+        </div>
+
+    </div>
+
+            <br>
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+                <label for="minority">I'm a minority in my school:</label><br>
+                <div style="display: flex; flex-direction: row; justify-content: center;">
+
+                <input type="radio" id="minority1" name="minority" value="Yes">
+                <label for="minority1"> Yes</label><br>
+                <input type="radio" id="minority2" name="minority" value="No">
+                <label for="minority2"> No</label><br>
+                </div>
+            </div>
+
+            <br>
+
+            <label for="clubs">I'm in clubs/sports:</label><br>
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+
+            <input type="radio" id="clubs1" name="clubs" value="Yes">
+            <label for="clubs1"> Yes</label><br>
+            <input type="radio" id="clubs2" name="clubs" value="No">
+            <label for="clubs2"> No</label><br>
+            </div>
+            <br>
+            <label for="mood">I'm usually:</label><br>
+            
+                <div style="display: flex; flex-direction: row; justify-content: center;">
+                <input type="checkbox" id="identity11" name="mood" value="I">
+                <label for="identity11"> Stressed</label><br>
+                <input type="checkbox" id="frustrated" name="mood" value="Frustrated">
+                <label for="frustrated"> Frustrated</label><br>
+                <input type="checkbox" id="Bored" name="mood" value="Bored">
+                <label for="Bored"> Bored</label><br>
+                <input type="checkbox" id="Angry" name="mood" value="Angry">
+                <label for="Angry"> Angry</label><br>
+                <input type="checkbox" id="Anxious" name="mood" value="Anxious">
+                <label for="Anxious"> Anxious</label><br>
+            </div>
+
+          
+            <br><br>
+            <input class="button modal-toggle" id="subtn" type="submit" value="Submit">
+        </form>
+        </div>
+      </div>
     <div id="container">
 <!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
         <div class="card" style="display: none;">
@@ -200,29 +283,49 @@
             <p>Why is nobody poopin' at your school?</p>
             <p>Don't worry, we got you.</p>
         </div>
+        <div class="card" data-link="/doorstops/lifehacks.html" style="display: none;">
+            <h2>School Life Hacks</h2>
+                <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+            <p>Don't worry, we got you.</p>
+        </div>
+        <!-- <div class="card" data-link="PERSONALIZED" style="display: none;">
+            <h2>Want personalized suggestions?</h2>
+                <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+            <p>We never see your data: it's only saved on your own device (so don't clear cache!)</p>
+        </div> -->
+
+        <div class="card" data-link="/doorstops/escape.html" style="display: none;">
+            <h2>You have rights, actually.</h2>
+            <div class="tenor-gif-embed" data-postid="17224602" data-share-method="host" data-aspect-ratio="1.22605" data-width="100%"></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+            <p>Make sure that when you get in trouble, you don't get into <em>too much trouble</em><br><br>
+            <span class="envy">Renegotiate how punishment works.</span></p>
+        </div>
         <div class="card" data-link="/doorstops/feedback.html" style="display: none;">
             <h2>Boring classes?</h2>
             <div class="tenor-gif-embed" data-postid="17224602" data-share-method="host" data-aspect-ratio="1.22605" data-width="100%"></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
-            <p>Simple ways to respond without starting conflict.</p>
+            <p>Give your teacher anonymous, constructive feedback that will make class better.</p>
         </div>
-        <div class="card" style="display: none;">
+        <!-- <div class="card" style="display: none;">
             <h2>Show me more about making class less boring</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
-        </div>
+        </div> -->
         <div class="card" data-link="/doorstops/food.html" style="display: none;">
             <h2>Toxic comments about eating</h2>
             <div class="tenor-gif-embed" data-postid="16651116" data-share-method="host" data-aspect-ratio="1" data-width="100%"></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
                 <br>
             <p>Respond and change the culture without causing drama!</p>
         </div>
-        
+<!--         
         <div class="card" id="more culture" style="display: none;">
             <h2>Show me more about changing school culture</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
-        </div>
+        </div> -->
 
         <div class="card" data-link="/programs/eat.html" style="display: none;">
             <h2>Lunch awful?</h2>
@@ -401,7 +504,11 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     if (cardLink.includes("#")) {
                         cardid = cardLink.split('#')[1];
                     }
-                    if (cardLink.startsWith('https://')) {
+                    if (cardLink === "PERSONALIZED") {
+                        let dinky = document.getElementById('popup');
+                        dinky.style.display = "flex";
+                    }
+                    else if (cardLink.startsWith('https://')) {
                         // Open external link in the same tab
                         window.location.href = cardLink;
                     } 
@@ -567,6 +674,38 @@ function showSection(n) {
     // Add cases for other sections as needed
 }
 
+    </script>
+    <script>
+    document.getElementById('closeBtn').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('content').style.display = 'none';
+    });
+    document.getElementById('subtn').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('content').style.display = 'none';
+    });
+
+document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+  
+    let identity = Array.from(document.querySelectorAll('input[name="identity"]:checked'), input => input.value);
+    let minority = document.querySelector('input[name="minority"]:checked').value;
+    let clubs = document.querySelector('input[name="clubs"]:checked').value;
+    let mood = Array.from(document.querySelectorAll('input[name="mood"]:checked'), input => input.value);
+  
+    localStorage.setItem('identity', JSON.stringify(identity));
+    localStorage.setItem('minority', minority);
+    localStorage.setItem('clubs', clubs);
+    localStorage.setItem('mood', mood);
+
+});
+
+    </script>
+    <script>
+        console.log(localStorage.getItem('mood'));
+    console.log(localStorage.getItem('identity'));
+    console.log(localStorage.getItem('minority'));
+    console.log(localStorage.getItem('clubs'));
     </script>
   <script src="/assets/js/script.js" defer></script>
 </body>

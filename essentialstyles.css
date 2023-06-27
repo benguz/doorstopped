@@ -304,6 +304,101 @@ span {
   color: hsl(170, 75%, 41%); 
 }
 
+/* Account popup */
+.dinkydonk {
+  position: fixed; /* fixed positioning makes sure it always stays on top */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: rgba(141, 141, 141, 0.5); /* semi-transparent background */
+  backdrop-filter: blur(10px); /* blurred background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* high z-index to stay on top */
+  overflow: scroll;
+  max-width: 100%;
+}
+
+.content {
+  color: white;
+  text-align: center;
+  max-width: 90%; /* limit the width */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.content img {
+  width: 50%;
+  height: auto;
+}
+
+.content h1, .content p {
+  margin-top: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+label {
+  display: block;
+  /* margin: 10px 0; */
+}
+
+input[type="checkbox"], input[type="radio"] {
+  margin: 0 5px 0 0;
+}
+
+input[type="checkbox"]:checked + label, 
+input[type="radio"]:checked + label {
+    color: #007BFF;
+}
+
+option:checked {
+    background-color: #007BFF;
+    color: white;
+}
+
+input[type="submit"] {
+  /* display: block;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px; */
+  cursor: pointer;
+  margin-top: 0px;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  padding: 0 10px;
+  color: #007BFF;
+}
+
+select {
+  /* padding: 5px; */
+}
+
+/*  */
+
 #navbar {
   position: relative;
   /* bottom: 0;   */
