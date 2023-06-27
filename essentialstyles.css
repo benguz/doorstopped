@@ -535,3 +535,7 @@ select {
   padding: initial;
   /* Add or remove properties as needed */
 }
+
+.tenor-gif-embed {
+  pointer-events: none;
+}
