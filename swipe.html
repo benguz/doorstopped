@@ -31,218 +31,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 
     <link href="css/styles.css" rel="stylesheet">
+    <link href="/essentialstyles.css" rel="stylesheet">
     <style>
-body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: #f5f5f5;
-    box-sizing: border-box;
-}
-
-#container, #swiped-right-section {
-    position: relative;
-    width: 90%; 
-    height: 93%; 
-    max-width: 400px; 
-    max-height: 600px; 
-    box-sizing: border-box;
-}
-
-#swiped-right-section {
-    overflow: scroll;
-}
-
-.card {
-    width: calc(100% - 40px); /* take full width of the container minus margins */
-    height: calc(100% - 40px); /* take full height of the container minus margins */
-}
-
-/* Style adjustments for larger screens */
-@media screen and (min-width: 2000px) {
-    #container, #swiped-right-section {
-        width: 50%; 
-        height: 70%; 
-    }
-}
-
-.card {
-    display: block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    margin: 20px;
-    padding: 20px;
-    transition: transform 0.3s;
-    cursor: grab;
-    position: absolute;
-    overflow: hidden; /* test feature */
-}
-
-
-.card img {
-    max-width: 80%;
-    margin-bottom: 15px;
-}
-
-.card h2 {
-    margin-bottom: 15px;
-    font-family: 'colfax-medium';
-    font-size: 25px;
-    color: #333;
-    text-align: left;
-}
-
-.card h3 {
-    margin-top: 5px;
-    margin-bottom: 15px;
-    font-family: 'colfax-medium';
-    font-size: 20px;
-    color: #333;
-    text-align: left;
-}
-
-.card p {
-    font-family: 'colfax-light';
-    font-size: 16px;
-    color: #666;
-    text-align: left;
-}
-
-.card a {
-    text-decoration: underline;
-}
-
-
-.card:active {
-    cursor: grabbing;
-}
-
-/* .card.out {
-    transform: translateX(-2000px);
-    transition: transform 1s;
-} */
-
-.card.out {
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-
-
-.card:first-of-type {
-    display: block;
-}
-
-#navbar {
-    position: relative;
-    bottom: 0;  
-    width: 90%;
-    max-width: 400px; 
-    height: 50px; /* adjust as needed */
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav-icon {
-    width: 30px; /* adjust as needed */
-    height: 30px; /* adjust as needed */
-}
-
-/* #swiped-right-section {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    padding: 20px;
-    box-sizing: border-box;
-} */
-
-#swiped-right-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-#swiped-right-list li {
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-#swiped-right-list li:hover {
-    cursor: pointer;
-}
-
-
-/* Reset max-width and max-height for mobile devices */
-@media screen and (max-width: 600px) {
-    
-    body {
-        /* align-items: flex-start; Aligns items to the top on mobile */
-        height: 100vh;
-    }
-
-    
-
-    #container, #swiped-right-section {
-        max-width: 100%;
-        min-height: 70%; 
-        /* top: 2.5em; */
-    }
-
-    #navbar {
-        max-width: 100%;
-    }
-
-    .card {
-        height: 100%;
-        width: calc(100% - 30px);
-    }
-
-    .card h2 {
-    font-size: 28px;
-}
-
-.card h3 {
-    font-size: 22px;
-}
-
-.card p {
-    font-size: 18px;
-}
-}
-
-
-.liked {
-    display: block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
-}
-
+        
     </style>
   </head>
 
 <body>
+
     <div id="container">
 <!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
-        <div class="card" data-link="https://link2.com" style="display: none;">
+        <div class="card" style="display: none;">
             <h2>More coming soon!</h2>
             <img src="" alt="image2" />
             <p></p>
@@ -333,6 +132,12 @@ body {
             <h2>"You're a try-hard"</h2>
             <p>You get put down for caring.</p>
         </div>
+        <div class="card" data-link="https://blog.benguzovsky.com/college" style="display: none;">
+            <h2>COLLEGE APPLICATION STRESS</h2>
+            <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+            <p>Click for some resources on how to navigate college applications! <br> Unless you're a freshman. What are you doing still reading, freshman.</p>
+        </div>
               <div class="card" data-link="/doorstops/othercareers.html" style="display: none;">
             <h2>HS feels like a dead end</h2>
             <p>It’s McDonalds or fame</p>
@@ -349,10 +154,25 @@ body {
             <h2>Social divides</h2>
             <p>rich/poor, black/white</p>
         </div>
+        <div class="card" data-link="https://www.teenagegriefsucks.com/" style="display: none;">
+            <h2>Living with losing a friend or loved one</h2>
+            <img src="/assets/images/teengrief.png" alt="image1" />
+            <br>
+            <p></p>
+            <p>Swipe right to go to a website with stories from other teenagers who lost a loved one.</p>
+        </div>
         <div class="card" data-link="/doorstops/listen.html" style="display: none;">
             <h2>Emotional Availability is Sexy</h2>
             <!--<img src="/assets/images/moon.png" alt="image2" />-->
             <p>Ever been injured where you can kind of play but it hurts more every game? You know you should stop but the season seems so close.<br>That’s hard. <strong>School can feel the same way</strong>: you’re stuck on an assignment or you have no idea what’s going on in class, but stick it out, head down, and make it to the end of the semester.<br>But school’s different. If you <strong>ask for help</strong>, you don’t get taken out of the game, <strong>you get back in</strong>. You get better. Your teacher respects you more.<br>Everyone's struggled like this. Wanna hear professional athletes say it?</p>
+        </div>
+        <div class="card" data-link="/doorstops/getout.html" style="display: none;">
+            <h2>Feel stuck in class?</h2>
+            <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <br>
+            <p>We don't care if you're afraid to take a break or you've just taken <strong>WAY too many of them</strong>. <br>
+            We can help you get consistent free time during class WHILE boosting the vibes with you and your teacher.</p>
+            <h3>Become a lavatory mogul. Leverage the emotional stapler. Make the call.</h3>
         </div>
         <div class="card" data-link="/doorstops/poop.html" style="display: none;">
             <h2>No urinal dividers?</h2>
@@ -367,7 +187,7 @@ body {
             <br>
             <p>How to respond and change the culture.</p>
         </div>
-        <div class="card" data-link="/doorstops/food.html" style="display: none;">
+        <div class="card" style="display: none;">
             <h2>Show me more about making class less boring</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
@@ -379,7 +199,7 @@ body {
             <p>How to respond and change the culture.</p>
         </div>
         
-        <div class="card" id="more culture" data-link="/doorstops/food.html" style="display: none;">
+        <div class="card" id="more culture" style="display: none;">
             <h2>Show me more about changing school culture</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
             <br>
@@ -402,7 +222,7 @@ body {
             <p>That’s a problem. Seek help.<br><strong>How can we change GPA culture?</strong> Everyone is trying to get into college.<br><br>Organize a <strong>schoolwide participation point boycott</strong>. Nobody speaks in class until participation grading is equitable.<br><br>Build <a href="/trust.html">trust</a> then launch the <a href="/doorstops/points.html">boycott.</a>
                 </p>
         </div>
-        <div class="card" data-link="/doorstops/extension.html#i-just-want-to-email">
+        <div class="card" data-link="/doorstops/extension.html#i-just-want-to-email" contents="extension">
             <h2>Essay due in two days? Haven’t started?</h2>
             <img src="/assets/images/extension-half.gif" alt="image1" />
             <p>We can help—not, like, in a plagiarism way.<br>You can and should ask for an extension.<br>
@@ -419,22 +239,102 @@ body {
             <img src="/assets/images/moon.png" alt="image1" />
             <p>Swipe left (not interested) and right (yes PLEASE) until you find the perfect strategy/cash grant/vibe check for being happier in school.<br>
         </div>
+        
     </div>
     <div id="swiped-right-section" style="display: none;">
         <ul id="swiped-right-list"></ul>
     </div>
     <div id="left-section" style="display: none;">
-        <p>Nothing here yet! </p>
+        <br><br>
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search Doorstops..." autocomplete="off">
+            <div id="results-container"></div>         
+        </div>
+        <div id="content-placeholder"></div>
+
+        <br><br>
     </div>
+
     <div id="navbar">
-        <button id="nav1"><img class="nav-icon" src="/assets/svg/umbrella.svg" alt="Icon 1" /></button>
-        <button id="nav2"><img class="nav-icon" src="/assets/svg/school.svg" alt="Icon 2" /></button>
-        <button id="nav3"><img class="nav-icon" src="/assets/svg/star.svg" alt="Icon 3" /></button>
+        <button id="nav1"><img class="nav-icon" id="img1" src="/assets/svg/Book_check.svg" alt="Icon 1" /></button>
+        <button id="nav2"><img class="nav-icon" id="img2" src="/assets/svg/Lamp_fill.svg" alt="Icon 2" /></button>
+        <button id="nav3"><img class="nav-icon" id="img3" src="/assets/svg/Favorite.svg" alt="Icon 3" /></button>
     </div>
-    
+    <script>
+
+        </script>
+    <script>
+let searchInput = document.getElementById('search-input');
+let resultsContainer = document.getElementById('results-container');
+
+searchInput.addEventListener('keyup', function(e) {
+    let searchQuery = e.target.value;
+
+    // Fetch matching pages
+    if (searchQuery) {fetch('pages.json')
+        .then(response => response.json())
+        .then(data => {
+            let matches = data.filter(page => {
+                // Check if any word in the search query is included in the h1 string
+                let h1Match = searchQuery.toLowerCase().split(" ").some(queryWord => 
+                page.h1.toLowerCase().includes(queryWord)
+            );
+
+            // Check if any word in the search query is included in any of the keywords
+            let keywordMatch = searchQuery.toLowerCase().split(" ").some(queryWord => 
+                page.keywords.some(keyword => 
+                    keyword.toLowerCase().includes(queryWord)
+                )
+            );
+
+            return h1Match || keywordMatch; // Return true if either match is found
+        });
+
+        displayResults(matches);
+        });
+    } else {
+        clearResults();
+    }
+});
+
+function clearResults() {
+    while (resultsContainer.firstChild) {
+        resultsContainer.firstChild.remove();
+    }
+}
+
+function displayResults(matches) {
+    // Clear any existing results
+    while (resultsContainer.firstChild) {
+        resultsContainer.firstChild.remove();
+    }
+
+    // Add new results
+    matches.forEach(match => {
+        let resultOption = document.createElement('div');
+        resultOption.textContent = match.h1;
+        resultOption.addEventListener('click', function() {
+            // This assumes that you have a URL available for each page on a
+            // `url` property. You may need to adjust this based on your
+            // actual data structure.
+            window.location.href = "/doorstops/" + match.name + ".html";
+        });
+        resultsContainer.appendChild(resultOption);
+    });
+}
+
+
+    </script>
+
     <script>
 // For each card
 let swipedRight = JSON.parse(localStorage.getItem('swipedRight')) || [];  // load swiped right cards from localStorage
+
+let deltaSwipe = 100;
+// shortens swipe distance for mobile users
+if (window.innerWidth < 1000) {
+    deltaSwipe = 70;
+}
 
 document.querySelectorAll('.card').forEach((card, index) => {
     let hammertime = new Hammer(card);
@@ -442,43 +342,104 @@ document.querySelectorAll('.card').forEach((card, index) => {
     let currentPos = 0;
     let rafId = null;
 
-    // Animate the card moving
+    // Animate the card moving - currently not being called
     function animate() {
-        let transform = `translateX(${currentPos}px)`;
-        card.style.transform = transform;
-        rafId = requestAnimationFrame(animate);
+        if(currentPos != 0) {
+            let transform = `translateX(${currentPos}px)`;
+            card.style.transform = transform;
+            rafId = requestAnimationFrame(animate);
+        }
     }
 
-    // Update position as you pan
+    // Update position as you pan and animate
     hammertime.on('pan', function(e) {
-        currentPos = initialPos + e.deltaX;
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) { // Only respond to mostly horizontal movements, fixes issues on mobile
+            currentPos = initialPos + e.deltaX;
+        let transform = `translateX(${currentPos}px)`;
+        card.style.transform = transform;
+        } else {
+        currentPos = 0;
+    }
+        
     });
 
     hammertime.on('panstart', function() {
         initialPos = currentPos;
         card.classList.remove('out');
-        if (!rafId) animate();
     });
 
     hammertime.on('panend', function(e) {
         initialPos = currentPos;
-        if (Math.abs(e.deltaX) > 100) { // Change this threshold as you like
+
+        if (Math.abs(e.deltaX) > deltaSwipe) { // Change this threshold as you like
             // If you swipe more than 100px to the right or left, take action
             card.classList.add('out');
             if (e.deltaX > 0) {
                 let cardLink = card.dataset.link;
+                let cardcss = card.dataset.css;
+                let cardid;
                 if (cardLink) {
+                    if (cardLink.includes("#")) {
+                        cardid = cardLink.split('#')[1];
+                    }
+                    if (cardLink.startsWith('https://')) {
+                        // Open external link in the same tab
+                        window.location.href = cardLink;
+                    } 
+                    else {
                     setTimeout(() => {
-                        window.open(cardLink, '_blank');
+                        fetch(cardLink)
+                    .then(response => response.text())
+                    .then(html => {
+                        console.log(html);
+                        // create a new DOMParser
+                        let parser = new DOMParser();
+                        // parse the text to a new document
+                        let doc = parser.parseFromString(html, 'text/html');
+                        // select the element with class 'yonk'
+                        let yonkElement = doc.querySelector(".yonk");
+
+                        let aboutElement = doc.querySelector(".about-content");
+                        let article = doc.querySelector("article");
+                        let body = doc.querySelector("body");
+
+                        if (yonkElement) {
+                            // put the content of 'yonk' element inside the placeholder
+                            loadStylesheet("/assets/css/style.css");
+                            document.querySelector("#content-placeholder").innerHTML = yonkElement.outerHTML;
+
+                            // Remove the first five <br> tags
+                            let brTags = document.querySelectorAll(".yonk > br");
+                            for (let i = 0; i < 5 && i < brTags.length; i++) {
+                                brTags[i].remove();
+                            }
+                            if (cardid) { // scroll to #ID
+                                window.location.hash = cardid;
+                            }
+                        } else if (article) {
+                            document.querySelector("#content-placeholder").innerHTML = article.outerHTML;
+                        } else if (aboutElement) {
+                            loadStylesheet("/assets/css/style.css");
+                            document.querySelector("#content-placeholder").innerHTML = aboutElement.outerHTML;
+                        } else {
+                            loadStylesheet("/doorstops/food.css");
+                            document.querySelector("#content-placeholder").innerHTML = body.outerHTML;
+                            loadScript("/assets/js/food.js");
+                        }
+                        showSection(3);
                     })
+                    .catch(err => console.log('Failed to load page: ', err));
+                                
+                    });
+                }
                     swipedRight.push({
                     title: card.querySelector('h2').textContent,
                     link: card.dataset.link
                     });
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
-
-                    // window.open(cardLink, '_blank');  window.location.href = cardLink;
+                    
                 }
+                
             }
             let nextCard = card.previousElementSibling;
             let followingCard = nextCard.previousElementSibling;
@@ -489,15 +450,38 @@ document.querySelectorAll('.card').forEach((card, index) => {
             card.style.opacity = '0';
             
             // After the transition ends, remove the card
-            setTimeout(() => card.remove(), 500);
+            setTimeout(() => card.remove(), 100);
         } else {
             // If you don't swipe enough, the card springs back to center
+            animate();
             currentPos = 0;
         }
         cancelAnimationFrame(rafId);
         rafId = null;
     });
 });
+
+function loadScript(src) {
+    let script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    document.head.appendChild(script);
+}
+
+function loadStylesheet(url) {
+    var link = document.createElement("link");
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = url;
+    document.getElementsByTagName("head")[0].appendChild(link);
+} 
+
+function removeStylesheet(href) {
+    let link = document.querySelector(`link[href='${href}']`);
+    if (link) {
+        link.parentNode.removeChild(link);
+    }
+}
 
 
 // Add event listeners to navbar icons
@@ -507,14 +491,19 @@ document.getElementById('nav3').addEventListener('click', function() { showSecti
 
 function showSection(n) {
     if (n === 2) {
+        removeStylesheet("/assets/css/style.css");
         document.querySelector('#container').style.display = 'block';
         document.querySelector('#swiped-right-section').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
-    } else if (n === 3) {
+        document.getElementById('img2').src = "/assets/svg/Lamp_fill.svg";
+        document.getElementById('img1').src = "/assets/svg/Book_check.svg";
+        document.getElementById('img3').src = "/assets/svg/Favorite.svg";
+    } else if (n === 1) {
         document.querySelector('#container').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
         let list = document.querySelector('#swiped-right-list');
         list.innerHTML = '';
+        let l = 0;
         swipedRight.forEach(card => {
             let listItem = document.createElement('li');
             let link = document.createElement('a');
@@ -525,18 +514,43 @@ function showSection(n) {
             listItem.className = 'liked'
             listItem.appendChild(link);
             list.appendChild(listItem);
+            // let dropdown = document.createElement('div');
+            // if (l === 0) {
+            //     fetch('pages.json')
+            //     .then(response => response.json())
+            //     .then(data => { data.filter(page => {
+            //             if (page.name === card.contents) {
+            //                 dropdown.textContent = page.html;
+            //             }
+            //         });
+            //     });
+            //     l++;
+            // }
+            // listItem.appendChild(dropdown);
         });
+        removeStylesheet("/assets/css/style.css");
         document.querySelector('#swiped-right-section').style.display = 'block';
-    } else if (n === 1) {
+        document.getElementById('img2').src = "/assets/svg/Lamp.svg";
+        document.getElementById('img1').src = "/assets/svg/Book_check_fill.svg";
+        document.getElementById('img3').src = "/assets/svg/Favorite.svg";
+    } else if (n === 3) {
+        document.querySelector('#left-section').classList.add("fade-in");
+        
         document.querySelector('#container').style.display = 'none';
         document.querySelector('#swiped-right-section').style.display = 'none';
         document.querySelector('#left-section').style.display = 'block';
-    }
+        setTimeout(() => {
+            document.querySelector('#left-section').classList.remove("fade-in");
+        }, 500);
+        document.getElementById('img2').src = "/assets/svg/Lamp.svg";
+        document.getElementById('img1').src = "/assets/svg/Book_check.svg";
+        document.getElementById('img3').src = "/assets/svg/Favorite_fill.svg";
+            }
     // Add cases for other sections as needed
 }
 
     </script>
-
+  <script src="/assets/js/script.js" defer></script>
 </body>
 
 </html>
