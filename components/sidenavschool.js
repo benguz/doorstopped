@@ -63,7 +63,7 @@ fetch('/components/players.json')
     currentPlayer = data.find(player => player.name === "/doorstops/school/index.html");
     } else {
     const currentPageShort = currentPage.replace(".html", "");
-    currentPlayer = data.find(player => player.name === currentPage | player.name === currentPageShort);
+    currentPlayer = data.find(player => player.name === currentPage || player.name === currentPageShort);
     }
 
     // Generate the HTML structure for the sidebar based on the currentPlayer
