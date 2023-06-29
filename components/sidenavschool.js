@@ -6,25 +6,25 @@ const toc = document.querySelector('#toc');
     {
       title: 'School 101',
       links: [
-        { href: '/doorstops/school/index.html', children: 'Intro: The System' },
-        { href: '/doorstops/school/money.html', children: 'Money' },
-        { href: '/doorstops/school/gridlock.html', children: 'Gridlock'},
-        { href: '/doorstops/school/audit.html', children: 'Your School' }, 
+        { href: '/school/index.html', children: 'Intro: The System' },
+        { href: '/school/money.html', children: 'Money' },
+        { href: '/school/gridlock.html', children: 'Gridlock'},
+        { href: '/school/audit.html', children: 'Your School' }, 
       ]
     },
     {
       title: 'The Change-Making Playbook',
       links: [
-        { href: '/doorstops/school/money.html', children: 'Controlling $100k' },
-        { href: '/doorstops/school/data.html', children: 'Leveraging Data' },
-        { href: '/doorstops/school/corp.html', children: 'Deciphering Corporate-Speak' },
-        { href: '/doorstops/school/selfie.html', children: 'Selfie Diplomacy' },
-        { href: '/doorstops/school/dress.html', children: 'Changing the Dress Code' },
-        { href: '/doorstops/school/takeover.html', children: 'State Takeover' },
-        { href: '/doorstops/school/waffle.html', children: 'Playing the Waffle Game' },
-        { href: '/doorstops/school/schedule.html', children: 'Schedule Change' },
-        { href: '/doorstops/school/comms.html', children: 'Forcing Communication' },
-        { href: '/doorstops/school/dayoff.html', children: 'Getting a day off' },
+        { href: '/school/money.html', children: 'Controlling $100k' },
+        { href: '/school/data.html', children: 'Leveraging Data' },
+        { href: '/school/corp.html', children: 'Deciphering Corporate-Speak' },
+        { href: '/school/selfie.html', children: 'Selfie Diplomacy' },
+        { href: '/school/dress.html', children: 'Changing the Dress Code' },
+        { href: '/school/takeover.html', children: 'State Takeover' },
+        { href: '/school/waffle.html', children: 'Playing the Waffle Game' },
+        { href: '/school/schedule.html', children: 'Schedule Change' },
+        { href: '/school/comms.html', children: 'Forcing Communication' },
+        { href: '/school/dayoff.html', children: 'Getting a day off' },
       ]
     },
   ];
@@ -59,8 +59,8 @@ fetch('/components/players.json')
 
     let currentPlayer;
 
-    if (currentPage === "/doorstops/school/") {
-    currentPlayer = data.find(player => player.name === "/doorstops/school/index.html");
+    if (currentPage === "/school/") {
+    currentPlayer = data.find(player => player.name === "/school/index.html");
     } else {
     const currentPageShort = currentPage.replace(".html", "");
     currentPlayer = data.find(player => player.name === currentPage || player.name === currentPageShort);
@@ -90,12 +90,12 @@ function generateSidebarHtml(currentPlayer) {
     
         // Create the key tab
         let randomKey = keys[Math.floor(Math.random() * keys.length)];
-        const keyTab = createTab(currentPlayer.key, `/doorstops/school/${currentPlayer.key}.html`, '#97E5D7', currentPlayer.key, randomKey);
+        const keyTab = createTab(currentPlayer.key, `/school/${currentPlayer.key}.html`, '#97E5D7', currentPlayer.key, randomKey);
         sidebarHtml += keyTab;
     
         // Create the foe tabs
         currentPlayer.foe.forEach(foe => {
-          const foeLink = `/doorstops/school/${foe}.html`;
+          const foeLink = `/school/${foe}.html`;
           let randomFoe = foes[Math.floor(Math.random() * foes.length)];
           const foeTab = createTab(foe, foeLink, '#FEB7B3', foe, randomFoe);
           sidebarHtml += foeTab;
@@ -112,7 +112,7 @@ function generateSidebarHtml(currentPlayer) {
             } else {
               allyName = ally;
             }
-          const allyLink = `/doorstops/school/${allyName}.html`;
+          const allyLink = `/school/${allyName}.html`;
           let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
 

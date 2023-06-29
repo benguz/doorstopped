@@ -13,7 +13,7 @@ body {
   /* overflow-y: hidden; */
 }
 
-#container, #swiped-right-section, #left-section {
+#container, #swiped-right-section, #left-section, #bingo-section, #account-section {
   position: relative;
   width: 90%; 
   height: 93%;
@@ -29,11 +29,19 @@ body {
   overflow: scroll;
 }
 
-#left-section {
+#left-section, #bingo-section, #account-section {
   font-family: 'colfax-medium';
   font-size: 16px;
   overflow: scroll;
   max-width: 55%;
+}
+
+#bingo-section, #account-section {
+  max-width: 100%;
+}
+
+#bingo-section {
+  font-size: 14px;
 }
 
 #content-placeholder {
@@ -162,7 +170,7 @@ body {
 
 /* Style adjustments for larger screens */
 @media screen and (min-width: 2000px) {
-  #container, #swiped-right-section, #left-section {
+  #container, #swiped-right-section, #left-section, #bingo-section, #account-section {
       width: 50%; 
       height: 70%;
   }
@@ -477,7 +485,7 @@ select {
       width: 100%;
   }
 
-  #container, #swiped-right-section, #left-section {
+  #container, #swiped-right-section, #left-section, #bingo-section, #account-section {
       
       max-width: 100%;
       min-height: 80%;
@@ -538,4 +546,135 @@ select {
 
 .tenor-gif-embed {
   pointer-events: none;
+}
+
+
+/* BINGO
+*/
+
+.bingo {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 40px 0;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+}
+    
+h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #666;
+  margin: 10px 0 30px;
+}
+
+.bingo-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bingo-item {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  perspective: 1000px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.bingo-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  transition: transform 0.6s;
+}
+
+.back {
+  transform: rotateX(180deg);
+  background-color: #209CEE;
+  color: #fff;
+}
+
+.front {
+  cursor: pointer;
+}
+
+.bingo-item:hover {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.bingo-item:hover .front {
+  transform: rotateX(180deg);
+}
+
+.bingo-item:hover .back {
+  transform: rotateX(0);
+}
+
+@media (max-width: 767px) {
+  .bingo-board {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .back {
+      font-size: 0.8rem;
+  }
+
+  .front {
+      font-size: 1.1rem; /* added */
+      /* display: none; */
+  }
+
+  .back {
+      transform: rotateX(0);
+  }
+
+  .bingo-face {
+      backface-visibility: hidden;
+  }
+}
+
+@media (hover: none) {
+  /* .front {
+      display: none;
+  } */
+
+  /* .back {
+      transform: rotateX(0)
+      display: none; 
+  }*/
+
+  .front {
+      transform: rotateX(0);
+  }
+
+  .back {
+      transform: rotateX(180deg);
+  }
 }
