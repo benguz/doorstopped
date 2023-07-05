@@ -33,8 +33,11 @@
     <link href="css/styles.css" rel="stylesheet">
     <link href="/essentialstyles.css" rel="stylesheet">
 
-    <!-- Plausible Analytics -->
-    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+    <!-- Plausible Analytics 
+    <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+    -->
+    <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   </head>
 
 <body>
@@ -338,13 +341,13 @@
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> 
             <br>
         </div> -->
-        <div class="card" data-link="/doorstops/feedback.html" style="display: none;">
+        <div class="card" data-link="/doorstops/feedback.html" style="display: none;" data-category="STR">
             <h2>Boring classes?</h2>
             <div class="tenor-gif-embed" data-postid="17224602" data-share-method="host" data-aspect-ratio="1.22605" data-width="100%"></div>
             <br>
             <p>Give your teacher anonymous, constructive feedback that will make class better.</p>
         </div>
-        <div class="card" data-link="/programs/eat.html" style="display: none;">
+        <div class="card" data-link="/programs/eat.html" style="display: none;" data-category="wellbeing">
             <h2>Lunch awful?</h2>
             <div class="tenor-gif-embed" data-postid="4503221" data-share-method="host" data-aspect-ratio="1.33588" data-width="100%"></div>             <br>
             <p>Pull out your mini waffle maker, or we'll buy one for you. Work your way up to your own food truck.</p> <h3>Become a school lunch entrepreneur.</h3></p>
@@ -358,12 +361,12 @@
             <h2>If people <span class="loud">arm wrestle</span> for participation points:</h2>
             <div style="display: flex; justify-content: center;">
             <div class="tenor-gif-embed" data-postid="14999627" data-share-method="host" data-aspect-ratio="1.37339" data-width="85%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        </div><br>
-            <h3>End the GPA obsession with a schoolwide participation point boycott.</h3> <p>Nobody speaks in class until participation grading is equitable.
-                </p>
-            </div> 
-        <!-- Something broken here. -->
-        <div class="card" data-link="/doorstops/extension.html#i-just-want-to-email" contents="extension">
+            </div>
+            <br>
+            <h3>End the GPA obsession with a schoolwide participation point boycott.</h3>
+            <p>Nobody speaks in class until participation grading is equitable.</p>
+        </div> 
+        <div class="card" data-link="/doorstops/extension.html#i-just-want-to-email" category="SEL-skills">
             <h2>Essay due in two days? Haven’t started?</h2>
             <img src="/assets/images/extension-half.gif" alt="image1" />
             <p>We can help—not, like, in a plagiarism way.<br>You can and should ask for an extension.<br>
@@ -520,7 +523,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
             card.classList.add('out');
             if (e.deltaX > 0) {
                 let cardLink = card.dataset.link;
-                // let cardCategory = card.dataset.category;
+                let cardCategory = card.dataset.category;
                 let cardid;
                 if (cardLink) {
                     if (cardLink.includes("#")) {
@@ -584,20 +587,9 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     link: card.dataset.link
                     });
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
-                    // fetch("/.netlify/functions/logToSheet", {
-                    //     method: "POST",
-                    //     headers: {
-                    //         'Content-Type': 'application/json'
-                    //     },
-                    //     body: JSON.stringify({
-                    //         category: cardCategory
-                    //     })
-                    // })
-                    // .then(response => response.json())
-                    // .then(data => console.log(data))
-                    // .catch((error) => {
-                    // console.error('Error:', error);
-                    // });
+                    
+                    // Analytics test
+                    plausible(cardCategory);
                 }
                 
             }
