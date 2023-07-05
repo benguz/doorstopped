@@ -11,3 +11,5 @@ dist/
 # next-sitemap
 sitemap*.xml
 robots.txt
+# Local Netlify folder
+.netlify

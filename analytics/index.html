@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Doorstopped - Doorstop Education</title>
+  <meta name="title" content="Doorstop Education">
+  <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+      -->
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #F0DDF0;
+        font-family: Poppins;
+    }
+
+    .box, .new-elements .square, .new-elements .rectangle {
+            border-radius: 10px;
+            background: #FFF;
+            box-shadow: 2px 5px 5px 1px rgba(0, 0, 0, 0.25);
+            padding: 20px;
+            margin: 20px;
+            text-align: left;
+        }
+
+    .box {  
+        max-width: 90%;
+        width: 800px;
+        position: relative;
+    }
+
+    .button {
+            border-radius: 10px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            padding: 10px 20px;
+            background: #ccc;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+        }
+
+        .new-elements {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 90%;
+            width: 100%;
+            flex-basis: auto;
+        }
+
+        .new-elements .square {
+            width: calc((100% / 3) - 40px);
+            min-width: 150px;
+            height: 200px;
+        }
+
+        .new-elements .rectangle {
+            width: calc(100% - 40px);
+            min-height: 200px;
+        }
+
+        .fade-in {
+        animation: fadeIn .1s ease-in forwards;
+        }
+
+        .fade-out {
+        animation: fadeOut .1s ease-out forwards;
+        }
+
+
+        .wrapper {
+        display: flex;
+        }
+
+        nav {
+        width: 16.67%; /* 1/6th of the width */
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        }
+
+        .main {
+        flex-grow: 1;
+        background: #E6EDFD;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-around;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            flex-basis: auto;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+    @media (max-width: 720px) {
+        .box {
+            max-width: 85%;
+            margin: auto;
+        }
+        .new-elements {
+            flex-direction: column;
+        }
+        .row {
+            flex-direction: column;
+        }
+        .square {
+            width: 90%;
+        }
+    }
+
+    
+</style>
+<script>
+    $(document).ready(function(){
+        $(".button").click(function(){
+            // $(".box").fadeOut();
+            $(".box").css("display", "none");
+            
+            $("body").css("background", "#E6EDFD");
+            document.querySelector('#second').classList.add("fade-in");
+            document.querySelector('#second').style.display = "flex";
+            setTimeout(() => {
+                document.querySelector('#second').classList.remove("fade-in");
+            }, 1000);
+        });
+    });
+</script>
+</head>
+<body>
+    <header class="header" data-header>
+        <div class="container">
+    
+          <a href="/index.html" class="logo">
+            <img src="./assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+          </a>
+    
+          <nav class="navbar" data-navbar>
+    
+            <div class="wrapper">
+              <a href="/index.html" class="logo">
+                <img src="./assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
+              </a>
+    
+              <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+    
+            <ul class="navbar-list">
+    
+              <li class="navbar-item">
+                <a href="/analytics/index" class="navbar-link" style="color: black" data-nav-link>Main Metrics</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="/analytics/sentiment" class="navbar-link"  style="color: black" data-nav-link>Student Sentiment</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="/analytics/design" class="navbar-link" style="color: black" data-nav-link>Design Doorstops</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#download" class="navbar-link" style="color: black" data-nav-link>Download Report</a>
+              </li>
+    
+            </ul>
+    
+          </nav>
+    
+          <div class="header-actions">
+    
+            <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
+              <span class="span">Contact Support</span>
+    
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+    
+            <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+              <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+    
+          </div>
+    
+          <div class="overlay" data-nav-toggler data-overlay></div>
+    
+        </div>
+      </header>
+      <!-- <main>
+
+      </main> -->
+<div class="box">
+    <h1>How are students interacting with doorstops?</h1>
+    <p>This is some sample text. Feel free to replace it with your own content.</p>
+    <img src="https://via.placeholder.com/150" alt="Sample image">
+    <button class="button">Click Me</button>
+
+</div>
+<div class="wrapper" style="display: none;"></div>
+
+<div class="new-elements" id="second" style="display: none;">
+    <div class="row">
+        <div class="square">Square 1</div>
+        <div class="square">Square 2</div>
+        <div class="square">Square 3</div>
+    </div>
+    <div class="rectangle">Rectangle</div>
+</div>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/assets/js/script.js" defer></script>
+
+
+<!-- 
+- ionicon link
+-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
