@@ -589,6 +589,8 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
                     
                     // Analytics test
+                    console.log("card.dataset.category: " + card.dataset.category);
+                    console.log("cardCategory: " + cardCategory)
                     plausible(cardCategory);
                 }
                 
