@@ -33,6 +33,8 @@
     <link href="css/styles.css" rel="stylesheet">
     <link href="/essentialstyles.css" rel="stylesheet">
 
+    <!-- Plausible Analytics -->
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
   </head>
 
 <body>
@@ -347,12 +349,12 @@
             <div class="tenor-gif-embed" data-postid="4503221" data-share-method="host" data-aspect-ratio="1.33588" data-width="100%"></div>             <br>
             <p>Pull out your mini waffle maker, or we'll buy one for you. Work your way up to your own food truck.</p> <h3>Become a school lunch entrepreneur.</h3></p>
         </div>
-        <div class="card" data-link="/time.html" style="display: none;" category="culture">
+        <div class="card" data-link="/time.html" style="display: none;" data-category="culture">
             <h2>Is class a waste of time? Prove it and change it.</h2>
             <div class="tenor-gif-embed" data-postid="25756884" data-share-method="host" data-aspect-ratio="1.45455" data-width="100%"></div>             <br>
             <p>All it takes is pulling out your phone timer, tracking how much class time is productive, and leveraging our nationwide dataset to prove there's room for growth.</p>
         </div>
-        <div class="card" data-link="/doorstops/points.html" category="culture">
+        <div class="card" data-link="/doorstops/points.html" data-category="culture">
             <h2>If people <span class="loud">arm wrestle</span> for participation points:</h2>
             <div style="display: flex; justify-content: center;">
             <div class="tenor-gif-embed" data-postid="14999627" data-share-method="host" data-aspect-ratio="1.37339" data-width="85%"></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
@@ -518,7 +520,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
             card.classList.add('out');
             if (e.deltaX > 0) {
                 let cardLink = card.dataset.link;
-                let cardcss = card.dataset.css;
+                // let cardCategory = card.dataset.category;
                 let cardid;
                 if (cardLink) {
                     if (cardLink.includes("#")) {
@@ -582,7 +584,20 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     link: card.dataset.link
                     });
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
-                    
+                    // fetch("/.netlify/functions/logToSheet", {
+                    //     method: "POST",
+                    //     headers: {
+                    //         'Content-Type': 'application/json'
+                    //     },
+                    //     body: JSON.stringify({
+                    //         category: cardCategory
+                    //     })
+                    // })
+                    // .then(response => response.json())
+                    // .then(data => console.log(data))
+                    // .catch((error) => {
+                    // console.error('Error:', error);
+                    // });
                 }
                 
             }
