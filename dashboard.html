@@ -36,7 +36,7 @@
     <!-- Plausible Analytics 
     <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.tagged-events.js"></script>
     -->
-    <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   </head>
 
@@ -366,7 +366,7 @@
             <h3>End the GPA obsession with a schoolwide participation point boycott.</h3>
             <p>Nobody speaks in class until participation grading is equitable.</p>
         </div> 
-        <div class="card" data-link="/doorstops/extension.html#i-just-want-to-email" category="SEL-skills">
+        <div class="card" data-link="/doorstops/extension.html#i-just-want-to-email" data-category="SEL-skills">
             <h2>Essay due in two days? Haven’t started?</h2>
             <img src="/assets/images/extension-half.gif" alt="image1" />
             <p>We can help—not, like, in a plagiarism way.<br>You can and should ask for an extension.<br>
@@ -590,7 +590,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     
                     // Analytics test
                     console.log("card.dataset.category: " + card.dataset.category);
-                    console.log("cardCategory: " + cardCategory)
+                    console.log("cardCategory: " + cardCategory);
                     plausible(cardCategory);
                 }
                 
