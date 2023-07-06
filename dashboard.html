@@ -605,9 +605,14 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     // console.log("cardCategory: " + cardCategory);
                     plausible(cardCategory);
                 }
+                else if (card.dataset.category === "50-swipes-survey-yes") {
+                    plausible("50-swipes-survey-yes");
+                    console.log("yes! ", cardCategory);
+                }
                 
             } else if (card.dataset.category === "50-swipes-survey-yes") {
                 plausible("50-swipes-survey-no");
+                console.log("no!");
             }
             let nextCard = card.previousElementSibling;
             let followingCard = nextCard.previousElementSibling;

@@ -90,14 +90,18 @@ const toggleNavbar = function () {
   overlay.classList.toggle("active");
 }
 
-addEventOnElem(navTogglers, "click", toggleNavbar);
+if (navTogglers.length !== 0) {
+  addEventOnElem(navTogglers, "click", toggleNavbar);
+}
 
 const closeNavbar = function () {
   navbar.classList.remove("active");
   overlay.classList.remove("active");
 }
 
-addEventOnElem(navLinks, "click", closeNavbar);
+if (navLinks.length !== 0) {
+  addEventOnElem(navLinks, "click", closeNavbar);
+}
 
 
 
@@ -117,6 +121,7 @@ const activeElem = function () {
     backTopBtn.classList.remove("active");
   }
 }
-
-addEventOnElem(window, "scroll", activeElem);
+if ((header) && (backTopBtn)) {
+  addEventOnElem(window, "scroll", activeElem);
+}
 
