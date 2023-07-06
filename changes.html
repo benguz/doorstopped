@@ -361,7 +361,17 @@ h2 {
     </script>
     <script src="/components/sidenavhidden.js">
     </script>
-
+<script>
+  fetch('/.netlify/functions/dashboard')
+  .then(response => response.json())
+  .then(data => {
+    // 'data' is the response from your function
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+</script>
 
 
 <!-- 
@@ -377,29 +387,6 @@ h2 {
   -->
   <script src="/assets/js/script.js" defer></script>
 
-  <!--
-    copy text
-    
-  -->
-<script>
-function copyText() {
-  const textToCopy = document.querySelector('.copy-paste-element p').textContent;
-  const textArea = document.createElement('textarea');
-  textArea.value = textToCopy;
-  document.body.appendChild(textArea);
-  textArea.select();
-  document.execCommand('copy');
-  document.body.removeChild(textArea);
-
-  const svg2 = document.querySelector('.svg2');
-  svg2.classList.toggle('hidden');
-  setTimeout(() => {
-    svg2.classList.toggle('hidden');
-  }, 150);
-}
-
-
-</script>
 
   <!-- 
     - ionicon link
