@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Doorstopped - Doorstop Education</title>
+  <meta name="title" content="Doorstop Education">
+  <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+  <style>
+      @media screen and (max-width: 1023px){
+.framebox {
+height: 34000em;
+}
+.sidenavtotal {
+display:none;
+padding: 0em;
+}
+#sidenav{
+display:none;
+
+}
+#toc {
+  display:none;
+}
+.desktop {
+  display: none;
+}
+}
+.yonk {
+  width: 97%;
+  margin-left: 1.5%;
+}
+@media (min-width: 1024px) {
+/* main {
+  display:flex; 
+  justify-content:center;
+} 
+.yonk {
+            width: 55%;  
+            margin-left: 22.5%; 
+            padding: 0 10px;
+            box-sizing: border-box;
+        }*/
+
+.yonk {
+  flex: 3;
+}
+.sidenavtotal {
+  flex: 1;
+}
+
+.framebox {
+  height: 15500em;
+}
+}
+
+.copy-paste-element {
+  position: relative;
+  background-color: #f6f9fc;
+  border-radius: 3px;
+  border: 1px solid #dce6e9;
+  padding: 15px;
+  margin-bottom: 1rem;
+}
+
+.copy-paste-element p {
+  margin: 0;
+  /* margin-bottom: 0.5em; */
+  line-height: 1.5;
+}
+
+.copy-icon {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-icon:focus {
+  outline: none;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.svg2 path {
+  stroke-dasharray: 477;
+  stroke-dashoffset: 477;
+  animation: draw 150ms ease-out forwards;
+}
+
+/* flexbox shit  
+.sidenavtotal {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+article {
+  flex: 3;
+}
+
+.toc {
+  flex: 1;
+  /*max-width:60%;
+  /*word-wrap: break-word;
+  /* Add your toc styles here
+}
+*/
+
+.yonk p {
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+  font-size: 14pt;
+}
+
+.yonk p, h1, h2, h3, li {
+  color: black;
+}
+
+.yonk a {
+  text-decoration: underline;
+  display: inline;
+}
+h1 {
+  font-size: 25pt;
+  text-decoration: none;
+}
+h2 {
+  margin-top: 1em;
+  font-size: 20pt;
+}
+
+.badonk {
+  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+  padding-left: 30px;
+  font-size: 14pt;
+
+}
+.honk {
+  list-style-type: disc !important; 
+}
+
+.yonk {
+    max-width: 55%;
+}
+
+strong {
+    font-size: 20pt;
+}
+
+@media screen and (max-width: 720px) {
+    .yonk {
+        max-width: 99%;
+    }
+}
+</style>
+
+
+  </style>
+
+  </head>
+
+<body id="top">
+
+  <header class="header" data-header>
+    <div class="container" min-width="620em">
+
+      <a href="/index.html" class="logo">
+        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="/index.html" class="logo">
+            <img src="/assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="/mission.html" class="navbar-link" data-nav-link>Mission</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/doorstops/index.html" class="navbar-link" data-nav-link>Doorstops</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/programs/index.html" class="navbar-link" data-nav-link>Programs</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/research/index.html" class="navbar-link" data-nav-link>Research</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
+          <span class="span">Try us out</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  
+  </header>
+
+      
+    <main>
+      <div style="display: flex; flex-direction: row;">
+      <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
+      
+          <br class="desktop"><br class="desktop">
+          <br class="desktop"><br class="desktop">
+          <br class="desktop">
+      <div id="sidenav"></div>
+      </div> 
+        <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center;">
+          <br class="desktop"><br class="desktop">
+          <br><br>
+          <br><br>
+<h1>What to do if you&rsquo;re in trouble</h1>
+<div style="width:75%;height:0.68em;background-color:hsl(170, 75%, 41%); padding-bottom:0.22em"></div>
+
+<div style="display: flex; justify-content: center; flex-direction: column; margin-top: 10px; margin-bottom: 10px;">
+    <img src="/assets/images/superintrouble.jpg">
+    <p style="color: grey; text-align: center;">If you think the punishment is even A LITTLE unfair, you have a (nonviolent) way to fight back.</p>
+</div>
+<p>So, imagine you&apos;re in school and your teacher punishes you every time you do something they don&apos;t like. It&apos;s like they don&apos;t even see you&apos;re trying to stand up for yourself because something isn&apos;t fair. This kind of punishment doesn&apos;t consider your feelings or why you acted out&mdash;and it IGNORES that you want to do better, that you&rsquo;re a good person, and that you have value. Plus, it grows the gap between the AP or &ldquo;gifted&rdquo; kids, who have it easier, and you getting pushed back.</p>
+<p></p>
+<p>Think about a doctor who only treats a stomach ache and ignores why you&apos;re sick in the first place (maybe you&rsquo;re lactose intolerant).&nbsp;</p>
+<p></p>
+<p>This is what we call the&nbsp;medical model. Some people use this model to treat low income folks. They don&apos;t try to fix the unfair system; instead, they keep doing things that make life even harder.</p>
+<p></p>
+<p>Play some defense. If you get in trouble, here&rsquo;s what you can say to minimize or remove the punishment:</p>
+<p></p>
+<strong id="mainscript">The Main Script</strong>
+<div class="copy-paste-element">
+    <div>
+      <p>Treating me like I mindlessly did a bad thing makes me feel less than. It&rsquo;s inhumane: you wouldn&rsquo;t treat me like that if you saw me as &ldquo;a child with problems,&rdquo; but you see me as a &ldquo;problem child.&rdquo; That bias takes away my agency, and a little piece of my humanity.</p>
+    </div>
+    <button class="copy-icon" onclick="copyText(event)">
+      <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+        <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+      </svg>
+    </button>
+  </div>
+<p></p>
+<div class="copy-paste-element">
+    <div>
+        <p>By addressing my outburst and not its root cause, you&rsquo;re&nbsp;perpetuating&nbsp;the social problems that led me to lash out in the first place. I take responsibility for my actions, but look at the data:&nbsp;</p>    </div>
+    <button class="copy-icon" onclick="copyText(event)">
+      <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+        <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+      </svg>
+    </button>
+  </div>
+<p></p>
+<p>Find the right section for you to get EVIDENCE that the punishment will do MORE harm than good.</p>
+<strong>For ADHD/anyone with an IEP:</strong>
+<div class="copy-paste-element">
+    <div>
+        <p>Students with IEPs are more likely to get suspended because their medically diagnosed behavior is often seen as requiring suspensions. Given that I have a learning disability, you should work with me, not kick me out of school and make me feel like I&rsquo;m a second class citizen.&rdquo;</p>
+        <button class="copy-icon" onclick="copyText(event)">
+      <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+        <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<p></p>
+<strong>If they don&rsquo;t respond or seem like they want to negotiate:</strong>
+<div class="copy-paste-element">
+    <div>
+        <p>I am ready to go to the district central office and make a Freedom of Information Act request for your suspension data, because I believe you suspend students with IEPs at a higher rate than other schools.&rdquo;</p>
+    </div>
+        <button class="copy-icon" onclick="copyText(event)">
+      <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+        <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+      </svg>
+    </button>
+  </div>
+<p></p>
+<p>You may also be experiencing off-the-book removal, a&nbsp;<a href="https://hechingerreport.org/when-your-disability-gets-you-sent-home-from-school/">toxic practice</a> where special education students are removed from school without the administration having to report they suspended anyone. If this happens to you, your best option is threatening to call a journalist, as this is an incredibly malicious practice your school should not get away with.</p>
+<p></p>
+<strong>For racial discrimination:</strong>
+<div class="copy-paste-element">
+    <div>
+        <p>From kindergarten, black kids are punished harsher than white kids for the same offenses. This racial disparity continues through high school: minority students are more likely to be disciplined for the same offenses and face larger punishments.&nbsp;
+            <br><br>
+Could you reconsider the length and severity of my punishment? I admit that I was in the wrong. Please admit that you see me as a &ldquo;problem child,&rdquo; not a &ldquo;child with problems.&rdquo; From there, we can start collaborating to change your perspective on me and make school safer for me and my peers, not kick me out.</p>
+        </p>
+    </div>
+        <button class="copy-icon" onclick="copyText(event)">
+      <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+        <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+      </svg>
+    </button>
+  </div>
+<p></p>
+<p></p>
+<p>Sources:&nbsp;</p>
+<ul class="badonk">
+    <li class="honk">
+        <p><a href="https://www.hepg.org/her-home/issues/harvard-educational-review-volume-90,-issue-4/herarticle/problem-children%e2%80%9d-and-children-with-problems%e2%80%9d">Harvard education review</a></p>
+    </li>
+    <li class="honk">
+        <p><a href="https://www.jstor.org/stable/23074048">https://www.jstor.org/stable/23074048</a>&nbsp;</p>
+    </li>
+    <li class="honk">
+        <p>Most importantly: &ldquo;The work of Skiba et al. (2011) is among the most convincing cited.5 The authors draw upon administrative data from 436 schools across the country in 2005-06, looking at differences in discipline for &ldquo;minor misbehavior.&rdquo; They find black and Hispanic students were more likely to be disciplined conditional on receiving a referral for &ldquo;minor misbehavior&rdquo; than were their white peers.&rdquo; - Brookings Institute</p>
+    </li>
+</ul>
+<p></p>
+<strong>For suspensions of minority students:&nbsp;</strong>
+<div class="copy-paste-element">
+    <div>
+        <p>Several studies document that black students are suspended for longer periods of time than white students, even when both are involved in the same fight and both had no prior disciplinary record. Please reconsider the length of my suspension. &rdquo;</p>
+    </div>
+        <button class="copy-icon" onclick="copyText(event)">
+      <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+        <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+      </svg>
+    </button>
+  </div>
+<p></p>
+<p>Source: Anderson, &ldquo;Do School Discipline Policies Treat Students Fairly? A Second Look at School Discipline Rate Disparities.&rdquo; &nbsp;<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.709.1155&rep=rep1&type=pdf">School Discipline</a></p>
+<p>See also:&nbsp;<a href="https://www.brookings.edu/articles/disproportionality-in-student-discipline-connecting-policy-to-research/">Brookings institute</a>&nbsp;</p>
+<p></p>
+<strong>For non-violent violations:</strong>
+<div class="copy-paste-element">
+    <div>
+        <p>There is a causal link between students who are suspended for minor offenses and their grades going down in the following years.&nbsp;In 2013, 43% of suspensions were for insubordination. I understand punishment, but please work with me to find another way to punish me that doesn&rsquo;t permanently leave me with anxiety and distrust for school.<br><br>Plus, according to education researchers published in the Harvard Education Review, &ldquo;under unjust conditions schools forfeit their ability to hold students accountable for role-dependent violations.&rdquo; By role-dependent, they mean any rule imposed by the school&mdash;so punish me if I physically hurt someone, but excessively punishing me for ____ is not legitimate.&nbsp;</p>
+    </div>
+        <button class="copy-icon" onclick="copyText(event)">
+      <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+        <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+      </svg>
+    </button>
+  </div>
+<p></p>
+<p></p>
+<strong>For insulting a teacher:</strong>
+<div class="copy-paste-element">
+    <div>
+        <p>School is a place where students and teachers have to show up like yesterday didn&rsquo;t happen. If either of us are offended, we just have to keep on covering material: there&rsquo;s no space for conversation or forgiveness. <br><br>
+I take responsibility for what I said, but excessive punishment only perpetuates the unequal social situations that hurt me and my teacher. I am willing to work around this, or if needed, to change my schedule, but <em>I will not be treated like a second class citizen without you at least acknowledging the contribution this school environment had to my outburst,</em> because placing all the blame on me with a punishment to match turns me into a second class citizen.
+        <br><br>Schools in [choose your state] have had completely unreasonable discipline policies as recently as:</p>    
+    </div>
+        <button class="copy-icon" onclick="copyText(event)">
+      <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+        <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+      </svg>
+    </button>
+  </div>
+
+<p></p>
+<p><em>New York</em>: 2012. Before 2012, students could be suspended for refusing to take off a hat or breaking dress code, and Kindergarteners could be suspended for more than 10 days.&nbsp;<a href="https://media4.manhattan-institute.org/sites/default/files/R-ME-0217v2.pdf">Manhattan Institute</a>&nbsp;</p>
+<p><em>Texas</em>: 2008. A 2002 study by Texas A&amp;M followed 7th graders for six years. 50% were suspended or expelled.&nbsp;<a href="https://www.vera.org/downloads/publications/zero-tolerance-in-schools-policy-brief.pdf">Zero Tolerance Policy Brief</a>&nbsp;</p>
+<p><em>Ohio</em>: 2014. An Ohio fifth grader was suspended from for three days because he pointed his finger &quot;in the shape of a gun&quot; and pulled an imaginary trigger while playing with his friends; the letter from the principal to the parents cited his finger as a &quot;level 2 lookalike firearm.&quot; Source: Bush, B. (2014). Boy points finger like gun, gets suspended. Columbus Dispatch, March 23, 2014.</p>
+<p>W/o specific example: Schools had zero-tolerance policies on dress code and non-violent offenses less than 10 years ago. Did our school? In 2013, 43% percent of expulsions and out-of-school suspensions a week more were for&nbsp;insubordination. Seriously? These types of suspensions are proven to contribute to the school-to-prison pipeline. Source: Robers et al., 2013, p. 167, Table 19.3.&nbsp;</p>
+<p></p>
+<strong>For violent violations:</strong>
+<p>In rural Montana, at a school we visited. A student said something really, really awful about the teacher's wife. To his face.</p>
+<p></p>
+<p>We like to pretend everything can be solved non-violently. But that's not always true. The teacher pinned the kid to the wall by the throat.</p>
+<p></p>
+<p>The kid went to the principal's office. He knew he fucked up. The teacher wasn't punished.</p>
+<p></p>
+<p>The system isn't always that reasonable. But sometimes you have to punch people. We don't have any profound advice for this.</p>
+<p></p>
+<p>The American Bar Association recommends that: Disciplinary guidelines must establish that a child should only be separated from school if lower levels of graduated interventions, including all in-school interventions have failed, the student is unresponsive to targeted interventions in consultation with appropriate personnel including a psychologist or a licensed counselor and it has been determined that failing to remove the student would pose a threat of safety to the student or to others.&nbsp;</p>
+<p><a href="https://www.americanbar.org/groups/diversity/racial_ethnic_justice/projects/school_to_prison/zero-tolerance-policies/">American Bar Association Recommendations</a>&nbsp;</p>
+<p></p>
+<p></p>
+<strong>Key takeaways:</strong>
+<ul class="badonk">
+    <li class="honk">
+        <p>SHOW SELF AWARENESS.&nbsp;Admit that what you did was wrong while making it clear there were also societal influences that you couldn&rsquo;t control.</p>
+    </li>
+    <li class="honk">
+        <p>OFFER A MIDDLE GROUND.&nbsp;Ask for the punishment to be reduced, don&rsquo;t just call it out.</p>
+    </li>
+    <li class="honk">
+        <p>USE DATA TO PROVE YOUR POINT.&nbsp;That way, you&rsquo;ll prove that you&rsquo;re not just some angry kid.&nbsp;</p>
+    </li>
+</ul>
+<p></p>
+<p>Further reading:</p>
+<ul class="badonk">
+    <li class="honk">
+        <p>Allen, 2016; Hess &amp; McAvoy, 2015; Zimmerman &amp; Robertson, 2017 (cited in Ohio State article)</p>
+    </li>
+    <li class="honk">
+        <p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0890856720322139">Discrimination research</a>: black students receive more suspensions than white peers, even when controlling for risk factors (like home environment and socioeconomic status?) &mdash; only explanation is discrimination.</p>
+    </li>
+    <li class="honk">
+        <p><a href="https://psycnet.apa.org/record/2019-25333-001">Further studies</a>&nbsp;</p>
+    </li>
+</ul>
+
+
+<ul class="badonk">
+<li class="honk">A few points can mean A LOT. Graduating on time, qualifying for your sports team, going into your final exam relaxed or STRESSED (I need a 206% to get a B).
+</li>
+</ul>
+
+
+
+<div class="copy-paste-element">
+  <div>
+    <p>Completing this assignment was a high priority, but I couldn't because [short reason, eg "a personal issue" is the minimum you need].”
+      </p>
+  </div>
+  <button class="copy-icon" onclick="copyText(event)">
+    <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+      <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+    </svg>
+  </button>
+</div>
+
+<br><br>
+
+</div>
+<div class="sidenavtotal" style="padding:3em;">
+      
+  <br class="desktop"><br class="desktop">
+  <br class="desktop"><br class="desktop">
+  <br class="desktop">
+<div id="toc"></div>
+</div>
+
+</div>
+    </main>
+
+
+<div id="footer-placeholder">
+
+</div>
+<script>
+    $(function(){
+      $("#footer-placeholder").load("/footer.html");
+    });
+    
+    </script>
+    <!--       -->
+
+    <script src="/components/sidenavcustom.js">
+    </script>
+
+
+
+
+<!-- 
+  - #BACK TO TOP
+-->
+
+<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+  <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+</a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/assets/js/script.js" defer></script>
+
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
