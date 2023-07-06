@@ -6,7 +6,6 @@ yarn.lock
 out/
 .vscode
 .env
-.vercel
 dist/
 # next-sitemap
 sitemap*.xml

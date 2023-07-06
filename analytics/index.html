@@ -246,9 +246,9 @@
 
 <div class="new-elements" id="second" style="display: none;">
     <div class="row">
-        <div class="square">Square 1</div>
-        <div class="square">Square 2</div>
-        <div class="square">Square 3</div>
+        <div id="survey" class="square">Square 1</div>
+        <div id="results" class="square">Square 2</div>
+        <div id="culture" class="square">Square 3</div>
     </div>
     <div class="rectangle">Rectangle</div>
 </div>
@@ -257,7 +257,37 @@
     - custom js link
   -->
   <script src="/assets/js/script.js" defer></script>
+  <script>
+    fetch('/.netlify/functions/dashboard')
+    .then(response => response.json())
+    .then(data => {
+      // 'data' is the response from your function
+      console.log(data);
+      let resultDiv = document.getElementById('results');
+      let surveyDiv = document.getElementById('survey');
+      let excludedNames = ["pageview", "50-swipes-survey-yes", "50-swipes-survey-no"];
+      let surveyNames = ["50-swipes-survey-yes", "50-swipes-survey-no"];
 
+      let filteredData = data.results.filter(item => !excludedNames.includes(item.name));
+      let surveyData = data.results.filter(item => excludedNames.includes(item.name));
+      console.log(surveyData);
+      surveyData.forEach(item => {
+        let p = document.createElement('p');
+        p.textContent = `${item.name}: ${item.visitors}`;
+        resultDiv.appendChild(p);
+      })
+      filteredData.forEach(item => {
+        let p = document.createElement('p');
+        p.textContent = `${item.name}: ${item.visitors}`;
+        resultDiv.appendChild(p);
+      });
+      const totalEvents = filteredData.reduce((acc, curr) => acc + curr.visitors, 0);
+      document.getElementById('culture').innerText = `Total Swipes Right: ${totalEvents}`;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+  </script>
 
 <!-- 
 - ionicon link

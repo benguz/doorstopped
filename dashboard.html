@@ -231,6 +231,11 @@
             <!--<img src="/assets/images/moon.png" alt="image2" />-->
             <p>Ever been injured where you can kind of play but it hurts more every game? You know you should stop but the season seems so close.<br>That’s hard. <strong>School can feel the same way</strong>: you’re stuck on an assignment or you have no idea what’s going on in class, but stick it out, head down, and make it to the end of the semester.<br>But school’s different. If you <strong>ask for help</strong>, you don’t get taken out of the game, <strong>you get back in</strong>. You get better. Your teacher respects you more.<br>Everyone's struggled like this. Wanna hear professional athletes say it?</p>
         </div>
+        <div class="card" style="display: none;" data-category="50-swipes-survey-yes">
+            <h2>You've swiped through 50 Doorstops! Have we helped you feel happier in school?</h2>
+            <div class="tenor-gif-embed" data-postid="12341428" data-share-method="host" data-aspect-ratio="1.37143" data-width="100%"></div> 
+            <p>Swipe right for yes, swipe left for no.</p>
+        </div>
         <div class="card" data-link="/doorstops/introuble.html#mainscript" style="display: none;" data-category="culture">
             <h2>WHAT TO SAY WHEN YOU'RE IN TROUBLE</h2>
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> 
@@ -596,11 +601,13 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
                     
                     // Analytics test
-                    console.log("card.dataset.category: " + card.dataset.category);
-                    console.log("cardCategory: " + cardCategory);
+                    // console.log("card.dataset.category: " + card.dataset.category);
+                    // console.log("cardCategory: " + cardCategory);
                     plausible(cardCategory);
                 }
                 
+            } else if (card.dataset.category === "50-swipes-survey-yes") {
+                plausible("50-swipes-survey-no");
             }
             let nextCard = card.previousElementSibling;
             let followingCard = nextCard.previousElementSibling;
