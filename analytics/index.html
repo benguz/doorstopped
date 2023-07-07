@@ -216,6 +216,11 @@
     100% {opacity: 0;}
 }
 
+canvas {
+  width: 100%;
+  min-height: 200px;
+}
+
     @media (max-width: 720px) {
         body {
           height: 170vh;
@@ -341,9 +346,22 @@
               <span>Students used 50+ Doorstops this week</span>
           </div>
         </div>
-        <div id="culture" class="square">Square 3</div>
+        <div id="culture" class="square">
+          <div class="top-section">
+            <span class="number">145</span>
+            <div class="icon positive">
+                <img src="/assets/svg/upicon.svg" alt="down-icon" />
+                <span class="percentage positive">50%</span>
+            </div>
+          </div>
+          <div class="label">
+              <span>Students are more excited to attend class</span>
+          </div>
+        </div>
     </div>
-    <div class="rectangle">Rectangle</div>
+    <div class="rectangle">
+      <canvas id="myChart"></canvas>
+    </div>
 </div>
 
   <!-- 
@@ -402,6 +420,54 @@
     .catch((error) => {
       console.error("Error:", error);
     });
+  </script>
+  <script>
+    fetch('/.netlify/functions/weekly')
+  .then(response => response.json())
+  .then(data => {
+    // Prepare the data for the chart
+    const labels = data.map(item => {
+      const date = new Date(item.weekStart);
+      return `Week of ${date.getMonth() + 1}/${date.getDate()}`;
+    });
+    const visitors = data.map(item => item.data.results.visitors.value);
+
+    // Create the chart
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Unique student visitors',
+          data: visitors,
+          backgroundColor: 'rgba(233, 30, 99, 0.2)',
+          borderColor: 'rgba(233, 30, 99, 1)',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Unique students using Doorstops by week',
+            fontSize: 60
+          },
+          legend: {
+            display: true,
+            position: 'bottom'
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  })
+  .catch(error => console.error('Error:', error));
   </script>
 
 <!-- 
