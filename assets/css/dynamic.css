@@ -292,7 +292,7 @@ ul {
 }
 
 #strategies {
-  background-image: url("/doorstops/swoosh.svg");  
+  /* background-image: url("/doorstops/swoosh.svg");   */
 }
 
 @media screen and (max-width: 600px) {

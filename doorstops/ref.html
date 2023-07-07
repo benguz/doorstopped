@@ -4,20 +4,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>Doorstop Education</title>
-    <meta name="title" content="Doorstop Education">
-    <meta name="description" content="Inspiring student agency nationwide.">
+    <title>Doorstops | Referents</title>
+    <meta name="title" content="Doorstops | Social Referents">
+    <meta name="description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
     <meta property="og:url" content="https://doorstopped.org/">
     <meta property="og:image" content="https://doorstopped.org/og.jpg">
     <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:title" content="Doorstop Education">
-    <meta property="og:description" content="Inspiring student agency nationwide.">
+    <meta property="og:title" content="Doorstops | Referents">
+    <meta property="og:description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://doorstopped.org/">
-    <meta property="twitter:title" content="Doorstop Education">
-    <meta property="twitter:description" content="Inspiring student agency nationwide.">
+    <meta property="twitter:title" content="Doorstops | Social Referents">
+    <meta property="twitter:description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
     <link href="./favicon.ico" rel="apple-touch-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
@@ -27,8 +27,6 @@
     <!-- include jQuery UI -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-    <!-- Hammer JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +34,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <link href="/assets/css/dynamic.css" rel="stylesheet">
     <style>
-
+.darker-bg {
+    background-color: rgba(0, 0, 0, 0.2); /* this creates a semi-transparent black layer */
+    background-blend-mode: overlay; /* this blends the new layer with the existing background */
+}
     </style>
   </head>
 
@@ -94,10 +95,10 @@
             </div>
           </div>
 
-          <p>Identify Referents</p>
+          <p>Make a List of Your Referents</p>
           <div class="card" style="display: flex; flex-direction: row;">
             <div class="textbox" contenteditable="true" flex="5">
-              Football team captain
+              Isaac - Football team captain
             </div>
             <button id="closeButton" class="close-button">
               <span class="close-icon">&#215;</span>
@@ -105,7 +106,7 @@
           </div>
           <div class="card" style="display: flex; flex-direction: row;">
             <div class="textbox" contenteditable="true" flex="5">
-              Newspaper Editor-in-Chief
+              Maya - Newspaper Editor-in-Chief
             </div>
             <button id="closeButton" class="close-button">
               <span class="close-icon">&#215;</span>
@@ -113,11 +114,15 @@
           </div>
           <div class="card" style="display: flex; flex-direction: row;">
             <div class="textbox" contenteditable="true" flex="5">
-              Class Clown
+              Stan - Class Clown
             </div>
             <button id="closeButton" class="close-button">
               <span class="close-icon">&#215;</span>
             </button>       
+          </div>
+          <div id="addCard" class="card" style="display: flex; flex-direction: row; cursor: pointer;">
+
+            <div class="add-icon" style="margin: auto;">+ Add a referent</div>
           </div>
           </div>
 <!--
@@ -130,7 +135,7 @@
           <p>Convince them to change</p>
           <div id="strategies" width="100%">
         <div id="thanks" style="display: none">
-          <h2>
+          <!-- <h2>
             THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU 
           </h2>
           <br>
@@ -150,7 +155,7 @@
           </h2>
           <br>
 
-          
+           -->
         </div>
 
    
@@ -170,6 +175,120 @@
         <p></p>
 </div> -->
 <script>
+  const referents = ["Class Prez", "Chief Stoner", "Highest Snap Score", "Guy who starts random convos with the teacher during class", "Basketball team captain", "Most Social Guy on Math Team", "Couple together since pre-k", "Diva", "Trend-setter"];
+
+  let idTracker = 0;
+  $(document).ready(function() {
+  $('#addCard').on('click', function() {
+    var newCard = '<div class="card" style="display: flex; flex-direction: row;">'+
+                  '<div class="textbox" contenteditable="true" style="flex: 5;">'+
+                  referents[Math.floor(Math.random()*referents.length)] +
+                  '</div>'+
+                  '<button class="close-button">'+
+                  '<span class="close-icon">&#215;</span>'+
+                  '</button></div>';
+    $(newCard).insertBefore('#addCard');
+
+    $('.textbox').each(function() {
+      var text = $(this).text();
+      var textExists = false;
+
+      $('#strategies .card').each(function() {
+        if ($(this).text() === text) {
+          textExists = true;
+          return false; // break the loop
+        }
+      });
+
+      if (!textExists) {
+        var newStrategyCard = '<div class="card"><strong>' + 
+          text + 
+          '</strong><br>' +
+          '<div>choose a strategy, change their mind</div>' +
+          '<div class="row" id="select' + idTracker +
+          '"">' +
+            '<div id="talk' + idTracker +
+            '" class="card row" onclick="act(1, ' + idTracker +
+            ')" style="background-color: hsl(351, 83%, 88%)">' +
+              'man-to-man</div><div id="empathy' + idTracker +
+              '" class="card row" onclick="act(2, ' + idTracker +
+              ')" style="background-color: hsl(42, 94%, 88%)">' +
+              'Open Heart Surgery</div>' +
+            '<div id="cafeteria' + idTracker +
+            '" class="card row" onclick="act(3, ' + idTracker +
+            ')" style="background-color: hsl(234, 44%, 88%)">Group Hug</div></div>' +
+          '</div>';
+        $('#strategies').append(newStrategyCard);
+        // selection = document.getElementById("select" + idTracker)
+        // selection.addEventListener('change', function() {
+        //   const selectedValue = this.value;
+
+        //   Array.from(this.options).forEach(function(option) {
+        //     if (option.value === selectedValue) {
+        //       option.classList.add('darker-bg');
+        //       option.style.display = 'block';
+        //     } else {
+        //       option.classList.remove('darker-bg');
+        //       option.style.display = 'none';
+        //     }
+        //   });
+        // });
+        idTracker++;
+      } 
+    });
+  });
+});
+
+function act(n, id) {
+  let p = document.createElement('p');
+  let old = document.getElementById('attachment' + id);
+  if (old) {
+    old.remove();
+  }
+  p.id = 'attachment' + id;
+
+  if (n === 1) {
+    let div = document.getElementById('talk' + id);
+    let close = document.getElementById('empathy' + id);
+    let close1 = document.getElementById('cafeteria' + id);
+
+    div.style.backgroundColor = 'hsl(351, 83%, 75%)';
+    close.style.backgroundColor = 'hsl(42, 94%, 88%)';
+    close1.style.backgroundColor = 'hsl(234, 44%, 88%)';
+    
+    p.textContent = 'honk';
+    div.parentNode.parentNode.appendChild(p);
+
+  } else if (n === 2) {
+    let div = document.getElementById('empathy' + id);
+    let close = document.getElementById('talk' + id);
+    let close1 = document.getElementById('cafeteria' + id);
+
+    div.style.backgroundColor = 'hsl(42, 94%, 75%)';
+    close.style.backgroundColor = 'hsl(351, 83%, 88%)';
+    close1.style.backgroundColor = 'hsl(234, 44%, 88%)';
+
+    p.textContent = 'bonk';
+    div.parentNode.parentNode.appendChild(p);
+
+  } else if (n===3) {
+    let div = document.getElementById('cafeteria' + id);
+    let close = document.getElementById('empathy' + id);
+    let close1 = document.getElementById('talk' + id);
+
+    div.style.backgroundColor = 'hsl(234, 44%, 75%)';
+    close.style.backgroundColor = 'hsl(42, 94%, 88%)';
+    close1.style.backgroundColor = 'hsl(351, 83%, 88%)';
+
+    p.textContent = 'donk';
+    div.parentNode.parentNode.appendChild(p);
+
+  }
+
+}
+
+</script>
+<!-- <script>
   // Here's an example of a list of words. Replace this with your actual list.
 const words = ["Football Captain", "Class Clown", "Class Prez", "Chief Stoner", "Highest Snap Score", "Guy who groans when homework is anounced", "Journalism Club EIC", "Most Social Guy on Math Team", "Couple together since pre-k", "diva", "trend-setter"];
 // Maybe I should make a map of the lunch tables instead.
@@ -214,9 +333,8 @@ for (let word of words) {
   i++;
 }
 
-</script>
+</script> -->
   <script>
-    
     const closeButtons = document.getElementsByClassName('close-button');
     console.log(closeButtons.length);
 for (let i = 0; i < closeButtons.length; i++) {
@@ -233,6 +351,8 @@ for (let i = 0; i < closeButtons.length; i++) {
 
 </script>
 <script>
+    const strategy = 0;
+
     function type(n) {
       judgey = document.getElementById("judgey");
       loud = document.getElementById("loud");
@@ -252,6 +372,8 @@ for (let i = 0; i < closeButtons.length; i++) {
         man.style.display = "none";
         collab.style.display = "none";
 
+        strategy = 1;
+
 
       } else if (n === 2) {
         judgey.style.backgroundColor = "white";
@@ -262,15 +384,18 @@ for (let i = 0; i < closeButtons.length; i++) {
         thanks.style.display = "none";
         collab.style.display = "none";
 
+        strategy = 2;
+
       } else if (n === 3) {
         judgey.style.backgroundColor = "white";
         loud.style.backgroundColor = "white";
-        comp.style.backgroundColor = "hsl(234, 44%, 88%)";
+        comp.style.backgroundColor = "hsl(234, 44%, 88%)"; 
 
         collab.style.display = "block";
         thanks.style.display = "none";
         man.style.display = "none";
 
+        strategy = 3;
       }
     }
 
@@ -433,10 +558,10 @@ function updateDeskColors2(desks, deskStates2) {
     }
   }
 }
-
 }
-
       </script>
+        <script src="/assets/js/script.js" defer></script>
+
 </body>
 
 </html>
