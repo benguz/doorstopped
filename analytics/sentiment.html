@@ -203,6 +203,10 @@
     100% {opacity: 0;}
 }
 
+canvas {
+    width: 100%;
+    max-height: 200px;
+}
 
     @media (max-width: 720px) {
         .box {
@@ -299,14 +303,13 @@
       <canvas id="myChart1"></canvas>
     </div>
     <div id="neg1" class="rectangle fade-in">
-      <canvas id="myChart2"></canvas>
+      <canvas id="myChart-neg"></canvas>
     </div>
     <div id="max2" class="rectangle fade-in">
-      <canvas id="myChart3"></canvas>
-
+      <canvas id="myChart2"></canvas>
     </div>
     <div id="max3" class="rectangle fade-in">
-      <canvas id="myChart4"></canvas>
+      <canvas id="myChart3"></canvas>
     </div>
 
 </div>
@@ -316,6 +319,7 @@
   -->
   <script src="/assets/js/script.js" defer></script>
   <script>
+    let totalEvents = 0;
     fetch('/.netlify/functions/dashboard')
     .then(response => response.json())
     .then(data => {
@@ -327,12 +331,12 @@
       // let surveyNames = ["50-swipes-survey-yes", "50-swipes-survey-no"];
 
       let filteredData = data.results.filter(item => !excludedNames.includes(item.name));
+      totalEvents = filteredData.reduce((acc, curr) => acc + curr.visitors, 0);
+
       maxIndicator(filteredData);
       // let surveyData = data.results.filter(item => surveyNames.includes(item.name));
-
-      // const totalEvents = filteredData.reduce((acc, curr) => acc + curr.visitors, 0);
-      // document.getElementById('culture').innerText = `Total Swipes Right: ${totalEvents}`;
-      // not exactly correct meaning right now
+      // not exactly correct meaning right now. this is number of students * avg. number of categories swiped
+      // i need a generic swipe event, or just use dashboard pageviews
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -352,6 +356,7 @@
         let index = 0;
         top3Items.forEach(item => {
             let p = document.createElement('p');
+            createChart(index + 1, item.name, item.visitors, totalEvents);
             switch(item.name) {
             case 'culture':
                 p.textContent = `Students are spending a lot of time on School Culture Doorstops, which could mean they feel tension with their peers: ${item.visitors} students total.`;
@@ -381,12 +386,13 @@
                 console.error('Unexpected category: ', item.name);
             }
             let div = document.getElementById(maxDivs[index]);
-            div.appendChild(p);
+            div.insertBefore(p, div.firstChild);
             index++;
         });
 
         bottomItems.forEach(item => {
             let p = document.createElement('p');
+            createChart('-neg', item.name, item.visitors, totalEvents);
             switch(item.name) {
             case 'culture':
                 p.textContent = `Students haven't spend much time on culture Doorstops: ${item.visitors} students total.`;
@@ -401,24 +407,64 @@
                 p.textContent = `Students aren't spending too much time on school policy Doorstops. They must be happy with the way things are run! ${item.visitors} students total.`;
                 break;
             case 'peers':
-                p.textContent = `Peers: ${item.visitors}`;
+                p.textContent = `Students aren't spending too much time on peer relationship Doorstops. They must be happy with how they're interacting with friends and classmates! ${item.visitors} students total.`;
                 break;
             case 'SEL-skills':
-                p.textContent = `SEL-Skills: ${item.visitors}`;
+                p.textContent = `Students haven't been using SEL skillbuilding Doorstops. If you feel like they're behind on SEL, this might be a sign students aren't aware of that. ${item.visitors} students total`;
                 break;
             case 'college-career':
-                p.textContent = `College-Career: ${item.visitors}`;
+                p.textContent = `Only ${item.visitors} students have used college-career Doorstops. Either your class feels well-prepared or they might need more external support to start thinking about their options post-graduation.`;
                 break;
             case 'wellbeing':
-                p.textContent = `Wellbeing: ${item.visitors}`;
+                p.textContent = `Only ${item.visitors} students have used wellbeing Doorstops, which cover healthy eating and sleeping, along with basic mental health needs in and around school. That's a good sign!`;
                 break;
             default:
                 console.error('Unexpected category: ', item.name);
             }
             let div = document.getElementById("neg1");
-            div.appendChild(p);
+            div.insertBefore(p, div.firstChild);
         });
     }
+
+
+    function createChart(n, category, users, total) {
+      let ctx = document.getElementById("myChart" + n).getContext('2d');
+      let labelCat = 'Students using ' + category + ' Doorstops';
+      const myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['Students'],
+              datasets: [{
+                  label: labelCat,
+                  data: [users], // replace with your data
+                  backgroundColor: 'rgba(54, 162, 235, 0.4)' // rgba(255, 99, 132, 0.4)'  
+              }, {
+                  label: 'Total Student Users',
+                  data: [total], // replace with your data
+                  backgroundColor: 'rgba(54, 162, 235, 0.2)' // 'rgba(255, 99, 132, 0.2)' 
+              }]
+          },
+          options: {
+              indexAxis: 'y',
+              plugins: {
+                  legend: {
+                      display: false
+                  }
+              },
+              scales: {
+                  x: {
+                      beginAtZero: true,
+                      stacked: true
+                  },
+                  y: {
+                      stacked: true
+                  }
+              }
+          }
+      });
+    }
+
+
 
   </script>
 
