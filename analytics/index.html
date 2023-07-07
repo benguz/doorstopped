@@ -44,7 +44,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 130vh;
         background: #F0DDF0;
         font-family: Poppins;
     }
@@ -53,7 +53,7 @@
             border-radius: 10px;
             background: #FFF;
             box-shadow: 2px 5px 5px 1px rgba(0, 0, 0, 0.25);
-            padding: 20px;
+            padding: 10px;
             margin: 20px;
             text-align: left;
         }
@@ -97,20 +97,20 @@
         .new-elements .square {
             width: calc((100% / 3) - 40px);
             min-width: 150px;
-            height: 200px;
+            height: 250px;
         }
 
         .new-elements .rectangle {
             width: calc(100% - 40px);
-            min-height: 200px;
+            min-height: 300px;
         }
 
         .fade-in {
-        animation: fadeIn .1s ease-in forwards;
+        animation: fadeIn .3s ease-in forwards;
         }
 
         .fade-out {
-        animation: fadeOut .1s ease-out forwards;
+        animation: fadeOut .4s ease-out forwards;
         }
 
 
@@ -150,26 +150,41 @@
         }
 
         .number {
-          font-size: 3em;
+          font-size: 5em;
           font-weight: bold;
       }
 
 .icon {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: -60px;
     display: flex;
-    align-items: center;
+    max-height: 40px;
 }
 
 .icon img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+.icon img.positive {
+  color: green;
+}
+
+.icon img.negative {
+    color: red;
+}
+.top-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
 }
 
 .percentage {
     margin-left: 5px;
-    font-size: 0.8em;
+    font-size: 1em;
+    align-self: flex-start;
 }
 
 .percentage.positive {
@@ -181,11 +196,31 @@
 }
 
 .label {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
+    text-align: center;
+}
+
+.header-spacer {
+    height: 5em;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }
 
     @media (max-width: 720px) {
+        body {
+          height: 170vh;
+          align-items: flex-start;
+        }
         .box {
             max-width: 85%;
             margin: auto;
@@ -196,28 +231,17 @@
         .row {
             flex-direction: column;
         }
-        .square {
+        .new-elements .square {
             width: 90%;
+        }
+        .header-spacer {
+            height: 2.5em;
         }
     }
 
     
 </style>
-<script>
-    $(document).ready(function(){
-        $(".button").click(function(){
-            // $(".box").fadeOut();
-            $(".box").css("display", "none");
-            
-            $("body").css("background", "#E6EDFD");
-            document.querySelector('#second').classList.add("fade-in");
-            document.querySelector('#second').style.display = "flex";
-            setTimeout(() => {
-                document.querySelector('#second').classList.remove("fade-in");
-            }, 1000);
-        });
-    });
-</script>
+
 </head>
 <body>
     <header class="header" data-header>
@@ -282,22 +306,22 @@
       <!-- <main>
 
       </main> -->
-<div class="box">
+<div class="box" id="onboard">
     <h1>How are students interacting with doorstops?</h1>
     <p>This is some sample text. Feel free to replace it with your own content.</p>
     <img src="https://via.placeholder.com/150" alt="Sample image">
-    <button class="button">Click Me</button>
+    <button id="engage" class="button">Click Me</button>
 
 </div>
-<div class="wrapper" style="display: none;"></div>
 
-<div class="new-elements" id="second" style="display: none;">
+<div class="new-elements fade-in" id="second" style="display: none;">
+  <div class="header-spacer"></div>
     <div class="row">
         <div id="survey" class="square">
           <div class="top-section">
             <span class="number">85</span>
-            <div class="icon">
-                <img src="/assets/svg/downicon.svg" alt="down-icon" />
+            <div class="icon positive">
+                <img src="/assets/svg/upicon.svg" alt="down-icon" />
                 <span class="percentage positive">15%</span>
             </div>
         </div>
@@ -305,7 +329,18 @@
             <span>Students feel safer in school, 201 surveyed</span>
         </div>
         </div>
-        <div id="results" class="square">Square 2</div>
+        <div id="results" class="square">
+          <div class="top-section">
+            <span class="number">170</span>
+            <div class="icon positive">
+                <img src="/assets/svg/upicon.svg" alt="down-icon" />
+                <span class="percentage positive">19%</span>
+            </div>
+          </div>
+          <div class="label">
+              <span>Students used 50+ Doorstops this week</span>
+          </div>
+        </div>
         <div id="culture" class="square">Square 3</div>
     </div>
     <div class="rectangle">Rectangle</div>
@@ -315,6 +350,27 @@
     - custom js link
   -->
   <script src="/assets/js/script.js" defer></script>
+  <script>
+    $(document).ready(function(){
+      if (localStorage.getItem('cache') === 'yes') {
+              // Check if page has been viewed
+              $('.box').css("display", "none");
+              $("body").css("background", "#E6EDFD");
+              document.querySelector('#second').style.display = "flex";
+            } else {
+              localStorage.setItem('cache', 'yes');
+            }
+        $(".button").click(function(){
+            document.querySelector('#onboard').classList.add("fade-out");
+            $(".box").css("display", "none");
+            $("body").css("background", "#E6EDFD");
+            document.querySelector('#second').style.display = "flex";
+            setTimeout(() => {
+                document.querySelector('#second').classList.remove("fade-in");
+            }, 400);
+        });
+    });
+</script>
   <script>
     fetch('/.netlify/functions/dashboard')
     .then(response => response.json())

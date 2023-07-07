@@ -108,11 +108,11 @@
         }
 
         .fade-in {
-        animation: fadeIn .1s ease-in forwards;
+        animation: fadeIn .4s ease-in forwards;
         }
 
         .fade-out {
-        animation: fadeOut .1s ease-out forwards;
+        animation: fadeOut .4s ease-out forwards;
         }
 
 
@@ -193,6 +193,17 @@
     width: 100%;
 }
 
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
     @media (max-width: 720px) {
         .box {
             max-width: 85%;
@@ -215,21 +226,7 @@
 
     
 </style>
-<script>
-    $(document).ready(function(){
-        $(".button").click(function(){
-            // $(".box").fadeOut();
-            $(".box").css("display", "none");
-            
-            $("body").css("background", "#E6EDFD");
-            document.querySelector('#second').classList.add("fade-in");
-            document.querySelector('#second').style.display = "flex";
-            setTimeout(() => {
-                document.querySelector('#second').classList.remove("fade-in");
-            }, 1000);
-        });
-    });
-</script>
+
 </head>
 <body>
     <header class="header" data-header>
@@ -296,12 +293,21 @@
       </main> -->
 
 <div class="header-spacer"></div>
-<div class="new-elements" id="second">
+<div class="new-elements fade-in" id="second">
     
-    <div id="max1" class="rectangle"></div>
-    <div id="neg1" class="rectangle"></div>
-    <div id="max2" class="rectangle"></div>
-    <div id="max3" class="rectangle"></div>
+    <div id="max1" class="rectangle fade-in">
+      <canvas id="myChart1"></canvas>
+    </div>
+    <div id="neg1" class="rectangle fade-in">
+      <canvas id="myChart2"></canvas>
+    </div>
+    <div id="max2" class="rectangle fade-in">
+      <canvas id="myChart3"></canvas>
+
+    </div>
+    <div id="max3" class="rectangle fade-in">
+      <canvas id="myChart4"></canvas>
+    </div>
 
 </div>
 
