@@ -493,16 +493,6 @@ let deltaSwipe = 100;
 // shortens swipe distance for mobile users
 if (window.innerWidth < 1000) {
     deltaSwipe = 70;
-
-    // prevents default swipe = back button behavior on safari
-    element = document.getElementById('#left-section');
-    element.addEventListener('touchstart', (e) => {
-        // is not near edge of view, exit
-        if (e.pageX > 20 && e.pageX < window.innerWidth - 20) return;
-
-        // prevent swipe to navigate back gesture
-        e.preventDefault();
-    });
 }
 
 document.querySelectorAll('.card').forEach((card, index) => {
@@ -749,7 +739,13 @@ function showSection(n) {
 
         // hammer test
         let leftSection = document.getElementById("left-section");
-        let hammertime = new Hammer(leftSection);
+        // to make preventDefault work, the following code is added
+        let hammertime = new Hammer.Manager(leftSection, {
+            touchAction: 'auto'  
+        });
+        let pan = new Hammer.Pan();
+        hammertime.add(pan);
+        // let hammertime = new Hammer(leftSection);
         let initialPos = 0;
         let currentPos = 0;
         let rafId = null;
@@ -760,9 +756,14 @@ function showSection(n) {
         }
 
         hammertime.on('pan', function(e) {
+            e.preventDefault();  // prevent browser's default behavior
+
             if (e.target.classList.contains('noswipe')) {
                 return;
             }
+
+            e.preventDefault();
+
             
             if (e.direction === Hammer.DIRECTION_RIGHT && Math.abs(e.deltaX) > Math.abs(e.deltaY)) { 
                 // Only respond to swipes right and mostly horizontal movements
@@ -775,11 +776,15 @@ function showSection(n) {
         });
 
         hammertime.on('panstart', function() {
+            e.preventDefault();  // prevent browser's default behavior
+
             initialPos = currentPos;
             leftSection.classList.remove('out');
         });
 
         hammertime.on('panend', function(e) {
+            e.preventDefault();  // prevent browser's default behavior
+
             initialPos = currentPos;
 
             if (Math.abs(e.deltaX) > deltaSwipe && e.direction === Hammer.DIRECTION_RIGHT) {
