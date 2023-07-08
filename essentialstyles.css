@@ -595,10 +595,17 @@ select {
   font-size: 12pt;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+  
+  // prevents default swipe = back button behavior on android
+  html, body {
+    overscroll-behavior-x: none;
+  }
+  
   .accordion-menu {
     max-width: 100% - 20px;
   }
+
 
   .accordion-menu p {
     /* ADD STYLES FOR MOBILE */
