@@ -553,6 +553,60 @@ select {
 }
 
 
+/**
+* accordion
+*/
+
+.accordion-menu {
+  width: 100%;
+}
+
+.accordion-section {
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.accordion-header {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.accordion-header:after {
+  content: '\25BC';
+  position: absolute;
+  right: 10px;
+}
+
+.accordion-header.active:after {
+  content: '\25B2';
+}
+
+.accordion-content {
+  padding: 10px;
+  display: none;
+  background-color: #fff;
+}
+
+.accordion-content p {
+  font-size: 12pt;
+}
+
+@media screen and (max-width: 600px) {
+  .accordion-menu {
+    max-width: 100% - 20px;
+  }
+
+  .accordion-menu p {
+    /* ADD STYLES FOR MOBILE */
+  }
+}
+
+
+
 /* BINGO
 */
 

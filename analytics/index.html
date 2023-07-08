@@ -360,6 +360,7 @@ canvas {
         </div>
     </div>
     <div class="rectangle">
+      <div id="loading-chart">Data loading!</div>
       <canvas id="myChart"></canvas>
     </div>
 </div>
@@ -468,6 +469,8 @@ canvas {
     });
   })
   .catch(error => console.error('Error:', error));
+  let loading = document.getElementById('loading-chart');
+  loading.style.display = "none";
   </script>
 
 <!-- 

@@ -21,7 +21,8 @@ const addEventOnElem = function (elem, type, callback) {
  */
 
 $(document).ready(function() {
-  $('.accordion-header').click(function() {
+  // Delegate events from the body element
+  $('body').on('click', '.accordion-header', function() {
     var content = $(this).next('.accordion-content');
 
     // If this section is already open, close it
@@ -39,6 +40,7 @@ $(document).ready(function() {
     }
   });
 });
+
 
 
 
