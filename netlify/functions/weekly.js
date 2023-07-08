@@ -2,25 +2,19 @@ const axios = require("axios");
 exports.handler = async function(event, context) {
     const API_KEY = process.env.TESTING_KEY;
   
-    // Calculate the start date (6 months ago)
+    // Calculate the start date (2 weeks ago)
     const startDate = new Date();
-    startDate.setMonth(startDate.getMonth() - 6);
+    startDate.setDate(startDate.getDate() - 14);
   
     const responses = [];
   
-    // Fetch data for each week
-    for (let weekStart = startDate; weekStart < Date.now(); weekStart.setDate(weekStart.getDate() + 7)) {
-      let weekEnd = new Date(weekStart);
-      weekEnd.setDate(weekEnd.getDate() + 6);
-  
-      if (weekEnd > Date.now()) {
-        weekEnd = new Date();  // make sure we don't request data for the future
-      }
+    // Fetch data for each day
+    for (let day = startDate; day < Date.now(); day.setDate(day.getDate() + 1)) {
   
       const params = {
         site_id: 'doorstopped.org',
-        period: 'custom',
-        date: `${weekStart.toISOString().split('T')[0]},${weekEnd.toISOString().split('T')[0]}`,
+        period: 'day',
+        date: `${day.toISOString().split('T')[0]}`,
         metrics: 'visitors',
         filters: 'event:page==/dashboard',
       };
@@ -34,8 +28,7 @@ exports.handler = async function(event, context) {
         });
   
         responses.push({
-          weekStart: weekStart.toISOString().split('T')[0],
-          weekEnd: weekEnd.toISOString().split('T')[0],
+          day: day.toISOString().split('T')[0],
           data: response.data
         });
       } catch (error) {
@@ -53,5 +46,4 @@ exports.handler = async function(event, context) {
       statusCode: 200,
       body: JSON.stringify(responses)
     };
-  }
-  
+}

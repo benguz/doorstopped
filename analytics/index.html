@@ -356,11 +356,12 @@ canvas {
           </div>
           <div class="label">
               <span>Students are more excited to attend class</span>
+              <span id="temp-filler"></span>
           </div>
         </div>
     </div>
     <div class="rectangle">
-      <div id="loading-chart">Data loading!</div>
+      <div id="loading-chart" style="width: 100%; height: 100%; text-align: center; vertical-align: middle; font-size: 25px;">Chart loading!</div>
       <canvas id="myChart"></canvas>
     </div>
 </div>
@@ -415,7 +416,7 @@ canvas {
         resultDiv.appendChild(p);
       });
       const totalEvents = filteredData.reduce((acc, curr) => acc + curr.visitors, 0);
-      document.getElementById('culture').innerText = `Total Swipes Right: ${totalEvents}`;
+      document.getElementById('temp-filler').innerText = `Total Swipes Right: ${totalEvents}`;
       // not exactly correct meaning right now
     })
     .catch((error) => {
@@ -428,8 +429,8 @@ canvas {
   .then(data => {
     // Prepare the data for the chart
     const labels = data.map(item => {
-      const date = new Date(item.weekStart);
-      return `Week of ${date.getMonth() + 1}/${date.getDate()}`;
+      const date = new Date(item.day);
+      return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
     });
     const visitors = data.map(item => item.data.results.visitors.value);
 
@@ -467,10 +468,11 @@ canvas {
         }
       }
     });
+    let loading = document.getElementById('loading-chart');
+    loading.style.display = "none";
   })
   .catch(error => console.error('Error:', error));
-  let loading = document.getElementById('loading-chart');
-  loading.style.display = "none";
+  
   </script>
 
 <!-- 
