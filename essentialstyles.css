@@ -597,10 +597,10 @@ select {
 
 @media screen and (max-width: 700px) {
   
-  /* attempted android back swipe fix
+  /* attempted android back swipe fix */
   html, body {
     overscroll-behavior-x: none;
-  } */
+  } 
   
   .accordion-menu {
     max-width: 100% - 20px;

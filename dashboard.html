@@ -739,13 +739,7 @@ function showSection(n) {
 
         // hammer test
         let leftSection = document.getElementById("left-section");
-        // to make preventDefault work, the following code is added
-        let hammertime = new Hammer.Manager(leftSection, {
-            touchAction: 'auto'  
-        });
-        let pan = new Hammer.Pan();
-        hammertime.add(pan);
-        // let hammertime = new Hammer(leftSection);
+        let hammertime = new Hammer(leftSection);
         let initialPos = 0;
         let currentPos = 0;
         let rafId = null;
@@ -756,15 +750,10 @@ function showSection(n) {
         }
 
         hammertime.on('pan', function(e) {
-            e.preventDefault();  // prevent browser's default behavior
-
             if (e.target.classList.contains('noswipe')) {
                 return;
             }
 
-            e.preventDefault();
-
-            
             if (e.direction === Hammer.DIRECTION_RIGHT && Math.abs(e.deltaX) > Math.abs(e.deltaY)) { 
                 // Only respond to swipes right and mostly horizontal movements
                 currentPos = initialPos + e.deltaX;
@@ -776,14 +765,12 @@ function showSection(n) {
         });
 
         hammertime.on('panstart', function() {
-            e.preventDefault();  // prevent browser's default behavior
 
             initialPos = currentPos;
             leftSection.classList.remove('out');
         });
 
         hammertime.on('panend', function(e) {
-            e.preventDefault();  // prevent browser's default behavior
 
             initialPos = currentPos;
 
@@ -802,20 +789,6 @@ function showSection(n) {
             }, 500);
 
             });
-        
-        // Set up Hammer on the child div
-        // let childDiv = document.getElementById('noswipe');
-        // console.log(childDiv);
-        // if (childDiv) {
-        //     let childHammer = new Hammer(childDiv);
-        //     childHammer.on('pan', function(e) {
-        //         // prevent the event from propagating to the parent
-        //         e.stopPropagation();
-
-        //         // handle the event
-        //     });
-        // }
-        
 
     } 
     else if (n === 4) {
