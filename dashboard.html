@@ -493,6 +493,16 @@ let deltaSwipe = 100;
 // shortens swipe distance for mobile users
 if (window.innerWidth < 1000) {
     deltaSwipe = 70;
+
+    // prevents default swipe = back button behavior on safari
+    element = document.getElementById('#left-section');
+    element.addEventListener('touchstart', (e) => {
+        // is not near edge of view, exit
+        if (e.pageX > 20 && e.pageX < window.innerWidth - 20) return;
+
+        // prevent swipe to navigate back gesture
+        e.preventDefault();
+    });
 }
 
 document.querySelectorAll('.card').forEach((card, index) => {
