@@ -14,7 +14,7 @@ exports.handler = async function(event, context) {
     // https://plausible.io/api/v1/stats/breakdown
     // 
     try {
-      const response = await axios.get('https://plausible.io/api/v1/stats/breakdown?site_id=doorstopped.org&period=12mo&property=event:name', {
+      const response = await axios.get('https://plausible.io/api/v1/stats/breakdown?site_id=doorstopped.org&period=12mo&property=event:name&metrics=visitors,events', {
         headers: {
           'Authorization': `Bearer ${API_KEY}`
         },

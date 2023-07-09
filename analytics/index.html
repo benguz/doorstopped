@@ -415,7 +415,7 @@ canvas {
         p.textContent = `${item.name}: ${item.visitors}`;
         resultDiv.appendChild(p);
       });
-      const totalEvents = filteredData.reduce((acc, curr) => acc + curr.visitors, 0);
+      const totalEvents = filteredData.reduce((acc, curr) => acc + curr.events, 0);
       document.getElementById('temp-filler').innerText = `Total Swipes Right: ${totalEvents}`;
       // not exactly correct meaning right now
     })

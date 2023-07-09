@@ -504,26 +504,26 @@ select {
   }
 
   .card {
-      height: 100%; 
+      /* height: 95%;  experimental style - try changing to 95% %*/
+      /* margin-top: 15px; experimental style - didn't exist*/
       width: calc(100% - 30px);
-
   }
   .card h1, h2 {
     line-height: 1.3;
   }
   .card h2 {
-  font-size: 28px;
-}
+    font-size: 28px;
+  }
 
-.card h3 {
-  font-size: 22px;
-  line-height: 1.4;
-}
+  .card h3 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
 
-.card p {
-  font-size: 18px;
-  line-height: 1.6;
-}
+  .card p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
 }
 
 
