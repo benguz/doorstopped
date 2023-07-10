@@ -12,7 +12,8 @@ exports.handler = async function(event, context) {
       filters: 'event:name==culture'
     };
     // https://plausible.io/api/v1/stats/breakdown
-    // 
+    // we can get visit duration with visit_duration, which can be added as a metric below
+    // couple with property= event:page==/doorstops**	
     try {
       const response = await axios.get('https://plausible.io/api/v1/stats/breakdown?site_id=doorstopped.org&period=12mo&property=event:name&metrics=visitors,events', {
         headers: {

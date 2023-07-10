@@ -7,7 +7,10 @@ exports.handler = async function(event, context) {
     startDate.setDate(startDate.getDate() - 14);
   
     const responses = [];
-  
+    // Instead of all these requests I should switch to timeseries
+    // 'https://plausible.io/api/v1/stats/timeseries?site_id=$SITE_ID&period=6mo'
+    // https://plausible.io/docs/stats-api
+    
     // Fetch data for each day
     for (let day = startDate; day < Date.now(); day.setDate(day.getDate() + 1)) {
   
