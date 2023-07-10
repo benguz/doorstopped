@@ -586,6 +586,9 @@ document.querySelectorAll('.card').forEach((card, index) => {
                             loadStylesheet("/doorstops/food.css");
                             document.querySelector("#content-placeholder").innerHTML = body.outerHTML;
                             loadScript("/assets/js/food.js");
+                        } else {
+                            document.querySelector("#content-placeholder").innerHTML = body.outerHTML;
+                            // not sure if I need a stylesheet here.
                         }
                         showSection(3);
                     })

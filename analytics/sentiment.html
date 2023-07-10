@@ -68,6 +68,8 @@
       overflow: auto;
     }
 
+
+
     .box {  
         max-width: 90%;
         width: 800px;
@@ -90,7 +92,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            max-width: 90%;
+            max-width: 80%;
             width: 100%;
             overflow: auto;
             flex-basis: auto;
@@ -331,7 +333,7 @@ canvas {
       // let surveyNames = ["50-swipes-survey-yes", "50-swipes-survey-no"];
 
       let filteredData = data.results.filter(item => !excludedNames.includes(item.name));
-      totalEvents = filteredData.reduce((acc, curr) => acc + curr.visitors, 0);
+      totalEvents = filteredData.reduce((acc, curr) => acc + curr.events, 0);
 
       maxIndicator(filteredData);
       // let surveyData = data.results.filter(item => surveyNames.includes(item.name));
@@ -345,7 +347,8 @@ canvas {
 
 
     function maxIndicator(data) {
-        const sortedData = data.sort((a, b) => b.visitors - a.visitors);
+        const sortedData = data.sort((a, b) => b.events - a.events);
+        // need to choose how to frame this
 
         // Get the top 3 categories by visitors
         const top3Items = sortedData.slice(0, 3);
@@ -355,44 +358,50 @@ canvas {
         
         let index = 0;
         top3Items.forEach(item => {
+            let s = document.createElement('strong');
             let p = document.createElement('p');
-            createChart(index + 1, item.name, item.visitors, totalEvents);
+            createChart(index + 1, item.name, item.events, totalEvents / 8);
             switch(item.name) {
             case 'culture':
-                p.textContent = `Students are spending a lot of time on School Culture Doorstops, which could mean they feel tension with their peers: ${item.visitors} students total.`;
+                s.textContent = "High Engagement with School Culture Doorstops"
+                p.textContent = `Students are spending a lot of time on school culture Doorstops, which could mean they feel tension with their peers. Expect students to start trying the peer behavioral interventions we recommend.`; // ${item.visitors} students total.`; 
                 break;
             case 'STR':
-                p.textContent = `Students are spending a lot of time on improving student-teacher relationships, especially with our Anonymous feedback form. That might mean they feel there aren't open communication channels for feedback right now! ${item.visitors} students total.`;
+                p.textContent = `Students are working hard on improving student-teacher relationships, especially with our Anonymous feedback form. That might mean they feel there aren't open communication channels for feedback right now. ${item.visitors} students total.`;
                 break;
             case 'self-advocacy':
                 p.textContent = `Self-Advocacy: ${item.visitors}`;
                 break;
             case 'policy':
-                p.textContent = `Students are spending a lot of time learning about how schools set policy. This might mean they're getting ready to come to the bargaining table with a proposal. ${item.visitors} students total`;
+                s.textContent = `Strong Interest in School Policy Changes`;
+                p.textContent = `Students are spending a lot of time learning about how schools set policy. This might mean they're getting ready to come to the bargaining table with a proposal. Since they're also using a lot of wellbeing Doorstops, expect students to ask for healthier lunch options and more time during lunch block.`; // ${item.visitors} students total.`;  ${item.visitors} students total`;
                 break;
             case 'peers':
                 p.textContent = `Peers: ${item.visitors}`;
                 break;
             case 'SEL-skills':
-                p.textContent = `Students are spending most of their time on learning social-emotional skills. This might help them catch up after COVID - it's awesome they're recognizing this need! ${item.visitors} Students total.`;
+                s.textContent = `Doorstops are Building SEL Core Competencies`;
+                p.textContent = `Students are spending most of their time on learning social-emotional skills. This might help them catch up after COVID - it's awesome they're recognizing this need!`; // ${item.visitors} Students total.`;
                 break;
             case 'college-career':
                 p.textContent = `College-Career: ${item.visitors}`;
                 break;
             case 'wellbeing':
-                p.textContent = `Wellbeing: ${item.visitors}`;
+                p.textContent = `Students have interacted a lot with wellbeing doorstops, helping them navigate healthy sleeping, eating, and mental health needs. This is likely the main reason students are reporting feeling happier in school on surveys! `; // ${item.visitors} students total.`; 
                 break;
             default:
                 console.error('Unexpected category: ', item.name);
             }
             let div = document.getElementById(maxDivs[index]);
             div.insertBefore(p, div.firstChild);
+            div.insertBefore(s, div.firstChild);
             index++;
         });
 
         bottomItems.forEach(item => {
+            let s = document.createElement('strong');
             let p = document.createElement('p');
-            createChart('-neg', item.name, item.visitors, totalEvents);
+            createChart('-neg', item.name, item.events, totalEvents / 8);
             switch(item.name) {
             case 'culture':
                 p.textContent = `Students haven't spend much time on culture Doorstops: ${item.visitors} students total.`;
@@ -407,7 +416,8 @@ canvas {
                 p.textContent = `Students aren't spending too much time on school policy Doorstops. They must be happy with the way things are run! ${item.visitors} students total.`;
                 break;
             case 'peers':
-                p.textContent = `Students aren't spending too much time on peer relationship Doorstops. They must be happy with how they're interacting with friends and classmates! ${item.visitors} students total.`;
+                s.textContent = `Peer relationships are healthy!`
+                p.textContent = `Students aren't spending too much time on peer relationship Doorstops. They must be happy with how they're interacting with friends and classmates!`; // ${item.visitors} students total.`;
                 break;
             case 'SEL-skills':
                 p.textContent = `Students haven't been using SEL skillbuilding Doorstops. If you feel like they're behind on SEL, this might be a sign students aren't aware of that. ${item.visitors} students total`;
@@ -423,6 +433,7 @@ canvas {
             }
             let div = document.getElementById("neg1");
             div.insertBefore(p, div.firstChild);
+            div.insertBefore(s, div.firstChild);
         });
     }
 
@@ -439,7 +450,7 @@ canvas {
                   data: [users], // replace with your data
                   backgroundColor: 'rgba(54, 162, 235, 0.4)' // rgba(255, 99, 132, 0.4)'  
               }, {
-                  label: 'Total Student Users',
+                  label: 'Average time per category',
                   data: [total], // replace with your data
                   backgroundColor: 'rgba(54, 162, 235, 0.2)' // 'rgba(255, 99, 132, 0.2)' 
               }]

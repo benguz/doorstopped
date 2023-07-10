@@ -48,7 +48,70 @@
   <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-shape-1.svg">
   <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
+  <!-- 
+  <script src="starfield.js"></script>
 
+  <style>
+    .starfield-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 1s ease;
+}
+
+.main-content {
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    justify-content: center;
+    z-index: 1;
+    padding: 1rem 1rem;
+    width: 85%; /* Adjust the content width */
+}
+
+.hero-section {
+    text-align: left; /* Align text to the left */
+}
+
+.hero-section h1 {
+    font-size: 72px; /* Increase font size */
+    margin-bottom: 1rem;
+    line-height: 1.2; /* Adjust line height */
+    color: white;
+}
+
+.hero-section p {
+    font-size: 24px;
+    color: #ccc;
+}
+
+#Starfield {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#b24eaa, black);
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+  </style>
+  -->
   <style>
 
 .word {
@@ -150,7 +213,7 @@
 } */
 
 #step1 {
-  background-image: url('/assets/images/youtube-cut.gif'); 
+  background-image: url('/assets/images/DDash.gif'); 
   background-size: cover;
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -282,14 +345,14 @@
 
           <div class="hero-content">
 
-            <h1 class="h1 section-title">Inspiring student agency, advocacy, and <span class="span">confidence</span>
+            <h1 class="h1 section-title">Inspire student agency, advocacy, and <span class="span" style="display: inline">confidence</span>
             </h1>
             <!-- ALT: Inspiring student agency nationwide.
 
 The biggest stakeholder in education doesn't know they're a stakeholder. We're changing that, bringing self advocacy and trust-building skills directly to students.-->
 
             <p class="hero-text">
-              We create Doorstops: multimedia resources that help with everything from asking for an extension to schoolwide culture shift.
+              Send out a link to our self-advocacy and trust-building digital experiences. Get real-time insights on student social-emotional wellbeing. 
             </p>
 
             <a href="/student.html" id="injectButton" class="btn has-before">
@@ -324,7 +387,6 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
 
 
 
-
       <!-- 
         - #CATEGORY
       -->
@@ -335,7 +397,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
           <p class="section-subtitle">Resources for Students</p>
 
           <h2 class="h2 section-title">
-            Doorstops are <span class="span">Individualized</span> Strategies
+            We create Doorstops: hundreds of resources opening doors for <span class="span">thousands</span> of students. 
           </h2>
 
           <p class="section-text">
@@ -359,7 +421,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
                 <p class="card-text">
                   Trust grows everything from attendance to teacher retention: we help students build it.
                 </p>
-                <span class="card-badge">6 Doorstops</span>
+                <span class="card-badge">29 Doorstops</span>
 
               </div>
             </li>
@@ -380,7 +442,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
                   We empower students to face and fight bullying, judgement, and extreme stress with research-tested strategies.
                 </p>
 
-                <span class="card-badge">4 Doorstops</span>
+                <span class="card-badge">17 Doorstops</span>
 
               </div>
             </li>
@@ -401,7 +463,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
                   We bring empathy and insight directly to unmotivated students through social media.
                 </p>
 
-                <span class="card-badge">3 Doorstops</span>
+                <span class="card-badge">8 Doorstops</span>
 
               </div>
             </li>
@@ -422,7 +484,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
                   We train students to run peer and classroom interventions that foster intentional, collaborative school culture.
                 </p>
 
-                <span class="card-badge">7 Doorstops</span>
+                <span class="card-badge">25 Doorstops</span>
 
               </div>
             </li>
@@ -432,67 +494,6 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
         </div>
       </section>
 
-      <!-- 
-        ADD SECTION EXPLAINING DOORSTOP USE CASES
-            -->
-            <section>
-      <div class="simple">
-        <br><br>
-        <h2 >Students discover us on social media</h2>
-        <br><br>
-      </div>
-        <!-- <section class="parallax-break" id="break">
-          <div class="content">
-          </div>
-        </section> -->
-        
-        <div class="parallax-small" id="step1">
-          <div class="content">
-            <!-- <h2>Students discover us on social media</h2> -->
-            <!-- <p style="color:black">Doorstops come into your life via social media or through programs at your school. We're here to help you make a positive change!</p> -->
-          </div>
-        </div>
-        <br class="desktop"><br class="desktop">
-        <br class="desktop"><br class="desktop">
-        <br class="desktop"><br class="desktop">
-        <div class="simple">
-          <br class="desktop"><br class="desktop">
-          <h2>We help them find the perfect Doorstop</h2>
-          <br class="desktop"><br class="desktop">
-        </div>
-
-        <div class="parallax-section" id="step2">
-          <div class="content">
-          </div>
-        </div>
-        <br><br>
-        <br><br>
-        <br><br>
-        <div class = "simple"> 
-          <br><br>
-          <h2>They use Doorstops to de-stress, get help, or make change</h2>
-          <br><br>
-        </div>
-        <section class="parallax-section" id="step3" style="margin-bottom: 5em">
-          <div class="content"> 
-            <!-- <h2>Using it instantly to destress and make change</h2> -->
-            <!-- <p style="color:black">Use what you've learned to build trust, navigate social tension, or shift your school's culture. Change starts with you!</p> -->
-          </div>
-        </section>
-
-        <section class="section about" id="programs" aria-label="programs" style="position:relative">
-          <div class="container" >
-        <h2 class="h2 section-title">
-          <span class="span">Student?</span> Find the perfect Doorstop! 
-          </h2>
-          <a href="/student" id="injectButton" class="btn has-before">
-            <span class="span">Upgrade your school day</span>
-            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-          </a>
-          </div>
-          <br><br>
-          <div class="simple"><h3>(educators, keep reading)</h3></div>
-          </section>
 
       <!-- 
         - #ABOUT
@@ -502,8 +503,8 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
 
           <figure class="about-banner">
 
-            <div class="img-holder" style="--width: 520; --height: 370;">
-              <img src="./assets/images/class.jpg" width="520" height="370" loading="lazy" alt="about banner"
+            <div class="img-holder" style="--width: 560; --height: 370;">
+              <img src="./assets/images/twitter.gif" width="560" height="370" loading="lazy" alt="about banner"
                 class="img-cover">
             </div>
 <!--
@@ -527,9 +528,8 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
               Turn students into <span class="span">change-makers</span>
             </h2>
 
-            <p class="section-text">           
-              We help foster school communities where reform is not done for students, but by students. We create spaces for dialogue, reflection, and decisions.
-            </p>
+            <p class="section-text">Agency is our ideology: by teaching students the self-advocacy skills they need to feel less trapped at their desks, they become change-makers, critical thinkers, and happier humans.
+                    </p>
 
             <ul class="about-list">
 
@@ -559,10 +559,27 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
             <img src="./assets/images/about-shape-4.svg" width="100" height="100" loading="lazy" alt=""
               class="shape about-shape-4">
 -->
+
           </div>
+          </div>
+            </section>
+      <section>
+        <div class="simple">
+          <br><br>
+          <br class="desktop"><br class="desktop">
+          <h2 class="h2 section-title" style="max-width: 90%;">Get real-time insights on student sentiment, choosing any metric to survey students.</h2>
+          <!-- <p class="section-text"></p> -->
+        </div>
+          <img src="/assets/images/DDash.gif" width="75%" style="margin: auto;">
+      </section>
+      <section class="section about">
+
+          <div class="container" >
+
           <h2 class="h2 section-title">
             Help students <span class="span">identify</span> and advocate for their needs.
             </h2>
+
             <a href="/programs/index.html" id="injectButton" class="btn has-before">
               <span class="span">Find your perfect program</span>
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -626,17 +643,9 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
           <ul class="grid-list">
 
             <li>
-              <div class="stats-card" style="--color: 170, 75%, 41%">
-                <h3 class="card-title">15</h3>
-
-                <p class="card-text">States</p>
-              </div>
-            </li>
-
-            <li>
               <div class="stats-card" style="--color: 351, 83%, 61%">
                 
-                <h3 class="card-title">30</h3>
+                <h3 class="card-title">100+</h3>
                 <p class="card-text">Doorstops Created</p>
               </div>
             </li>
@@ -648,6 +657,13 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
               </div>
             </li>
 
+            <li>
+                <div class="stats-card" style="--color: 170, 75%, 41%">
+                  <h3 class="card-title">15</h3>
+  
+                  <p class="card-text">States</p>
+                </div>
+              </li>
             
             <li>
               <div class="stats-card" style="--color: 260, 100%, 67%">
@@ -663,6 +679,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
       </section>
       <!-- 
         - #BLOG
+        No PD. No tech integration. It's free until students feel safer/happier/more like they belong in school. You choose the metric, we survey students in our app. We ask that you pay $10/student that meets your chosen success metric: one payment, then Doorstops are free for life.
       -->
 
       <section class="section blog has-bg-image" id="research" aria-label="research"
@@ -797,44 +814,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
 
           <img src="./assets/images/blog-shape.png" width="186" height="186" loading="lazy" alt=""
             class="shape blog-shape">
-          <!--
-
-        <div>
-          <br></br>
-        <h2 class="h1 section-title" style="margin-bottom: 0; display: inline;">Partner with</h2>
-        <div id="word-rotator"><h2 class="h1 section-title word" id="another-div" style="margin-bottom: 0;"></h2>
-          </div>
-          <h2 class="h1 section-title" id="another-div">students.</h2>
-
-              <script>var words = ["at-risk", "anxious", "struggling", "bored", "absent"];
-        var currentIndex = 0;
         
-        function changeWord() {
-          var wordContainer = document.querySelector(".word");
-          var currentWord = wordContainer.querySelector("div");
-          if (currentWord) currentWord.className = 'out';
-        
-          var newWord = document.createElement("div");
-          newWord.textContent = words[currentIndex];
-          newWord.className = 'in';
-          wordContainer.appendChild(newWord);
-        
-          setTimeout(function() {
-            newWord.className = '';
-          }, 250); // Half of 500ms to match the middle of transition
-        
-          if (currentWord) {
-            setTimeout(function() {
-              wordContainer.removeChild(currentWord);
-            }, 250); // Remove after full transition
-          }
-        
-          currentIndex = (currentIndex + 1) % words.length;
-        }
-        
-        setInterval(changeWord, 500);        
-      </script>
-      -->
               </div>
 
       </section>
@@ -864,7 +844,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
     <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
   </a>
 
-    
+   
 
   <!-- 
     - custom js link

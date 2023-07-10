@@ -49,6 +49,8 @@
         font-family: Poppins;
     }
 
+    
+
     .box, .new-elements .square, .new-elements .rectangle {
             border-radius: 10px;
             background: #FFF;
@@ -69,8 +71,10 @@
 
     .box {  
         max-width: 90%;
-        width: 800px;
-        position: relative;
+        width: 650px;
+        position: absolute;
+        top: 200px;
+        padding: 30px;
     }
 
     .button {
@@ -202,7 +206,7 @@
 }
 
 .header-spacer {
-    height: 5em;
+    height: 15em;
     width: 100%;
 }
 
@@ -219,6 +223,11 @@
 canvas {
   width: 100%;
   min-height: 200px;
+}
+
+#intro-img {
+  width: 150px;
+  height: 150px;
 }
 
     @media (max-width: 720px) {
@@ -312,10 +321,11 @@ canvas {
 
       </main> -->
 <div class="box" id="onboard">
-    <h1>How are students interacting with doorstops?</h1>
-    <p>This is some sample text. Feel free to replace it with your own content.</p>
-    <img src="https://via.placeholder.com/150" alt="Sample image">
-    <button id="engage" class="button">Click Me</button>
+    <h1>How are students interacting with Doorstops?</h1>
+    <p>Welcome to our Doorstop Dashboard, with data-driven reporting on how students feel about school, plus live-updating survey data on your chosen metrics.</p>
+    <br><br>
+    <!-- <img src="/assets/images/classroomempty.jpg" id="intro-img" alt="Sample image"> -->
+    <button id="engage" class="button">Show me data!</button>
 
 </div>
 
@@ -373,7 +383,7 @@ canvas {
   <script>
     $(document).ready(function(){
       if (localStorage.getItem('cache') === 'yes') {
-              // Check if page has been viewed
+            //  Check if page has been viewed
               $('.box').css("display", "none");
               $("body").css("background", "#E6EDFD");
               document.querySelector('#second').style.display = "flex";
@@ -408,7 +418,7 @@ canvas {
       surveyData.forEach(item => {
         let p = document.createElement('p');
         p.textContent = `${item.name}: ${item.visitors}`;
-        surveyDiv.appendChild(p);
+        surveyDiv.appendChild(p); 
       })
       filteredData.forEach(item => {
         let p = document.createElement('p');
@@ -417,7 +427,6 @@ canvas {
       });
       const totalEvents = filteredData.reduce((acc, curr) => acc + curr.events, 0);
       document.getElementById('temp-filler').innerText = `Total Swipes Right: ${totalEvents}`;
-      // not exactly correct meaning right now
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -433,7 +442,8 @@ canvas {
       return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
     });
     const visitors = data.map(item => item.data.results.visitors.value);
-
+    // const sample = [75, 83, 104, 85, 155, 177, 183, 120, 82, 109, 111, 67, 129, 190, 144];
+    
     // Create the chart
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
@@ -442,7 +452,7 @@ canvas {
         labels: labels,
         datasets: [{
           label: 'Unique student visitors',
-          data: visitors,
+          data: visitors, // sample
           backgroundColor: 'rgba(233, 30, 99, 0.2)',
           borderColor: 'rgba(233, 30, 99, 1)',
           borderWidth: 3
@@ -453,8 +463,11 @@ canvas {
         plugins: {
           title: {
             display: true,
-            text: 'Unique students using Doorstops by week',
-            fontSize: 60
+            text: 'Daily Engagemet: Number of Students using Doorstops',
+            font: {
+              size: 30,
+              family: 'Poppins'
+            }
           },
           legend: {
             display: true,
