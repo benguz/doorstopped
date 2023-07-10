@@ -10,9 +10,9 @@
   <!-- 
     - primary meta tag
   -->
-  <title>Doorstopped - Doorstop Education</title>
-  <meta name="title" content="Doorstop Education">
-  <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+  <title>Your Analytics | Doorstop Education</title>
+  <meta name="title" content="Your Analytics | Doorstop Education">
+  <meta name="description" content="See data-driven analysis on how your students interact with Doorstops. Customize and create doorstops for your students.">
 
   <!-- 
     - favicon
@@ -334,19 +334,19 @@ canvas {
     <div class="row">
         <div id="survey" class="square">
           <div class="top-section">
-            <span class="number">85</span>
+            <span class="number" id="surveysuccess">85</span>
             <div class="icon positive">
                 <img src="/assets/svg/upicon.svg" alt="down-icon" />
-                <span class="percentage positive">15%</span>
+                <span class="percentage positive" id="surveypct">15%</span>
             </div>
         </div>
         <div class="label">
-            <span>Students feel safer in school, 201 surveyed</span>
+            <span id="surveytotal">Students feel safer in school, 201 surveyed</span>
         </div>
         </div>
         <div id="results" class="square">
           <div class="top-section">
-            <span class="number">170</span>
+            <span class="number" id="engagement">170</span>
             <div class="icon positive">
                 <img src="/assets/svg/upicon.svg" alt="down-icon" />
                 <span class="percentage positive">19%</span>
@@ -358,7 +358,7 @@ canvas {
         </div>
         <div id="culture" class="square">
           <div class="top-section">
-            <span class="number">145</span>
+            <span class="number" id="excitedsurvey">145</span>
             <div class="icon positive">
                 <img src="/assets/svg/upicon.svg" alt="down-icon" />
                 <span class="percentage positive">50%</span>
@@ -366,7 +366,6 @@ canvas {
           </div>
           <div class="label">
               <span>Students are more excited to attend class</span>
-              <span id="temp-filler"></span>
           </div>
         </div>
     </div>
@@ -405,28 +404,41 @@ canvas {
     fetch('/.netlify/functions/dashboard')
     .then(response => response.json())
     .then(data => {
-      // 'data' is the response from your function
       console.log(data);
-      let resultDiv = document.getElementById('results');
-      let surveyDiv = document.getElementById('survey');
+
+
       let excludedNames = ["pageview", "50-swipes-survey-yes", "50-swipes-survey-no"];
       let surveyNames = ["50-swipes-survey-yes", "50-swipes-survey-no"];
 
       let filteredData = data.results.filter(item => !excludedNames.includes(item.name));
       let surveyData = data.results.filter(item => surveyNames.includes(item.name));
-      console.log(surveyData);
-      surveyData.forEach(item => {
-        let p = document.createElement('p');
-        p.textContent = `${item.name}: ${item.visitors}`;
-        surveyDiv.appendChild(p); 
-      })
+      
+      
+      // square 1
+      let surveyYes = document.getElementById('surveysuccess');
+      let surveyTotal = document.getElementById('surveytotal');
+      let surveypct = document.getElementById('surveypct');
+
+      surveyYes.textContent = surveyData[0].events;
+      let total = surveyData[0].events + surveyData[1].events;
+      surveyTotal.textContent = 'Students feel safer in school, ' + total + ' surveyed';
+      // next step is to update surveypct intelligently.
+      
+      // square 2
+      let resultDiv = document.getElementById('results');
+      let engagement = document.getElementById('engagement');
+      let sum = 0;
       filteredData.forEach(item => {
         let p = document.createElement('p');
         p.textContent = `${item.name}: ${item.visitors}`;
-        resultDiv.appendChild(p);
+        sum += item.visitors; //uniques by day --- maybe better content for this square would be student engagement, eg students w/ more than 10 minutes on dashboard
+        // resultDiv.appendChild(p);
       });
+      engagement.textContent = sum;
+
+      // square 3
       const totalEvents = filteredData.reduce((acc, curr) => acc + curr.events, 0);
-      document.getElementById('temp-filler').innerText = `Total Swipes Right: ${totalEvents}`;
+      document.getElementById('excitedsurvey').innerText = totalEvents; // `Total Swipes Right: ${totalEvents}`
     })
     .catch((error) => {
       console.error("Error:", error);
