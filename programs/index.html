@@ -36,14 +36,69 @@
   </head>
 
 <body id="top">
-  <div id="nav-placeholder">
+  <header class="header" data-header>
+    <div class="container">
 
-  </div>
-  <script>
-      $(function(){
-        $("#nav-placeholder").load("/nav.html");
-      });
-      </script>
+      <a href="/index" class="logo">
+        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="/index" class="logo">
+            <img src="/assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="/mission" class="navbar-link" data-nav-link>Mission</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/doorstops" class="navbar-link" data-nav-link>Doorstops</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/programs" class="navbar-link" data-nav-link>Programs</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/research" class="navbar-link" data-nav-link>Research</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="mailto:guzovsky@princeton.edu" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
+          <span class="span">Try us out</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
     <main>
         <article>
             <section class="section about" id="programs" aria-label="programs" style="position:relative">
@@ -109,8 +164,38 @@
     -->
               </div>
 
-              <div class="about-content" id="phones">
+</div></section>
+          
+<section class="section about" id="programs" aria-label="programs" style="position:relative">
+  <div class="container" >
+<h2 class="h2 section-title">
+  <!-- <span class="span">Student?</span> -->
+  We mediate SEL-centered conversations that bring students to the bargaining table 
+  </h2>
+  <a href="/programs/phones" id="injectButton" class="btn has-before">
+    <span class="span">End student powerlessness</span>
+    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+  </a>
+  </div>
+  <br><br>
+  <img src="/assets/images/DDash.gif" width="75%" style="margin: auto;">
+  <div class="container" >
+  <h2 class="h2 section-title">
+    <!-- <span class="span">Student?</span> -->
+    Choose your success metric, we bring the data. Analyze student sentiment and watch belonging grow.
+    </h2>
+    <a href="/empower" id="injectButton" class="btn has-before">
+      <span class="span">Get real-time insights</span>
+      <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+    </a>
+    </div>
 
+    <br><br>
+    </section>
+
+                    <section class="section about" id="programs" aria-label="programs" style="position:relative">
+                      <div class="container">
+                        <div class="about-content">
                 <h2 class="h2 section-title" >
                   Reduce phone use by <span class="span">authorizing</span> student perspectives
                 </h2>
