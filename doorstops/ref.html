@@ -279,21 +279,33 @@ function act(n, id) {
 
 
     } else if (strategy === 2) {
-      // loud classes
+      // loud classes / harassment. Should probably switch this to harassment.
 
       // 
       // 
       script = `Hey man, do you have a minute to talk? I know we don't usually hang out but it's important.<br><br>
-      
+      I know you guys have a lot of fun in [class where there's disruptive people // parties // juuling in bathrooms, etc], honestly it's kind of cool to watch.<br><br>
+      I have to bring up - for me and for my friends - that it can be stressful for us. I know you have no bad intentions at all, but when you [behavior X], it [outcome, eg. hurts the teacher's feelings/makes it harder for the people who want to learn / makes some of my friends uncomfy].<br><br>
+      I'm not asking you to completely stop. Is there a compromise you might be open to? I'm sure if we [solution, eg. went to the teacher and said we'd be way more respectful if we changed the curriculum/had more time outside], you'd have a more chill time, too.<br><br>
+      What do you think?<br><br>
+
+      [Optional - I would definitely owe you one man. If they bring up that their friends would be against it, explain the social referents concept.]
       `;
       explainText = "this will work bc..."
 
     } else if (strategy === 3) {
       // competitiveness
-      script = 'honk';
+      script = `Hey man, can I be, like, emotionally available for a second? I know we don't hang out much but this is important.<br><br>
+      
+      Everyone's super stressed about grades and college and everything. I think there's a way to get rid of the toxic competitive part - there are lots of high schools with high-achieving kids and no competitiveness. Plus, there's a lot of admissions data that says colleges don't take a fixed number of students from a school.<br><br>
+
+      Here's what I'm thinking:<br><br>
+      
+      If we had something collaborative to push for [like getting admin to get rid of weighted GPA, working together to push for a school policy change that would look good on everyone's resume, committing to genuinely shouting out people for effort on assignments, even if you don't know them], school culture would be a lot less stressful.<br><br>
+
+      Would you be down to support something like that?`;
       explainText = "this will work bc..."
       // external link to people who want to try participation boycott, different approach.
-
     }
 
 
@@ -314,8 +326,16 @@ function act(n, id) {
       // judgey people
       // solution is hi's + gum culture
       // Start saying hi to people in the halls. Genuinely.  (Popular non-bullies creating a status symbol, giving it to people lower on the hierarchy)
-
-      script = 'bonk';
+      
+      script = `At first, I didn't really believe there was a problem either. But imagine if you spent a day silent: not saying anything to anyone at school. People would start to make fun of you, pick on you, because you can't respond.<br><br>
+      
+      That's how people with lower social status feel, like they can't respond.
+      
+      I'm not asking you to hold a massive protest or anything, but can you, just, say hi to people in the halls? Or offer girls sitting next to you gum? will be enough to stop the toxic groupchats from stinging.<br><br> 
+      
+      It's 1% of girls making the rest of us feel shitty, and they're not *that* popular. If everyone else starts acting like the popularity contest doesn't exist, we'll all end up happier.
+      
+      All it takes is proving the world doesn't revolve around the 1%. Are you in?`;
       explainText = "this will work bc..."
 
     } else if (strategy === 2) {
@@ -342,6 +362,12 @@ function act(n, id) {
 
     // cafeteria convo approach + script
     // Share hydroflasks with ice cream in them. Other kind of simple nice thing that works as social currency eg gum
+    // Say you want that protest to happen. Maybe the dress code is awful. 
+    // Maybe there’s a culture of harassment at parties. The first problem you might run into is apathy: sure, it sucks, but nobody cares enough to do anything about it. 
+    // If you go from lunch table to lunch table pitching a protest or seeding some social change, 
+    // the friend group dynamics you’re jumping into might not be ~conducive~ to listening, empathy, or action.
+    // If you go talk to people one-on-one instead, maybe the most approachable person from each friend group, you’d be able to better connect. But how will others perceive that? How do you avoid getting mixed into drama when the campus sees you pulling so many people aside to talk?
+
     if (strategy === 1) {
       // judgey people
       // solution is hi's + gum culture
@@ -389,6 +415,9 @@ function act(n, id) {
     }
     div.parentNode.parentNode.append(strategyContents);
 
+    // add alert if strategy is zero to tell them to click one!
+    // UX-ify button presses to make emojis fly out
+    // add option to select people's vibes for more choices
 }
 
 </script>
