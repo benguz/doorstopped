@@ -66,6 +66,7 @@ body {
 .row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 
@@ -291,12 +292,68 @@ ul {
   text-align: left;
 }
 
+
+#donkey {
+  color: black; 
+  max-width: 60%;
+  margin: auto;
+}
 #strategies {
-  /* background-image: url("/doorstops/swoosh.svg");   */
+  max-width: 100%;
 }
 
-@media screen and (max-width: 600px) {
 
+.copy-paste-element {
+  text-align: left;
+  position: relative;
+  background-color: #f6f9fc;
+  border-radius: 3px;
+  border: 1px solid #dce6e9;
+  padding: 15px;
+  margin-bottom: 1rem;
+}
+
+.copy-paste-element p {
+  margin: 0;
+  /* margin-bottom: 0.5em; */
+  /* line-height: 1.5; */
+  font-size: 14pt;
+}
+
+.copy-icon {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-icon:focus {
+  outline: none;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.svg2 path {
+  stroke-dasharray: 477;
+  stroke-dashoffset: 477;
+  animation: draw 150ms ease-out forwards;
+}
+
+
+@media screen and (max-width: 600px) {
+  #donkey {
+    max-width: 100%;
+  }
   .desk {
   width: 60px;
   height: 40px;
@@ -309,7 +366,9 @@ ul {
     #text-section {
         max-width: 100%;
     }
-
+    #strategies {
+      max-width: 98%;
+    }
 }
 
 .close-button {

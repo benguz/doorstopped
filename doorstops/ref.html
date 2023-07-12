@@ -131,7 +131,7 @@
         <div id="selectedList">
             Selected items will be added here 
         </div>    -->
-          <div style="color: black; max-width: 100%">
+          <div id="donkey">
           <p>Convince them to change</p>
           <div id="strategies" width="100%">
         <div id="thanks" style="display: none">
@@ -188,7 +188,6 @@
                   '<span class="close-icon">&#215;</span>'+
                   '</button></div>';
     $(newCard).insertBefore('#addCard');
-
     $('.textbox').each(function() {
       var text = $(this).text();
       var textExists = false;
@@ -210,7 +209,7 @@
             '<div id="talk' + idTracker +
             '" class="card row" onclick="act(1, ' + idTracker +
             ')" style="background-color: hsl(351, 83%, 88%)">' +
-              'man-to-man</div><div id="empathy' + idTracker +
+              'Man-to-man</div><div id="empathy' + idTracker +
               '" class="card row" onclick="act(2, ' + idTracker +
               ')" style="background-color: hsl(42, 94%, 88%)">' +
               'Open Heart Surgery</div>' +
@@ -241,38 +240,99 @@
 
 function act(n, id) {
   let p = document.createElement('p');
+  // let explainer = document.createElement('p');
   let old = document.getElementById('attachment' + id);
+  let script = "";
+  let explainText = "";
   if (old) {
     old.remove();
   }
   p.id = 'attachment' + id;
+  let div = "";
 
   if (n === 1) {
-    let div = document.getElementById('talk' + id);
+    div = document.getElementById('talk' + id);
     let close = document.getElementById('empathy' + id);
     let close1 = document.getElementById('cafeteria' + id);
 
     div.style.backgroundColor = 'hsl(351, 83%, 75%)';
     close.style.backgroundColor = 'hsl(42, 94%, 88%)';
     close1.style.backgroundColor = 'hsl(234, 44%, 88%)';
+    // man to man approach + script
     
-    p.textContent = 'honk';
-    div.parentNode.parentNode.appendChild(p);
+    if (strategy === 1) {
+      // judgey people
+      // solution is hi's + gum culture
+      // Start saying hi to people in the halls. Genuinely.  (Popular non-bullies creating a status symbol, giving it to people lower on the hierarchy)
+
+      script = `Hey man, do you have a minute to talk? I know we don't usually hang out but it's important. Girls are really mean to each other here. It's not like this at other schools.<br><br>
+      
+      And it's kind of not really our problem, but it's two percent of the girls making the other 98 percent feel awful. Every Day. And you know how it is with anxiety and everything. We don't have to, like, burn down someone's house, but at other schools, even doing small things to show that we *don't* agree with the bad vibes has completely changed the culture.<br><br> 
+      
+      Can you start [saying hi // offering gum] to girls in class you don't usually talk to. That is literally all it takes.All the guys look up to you and would follow your lead, and it could really change the culture.<br><br>
+      
+      I'm asking man to man here. [okay to say this even if you're not a man].<br><br> 
+
+      I'm totally down to bring my friends to a [sports team/performance/opening/help out] if it'd convince you!`;
+      // Brief explainer of the strategy and why it will work.
+      explainText = "this will work bc..."
+
+
+    } else if (strategy === 2) {
+      // loud classes
+
+      // 
+      // 
+      script = `Hey man, do you have a minute to talk? I know we don't usually hang out but it's important.<br><br>
+      
+      `;
+      explainText = "this will work bc..."
+
+    } else if (strategy === 3) {
+      // competitiveness
+      script = 'honk';
+      explainText = "this will work bc..."
+      // external link to people who want to try participation boycott, different approach.
+
+    }
+
+
 
   } else if (n === 2) {
-    let div = document.getElementById('empathy' + id);
+    div = document.getElementById('empathy' + id);
     let close = document.getElementById('talk' + id);
     let close1 = document.getElementById('cafeteria' + id);
 
     div.style.backgroundColor = 'hsl(42, 94%, 75%)';
     close.style.backgroundColor = 'hsl(351, 83%, 88%)';
     close1.style.backgroundColor = 'hsl(234, 44%, 88%)';
+    // proving to them there's a problem 
+    // Don’t believe it? Try a day of silence. Watch people pick on you because you can’t fight back. It’s literally a jungle.
+          // Brief explainer of the strategy and why it will work.
 
-    p.textContent = 'bonk';
-    div.parentNode.parentNode.appendChild(p);
+    if (strategy === 1) {
+      // judgey people
+      // solution is hi's + gum culture
+      // Start saying hi to people in the halls. Genuinely.  (Popular non-bullies creating a status symbol, giving it to people lower on the hierarchy)
+
+      script = 'bonk';
+      explainText = "this will work bc..."
+
+    } else if (strategy === 2) {
+      // loud classes
+      script = 'bonk';
+      explainText = "this will work bc..."
+
+    } else if (strategy === 3) {
+      // competitiveness
+      script = 'bonk';
+      explainText = "this will work bc..."
+
+    }
+
 
   } else if (n===3) {
-    let div = document.getElementById('cafeteria' + id);
+    div = document.getElementById('cafeteria' + id);
     let close = document.getElementById('empathy' + id);
     let close1 = document.getElementById('talk' + id);
 
@@ -280,63 +340,60 @@ function act(n, id) {
     close.style.backgroundColor = 'hsl(42, 94%, 88%)';
     close1.style.backgroundColor = 'hsl(351, 83%, 88%)';
 
-    p.textContent = 'donk';
+    // cafeteria convo approach + script
+    // Share hydroflasks with ice cream in them. Other kind of simple nice thing that works as social currency eg gum
+    if (strategy === 1) {
+      // judgey people
+      // solution is hi's + gum culture
+      // Start saying hi to people in the halls. Genuinely.  (Popular non-bullies creating a status symbol, giving it to people lower on the hierarchy)
+
+      script = 'donk';
+
+    } else if (strategy === 2) {
+      // loud classes
+      script = 'donk';
+
+    } else if (strategy === 3) {
+      // competitiveness
+      script = 'donk';
+
+    }
     div.parentNode.parentNode.appendChild(p);
 
   }
+    
+  var newApproach = `
+    <div class="copy-paste-element" id="address` + id +
+    `">
+  <div>
+    <p>` + script +
+  `</p>
+  </div>
+  <button class="copy-icon" onclick="copyText(event)">
+    <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+      <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+    </svg>
+  </button>
+</div>
+<p id="explainer` + id +
+`">` + explainText +
+`</p>`
+    var strategyContents = document.createElement('div');
+    strategyContents.innerHTML = newApproach;
+
+    let l = null;
+    if (l = document.getElementById("address" + id)) {
+      l.remove();
+      document.getElementById("explainer" + id).remove();
+    }
+    div.parentNode.parentNode.append(strategyContents);
 
 }
 
 </script>
-<!-- <script>
-  // Here's an example of a list of words. Replace this with your actual list.
-const words = ["Football Captain", "Class Clown", "Class Prez", "Chief Stoner", "Highest Snap Score", "Guy who groans when homework is anounced", "Journalism Club EIC", "Most Social Guy on Math Team", "Couple together since pre-k", "diva", "trend-setter"];
-// Maybe I should make a map of the lunch tables instead.
-const textBoxContainer = document.getElementById('textBoxContainer');
-const selectedList = document.getElementById('selectedList');
-
-const totalWidth = 100;
-
-// Calculate the number of slots
-const slots = Math.floor(window.innerWidth / totalWidth);
-
-// Generate the text boxes
-var i = 0;
-for (let word of words) {
-  setTimeout(function() {
-  
-    const textBox = document.createElement('div');
-    textBox.style.left = Math.random() * window.innerWidth + "px";
-    const slot = Math.floor(Math.random() * slots);
-    textBox.style.left = slot * totalWidth + "px";
-    textBox.classList.add('float');
-    textBox.textContent = word;
-
-    textBox.addEventListener('click', () => {
-        // Toggle the "selected" class
-        textBox.classList.toggle('selected');
-
-        // Add/remove the word to/from the list
-        if (textBox.classList.contains('selected')) {
-            const listItem = document.createElement('li');
-            listItem.textContent = word;
-            listItem.id = `listItem-${word}`;
-            selectedList.appendChild(listItem);
-        } else {
-            const listItemToRemove = document.getElementById(`listItem-${word}`);
-            selectedList.removeChild(listItemToRemove);
-        }
-    });
-
-    textBoxContainer.appendChild(textBox);
-  }, 500 * i);
-  i++;
-}
-
-</script> -->
   <script>
     const closeButtons = document.getElementsByClassName('close-button');
-    console.log(closeButtons.length);
 for (let i = 0; i < closeButtons.length; i++) {
   let closeButton = closeButtons[i];
   closeButton.addEventListener('click', () => {
@@ -351,7 +408,7 @@ for (let i = 0; i < closeButtons.length; i++) {
 
 </script>
 <script>
-    const strategy = 0;
+    let strategy = 0;
 
     function type(n) {
       judgey = document.getElementById("judgey");
