@@ -58,6 +58,14 @@
                 How <span class="span">emotionally available</span> are y'all?
             </h2>
             <br>
+            <form id="myForm">
+              <label for="transcript">Enter Text:</label><br>
+              <textarea id="transcript" name="transcript" rows="4" cols="50"></textarea><br>
+              <label for="fileInput">Or upload a .txt file:</label><br>
+              <input type="file" id="fileInput" name="fileInput" accept=".txt"><br>
+              <input type="submit" value="Submit">
+          </form>
+          <div id="words"></div>
             <!--
             <p style="margin-bottom:0.5em"><b>Start</b> your phone timer when your first class really starts: when your teacher starts teaching (with people are paying attention) or group work gets productive.</p>
                 <p style="margin-bottom:0.5em"><b>Pause</b> when there’s a disruption, a break, or when people stop paying attention.</p>
@@ -101,6 +109,73 @@
 <div id="footer-placeholder">
 
 </div>
+<script>
+// Fetch the words from the TXT file
+fetch('/assets/data/emotionwords.txt')
+    .then(response => response.text())
+    .then(data => {
+        let words = new Set(data.trim().toLowerCase().split('\n').map(word => word.trim()));
+        console.log("words ", words)
+
+        // Get the form and add a submit event listener
+        let form = document.getElementById('myForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get the text value
+            let transcript = form.elements['transcript'].value;
+
+            // get file value
+            let fileInput = form.elements['fileInput'].files[0];
+            
+            if (fileInput) {
+                // If a file is uploaded, read its content
+                let reader = new FileReader();
+                reader.onload = function() {
+                    processText(reader.result);
+                };
+                reader.readAsText(fileInput);
+            } else {
+                // If no file is uploaded, process the text input
+                processText(transcript);
+            }
+          });
+          function processText(text) {
+
+            // Remove punctuation and newlines and split the text into words
+            let tokens = text.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\n\r\t]/g," ").split(' ').filter(Boolean);;
+
+            console.log("tokens ", tokens)
+            // Count the occurrences
+            let wordCounts = {};
+            for (let token of tokens) {
+                if (words.has(token.trim())) {
+                  console.log("yes!")
+                    if (token in wordCounts) {
+                        wordCounts[token]++;
+                    } else {
+                        wordCounts[token] = 1;
+                    }
+                }
+            }
+            console.log(wordCounts);
+
+            // Get the div to display the word counts
+            let wordsDiv = document.getElementById('words');
+
+            // Clear any previous content in the div
+            wordsDiv.innerHTML = '';
+
+            // Display the word counts in the div
+            for (let word in wordCounts) {
+                let count = wordCounts[word];
+                let p = document.createElement('p');
+                p.textContent = `${word}: ${count}`;
+                wordsDiv.appendChild(p);
+            }
+          }
+    });
+</script>
 <script>
     $(function(){
       $("#footer-placeholder").load("/footer.html");
