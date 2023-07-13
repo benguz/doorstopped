@@ -853,8 +853,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
   <script type="text/javascript">
     // handles redirects for student users coming from fix.school.
     window.onload = function() {
-        var referrer = document.referrer;
-        // Check if referrer is from a certain domain
+        var referrer = window.location.hostname;
         if (referrer.includes("fix.school")) {
             window.location.href = "/student";
         }
