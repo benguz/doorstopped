@@ -58,6 +58,14 @@
                 How <span class="span">emotionally available</span> are y'all?
             </h2>
             <br>
+            <p style="margin-bottom:0.5em">Most classes DON'T have students talking about their feelings, but <b>people are feeling everything from boredom to incredible emotional pain</b> in class.</p>
+            <p style="margin-bottom:0.5em">Not talking about it is like leaving a fire burning in your classroom's trash can.</p>
+            <br>
+            <h2 class="h2 section-title">Track emotion word use in your class.</h2>
+            <br>
+            <p>This data is your leverage to change school.</p>
+            <p><b>Record your class</b> and run the audio through a speech to text website. Bring that text over here. You'll get a score on how emotionally unavailable your class is.</p>
+                <br>
             <form id="myForm">
               <label for="transcript">Enter Text:</label><br>
               <textarea id="transcript" name="transcript" rows="4" cols="50"></textarea><br>
@@ -66,8 +74,10 @@
               <input type="submit" value="Submit">
           </form>
           <div id="words"></div>
+          <p style="margin-bottom:0.5em">We're doing a nationwide experiment on emotion words, part of our work on student mental health and belonging.
+          </p>
+          <p style="margin-bottom:0.5em">If you want to share your data, email your <b>emotion word score and the number of classes you tracked</b> to guzovsky@princeton.edu or text 781-three-three-zero-6849.</p>
             <!--
-            <p style="margin-bottom:0.5em"><b>Start</b> your phone timer when your first class really starts: when your teacher starts teaching (with people are paying attention) or group work gets productive.</p>
                 <p style="margin-bottom:0.5em"><b>Pause</b> when there’s a disruption, a break, or when people stop paying attention.</p>
                     <p style="margin-bottom:0.5em"><b>Pause</b> when the class ends, and start when the next one really starts. Repeat for the day.</p>
             <br>
@@ -110,7 +120,9 @@
 
 </div>
 <script>
-// Fetch the words from the TXT file
+
+// TODO: Actually score the emotional availability of the input, don't just output random crud
+// Fetch the words from the local TXT file
 fetch('/assets/data/emotionwords.txt')
     .then(response => response.text())
     .then(data => {
