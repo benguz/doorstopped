@@ -141,7 +141,7 @@ fetch('/assets/data/emotionwords.txt')
             }
           });
           function processText(text) {
-
+            // https://www.tutorialspoint.com/how-to-convert-speech-to-text-using-javascript
             // Remove punctuation and newlines and split the text into words
             let tokens = text.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\n\r\t]/g," ").split(' ').filter(Boolean);;
 
