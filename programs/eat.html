@@ -34,36 +34,163 @@
     rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
-  <style>
-      @media screen and (max-width: 1023px){
-.framebox {
-height: 34000em;
-}
-.sidenavtotal {
-display:none;
-padding: 0em;
-}
-#sidenav{
-display:none;
-
-}
-#toc {
-  display:none;
-}
-.desktop {
-  display: none;
-}
-}
-@media (min-width: 1024px) {
-main {
-  display:flex; 
-  justify-content:center;
-}
-.framebox {
-  height: 15500em;
-}
-}
-  </style>
+    <style>
+    @media screen and (max-width: 1023px){
+      .framebox {
+      height: 34000em;
+      }
+      .sidenavtotal {
+      display:none;
+      padding: 0em;
+      }
+      #sidenav{
+      display:none;
+      
+      }
+      #toc {
+        display:none;
+      }
+      .desktop {
+        display: none;
+      }
+      }
+      .yonk {
+        width: 97%;
+        margin-left: 1.5%;
+      }
+      @media (min-width: 1024px) {
+      /* main {
+        display:flex; 
+        justify-content:center;
+      } 
+      .yonk {
+                  width: 55%;  
+                  margin-left: 22.5%; 
+                  padding: 0 10px;
+                  box-sizing: border-box;
+              }*/
+      
+      /* .yonk {
+        flex: 3;
+      }
+      .sidenavtotal {
+        flex: 1;
+      } */
+      
+      .framebox {
+        height: 15500em;
+      }
+      }
+      
+      .copy-paste-element {
+        position: relative;
+        background-color: #f6f9fc;
+        border-radius: 3px;
+        border: 1px solid #dce6e9;
+        padding: 15px;
+        margin-bottom: 1rem;
+      }
+      
+      .copy-paste-element p {
+        margin: 0;
+        /* margin-bottom: 0.5em; */
+        line-height: 1.5;
+      }
+      
+      .copy-icon {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .copy-icon:focus {
+        outline: none;
+      }
+      
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      
+      .hidden {
+        display: none;
+      }
+      
+      .svg2 path {
+        stroke-dasharray: 477;
+        stroke-dashoffset: 477;
+        animation: draw 150ms ease-out forwards;
+      }
+      
+      /* flexbox shit  
+      .sidenavtotal {
+        flex: 1;
+        margin-right: 1rem;
+      }
+      
+      article {
+        flex: 3;
+      }
+      
+      .toc {
+        flex: 1;
+        /*max-width:60%;
+        /*word-wrap: break-word;
+        /* Add your toc styles here
+      }
+      */
+      
+      .yonk p {
+        margin-bottom: 0.5em;
+        margin-top: 0.7em;
+        font-size: 14pt;
+      }
+      
+      .yonk p, h1, h2, h3, li {
+        color: black;
+      }
+      
+      .yonk a {
+        text-decoration: underline;
+        display: inline;
+      }
+      h1 {
+        font-size: 25pt;
+        text-decoration: none;
+      }
+      h2 {
+        margin-top: 1em;
+        font-size: 20pt;
+      }
+      
+      .badonk {
+        list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+        padding-left: 30px;
+        font-size: 14pt;
+      
+      }
+      .honk {
+        list-style-type: disc !important; 
+      }
+      
+      .yonk {
+          max-width: 55%;
+      }
+      
+      /* strong {
+          font-size: 20pt;
+      } */
+      
+      @media screen and (max-width: 720px) {
+          .yonk {
+              max-width: 99%;
+          }
+      }
+      </style>
 
   </head>
 
@@ -130,27 +257,306 @@ main {
   </header>
 
       
-    <main>
-      <div class="sidenavtotal" style="padding:3em;">
-      
-          <br class="desktop"><br class="desktop">
-          <br class="desktop"><br class="desktop">
+    <main style="display: flex; flex-direction: row;">
+      <div style="display: flex; flex-direction: row;">
+        <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
+        
+            <br class="desktop"><br class="desktop">
+            <br class="desktop"><br class="desktop">
+            <br class="desktop">
+        <div id="sidenav"></div>
+        </div> 
       <div id="sidenav"></div>
       </div>
-        <article>
-          <br class="desktop"><br class="desktop">
-          <div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
-              <iframe class="framebox" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="620em" max-width="calc(100% - 10em)" height="15500em" 
-              src="https://docs.google.com/document/d/e/2PACX-1vQuAgsNXEfTBhS56N0W2yvlVj7MyOfDYXK3G5JNhVzEHwc8G9JW45GD-3hEP3eN77aPQPpooN4fqZid/pub?embedded=true"></iframe>    
+          <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center; margin: auto;">
+            <br class="desktop"><br class="desktop">
+            <br><br>
+            <br><br>
+            <h1><strong>You have a food problem. We’ll give you $200 to help solve it.</strong></h1>
+
+
+            <p>
+            If people are skipping school lunch and not eating at all, it doesn’t matter if the food is free. <strong>The school is failing to feed students.</strong> That is the most basic need.
+            </p>
+            <p>
+            What’s the root cause of kids not eating at your school? Pick a problem, we’ll take you to a tested strategy. 
+            </p>
+            <p>
+            The food is so <strong><a style="scroll-margin-top: 4.5em;" href="#starve">GROSS</a> </strong>people would rather starve.
+            </p>
+            <p>
+            Buying lunch is <strong><a style="scroll-margin-top: 4.5em;" href="#stigma">STIGMATIZED</a></strong>, people don’t eat it because they’re SHUNNED.
+            </p>
+            <p>
+            The food is too <strong><a style="scroll-margin-top: 4.5em;" href="#pricey">PRICEY</a></strong>, there are kids begging for morsels next to the lunch line.
+            </p>
+            <p>
+            There’s not <strong><a style="scroll-margin-top: 4.5em;" href="#enough">ENOUGH</a></strong>, people skip breakfast and dinner.
+            </p>
+            <p>
+            Nobody has <strong><a style="scroll-margin-top: 4.5em;" href="#time">TIME</a> </strong>to eat, the line is too long or people take an extra class during lunch.
+            </p>
+            <p>
+            Or… jump right to a strategy you think will work: 
+            </p>
+            <ul>
+            
+            <li><a style="scroll-margin-top: 4.5em;" href="#data">Collect data. Bring it to administrators</a>—evidence that kids aren’t eating will make them change lunch.  
+            
+            <li>Think admin won’t budge? We Give $50–$200 grants to <a style="scroll-margin-top: 4.5em;" href="#money">HOW TO GET OUR MONEY TO FUND YOU</a>. 
+            <ul>
+             
+            <li>Collect quick data
+             
+            <li>Get our grant
+             
+            <li><a style="scroll-margin-top: 4.5em;" href="#cook">Use our cookbook-playbook to scale up</a>
+            </li> 
+            </ul>
+            
+            <li>Is cooking in bulk for your classmates (and maybe getting in trouble) too much? <a href="https://docs.google.com/presentation/d/1RdGBdMOi2uh64KpnxBohBevxvYaB1JOOcgM8K6yIkAM/edit?usp=sharing">Try our waffle game first.</a>
+            </li>
+            </ul>
+            <h2 id="data">NEGOTIATING WITH TRUST AND DATA</h2>
+            
+            
+            <p>
+            Collect data. Bring it to administrators—evidence that kids aren’t eating will make them change lunch. 
+            </p>
+            <p>
+            Count how many kids don't eat during lunch block. Get a percentage. 
+            </p>
+            <p>
+            If someone goes out to eat or gets food from home, they ate. If lunch is not the issue, poll 20 students on whether they had breakfast. 
+            </p>
+            <p>
+            We’re doing the same nationwide: send us a percentage, we’ll get national news. Email <a href="mailto:guzovsky@princeton.edu">guzovsky@princeton.edu</a> with your school name, state, and percentage of students who eat something during lunch.
+            </p>
+            <p>
+            Bring that information to administrators. Walk up to your principal or their secretary and ask for a meeting. Say:
+            </p>
+            <p>
+            “Students aren’t eating anything during lunch: I surveyed students and X% didn’t eat because [your reason, eg. the frozen food is too gross]. Food is a basic need, and you have a responsibility to make sure students don’t go hungry. Can you rework the budget to [your solution, eg. serve food more students will eat]?
+            </p>
+            <p>
+            <a style="scroll-margin-top: 4.5em;" href="#cook">CHOOSE WHAT TO COOK</a>.
+            </p>
+            <h2 id="starve">People would rather STARVE: </h2>
+            
+            
+            <p>
+            To get federal funding for meals (which a lot of under-resourced high schools want), they have to serve really, really gross food: federal requirements are strictly anti-seasoning and happiness.<sup id="fnref1"><a style="scroll-margin-top: 4.5em;" href="#fn1" rel="footnote">1</a></sup> Your school only has $1.19 per meal to spend.<sup id="fnref2"><a style="scroll-margin-top: 4.5em;" href="#fn2" rel="footnote">2</a></sup> So… ok. What now? You’re going to have to <a style="scroll-margin-top: 4.5em;" href="#cook">cook for yourself and your friends</a>.
+            </p>
+            <h2 id="stigma">Buying lunch is STIGMATIZED</h2>
+            
+            
+            <p>
+            Fixing this takes someone getting punched in the face. Or, if that’s not your thing. Try <a href="http://doorstopped.org/doorstops/ref">SCHOOLWIDE CULTURE SHIFT</a>. Don’t want to commit to a big project, just take a simpler approach:
+            </p>
+            <p>
+            SAY THAT THERE’S STIGMA. LOUDLY. Put up posters, wear a disguise while you tape them to the walls if you have to. Here’s <a href="https://docs.google.com/document/d/1C099Bnu_si6dM1Iap-jHpVbCOhqaahV7X31CjJ8d1EQ/copy?usp=sharing">a template poster that actually works</a>. This is like saying to your little cousin that bites people, “Hey, you’re hurting me.” And they’re like, “Oh, I am?”
+            </p>
+            <h2 id="pricey">The food is too PRICEY</h2>
+            
+            
+            <p>
+            This is a problem for your PRINCIPAL (or honestly, you’re probably a private schooler if you’re in this section, so “Head of Upper School”), and I’m sure a JOURNALIST would love an anonymous tip that kids aren’t EATING. We call that LEVERAGE, BESTIE.
+            </p>
+            <p>
+            Don’t actually expose your school to the news like that unless there is no other option. It’ll have long term negative consequences because every administrator will start acting paranoid. Try this first.
+            </p>
+            <p>
+            Lead with KINDNESS before going SICKO NEGOTIATOR MODE. 
+            </p>
+            <ul>
+            
+            <li>COLLECT DATA: count how many kids don’t eat during lunch block. 
+            <ul>
+             
+            <li>Ask the school lunch lady for data on how many lunches are bought/day, or do a sample yourself: get to lunch first, count, estimate based on that for the other two lunch periods.
+             
+            <li>Or… Poll 20 random people in the hallway: yes/no, do you eat during lunch? Don’t just ask your friends!
+            </li> 
+            </ul>
+            
+            <li>SHARE DATA: tell the principal or an administrator/teacher you trust. [Script option, centering that food is a basic need] 
+            <ul>
+             
+            <li>“Students aren’t eating anything during lunch: I surveyed students and X% didn’t eat because [your reason, eg. the frozen food is too gross]. Food is a basic need, and you have a responsibility to make sure students don’t go hungry. Can you rework the budget to [your solution, eg. serve food more students will eat]?
+            </li> 
+            </ul>
+            </li> 
+            </ul>
+            <ul>
+            
+            <li>GIVE THEM A LITTLE TIME: See what they do about it. Try to STAND IN THEIR SHOES, understand WHY they might be doing something. You can’t SOLVE the problem if you don’t know WHAT’S STOPPING THEM FROM SOLVING IT. 
+            <ul>
+             
+            <li>What regulatory policy do they have to follow? What are their budget constraints? Are they locked in negotiations with the teacher’s union?
+            </li> 
+            </ul>
+            
+            <li>IF THEY DON’T PROMISE CHANGE IN A REASONABLE AMOUNT OF TIME, you have to start negotiating. This is where you bring up journalists.
+            
+            <li>IF the negotiation fails (or you don’t want the confrontation, which WILL have NEGATIVE IMPACTS on your reputation)
+            </li>
+            </ul>
+            <h2 id="enough">There’s not ENOUGH to eat</h2>
+            
+            
+            <p>
+            Finding your state’s regulations. Usually, you can’t sell within a certain distance of the cafeteria. If people are skipping breakfast though… set up right where school buses come and <a style="scroll-margin-top: 4.5em;" href="#cook">start cooking</a>.
+            </p>
+            <h2 id="time">Nobody has TIME to eat</h2>
+            
+            
+            <p>
+            Maybe the AP kids take another class during lunch block, or the line is just SUPER long. <a style="scroll-margin-top: 4.5em;" href="#cook">You can start cooking food in bulk</a>, but PLACE YOURSELF in a more STRATEGIC LOCATION. Kids need to walk by you. Choose a high traffic hallway.
+            </p>
+            <p>
+            OR. If the problem is competitiveness: you can CONVINCE STUDENTS TO SIGN OFF ON AN EMAIL TO EVERY COLLEGE ADMISSIONS OFFICE IN THE COUNTRY. We’ll help you send it. It would say:
+            </p>
+            <p>
+              
+<div class="copy-paste-element">
+  <div>
+    <p><strong>Subject:</strong> Support [High school name] students who don't eat during lunch?<br><br>
+Hello [name],<br>
+    <br>
+We’re all students at [Your High School Name], and many of us take an additional class during our lunch period, meaning we eat nothing during the school day. We do this out of pressure to achieve at the highest level, but we won’t anymore.<br>
+    <br>
+Lunch is important to us. It’s a basic need for health. When you see our applications in the coming years and notice students are taking one less class, that’s why. Please consider us as continuing to take the most challenging course load available at our school, as a course load that denies us food denies our basic needs.<br>    
+<br>
+Thank you for reading.<br><br>
+Regards,<br>
+[Your High School Name] Students.  
+</p>
+  </div>
+  <button class="copy-icon" onclick="copyText(event)">
+    <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+      <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+    </svg>
+  </button>
+</div>
+
+            <h2 id="cook">COOOOOOK</h2>
+            
+            
+            <p>
+            <strong>Level 1: The Muffin Man</strong>
+            </p>
+            <p>
+            Buy chips and snacks. Bring them in your backpack. Distribute them sneakily. This is your beta test to see just how hungry people are.
+            </p>
+            <p>
+            <strong>Level 2: The Snack Shack</strong>
+            </p>
+            <p>
+            Get a waffle maker, <a href="https://www.amazon.com/DASH-DMW001AQ-Individual-Chaffles-Non-Stick/dp/B01M9I779L/">start small</a>. You can plug this baby in anywhere and throw some <a href="https://www.amazon.com/Krusteaz-Belgian-Waffle-Mix-Foodservice/dp/B004AJIG76">waffle mix</a> in. Use a classroom, or any room near the cafeteria. Buy some snacks, too. Set up an operation. Charge a dollar a waffle if you want to turn this into a business, or do it for free if you’re all about supporting the community (we’ll spot you). If people like it, you can start thinking bigger… 
+            </p>
+            <p>
+            <strong>Level 3: Enchiladas in Bulk</strong>
+            </p>
+            <p>
+            If you don’t have a kitchen at home for this, ask a local restaurant or food pantry to use their kitchen. If they’re worried about liability insurance, we can cover you. 
+            </p>
+            <p>
+            Make something easy to do in bulk. Pasta with meat sauce. Ground beef and tortillas. Egg and cheese sandwiches. Don’t forget about vegetables. And SALT.
+            </p>
+            <p>
+            Bringing in friends to help: 10 people means you only have to cook once every two weeks. 
+            </p>
+            <p>
+            You’ll need:
+            </p>
+            <ul>
+            
+            <li>A table. Your school has lots of tables: clutch up, secure the bag.
+            
+            <li>If you want to keep things warm, set up near an outlet or find an oil-powered mini-stove.
+            
+            <li>A sign. Nothing’s real unless you have a sign. Get it from the art classroom or CVS.
+            
+            <li>Survey Data. Understand #1 how many students you feed and #2 how many students don’t eat during lunch. Poll 20 random classmates in the halls. Record it for proof if you’re feeling elite. When an administrator comes to shut down your operation, <strong>your data is your leverage:</strong> “We felt it was necessary to bend school rules and sell food because students are not eating during lunch: we polled students and X% skip lunch. Food is a basic need, and we’re happy to work with any health regulations you need us to, but we will not shut down.
+            </li>
+            </ul>
+            <ul>
+            
+            <li>Vlog walking into school (either solo or w/ a parent of a student for legitimacy) and giving out free food
+            
+            <li>Cold email your favorite youtube chefs for recipe ideas. 
+            </li>
+            </ul>
+            <p>
+            <strong>Level 4: The Legitimate Operation</strong>
+            </p>
+            <p>
+            SAY IT’S FOR A FUNDRAISER for…
+            </p>
+            <ul>
+            
+            <li>a local food pantry (partner with them, you can borrow their kitchen to cook meals)
+            
+            <li>For giving kids who can’t afford it meals outside of school (so you run your service once during lunch, once after school, paid for by the kids!)
+            
+            <li>For any cause you want, as long as the fundraiser runs … first weekly, then daily!
+            </li>
+            </ul>
+            <p>
+            <strong>Level 5: Permission from the School, Subsidies for kids who can’t afford it.</strong>
+            </p>
+            <p>
+            GET A FOOD TRUCK (already may have navigated certain regulations - which I, to write this page, will need to understand & explain)(richland had it)
+            </p>
+            <p>
+            MAKE SURE YOUR FOOD IS UP TO CODE REGARDLESS: HERE’S HOW TO COOK WITH HIGH STANDARDS. 
+            </p>
+            <ul>
+            
+            <li>Wash your hands.
+            
+            <li>Make sure your meat is cooked through.
+            
+            <li>Don’t let raw stuff touch other stuff.
+            </li>
+            </ul>
+            <h1 id="money">HOW TO GET OUR MONEY TO FUND YOU</h1>
+            
+            
+            <p>
+            You commit to 1. Being clean and 2. Cookin' good. Take a few pictures + videos of your setup to prove it. 
+            </p>
+            <p>
+            Our goal is for you to be self-sustaining, but if you're breaking even, we can keep up the support.
+            </p>
+            <p>
+            Email <a href="mailto:guzovsky@princeton.edu">guzovsky@princeton.edu</a> with pictures of your setup, how you’re keeping everything clean, <a style="scroll-margin-top: 4.5em;" href="#heading=h.88vkwbon970c">survey data</a> if you collected it, and we’ll send you ingredients!
+            </p>
+            
+            <!-- Footnotes themselves at the bottom. -->
+            
+            <h2>Notes</h2>
+            <div class="footnotes">
+            <hr>
+            <ul><li id="fn1">
+            <p>
+                 https://hhsbuzzer.com/1912/features/the-logistics-of-lunch/&nbsp;<a style="scroll-margin-top: 4.5em;" href="#fnref1" rev="footnote">&#8617;</a><li id="fn2">
+            <p>
+                 https://foodcorps.org/6-things-you-need-to-know-about-school-food/&nbsp;<a style="scroll-margin-top: 4.5em;" href="#fnref2" rev="footnote">&#8617;</a>
+            
+            </ul></div>
             </div>
             
-          
-      </article>
-      <div style="padding:3em;">
           <br><br>
-          <br><br>
-          <div id="toc" ></div>
-      </div>
+          </div>
+          <div class="sidenavtotal" style="padding:3em;">
+      
+            <br class="desktop"><br class="desktop">
+            <br class="desktop"><br class="desktop">
+            <br class="desktop">
+          <div id="toc"></div>
+          </div>
       
     </main>
 
@@ -164,7 +570,7 @@ main {
     });
     
     </script>
-    <script src="/components/sidenav.js">
+    <script src="/components/sidenaveh.js">
     </script>
 
 
@@ -173,7 +579,7 @@ main {
   - #BACK TO TOP
 -->
 
-<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+<a style="scroll-margin-top: 4.5em;" href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
   <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
 </a>
 
