@@ -35,6 +35,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Poppins&display=swap" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         @media screen and (max-width: 1023px){
@@ -56,6 +57,8 @@ display:none;
     display: none;
   }
 }
+
+
 @media (min-width: 1024px) {
   main {
     display:flex; 
@@ -69,7 +72,7 @@ display:none;
 .board {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    max-width: 410px;
+    max-width: 610px;
     margin: 0 auto;
 }
 
@@ -228,27 +231,27 @@ h1 {
 
               </div>
               <div class="board-item">
-                <img src="/assets/svg/longgame.svg"></img>
+                <img src="/assets/svg/longgame.svg" onclick="goto(6)"></img>
 
               </div>
               <div class="board-item">
-                <img src="/assets/svg/puzzle.svg"></img>
+                <img src="/assets/svg/puzzle.svg" onclick="goto(7)"></img>
 
               </div>
               <div class="board-item">
-                <img src="/assets/svg/walk.svg"></img>
+                <img src="/assets/svg/walk.svg" onclick="goto(8)"></img>
 
               </div>
               <div class="board-item">
-                <img src="/assets/svg/script.svg"></img>
+                <img src="/assets/svg/script.svg" onclick="goto(9)"></img>
 
               </div>
               <div class="board-item">
-                <img src="/assets/svg/salami.svg"></img>
+                <img src="/assets/svg/salami.svg" onclick="goto(10)"></img>
 
               </div>
               <div class="board-item">
-                <img src="/assets/svg/ifileave.svg"></img>
+                <img src="/assets/svg/ifileave.svg" onclick="goto(11)"></img>
 
               </div>
             </div>
@@ -268,22 +271,36 @@ h1 {
                 <br><br>                  <p>Here are <strong>all your strategies to establish sustainable &ldquo;take a break&rdquo; routines</strong> followed by word-for-word scripts and explained what-if&rsquo;s.</p>
                   <p>You&rsquo;ll learn: <span class="aesthetic-button blue">Negotiating</span>, <span class="aesthetic-button green">Networking</span>, <span class="aesthetic-button pale">Building a brand</span></p>
                   <h2 id="scroll-2">The Emotional Stapler</h2>
-                  <p>Reqs: Strong relationship with your teacher&nbsp;</p>
-                  <p>Skills: Emotional availability, Proactive communication</p>
+
+                <p>You'll learn: <span class="aesthetic-button pink">Emotional Availability</span> <span class="aesthetic-button orange">Proactive Communication</span>
+
+                  <p>You'll need: <span class=reality-blurb>a strong relationship with your teacher</span></p>
+                  </p>
+                  <div style="display: flex; justify-content: center; flex-direction: column; margin-top: 10px; margin-bottom: 10px;">
+                    <img src="/assets/images/owstapler.jpg">
+                    <!-- <p style="color: grey; text-align: center;">If you think the punishment is even A LITTLE unfair, you have a (nonviolent) way to fight back.</p> -->
+                </div>
                   <p>Remember when you were in fourth grade and your crazy friend Jamarison would staple himself just to get out of class?</p>
                   <p>Well, you can&rsquo;t get away with that anymore, but you still can go to the nurse.&nbsp;</p>
-                  <p>Going to the nurse can always be a once-a-semester escape plan, but if you want to go regularly, your teacher must know you&rsquo;re regularly stressed and tired. Have you ever seen a teacher walk up to a student with their head in their desk and ask, &ldquo;Do you want to go to the nurse?&rdquo;</p>
+                  <p>Going to the nurse can always be a once-a-semester escape plan, but if you want to go regularly, your teacher needs to know you&rsquo;re regularly stressed and tired.</p>
+                    
+                  <p><strong>Downside</strong>: That means telling them. <strong>Upside</strong>: Once you do, all it'll take to leave class is making eye contact with your teacher, and they'll nod back</p>
+                  <p>Have you ever seen a teacher walk up to a student with their head in their desk and ask, &ldquo;Do you want to go to the nurse?&rdquo; <strong>Those interactions are proof your teacher cares.</strong></p>
+                  <p>All you need to do is take the lead</p>
                   <p>Problems:</p>
                   <ul>
-                  <li>&ldquo;The nurse at my school is an asshole&rdquo; Link to [how to build a good relationship with the nurse w/ Deer Park examples]</li>
+                  <li>"The nurse at my school is an asshole"</li>
                   </ul>
                   <ul>
-                  <li>Men who are afraid to admit pain, it&rsquo;s okay to go to the nurse. [link]</li>
+                  <li>Men who are afraid to admit pain, it&rsquo;s <a href="/doorstops/feelings">okay to go to the nurse.</a></li>
                   </ul>
-                  <h2>The 10 minute walk&hellip; 20 minute walk&hellip; 2 hour walk&hellip;</h2>
-                  <p>Reqs:</p>
-                  <p>Skills:&nbsp; Pitching yourself, Comfort under stress</p>
-                  <p>To take a walk during class often, your teacher must know why: they don&rsquo;t need your whole emotional history and every trauma you&rsquo;ve been through, but they need <strong>visual or verbal cues that you&rsquo;re stressed, tired, in your feelings, or out of it</strong>.</p>
+                  <h2 id="scroll-8">The 10 minute walk&hellip; 20 minute walk&hellip; 2 hour walk&hellip;</h2>
+                  <!-- <div style="display: flex; justify-content: center; flex-direction: column; margin-top: 10px; margin-bottom: 10px;">
+                    <img src="/assets/images/owstapler.jpg">
+                    <p style="color: grey; text-align: center;">If you think the punishment is even A LITTLE unfair, you have a (nonviolent) way to fight back.</p> 
+                </div>-->
+                  <p>Skills:&nbsp; <span class="aesthetic-button blue">Pitching yourself</span><span class="aesthetic-button pale">Comfort under stress</span></p>
+                  <p>To take a lot of walks during class, your teacher has to know why: they don&rsquo;t need your whole emotional history and every trauma you&rsquo;ve been through, but they need <strong>visual or verbal cues that you&rsquo;re stressed, tired, in your feelings, or out of it</strong>.</p>
                   <ul>
                   <li><strong>Stressed, Tired, Out of it: </strong>Head on your desk. Listening to music. Silence. Blank stares. No movement.</li>
                   <li><strong>In your feelings:</strong> Rowdy, but a little frustrated. [Say more, but think PA]</li>
@@ -294,13 +311,16 @@ h1 {
                   <li>TEACHERS YOU ARE CLOSE WITH: 10-15 minutes.</li>
                   <li>BESTIE TEACHERS: As long as you want.</li>
                   </ul>
-                  <p>The teacher cannot have <em>everybody leaving class</em> becoming normal. It undermines their authority and, honestly, makes them feel pretty awful about themselves. Keep this in mind when you think about how long your walk should be. You might do this naturally: <strong>If you&rsquo;re often stressed, tired, in your feelings, or out of it, match the length of your walk to the intensity of your feelings.&nbsp;</strong></p>
-                  <p style="text-align: center;">[Diagram]</p>
+                  <p>The teacher cannot have <em>everybody leaving class</em> becoming normal. It undermines their authority and, honestly, hurts their feelings. Keep this in mind when you think about how long your walk should be. You might do this naturally: <strong>If you&rsquo;re often stressed, tired, in your feelings, or out of it, match the length of your walk to the intensity of your feelings.&nbsp;</strong></p>
+                  <canvas id="feelings" style="width: 500px; height: 300px; min-height: 250px; max-width: 100%;"></canvas>
                   <p>If you don&rsquo;t have an emotion or some personal reasons for leaving class, always leave for the same amount of time [link to habits as motivation].&nbsp;</p>
-                  <p>If your teacher is hostile to your walks <em>beyond</em> what you think is fair (it&rsquo;s true, people should generally be in class or the class won&rsquo;t function&mdash;and a dysfunctional class can get your teacher fired) see <a href="https://docs.google.com/document/d/1W-zo0vMAWIB2PRT0qWA9cA9-9P6o_2nZAnZ5qR0oXsw/edit#heading=h.gkfgdiarg2mx" target="_blank" rel="noopener">Salami Tactics</a> further down.&nbsp;</p>
+                  <p>If your teacher is hostile to your walks <em>beyond</em> what you think is fair (it&rsquo;s true, people should generally be in class or the class won&rsquo;t function&mdash;and a dysfunctional class can get your teacher fired) see <a href="#scroll-10">Salami Tactics</a> further down.&nbsp;</p>
                   <h2 id="scroll-1">The Lavatory Mogul&nbsp;</h2>
-                  <p>Reqs:&nbsp;</p>
-                  <p>Skills: Building relationships, Comfort under stress, Emotional availability</p>
+                  <p><span class="aesthetic-button orange">Networking</span> <span class="aesthetic-button blue">Comfort under stress</span> <span class="aesthetic-button pink">Emotional Availability</span></p>
+                  <div style="display: flex; justify-content: center; flex-direction: column; margin-top: 10px; margin-bottom: 10px;">
+                    <img src="/assets/images/billionaire.jpg">
+                    <!-- <p style="color: grey; text-align: center;">If you think the punishment is even A LITTLE unfair, you have a (nonviolent) way to fight back.</p> -->
+                </div>
                   <p>Going to the bathroom is all about networking. &ldquo;NETWORKING&rdquo; is a term that&rsquo;s thrown around a lot. It means getting to know people who are willing to help you.&nbsp;</p>
                   <ul>
                   <li>If the lunch lady gives you an extra scoop because you smile at her, that&rsquo;s networking.</li>
@@ -308,18 +328,15 @@ h1 {
                   <li>If your friend works at a burger joint and hooks you up with free fries, that&rsquo;s networking.</li>
                   </ul>
                   <p>You need to know all the people you might run into on the way to the bathroom, and how they&rsquo;ll handle the situation:</p>
-                  <ol>
-                  <li>*takes you forcibly back to class*</li>
-                  <li>Go to class!&nbsp;</li>
-                  </ol>
-                  <ul>
-                  <li><strong>Tardiness Culture</strong>: ECHS, Not a big deal, but you need to be able to handle these small levels of stress.</li>
-                  <li><strong>Strict culture</strong>: New Visions, you need to carry around a massive bathroom pass, staff will get very if you don&rsquo;t have one.</li>
-                  </ul>
-                  <ol>
-                  <li>Are you supposed to be in class?</li>
-                  <li>*Head nod, smile*</li>
-                  </ol>
+                  <p><strong>1. </strong>*takes you forcibly back to class*</li>
+                  <p><strong>2. </strong>"Go to class!"<br></p>
+                    <p><strong>Tardiness Culture</strong>: ECHS, Not a big deal, but you need to be able to handle these small levels of stress.<br>
+                    <strong>Strict culture</strong>: New Visions, you need to carry around a massive bathroom pass, staff will get very if you don&rsquo;t have one.
+                    </p>
+                  </li>
+                  <p><strong>3. </strong>Are you supposed to be in class?</p>
+                  <p><strong>4. </strong>*Head nod, smile*</p>
+
                   <p>Getting from (1) &rArr; (2) takes HIGH SKILL NETWORKING [link]. Getting from (2) &rArr; (4) is easy: it takes KINDNESS.(2): DON&rsquo;T JUST BE SILENT.(3): TELL THEM JUST A LITTLE BIT ABOUT YOUR STRESS &ldquo;I&rsquo;m [name], I&rsquo;m a [class year], I have been dealing with a lot of personal issues, so my teacher gave me permission to take a walk.&rdquo;</p>
                   <ul>
                   <li>You don&rsquo;t need an A1 excuse to get out of class, you just have to show some emotional intelligence.&nbsp;</li>
@@ -331,35 +348,32 @@ h1 {
                   <li>The joke: Bring a fake mustache to school</li>
                   </ul>
                   <p>(4): You&rsquo;ve won, you&rsquo;ve made it. Make sure you know their name, because that&rsquo;s the type of person who will fight for you someday [link to &ldquo;using your teacher network&rdquo;].</p>
+                  <div style="display: flex; justify-content: center; flex-direction: column; margin-top: 10px; margin-bottom: 10px;">
+                    <img src="/assets/images/pass.jpg">
+                </div>
                   <p style="text-align: center;"><span style="color: #666666;">North Carolina bathroom pass. Those are hand grips there. One of their bathrooms has a hole in the wall but their passes are brand new. Priorities!</span></p>
                   <p>Hall monitors have a job, but they also have a name. Learn it and say hi, smile, stand upright. They can be your most powerful friends.</p>
                   <h2 id="scroll-4">The Genuinely Warm and Friendly Teacher</h2>
                   <p>Reqs: A school where teachers are social and many prop their doors open</p>
                   <p>Skills: Building relationships, Proactive communication</p>
                   <p><strong>Does your teacher have other teacher friends? Maybe a teacher-teacher (b)romance you ship?&nbsp;</strong></p>
-                  <ol>
-                  <li>Get out a piece of paper and a pencil. Or walk into a classroom with only a teacher and ask to quietly use the whiteboard (Yes, you can do that [exposure therapy link]).&nbsp;</li>
-                  </ol>
-                  <ol>
-                  <li>Choose a class period you really want to miss. Take a quick walk to see what other classes are in session that block, and which teachers are free.</li>
-                  </ol>
+                  <strong>1. </strong>Get out a piece of paper and a pencil. Or walk into a classroom with only a teacher and ask to quietly use the whiteboard (Yes, you can do that [exposure therapy link]).&nbsp;</p>
+                  
+                  <p><strong>2. </strong>Choose a class period you really want to miss. Take a quick walk to see what other classes are in session that block, and which teachers are free.</p>
+                  
                   <p style="text-align: center;"><span style="color: #666666;">Redraw neater</span></p>
-                  <ol>
-                  <li>Map your teacher&rsquo;s friend network. Find friends and neutral teachers with free blocks.&nbsp;</li>
-                  <ol>
+                  
+                  <p><strong>3. </strong>Map your teacher&rsquo;s friend network. Find friends and neutral teachers with free blocks.&nbsp;</p>
+                  <ul>
                   <li>FRIENDS: Ask both teachers for permission to sit in other room to destress.</li>
                   <li>NEUTRAL: Ask the other teacher for permission, and for them to give you a pass.&nbsp;</li>
-                  </ol>
-                  <li>SCRIPT: &ldquo;Can I sit quietly in the back of your class when I&rsquo;m [stressed/overwhelmed/tired] in another one?&rdquo;</li>
-                  </ol>
+                  </ul>
+                  <p><strong>4. </strong>SCRIPT: &ldquo;Can I sit quietly in the back of your class when I&rsquo;m [stressed/overwhelmed/tired] in another one?&rdquo;</p>
+               
                   <p><strong>Is there a friend/adult you can ask about where there is a safe space to go?</strong></p>
-                  <ul>
-                  <li>The library is almost always a safe bet</li>
-                  <ul>
-                  <li>Librarians are nice, walk in and ask them for a book recommendation. They&rsquo;ll love you, and they&rsquo;ll let you sit in the library any time.</li>
-                  </ul>
-                  <li>&ldquo;Can I sit quietly in the back of your class when I&rsquo;m [stressed/overwhelmed/tired] in another one?&rdquo;&nbsp;</li>
-                  </ul>
+                  <p>The library is almost always a safe bet. Librarians are nice, walk in and ask them for a book recommendation. They&rsquo;ll love you, and they&rsquo;ll let you sit in the library any time.</p>
+                  <p>&ldquo;Can I sit quietly in the back of your class when I&rsquo;m [stressed/overwhelmed/tired] in another one?&rdquo;&nbsp;</p>
+                  
                   <h2 id="scroll-5">Nobody can talk to you when you&rsquo;re on the phone</h2>
                   <p>Reqs: Be okay with breaking rules and telling white lies</p>
                   <p>Skills: Subversion, Comfort under stress, Proactive communication</p>
@@ -369,7 +383,7 @@ h1 {
                   <li>Describe SC interaction: when a teacher cares vs. when a teacher doesn&rsquo;t</li>
                   </ul>
                   <p>The <strong>best</strong> way to handle a phone call is telling your teacher in advance that you&rsquo;ll have to take one. You don&rsquo;t have to specify: &ldquo;It&rsquo;s personal&rdquo; is enough. [Link to &ldquo;why proactively communicate&rdquo;]</p>
-                  <h2 id="scroll-2">The Cheese&nbsp;</h2>
+                  <h2 id="scroll-3">The Cheese&nbsp;</h2>
                   <p>Reqs: A very large class or a very inattentive teacher</p>
                   <p>Skills: Subversion, Comfort under stress</p>
                   <p>If you told your teacher to their face, &ldquo;I get up and walk out of your class, then don&rsquo;t come back for a while. I respect you and what you do, but [school name] as it&rsquo;s set up isn&rsquo;t working for me.&rdquo; What would they say?&mdash;Can you handle that confrontation?</p>
@@ -379,7 +393,7 @@ h1 {
                   <p>Reputation matters, not for how other people see you, but for your health. When you feel like you don&rsquo;t belong, or that others don&rsquo;t trust you, it hurts. You start to care even less and say &ldquo;fuck you&rdquo; more.&nbsp;</p>
                   <p>Fuck.</p>
                   <p>What if&hellip; you want someone to stop you? ⇩</p>
-                  <h2>Nobody cares if I leave.</h2>
+                  <h2 id="scroll-11">Nobody cares if I leave.</h2>
                   <p>That sucks, man. The only thing worse than sitting in class is cutting and thinking nobody cares.&nbsp;</p>
                   <p>[audio form] &ldquo;When I used to cut class and leave the building, I saw that teachers that seen me leaving didn&rsquo;t say a thing to me. They didn&rsquo;t care because it was one less troublemaker in school, one less stupid Black boy to teach, and one less kid in their class. All of this made their lives easier. You know what used to be funny? These teachers would tell you that if you study hard you could be this or could be that, but they knew that this would not happen to most of us. They lied right to my face and you could tell that they was never honest&hellip; My old school was a terrible place to go to. [<a href="https://journals.sagepub.com/doi/pdf/10.1177/0042085911427738?casa_token=CcI40K8XCzkAAAAA:qyS2izE-C1yslQn4t43LibPDqkEXVQ5K-IB0QFXbZKFDoyMcZdP572UH4ZGQVpdsZo5xfX8si3L9dQ" target="_blank" rel="noopener">source</a>]</p>
                   <p>I can&rsquo;t adequately respond to this [maybe the 8 min belonging intervention can?]. Needs to be a video with lots of affirmation and practical strategies, with consultations from researchers, therapists, community leaders, etc.</p>
@@ -388,7 +402,7 @@ h1 {
                   <li>Script to ask a teacher to show they care: once a week, send a phone call home.</li>
                   <li>IF they don&rsquo;t do it, here&rsquo;s how to find a community that does care (or, we create one &mdash; full of students like this and mentors who went through it, or a group call you can join with other people currently cutting class)</li>
                   </ul>
-                  <h2>The PUZZLE SET</h2>
+                  <h2 id="scroll-7">The PUZZLE SET</h2>
                   <p>Reqs: Space in the back of the classroom and your favorite board game, chairs that you can get up from quietly</p>
                   <p>Skills: immaculate vibes</p>
                   <p>Rural Utah, school is TWO HALLWAYS.</p>
@@ -422,16 +436,20 @@ h1 {
                   </ul>
                   <p>Either way, <strong>when you become an active negotiator in classroom boundaries, you stop feeling powerless in school</strong>. Take this first (scary) step, then push to bigger opportunities [link].</p>
                   <p>If you don&rsquo;t like puzzles, bring in literally anything else that&rsquo;s quiet, chill, and not distracting.</p>
-                  <h2>The Long Game &mdash; how go without a pass, any time, without asking</h2>
+                  <h2 id="scroll-6">The Long Game &mdash; how go without a pass, any time, without asking</h2>
                   <p>Reqs:&nbsp;</p>
                   <p>Skills: Building relationships, Pitching yourself</p>
                   <p>Your valedictorian could toss a frisbee in the hallway during class, and you could get shaken down walking to the library (true story from a school with five police officers and folks getting suspended for bringing guns into class).</p>
+                  <div style="display: flex; justify-content: center; flex-direction: column; margin-top: 10px; margin-bottom: 10px;">
+                    <img src="/assets/images/gpagetaway.png">
+                    <!-- <p style="color: grey; text-align: center;">If you think the punishment is even A LITTLE unfair, you have a (nonviolent) way to fight back.</p> -->
+                </div>
                   <p>The strategy here is REPUTATION MANAGEMENT. Think about the guy running [celebrity&rsquo;s] media team. [continuing real life example, reach out to people who do this for a living]</p>
                   <h2>OVERALL: ESTABLISH SUSTAINABLE ROUTINE</h2>
                   <img src="/assets/svg/School Map.svg" width="80%" style="margin: auto;">
                   <p>Watch the teacher&rsquo;s reaction when you come back from a break, do they notice? Do they give you a look? Try to thread the needle, and if they&rsquo;re angry with you&hellip; [link to how to start a tough conversation with your teacher].</p>
                   <h1>How to make the ask</h1>
-                  <h2>Just give me a script</h2>
+                  <h2 id="scroll-9">Just give me a script</h2>
                   <ul>
                   <li>[raise your hand//make eye contact] &ldquo;Can I take a [X minute] walk? I&rsquo;ll come back more focused.&rdquo;</li>
                   <ul>
@@ -461,8 +479,8 @@ h1 {
                   <li>I grew up watching this kid, Nalen, walk out of computer science class two minutes into the block, every day. Most of the class was group work, so he didn&rsquo;t miss much. One day I asked him where he went and he said, nowhere. He wasn&rsquo;t a genius who didn&rsquo;t need to be there: it was his first honors class. Maybe he wanted to stay, but I wanted to leave, just for a few minutes, one day. So I did. I was worried about offending the teacher, but leaving wasn&rsquo;t an attack on her, it was for me and my well-being. I started leaving more often, never like Nalen, but for 10 minutes, then 15, then 10 minutes in other classes, too. I got happier.</li>
                   </ul>
                   </ul>
-                  <h2>Salami Tactics</h2>
-                  <p>Salamiing something means making progress on it the way a butcher cuts salami: one tiny slice at a time. Salami Tactics are used by politicians, armies, and anybody trying to establish a new normal. For you, that means taking a one minute water break from class on the first day of school, then a two minute break on the second week, then a three minute break on the second <em>month</em>.</p>
+                  <h2 id="scroll-10">Salami Tactics</h2>
+                  <p><em>Salami-ing</em> something means making progress on it the way a butcher cuts salami: one tiny slice at a time. Salami Tactics are used by politicians, armies, and anybody trying to establish a new normal. For you, that means taking a one minute water break from class on the first day of school, then a two minute break on the second week, then a three minute break on the second <em>month</em>.</p>
                   <ul>
                   <li>SAY WHAT&rsquo;S IN IT FOR THEM:</li>
                   <ul>
@@ -500,6 +518,7 @@ h1 {
                   </ul>
                   </ul></div>    
               </div>
+              <br><br><br>
         </article>
         <div style="padding:3em;">
             <br><br>
@@ -561,6 +580,44 @@ h1 {
         console.log("Element not found: " + elementId);
       }
     }
+  </script>
+  <script>
+    const labels = ["SUPER strict", "sub", "stressed teacher", "cares, but it hurts when you leave", "doesn't really care", "cares and understands", "teacher is your bestie"]
+    const sample = [3, 5, 6, 10, 19, 22, 30];
+    
+    // Create the chart
+    const ctx = document.getElementById('feelings').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Minutes you can leave',
+          data: sample,
+          backgroundColor: 'rgba(233, 30, 99, 0.2)',
+          borderColor: 'rgba(233, 30, 99, 1)',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: false,
+          },
+          legend: {
+            display: true,
+            position: 'bottom'
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
   </script>
   <script>
       $(function(){

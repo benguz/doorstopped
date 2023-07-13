@@ -95,7 +95,8 @@
             </div>
           </div>
 
-          <p>Make a List of Your Referents</p>
+          <p style="margin-block-end: 0.1em;">Make a List of Your Referents
+          <p style="font-size: 14px; color: grey; margin-block-start: 0em;">Click a card to edit!</p></p>
           <div class="card" style="display: flex; flex-direction: row;">
             <div class="textbox" contenteditable="true" flex="5">
               Isaac - Football team captain
@@ -159,8 +160,8 @@
         </div>
 
    
-        <div id="mantoman" class="card" style="display: none">disruptive people strat</div>
-        <div id="collab" class="card" style="display: none">competitions strat</div>
+        <div id="mantoman" class="card" style="display: none">Handling disruptive people and harrasment</div>
+        <div id="collab" class="card" style="display: none">Handling competitive culture</div>
       </div>
     </div>
       
@@ -184,10 +185,20 @@
                   '<div class="textbox" contenteditable="true" style="flex: 5;">'+
                   referents[Math.floor(Math.random()*referents.length)] +
                   '</div>'+
-                  '<button class="close-button">'+
-                  '<span class="close-icon">&#215;</span>'+
+                  '<button class="close-button" id="close' + idTracker +
+                  '">'+
+                  '<span class="close-icon">&#215;</span>'+ 
                   '</button></div>';
     $(newCard).insertBefore('#addCard');
+    let closeNew = document.getElementById("close" + idTracker)
+    closeNew.addEventListener('click', () => {
+      const card = closeNew.closest('.card');
+
+      // Delete the card element if found
+      if (card) {
+        card.remove();
+      }
+    });
     $('.textbox').each(function() {
       var text = $(this).text();
       var textExists = false;
@@ -340,12 +351,23 @@ function act(n, id) {
 
     } else if (strategy === 2) {
       // loud classes
-      script = 'bonk';
+      script = `Hey, do you have a minute to talk? I think there are more fun ways to [make math class less boring than to interupt the teacher // party that make girls less uncomfortable], hear me out.<br><br>
+      I heard that in Scotland, a bunch of kids were told by their school not to go to a cemetery "because there were vampires there", so after school the entire student population went to the cemetery and spent hours hunting for the vampire.<br><br>
+      Why don't we do stuff like that here? What I'm trying to say is, I'm down to go against school rules, but I think there are fun ways to do it that make everyone feel included.<br><br>
+      Are you open to trying [solution, eg. to talk to the teacher about taking breaks during class? It would be less hurtful for them and make class easier on other students // change the way you talk to girls at parties? You can still chase them, but do it in a way that's fun for them!]<br><br>
+      A lot of people respect you and would follow your lead.
+      `;
       explainText = "this will work bc..."
 
     } else if (strategy === 3) {
       // competitiveness
-      script = 'bonk';
+      script = `You know when people walk up to you all like "WHADIDYA GET ON THE EXAM WHA-WHA-WHA???" Isn't that kind of toxic?<br><br> 
+      It's like a mix of rubbing their better score in your face, trying to get you into a dick-measuring contest, and just compulsively wanting to know how other people are doing. But the common theme is low self-awareness.<br><br>
+      That person clearly has no bad intentions, they just don't know they're making other people uncomfortable.<br><br>
+      But... there are other things at school that are a *little* more subtle but leave people just as stressed.<br><br>
+      Groaning about how much homework we have or how many classes we're taking, being frustrated about an A-, not opening up about how stressed we are about getting into college... What if we committed to changing the culture here?<br><br>
+      I think if at the next [lunch/assembly/event], a group of students stood up and talked about what we could do to make school less stressful, [policy change, eg. preventing students from taking a class during lunch or culture change, eg. shouting out hard work/cool thoughts on assignments instead of asking about grades], life would get easier.<br><br> 
+      Are you down?`;
       explainText = "this will work bc..."
 
     }
@@ -373,19 +395,35 @@ function act(n, id) {
       // solution is hi's + gum culture
       // Start saying hi to people in the halls. Genuinely.  (Popular non-bullies creating a status symbol, giving it to people lower on the hierarchy)
 
-      script = 'donk';
+      script = `<strong>Go up to their table at the cafeteria...</strong> Hey y'all, I'm trying something!<br><br>
+      Do you want to hand out gum to random people in your classes? It's a way to break down like the judgey people culture.<br><br>
+      Gum is, like, *the* way people do nice things for each other here. So I thought everyone would feel more comfortable in school (I'm sure you've all been stressed by the social life here) without anyone having to go crazy or be forced to make new friends.<br><br>
+      What do you think? [Optional: "here's two packs of gum!"" - the school would totally pay for this by the way, but you have to hide that the school is involved or this won't be seen as a cool thing.]`;
+      explainText = "this will work bc..."
+
 
     } else if (strategy === 2) {
-      // loud classes
-      script = 'donk';
+      // loud classes / harassment
+      script = `<strong>Go up to their table at the cafeteria...</strong> Hey y'all, I'm trying something!<br><br>
+      Do you guys ever feel like the parties here get kind of icky? <br><br>
+      Like, by the end of the night girls are making THAT kind of eye contact with their friends to be like, get me out of here?<br><br>
+      In a lot of ways, this isn't really our problem, we're not the assholes, but you guys are some of the only people here that have, like, other people's respect.<br><br>
+      If you guys called out that type of icky drunk bro talk around your friends, it could really stop and make a lot of girls feel safer.<br><br>
+      I know that's a really hard conversation to have, but hey, I'm here putting myself out there, too. I think it's worth it.<br><br>
+      Are you down?`;
+      explainText = "this will work bc..."
+
 
     } else if (strategy === 3) {
       // competitiveness
-      script = 'donk';
+      script = `<strong>Go up to their table at the cafeteria...</strong> Hey y'all, I'm trying something!<br><br>
+      I know we all get stressed by the work grind here and the lowkey competition. I think we could all be less stressed if we made a really, really small change:
+      gassing people up for non-grade achievements. Like, any time people are stressed about work, if we compliment their save in the hockey game, or their outfit, or even something cool they did on their assignment (like, genuinely compliment people), it would really help ease the stress.<br><br>
+      And I know if you guys started doing it, other people would catch on and the culture here would get that much healthier.`;
+      explainText = "this will work bc..."
+
 
     }
-    div.parentNode.parentNode.appendChild(p);
-
   }
     
   var newApproach = `
@@ -403,7 +441,7 @@ function act(n, id) {
   </button>
 </div>
 <p id="explainer` + id +
-`">` + explainText +
+`">` + // explainText +
 `</p>`
     var strategyContents = document.createElement('div');
     strategyContents.innerHTML = newApproach;

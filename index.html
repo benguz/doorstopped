@@ -210,7 +210,7 @@
     <div class="container">
 
       <a href="/index" class="logo">
-        <img src="./assets/svg/doors-cool.svg" width="162" height="50"  alt="Doorstop Education logo">
+        <img src="./assets/images/doors.svg" width="178" height="60"  alt="Doorstop Education logo">
       </a>
 
       <nav class="navbar" data-navbar>
@@ -849,6 +849,17 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
   <div id="footer-placeholder">
 
   </div>
+  
+  <script type="text/javascript">
+    // handles redirects for student users coming from fix.school.
+    window.onload = function() {
+        var referrer = document.referrer;
+        // Check if referrer is from a certain domain
+        if (referrer.includes("fix.school")) {
+            window.location.href = "/student";
+        }
+    }
+</script>
   <script>
       $(function(){
         $("#footer-placeholder").load("/footer");
@@ -880,6 +891,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="/assets/js/dynamiclogo.js">
   </script>
+
 </body>
 
 </html>

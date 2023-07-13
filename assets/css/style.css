@@ -971,6 +971,16 @@ r {
 .aesthetic-button:hover {
 cursor: pointer;
 }
+
+.reality-blurb {
+  display: inline-block;
+  /* text-decoration: underline wavy #A44CD3; */
+  text-decoration: underline red;
+
+  /* font-family: Arial, sans-serif; */
+  background-color: none;
+}
+
 .blue {
 background-color: #97E5D7;
 }
@@ -1158,6 +1168,12 @@ h2 {
   list-style-type: disc; /* or circle or square, depending on the bullet style you want */
   padding-left: 30px;
   font-size: 14pt;
+}
+
+.yonk ol {
+  
+  list-style-type: decimal;
+  
 }
 
 .yonk li {
