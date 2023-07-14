@@ -608,8 +608,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
                         let article = doc.querySelector("article");
                         let body = doc.querySelector("body");
                         let content = document.querySelector("#content-placeholder");
-                        content.textContent = ''; // clear past entries
-
+                        
                         if (yonkElement) {
                             // put the content of 'yonk' element inside the placeholder
                             loadStylesheet("/assets/css/style.css");
@@ -624,15 +623,19 @@ document.querySelectorAll('.card').forEach((card, index) => {
                             }
                         } else if (article) {
                             // loadStylesheet("/assets/css/style.css");
+                            content.innerHTML = "";
                             content.appendChild(article);
                         } else if (aboutElement) {
+                            content.innerHTML = "";
                             loadStylesheet("/assets/css/style.css");
                             content.appendChild(aboutElement); // .innerHTML = aboutElement.outerHTML;
                         } else if (doc.querySelector(".slider-wrapper")){
                             loadStylesheet("/doorstops/food.css");
+                            content.innerHTML = "";
                             content.appendChild(body);
                             loadScript("/assets/js/food.js");
                         } else if (doc.querySelector(".ref")) {
+                            content.innerHTML = "";
                             loadStylesheet("/assets/css/dynamic.css");
                             // const bodyElement = body.cloneNode(true);
                             content.appendChild(doc.querySelector(".ref"));
