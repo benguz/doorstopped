@@ -48,7 +48,16 @@
   <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-shape-1.svg">
   <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
-
+  <script type="text/javascript">
+    // handles redirects for student users coming from fix.school.
+    window.onload = function() {
+        var referrer = document.referrer;
+        // Check if referrer is from a certain domain
+        if (referrer.includes("fix.school")) {
+            window.location.href = "/student";
+        }
+    }
+</script>
   <style>
 
 .word {
@@ -850,16 +859,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
 
   </div>
   
-  <script type="text/javascript">
-    // handles redirects for student users coming from fix.school.
-    window.onload = function() {
-        var referrer = document.referrer;
-        // Check if referrer is from a certain domain
-        if (referrer.includes("fix.school")) {
-            window.location.href = "/student";
-        }
-    }
-</script>
+
   <script>
       $(function(){
         $("#footer-placeholder").load("/footer");
