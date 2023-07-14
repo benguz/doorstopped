@@ -623,22 +623,21 @@ document.querySelectorAll('.card').forEach((card, index) => {
                             }
                         } else if (article) {
                             // loadStylesheet("/assets/css/style.css");
-                            content.innerHTML = "";
-                            content.appendChild(article);
+                            content.innerHTML = article.outerHTML;
                         } else if (aboutElement) {
-                            content.innerHTML = "";
+                            // content.innerHTML = "";
                             loadStylesheet("/assets/css/style.css");
-                            content.appendChild(aboutElement); // .innerHTML = aboutElement.outerHTML;
+                            content.innerHTML = aboutElement.outerHTML;
                         } else if (doc.querySelector(".slider-wrapper")){
                             loadStylesheet("/doorstops/food.css");
-                            content.innerHTML = "";
-                            content.appendChild(body);
+                            // content.innerHTML = "";
+                            // content.appendChild(body);
+                            content.innerHTML = body.outerHTML;
                             loadScript("/assets/js/food.js");
                         } else if (doc.querySelector(".ref")) {
-                            content.innerHTML = "";
                             loadStylesheet("/assets/css/dynamic.css");
                             // const bodyElement = body.cloneNode(true);
-                            content.appendChild(doc.querySelector(".ref"));
+                            content.innerHTML = doc.querySelector(".ref").outerHTML;
                             loadScript("/assets/js/ref.js");
                             loadScript("/assets/js/ref-dashboard.js");
                             setTimeout(() => callthis(), 200);

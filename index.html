@@ -50,12 +50,8 @@
   <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
   <script type="text/javascript">
     // handles redirects for student users coming from fix.school.
-    window.onload = function() {
-        var referrer = window.location.hostname;
-        // Check if referrer is from a certain domain
-        if (referrer.includes("fix.school")) {
-            window.location.href = "/student";
-        }
+    if (window.location.hostname.includes("fix.school")) {
+        window.location.href = "/student";
     }
 </script>
   <style>
@@ -159,7 +155,7 @@
 } */
 
 #step1 {
-  background-image: url('/assets/images/youtube-cut.gif'); 
+  background-image: url('/assets/images/youtube-cut.mpeg'); 
   background-size: cover;
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -170,7 +166,7 @@
 }
 
 #step2 {
-  background-image: url('/assets/images/selection.gif'); 
+  background-image: url('/assets/images/selection.mpeg'); 
   background-size: cover;
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -180,7 +176,7 @@
 }
 
 #step3 {
-  background-image: url('/assets/images/extension-half.gif');
+  background-image: url('/assets/images/extension-half.mpeg');
   background-size: cover; 
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -316,7 +312,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
 
             
             <div class="img-holder two" style="--width: 240; --height: 370;">
-              <img src="./assets/images/moon.png" width="240" height="370" alt="hero banner" class="img-cover">
+              <img src="./assets/images/moon.webp" width="240" height="370" alt="hero banner" class="img-cover">
             </div>
       <!---->
       <!-- 
@@ -687,8 +683,8 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
             <li>
               <div class="blog-card">
 
-                <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
-                  <img src="./assets/images/classroomy.jpg" width="370" height="370" loading="lazy"
+                <figure class="card-banner img-holder has-after" style="--width: 270; --height: 270;">
+                  <img src="./assets/images/classroomy.jpg" width="270" height="270" loading="lazy"
                     alt="Become A Better Blogger: Content Planning" class="img-cover">
                 </figure>
 
@@ -767,7 +763,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
               <div class="blog-card">
 
                 <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
-                  <img src="./assets/images/moon.png" width="370" height="370" loading="lazy"
+                  <img src="./assets/images/moon.webp" width="370" height="370" loading="lazy"
                     alt="Become A Better Blogger: Content Planning" class="img-cover">
                 </figure>
 
@@ -889,7 +885,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="/assets/js/dynamiclogo.js">
+  <!-- <script src="/assets/js/dynamiclogo.js"> -->
   </script>
 
 </body>
