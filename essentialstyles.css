@@ -548,7 +548,7 @@ select {
   /* Add or remove properties as needed */
 }
 
-.tenor-gif-embed {
+#myVideo, .tenor-gif-embed {
   pointer-events: none;
 }
 

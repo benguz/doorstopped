@@ -376,7 +376,10 @@
         </div>
         <div class="card" data-link="/doorstops/parents" style="display: none;" data-category="external">
             <h2>Take 2 minutes to 2x your GPA </h2>
-            <div class="tenor-gif-embed" data-postid="16251810" data-share-method="host" data-aspect-ratio="1.2749" data-width="100%"></div>
+            <!-- <div class="tenor-gif-embed" data-postid="16251810" data-share-method="host" data-aspect-ratio="1.2749" data-width="100%"></div> -->
+            <video autoplay muted loop id="myVideo" width="100%" style="object-fit: contain;">
+                <source src="/assets/cards/tenor-panda-chase.webm" type="video/webm">
+              </video>            
             <p>When your parents ask you your least favorite question, you do better and feel safer in school</p>
         </div>
         <div class="card" data-link="/doorstops/money" style="display: none;" data-category="policy">
@@ -423,7 +426,7 @@
 <!-- reorder-->
         <div class="card" data-link="/doorstops/extension#i-just-want-to-email" data-category="SEL-skills">
             <h2>Essay due in two days? Haven’t started?</h2>
-            <img src="/assets/images/extension-half.gif" alt="image1" />
+            <img src="/assets/images/extension-half.webm" alt="extension email workflow" />
             <p>We can help—not, like, in a plagiarism way.<br>You can and should ask for an extension.<br>
             <h3>Me? I don’t need an extension. You must not be familiar with my game.</h3>
             <p>In 5 years your boss is going to say, "Bestie, can you work until 10pm today?"<br>Don't say "Sure, Bestie!" <strong>Learn to set boundaries and ask for help now.</strong></p>
@@ -435,7 +438,7 @@
         -->
         <div class="card special">
             <h2>Swipe to change school</h2>
-            <img src="/assets/images/moon.png" alt="image1" />
+            <img src="/assets/images/moon.webp" alt="image1"/>
             <p>Swipe left (not interested) and right (yes PLEASE) until you find the perfect strategy/cash grant/vibe check for being happier in school.<br>
         </div>
     </div>
@@ -608,7 +611,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
                         let article = doc.querySelector("article");
                         let body = doc.querySelector("body");
                         let content = document.querySelector("#content-placeholder");
-                        
+                        window.location.hash ="#content-placeholder";
                         if (yonkElement) {
                             // put the content of 'yonk' element inside the placeholder
                             loadStylesheet("/assets/css/style.css");

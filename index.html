@@ -118,72 +118,67 @@
   overflow-y: scroll;
 } */
 
-.parallax-section {
+/* .parallax-section {
   height: 70vh;
   position: relative;
   scroll-snap-align: start;
-  /* background-attachment: fixed; Creates the parallax effect */
-}
-
+} */
+/* 
 .parallax-small {
   height: 30vh;
   position: relative;
   scroll-snap-align: start;
-}
-
-@media screen and (max-width: 1023px){
-  .parallax-small {
-  height: 20vh;
-  
-
-}
-.parallax-section {
-  height: 40vh;
-  /* background-attachment: fixed; Creates the parallax effect */
-}
-.simple {
-  color: black;
-}
-}
-
-
-/* .parallax-break {
-  height: 30vh;
-  position: relative;
-  scroll-snap-align: start;
-  background-attachment: fixed; 
 } */
 
-#step1 {
-  background-image: url('/assets/images/youtube-cut.mpeg'); 
-  background-size: cover;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-
-}
-
-#step2 {
-  background-image: url('/assets/images/selection.mpeg'); 
-  background-size: cover;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+#step1, #step2, #step3 {
+  position: relative;
+  width: 90%;
+  margin: auto;
 }
 
 #step3 {
-  background-image: url('/assets/images/extension-half.mpeg');
-  background-size: cover; 
+  width: 80%;
+  /* background-image: url('/assets/images/selection.gif'); 
+  background-size: cover;
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
-  background-position: center center;
   background-repeat: no-repeat;
+  background-position: center center; */
 }
+
+.video-loop {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.simple {
+  left: 50%;
+  transform: translate(0%, -50%);
+  text-align: center;
+}
+
+@media screen and (max-width: 1023px){
+  /* .parallax-small {
+  height: 20vh;
+    
+
+  }
+  .parallax-section {
+    height: 40vh;     background-attachment: fixed; Creates the parallax effect
+
+  } */
+  .simple {
+    color: black;
+  }
+
+  #step1, #step2, #step3 {
+    width: 100%;
+  }
+}
+
+
 
 .content {
   position: absolute;
@@ -193,13 +188,6 @@
   text-align: center;
   color: white;
 }
-
-.simple {
-  left: 50%;
-  transform: translate(0%, -50%);
-  text-align: center;
-}
-
   </style>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -452,6 +440,9 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
         </section> -->
         
         <div class="parallax-small" id="step1">
+          <video autoplay muted loop class="video-loop" id="video-yt"> 
+            <source src="/assets/images/youtube-cut.webm" type="video/webm">
+          </video>
           <div class="content">
             <!-- <h2>Students discover us on social media</h2> -->
             <!-- <p style="color:black">Doorstops come into your life via social media or through programs at your school. We're here to help you make a positive change!</p> -->
@@ -467,6 +458,9 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
         </div>
 
         <div class="parallax-section" id="step2">
+          <video autoplay muted loop class="video-loop" id="video-yt"> 
+            <source src="/assets/images/selection.webm" type="video/webm">
+          </video>
           <div class="content">
           </div>
         </div>
@@ -479,6 +473,9 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
           <br><br>
         </div>
         <section class="parallax-section" id="step3" style="margin-bottom: 5em">
+          <video autoplay muted loop class="video-loop" id="video-yt"> 
+            <source src="/assets/images/extension-half.webm" type="video/webm">
+          </video>
           <div class="content"> 
             <!-- <h2>Using it instantly to destress and make change</h2> -->
             <!-- <p style="color:black">Use what you've learned to build trust, navigate social tension, or shift your school's culture. Change starts with you!</p> -->
