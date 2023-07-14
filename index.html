@@ -51,7 +51,7 @@
   <script type="text/javascript">
     // handles redirects for student users coming from fix.school.
     window.onload = function() {
-        var referrer = document.referrer;
+        var referrer = window.location.hostname;
         // Check if referrer is from a certain domain
         if (referrer.includes("fix.school")) {
             window.location.href = "/student";
