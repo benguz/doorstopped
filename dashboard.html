@@ -426,7 +426,9 @@
 <!-- reorder-->
         <div class="card" data-link="/doorstops/extension#i-just-want-to-email" data-category="SEL-skills">
             <h2>Essay due in two days? Haven’t started?</h2>
-            <img src="/assets/images/extension-half.webm" alt="extension email workflow" />
+            <video autoplay muted loop id="extension" width="100%" style="object-fit: contain;">
+                <source src="/assets/images/extension-half.webm" alt="extension email workflow" type="video/webm">
+              </video>  
             <p>We can help—not, like, in a plagiarism way.<br>You can and should ask for an extension.<br>
             <h3>Me? I don’t need an extension. You must not be familiar with my game.</h3>
             <p>In 5 years your boss is going to say, "Bestie, can you work until 10pm today?"<br>Don't say "Sure, Bestie!" <strong>Learn to set boundaries and ask for help now.</strong></p>
@@ -872,11 +874,11 @@ function showSection(n) {
             let doc = parser.parseFromString(html, 'text/html');
             
             let body = doc.querySelector("#bingo");
-
-            document.querySelector("#bingo-section").innerHTML = body.innerHTML;
+            document.querySelector("#bingo-section").innerHTML = body.outerHTML;
         });
 
         document.querySelector('#bingo-section').style.display = 'block';
+        document.querySelector("#bingo-section").style.backgroundColor = 'transparent';
         setTimeout(() => {
             document.querySelector('#bingo-section').classList.remove("fade-in");
         }, 500);
