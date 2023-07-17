@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Doorstops | Toxic Food Comments</title>
+    <meta name="title" content="Doorstop Education">
+    <meta name="description" content="Responding to toxic comments about how much food is on your plate.">
+    <meta property="og:url" content="https://doorstopped.org/">
+    <meta property="og:image" content="https://doorstopped.org/og.jpg">
+    <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="Doorstops | Toxic Food Comments">
+    <meta property="og:description" content="Responding to toxic comments about how much food is on your plate.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://doorstopped.org/">
+    <meta property="twitter:title" content="Doorstops | Toxic Food Comments">
+    <meta property="twitter:description" content="Responding to toxic comments about how much food is on your plate.">
+    <link href="/favicon.ico" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- include jQuery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/doorstops/food.css">
+<script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+<style>
+#emoji-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  background-color: transparent;
+}
+
+.emoji-container {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.emoji-button-container {
+  background-color: #c9c9c9; /* Apply background color to emoji bar only */
+  padding: 20px;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.right {
+    border-radius: 0px 20px 20px 0px;
+}
+
+
+.emoji-button {
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.floating-emoji {
+  position: absolute;
+  bottom: 50px;
+  opacity: 1;
+}
+
+@keyframes floatPath1 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  25% { transform: translate(-20px, -30px); opacity: 0.75; }
+  50% { transform: translate(20px, -60px); opacity: 0.5; }
+  75% { transform: translate(-20px, -90px); opacity: 0.25; }
+  100% { transform: translate(20px, -120px); opacity: 0; }
+}
+
+@keyframes floatPath2 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  12.5% {transform: translate(6px, -15px); opacity: 0.875;}
+  25% { transform: translate(8px, -30px); opacity: 0.75; }
+  37.5% {transform: translate(-2px, -45px); opacity: 0.625;}
+  50% { transform: translate(-8px, -60px); opacity: 0.5; }
+  62.5% {transform: translate(-6px, -75px); opacity: 0.375;}
+  75% { transform: translate(0px, -90px); opacity: 0.25; }
+  87.5% {transform: translate(-5px, -105px); opacity: 0.125;}
+  100% { transform: translate(-10px, -120px); opacity: 0; }
+}
+
+@keyframes floatPath3 {
+    0% { transform: translate(0, 0); opacity: 1; }
+  12.5% {transform: translate(5px, -15px); opacity: 0.875;}
+  25% { transform: translate(10px, -30px); opacity: 0.75; }
+  37.5% {transform: translate(1px, -45px); opacity: 0.625;}
+  50% { transform: translate(-7px, -60px); opacity: 0.5; }
+  62.5% {transform: translate(-10px, -75px); opacity: 0.375;}
+  75% { transform: translate(-7px, -90px); opacity: 0.25; }
+  87.5% {transform: translate(-5px, -105px); opacity: 0.125;}
+  100% { transform: translate(-10px, -120px); opacity: 0; }
+
+}
+
+@keyframes floatPath4 {
+    0% { transform: translate(0, 0); opacity: 1; }
+  12.5% {transform: translate(-6px, -15px); opacity: 0.875;}
+  25% { transform: translate(-8px, -30px); opacity: 0.75; }
+  37.5% {transform: translate(2px, -45px); opacity: 0.625;}
+  50% { transform: translate(8px, -60px); opacity: 0.5; }
+  62.5% {transform: translate(6px, -75px); opacity: 0.375;}
+  75% { transform: translate(3px, -90px); opacity: 0.25; }
+  87.5% {transform: translate(-5px, -105px); opacity: 0.125;}
+  100% { transform: translate(-10px, -120px); opacity: 0; }
+}
+
+@keyframes floatPath5 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  25% { transform: translate(20px, -30px); opacity: 0.75; }
+  50% { transform: translate(20px, -60px); opacity: 0.5; }
+  75% { transform: translate(-20px, -90px); opacity: 0.25; }
+  100% { transform: translate(-20px, -120px); opacity: 0; }
+}
+
+@keyframes floatPath6 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  25% { transform: translate(-20px, -30px); opacity: 0.75; }
+  50% { transform: translate(-20px, -60px); opacity: 0.5; }
+  75% { transform: translate(20px, -90px); opacity: 0.25; }
+  100% { transform: translate(20px, -120px); opacity: 0; }
+}
+
+@media screen and (max-width: 720px) {
+    
+.emoji-button-container {
+  padding: 15px;
+
+}
+
+.left {
+    border-radius: 15px 0px 0px 15px;
+}
+
+.right {
+    border-radius: 0px 15px 15px 0px;
+}
+
+
+.emoji-button {
+  font-size: 1.5em;
+}
+
+}
+</style>
+</head>
+
+<body class="reset-styles">
+
+    <h2 class="reset-styles">Emoji Experiment</h2>
+    <p class="reset-styles">How are you feeling?</p>
+    <p class="reset-styles">The page will change based on your reaction (and how hard you button mash).</p>
+
+    <div id="emoji-bar">
+        <div class="emoji-container">
+          <div class="emoji-button-container left">
+            <button class="emoji-button" data-emoji="👍">👍</button>
+          </div>
+        </div>
+        <div class="emoji-container">
+          <div class="emoji-button-container">
+            <button class="emoji-button" data-emoji="❤️">❤️</button>
+          </div>
+        </div>
+        <div class="emoji-container">
+          <div class="emoji-button-container">
+            <button class="emoji-button" data-emoji="😆">😆</button>
+          </div>
+        </div>
+        <div class="emoji-container">
+          <div class="emoji-button-container">
+            <button class="emoji-button" data-emoji="😢">😢</button>
+          </div>
+        </div>
+        <div class="emoji-container">
+          <div class="emoji-button-container right">
+            <button class="emoji-button" data-emoji="😡">😡</button>
+          </div>
+        </div>
+      </div>
+      
+<script>
+$(".emoji-button").click(function() {
+  var emoji = $(this).data("emoji");
+  var newElement ="";
+  if (emoji === "😡") {
+    var rages = ["🤬", "F*********CK", "#@$&^%@#", "LOOSER", "AAAAAAAHHH", "L + RATIO"]
+    var rage = rages[Math.floor(Math.random() * rages.length)];
+    newElement = $(`<span class='floating-emoji'>${rage}</span>`);
+
+  } else if (emoji === "❤️") {
+    var tears = ["LOVE THIS", "💗", "💖💖💖", "PEACE❤️", "💚", "🧡", "💛", "🤍"]
+    var tear = tears[Math.floor(Math.random() * tears.length)];
+    newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+
+  } else if (emoji === "😢") {
+    var tears = ["😭", "😓", "😞", "😨", "😰", "noooo", "all the feels"]
+    var tear = tears[Math.floor(Math.random() * tears.length)];
+    newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+
+  } else {
+    newElement = $(`<span class='floating-emoji'>${emoji}</span>`);
+  }
+  $(this).parent().append(newElement);
+
+  /* Choose an animation randomly */
+//   var animations = ['floatPath1', 'floatPath2', 'floatPath3','floatPath4', 'floatPath5', 'floatPath6']; // Add more animations as needed
+  var test = ['floatPath2', 'floatPath3', 'floatPath4']; // Add more animations as needed
+
+  var animation = test[Math.floor(Math.random() * test.length)];
+
+
+  /* Apply the animation */
+  newElement.css('animation', `${animation} 1s forwards`);
+
+  setTimeout(function() {
+    newElement.remove();
+  }, 2000); // Remove the emoji after the animation completes (2 seconds)
+});
+  
+  
+
+</script>
+</body>
+
+</html>
