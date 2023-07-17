@@ -4,20 +4,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>Doorstops | Toxic Food Comments</title>
-    <meta name="title" content="Doorstop Education">
-    <meta name="description" content="Responding to toxic comments about how much food is on your plate.">
+    <title>EMOJI EMOTIONS | Doorstops</title>
+    <meta name="title" content="EMOJI EMOTIONS | Doorstops">
+    <meta name="description" content="EMOJI EMOTIONS | Doorstops.">
     <meta property="og:url" content="https://doorstopped.org/">
     <meta property="og:image" content="https://doorstopped.org/og.jpg">
     <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:title" content="Doorstops | Toxic Food Comments">
-    <meta property="og:description" content="Responding to toxic comments about how much food is on your plate.">
+    <meta property="og:title" content="EMOJI EMOTIONS | Doorstops">
+    <meta property="og:description" content="EMOJI EMOTIONS | Doorstops">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://doorstopped.org/">
-    <meta property="twitter:title" content="Doorstops | Toxic Food Comments">
-    <meta property="twitter:description" content="Responding to toxic comments about how much food is on your plate.">
+    <meta property="twitter:title" content="EMOJI EMOTIONS | Doorstops">
+    <meta property="twitter:description" content="EMOJI EMOTIONS | Doorstops">
     <link href="/favicon.ico" rel="apple-touch-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
@@ -162,7 +162,9 @@
 .emoji-button {
   font-size: 1.5em;
 }
-
+ p {
+    text-align: center;
+ }
 }
 </style>
 </head>
@@ -174,6 +176,7 @@
     <p class="reset-styles">The page will change based on your reaction (and how hard you button mash).</p>
 
     <div id="emoji-bar">
+        <!--Inspired by Artur Bień https://expensive.toys/toys/reactions-->
         <div class="emoji-container">
           <div class="emoji-button-container left">
             <button class="emoji-button" data-emoji="👍">👍</button>
@@ -181,12 +184,12 @@
         </div>
         <div class="emoji-container">
           <div class="emoji-button-container">
-            <button class="emoji-button" data-emoji="❤️">❤️</button>
+            <button class="emoji-button" data-emoji="🤦">🤦</button>
           </div>
         </div>
         <div class="emoji-container">
           <div class="emoji-button-container">
-            <button class="emoji-button" data-emoji="😆">😆</button>
+            <button class="emoji-button" data-emoji="🙄">🙄</button>
           </div>
         </div>
         <div class="emoji-container">
@@ -206,12 +209,22 @@ $(".emoji-button").click(function() {
   var emoji = $(this).data("emoji");
   var newElement ="";
   if (emoji === "😡") {
-    var rages = ["🤬", "F*********CK", "#@$&^%@#", "LOOSER", "AAAAAAAHHH", "L + RATIO"]
+    var rages = ["🤬", "👺", "😈😈", "F*********CK", "#@$&^%@#", "LOOOSER", "AAAAAAAHHH", "L+RATIO", "YOU'RE TRASH"]
     var rage = rages[Math.floor(Math.random() * rages.length)];
     newElement = $(`<span class='floating-emoji'>${rage}</span>`);
 
+  } else if (emoji === "🤦") {
+    var tears = ["mid", "😐", "lame", "wtf😕", "uhhh gross 🤮", "🤦", "ick", "mmmm no..."]
+    var tear = tears[Math.floor(Math.random() * tears.length)];
+    newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+
+  } else if (emoji === "🙄") {
+    var tears = ["😳😳😳", "drama", "💅💅", "unbothered", "nah girl", "she said WHAT", "spill the ☕"]
+    var tear = tears[Math.floor(Math.random() * tears.length)];
+    newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+
   } else if (emoji === "❤️") {
-    var tears = ["LOVE THIS", "💗", "💖💖💖", "PEACE❤️", "💚", "🧡", "💛", "🤍"]
+    var tears = ["LOVE THIS", "❤️", "💗", "💖💖💖", "ILYYY", "💚", "🧡", "💛", "🤍", "💙"]
     var tear = tears[Math.floor(Math.random() * tears.length)];
     newElement = $(`<span class='floating-emoji'>${tear}</span>`);
 

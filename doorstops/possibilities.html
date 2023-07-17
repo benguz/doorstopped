@@ -36,6 +36,31 @@
     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,1000&display=swap" rel="stylesheet">
   <style>
+
+@font-face {
+    font-family: OTMiniature;
+    src: url("/assets/fonts/OTMiniature-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: OTMiniature;
+    font-style: italic;    
+    src: url("/assets/fonts/OTMiniature-ExtralightItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: OTMiniature;
+    font-weight: bold;
+    src: url("/assets/fonts/OTMiniature-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: OTMiniature;
+    font-weight: bold-italic;
+    src: url("/assets/fonts/OTMiniature-BoldItalic.otf") format("opentype");
+}
+
+
       @media screen and (max-width: 1023px){
 .framebox {
 height: 34000em;
@@ -94,10 +119,15 @@ display:none;
 .blue { background: #7070ff; }
 .violet { background: #bd6dff; }
 
-@keyframes marquee {
+/* @keyframes marquee {
     0% { transform: translateX(100%); }
     50% {transform: translateX(0%);}
   100% { transform: translateX(100%); }
+} */
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); } /* change from 100% to -100% */
 }
 
 .career-container {
@@ -109,11 +139,15 @@ display:none;
   justify-content: space-around; /* Distributes spaces evenly between items */
 
 }
-.career-container span {
+.careerEx {
   position: relative;
-  animation: marquee 15s linear infinite;
-  font-family: 'Nunito', sans-serif;
-  font-size: 55px;
+  /* animation: marquee 10s linear; */
+  font-family: 'OTMiniature';
+  font-style: italic;
+  margin-right: 10px;
+  /* font-family: 'Nunito', sans-serif; */
+  font-size: 70px;
+  line-height: 1;
   width: 20%;
 }
 
@@ -123,7 +157,7 @@ display:none;
 
 @media screen and (max-width: 600px) {
     .career-container span {
-  animation: marquee 10s linear infinite;
+  animation: marquee 10s linear;
   font-size: 25px;
   width: 20%;
 }
@@ -135,8 +169,8 @@ display:none;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
-  background: rgba(141, 141, 141, 0.5); /* semi-transparent background */
-  backdrop-filter: blur(10px); /* blurred background */
+  background: rgba(61, 61, 61, 0.5); /* semi-transparent background */
+  backdrop-filter: blur(20px); /* blurred background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,12 +186,29 @@ display:none;
 }
 
 .content img {
-  width: 100%;
+  width: 50%;
   height: auto;
+  margin: auto;
 }
 
-.content h1, .content p {
+
+.content h1, .content p, .content a {
   margin-top: 20px;
+  font-size: 20px;
+}
+
+.content a {
+  text-decoration: underline double;
+  font-family: 'OTMiniature';
+  font-weight: bold-italic;
+}
+
+
+.content h1 {
+  font-family: 'OTMiniature';
+  font-weight: bold-italic;
+  color: white;
+  font-size: 40px;
 }
 
 .close {
@@ -249,9 +300,17 @@ display:none;
     <span class="close" id="closeBtn">&times;</span>
 
     <div class="content" id="Doctor" style="display: none;">
-      <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
-      <h1>DOCTOR</h1>
-      <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; flex-direction: row;">
+        <img src="/assets/images/Margarettodd.jpg" alt="Descriptive image alt text" />
+        <img src="/assets/images/sophiajex.jpg" alt="Descriptive image alt text" />
+      </div>
+      <div>
+        <h1>Margaret Todd was the first female doctor in Scotland</h1>
+      <p>And she was GAY. She dated Sophia Jex-Blake, the SECOND ever female doctor in Scotland.</p>
+      <a href="https://queerbio.com/wiki/index.php?title=Prominent_Medical_Practitioners_Who_Identify_as_LGBTQ"><em>CLICK FOR MORE LGBTQ Doctors</em></a>
+      </div>
+      </div>
     </div>
     <div class="content" id="Architect" style="display: none;">
         <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
@@ -281,12 +340,16 @@ display:none;
       <div class="content" id="Singer" style="display: none;">
         <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
         <h1>SINGER</h1>
-        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+        <p>It's not just Elton John and Lil Nas X. </p>
       </div>
       <div class="content" id="Writer" style="display: none;">
-        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
-        <h1>WRITER</h1>
-        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+        <div style="display: flex; flex-direction: row;">
+          <img src="/assets/images/georgemjohnson.jpg" alt="george m johnson" />
+          <div>
+            <h1>George M. Johnson</h1>
+            <p>George M Johnson is an Award-Winning Black Non-Binary Writer, Author, and Executive Producer.</p>
+          </div>
+      </div>
       </div>
       <div class="content" id="Scientist" style="display: none;">
         <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
@@ -339,6 +402,14 @@ display:none;
     <div class="stripe blue"><div class="career-container"></div></div>
     <div class="stripe violet"><div class="career-container"></div></div>
   </div>
+  <div class="flag">
+    <div class="stripe red"><div class="career-container"></div></div>
+    <div class="stripe orange"><div class="career-container"></div></div>
+    <div class="stripe yellow"><div class="career-container"></div></div>
+    <div class="stripe green"><div class="career-container"></div></div>
+    <div class="stripe blue"><div class="career-container"></div></div>
+    <div class="stripe violet"><div class="career-container"></div></div>
+  </div>
   
   
 </div>
@@ -362,12 +433,16 @@ var careers = ["Doctor", "Engineer", "Artist", "Teacher", "Lawyer", "Scientist",
 
 // Function to handle onclick event
 function handleClick(careerName) {
-    console.log(careerName);
     var careerpage = document.getElementById(careerName);
     var overlay = document.getElementById("popup");
-    overlay.style.display = "flex";
-    careerpage.style.display = "block";
-    lastclickedID = careerName;
+    if (overlay.style.display === "flex") {
+      /// handle double popup
+    } else {
+      overlay.style.display = "flex";
+      careerpage.style.display = "block";
+      lastclickedID = careerName;
+    }
+    
 
 }
 
@@ -379,22 +454,41 @@ if (window.innerWidth < 600) {
     console.log("less");
     paths = 3
 }
-// Iterate over containers and inject career spans
-for(let i = 0; i < containers.length; i++) {
+
+function injectCareers() {
+  // remove old careers 
+  let map = document.getElementsByClassName("careerEx");
+
+  // Convert HTMLCollection to array to avoid issues while removing
+  let elementsArray = Array.from(map);
+    
+  // for (let i = 0; i < elementsArray.length; i++) {
+  //     elementsArray[i].parentNode.removeChild(elementsArray[i]);
+  // }
+
+  //
+
+  for(let i = 0; i < containers.length; i++) {
     for (let j = 0; j < paths; j++) {
-    let careerSpan = document.createElement('span');
-    // Select random career
-    let career = careers[Math.floor(Math.random()*careers.length)];
-    if ( j % 2 === 0) {
-        careerSpan.style.textAlign = "center";
-    } else {
-        careerSpan.style.textAlign = "left";
+      let careerSpan = document.createElement('span');
+      // Select random career
+      let career = careers[Math.floor(Math.random()*careers.length)];
+
+      careerSpan.innerText = career;
+      careerSpan.className = "careerEx"
+
+
+      careerSpan.onclick = function() { handleClick(careerSpan.innerText) };
+      containers[i].appendChild(careerSpan);
     }
-    careerSpan.innerText = career;
-    careerSpan.onclick = function() { handleClick(careerSpan.innerText) };
-    containers[i].appendChild(careerSpan);
+  }
 }
+for(let i = 0; i < 3; i++) {
+
+injectCareers();
 }
+// let intervalId = setInterval(injectCareers, 10000); // 10000 milliseconds = 10 seconds
+
 
 </script>
 <script>
