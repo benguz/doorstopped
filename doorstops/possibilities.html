@@ -119,11 +119,6 @@ display:none;
 .blue { background: #7070ff; }
 .violet { background: #bd6dff; }
 
-/* @keyframes marquee {
-    0% { transform: translateX(100%); }
-    50% {transform: translateX(0%);}
-  100% { transform: translateX(100%); }
-} */
 
 @keyframes marquee {
     0% { transform: translateX(100%); }
@@ -153,14 +148,14 @@ display:none;
 
 .career-container span:hover {
   cursor: pointer;
+
+
 }
 
-@media screen and (max-width: 600px) {
-    .career-container span {
-  animation: marquee 10s linear;
-  font-size: 25px;
-  width: 20%;
-}
+.intro h1 {
+  font-family: 'OTMiniature';
+  font-weight: bold-italic;
+  text-align: center;
 }
 
 .dinkydonk {
@@ -201,6 +196,8 @@ display:none;
   text-decoration: underline double;
   font-family: 'OTMiniature';
   font-weight: bold-italic;
+  display: inline;
+
 }
 
 
@@ -219,6 +216,20 @@ display:none;
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px) {
+    .career-container span {
+  /* animation: marquee 10s linear; */
+  font-size: 30px;
+  width: 20%;
+}
+.content img {
+  width: 70%;
+  height: auto;
+  margin: auto;
+}
 }
 
 
@@ -333,9 +344,9 @@ display:none;
         <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
       </div>
       <div class="content" id="CEO" style="display: none;">
-        <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
-        <h1>CEO</h1>
-        <p>Your body text goes here. This can be a few sentences or a paragraph.</p>
+        <h1>Check out TIM COOK (CEO OF APPLE) and Beth Ford, CEO of LAND OF LAKES</h1>
+        <p>Want scholarships and mentorship for lesbian and nonbinary women in tech? Join 70,000 LBTQ+ women and allies from 100 different countries at <a href="https://lesbianswhotech.org/about/">Lesbians Who Tech</a>, founded by another Lesbian CEO.</p>
+        <img src="/assets/images/bethford.jpeg" alt="Beth Ford" />
       </div>
       <div class="content" id="Singer" style="display: none;">
         <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" />
@@ -393,7 +404,11 @@ display:none;
       </div>
   </div>
   
-<div class="" id="Doctor"></div>
+<div class="intro">
+  <h1>SEE LGBTQ PEOPLE IN THE CAREERS OF YOUR DREAMS. CLICK ON THEM, BESTIE.</h1>
+  <br class="desktop"><br class="desktop">
+
+</div>
 <div class="flag">
     <div class="stripe red"><div class="career-container"></div></div>
     <div class="stripe orange"><div class="career-container"></div></div>
@@ -418,6 +433,7 @@ display:none;
 <div id="footer-placeholder">
 
 </div>
+
 <script>
   // USE THIS TYPEFACE https://off-type.com/products/miniature
 var lastclickedID;
@@ -449,10 +465,11 @@ function handleClick(careerName) {
 // Get career containers
 var containers = document.querySelectorAll('.career-container');
 
-var paths = 5
+var paths = 5;
+var repeats = 3;
 if (window.innerWidth < 600) {
-    console.log("less");
-    paths = 3
+    paths = 3;
+    repeats = 1;
 }
 
 function injectCareers() {
@@ -483,7 +500,7 @@ function injectCareers() {
     }
   }
 }
-for(let i = 0; i < 3; i++) {
+for(let i = 0; i < repeats; i++) {
 
 injectCareers();
 }

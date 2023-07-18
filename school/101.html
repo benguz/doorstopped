@@ -36,7 +36,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
       <style>
           .section {
-              height: 100vh;
+              height: 95vh;
               display: flex;
               flex-direction: row;
               align-items: center;
@@ -44,11 +44,15 @@
               text-align: center;
               padding: 50px;
               color: white;
+              z-index: 4;
           }
 
           h1, h2, h3 {
               color: black; /* Off-White */
               font-weight: 700;
+          }
+          h3 {
+            font-weight: 400;
           }
           p {
               color: black; /* Light Grey */
@@ -61,7 +65,7 @@
             font-family: none;
         }
         section {
-  height: 100vh; /* 100% of the viewport height */
+  height: 95vh; /* 100% of the viewport height */
   position: relative;
   overflow: hidden;
   font-family: 'Poppins';
@@ -75,7 +79,7 @@
 }
 
 #section2 {
-    background-image: url(/assets/images/classroomy.jpg);
+    background-image: url(/assets/images/Doorstopfit.png);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
@@ -83,14 +87,64 @@
 
 
 #section3 {
-              background: #63ACE5; /* Light Blue */
-          }
+  background-image: url(/assets/images/childbehind.jpg);;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  /* background: #63ACE5;  */
+}
 
 .svg-container {
   position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 75%;
+  transform: translate(-75%, -50%);
+}
+
+.dynamic {
+  display: none;
+  z-index: 3;
+}
+
+.fade-in {
+  animation: fadeIn .7s ease-in forwards;
+  
+}
+
+.fade-out {
+  animation: fadeOut .7s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.flicker {
+    animation: flicker 0.1s linear infinite;
 }
 
 svg {
@@ -111,113 +165,212 @@ svg {
     width: 600px;
 }
 
+
+
+#special {
+  width: 0;
+  height: 0;
+}
+
 /* img {
     flex: 2;
     width: 200px;
     height: auto;
 } */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
 
+.demo {
+  max-width: 45%;
+}
 @media screen and (max-width: 600px) {
     .container {
 
     max-width: 100%;
     }
+
+    .demo {
+  max-width: 100%;
+}
 }
     </style>
     </head>
     <body>
-        <div class="svg-container">
+      <div class="svg-container">
             <svg id="dynamic-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-              <rect id="row-1" y="0" width="100" height="10" />
-              <rect id="row-2" y="10" width="100" height="10" />
-              <rect id="row-3" y="20" width="100" height="10" />
-              <rect id="row-4" y="30" width="100" height="10" />
-              <rect id="row-5" y="40" width="100" height="10" />
-              <rect id="row-6" y="50" width="100" height="10" />
-              <rect id="row-7" y="60" width="100" height="10" />
-              <rect id="row-8" y="70" width="100" height="10" />
-              <rect id="row-9" y="80" width="100" height="10" />              
-              <rect id="row-10" y="90" width="100" height="10" />
+                <polygon id="triangle-1" points="0,100 100,100 100,50" fill="#CC9966"/>
             </svg>
-          </div>
-  
-
-    <section id="section1" class="section">
-        <div class="container">
-            <h1>SCHOOL 101.</h1>
-            <h2>INTRO.</h2>
-            <p>Education is a $500 billion industry, but it’s still underfunded. With 50 million students in the system, that’s only $10,000 a kid, way less than other developed countries...</p>
-        </div>
-        <!-- <img src="/assets/images/class.jpg"> -->
-
-    </section>
-
-    <section id="section2" class="section">
-        <div class="container">
-            <h2>Policy and practice change is incredibly hard to do right.</h2>
-            <p>If a school sets a policy requiring smaller class sizes, they’ll need more teachers...</p>
-        </div>
-        <!-- <img src="/assets/images/class.jpg"> -->
-
-    </section>
-
-    <section id="section3" class="section">
-        <div class="container">
-            <h2>Without students, there is no school. </h2>
-            <p>If you idiots all walked out tomorrow and said you wouldn't come back until the disgusting bathrooms were fixed, they would get fixed...</p>
-            <h3>To change the system, you’ll need to know how it works. Let’s get into School 101: How to Change It.</h3>
-        </div>
-        <!-- <img src="/assets/images/class.jpg"> -->
-
-    </section>
-</body>
-</html>
-
-          
-        <script>
-$(window).scroll(function() {
-  var scrollTop = $(window).scrollTop();
-  var windowHeight = $(window).height();
-  var section1Height = $('#section1').height();
-
-  var svgHeight = $('#dynamic-svg').height();
-
-  var firstPos = (section1Height/2) - svgHeight;
-  var lastPos = (section1Height/2) + svgHeight;
-  console.log("first " + firstPos);
-  console.log("last " + lastPos);
-
-
-//   var relativePos = (scrollTop / section1Height) * 10;
-//   console.log(relativePos);
-
-  if (scrollTop > firstPos && scrollTop < lastPos) {
-    console.log("between")
-    rowsInSection1 = Math.floor(10 * (scrollTop - firstPos) / (svgHeight * 2));
-    rowsInSection2 = 10 - rowsInSection1;
-    // Color the rows for section1
-    for (var i = 10; i > 10 - rowsInSection1; i--) {
-        $('#row-' + i).attr('fill', 'blue');
-    }
+    </div>
     
-    // Color the rows for section2
-    for (var i = 10 - rowsInSection1; i > 10 - rowsInSection1 - rowsInSection2; i--) {
-        $('#row-' + i).attr('fill', 'green');
+  
+    <section class="section ">
+      <h1>This is a doorstop. </h1>
+
+    </section>
+    <section class="section  ">
+      <h1>It costs $1.08. It's meant to hold doors open.</h1>
+
+    </section>
+    <div class="svg-container">
+        <svg class="dynamic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <polygon id="triangle-1" points="0,100 100,100 100,50"/>
+        </svg>
+  </div>
+    <section class="section column high">
+      <div class="demo">
+
+      <h1>Education is a $700 billion industry.</h1>
+      <h3>With 50 million students, that means schools spend $14,000 per student.</h3>
+        </div>
+    </section>
+    <section class="section">
+      <h1>That could be 12,963 Doorstops</h1>
+    </section>
+    <section class="section column">
+      <div class="demo">
+      <h1>Do you feel like 12,963 doors have been opened for you?</h1>
+      <h3>12,963 opportunties?</h3>
+    </div>
+    </section>
+    <section class="section column">      
+      <div class="demo">
+        <h1>Can you count on your hand how many times someone has had your back?</h1>
+      </div>
+    </section>
+
+    <section class="section column">
+      <div class="demo">
+
+      <h1>People keep trying to improve school, but it's not working.</h1>
+      <h3>They're missing something...</h3>
+      </div>
+    </section>
+    <section class="section column">
+      <div class="demo">
+
+      <h1>To make a change, all these people have to agree:</h1>
+      <h3>- Administrators<br>
+        - The school board<br>
+        - The district<br>
+        - The PTO<br>
+        - Teachers<br>
+        - Teachers unions<br>
+        - Parents, voters, and locals<br>
+        - The superintendents association<br>
+        - State policymakers<br>
+        - Federal policymakers
+        </h3>
+      </div>
+    </section>
+    <section class="section column">
+      <div class="demo">
+
+      <h1>Who's missing from that list?</h1>
+      </div>
+    </section>
+
+ <section class="section column">
+      <div class="demo">
+        <h1 style="color: rebeccapurple">Students.</h1>
+      <h1>You think you <em>can't</em> change school. <span style="opacity: 0; display: inline-block;" id="wrong">You're wrong.</span></h1>
+      </div>
+    </section>
+    <section class="section column">
+      <div class="demo">
+        <h1>If you walk out of school tomorrow</h1>
+        <h3>and didn't come back until the disgusting bathrooms were fixed or the school hired more social workers, everything would change.</h3>
+    </div>
+    </section>
+    <section class="section column">
+      <div class="demo">
+        <h1>If you just want to do better in class, be less stressed, or even eat better food for lunch,</h1>
+        <h3> YOU HAVE SMALL, POWERFUL WAYS TO ACHIEVE THAT THAT, TOO.</h3>
+    </div>
+    </section>
+    <section class="section column">
+      <div class="demo">
+        <h1>School is built for you.</h1>
+        <h3>It just *acts* like you don't exist</h3>
+    </div>
+    </section>
+    <section id="cta-section" class="section column">
+      <div class="demo">
+        <h1>To change the system, you'll need to know how it works!</h1>
+        <h3>Let’s get into School 101.</h3>
+    </div>
+    </section>
+    <!-- <section class="section column">
+       <div class="demo">
+        <h1></h1>
+        <h3></h3>
+    </div>
+    </section> -->
+ 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var target = document.querySelector("#wrong");
+
+    var observer = new IntersectionObserver(function(entries) {
+      if(entries[0].isIntersecting === true)
+        target.classList.add('fade-in');
+    }, { threshold: [1] });
+
+    observer.observe(target);
+  });
+</script>
+        <script>
+  $(window).scroll(function() {
+    var scrollTop = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    var sectionHeight = $('#cta-section').height();
+
+    // stop scrolling at perfect spot
+    if (scrollTop >= sectionHeight * 16.5)  {
+      $('#dynamic-svg').css({
+        'transform': `rotate(0deg)`
+      });
+
+    } else {
+      let position = Math.floor((scrollTop / sectionHeight));
+      
+      if (position % 4 == 0) {
+        $('#triangle-1').attr('fill', '#CC9966');
+        $('#dynamic-svg').css('transform', `rotate(${scrollTop / sectionHeight * 115}deg)`);
+
+      } else if (position % 4 == 1) {
+        $('#triangle-1').attr('fill', '#EBCDAE');
+        $('#dynamic-svg').css('transform', `rotate(${scrollTop / sectionHeight * 115}deg)`);
+
+
+      } else if (position % 4 == 2) {
+        $('#triangle-1').attr('fill', '#987148');
+        $('#dynamic-svg').css('transform', `rotate(${scrollTop / sectionHeight * 115}deg)`);
+
+
+      } else {
+        $('#triangle-1').attr('fill', '#68A2F8');
+        $('#dynamic-svg').css('transform', `rotate(${scrollTop / sectionHeight * 115}deg)`);
+
+
+      } 
     }
-  } else if (scrollTop > firstPos) {
-    for (var i = 1; i <= 10; i++) {
-    $('#row-' + i).attr('fill', 'blue');
-  }
-  } else {
-  for (var i = 1; i <= 10; i++) {
-    $('#row-' + i).attr('fill', 'green');
-  }
-  }
 
-
-});
-
-
+    // if (scrollTop <= section1Height) {
+    // } else if (scrollTop <= section1Height + section2Height) {
+    //   $('#dynamic-svg').css('transform', `rotate(${(scrollTop - section1Height) / section2Height * 270}deg)`);
+    // } else if (scrollTop <= section1Height *3) {
+    //   $('#triangle-1').attr('fill', '#987148');
+    //   $('#dynamic-svg').css('transform', `rotate(${(scrollTop - section1Height) / section2Height * 270}deg)`);
+    // } else {
+    //   $('#triangle-1').attr('fill', '#987148');
+    //   $('#dynamic-svg').css('transform', `rotate(${(scrollTop - section1Height - section2Height) / section3Height * 270}deg)`);
+    // }
+  });
         </script>
     </body>
 

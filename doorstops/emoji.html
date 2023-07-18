@@ -36,6 +36,10 @@
 <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
 <style>
+
+body {
+    height: 150vh;
+}
 #emoji-bar {
   display: flex;
   justify-content: space-around;
@@ -174,12 +178,11 @@
     <h2 class="reset-styles">Emoji Experiment</h2>
     <p class="reset-styles">How are you feeling?</p>
     <p class="reset-styles">The page will change based on your reaction (and how hard you button mash).</p>
-
     <div id="emoji-bar">
         <!--Inspired by Artur Bień https://expensive.toys/toys/reactions-->
         <div class="emoji-container">
           <div class="emoji-button-container left">
-            <button class="emoji-button" data-emoji="👍">👍</button>
+            <button class="emoji-button" data-emoji="👎">👎</button>
           </div>
         </div>
         <div class="emoji-container">
@@ -203,23 +206,44 @@
           </div>
         </div>
       </div>
+      <br><br><br><br>
+      <p class="reset-styles">Did you like this Doorstop?</p>
+      <br><br>
+      <div id="emoji-bar">
+        <!--Inspired by Artur Bień https://expensive.toys/toys/reactions-->
+        <div class="emoji-container">
+          <div class="emoji-button-container left">
+            <button class="emoji-button" data-emoji="😡">😡</button>
+          </div>
+        </div>
+        <div class="emoji-container">
+          <div class="emoji-button-container">
+            <button class="emoji-button" data-emoji="🙄">🙄</button>
+          </div>
+        </div>
+        <div class="emoji-container">
+          <div class="emoji-button-container right">
+            <button class="emoji-button" data-emoji="❤️">❤️</button>
+          </div>
+        </div>
+      </div>
       
 <script>
 $(".emoji-button").click(function() {
   var emoji = $(this).data("emoji");
   var newElement ="";
   if (emoji === "😡") {
-    var rages = ["🤬", "👺", "😈😈", "F*********CK", "#@$&^%@#", "LOOOSER", "AAAAAAAHHH", "L+RATIO", "YOU'RE TRASH"]
+    var rages = ["🤬", "👺", "😈😈", "F*******CK", "#@$&^#", "LOSER", "😡", "L+RATIO", "YOU'RE TRASH"]
     var rage = rages[Math.floor(Math.random() * rages.length)];
     newElement = $(`<span class='floating-emoji'>${rage}</span>`);
 
   } else if (emoji === "🤦") {
-    var tears = ["mid", "😐", "lame", "wtf😕", "uhhh gross 🤮", "🤦", "ick", "mmmm no..."]
+    var tears = ["mid", "😐", "🤢🤢", "wtf😕", "🤨", "uhhh gross 🤮", "🤦", "ick", "mmmm no..."]
     var tear = tears[Math.floor(Math.random() * tears.length)];
     newElement = $(`<span class='floating-emoji'>${tear}</span>`);
 
   } else if (emoji === "🙄") {
-    var tears = ["😳😳😳", "drama", "💅💅", "unbothered", "nah girl", "she said WHAT", "spill the ☕"]
+    var tears = ["😳😳😳", "👎", "🙄", "😒", "😤😤", "drama", "💅💅", "nah girl", "spill the ☕"]
     var tear = tears[Math.floor(Math.random() * tears.length)];
     newElement = $(`<span class='floating-emoji'>${tear}</span>`);
 
@@ -229,7 +253,7 @@ $(".emoji-button").click(function() {
     newElement = $(`<span class='floating-emoji'>${tear}</span>`);
 
   } else if (emoji === "😢") {
-    var tears = ["😭", "😓", "😞", "😨", "😰", "noooo", "all the feels"]
+    var tears = ["😭", "😓", "😞", "😨", "😰", "😭😭😭", "noooo", "all the feels"]
     var tear = tears[Math.floor(Math.random() * tears.length)];
     newElement = $(`<span class='floating-emoji'>${tear}</span>`);
 
