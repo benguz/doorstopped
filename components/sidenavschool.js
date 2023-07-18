@@ -136,3 +136,39 @@ function generateSidebarHtml(currentPlayer) {
 sidenav.innerHTML = sidenavHtml;
 
  
+// First, flatten the array
+const flatItems = items.reduce((acc, curr) => {
+  return acc.concat(curr.links);
+}, []);
+
+// Function to find current page index
+const getCurrentPageIndex = () => {
+  const currentPath = window.location.pathname;
+  return flatItems.findIndex(item => item.href === currentPath);
+};
+
+// Function to generate navigation buttons
+const generateNavigationButtons = () => {
+  const currentIndex = getCurrentPageIndex();
+  let navigationButtonsHtml = '';
+
+  if (currentIndex === 0) {
+    // If it's the first page, render a larger 'Next' button only
+    navigationButtonsHtml += `<a href="${flatItems[currentIndex + 1].href}" class="nav-button large-button">Next &rarr;</a>`;
+  } else if (currentIndex === flatItems.length - 1) {
+    // If it's the last page, render a larger 'Previous' button only
+    navigationButtonsHtml += `<a href="${flatItems[currentIndex - 1].href}" class="nav-button large-button">&larr; Previous</a>`;
+  } else {
+    // Otherwise, render both 'Previous' and 'Next' buttons
+    navigationButtonsHtml += `
+      <a href="${flatItems[currentIndex - 1].href}" class="nav-button">Previous &larr;</a>
+      <a href="${flatItems[currentIndex + 1].href}" class="nav-button">Next &rarr;</a>
+    `;
+  }
+
+  return navigationButtonsHtml;
+};
+
+// Insert the navigation buttons at the bottom of the page
+const navButtonContainer = document.querySelector('#nav-button-container');
+navButtonContainer.innerHTML = generateNavigationButtons();

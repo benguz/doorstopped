@@ -1199,6 +1199,39 @@ h2 {
   } /* padding stuff */
 }
 
+
+/**
+* SCHOOL 101 NAV
+*/
+
+.nav-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: transparent;
+  color: #008fd5;
+  border-radius: 10px;
+  border: 1px solid #e9eaeb; */
+
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  border: 3px solid #008fd5;
+  position:relative;
+  left:-2px;
+  top:-2px;
+  background-color: rgba(0, 143, 213, 0.2);
+  cursor: pointer;
+}
+
+.large-button {
+  padding: 20px 40px;
+  font-size: 20px;
+}
+
 /**
 * COPY-PASTE
 */
