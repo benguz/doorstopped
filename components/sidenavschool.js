@@ -6,25 +6,25 @@ const toc = document.querySelector('#toc');
     {
       title: 'School 101',
       links: [
-        { href: '/school/index.html', children: 'Intro: The System' },
-        { href: '/school/money.html', children: 'Money' },
-        { href: '/school/gridlock.html', children: 'Gridlock'},
-        { href: '/school/audit.html', children: 'Your School' }, 
+        { href: '/school/index', children: 'Intro: The System' },
+        { href: '/school/money', children: 'Money' },
+        { href: '/school/gridlock', children: 'Gridlock'},
+        { href: '/school/audit', children: 'Your School' }, 
       ]
     },
     {
       title: 'The Change-Making Playbook',
       links: [
-        { href: '/school/money.html', children: 'Controlling $100k' },
-        { href: '/school/data.html', children: 'Leveraging Data' },
-        { href: '/school/corp.html', children: 'Deciphering Corporate-Speak' },
-        { href: '/school/selfie.html', children: 'Selfie Diplomacy' },
-        { href: '/school/dress.html', children: 'Changing the Dress Code' },
-        { href: '/school/takeover.html', children: 'State Takeover' },
-        { href: '/school/waffle.html', children: 'Playing the Waffle Game' },
-        { href: '/school/schedule.html', children: 'Schedule Change' },
-        { href: '/school/comms.html', children: 'Forcing Communication' },
-        { href: '/school/dayoff.html', children: 'Getting a day off' },
+        { href: '/school/money', children: 'Controlling $100k' },
+        { href: '/school/data', children: 'Leveraging Data' },
+        { href: '/school/corp', children: 'Deciphering Corporate-Speak' },
+        { href: '/school/selfie', children: 'Selfie Diplomacy' },
+        { href: '/school/dress', children: 'Changing the Dress Code' },
+        { href: '/school/takeover', children: 'State Takeover' },
+        { href: '/school/waffle', children: 'Playing the Waffle Game' },
+        { href: '/school/schedule', children: 'Schedule Change' },
+        { href: '/school/comms', children: 'Forcing Communication' },
+        { href: '/school/dayoff', children: 'Getting a day off' },
       ]
     },
   ];
@@ -60,9 +60,9 @@ fetch('/components/players.json')
     let currentPlayer;
 
     if (currentPage === "/school/") {
-    currentPlayer = data.find(player => player.name === "/school/index.html");
+    currentPlayer = data.find(player => player.name === "/school/index");
     } else {
-    const currentPageShort = currentPage.replace(".html", "");
+    const currentPageShort = currentPage.replace("", "");
     currentPlayer = data.find(player => player.name === currentPage || player.name === currentPageShort);
     }
 
@@ -90,12 +90,12 @@ function generateSidebarHtml(currentPlayer) {
     
         // Create the key tab
         let randomKey = keys[Math.floor(Math.random() * keys.length)];
-        const keyTab = createTab(currentPlayer.key, `/school/${currentPlayer.key}.html`, '#97E5D7', currentPlayer.key, randomKey);
+        const keyTab = createTab(currentPlayer.key, `/school/${currentPlayer.key}`, '#97E5D7', currentPlayer.key, randomKey);
         sidebarHtml += keyTab;
     
         // Create the foe tabs
         currentPlayer.foe.forEach(foe => {
-          const foeLink = `/school/${foe}.html`;
+          const foeLink = `/school/${foe}`;
           let randomFoe = foes[Math.floor(Math.random() * foes.length)];
           const foeTab = createTab(foe, foeLink, '#FEB7B3', foe, randomFoe);
           sidebarHtml += foeTab;
@@ -112,7 +112,7 @@ function generateSidebarHtml(currentPlayer) {
             } else {
               allyName = ally;
             }
-          const allyLink = `/school/${allyName}.html`;
+          const allyLink = `/school/${allyName}`;
           let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
 
@@ -128,8 +128,8 @@ function generateSidebarHtml(currentPlayer) {
   // Function to create an individual tab
   function createTab(text, link, color, back, img) {
     return `<div class="bingo-item"> 
-    <button class="aesthetic-tab front" style="background-color: ${color}" onclick="window.location.href='${link}'"><img class="aesthetic-icon" src="/assets/images/${img}.png"></img>${text}</button>
-    <button class="aesthetic-tab back" style="background-color: ${color}" onclick="window.location.href='${link}'"><img class="aesthetic-icon" src="/assets/images/${img}.png"></img>${back}</button>
+    <button class="aesthetic-tab front" style="background-color: ${color};" onclick="window.location.href='${link}'"><img class="aesthetic-icon" src="/assets/images/${img}.png"></img>${text}</button>
+    <button class="aesthetic-tab back" style="background-color: ${color};" onclick="window.location.href='${link}'"><img class="aesthetic-icon" src="/assets/images/${img}.png"></img>${back}</button>
     </div>`;
   }
 
@@ -161,8 +161,8 @@ const generateNavigationButtons = () => {
   } else {
     // Otherwise, render both 'Previous' and 'Next' buttons
     navigationButtonsHtml += `
-      <a href="${flatItems[currentIndex - 1].href}" class="nav-button">Previous &larr;</a>
-      <a href="${flatItems[currentIndex + 1].href}" class="nav-button">Next &rarr;</a>
+      <a href="${flatItems[currentIndex - 1].href}" class="nav-button" style="text-align: left;">&larr;  ${flatItems[currentIndex - 1].children}</a>
+      <a href="${flatItems[currentIndex + 1].href}" class="nav-button" style="text-align: right;">${flatItems[currentIndex + 1].children}  &rarr;</a>
     `;
   }
 

@@ -46,10 +46,33 @@
               color: white;
               z-index: 4;
           }
-
-          h1, h2, h3 {
+          .row {
+            display: flex; 
+            flex-direction: row; 
+            justify-content: space-around;
+          }
+.lard {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+}
+          h1, h2, h3, a {
               color: black; /* Off-White */
               font-weight: 700;
+          }
+          a {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-family: inherit;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            text-decoration: underline;
           }
           h3 {
             font-weight: 400;
@@ -71,28 +94,6 @@
   font-family: 'Poppins';
 }
 
-#section1 {
-    background-image: url(/assets/images/classroomempty.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}
-
-#section2 {
-    background-image: url(/assets/images/Doorstopfit.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}
-
-
-#section3 {
-  background-image: url(/assets/images/childbehind.jpg);;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
-  /* background: #63ACE5;  */
-}
 
 .svg-container {
   position: fixed;
@@ -111,14 +112,31 @@
   
 }
 
+.fade-in-slow {
+  animation: fadeInSlow 1.4s ease-in forwards;
+}
+
 .fade-out {
   animation: fadeOut .7s ease-out forwards;
+}
+
+@keyframes fadeInSlow {
+  0%, 40% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  /* 50% {transform: translateY(0);} */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(10px);
 
   }
   to {
@@ -172,6 +190,12 @@ svg {
   height: 0;
 }
 
+
+.lard:hover {
+    cursor: pointer;
+}
+
+
 /* img {
     flex: 2;
     width: 200px;
@@ -187,17 +211,80 @@ svg {
 
 .demo {
   max-width: 45%;
-  margin-right: 30px;
+  margin-right: 25px;
 }
 
+.text-and-image {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  max-width: 100%; 
+}
+
+
 .video-simple {
-  width: 600px;
+  flex-basis: 0;
+  flex-grow: 1;
+  width: 550px;
   max-width: 100%;
   height: auto;
   /* height: 100px;
   object-fit: contain; */
 }
+
+.dude {
+  text-align: left; 
+  margin-right: 40%;
+}
+
+.big {
+  font-size: 4.5em; 
+  opacity: 0;
+}
+
 @media screen and (max-width: 600px) {
+  body {
+    max-width: 98%;
+    margin: auto;
+
+  }
+  h1.toobig, a.toobig {
+    font-size: 2em;
+  }
+  h3.toobig {
+    font-size: 1.5em;
+  }
+  .row {
+    flex-direction: column; 
+  }
+  .dude {
+    margin-right: 100px;
+
+  }
+  /* h1 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.5em;
+  } */
+  .big {
+    font-size: 3em;
+  }
+  /* .bringin {
+    opacity: 1;
+    
+  } */
+  section, .section {
+    padding: 5px;
+    height: 70vh;
+  }
+  .text-and-image {
+    flex-direction: column;
+  }
+  .video-simple {
+    margin-top: 10px;
+    width: 95%;
+  }
     .container {
 
     max-width: 100%;
@@ -213,36 +300,70 @@ svg {
     
   
     <section class="section">
-      <h1>This is a doorstop. </h1>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="margin-left: 40%; margin-bottom: 20px; color: #CC9966">
+      <h1 class="dude" style="">This is a doorstop. </h1>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="margin-bottom: 20px; color: #CC9966">
         <polygon id="triangle-1" points="0,100 100,100 100,50" fill="#CC9966"/>
     </svg>
     </section>
     <section class="section column">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="text-and-image" >
             <div class="demo">
-                <h1>This is a Doorstop. Capital D.</h1>
+                <h1>This is a <span style="display: inline; text-decoration: underline solid">D</span>oorstop, capital "D".</h1>
             </div>
-                <video autoplay muted loop class="video-simple bringin"> 
+                <video autoplay muted loop style="opacity: 0;" class="video-simple bringin"> 
                         <source src="/assets/images/extension-half.webm" type="video/webm">
                 </video>
     </div>
     </section>
-    <section class="section column high">
-      <div class="demo">
-
-      <h1></h1>
-      <h3></h3>
+    <section class="section column">
+       <div class="text-and-image" >
+        <div class="demo">
+          <h1>It's a strategy that helps you change school</h1>
         </div>
+            <video autoplay muted loop style="opacity: 0;" class="video-simple bringin"> 
+                    <source src="/assets/images/twitter.webm" type="video/webm">
+            </video>
+   </div>
+   </section>
+    <section class="section column">
+      <div class="text-and-image">
+
+      <div class="demo">
+      <h1 class="toobig">You find Doorstops swiping on the <a style="display: inline-block;" href="/dashboard">dashboard</a> or playing toxic vibes bingo.</h1>
+      <h3 class="toobig">The more you swipe, the more personalized your Doorstops get!</h3>
+        </div>
+        <video autoplay muted loop style="opacity: 0;" class="video-simple bringin"> 
+          <source src="/assets/images/swipe-demo.webm" type="video/webm">
+  </video>
+  </div>
+    </section>
+    <section class="section column">
+      <!-- <div class="text-and-image"> -->
+
+      <div class="demo" style="max-width: 100%; margin: auto; text-align: center;">
+      <h1 class="big bringin" >There are <strong style="color:  #aa0462;">1,000's of ways</strong> you can change school, <strong style="color:#cd6f6f; opacity: 0;" class="bringin delay">no matter what you're struggling with.</strong></h1>
+        </div>
+        <!-- <video autoplay muted loop style="opacity: 0;" class="video-simple bringin"> 
+          <source src="/assets/images/swipe-demo.webm" type="video/webm">
+  </video> 
+  </div>-->
     </section>
     
  <section class="section column">
-      <div class="demo">
-        <h1 style="color: rebeccapurple">Purple!</h1>
-      <h1>You think you <em>can't</em> change school. <span style="opacity: 0; display: inline-block;" class="wrong">You're wrong.</span></h1>
-      </div>
+  <br><br><br>
+  <div class="lard" style="color: black; font-size: 1.5em; background-color: hsl(42, 94%, 88%); margin: auto;" onclick="window.location.href = '/dashboard'">
+    Find the perfect Doorstop
+  </div>
+  <div class="lard" style="color: black; font-size: 1.5em; background-color: hsl(351, 83%, 88%); margin: auto;" onclick="window.location.href = 'https://doorstopfellows.org'">
+    Get the Fellas
+  </div>
+  <div class="lard" style="color: black; font-size: 1.5em; background-color: hsl(234, 44%, 88%); margin: auto;" onclick="window.location.href = '/school'">
+    Learn how school works
+  </div>
+  <br><br><br>  
     </section>
-    
+
+ 
     <!-- <section class="section column">
        <div class="demo">
         <h1></h1>
@@ -255,13 +376,24 @@ svg {
 
     var targets = document.getElementsByClassName("bringin");
     for (let i = 0; i < targets.length; i++) {
-        var observer = new IntersectionObserver(function(entries) {
-        if(entries[0].isIntersecting === true)
-            targets[i].classList.add('fade-in');
-        }, { threshold: [1] });
+        if (targets[i].classList.contains("delay")) {
+          var observer = new IntersectionObserver(function(entries) {
+          if(entries[0].isIntersecting === true)
+              targets[i].classList.add('fade-in-slow');
+          }, { threshold: [1] });
 
-        observer.observe(targets[i]);
+          observer.observe(targets[i]);
+          }
+        else {
+          var observer = new IntersectionObserver(function(entries) {
+          if(entries[0].isIntersecting === true)
+              targets[i].classList.add('fade-in');
+          }, { threshold: [1] });
+
+          observer.observe(targets[i]);
+          }
         }
+        
   });
 </script>
        
