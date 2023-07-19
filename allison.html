@@ -572,11 +572,11 @@ body {
     
       var animation = test[Math.floor(Math.random() * test.length)];
     
-      if (clickcountSad > 99) {
+      if (clickcountSad > 49) {
         plausible("allison-sad-100");
         clickcountSad = 0;
       }
-      if (clickcountHappy > 99) {
+      if (clickcountHappy > 49) {
         plausible("allison-happy-100");
         clickcountHappy = 0;
       }
@@ -611,8 +611,8 @@ body {
 
       if (happyData[0].events > happyData[1].events) {
         surveyHappy.textContent = "ALLISON IS HAPPY TODAY"
-        if (happyData[2].events > 0) {
-            surveyHappy.textContent = "ALLISON IS SO HAPPY TODAY, SHE CLICKED HAPPY BUTTONS OVER 100 TIMES"
+        if (happyData.length > 2 && happyData[2].events > 0) {
+            surveyHappy.textContent = "ALLISON IS SO HAPPY TODAY, SHE CLICKED HAPPY BUTTONS OVER 50 TIMES"
 
         }
         surveyYes.textContent = happyData[0].events;
@@ -621,8 +621,8 @@ body {
         } else {
             surveyHappy.textContent = "ALLISON IS SAD TODAY"
             
-            if (happyData[3].events > 0) {
-            surveyHappy.textContent = "ALLISON IS SO SAD TODAY, SHE CLICKED SAD BUTTONS OVER 100 TIMES"
+            if (happyData.length > 3 && happyData[3].events > 0) {
+            surveyHappy.textContent = "ALLISON IS SO SAD TODAY, SHE CLICKED SAD BUTTONS OVER 50 TIMES"
 
             }
             surveyYes.textContent = happyData[1].events;
@@ -642,11 +642,12 @@ body {
   .then(response => response.json())
   .then(data => {
     // Prepare the data for the chart
+    console.log(data);
     const labels = data.map(item => {
       const date = new Date(item.day);
       return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
     });
-    const visitors = data.map(item => item.data.results.visitors.value);
+    const visitors = data.map(item => item.data.results.events.value);
     // const sample = [75, 83, 104, 85, 155, 177, 183, 120, 82, 109, 111, 67, 129, 190, 144];
     
     // Create the chart
@@ -656,7 +657,7 @@ body {
       data: {
         labels: labels,
         datasets: [{
-          label: 'Unique student visitors',
+          label: 'Happy clicks',
           data: visitors, // sample
           backgroundColor: 'rgba(233, 30, 99, 0.2)',
           borderColor: 'rgba(233, 30, 99, 1)',
@@ -668,7 +669,7 @@ body {
         plugins: {
           title: {
             display: true,
-            text: 'Daily Engagemet: Number of Students using Doorstops',
+            text: 'Allison Happiness by Day',
             font: {
               size: 30,
               family: 'Poppins'

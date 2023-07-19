@@ -8,7 +8,7 @@ exports.handler = async function(event, context) {
   
     const responses = [];
     // Instead of all these requests I should switch to timeseries
-    // '?site_id=$SITE_ID&period=6mo'
+    // 'https://plausible.io/api/v1/stats/timeseries?site_id=$SITE_ID&period=6mo'
     // https://plausible.io/docs/stats-api
     
     // Fetch data for each day
@@ -18,12 +18,13 @@ exports.handler = async function(event, context) {
         site_id: 'doorstopped.org',
         period: 'day',
         date: `${day.toISOString().split('T')[0]}`,
-        metrics: 'visitors',
+        property: 'event:name',
+        metrics: 'events',
         filters: 'event:name==Allison-happy'
       };
   
       try {
-        const response = await axios.get('https://plausible.io/api/v1/stats/timeseries', {
+        const response = await axios.get('https://plausible.io/api/v1/stats/aggregate', {
           headers: {
             'Authorization': `Bearer ${API_KEY}`
           },
