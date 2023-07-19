@@ -253,9 +253,141 @@ canvas {
         }
     }
 
-    
-</style>
+    #emoji-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  background-color: transparent;
+}
 
+.emoji-container {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.emoji-button-container {
+  background-color: #c9c9c9; /* Apply background color to emoji bar only */
+  padding: 20px;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.right {
+    border-radius: 0px 20px 20px 0px;
+}
+
+
+.emoji-button {
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.floating-emoji {
+  position: absolute;
+  bottom: 50px;
+  opacity: 1;
+}
+
+@keyframes floatPath1 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  25% { transform: translate(-20px, -30px); opacity: 0.75; }
+  50% { transform: translate(20px, -60px); opacity: 0.5; }
+  75% { transform: translate(-20px, -90px); opacity: 0.25; }
+  100% { transform: translate(20px, -120px); opacity: 0; }
+}
+
+@keyframes floatPath2 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  12.5% {transform: translate(6px, -15px); opacity: 0.875;}
+  25% { transform: translate(8px, -30px); opacity: 0.75; }
+  37.5% {transform: translate(-2px, -45px); opacity: 0.625;}
+  50% { transform: translate(-8px, -60px); opacity: 0.5; }
+  62.5% {transform: translate(-6px, -75px); opacity: 0.375;}
+  75% { transform: translate(0px, -90px); opacity: 0.25; }
+  87.5% {transform: translate(-5px, -105px); opacity: 0.125;}
+  100% { transform: translate(-10px, -120px); opacity: 0; }
+}
+
+@keyframes floatPath3 {
+    0% { transform: translate(0, 0); opacity: 1; }
+  12.5% {transform: translate(5px, -15px); opacity: 0.875;}
+  25% { transform: translate(10px, -30px); opacity: 0.75; }
+  37.5% {transform: translate(1px, -45px); opacity: 0.625;}
+  50% { transform: translate(-7px, -60px); opacity: 0.5; }
+  62.5% {transform: translate(-10px, -75px); opacity: 0.375;}
+  75% { transform: translate(-7px, -90px); opacity: 0.25; }
+  87.5% {transform: translate(-5px, -105px); opacity: 0.125;}
+  100% { transform: translate(-10px, -120px); opacity: 0; }
+
+}
+
+@keyframes floatPath4 {
+    0% { transform: translate(0, 0); opacity: 1; }
+  12.5% {transform: translate(-6px, -15px); opacity: 0.875;}
+  25% { transform: translate(-8px, -30px); opacity: 0.75; }
+  37.5% {transform: translate(2px, -45px); opacity: 0.625;}
+  50% { transform: translate(8px, -60px); opacity: 0.5; }
+  62.5% {transform: translate(6px, -75px); opacity: 0.375;}
+  75% { transform: translate(3px, -90px); opacity: 0.25; }
+  87.5% {transform: translate(-5px, -105px); opacity: 0.125;}
+  100% { transform: translate(-10px, -120px); opacity: 0; }
+}
+
+@keyframes floatPath5 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  25% { transform: translate(20px, -30px); opacity: 0.75; }
+  50% { transform: translate(20px, -60px); opacity: 0.5; }
+  75% { transform: translate(-20px, -90px); opacity: 0.25; }
+  100% { transform: translate(-20px, -120px); opacity: 0; }
+}
+
+@keyframes floatPath6 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  25% { transform: translate(-20px, -30px); opacity: 0.75; }
+  50% { transform: translate(-20px, -60px); opacity: 0.5; }
+  75% { transform: translate(20px, -90px); opacity: 0.25; }
+  100% { transform: translate(20px, -120px); opacity: 0; }
+}
+
+@media screen and (max-width: 720px) {
+    
+.emoji-button-container {
+  padding: 15px;
+
+}
+
+.left {
+    border-radius: 15px 0px 0px 15px;
+}
+
+.right {
+    border-radius: 0px 15px 15px 0px;
+}
+
+body {
+    height: 500vh;
+}
+.emoji-button {
+  font-size: 1.5em;
+}
+ p {
+    text-align: center;
+ }
+}
+</style><link rel="stylesheet" href="/doorstops/food.css">
+<script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 </head>
 <body>
     <header class="header" data-header>
@@ -317,58 +449,64 @@ canvas {
     
         </div>
       </header>
-      <!-- <main>
 
-      </main> -->
-<div class="box" id="onboard">
-    <h1>How are students interacting with Doorstops?</h1>
-    <p>Welcome to our Doorstop Dashboard, with data-driven reporting on how students feel about school, plus live-updating survey data on your chosen metrics.</p>
-    <br><br>
-    <!-- <img src="/assets/images/classroomempty.jpg" id="intro-img" alt="Sample image"> -->
-    <button id="engage" class="button">Show me data!</button>
+      <div class="header-spacer"></div>
+      <br><br><br><br>
+      <br><br><br><br>
+      <br><br><br><br>
+      <br><br><br><br>
+      <br><br><br><br>
 
-</div>
+      <h2 class="reset-styles">Emoji Experiment</h2>
+      <p class="reset-styles">ALLISON HOW DO YOU FEEL.</p>
+      <br><br>
+      <div id="emoji-bar">
+        <!--Inspired by Artur Bień https://expensive.toys/toys/reactions-->
+        <div class="emoji-container">
+          <div class="emoji-button-container left">
+            <button class="emoji-button" data-emoji="😡">😡</button>
+          </div>
+        </div>
+        <div class="emoji-container">
+            <div class="emoji-button-container">
+              <button class="emoji-button" data-emoji="😢">😢</button>
+            </div>
+          </div>
+        <div class="emoji-container">
+          <div class="emoji-button-container">
+            <button class="emoji-button" data-emoji="🙄">🙄</button>
+          </div>
+        </div>
+          <div class="emoji-container">
+            <div class="emoji-button-container">
+              <button class="emoji-button" data-emoji="👍">👍</button>
+            </div>
+          </div>
+        <div class="emoji-container">
+          <div class="emoji-button-container right">
+            <button class="emoji-button" data-emoji="❤️">❤️</button>
+          </div>
+        </div>
+      </div>
 
-<div class="new-elements fade-in" id="second" style="display: none;">
-  <div class="header-spacer"></div>
+      <h2 class="reset-styles" id="feelingswheel">TODAY ALLISON FEELS...</h2>
+
+
+<div class="new-elements fade-in" id="second" >
     <div class="row">
         <div id="survey" class="square">
           <div class="top-section">
-            <span class="number" id="surveysuccess">176</span>
+            <span class="number" id="surveysuccess"></span>
             <div class="icon positive">
                 <img src="/assets/svg/upicon.svg" alt="down-icon" />
-                <span class="percentage positive" id="surveypct">15%</span>
+                <span class="percentage positive" id="surveypct"></span>
             </div>
         </div>
         <div class="label">
-            <span id="surveytotal">Students feel safer in school, 201 surveyed</span>
+            <span id="surveytotal"></span>
         </div>
         </div>
-        <div id="results" class="square">
-          <div class="top-section">
-            <span class="number" id="engagement">170</span>
-            <div class="icon positive">
-                <img src="/assets/svg/upicon.svg" alt="down-icon" />
-                <span class="percentage positive">19%</span>
-            </div>
-          </div>
-          <div class="label">
-              <span>Students used 50+ Doorstops this week</span>
-          </div>
-        </div>
-        <div id="culture" class="square">
-          <div class="top-section">
-            <span class="number" id="excitedsurvey">145</span>
-            <div class="icon positive">
-                <img src="/assets/svg/upicon.svg" alt="down-icon" />
-                <span class="percentage positive">50%</span>
-            </div>
-          </div>
-          <div class="label">
-              <span>Students are more excited to attend class</span>
-          </div>
-        </div>
-    </div>
+        
     <div class="rectangle">
       <div id="loading-chart" style="width: 100%; height: 100%; text-align: center; vertical-align: middle; font-size: 25px;">Chart loading!</div>
       <canvas id="myChart"></canvas>
@@ -380,71 +518,127 @@ canvas {
   -->
   <script src="/assets/js/script.js" defer></script>
   <script>
-    $(document).ready(function(){
-      if (localStorage.getItem('cache') === 'yes') {
-            //  Check if page has been viewed
-              $('.box').css("display", "none");
-              $("body").css("background", "#E6EDFD");
-              document.querySelector('#second').style.display = "flex";
-            } else {
-              localStorage.setItem('cache', 'yes');
-            }
-        $(".button").click(function(){
-            document.querySelector('#onboard').classList.add("fade-out");
-            $(".box").css("display", "none");
-            $("body").css("background", "#E6EDFD");
-            document.querySelector('#second').style.display = "flex";
-            setTimeout(() => {
-                document.querySelector('#second').classList.remove("fade-in");
-            }, 400);
-        });
-    });
+
 </script>
+      
+<script>
+    let clickcountSad = 0;
+    let clickcountHappy = 0;
+
+    $(".emoji-button").click(function() {
+      var emoji = $(this).data("emoji");
+      var newElement ="";
+      if (emoji === "😡") {
+        var rages = ["🤬", "👺", "😈😈", "F*******CK", "#@$&^#", "LOSER", "😡", "L+RATIO", "YOU'RE TRASH"]
+        var rage = rages[Math.floor(Math.random() * rages.length)];
+        newElement = $(`<span class='floating-emoji'>${rage}</span>`);
+        plausible("Allison-sad");
+        clickcountSad++
+    
+      } else if (emoji === "🤦" || emoji === "🙄") {
+        var tears = ["mid", "😳", "😤😤", "🙄", "😐", "🤢🤢",  "💅💅", "wtf😕", "🤨", "uhhh gross 🤮", "🤦", "ick", "mmmm no..."]
+        var tear = tears[Math.floor(Math.random() * tears.length)];
+        newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+        plausible("Allison-sad");
+        clickcountSad++
+    
+      } else if (emoji === "❤️") {
+        var tears = ["LOVE THIS", "❤️", "💗", "💖💖💖", "ILYYY", "💚", "🧡", "💛", "🤍", "💙"]
+        var tear = tears[Math.floor(Math.random() * tears.length)];
+        newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+        plausible("Allison-happy");
+        clickcountHappy++;
+    
+      } else if (emoji === "😢") {
+        var tears = ["😭", "😓", "😞", "😨", "😰", "😭😭😭", "noooo", "all the feels"]
+        var tear = tears[Math.floor(Math.random() * tears.length)];
+        newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+        plausible("Allison-sad");
+        clickcountSad++
+    
+      } else if (emoji === "👍") {
+        plausible("Allison-happy");
+        newElement = $(`<span class='floating-emoji'>${emoji}</span>`);
+        clickcountHappy++;
+
+      } else {
+        newElement = $(`<span class='floating-emoji'>${emoji}</span>`);
+      }
+      $(this).parent().append(newElement);
+    
+      /* Choose an animation randomly */
+    //   var animations = ['floatPath1', 'floatPath2', 'floatPath3','floatPath4', 'floatPath5', 'floatPath6']; // Add more animations as needed
+      var test = ['floatPath2', 'floatPath3', 'floatPath4']; // Add more animations as needed
+    
+      var animation = test[Math.floor(Math.random() * test.length)];
+    
+      if (clickcountSad > 99) {
+        plausible("allison-sad-100");
+        clickcountSad = 0;
+      }
+      if (clickcountHappy > 99) {
+        plausible("allison-happy-100");
+        clickcountHappy = 0;
+      }
+      /* Apply the animation */
+      newElement.css('animation', `${animation} 1s forwards`);
+    
+      setTimeout(function() {
+        newElement.remove();
+      }, 2000); // Remove the emoji after the animation completes (2 seconds)
+    });
+      
+      
+    
+    </script>
   <script>
     fetch('/.netlify/functions/dashboard')
     .then(response => response.json())
     .then(data => {
       console.log(data);
 
-      let excludedNames = ["pageview", "50-swipes-survey-yes", "50-swipes-survey-no", "allison-happy-100", "allison-sad-100", "Allison-happy", "Allison-sad"];
-      let surveyNames = ["50-swipes-survey-yes", "50-swipes-survey-no"];
+      let excludedNames = ["Allison-happy", "Allison-sad", "allison-happy-100", "allison-sad-100"];
 
-      let filteredData = data.results.filter(item => !excludedNames.includes(item.name));
-      let surveyData = data.results.filter(item => surveyNames.includes(item.name));
+      let happyData = data.results.filter(item => excludedNames.includes(item.name));
       
       
       // square 1
       let surveyYes = document.getElementById('surveysuccess');
       let surveyTotal = document.getElementById('surveytotal');
       let surveypct = document.getElementById('surveypct');
+      let surveyHappy = document.getElementById('feelingswheel');
 
-      surveyYes.textContent = surveyData[0].events;
-      let total = surveyData[0].events + surveyData[1].events;
-      surveyTotal.textContent = 'Students feel safer in school, ' + total + ' surveyed';
+
+      if (happyData[0].events > happyData[1].events) {
+        surveyHappy.textContent = "ALLISON IS HAPPY TODAY"
+        if (happyData[2].events > 0) {
+            surveyHappy.textContent = "ALLISON IS SO HAPPY TODAY, SHE CLICKED HAPPY BUTTONS OVER 100 TIMES"
+
+        }
+        surveyYes.textContent = happyData[0].events;
+        surveyTotal.textContent = 'Happy buttons clicked total';
+
+        } else {
+            surveyHappy.textContent = "ALLISON IS SAD TODAY"
+            
+            if (happyData[3].events > 0) {
+            surveyHappy.textContent = "ALLISON IS SO SAD TODAY, SHE CLICKED SAD BUTTONS OVER 100 TIMES"
+
+            }
+            surveyYes.textContent = happyData[1].events;
+            surveyTotal.textContent = 'Sad buttons clicked total';
+
+        }
+      
       // next step is to update surveypct intelligently.
       
-      // square 2
-      let resultDiv = document.getElementById('results');
-      let engagement = document.getElementById('engagement');
-      let sum = 0;
-      filteredData.forEach(item => {
-        let p = document.createElement('p');
-        p.textContent = `${item.name}: ${item.visitors}`;
-        sum += item.visitors; //uniques by day --- maybe better content for this square would be student engagement, eg students w/ more than 10 minutes on dashboard
-        // resultDiv.appendChild(p);
-      });
-      engagement.textContent = sum;
-
-      // square 3
-      const totalEvents = filteredData.reduce((acc, curr) => acc + curr.events, 0);
-      document.getElementById('excitedsurvey').innerText = totalEvents; // `Total Swipes Right: ${totalEvents}`
     })
     .catch((error) => {
       console.error("Error:", error);
     });
   </script>
   <script>
-    fetch('/.netlify/functions/weekly')
+    fetch('/.netlify/functions/allison')
   .then(response => response.json())
   .then(data => {
     // Prepare the data for the chart
