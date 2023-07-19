@@ -1,0 +1,2 @@
+/dashboard
+  Content-Security-Policy: frame-ancestors 'self' https://benguzovsky.com https://blog.benguzovsky.com
