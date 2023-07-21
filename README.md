@@ -11,6 +11,13 @@ Doorstop Education
 8. Share your subdomain (or custom domain!) link with students. Go to /analytics on the live site to see how students are interacting with Doorstops!
 9. Sync changes from the main fork often, as that is where new Doorstops will be added!
 
+## Embed a Doorstop or the swipe interface into your site
+1. Request permission to either by emailing benjamin.guzovsky [at] gmail [dot] com or by making a pull request adding your domain to _headers for the relevant page.
+2. Add the following line of code to your website, where the src= points to the page you'd like to embed.
+```
+    <iframe style="width: 98%; margin: auto; height: 100vh; border-style: none;" src="https://doorstopped.org/dashboard" class="container"></iframe>
+```
+3. You're more than welcome to also fork the repository and create your own _headers file.
 
 ## Doorstop creation and filtering categories.
 
