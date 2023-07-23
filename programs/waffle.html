@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Waffle Game - How School Policy Change Works | Doorstops</title>
+    <meta name="title" content="Social Referents Are the Secret To Changing School Culture">
+    <meta name="description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
+    <meta property="og:url" content="https://doorstopped.org/">
+    <meta property="og:image" content="https://doorstopped.org/og.jpg">
+    <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="Doorstops | Referents">
+    <meta property="og:description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://doorstopped.org/">
+    <meta property="twitter:title" content="Doorstops | Social Referents">
+    <meta property="twitter:description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
+    <link href="./favicon.ico" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- include jQuery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="/assets/css/dynamic.css" rel="stylesheet">
+ <style>
+
+    body {
+        background-color: aliceblue;
+        background-size: contain;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .turn {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    #background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.char-btn {
+    width: 50%;
+    background-color: #2804aa38;
+}
+
+
+.mobile {
+    text-align: left; max-width: 50%;
+}
+    .selected {
+        background-color: hsl(351, 83%, 75%);
+    }
+
+.col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.r {
+    display: flex;
+    flex-direction: column;
+
+}
+.char-btn.selected {
+    background-color: #2804aa58;
+    border: 1px solid black;
+    }
+    @media screen and (max-width: 720px) {
+        .ref {
+        text-align: left;
+    }
+    .r {
+        flex: row;
+    }
+    .mobile {
+        max-width: 100%;
+    }
+    body {
+        background-position: center; /* Center the image */
+        background-size: cover;
+    }
+    .ref h1 {
+    max-width: 90%;
+    }
+    .row {
+        flex-direction: row;
+    }
+    .turn {
+        display: flex;
+        flex-direction: column;
+    }
+    }
+
+ </style>
+  </head>
+
+<body>
+  <div class="ref">
+    <br><br>
+    <video id="background-video" autoplay loop muted>
+        <source src="" type="video/webm">
+        </video>
+        
+    <h1>Step one: choose a vibe</h1>
+    
+    <div style="color: black; max-width: 100%">
+        <div class="r">
+            <div class="col">
+                
+          <div id="judgey" data-img-url="" class="bg-btn lard row selected" >
+            Chill
+          </div>
+
+          <div id="loud" data-img-url="/assets/images/billionaire.jpg" class="bg-btn lard row">
+            Bling
+          </div>
+          <div id="yonk" data-img-url="/assets/images/relaxing-waffles.gif" class="bg-btn lard row">
+            Waffle
+          </div>
+          <div id="yonk" data-img-url="/assets/cards/dancing-panda.webm" class="bg-btn lard row">
+            Panda
+          </div>
+        </div>
+        <div class="col">
+
+          <div id="yonk" data-img-url="/assets/cards/pandastic-panda.webm" class="bg-btn lard row">
+            Majestic
+          </div>
+          <div id="comp"  data-img-url="/assets/images/classroomempty.jpg" class="bg-btn lard row">
+            Rizz
+          </div>
+          <div id="yonk" data-img-url="/assets/images/nuts.png"class="bg-btn lard row">
+            Nuts
+          </div>
+
+        </div>
+        </div>
+        </div>
+    <h1><strong style="color: #aa0462">Step two:</strong> <strong style="color: #cd6f6f">Send your friends a</strong> <strong style="color: #d06348">link to this page.</strong></h1>
+    <h1>Half of you will play students, half of you will play ~nefarious~ school staff. Students, your goal is to <strong style="color: #2804aa">get a waffle maker in the cafeteria</strong>. </h1>
+    <video autoplay muted loop id="myVideo" width="300px" style="object-fit: contain; max-width: 100%">
+        <source src="/assets/cards/likesthefood.webm" type="video/webm">
+      </video> 
+      <h1>Non-students, you each have your own goals, some of them are secret. CHOOSE YOUR CHARACTER. Click ONLY ON YOUR CHARACTER to see your secret goals AFTER YOU AGREE WITH YOUR FRIENDS WHO IS WHO.
+        </h1>
+        <div class="lard turn">
+            <img src="/assets/images/waffle/jon.jpg" width="500px" class="mobile" height="auto">
+            <div width="500px" class="mobile">
+                <h1>Jon Val John</h1>
+                <p>Principal who really wants to be superintendent (which would grow his lifetime earnings by $1.2 million).</p>
+                <p>To do that, he needs to cut costs. And boy, is he excited about it.</p>
+                <p>Prop: cowboy hat</p>
+                <div class="char-btn lard row">
+                    Choose Jon
+                  </div>
+                  <div class="secret" style="display: none"><strong>You can fire people lol. But you are kind of lazy and would rather maggie do it. You will do anything to save $$. You insert made up words into every other sentence trying to sound smart.</strong></div>
+            </div>
+        </div>
+        <div class="lard turn" style="background-image: url(/assets/svg/wave2.svg)">
+            <img src="/assets/images/waffle/perry.png" width="500px" class="mobile" height="auto">
+
+            <div width="500px" class="mobile">
+                <h1>Perry, Science Teacher</h1>
+                <p>Values personal space. A LOT of personal space.</p>
+                <p>Wants the teacher’s lounge all to himself. No teachers, no students.</p>
+                <p>Big crush on Maggie.</p>
+                <p>Prop: magnifying glass</p>
+                <div class="char-btn lard row">
+                    Choose Perry
+                  </div>
+                  <div class="secret" style="display: none"><strong>You have a key to the teacher's lounge. Also, give Vlad whatever he wants.</strong></div>
+            </div>
+        </div>
+        <div class="lard turn" style="background-image: url(/assets/svg/wave.svg)">
+            <img src="/assets/images/sophiajex.jpg" width="500px" height="auto" class="mobile">
+
+            <div width="500px" class="mobile">
+                <h1>Maggie</h1>
+                <p>Principal’s secretary. Does half his work for him and knows everything about the school.</p>
+                <p>Wants gluten free, vegan lunch food.</p>
+                <p>Isn’t allowed into the teacher’s lounge.</p>
+                <p>Perry makes her uncomfortable
+                </p>
+                <p>Prop: confiscated baseball hats</p>
+                <div class="char-btn lard row">
+                    Choose Maggie
+                  </div>
+                  <div class="secret" style="display: none"><strong>Jon doesn't have to know if you change something, and you can really change anything.</strong></div>
+            </div>
+        </div>
+
+        <div class="lard turn" style="background-image: url(/assets/svg/wave2.svg)">
+            <img src="/assets/images/waffle/jacked.webp" width="500px" class="mobile" height="auto">
+            <div width="500px" class="mobile">
+                <h1>Press Scott</h1>
+                <p>Varsity football captain. Goon with his friends but nice and sensitive in Poetry x Bad Movies x Cheese club.</p>
+                <p><strong>Skips breakfast to go to the weight room.</strong></p>
+                <p>Prop: shaving cream</p>
+                <div class="char-btn lard row">
+                    Choose Press
+                  </div>
+                  <div class="secret" style="display: none"><strong>Spray your enemies with shaving cream. If you want to play Press as a bully with a soft spot, you can, too!</strong></div>
+            </div>
+        </div>
+        <div class="lard turn" style="background-image: url(/assets/svg/wave3.svg)">
+            <img src="/assets/images/waffle/kelly.png" width="500px" class="mobile" height="auto">
+
+            <div width="500px" class="mobile" >
+                <h1>Kelly Belly Jelly</h1>
+                <p>Sophomore, hacker, and Press’s best friend.</p>
+                <p>If you need info from the school mainframe, she’s your gal. She’s always helping the staff out with computer stuff.
+                </p>
+                <p>Hates the school food. Sits outside and eats lunch with Lorne anyway.                </p>
+                <div class="char-btn lard row">
+                    Choose Kelly
+                  </div>
+                  <div class="secret" style="display: none"><strong>You can make up any numbers you want to support your arguments and say you hacked them.</strong></div>
+            </div>
+        </div>
+        <div class="lard turn" style="background-image: url(/assets/svg/wave.svg)">
+            <img src="/assets/images/about-banner.jpg" width="500px" class="mobile" height="auto">
+
+            <div width="500px" class="mobile">
+                <h1>Mary Dougherty
+                </h1>
+                <p>History teacher. Loves flannel. Has cool stories.</p>
+                <p>Wants the teacher’s lounge all to herself. No teachers, no students.</p>
+                <p>Prop: disco shirt</p>
+                <div class="char-btn lard row">
+                    Choose Mary
+                  </div>
+                  <div class="secret" style="display: none"><strong>You have the KEY to the TEACHER'S LOUNGE, WHERE FOOD CAN BE MADE AND OUTLETS ARE A PLENTY. USE THIS LEVERAGE WISELY. Don't get fired. You'd love to go fly fishing instead of teaching class.</strong></div>
+            </div>
+            
+        </div>
+        <div class="lard turn" style="background-image: url(/assets/svg/wave2.svg)">
+            <img src="/assets/images/hat.jpg" width="500px" class="mobile" height="auto">
+
+            <div width="500px" class="mobile">
+                <h1>Vlad</h1>
+                <p>Foreign exchange student and teacher’s pet. Perry gave him the only A+ and Mary invited him fly fishing once.
+                    
+                    </p>
+                <p>Has never tried waffles.</p>
+                <p>Prop: fur hat</p>
+                <div class="char-btn lard row">
+                    Choose Vlad
+                  </div>
+                  <div class="secret" style="display: none"><strong>You can get Mary and Perry to do whatever you want.</strong></div>
+            </div>
+            
+        </div>
+        <div class="lard turn" style="background-image: url(/assets/svg/wave3.svg)">
+            <img src="/assets/images/waffle/lorne.jpg" width="500px" class="mobile" height="auto">
+
+            <div width="500px" class="mobile">
+                <h1>Lorne</h1>
+                <p>Lunch lady for 20 years. Gives people extra scoops.</p>
+                <p>Has never tried waffles.</p>
+                <p>Eats lunch outside (no key to the teacher’s lounge, which makes Lorne sad).                </p>
+                <div class="char-btn lard row">
+                    Choose Lorne
+                  </div>
+                  <div class="secret" style="display: none"><strong>You know the school would actually *save* money if there was a waffle maker, but you don't want to be stuck making the waffles yourself.</strong></div>
+            </div>
+            
+        </div>
+        <div class="lard turn" style="background-image: url(/assets/svg/wave.svg)">
+            <img src="/assets/images/blog-1.jpg" width="500px" class="mobile" height="auto">
+
+            <div width="500px" class="mobile">
+                <h1>Sandy Dandy</h1>
+                <p>Journalism club president.</p>
+                <p>LOVES waffles.</p>
+                <p>Prop: book she pretends to read - but it's upside-down</p>
+                <div class="char-btn lard row">
+                    Choose Sandy
+                  </div>
+                  <div class="secret" style="display: none"><strong>You know that 50% of students eat nothing during lunch and can threaten to write a hit piece</strong></div>
+            </div>
+            
+        </div>
+      <h1>Please, children. <strong style="color: #2804aa">Follow these rules:</strong></h1>
+      <div class="lard" >
+        <ul style="text-align: left; width: 300px; max-width: 90%;">
+        <li>Stay in character unless someone uses the safeword, which is “Egg and Cheese”</li>
+        <li>Don’t ask, What do you want in exchange?
+            Figure out what they want first, and ask do you want ___ in exchange?</li>
+        <li style="color: #aa0462">No physical violence</li>
+    </ul>
+        </div>
+        <h1 style="color: #d06348">Props you should <strong style="color: #cd6f6f">have:</strong></h1>
+        <div class="lard" >
+            <ul style="text-align: left; width: 300px; max-width: 90%;">
+            <li>Shaving cream</li>
+            <li>Fur hat</li>
+            <li>Cowboy hat</li>
+            <li>Second bottle of shaving cream</li>
+            <li>Broken calculator</li>
+            <li>Notebook with no pages</li>
+            <li>Mini-waffle maker as prize for winner</li>
+        </ul>
+        </div>
+        <h1 style="color: #aa0462">GO. DISPERSE. CONSPIRE. ARGUE.</h1>
+      <h1 style="color: #aa04625e">KEEP READING WHEN YOU WANT TO TALK ABOUT WHY WE DID THAT AND HOW IT APPLIES TO YOUR SCHOOL</h1>
+
+      <br><br>   <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+      <!-- <div class="lard">
+        <p></p>
+</div> -->
+<script>
+    $(document).ready(function() {
+        $(".bg-btn").click(function() {
+            var imgUrl = $(this).data('img-url');
+            if (imgUrl.endsWith('.webm')) {
+                $("#background-video > source").attr("src", imgUrl);
+                $("#background-video")[0].load(); // Load new source
+            } else {
+                $("body").css("background-image", 'url(' + imgUrl + ')');
+                $("#background-video > source").attr("src", "");
+                $("#background-video")[0].load(); 
+            }
+            $(".bg-btn").removeClass('selected');  // Remove the selected class from all buttons
+            $(this).addClass('selected'); 
+        });
+    });
+
+    $('.char-btn').click(function() {
+        $(this).next('.secret').show();
+        $(this).addClass('selected');
+    });
+</script>
+        <script src="/assets/js/script.js" defer></script>
+
+</body>
+
+</html>
