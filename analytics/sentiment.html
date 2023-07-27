@@ -329,7 +329,7 @@ canvas {
       console.log(data);
       let resultDiv = document.getElementById('results');
       let surveyDiv = document.getElementById('survey');
-      let excludedNames = ["pageview", "50-swipes-survey-yes", "50-swipes-survey-no"];
+      let excludedNames = ["pageview", "50-swipes-survey-yes", "50-swipes-survey-no", "allison-happy-100", "allison-sad-100", "Allison-happy", "Allison-sad"];
       // let surveyNames = ["50-swipes-survey-yes", "50-swipes-survey-no"];
 
       let filteredData = data.results.filter(item => !excludedNames.includes(item.name));

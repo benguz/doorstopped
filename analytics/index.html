@@ -453,7 +453,7 @@ canvas {
       return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
     });
     const visitors = data.map(item => item.data.results.visitors.value);
-    // const sample = [75, 83, 104, 85, 155, 177, 183, 120, 82, 109, 111, 67, 129, 190, 144];
+    const sample = [75, 83, 104, 85, 155, 177, 183, 120, 82, 109, 111, 67, 129, 190, 144];
     
     // Create the chart
     const ctx = document.getElementById('myChart').getContext('2d');
@@ -463,7 +463,7 @@ canvas {
         labels: labels,
         datasets: [{
           label: 'Unique student visitors',
-          data: visitors, // sample
+          data: sample, // sample visitors, 
           backgroundColor: 'rgba(233, 30, 99, 0.2)',
           borderColor: 'rgba(233, 30, 99, 1)',
           borderWidth: 3
