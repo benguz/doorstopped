@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- 
+      - primary meta tag
+    -->
+    <title>School 101: How School Systems Work and How Students Can Break Them</title>
+    <meta name="title" content="School 101: How School Systems Work and How Students Can Break Them">
+    <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+    
+    <!-- 
+      - favicon
+    -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+
+    <!-- 
+      - google font link
+    -->
+    <link rel="canonical" href="https://doorstopped.org/school/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <link rel="stylesheet" href="/css/styles.css">
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <style>
+          .section {
+              height: 95vh;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              /* justify-content: center; */
+              text-align: center;
+              padding: 50px;
+              color: white;
+              z-index: 4;
+          }
+          .row {
+            display: flex; 
+            flex-direction: row; 
+            justify-content: space-around;
+          }
+.lard {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+}
+          h1, h2, h3, a {
+              color: black; /* Off-White */
+              font-weight: 700;
+          }
+          a {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-family: inherit;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            text-decoration: underline;
+          }
+          h3 {
+            font-weight: 400;
+          }
+          p {
+              color: black; /* Light Grey */
+              font-weight: 500;
+              
+          }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: none;
+        }
+        section {
+  height: 95vh; /* 100% of the viewport height */
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins';
+}
+
+
+.svg-container {
+  position: fixed;
+  top: 50%;
+  left: 75%;
+  transform: translate(-75%, -50%);
+}
+
+.dynamic {
+  display: none;
+  z-index: 3;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in forwards;
+  
+}
+
+.fade-in-slow {
+  animation: fadeInSlow 1.7s ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOut .7s ease-out forwards;
+}
+
+@keyframes fadeInSlow {
+  0%, 40% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  /* 50% {transform: translateY(0);} */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.flicker {
+    animation: flicker 0.1s linear infinite;
+}
+
+svg {
+  height: 100px; /* Change according to your preference */
+  width: 100px; /* Change according to your preference */
+  z-index: 5;
+}
+
+.container {
+    /* flex: 2; */
+    text-align: left;
+    background-color: rgb(211, 211, 211);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    background: rgba(141, 141, 141, 0.5); /* semi-transparent background */
+    backdrop-filter: blur(10px); /* blurred background */
+    width: 600px;
+}
+
+
+
+#special {
+  width: 0;
+  height: 0;
+}
+
+
+.lard:hover {
+    cursor: pointer;
+}
+
+
+/* img {
+    flex: 2;
+    width: 200px;
+    height: auto;
+} */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.demo {
+  max-width: 45%;
+  margin-right: 25px;
+}
+
+.text-and-image {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  max-width: 100%; 
+}
+
+
+.video-simple {
+  flex-basis: 0;
+  flex-grow: 1;
+  width: 550px;
+  max-width: 100%;
+  height: auto;
+  /* height: 100px;
+  object-fit: contain; */
+}
+
+.dude {
+  text-align: left; 
+  margin-right: 40%;
+}
+
+.big {
+  font-size: 4.5em; 
+  opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    max-width: 98%;
+    margin: auto;
+
+  }
+  h1.toobig, a.toobig {
+    font-size: 2em;
+  }
+  h3.toobig {
+    font-size: 1.5em;
+  }
+  .row {
+    flex-direction: column; 
+  }
+  .dude {
+    margin-right: 100px;
+
+  }
+  /* h1 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.5em;
+  } */
+  .big {
+    font-size: 3em;
+  }
+  /* .bringin {
+    opacity: 1;
+    
+  } */
+  section, .section {
+    padding: 5px;
+    height: 70vh;
+  }
+  .text-and-image {
+    flex-direction: column;
+  }
+  .video-simple {
+    margin-top: 10px;
+    width: 95%;
+  }
+    .container {
+
+    max-width: 100%;
+    }
+
+    .demo {
+  max-width: 100%;
+}
+}
+    </style>
+    </head>
+    <body>
+
+<section class="section column">
+    <!-- <div class="text-and-image"> -->
+
+    <div class="demo" style="max-width: 100%; margin: auto; text-align: center;">
+    <h1 class="big bringin" >Show students <strong style="color:  #aa0462;">1,000s of ways</strong> to be happier at school, <strong style="color: #2804aa; opacity: 0;" class="bringin delay">no matter what they're struggling with.</strong></h1>
+      </div>
+      <!-- <video autoplay muted loop style="opacity: 0;" class="video-simple bringin"> 
+        <source src="/assets/images/swipe-demo.webm" type="video/webm">
+</video> 
+</div>-->
+  </section>
+
+  <section class="section column">
+    <!-- <div class="text-and-image"> -->
+
+    <div class="demo" style="max-width: 100%; margin: auto; text-align: center;">
+    <h1 class="big bringin" >Get real time data on student sentiment and <strong style="color: #d06348">social-emotional growth.</strong></h1>
+      </div>
+      <!-- <video autoplay muted loop style="opacity: 0;" class="video-simple bringin"> 
+        <source src="/assets/images/swipe-demo.webm" type="video/webm">
+</video> 
+</div>-->
+  </section>
+
+  
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  
+      var targets = document.getElementsByClassName("bringin");
+      for (let i = 0; i < targets.length; i++) {
+          if (targets[i].classList.contains("delay")) {
+            var observer = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting === true)
+                targets[i].classList.add('fade-in-slow');
+            }, { threshold: [1] });
+  
+            observer.observe(targets[i]);
+            }
+          else {
+            var observer = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting === true)
+                targets[i].classList.add('fade-in');
+            }, { threshold: [1] });
+  
+            observer.observe(targets[i]);
+            }
+          }
+          
+    });
+  </script>
+         
+      </body>
+  
+    
+    </html>
