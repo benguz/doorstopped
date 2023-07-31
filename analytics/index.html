@@ -418,9 +418,9 @@ canvas {
       let surveyTotal = document.getElementById('surveytotal');
       let surveypct = document.getElementById('surveypct');
 
-      // surveyYes.textContent = surveyData[0].events;
-      // let total = surveyData[0].events + surveyData[1].events;
-      // surveyTotal.textContent = 'Students feel safer in school, ' + total + ' surveyed';
+      surveyYes.textContent = surveyData[0].events;
+      let total = surveyData[0].events + surveyData[1].events;
+      surveyTotal.textContent = 'Students feel safer in school, ' + total + ' surveyed';
       // next step is to update surveypct intelligently.
       
       // square 2
@@ -463,7 +463,7 @@ canvas {
         labels: labels,
         datasets: [{
           label: 'Unique student visitors',
-          data: sample, // sample visitors, 
+          data: visitors, // sample 
           backgroundColor: 'rgba(233, 30, 99, 0.2)',
           borderColor: 'rgba(233, 30, 99, 1)',
           borderWidth: 3
