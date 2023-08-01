@@ -81,6 +81,13 @@ body {
   cursor: pointer;
 }
 
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices - prevents tap to zoom */ 
+  .emoji-button {
+    touch-action: manipulation;
+  }
+}
+
 .floating-emoji {
   position: absolute;
   bottom: 50px;
@@ -149,23 +156,25 @@ body {
 }
 
 @media screen and (max-width: 720px) {
-    
+#emoji-bar {
+  max-width: 98%;
+}
 .emoji-button-container {
-  padding: 15px;
+  padding: 10px;
 
 }
 
 .left {
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .right {
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 0px 10px 10px 0px;
 }
 
 
 .emoji-button {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
  p {
     text-align: center;
@@ -175,7 +184,7 @@ body {
 .progress-bar-container {
     display: flex;
     width: 100%;
-    height: 30px;
+    height: 50px;
     background: lightgrey;
 }
 
@@ -183,6 +192,9 @@ body {
     height: 100%;
     transition: width 1s ease-out;
     position: relative;
+    display: flex;
+    align-items: center;
+    
 }
 
 .section-text {

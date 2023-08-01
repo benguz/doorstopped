@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Wayland High School",
+        "DBN": "12345",
+        "keywords": ["boring", "chill", "good-sports"],
+        "counselors": 1
+    },
+    {
+        "name": "Weston High School",
+        "DBN": "12345",
+        "keywords": ["fun", "stressful", "bad-mental-health", "good-sports"],
+        "counselors": 1
+    },
+    {
+        "name": "Newton High School",
+        "DBN": "12345",
+        "keywords": ["boring", "chill", "bad-sports"],
+        "counselors": 1
+    },
+    {
+        "name": "Wellesley High School",
+        "DBN": "12345",
+        "keywords": ["boring", "bullying", "bad-sports"],
+        "counselors": 1
+    }
+]

@@ -174,9 +174,10 @@ a {
 
 .donk {
   height: 50px;
-  background-color: #65d658;
+  background-color: #96d68f;
   border-radius: 15px;
   margin: 10px;
+  padding: 10px;
   cursor: pointer;
   position: fixed;
   text-align: center;
@@ -234,6 +235,10 @@ a {
 
     }
 
+}
+
+#myChart {
+    max-width: 100%;
 }
 
 img {
@@ -309,7 +314,7 @@ Would you be open to sending out a name pronounciation survey to the whole class
             <p>If you go by different pronouns than your peers, this is a great place to mention that, or clarify what names to call you in front of your parents vs. with your friends. You can send an anonymous email asking for a pronoun survey <a href="/doorstops/pronouns.html">here</a> or just add a sentence to this email if you're comfortable.</p>
           </div>
       </div>
-      <div class="accordion-section">
+      <div class="accordion-section last">
       <div class="accordion-header">Super valuable: add pronounciation audio to your email footer</div>
       <div class="accordion-content">
         
@@ -362,11 +367,18 @@ Would you be open to sending out a name pronounciation survey to the whole class
               <button type="submit" id="dislike-button"><img src="/assets/svg/umbrella.svg"></img></button>
         </div>
     </div>
+    <audio id="silence" src="/assets/audio/silence.mp3"></audio>
+    <audio id="audio1" src="/assets/audio/what.mp3"></audio>
+    <audio id="audio2" src="/assets/audio/what.mp3"></audio>
+    <audio id="audio3" src="/assets/audio/what.mp3"></audio>
+    <audio id="audio4" src="/assets/audio/what.mp3"></audio>
 
     <section class="wrapper">
         <div id="game-section">
 
         </div>
+        <button id="stop-button" style="border: 1px solid #04AA6D; margin: auto; border-radius: 3px; ">STOP I GET IT - I WILL CALL PEOPLE OUT</button>
+
     </section>
     
     
@@ -417,19 +429,21 @@ Would you be open to sending out a name pronounciation survey to the whole class
 window.onload = function() {
   var textbox = document.getElementById('textbox');
   var textSection = document.getElementById('text-section');
-  var prefix = ["scha", "uuuuuuhhh", "cra",];
-  var suffix = ["smowksy", "blonk", "ozzle", "AY"];
-  var mid = ["garbla", "shing", "gle"];
+  var prefix = ["scha", "uuuuuuhhh", "cra", "wa", "gorgl", "z", "gr", "ouououuuu"];
+  var suffix = ["smowksy", "blonk", "ozzle", "AY", "skle", "gggle", "orl", "eeel"];
+  var mid = ["garbla", "shing", "gle", "fsdkjl", "iz", "cr", "alo", "zzz..."];
+  let stop = 0;
 
     document.getElementById('dislike-button').addEventListener('click', function() {
       // Scroll to the game section
       var gameSection = document.getElementById('game-section');
       gameSection.style.display = "block";
       gameSection.scrollIntoView({behavior: "smooth"});
-        
-      for (let i = 0; i < prefix.length; i++) {
-        setTimeout(() => {
-
+      var silence = document.getElementById("silence");
+      silence.play();
+      let plays = 0;
+         stop = setInterval(() => {
+            
             var desk = document.createElement('div');
 
             desk.className = 'donk';
@@ -440,21 +454,38 @@ window.onload = function() {
                 this.style.display = 'none';
                 var img = document.createElement('img');
                 img.src = '/assets/svg/no.png';
+
+                img.style.margin = "auto";
                 gameSection.appendChild(img);
+                var audio;
+                let x = plays % 4;
+                if (x === 0) {
+                    audio = document.getElementById("audio1");
+                } else if (x === 1) {
+                    audio = document.getElementById("audio2");
+                } else if (x === 2) {
+                    audio = document.getElementById("audio3");
+                } else {
+                    audio = document.getElementById("audio4");
+                }
+                plays++;
+                audio.play();
                 setTimeout(() => {
                     img.classList.add("fade-out");
                     img.style.display = 'none';
+
                 }, 250);
             });
-            var rand = Math.random();
+            let rand = Math.random();
+            let i = Math.floor(7 * Math.random());
             if (rand < .33) {
                 var again = Math.floor(textbox.textContent.length * Math.random());
                 desk.textContent = textbox.textContent.substring(0, again) + mid[i].toString() + textbox.textContent.substring(again) + '?';
-            } else if (rand < .50) {
+            } else if (rand < .44) {
                 desk.textContent = textbox.textContent + suffix[i] + '?';
             } else if (rand < .66) {
                 desk.textContent = textbox.textContent.substring(0, textbox.textContent.length - 3) + suffix[i] + '?';
-            } else if (rand < .80) {
+            } else if (rand < .92) {
                 desk.textContent = prefix[i] + textbox.textContent.substring(2) + '?';
             } else if (rand < .99) {
                 desk.textContent = prefix[i] + textbox.textContent + '?';
@@ -467,10 +498,15 @@ window.onload = function() {
             });
 
             gameSection.appendChild(desk);
-        }, 250);
-      }
+        }, 1500 * Math.random());
+ 
       
     
+    });
+
+    document.getElementById('stop-button').addEventListener('click', function() {
+        clearInterval(stop);
+        document.querySelectorAll('.donk').forEach(e => e.remove());
     });
 }
 
