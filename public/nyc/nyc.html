@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-<!-- <link rel="stylesheet" href="/doorstops/food.css"> -->
+<link rel="stylesheet" href="/doorstops/food.css">
 
 <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
@@ -173,9 +173,23 @@ body {
 }
 
 .progress-bar-container {
+    display: flex;
     width: 100%;
     height: 30px;
     background: lightgrey;
+}
+
+.color-section {
+    height: 100%;
+    transition: width 1s ease-out;
+    position: relative;
+}
+
+.section-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: black; /* choose color that will be visible on all your section colors */
 }
 
 .progress-bar {
@@ -204,7 +218,6 @@ background-color: #FFD4B8;
 background-color: #FEB7B3;
 }
 </style>
-    <script src="https://unpkg.com/@spreadtheweb/multi-range-slider@1.0.2/dist/range-slider.main.min.js"></script>
 
 </head>
 
@@ -217,35 +230,35 @@ background-color: #FEB7B3;
 <!-- switch to sliders with emoji effect -->
         <div class="emoji-container">
           <div class="emoji-button-container left">
-            <button class="emoji-button" data-color="red" data-emoji="🤓">🤓 Smart</button>
+            <button class="emoji-button" data-color="C1CEFE" data-emoji="🤓">🤓 Smart</button>
           </div>
         </div>
         <div class="emoji-container">
           <div class="emoji-button-container">
-            <button class="emoji-button" data-color="pink" data-emoji="🙄">🙄 Safe</button>
+            <button class="emoji-button" data-color="A0DDFF" data-emoji="🙄">🙄 Safe</button>
           </div>
         </div>
         <div class="emoji-container">
           <div class="emoji-button-container ">
-            <button class="emoji-button" data-color="blue" data-emoji="👍">👍 Close</button>
+            <button class="emoji-button" data-color="FCF1DD" data-emoji="👍">👍 Close</button>
           </div>
         </div>
         <div class="emoji-container">
           <div class="emoji-button-container">
-            <button class="emoji-button" data-color="green" data-emoji="😆">😆 Fun</button>
+            <button class="emoji-button" data-color="F7A9A8" data-emoji="😆">😆 Fun</button>
           </div>
         </div>
         <div class="emoji-container">
           <div class="emoji-button-container right">
-            <button class="emoji-button" data-color="#F23474" data-emoji="❤️">❤️ Chill</button>
+            <button class="emoji-button" data-color="EF798A" data-emoji="❤️">❤️ Chill</button>
           </div>
         </div>
       </div>
       <br><br><br><br>
       <div class="progress-bar-container">
-        <div class="progress-bar" style="width: 0%; transition: width 0.1s ease-out;"></div>
-    </div>
-
+        <div class="progress-bar" style="width: 0%; transition: width 0.5s ease-out;"></div>
+      </div>
+<!-- 
     <div class="reset-styles slider-wrapper noswipe" id="noswipe">
       <div class="reset-styles nard">
       <p class="reset-styles" id="slider-text">I’m happy with what’s on my plate right now — all the food looks great! We might have different cultural values around what a healthy body looks like.</p>
@@ -255,47 +268,59 @@ background-color: #FEB7B3;
         <label class="reset-styles slider-label-left"><strong>safe, clear, good boundaries</strong></label>
         <label class="reset-styles slider-label-right"><strong>woke up and chose violence</strong></label>
       </div>
-    </div>
+    </div> -->
       <p class="reset-styles">I live in</p>
       <p>Borough choice</p>
       <br><br>
         <!--Inspired by Artur Bień https://expensive.toys/toys/reactions-->
 
-    <div class="multi"></div>
 
  
 
 
 
 <br><br>
+
 <script>
-  let slider = new RangeSlider('.multi', {
-    values: [0, 20, 40, 60, 80],
-    min: 0,
-    max: 100,
-    pointRadius: 20,
-    railHeight: 10,
-    trackHeight: 10,
-    colors: {
-        points: ["#540BEC", "#540BEC", "#F77BF0", "#F77BF0"], 
-        rail: ["#FEB7B3", "#FCF1DD"],
-        tracks: ["#D2EBD8", "#97E5D7", "#FFD4B8"]
-    }
-    });
-</script>
-<script>
-  let progressBarWidth = 0;
+let totalWidth = 0;
+
+let colorWidths = {
+    FCF1DD: 0,
+    A0DDFF: 0,
+    C1CEFE: 0,
+    F7A9A8: 0,
+    EF798A: 0
+};
+
+       
+let colorTexts = {
+    FCF1DD: "👍👍👍",
+    A0DDFF: "🙄🙄🙄",
+    C1CEFE: "🤓🤓🤓",
+    F7A9A8: "😆😆😆",
+    EF798A: "❤️❤️❤️"
+};
 $(".emoji-button").click(function() {
   let color = $(this).data('color');
     
-    // Update progress bar
-    if(progressBarWidth < 100) {
-        progressBarWidth += 2;
+      // Find existing color section
+    let $colorSection = $(".color-section." + color);
+    if ($colorSection.length === 0) {
+        // Create new color section if not exists
+        $colorSection = $('<div class="color-section ' + color + '"><span class="section-text"></span></div>');
+        $(".progress-bar-container").append($colorSection);
     }
-    $(".progress-bar").css("width", progressBarWidth + "%");
-    
-    // Fade in color
-    $(".progress-bar").animate({backgroundColor: color}, 'fast');
+
+  if(totalWidth < 100) {
+    totalWidth += 2;
+    colorWidths[color] += 2;
+    $colorSection.css("width", colorWidths[color] + "%");
+    $colorSection.css("background-color", "#" + color);
+    if (colorWidths[color] >= 12) {
+        $colorSection.find(".section-text").text(colorTexts[color]);
+    }
+  }
+
 
   var emoji = $(this).data("emoji");
   var newElement ="";
