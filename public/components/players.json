@@ -16,5 +16,12 @@
         "ally": [["The Principal", "chooses budget"], "Students", "Federal Gov", "The Parents", "The Locals", "Advocacy Groups"],
         "key": "The State",
         "foe": ["The District"]
+    },
+    {
+        "name": "/school/dayoff",
+        "ally": [["The Principal", "chooses budget"], "Students", "Federal Gov", "The Parents", "The Locals", "Advocacy Groups"],
+        "key": "The State",
+        "foe": ["The District"]
     }
+    
 ]

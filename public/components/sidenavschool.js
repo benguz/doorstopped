@@ -6,7 +6,7 @@ const toc = document.querySelector('#toc');
     {
       title: 'School 101',
       links: [
-        { href: '/school/index', children: 'Intro: The System' },
+        { href: '/school/', children: 'Intro: The System' },
         { href: '/school/money', children: 'Money' },
         { href: '/school/gridlock', children: 'Gridlock'},
         { href: '/school/audit', children: 'Your School' }, 
@@ -25,6 +25,7 @@ const toc = document.querySelector('#toc');
         { href: '/school/schedule', children: 'Schedule Change' },
         { href: '/school/comms', children: 'Forcing Communication' },
         { href: '/school/dayoff', children: 'Getting a day off' },
+        { href: '/school/interns', children: 'Starting New Programs' }
       ]
     },
   ];
@@ -133,7 +134,10 @@ function generateSidebarHtml(currentPlayer) {
     </div>`;
   }
 
-sidenav.innerHTML = sidenavHtml;
+  if (sidenav) {
+    sidenav.innerHTML = sidenavHtml;
+
+  }
 
  
 // First, flatten the array

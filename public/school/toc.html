@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Doorstopped - Doorstop Education</title>
+  <meta name="title" content="Doorstop Education">
+  <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <style>
+body {
+    background-color: #f5f5f5;
+}
+.tableofcontents {
+    width: 50%; 
+    margin: auto;
+    /* text-align: center; */
+}
+
+@media screen and (max-width: 600px) {
+    .tableofcontents {
+        width: 98%;
+    }
+}
+</style>
+
+
+  </style>
+  <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+  </head>
+
+<body id="top">
+
+
+      
+    <main>
+        <br><br>
+      <div id="sidenav" ></div>
+      </div> 
+
+      
+    </main>
+
+
+
+
+
+
+<script>
+    const sidenav = document.querySelector('#sidenav');
+
+  // Define the items for the side navigation and the headings for the table of contents
+  const items = [
+    {
+      title: 'School 101',
+      links: [
+        { href: '/school/', children: 'Intro: The System' },
+        { href: '/school/flow', children: 'Power and Incentives'},
+        { href: '/school/money', children: 'Money - Controlling $100k' },
+        { href: '/school/audit', children: 'Your School' }, 
+      ]
+    },
+    {
+      title: 'The Change-Making Playbook',
+      links: [
+        { href: '/school/data', children: 'Leveraging Data' },
+        { href: '/school/corp', children: 'Deciphering Corporate-Speak' },
+        { href: '/school/selfie', children: 'Selfie Diplomacy' },
+        { href: '/school/dress', children: 'Changing the Dress Code' },
+        { href: '/school/takeover', children: 'State Takeover' },
+        { href: '/programs/waffle', children: 'Playing the Waffle Game' },
+        { href: '/school/schedule', children: 'Schedule Change' },
+        { href: '/school/comms', children: 'Forcing Communication' },
+        { href: '/school/dayoff', children: 'Getting a day off' },
+      ]
+    },
+    {
+      title: 'Category',
+      links: [
+        { href: '/school/flow#', children: 'Controlling $100k' },
+        { href: '/school/data', children: 'Leveraging Data' },
+        { href: '/school/corp', children: 'Deciphering Corporate-Speak' },
+        { href: '/school/selfie', children: 'Selfie Diplomacy' },
+        { href: '/school/dress', children: 'Changing the Dress Code' },
+        { href: '/school/takeover', children: 'State Takeover' },
+        { href: '/school/waffle', children: 'Playing the Waffle Game' },
+        { href: '/school/schedule', children: 'Schedule Change' },
+        { href: '/school/comms', children: 'Forcing Communication' },
+        { href: '/school/dayoff', children: 'Getting a day off' },
+      ]
+    },
+  ];
+  const sidenavHtml = `
+    <nav class="tableofcontents">
+    
+      ${items.map(item => `
+        <div>
+          <h3>${item.title}</h3>
+          <div style="width:100%;margin:auto;height:0.68em;background-color:#FEB7B3; padding-bottom:0.22em"></div>
+          <ul class="flex column">
+            ${item.links.map(link => `
+              <li> ${window.location.pathname === link.href ? "<em><u>" : ''}
+                <a class="scroll" href="${link.href}">${link.children}</a>
+                ${window.location.pathname === link.href ? "</u></em>" : ''}
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      `).join('')}
+    </nav>
+  `;
+  sidenav.innerHTML = sidenavHtml;
+
+</script>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/assets/js/script.js" defer></script>
+  <!-- <script src="/components/sidenavschool.js"> -->
+</script>
+
+</body>
+<footer>
+
+</footer>
+
+
