@@ -1,0 +1,147 @@
+
+html {
+    scroll-behavior: smooth;
+  }
+.bingo-item {
+    position: relative;
+    /* width: 45%;
+    display: inline-block; */
+    margin-bottom: 10px;
+    height: 50px;
+    perspective: 1000px;
+    overflow: hidden;
+    cursor: pointer;
+    scroll-behavior: smooth;
+  }
+  .warning-box {
+    position: relative;
+    background-color: #FCF1DD;
+    border-radius: 3px;
+    border: 1px solid #fecb6a;
+    padding: 15px;
+    margin-bottom: 1rem;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 13pt;
+    display: flex;
+    align-items: center; /* Vertical centering */
+  }
+  
+  .warning-box p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .warning-box a {
+    margin: 0;
+    display: inline;
+    line-height: 1.5;
+  }
+  
+  .warning-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-right: 12px;
+  }
+  
+  .warning-icon:focus {
+    outline: none;
+  }
+  .aesthetic-tab {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* padding: 5px; */
+    background-color: #f2f2f2;
+    text-align: center;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    font-size: 18px;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    scroll-behavior: smooth;
+
+  }
+  .bingo-item:hover .front {
+    transform: rotateX(180deg);
+    cursor: pointer;
+    z-index: -1;
+  }
+  
+  .bingo-item:hover .back {
+    transform: rotateX(0);
+    z-index: 1;
+  }
+  
+  .front {
+    z-index: 1;
+    background: inherit;
+  }
+  
+  .back {
+    transform: rotateX(180deg);
+    z-index: -1;
+    background: inherit;
+
+  }
+  
+  .aesthetic-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+  }
+
+  #nav-button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .nav-button {
+    flex-basis: 0;
+    flex-grow: 1;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    background-color: transparent;
+    color: #008fd5;
+    border-radius: 10px;
+    border: 1px solid #e9eaeb;
+    width: 50%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #008fd5;
+    position:relative;
+    background-color: rgba(0, 143, 213, 0.2);
+    cursor: pointer;
+  }
+  
+  .large-button {
+    padding: 20px 40px;
+    font-size: 20px;
+  }
+
+
+  ul {
+    list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+    padding-left: 30px;
+    font-size: 14pt;
+    list-style: initial;
+
+  
+  }
+  li {
+    list-style-type: disc !important; 
+    display: list-item;
+  }

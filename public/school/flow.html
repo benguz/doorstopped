@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- 
+      - primary meta tag
+    -->
+    <title>School 101: How School Systems Work and How Students Can Break Them</title>
+    <meta name="title" content="School 101: How School Systems Work and How Students Can Break Them">
+    <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+    
+    <!-- 
+      - favicon
+    -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+
+    <!-- 
+      - google font link
+    -->
+    <link rel="canonical" href="https://doorstopped.org/school/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <link rel="stylesheet" href="/css/styles.css">
+      <link rel="stylesheet" href="/school/school.css">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <style>
+          .section {
+              height: 95vh;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              /* justify-content: center; */
+              text-align: center;
+              padding: 50px;
+              color: white;
+              z-index: 4;
+          }
+
+          h1, h2, h3 {
+              color: black; /* Off-White */
+              font-weight: 700;
+          }
+          h3 {
+            font-weight: 400;
+          }
+          p {
+              color: black; /* Light Grey */
+              font-weight: 500;
+              
+          }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: none;
+        }
+        section {
+  height: 95vh; /* 100% of the viewport height */
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins';
+}
+
+#section1 {
+    background-image: url(/assets/images/classroomempty.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+#section2 {
+    background-image: url(/assets/images/Doorstopfit.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+
+#section3 {
+  background-image: url(/assets/images/childbehind.jpg);;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  /* background: #63ACE5;  */
+}
+
+.svg-container {
+  position: fixed;
+  top: 50%;
+  left: 75%;
+  transform: translate(-75%, -50%);
+}
+
+.dynamic {
+  display: none;
+  z-index: 3;
+}
+
+.fade-in {
+  animation: fadeIn .7s ease-in forwards;
+  
+}
+
+.fade-out {
+  animation: fadeOut .7s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.flicker {
+    animation: flicker 0.1s linear infinite;
+}
+
+svg {
+  height: 100px; /* Change according to your preference */
+  width: 100px; /* Change according to your preference */
+  z-index: 5;
+}
+
+.container {
+    /* flex: 2; */
+    text-align: left;
+    background-color: rgb(211, 211, 211);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    background: rgba(141, 141, 141, 0.5); /* semi-transparent background */
+    backdrop-filter: blur(10px); /* blurred background */
+    width: 600px;
+}
+
+
+
+#special {
+  width: 0;
+  height: 0;
+}
+
+/* img {
+    flex: 2;
+    width: 200px;
+    height: auto;
+} */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.demo {
+  max-width: 45%;
+}
+@media screen and (max-width: 600px) {
+    .container {
+
+    max-width: 100%;
+    }
+
+    .demo {
+  max-width: 100%;
+}
+}
+
+.aesthetic-tab {
+    padding: 5px;
+}
+
+
+.bingo-container {
+    display: grid;
+    grid-template-columns:  200px 200px 200px;
+    gap: 5px;
+  }
+
+  .bingo-item {
+    position: relative;
+    margin-bottom: 10px;
+    height: 50px;
+    perspective: 1000px;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .text-and-image {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  max-width: 100%; 
+}
+
+  @media screen and (max-width: 600px) {
+    .section {
+        padding: 3px;
+    }
+    .bingo-container {
+        grid-template-columns: 160px 160px;      
+        gap: 10px;
+    }
+    h1 {
+        font-weight: 600;
+        font-size: 1.8em;
+        width: 98%;
+    }
+    h3 {
+        font-size: 1.2em
+    }
+
+    p {
+        font-size: 1em;
+        font-weight: 400;
+    }
+  }
+
+
+.video-simple {
+  flex-basis: 0;
+  flex-grow: 1;
+  width: 550px;
+  max-width: 100%;
+  height: auto;
+
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+}
+@media screen and (max-width: 600px) {
+  .text-and-image {
+    flex-direction: column;
+  }
+  .video-simple {
+    margin-top: 10px;
+    width: 95%;
+  }
+  .bigger {
+    height: 140vh;
+  }
+}
+    </style>
+    </head>
+    <body>
+
+    <section class="section column">
+        <div class="text-and-image">
+
+      <div class="demo">
+
+      <h1>To make a big change, all these people have to agree... but what can they do on their own?</h1>
+      </div>
+      <div class="bingo-container">
+
+      <div class="bingo-item" onclick="window.location.href='#principal'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/cowboy.png"></img>Principal</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/cowboy.png"></img>💅💅</button>
+      </div>
+      <div class="bingo-item" onclick="window.location.href='#district'">     
+
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/key.png"></img>District Office</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/key.png"></img>🙄Superintendent + Co.</button>
+      </div>
+      <div class="bingo-item" onclick="window.location.href='#board'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/spy.png"></img>School Board</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/spy.png"></img>😳😨🙄</button>
+      </div>
+      <div class="bingo-item" onclick="window.location.href='#parents'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/heart.png"></img>Parents</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/heart.png"></img>MOM!!!</button>
+      </div>
+      <div class="bingo-item" onclick="window.location.href='#city'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/spazz.png"></img>The Town/City</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/spazz.png"></img>Local Government</button>
+      </div>
+      <div class="bingo-item" onclick="window.location.href='#state'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/trophy.png"></img>The State</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/trophy.png"></img>Education "Agencies"</button>
+      </div>
+
+      <div class="bingo-item" onclick="window.location.href='#federal'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/devil.png"></img>Federal Policymakers</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/devil.png"></img>🤮🤦</button>
+      </div>
+      <div class="bingo-item" onclick="window.location.href='#unions'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/cowboy.png"></img>Teachers' Unions</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/cowboy.png"></img>😤😤💚</button>
+      </div>
+      <div class="bingo-item" onclick="window.location.href='#typical'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/praise.png"></img>Typical Teachers</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/praise.png"></img>😐😕🤨</button>
+      </div>
+
+      <div class="bingo-item" onclick="window.location.href='#teachers'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/saint.png"></img>Involved Teachers</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/saint.png"></img>💚🧡💛🤍💙</button>
+      </div>
+      <div class="bingo-item" onclick="window.location.href='#outside'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/thunder.png"></img>Outside Forces</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/thunder.png"></img>Advocate, Consultant, Booster</button>
+      </div>
+      <div class="bingo-item" onclick="window.location.href='#kahunas'"> 
+        <button class="aesthetic-tab front" style="background-color: #D2EBD8;"><img class="aesthetic-icon" src="/assets/images/diamond.png"></img>Big Kahunas</button>
+        <button class="aesthetic-tab back" style="background-color: #D2EBD8;" ><img class="aesthetic-icon" src="/assets/images/diamond.png"></img>Billionaires, Foundations</button>
+      </div>
+      </div>
+    
+    </div>
+    </section>
+
+ <section class="section column" id="principal">
+    <div class="text-and-image">
+      <div class="demo">
+        <h1><span style="color: rebeccapurple">Your principal has less power than you think...</span><span style="opacity: 0; display: inline-block;" class="wrong"></span></h1>
+        <h3>Go to them for school policy issues, not budget issues (some principals only control $8k of budget spend a year).</h3>
+        </div>
+        <video autoplay muted loop style="opacity: 0;" class="video-simple bringin"> 
+            <source src="/assets/cards/panda-punch.webm" type="video/webm">
+    </video>
+      </div>
+      <br>
+      <div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
+        <span id="nav-button-container">
+            <a href="/doorstops/points" class="nav-button" style="text-align: center;">Change grading policy  &rarr;</a>
+            </span>
+        <span id="nav-button-container">
+            <a href="/school/schedule" class="nav-button" style="text-align: center;">Get a day off for any holiday  &rarr;</a>
+            </span>
+        <span id="nav-button-container" >
+            <a href="/school/dresscode" class="nav-button" style="text-align: center;">Get rid of Dress Codes  &rarr;</a>
+        </span>
+      </div>
+
+    
+    </section>
+    <section class="section column bigger" id="district">
+        <div class="text-and-image">
+      <div class="demo">
+        <h1>But you've probably never <span style="color: #2804aa">SEEN</span> your principal's boss.</h1>
+        <ul style="margin-top: 5px;">
+        <h3>  - Meet the district central office. Led by the superintendent, they have huge influence on budget, curriculum, scheduling, & policy.</h3>
+        <h3>  - They think about costs (the time and resources required to launch new programs) and community buy-in. </h3>
+        <h3>  - These people are hired, not voted in, sheltering them from community influence.</h3>
+    </ul>
+    </div>
+    <video autoplay muted loop style="opacity: 0; max-width: 500px; margin: auto;" class="video-simple bringin"> 
+        <source src="/assets/cards/whatever-shrug.webm" type="video/webm">
+</video>
+</div>
+<br>
+<div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
+  <span id="nav-button-container">
+      <!-- <h3>- Homework </h3> -->
+      <a href="/school/allies" class="nav-button" style="text-align: center;">Make powerful allies  &rarr;</a>
+      </span>
+  <span id="nav-button-container">
+      <!-- <h3>- Schedule </h3> -->
+      <a href="/doorstops/leverage" class="nav-button" style="text-align: center;">Leverage Phones, Attendance, and Trust  &rarr;</a>
+      </span>
+  <span id="nav-button-container" >
+      <!-- <h3>- Dress Code </h3> -->
+      <a href="/school/negotiations" class="nav-button" style="text-align: center;">Turn problems into negotiations  &rarr;</a>
+  </span>
+</div>
+    </section>
+    <section class="section column" id="board">
+        
+            <div class="demo" style="max-width: 100%; margin: auto; text-align: center;">
+                <h1 style="max-width: 90%; margin: auto"><span style="color: #aa0462">The District Office is indirectly controlled by the School Board,</span><span style="color: #cd6f6f"> which has the most influence on school.</span></h1>
+                <br>
+                <div class="text-and-image">
+                    <div class="demo" style="text-align: left; margin-right: 10px;">
+        <h3>With, final say on hiring, budget, & policy, the board can act incredibly quickly and blindside other players.</h3>
+        <h3>Bad school boards micromanage day-to-day operations, tell teachers how to teach, and blindside the community with rash decisions. </h3>
+    </div>
+    <div class="warning-box" style="text-align: left;">
+        <button class="warning-icon" >
+          <svg class="svg3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin: auto;">
+            <circle cx="12" cy="12" r="11" stroke="black" fill="transparent" />
+            <path d="M12 8v4M12 16h.01" />
+          </svg>
+          
+        </button>
+        <div>
+          <p>In red-er states, local school boards are even more powerful. Pre-covid, locals had a lot of trust in these school boards—if a town needed to raise taxes to pay for a clearly beneficial new initiative, people would be willing. Covid broke down a lot of trust and goodwill.</p>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!--Uncommunicative and unresponsive administrators	34
+        How to navigate the absolute mess that is school board meeting minutes.	33
+        Successful Student Walkouts Change Policy
+-->
+
+    </section>
+    <section class="section column" id="parents">
+        <div class="text-and-image">
+      <div class="demo">
+        <h1>School boards are appointed by VOTE:</h1>
+        <h3> Different INTEREST GROUPS (advocacy groups, unions, superintendents’ associations) may have allies on the board. But your parents have the final say - they're the ones who can get administrators and school board officials fired.</h3>
+    </div>
+    <div class="warning-box" style="text-align: left;">
+        <button class="warning-icon" >
+          <svg class="svg3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin: auto;">
+            <circle cx="12" cy="12" r="11" stroke="black" fill="transparent" />
+            <path d="M12 8v4M12 16h.01" />
+          </svg>
+          
+        </button>
+        <div>
+          <p>Many parents are on the PTO (Parent-teacher organization) and some are on the school board. They are generally receptive to student concerns, but might have different priorities (college matriculation, academic rigor, strict discipline or dress code, religious ideas).</p>
+        </div>
+    </div>
+
+    </div>
+    <!--Fighting Scare tactics
+            Hiring a new administrator
+-->
+    </section>
+    <section id="cta-section" class="section column" id="city">
+        <div class="text-and-image">
+      <div class="demo">
+        <h1>Most parents don't have time for that, but your <span style="color:olivedrab">local government</span> does.</h1>
+        <h3>Your city/town is responsible for most of the funding in smaller, wealthier districts and still half the funding in larger districts like NYC. They decide how much taxpayer money goes to schools. </h3>
+        <p>(but they aren’t involved in school policy decisions)</p>
+        <div id="nav-button-container">
+          <a href="#state" class="nav-button" style="text-align: center;">Resources coming soon on leveraging town politics!</a>
+        </div>
+    </div>
+    <video autoplay muted loop style="opacity: 0; max-width: 350px; margin: auto;" class="video-simple bringin"> 
+        <!-- <source src="/assets/cards/dancing-panda.webm" type="video/webm"> -->
+</video>
+</div>
+<div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
+    <span id="nav-button-container">
+        <!-- <h3>- Homework </h3> -->
+        <a href="/school/money" class="nav-button" style="text-align: center;">How much money does your school have?  &rarr;</a>
+        </span>
+    <span id="nav-button-container">
+        <!-- <h3>- Schedule </h3> -->
+        <a href="/school/voyce" class="nav-button" style="text-align: center;">Start an internship program for seniors  &rarr;</a>
+        </span>
+
+  </div>
+    </section>
+
+    <section class="section column" id="state">
+        <div class="demo">
+          <h1>States have secret weapons for turning high school upside-down.</h1>
+          <h3><span style="color: olivedrab">Moves:</span> Hostile takeover, choose funding strategies (that you can break)</h3>
+          <h3><span style="color: olivedrab">Goal:</span> Max out federal funding. Massachusetts took $250 million cash from the feds to make a change they knew would make class worse.</h3>
+      </div>
+      <br>
+      <div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
+        <span id="nav-button-container">
+            <!-- <h3>- Homework </h3> -->
+            <a href="/school/takeover" class="nav-button" style="text-align: center;">Hostile Takeover  &rarr;</a>
+            </span>
+        <span id="nav-button-container">
+            <!-- <h3>- Schedule </h3> -->
+            <a href="/school/voyce" class="nav-button" style="text-align: center;">Leapfrog the district  &rarr;</a>
+            </span>
+        <span id="nav-button-container" >
+            <!-- <h3>- Dress Code </h3> -->
+            <a href="/doorstops/attendance" class="nav-button" style="text-align: center;">Leverage Attendance  &rarr;</a>
+        </span>
+      </div>
+      </section>
+      <section class="section column" id="federal">
+        <div class="demo" style="max-width: 100%; margin: auto; text-align: center;">
+          <h1>The federal government... probably doesn't matter to you</h1>
+          <h3>Scroll for more power dynamics or jump to the next topic: </h3>
+          <div id="nav-button-container">
+            <a href="/school/money" class="nav-button" style="text-align: center;">Getting 100k in funding for anything you want  &rarr;</a>
+          </div>
+        </div>
+
+
+      </section>
+      <!--
+        Involved Teachers:
+        - Make Powerful Allies
+
+        Outside Forces:
+        - Identify stupid edtech your school spends money on and build it yourself
+        - How advocacy groups influence schools
+
+        Typical Teachers & Unions: [SHOULD BE SAME PAGE]
+        - Getting unhoused students a place to sleep in unused school buildings	31
+        - Teacher Incentives 101
+
+        Big Kahunas:
+        - Co-writing a grant with your principal
+        - Fundraising 101
+
+        Okay, and as a whole why does the system suck?
+        - Problem with metrics
+        - Why education policy fails
+        - Lunch example - schools couldn't get better food if they wanted to bc they'd lose federal funding
+        - Big Cheese consiparacy
+      -->
+
+      <section id="cta-section" class="section column">
+          <div class="text-and-image">
+        <div class="demo">
+          <h1>Ready to learn the fundamentals of <span style="color:olivedrab">money</span> in schools?</h1>
+          <h3>Students control millions of dollars annually, <span style="color:olivedrab">they just don't know it.</span></h3>
+          <div id="nav-button-container">
+            <a href="/school/money" class="nav-button" style="text-align: center;">Get 100k in funding for anything you want  &rarr;</a>
+          </div>
+      </div>
+      <video autoplay muted loop style="opacity: 0; max-width: 350px; margin: auto;" class="video-simple bringin"> 
+          <source src="/assets/cards/dancing-panda.webm" type="video/webm">
+  </video>
+  </div>
+      </section>
+
+
+    <!-- <section class="section column">
+       <div class="demo">
+        <h1></h1>
+        <h3></h3>
+    </div>
+    </section> -->
+ 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.querySelectorAll('.wrong');
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, { threshold: [1] });
+    elements.forEach(function(element) {
+        observer.observe(element);
+    });
+    var targets = document.getElementsByClassName("bringin");
+    for (let i = 0; i < targets.length; i++) {
+        if (targets[i].classList.contains("delay")) {
+          var observer = new IntersectionObserver(function(entries) {
+          if(entries[0].isIntersecting === true)
+              targets[i].classList.add('fade-in-slow');
+          }, { threshold: [1] });
+
+          observer.observe(targets[i]);
+          }
+        else {
+          var observer = new IntersectionObserver(function(entries) {
+          if(entries[0].isIntersecting === true)
+              targets[i].classList.add('fade-in');
+          }, { threshold: [1] });
+
+          observer.observe(targets[i]);
+          }
+        }
+        
+  
+  });
+  function smoothScroll(target) {
+    console.log(target);
+    document.getElementById(target).scrollIntoView({
+    behavior: 'smooth'
+});
+  }
+</script>
+
+    </body>
+
+  
+  </html>

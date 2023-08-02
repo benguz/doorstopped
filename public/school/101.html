@@ -198,6 +198,47 @@ svg {
   max-width: 100%;
 }
 }
+
+#nav-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.nav-button {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: transparent;
+  color: #008fd5;
+  border-radius: 10px;
+  border: 1px solid #e9eaeb;
+  width: 50%;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #008fd5;
+  position:relative;
+  background-color: rgba(0, 143, 213, 0.2);
+  cursor: pointer;
+}
+
+.large-button {
+  padding: 20px 40px;
+  font-size: 20px;
+}
+
+
+
     </style>
     </head>
     <body>
@@ -251,6 +292,7 @@ svg {
       </div>
     </section>
     <section class="section column">
+
       <div class="demo">
 
       <h1>To make a change, all these people have to agree:</h1>
@@ -302,8 +344,13 @@ svg {
       <div class="demo">
         <h1>To change the system, you'll need to know how it works!</h1>
         <h3>Let’s get into School 101.</h3>
+        <div id="nav-button-container">
+          <a href="/school/money" class="nav-button" style="text-align: center;">Trace the power, find your solutions  &rarr;</a>
+        </div>
     </div>
     </section>
+
+
     <!-- <section class="section column">
        <div class="demo">
         <h1></h1>
