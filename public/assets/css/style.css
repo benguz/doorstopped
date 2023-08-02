@@ -1011,6 +1011,7 @@ r {
 cursor: pointer;
 }
 
+
 .reality-blurb {
   display: inline-block;
   /* text-decoration: underline wavy #A44CD3; */
@@ -1176,7 +1177,7 @@ background-color: #FEB7B3;
   background-color: transparent;
   color: #008fd5;
   border-radius: 10px;
-  border: 1px solid #e9eaeb; */
+  border: 1px solid #e9eaeb; 
   width: 50%;
   font-size: 16px;
   transition: background-color 0.3s ease;
