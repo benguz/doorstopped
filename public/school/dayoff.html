@@ -37,16 +37,8 @@
     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
   <style>
-      @media screen and (max-width: 1023px){
 
-.desktop {
-  display: none;
-}
-}
-.yonk {
-  width: 97%;
-  margin-left: 1.5%;
-}
+
 @media (min-width: 1024px) {
 /* main {
   display:flex; 
@@ -54,11 +46,35 @@
 } */
 .yonk {
             width: 100%;  
-
+            justify-content: center; 
+            flex: 3;
         }
 
 }
 
+h1 {
+  font-size: 25pt;
+  text-decoration: none;
+}
+h2 {
+  margin-top: 1em;
+  font-size: 20pt;
+}
+
+@media screen and (max-width: 1023px){
+
+.desktop {
+  display: none;
+}
+.yonk {
+  width: 98%;
+  margin: auto;
+  flex: none;
+}
+h1 {
+  font-size: 20pt;
+}
+}
 
 .yonk p {
   margin-bottom: 0.5em;
@@ -81,14 +97,7 @@ a.nav-button {
     border: 2px solid #e9eaeb;
 }
 
-h1 {
-  font-size: 25pt;
-  text-decoration: none;
-}
-h2 {
-  margin-top: 1em;
-  font-size: 20pt;
-}
+
 .badonk {
   list-style-type: disc; /* or circle or square, depending on the bullet style you want */
   padding-left: 30px;
@@ -138,8 +147,8 @@ body {
       <div id="extraspace">
           </div>
       </div>
-        <div class="yonk" width="620px" style="justify-content: center; flex: 3;">
-          <br class="desktop"><br class="desktop">
+        <div class="yonk" width="620px">
+          <br class="desktop"><br>
 
 <h1>Getting a day off... then fixing the whole schedule</h1>
 <p class="subtitle" style="font-family: League Spartan; color: #989aa2; font-size: 15pt;">A step-by-step guide to getting a schoolwide a day off, plus strategies for even bigger schedule change.</p>

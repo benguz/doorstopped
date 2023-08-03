@@ -98,6 +98,8 @@ html {
     font-family: League Spartan; 
     color: #989aa2; 
     font-size: 15pt;
+    line-height: 1.5em;
+
   }
 
   #nav-button-container {
@@ -154,4 +156,10 @@ html {
   li {
     list-style-type: disc !important; 
     display: list-item;
+  }
+
+  @media screen and (max-width: 620px) {
+    .subtitle {
+      font-size: 14pt;
+    }
   }

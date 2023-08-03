@@ -1,25 +1,25 @@
 [
     {
-        "name": "/school/index.html",
+        "name": "/school",
         "ally": ["Students", "Can Change", "School"],
         "key": ["Students"],
         "foe": ["Students", "Can Change", "School"]
     },
     {
-        "name": "/school/money.html",
+        "name": "/school/money",
         "ally": [["The Principal", "chooses budget"], "Students", "Federal Gov", "The Parents", "The Locals", "Advocacy Groups"],
         "key": "The State",
         "foe": ["The District"]
     },
     {
-        "name": "/school/selfie.html",
+        "name": "/school/selfie",
         "ally": [["The Principal", "chooses budget"], "Students", "Federal Gov", "The Parents", "The Locals", "Advocacy Groups"],
         "key": "The State",
         "foe": ["The District"]
     },
     {
         "name": "/school/dayoff",
-        "ally": ["Students", "Federal Gov", "The Parents", "The Locals", "Advocacy Groups"],
+        "ally": [["Students", "You start it"], ["The State", "Change ALL Schedules"], ["The Parents", "Biggest Ally"], ["The Locals", "Get their help"]],
         "key": "The Principal",
         "foe": ["The District"]
     }
