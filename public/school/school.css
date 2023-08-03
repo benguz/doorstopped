@@ -20,6 +20,7 @@ html {
     border: 1px solid #fecb6a;
     padding: 15px;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     font-family: 'League Spartan', sans-serif;
     font-size: 13pt;
     display: flex;
@@ -93,6 +94,11 @@ html {
     height: 18px;
     margin-right: 5px;
   }
+  .subtitle {
+    font-family: League Spartan; 
+    color: #989aa2; 
+    font-size: 15pt;
+  }
 
   #nav-button-container {
     width: 100%;
@@ -117,6 +123,10 @@ html {
     width: 50%;
     font-size: 16px;
     transition: background-color 0.3s ease;
+  }
+
+  .nav-button a {
+    text-decoration: none;
   }
   
   .nav-button:hover {
