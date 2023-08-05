@@ -55,11 +55,29 @@ display:none;
   display: none;
 }
 }
+.yonk {
+  width: 97%;
+  margin-left: 1.5%;
+}
 @media (min-width: 1024px) {
-main {
+/* main {
   display:flex; 
   justify-content:center;
+} 
+.yonk {
+            width: 55%;  
+            margin-left: 22.5%; 
+            padding: 0 10px;
+            box-sizing: border-box;
+        }*/
+
+.yonk {
+  flex: 3;
 }
+.sidenavtotal {
+  flex: 1;
+}
+
 .framebox {
   height: 15500em;
 }
@@ -76,6 +94,7 @@ main {
 
 .copy-paste-element p {
   margin: 0;
+  /* margin-bottom: 0.5em; */
   line-height: 1.5;
 }
 
@@ -108,28 +127,55 @@ main {
   animation: draw 150ms ease-out forwards;
 }
 
-/* flexbox shit */
+/* flexbox shit  
 .sidenavtotal {
   flex: 1;
   margin-right: 1rem;
-  /* Add your sidenav styles here */
 }
 
 article {
   flex: 3;
-  /* Add your article styles here */
 }
 
 .toc {
   flex: 1;
-  /* Add your toc styles here */
+  /*max-width:60%;
+  /*word-wrap: break-word;
+  /* Add your toc styles here
+}
+*/
+
+.yonk p {
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+  font-size: 14pt;
 }
 
+.yonk p, h1, h2, h3, li {
+  color: black;
+}
 
-      @media screen and (max-width: 1023px){
-.yonk {
-max-width: 98%;
-margin: auto;
+.yonk a {
+  text-decoration: underline;
+  display: inline;
+}
+h1 {
+  font-size: 25pt;
+  text-decoration: none;
+}
+h2 {
+  margin-top: 1em;
+  font-size: 20pt;
+}
+
+.badonk {
+  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+  padding-left: 30px;
+  font-size: 14pt;
+
+}
+.honk {
+  list-style-type: disc !important; 
 }
   </style>
 
@@ -200,21 +246,30 @@ margin: auto;
 
       
     <main>
-      <div class="sidenavtotal" style="padding:3em;">
       
-          <br class="desktop"><br class="desktop">
-          <br class="desktop"><br class="desktop">
-      <div id="sidenav"></div>
-      </div>
+        <div style="display: flex; flex-direction: row;">
+        <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
+        
+            <br class="desktop"><br class="desktop">
+            <br class="desktop"><br class="desktop">
+            <br class="desktop">
+        <div id="sidenav"></div>
+        </div> 
       <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center;">
           <br class="desktop"><br class="desktop">
           <br><br>
           <br><br>
           <h1>Doorstop Your School</h1>
-          <p>Email <a style="display: inline" href="mailto:guzovsky@princeton.edu">guzovsky@princeton.edu</a> with one sentence about what sucks at school. I'll reply with a template email you can send to your *favorite* teacher or administrator to get approval for us to come!</p>
-          <br>
+          <div class="warning-box">
+            <button class="warning-icon">
+              <img src="/assets/images/cowboy.png">
+            </button>
+            <div>
+              <p>Get the Fellas together to start a club <a href="https://doorstopfellows.org">dedicated to improving your school</a>. You’d get access to 100s of digital resources + face time with education researchers who will listen to your problems and help out!</p>
+            </div>
+          </div>
+          <p>Bring us to your school to run culture-changing activities! Email <a style="display: inline" href="mailto:guzovsky@princeton.edu">guzovsky@princeton.edu</a> with one sentence about what sucks at school. I'll reply with a template email you can send to your *favorite* teacher or administrator to get approval for us to come!</p>
           <p>If you just want to talk, I'm always free: 781-three-three-zero-6849. I am not a mandatory reporter, but if the issue is serious, I may redirect you to a helpline that can better support you.</p>
-          <br>
           <p>If you're already ready to email, here's a template.</p>
           <br>
           <div class="copy-paste-element">
@@ -241,18 +296,15 @@ margin: auto;
           </div>
           <br>
           
-          <!--<div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
-              <iframe class="framebox" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="620em" max-width="calc(100% - 10em)" height="15500em" 
-              src=""></iframe>    
-            </div> -->
-            
-          
+    
         </div>
-      <div style="padding:3em;">
-          <br><br>
-          <br><br>
-          <div id="toc" ></div>
-      </div>
+        <div class="sidenavtotal" style="padding:3em;">
+      
+          <br class="desktop"><br class="desktop">
+          <br class="desktop"><br class="desktop">
+          <br class="desktop">
+        <div id="toc"></div>
+        </div>
       
     </main>
 
@@ -266,7 +318,7 @@ margin: auto;
     });
     
     </script>
-    <script src="/components/sidenavhidden.js">
+    <script src="/components/sidenaveh.js">
     </script>
 
 
