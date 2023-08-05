@@ -1,0 +1,45 @@
+  
+  .floating-emoji {
+    position: absolute;
+    bottom: 3em;
+    left: 3em;
+    opacity: 1;
+  }
+  
+  
+  @keyframes floatPath2 {
+    0% { transform: translate(0, 0); opacity: 1; }
+    12.5% {transform: translate(6px, -15px); opacity: 0.875;}
+    25% { transform: translate(8px, -30px); opacity: 0.75; }
+    37.5% {transform: translate(-2px, -45px); opacity: 0.625;}
+    50% { transform: translate(-8px, -60px); opacity: 0.5; }
+    62.5% {transform: translate(-6px, -75px); opacity: 0.375;}
+    75% { transform: translate(0px, -90px); opacity: 0.25; }
+    87.5% {transform: translate(-5px, -105px); opacity: 0.125;}
+    100% { transform: translate(-10px, -120px); opacity: 0; }
+  }
+  
+  @keyframes floatPath3 {
+      0% { transform: translate(0, 0); opacity: 1; }
+    12.5% {transform: translate(5px, -15px); opacity: 0.875;}
+    25% { transform: translate(10px, -30px); opacity: 0.75; }
+    37.5% {transform: translate(1px, -45px); opacity: 0.625;}
+    50% { transform: translate(-7px, -60px); opacity: 0.5; }
+    62.5% {transform: translate(-10px, -75px); opacity: 0.375;}
+    75% { transform: translate(-7px, -90px); opacity: 0.25; }
+    87.5% {transform: translate(-5px, -105px); opacity: 0.125;}
+    100% { transform: translate(-10px, -120px); opacity: 0; }
+  
+  }
+  
+  @keyframes floatPath4 {
+      0% { transform: translate(0, 0); opacity: 1; }
+    12.5% {transform: translate(-6px, -15px); opacity: 0.875;}
+    25% { transform: translate(-8px, -30px); opacity: 0.75; }
+    37.5% {transform: translate(2px, -45px); opacity: 0.625;}
+    50% { transform: translate(8px, -60px); opacity: 0.5; }
+    62.5% {transform: translate(6px, -75px); opacity: 0.375;}
+    75% { transform: translate(3px, -90px); opacity: 0.25; }
+    87.5% {transform: translate(-5px, -105px); opacity: 0.125;}
+    100% { transform: translate(-10px, -120px); opacity: 0; }
+  }
