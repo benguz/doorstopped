@@ -122,6 +122,23 @@
         </form>
         </div>
       </div>
+      <div id="desktop-sidenav">
+        <a>            
+            <img src="/assets/images/doors.svg" width="200" height="auto" alt="Doorstopped logo">
+          </a>
+          <br>
+          <button id="nav2" class="desktop-button"><img class="nav-icon desktop" id="img2" src="/assets/svg/cards-dark.svg" alt="Icon 2" /><h2 class="desktop-text">&nbsp;Home</h2></button>
+          <button id="nav3" class="desktop-button"><img class="nav-icon desktop" id="img3" src="/assets/svg/Favorite.svg" alt="Icon 3" /><h2 class="desktop-text">&nbsp;Doorstops</h2></button>
+          <button id="nav4" class="desktop-button"><img class="nav-icon desktop" id="img4" src="/assets/svg/Lamp.svg" alt="Icon 4" /><h2 class="desktop-text">&nbsp;Explore</h2></button>
+
+          <!-- <button id="nav1"><img class="nav-icon" id="img1" src="/assets/svg/cards-dark.svg" alt="Icon 1" />Explore</button> -->
+          <button id="nav4" class="desktop-button"><img class="nav-icon desktop" id="img4" src="/assets/svg/User_alt.svg" alt="Icon 4" /><h2 class="desktop-text">&nbsp;Account</h2></button>
+          <button id="nav5" class="desktop-button"><img class="nav-icon desktop" id="img5" src="/assets/svg/Book_check.svg" alt="Icon 5" /><h2 class="desktop-text">&nbsp;Get the Fellas</h2></button>
+
+          <br>
+          <br><br>
+      </div>
+      <div id="desktop-main">
     <div id="container">
 <!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
         <div class="card" style="display: none;">
@@ -130,7 +147,7 @@
             <p></p>
         </div>
 
-              <div class="card" data-link="/time" style="display: none;">
+              <!-- <div class="card" data-link="/time" style="display: none;">
             <h2>Nobody shows up</h2>
             <p>because the school is awful</p>
         </div>
@@ -141,7 +158,7 @@
               <div class="card" data-link="/doorstops/teachit" style="display: none;">
             <h2>Boredom</h2>
             <p>Window-Staring 101</p>
-        </div>
+        </div> -->
               <div class="card" data-link="doorstops/shift#enemy" style="display: none;"> 
                 <!--link to doorstopfellows in the future-->
             <h2>Apathy</h2>
@@ -397,7 +414,7 @@
         <div class="card" data-link="/doorstops/othercareers" style="display: none;" data-category="culture">
             <h2>No idea what you want to do when you graduate?</h2>
             <video autoplay muted loop width="100%" style="object-fit: contain;">
-                <source src="/assets/cards/dancing-panda-2webm" alt="panda shaking its bum" type="video/webm">
+                <source src="/assets/cards/dancing-panda-2.webm" alt="panda shaking its bum" type="video/webm">
               </video>              
               <br>
             <p>THERE ARE OTHER CAREERS BESIDES ATHLETE AND ACTOR AND SOME OF THEM ARE COOL.</p>
@@ -492,27 +509,36 @@
         </div>
     </div>
     <div id="swiped-right-section" style="display: none;">
-        <ul id="swiped-right-list"></ul>
     </div>
     <div id="left-section" style="display: none;">
         <br><br>
-        <div id="search-container">
+
+        <div id="content-placeholder">
+               <!-- Add howto -->
+        </div>
+     
+        <br><br>
+    </div>
+    <div id="bingo-section" style="display: none;"> 
+        <br><br>
+        <div id="search-container" style="max-width: 90%; margin: auto;">
             <input type="text" id="search-input" placeholder="Search Doorstops..." autocomplete="off">
             <div id="results-container"></div>         
         </div>
-        <div id="content-placeholder"></div>
+        <div id="bingo-action" class="bingo"></div>
 
-        <br><br>
     </div>
-    <div id="bingo-section" class="bingo" style="display: none;"> </div>
-    <div id="account-section" class="account" style="display: none;"> </div>
+    <div id="account-section" class="account" style="display: none;"> 
+        <ul id="swiped-right-list"></ul>
 
+    </div>
+</div>
     <div id="navbar">
-        <button id="nav1"><img class="nav-icon" id="img1" src="/assets/svg/Book_check.svg" alt="Icon 1" /></button>
-        <button id="nav4"><img class="nav-icon" id="img4" src="/assets/svg/Lamp.svg" alt="Icon 4" /></button>
-        <button id="nav2"><img class="nav-icon" id="img2" src="/assets/svg/cards-dark.svg" alt="Icon 2" /></button>
-        <button id="nav3"><img class="nav-icon" id="img3" src="/assets/svg/Favorite.svg" alt="Icon 3" /></button>
-        <button id="nav5"><img class="nav-icon" id="img5" src="/assets/svg/User_alt.svg" alt="Icon 5" /></button> <!--Account Icon-->
+        <button id="nav1m"><img class="nav-icon" id="img1" src="/assets/svg/Book_check.svg" alt="Icon 1" /></button>
+        <button id="nav4m"><img class="nav-icon" id="img4" src="/assets/svg/Lamp.svg" alt="Icon 4" /></button>
+        <button id="nav2m"><img class="nav-icon" id="img2" src="/assets/svg/cards-dark.svg" alt="Icon 2" /></button>
+        <button id="nav3m"><img class="nav-icon" id="img3" src="/assets/svg/Favorite.svg" alt="Icon 3" /></button>
+        <button id="nav5m"><img class="nav-icon" id="img5" src="/assets/svg/User_alt.svg" alt="Icon 5" /></button> <!--Account Icon-->
     </div>
     <script>
 
@@ -774,6 +800,12 @@ document.getElementById('nav3').addEventListener('click', function() { showSecti
 document.getElementById('nav4').addEventListener('click', function() { showSection(4); });
 document.getElementById('nav5').addEventListener('click', function() { showSection(5); });
 
+document.getElementById('nav1m').addEventListener('click', function() { showSection(1); });
+document.getElementById('nav2m').addEventListener('click', function() { showSection(2); });
+document.getElementById('nav3m').addEventListener('click', function() { showSection(3); });
+document.getElementById('nav4m').addEventListener('click', function() { showSection(4); });
+document.getElementById('nav5m').addEventListener('click', function() { showSection(5); });
+
 
 function showSection(n) {
     if (n === 2) {
@@ -797,33 +829,7 @@ function showSection(n) {
         document.querySelector('#bingo-section').style.display = 'none';
         document.querySelector('#account-section').style.display = 'none';
 
-        let list = document.querySelector('#swiped-right-list');
-        list.innerHTML = '';
-        let l = 0;
-        swipedRight.forEach(card => {
-            let listItem = document.createElement('li');
-            let link = document.createElement('a');
-            // let button = document.createElement('button');
-            link.href = card.link;
-            link.textContent = card.title;
-            link.target = '_blank';
-            listItem.className = 'liked'
-            listItem.appendChild(link);
-            list.appendChild(listItem);
-            // let dropdown = document.createElement('div');
-            // if (l === 0) {
-            //     fetch('pages.json')
-            //     .then(response => response.json())
-            //     .then(data => { data.filter(page => {
-            //             if (page.name === card.contents) {
-            //                 dropdown.textContent = page.html;
-            //             }
-            //         });
-            //     });
-            //     l++;
-            // }
-            // listItem.appendChild(dropdown);
-        });
+        
         removeStylesheet("/assets/css/style.css");
         document.querySelector('#swiped-right-section').style.display = 'block';
         document.getElementById('img2').src = "/assets/svg/cards-light.svg";
@@ -921,7 +927,7 @@ function showSection(n) {
             let doc = parser.parseFromString(html, 'text/html');
             
             let body = doc.querySelector("#bingo");
-            document.querySelector("#bingo-section").innerHTML = body.outerHTML;
+            document.querySelector("#bingo-action").innerHTML = body.outerHTML;
         });
 
         document.querySelector('#bingo-section').style.display = 'block';
@@ -941,7 +947,33 @@ function showSection(n) {
         document.querySelector('#left-section').style.display = 'none';
         document.querySelector('#bingo-section').style.display = 'none';
         document.querySelector('#account-section').style.display = 'block';
-
+        let list = document.querySelector('#swiped-right-list');
+        list.innerHTML = '';
+        let l = 0;
+        swipedRight.forEach(card => {
+            let listItem = document.createElement('li');
+            let link = document.createElement('a');
+            // let button = document.createElement('button');
+            link.href = card.link;
+            link.textContent = card.title;
+            link.target = '_blank';
+            listItem.className = 'liked'
+            listItem.appendChild(link);
+            list.appendChild(listItem);
+            // let dropdown = document.createElement('div');
+            // if (l === 0) {
+            //     fetch('pages.json')
+            //     .then(response => response.json())
+            //     .then(data => { data.filter(page => {
+            //             if (page.name === card.contents) {
+            //                 dropdown.textContent = page.html;
+            //             }
+            //         });
+            //     });
+            //     l++;
+            // }
+            // listItem.appendChild(dropdown);
+        });
         document.getElementById('img2').src = "/assets/svg/cards-light.svg";
         document.getElementById('img1').src = "/assets/svg/Book_check.svg";
         document.getElementById('img3').src = "/assets/svg/Favorite.svg";
