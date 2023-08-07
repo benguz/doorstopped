@@ -1,0 +1,252 @@
+[
+      {
+        "name": "Alabama",
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
+      },
+      {
+        "name": "Alaska",
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
+      },
+      {
+        "name": "Arizona",
+        "law": "Zoom is out of compliance with statute AZ REV ST § 15-1046.",
+        "link": "https://codes.findlaw.com/az/title-15-education/az-rev-st-sect-15-1046.html"
+      },
+      {
+        "name": "Arkansas",
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
+      },
+      {
+        "name": "California",
+        "law": "Violates everything, namely CA BUS & PROF § 22584 & CA BUS & PROF § 22585, which states that K-12 website/application vendors can't use, share, disclose, or compile student information 'for any purpose other than educational purpose and improving their service; they can't sell the information and must delete the information if the school or district requests.'",
+        "link": "https://codes.findlaw.com/ca/business-and-professions-code/bpc-sect-22584.html"
+      },
+      {
+        "name": "Colorado",
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
+      },
+      {
+        "name": "Connecticut",
+        "law": "The only related law is CT Gen St §10-234bb, which 'requires local/regional boards of education to enter into written contracts with a contractor any time such local or regional board of education shares or provides access to student information, student records, or student generated content with such contractor.'",
+        "link": "https://codes.findlaw.com/ct/title-10-education-and-culture/ct-gen-st-sect-10-234bb/"
+      },
+      {
+        "name": "Delaware",
+        "law": "Delaware law requires vendors to 'delete data in reasonable time,' which Zoom makes no provisions for.",
+        "link": "https://codes.findlaw.com/de/title-6-commerce-and-trade/de-code-sect-6-1204c.html"
+      },
+      {
+        "name": "Florida",
+        "law": "Like most states, Florida prohibits online services from selling, sharing, or renting a student's information.",
+        "link": "https://www.flsenate.gov/Session/Bill/2023/662"
+      },
+      {
+        "name": "Georgia",
+        "law": "Prevents all commercial use of student data.",
+        "link": "https://example.com/georgia"
+      },
+      {
+        "name": "Hawaii",
+        "law": "Hawaii has a 'delete data in reasonable time,' provision Zoom can't enforce.",
+        "link": "https://codes.findlaw.com/hi/division-1-government/hi-rev-st-sect-302a-500.html"
+      },
+      {
+        "name": "Idaho",
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
+      },
+      {
+        "name": "Illinois",
+        "law": "Illinois law details...",
+        "link": "https://example.com/illinois"
+      },
+      {
+        "name": "Indiana",
+        "law": "Indiana law details...",
+        "link": "https://example.com/indiana"
+      },
+      {
+        "name": "Iowa",
+        "law": "Iowa law details...",
+        "link": "https://example.com/iowa"
+      },
+      {
+        "name": "Kansas",
+        "law": "Kansas law details...",
+        "link": "https://example.com/kansas"
+      },
+      {
+        "name": "Kentucky",
+        "law": "Kentucky law details...",
+        "link": "https://example.com/kentucky"
+      },
+      {
+        "name": "Louisiana",
+        "law": "Louisiana law details...",
+        "link": "https://example.com/louisiana"
+      },
+      {
+        "name": "Maine",
+        "law": "Maine law details...",
+        "link": "https://example.com/maine"
+      },
+      {
+        "name": "Maryland",
+        "law": "Maryland law details...",
+        "link": "https://example.com/maryland"
+      },
+      {
+        "name": "Massachusetts",
+        "law": "Massachusetts law details...",
+        "link": "https://example.com/massachusetts"
+      },
+      {
+        "name": "Michigan",
+        "law": "Michigan law details...",
+        "link": "https://example.com/michigan"
+      },
+      {
+        "name": "Minnesota",
+        "law": "Minnesota law details...",
+        "link": "https://example.com/minnesota"
+      },
+      {
+        "name": "Mississippi",
+        "law": "Mississippi law details...",
+        "link": "https://example.com/mississippi"
+      },
+      {
+        "name": "Missouri",
+        "law": "Missouri law details...",
+        "link": "https://example.com/missouri"
+      },
+      {
+        "name": "Montana",
+        "law": "Montana law details...",
+        "link": "https://example.com/montana"
+      },
+      {
+        "name": "Nebraska",
+        "law": "Nebraska law details...",
+        "link": "https://example.com/nebraska"
+      },
+      {
+        "name": "Nevada",
+        "law": "Nevada law details...",
+        "link": "https://example.com/nevada"
+      },
+      {
+        "name": "New Hampshire",
+        "law": "New Hampshire law details...",
+        "link": "https://example.com/new-hampshire"
+      },
+      {
+        "name": "New Jersey",
+        "law": "New Jersey law details...",
+        "link": "https://example.com/new-jersey"
+      },
+      {
+        "name": "New Mexico",
+        "law": "New Mexico law details...",
+        "link": "https://example.com/new-mexico"
+      },
+      {
+        "name": "New York",
+        "law": "Violates New York State Education Law § 2-d, which requires outside parties collect and disclose students' personally identifiable information only as necessary (banning selling and using for marketing) and only for educational purposes. There are many other provisions and compliance requirements Zoom can't feasibly enforce. ",
+        "link": "https://www.nysenate.gov/legislation/laws/EDN/2-D"
+      },
+      {
+        "name": "North Carolina",
+        "law": "North Carolina law details...",
+        "link": "https://example.com/north-carolina"
+      },
+      {
+        "name": "North Dakota",
+        "law": "North Dakota law details...",
+        "link": "https://example.com/north-dakota"
+      },
+      {
+        "name": "Ohio",
+        "law": "Ohio law details...",
+        "link": "https://example.com/ohio"
+      },
+      {
+        "name": "Oklahoma",
+        "law": "Oklahoma law details...",
+        "link": "https://example.com/oklahoma"
+      },
+      {
+        "name": "Oregon",
+        "law": "Oregon law details...",
+        "link": "https://example.com/oregon"
+      },
+      {
+        "name": "Pennsylvania",
+        "law": "Pennsylvania law details...",
+        "link": "https://example.com/pennsylvania"
+      },
+      {
+        "name": "Rhode Island",
+        "law": "Rhode Island law details...",
+        "link": "https://example.com/rhode-island"
+      },
+      {
+        "name": "South Carolina",
+        "law": "South Carolina law details...",
+        "link": "https://example.com/south-carolina"
+      },
+      {
+        "name": "South Dakota",
+        "law": "South Dakota law details...",
+        "link": "https://example.com/south-dakota"
+      },
+      {
+        "name": "Tennessee",
+        "law": "Tennessee law details...",
+        "link": "https://example.com/tennessee"
+      },
+      {
+        "name": "Texas",
+        "law": "Texas law details...",
+        "link": "https://example.com/texas"
+      },
+      {
+        "name": "Utah",
+        "law": "Utah law details...",
+        "link": "https://example.com/utah"
+      },
+      {
+        "name": "Vermont",
+        "law": "Vermont law details...",
+        "link": "https://example.com/vermont"
+      },
+      {
+        "name": "Virginia",
+        "law": "Virginia law details...",
+        "link": "https://example.com/virginia"
+      },
+      {
+        "name": "Washington",
+        "law": "Washington law details...",
+        "link": "https://example.com/washington"
+      },
+      {
+        "name": "West Virginia",
+        "law": "West Virginia law details...",
+        "link": "https://example.com/west-virginia"
+      },
+      {
+        "name": "Wisconsin",
+        "law": "Wisconsin law details...",
+        "link": "https://example.com/wisconsin"
+      },
+      {
+        "name": "Wyoming",
+        "law": "Wyoming law details...",
+        "link": "https://example.com/wyoming"
+      }
+]

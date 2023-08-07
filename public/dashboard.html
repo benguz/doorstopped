@@ -818,7 +818,7 @@ function showSection(n) {
     if (n === 2) {
 
         removeStylesheet("/assets/css/style.css");
-        // removeStylesheet("/assets/css/dynamic.css");
+        // removeStylesheet("/assets/css/dynamic.css"); - keep an array of current sheets, then remove from there
         // remove more sheets - do this no matter what they click on unless they click 3, so 3 should be the default if.
         document.querySelector('#container').style.display = 'block';
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';

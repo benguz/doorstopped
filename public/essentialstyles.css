@@ -34,7 +34,7 @@ body {
   font-family: 'colfax-medium';
   font-size: 16px;
   overflow: scroll;
-  max-width: 55%;
+  max-width: 62%;
 }
 
 #bingo-section, #account-section {
@@ -563,6 +563,7 @@ select {
   }
   #desktop-main {
     width: 100%;
+    height: 95vh;
   }
   body {
       /* align-items: flex-start; Aligns items to the top on mobile */
