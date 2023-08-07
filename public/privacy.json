@@ -61,98 +61,98 @@
       },
       {
         "name": "Illinois",
-        "law": "Illinois law details...",
-        "link": "https://example.com/illinois"
+        "law": "Prevents selling and renting student data.",
+        "link": "https://ilga.gov/legislation/BillStatus.asp?DocNum=1796&GAID=14&DocTypeID=SB&LegID=104813&SessionID=91&SpecSess=&Session=&GA=100"
       },
       {
         "name": "Indiana",
-        "law": "Indiana law details...",
-        "link": "https://example.com/indiana"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Iowa",
-        "law": "Iowa law details...",
-        "link": "https://example.com/iowa"
+        "law": "Prevents selling and renting student data.",
+        "link": "https://www.legis.iowa.gov/legislation/BillBook?ga=87&ba=HF2354"
       },
       {
         "name": "Kansas",
-        "law": "Kansas law details...",
-        "link": "https://example.com/kansas"
+        "law": "Prevents selling and renting student data and 'prohibits school districts from collecting biometric data and conducting survey on life-styles (sex history, religion, etc.) unless consent given in writing.'",
+        "link": "https://codes.findlaw.com/ks/chapter-72-schools/ks-st-sect-72-6314/"
       },
       {
         "name": "Kentucky",
-        "law": "Kentucky law details...",
-        "link": "https://example.com/kentucky"
+        "law": "If Zoom can reasonably be considered a 'cloud computing service,' defined as 'a service that provides, and that is marketed and designed to provide, an educational institution with account-based access to online computing resources,' Zoom can't use student data for anything other than maintaining its 'integrity' as a company, prohibiting use for advertising or commercial purposes.",
+        "link": "https://codes.findlaw.com/ky/title-xxix-commerce-and-trade/ky-rev-st-sect-365-734.html"
       },
       {
         "name": "Louisiana",
-        "law": "Louisiana law details...",
-        "link": "https://example.com/louisiana"
+        "law": "'Allows for transfer of student data to contracted vendors but also lists contract requirements: inclusion of privacy compliance standards, audits conducted under direction of local school superintendent, breach and notice procedure, and storage/deletion policy; places $10,000 fine on violation of the contract requirements.'",
+        "link": "https://codes.findlaw.com/la/revised-statutes/la-rev-stat-tit-17-sect-3914.html"
       },
       {
         "name": "Maine",
-        "law": "Maine law details...",
-        "link": "https://example.com/maine"
+        "law": "Requires service providers to clarify what student data they collect and how the data is maintained and used, provide notice before making any changes, prohibit retaining information, facilitate access and correction, get parental consent, and obtain consent for using data in a way 'inconsistent' with the privacy policy.",
+        "link": "https://codes.findlaw.com/me/title-20-a-education/me-rev-st-tit-20-a-sect-953.html"
       },
       {
         "name": "Maryland",
-        "law": "Maryland law details...",
-        "link": "https://example.com/maryland"
+        "law": "Prohibits selling and disclosing data.",
+        "link": "https://codes.findlaw.com/md/education/md-code-educ-sect-4-131.html"
       },
       {
         "name": "Massachusetts",
-        "law": "Massachusetts law details...",
-        "link": "https://example.com/massachusetts"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Michigan",
-        "law": "Michigan law details...",
-        "link": "https://example.com/michigan"
+        "law": "Prohibits selling and renting",
+        "link": "https://codes.findlaw.com/mi/chapter-380-school-code-of-1976/mi-comp-laws-380-1136.html"
       },
       {
         "name": "Minnesota",
-        "law": "Minnesota law details...",
-        "link": "https://example.com/minnesota"
+        "law": "This bill 'places limits on the technology provider and disclosure or use of educational data, including prohibiting the sale, share, or dissemination of the data and use of data for any commercial purpose. Outside of specific exceptions schools and technology providers must not electronically access or monitor school issued device location, internet activity, keystrokes, camera or audio.'",
+        "link": "https://codes.findlaw.com/mn/data-practices-ch-13-13c/mn-st-sect-13-32.html"
       },
       {
         "name": "Mississippi",
-        "law": "Mississippi law details...",
-        "link": "https://example.com/mississippi"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Missouri",
-        "law": "Missouri law details...",
-        "link": "https://example.com/missouri"
+        "law": "Zoom can't sell student data or collect individual student data (criminal record, mental/health, biometric, etc.).",
+        "link": "https://codes.findlaw.com/mo/title-xi-education-and-libraries/mo-rev-st-161-096.html"
       },
       {
         "name": "Montana",
-        "law": "Montana law details...",
-        "link": "https://example.com/montana"
+        "law": "Prohibits selling data.",
+        "link": "https://codes.findlaw.com/mt/title-20-education/mt-code-ann-sect-20-7-1325.html"
       },
       {
         "name": "Nebraska",
-        "law": "Nebraska law details...",
-        "link": "https://example.com/nebraska"
+        "law": "Prohibits selling or renting data.",
+        "link": "https://codes.findlaw.com/ne/chapter-79-schools/ne-rev-st-sect-79-2-155/"
       },
       {
         "name": "Nevada",
-        "law": "Nevada law details...",
-        "link": "https://example.com/nevada"
+        "law": "clarify what student data they collect and how the data is maintained and used, provide notice before making any changes, prohibit retaining information, facilitate access and correction.",
+        "link": "https://codes.findlaw.com/nv/title-34-education/nv-rev-st-388-282/"
       },
       {
         "name": "New Hampshire",
-        "law": "New Hampshire law details...",
-        "link": "https://example.com/new-hampshire"
+        "law": "Prohibits selling and disclosing.",
+        "link": "http://www.gencourt.state.nh.us/rsa/html/XV/189/189-68-a.htm"
       },
       {
         "name": "New Jersey",
-        "law": "New Jersey law details...",
-        "link": "https://example.com/new-jersey"
+        "law": "'Prohibits online education services from disclosing student educational records, amassing profiles of student data for non-educational purposes, and requires deletion of data in certain instances.'",
+        "link": "https://casetext.com/statute/new-jersey-statutes/title-56-trade-names-trade-marks-and-unfair-trade-practices/chapter-568/section-568-215-definitions-relative-to-online-education-services-and-student-educational-records"
       },
       {
         "name": "New Mexico",
-        "law": "New Mexico law details...",
-        "link": "https://example.com/new-mexico"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "New York",
@@ -161,92 +161,92 @@
       },
       {
         "name": "North Carolina",
-        "law": "North Carolina law details...",
-        "link": "https://example.com/north-carolina"
+        "law": "'Prohibits collection of biometric and lifestyle information from students.'",
+        "link": "https://codes.findlaw.com/nc/chapter-115c-elementary-and-secondary-education/nc-gen-st-sect-115c-402-5/"
       },
       {
         "name": "North Dakota",
-        "law": "North Dakota law details...",
-        "link": "https://example.com/north-dakota"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Ohio",
-        "law": "Ohio law details...",
-        "link": "https://example.com/ohio"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Oklahoma",
-        "law": "Oklahoma law details...",
-        "link": "https://example.com/oklahoma"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Oregon",
-        "law": "Oregon law details...",
-        "link": "https://example.com/oregon"
+        "law": "Prohibits using data for commercial and 'secondary' purposes except for recommendation engines, personalized learning, and service improvement.",
+        "link": "https://codes.findlaw.com/or/title-30-education-and-culture/or-rev-st-sect-336-184.html"
       },
       {
         "name": "Pennsylvania",
-        "law": "Pennsylvania law details...",
-        "link": "https://example.com/pennsylvania"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Rhode Island",
-        "law": "Rhode Island law details...",
-        "link": "https://example.com/rhode-island"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "South Carolina",
-        "law": "South Carolina law details...",
-        "link": "https://example.com/south-carolina"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "South Dakota",
-        "law": "South Dakota law details...",
-        "link": "https://example.com/south-dakota"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Tennessee",
-        "law": "Tennessee law details...",
-        "link": "https://example.com/tennessee"
+        "law": "Prohibits the collection of student data for commercial purposes.",
+        "link": "https://codes.findlaw.com/tn/title-49-education/tn-code-sect-49-1-309.html"
       },
       {
         "name": "Texas",
-        "law": "Texas law details...",
-        "link": "https://example.com/texas"
+        "law": "Incredibly stringent state education requirements limiting student data collection here: https://capitol.texas.gov/tlodocs/88R/billtext/html/HB00018F.htm. Restricts the use of covered info, including but not limited to personally identifiable data, by an online application. See more details here ",
+        "link": "https://codes.findlaw.com/tx/education-code/educ-sect-32-152.html"
       },
       {
         "name": "Utah",
-        "law": "Utah law details...",
-        "link": "https://example.com/utah"
+        "law": "In Utah, students own their own personally identifiable data. This is incredibly interesting, but the implications are unclear.",
+        "link": "https://codes.findlaw.com/ut/title-53e-public-education-system-state-administration/ut-code-sect-53e-9-301.html"
       },
       {
         "name": "Vermont",
-        "law": "Vermont law details...",
-        "link": "https://example.com/vermont"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Virginia",
-        "law": "Virginia law details...",
-        "link": "https://example.com/virginia"
+        "law": "Zoom must provide each student's parent with access to a downloadable electronic copy of any student personal information pertaining to such student that has been collected, maintained, used, or shared. Also requires service providers to clarify what student data they collect and how the data is maintained and used, provide notice before making any changes, prohibit retaining information, facilitate access and correction, get parental consent, and obtain consent for using data in a way 'inconsistent' with the privacy policy.",
+        "link": "https://studentprivacycompass.org/state-laws/"
       },
       {
         "name": "Washington",
-        "law": "Washington law details...",
-        "link": "https://example.com/washington"
+        "law": "Prohibits selling data or using it or any purpose agreed to without consent.",
+        "link": "https://codes.findlaw.com/wa/title-28a-common-school-provisions/wa-rev-code-28a-604-040.html"
       },
       {
         "name": "West Virginia",
-        "law": "West Virginia law details...",
-        "link": "https://example.com/west-virginia"
+        "law": "Must give parents opportunity to opt-out of sharing their student's data, and collection of lifestyle information is prohibited.",
+        "link": "https://codes.findlaw.com/wv/chapter-18-education/wv-code-sect-18-2-5h/"
       },
       {
         "name": "Wisconsin",
-        "law": "Wisconsin law details...",
-        "link": "https://example.com/wisconsin"
+        "law": "No specific laws, subject to FERPA and PPRA.",
+        "link": "https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra"
       },
       {
         "name": "Wyoming",
-        "law": "Wyoming law details...",
-        "link": "https://example.com/wyoming"
+        "law": "The responsibility falls to the State Superintendent for protecting data privacy, but details are unclear.",
+        "link": "https://codes.findlaw.com/wy/title-21-education/wy-st-sect-21-2-202.html"
       }
 ]
