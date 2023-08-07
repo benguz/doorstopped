@@ -530,7 +530,7 @@ select {
 
 .desktop-button:hover {
   background-color: #D9D9D9;
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 #desktop-main {
