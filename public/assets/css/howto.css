@@ -1,0 +1,246 @@
+.section {
+    height: 95vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+    text-align: center;
+    padding: 50px;
+    color: white;
+    z-index: 4;
+}
+.row {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around;
+}
+.bard {
+/* display: block; */
+justify-content: center;
+align-items: center;
+background-color: white;
+border-radius: 10px;
+box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+margin: 10px;
+padding: 15px;
+position: relative;
+}
+h1, h2, h3, a {
+    color: black; /* Off-White */
+    font-weight: 700;
+}
+a {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  text-decoration: underline;
+}
+h3 {
+  font-weight: 400;
+}
+p {
+    color: black; /* Light Grey */
+    font-weight: 500;
+    
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: none;
+}
+section {
+height: 95vh; /* 100% of the viewport height */
+position: relative;
+overflow: hidden;
+font-family: 'Poppins';
+}
+
+
+.svg-container {
+position: fixed;
+top: 50%;
+left: 75%;
+transform: translate(-75%, -50%);
+}
+
+.dynamic {
+display: none;
+z-index: 3;
+}
+
+.fade-in {
+animation: fadeIn .7s ease-in forwards;
+
+}
+
+.fade-in-slow {
+animation: fadeInSlow 1.4s ease-in forwards;
+}
+
+.fade-out {
+animation: fadeOut .7s ease-out forwards;
+}
+
+@keyframes fadeInSlow {
+0%, 40% {
+opacity: 0;
+transform: translateY(10px);
+}
+/* 50% {transform: translateY(0);} */
+100% {
+opacity: 1;
+transform: translateY(0);
+
+}
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(10px);
+
+}
+to {
+opacity: 1;
+transform: translateY(0);
+
+}
+}
+
+@keyframes fadeOut {
+from {
+opacity: 1;
+}
+to {
+opacity: 0;
+}
+}
+
+svg {
+height: 100px; /* Change according to your preference */
+width: 100px; /* Change according to your preference */
+z-index: 5;
+}
+
+.container {
+/* flex: 2; */
+text-align: left;
+background-color: rgb(211, 211, 211);
+border-radius: 5px;
+padding: 20px;
+margin: 20px;
+background: rgba(141, 141, 141, 0.5); /* semi-transparent background */
+backdrop-filter: blur(10px); /* blurred background */
+width: 600px;
+}
+
+
+
+#special {
+width: 0;
+height: 0;
+}
+
+
+.bard:hover {
+cursor: pointer;
+}
+
+
+/* img {
+flex: 2;
+width: 200px;
+height: auto;
+} */
+.column {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+text-align: left;
+}
+
+.demo {
+max-width: 45%;
+margin-right: 25px;
+}
+
+.text-and-image {
+display: flex; 
+justify-content: space-between; 
+align-items: center; 
+max-width: 100%; 
+}
+
+
+.video-simple {
+flex-basis: 0;
+flex-grow: 1;
+width: 550px;
+max-width: 100%;
+height: auto;
+/* height: 100px;
+object-fit: contain; */
+}
+
+.dude {
+text-align: left; 
+margin-right: 40%;
+}
+
+.big {
+font-size: 4.5em; 
+opacity: 0;
+}
+
+@media screen and (max-width: 620px) {
+body {
+max-width: 98%;
+margin: auto;
+
+}
+h1.toobig, a.toobig {
+font-size: 2em;
+}
+h3.toobig {
+font-size: 1.5em;
+}
+.row {
+flex-direction: column; 
+}
+.dude {
+margin-right: 100px;
+
+}
+/* h1 {
+font-size: 2em;
+}
+h3 {
+font-size: 1.5em;
+} */
+.big {
+font-size: 3em;
+}
+/* .bringin {
+opacity: 1;
+
+} */
+section, .section {
+padding: 5px;
+height: 70vh;
+}
+.text-and-image {
+flex-direction: column;
+}
+.video-simple {
+margin-top: 10px;
+width: 95%;
+}
+
+
+.demo {
+max-width: 100%;
+}
+}

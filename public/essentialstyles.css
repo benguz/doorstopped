@@ -16,10 +16,15 @@ body {
 #container, #swiped-right-section, #left-section, #bingo-section, #account-section {
   position: relative;
   width: 90%; 
-  height: 93%;
-  max-height: 93%;
+  height: 100%;
+  max-height: 100%;
   box-sizing: border-box;
   margin: auto;
+}
+
+#container {
+  height: 93%;
+  max-height: 93%;
 }
 
 #container, #swiped-right-section {
@@ -34,7 +39,8 @@ body {
   font-family: 'colfax-medium';
   font-size: 16px;
   overflow: scroll;
-  max-width: 62%;
+  /* max-width: 62%; */
+  max-width: 100%;
 }
 
 #bingo-section, #account-section {
@@ -47,6 +53,8 @@ body {
 
 #content-placeholder {
   text-align: left;
+  width: 80%;
+  margin: auto;
 }
 
 #content-placeholder .yonk {
@@ -310,7 +318,10 @@ body {
 iframe {
   text-align: center;
   width: 100%;
+  text-color: black;
+  overflow: scroll;
 }
+
 
 span {
   display: inline;
@@ -512,10 +523,12 @@ select {
   border-right: 1px solid #AFAFAF;
   flex: 1;
   padding: 25px;
+  /* background-image: url(/assets/images/gradient.webp); background-size: cover; */
+
 }
 
 .desktop-button {
-  background-color: #fff;
+  background-color: rgba(255,255,255,.5);
   border-radius: 10px;
   width: 100%;
   margin: 7px;
@@ -565,10 +578,17 @@ select {
     width: 100%;
     height: 95vh;
   }
+  #content-placeholder {
+    width: 100%;
+    max-width: 100%;
+  }
   body {
       /* align-items: flex-start; Aligns items to the top on mobile */
       height: 95vh;
       flex-direction: column;
+  }
+  #howto {
+    height: 125vh;
   }
 
   #results-container, #search-container {
@@ -710,7 +730,7 @@ select {
 .bingo {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
-  padding: 40px 0;
+  padding: 15px 0;
 }
 
 header {

@@ -123,7 +123,7 @@
         </div>
       </div>
       <div id="desktop-sidenav">
-        <a>            
+        <a >            
             <img src="/assets/images/doors.svg" width="200" height="auto" alt="Doorstopped logo">
           </a>
           <br>
@@ -138,7 +138,7 @@
           <br>
           <br><br>
       </div>
-      <div id="desktop-main">
+      <div id="desktop-main" >
     <div id="container">
 <!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
         <div class="card" style="display: none;">
@@ -512,7 +512,7 @@
     </div>
     <div id="left-section" style="display: none;">
         <br><br>
-
+        <iframe src="/doorstops/howto-embed" id="howto" width="100%" height="600vh"></iframe>
         <div id="content-placeholder">
                <!-- Add howto -->
         </div>
@@ -529,6 +529,8 @@
 
     </div>
     <div id="account-section" class="account" style="display: none;"> 
+        <!-- Customization survey -->
+        <!-- Add "I want to see the how-to guide again." -->
         <ul id="swiped-right-list"></ul>
 
     </div>
@@ -738,7 +740,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     link: card.dataset.link
                     });
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
-                    
+                    document.querySelector('#howto').style.display = 'none'; // hides howto
                     // Analytics test
                     // console.log("card.dataset.category: " + card.dataset.category);
                     // console.log("cardCategory: " + cardCategory);
@@ -822,7 +824,6 @@ function showSection(n) {
         // remove more sheets - do this no matter what they click on unless they click 3, so 3 should be the default if.
         document.querySelector('#container').style.display = 'block';
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
-        console.log(sections[lastShownSection - 1]);
         // document.querySelector('#left-section').style.display = 'none';
         // document.querySelector('#bingo-section').style.display = 'none';
         // document.querySelector('#account-section').style.display = 'none';
@@ -850,7 +851,6 @@ function showSection(n) {
         document.querySelector('#left-section').classList.add("fade-in");
         
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
-        // console.log(sections[lastShownSection - 1]);
 
         document.querySelector('#left-section').style.display = 'block';
         setTimeout(() => {
