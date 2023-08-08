@@ -496,13 +496,13 @@
                 <br>
             <p>Respond and change the culture without causing drama!</p>
         </div>
-        <div class="card" data-link="/doorstops/feedback" style="display: none;" data-category="STR">
+        <div class="card" data-link="/doorstops/feedback" style="display: none;" data-height="3000px" data-category="STR">
             <h2>Boring classes?</h2>
             <div class="tenor-gif-embed" data-postid="17224602" data-share-method="host" data-aspect-ratio="1.22605" data-width="100%"></div>
             <br>
             <p>Give your teacher anonymous, constructive feedback that will make class better.</p>
         </div>
-        <div class="card" data-link="/doorstops/points" data-category="culture">
+        <div class="card" data-link="/doorstops/points" data-height="30000px" data-category="culture">
             <h2>If people <span class="loud">arm wrestle</span> for participation points:</h2>
             <video autoplay muted loop id="extension" width="100%" style="object-fit: contain;">
                 <source src="/assets/cards/panda-tumbles-down.webm" alt="pandas falling over each other" type="video/webm">
@@ -511,15 +511,14 @@
             <h3>End the GPA obsession with a schoolwide participation point boycott.</h3>
             <p>Nobody speaks in class until participation grading is equitable.</p>
         </div> 
-<!-- reorder-->
-        <div class="card" data-link="/doorstops/extension#i-just-want-to-email" data-category="SEL-skills">
+        <div class="card" data-link="/doorstops/extension#i-just-want-to-email" data-height="300000px" data-category="SEL-skills">
             <h2>Essay due in two days? Haven’t started?</h2>
             <video autoplay muted loop id="extension" width="100%" style="object-fit: contain;">
                 <source src="/assets/images/extension-half.webm" alt="extension email workflow" type="video/webm">
               </video>  
-            <p>We can help—not, like, in a plagiarism way.<br>You can and should ask for an extension.<br>
+            <p>We can help—not, like, in a plagiarism way. Ask for an extension!<br>
             <h3>Me? I don’t need an extension. You must not be familiar with my game.</h3>
-            <p>In 5 years your boss is going to say, "Bestie, can you work until 10pm today?"<br>Don't say "Sure, Bestie!" <strong>Learn to set boundaries and ask for help now.</strong></p>
+            <p>Someday your boss is gonna say, "Bestie, can you work 'til 10pm today?"<br>Don't say "Sure, Bestie!" <strong>Learn to set boundaries and ask for help now.</strong></p>
         </div>
         <!--
         <div class="card" data-link="/doorstops/points">
@@ -536,9 +535,10 @@
     </div>
     <div id="left-section" style="display: none;">
         <br><br>
-        <iframe src="/doorstops/howto-embed" id="howto" width="100%" height="600vh"></iframe>
+        <iframe id="howto" src="/doorstops/howto-embed" width="100%" height="600vh"></iframe>
         <div id="content-placeholder">
                <!-- Add howto -->
+        <!-- for iframe imports <iframe id="main" width="100%" height="300000px"></iframe> -->
         </div>
      
         <br><br>
@@ -566,9 +566,7 @@
         <button id="nav3m"><img class="nav-icon" id="img3m" src="/assets/svg/Favorite.svg" alt="Icon 3" /></button>
         <button id="nav5m"><img class="nav-icon" id="img5m" src="/assets/svg/User_alt.svg" alt="Icon 5" /></button> <!--Account Icon-->
     </div>
-    <script>
 
-        </script>
     <script>
 let searchInput = document.getElementById('search-input');
 let resultsContainer = document.getElementById('results-container');
@@ -628,8 +626,6 @@ function displayResults(matches) {
         resultsContainer.appendChild(resultOption);
     });
 }
-
-
     </script>
 
     <script>
@@ -686,20 +682,24 @@ document.querySelectorAll('.card').forEach((card, index) => {
             if (e.deltaX > 0) {
                 let cardLink = card.dataset.link;
                 let cardCategory = card.dataset.category;
+                // let cardHeight = card.dataset.height;
                 let cardid;
                 if (cardLink) {
                     if (cardLink.includes("#")) {
                         cardid = cardLink.split('#')[1];
                     }
-                    if (cardLink === "PERSONALIZED") {
-                        let dinky = document.getElementById('popup');
-                        dinky.style.display = "flex";
-                    }
-                    else if (cardLink.startsWith('https://')) {
+                    // if (cardLink === "PERSONALIZED") {
+                    //     let dinky = document.getElementById('popup');
+                    //     dinky.style.display = "flex";
+                    // }
+                    if (cardLink.startsWith('https://')) {
                         // Open external link in the same tab
                         window.location.href = cardLink;
                     } 
                     else {
+                        // let bang = document.getElementById("main");
+                        // bang.src = cardLink;
+                        // bang.height = cardHeight;
                     setTimeout(() => {
                         fetch(cardLink)
                     .then(response => response.text())
@@ -727,7 +727,10 @@ document.querySelectorAll('.card').forEach((card, index) => {
                             }
                             if (cardid) { // scroll to #ID
                                 window.location.hash = cardid;
-                            }
+                                // bang.onload = function() {
+                                //     bang.contentWindow.document.getElementById(cardid).scrollIntoView();
+                                // };                            
+                                }
                         } else if (article) {
                             // loadStylesheet("/assets/css/style.css");
                             content.innerHTML = article.outerHTML;
@@ -765,9 +768,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
                     });
                     localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
                     document.querySelector('#howto').style.display = 'none'; // hides howto
-                    // Analytics test
-                    // console.log("card.dataset.category: " + card.dataset.category);
-                    // console.log("cardCategory: " + cardCategory);
+
                     plausible(cardCategory);
                 }
                 else if (card.dataset.category === "50-swipes-survey-yes") {
