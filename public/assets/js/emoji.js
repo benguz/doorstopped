@@ -2,6 +2,8 @@
 $(".emoji-element").click(function() {
     var newElement ="";
     var tears = ["🤨", "🙄", "😳😳😳", "💅💅", "❤️", "💗", "💖💖💖", "💚", "🧡", "💛", "🤍", "💙"]
+    var emoji = $(this).data("emoji");
+
     // 😤😠
     // 🤬
     // 😈
@@ -33,8 +35,14 @@ $(".emoji-element").click(function() {
     //   } else {
     //     newElement = $(`<span class='floating-emoji'>${emoji}</span>`);
     //   }
-    var tear = tears[Math.floor(Math.random() * tears.length)]
-    newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+    if (emoji === "💤") {
+      newElement = $(`<span class='floating-emoji'>${emoji}</span>`);
+
+    } else {
+      var tear = tears[Math.floor(Math.random() * tears.length)]
+      newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+    }
+
   
     $(this).parent().append(newElement);
   

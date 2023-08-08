@@ -60,6 +60,10 @@ display:none;
   width: 97%;
   margin-left: 1.5%;
 }
+
+
+  
+
 @media (min-width: 1024px) {
 /* main {
   display:flex; 
@@ -169,6 +173,14 @@ h2 {
   font-size: 20pt;
 }
 
+ 
+.floating-emoji {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+
 .badonk {
   list-style-type: disc; /* or circle or square, depending on the bullet style you want */
   padding-left: 30px;
@@ -259,9 +271,12 @@ h2 {
           <br><br>
           <br><br>
           <h1>Bring Back <strong style="color: hsl(351, 83%, 61%)">Nap Time</strong></h1>
-          <p class="subtitle" style="margin: 0; color: #989aa2;">Subtitle</p>
-            
-          
+          <p class="subtitle" style="font-size: 13; margin: 0; color: #989aa2;">Subtitle</p>
+          <div class="sleepbox" style="display: flex; position: relative; width:20%; height: 20px; display: inline;"><p class="emoji-element" style="display: inline" data-emoji="💤">🛌</p></div>          
+          <div class="sleepbox" style="display: flex; position: relative; width:20%; height: 20px; display: inline;"><p class="emoji-element" style="display: inline" data-emoji="💤">🛌</p></div>
+          <div class="sleepbox" style="display: flex; position: relative; width:20%; height: 20px; display: inline;"><p class="emoji-element" style="display: inline" data-emoji="💤">🛌</p></div>
+          <div class="sleepbox" style="display: flex; position: relative; width:20%; height: 20px; display: inline;"><p class="emoji-element" style="display: inline" data-emoji="💤">🛌</p></div>
+
           <br><br>
             </div>
             <div class="sidenavtotal" style="padding:3em;">
@@ -298,7 +313,28 @@ h2 {
 
   <script src="/assets/js/script.js" defer></script>
   <script src="/assets/js/emoji.js"></script>
+  <script>
+    $(window).scroll(function() {
 
+    var animations = ['floatPath2', 'floatPath3', 'floatPath4']; // Add more animations as needed
+
+    /* Apply the animation */
+    Array.from(document.querySelectorAll('.emoji-element')).forEach((element) =>
+      {
+        var animation = animations[Math.floor(Math.random() * animations.length)];
+        let newElement = $(`<span class='floating-emoji'>💤</span>`);
+  
+        /* Apply the animation */
+        newElement.css('animation', `${animation} 1s forwards`);
+        
+        $(element).parent().append(newElement);
+        setTimeout(function() {
+          newElement.remove();
+        }, 2000);
+      });
+  
+  });
+  </script>
   <script src="/components/sidenaveh.js"> 
 </script>
 
