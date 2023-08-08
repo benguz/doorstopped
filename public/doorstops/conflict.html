@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Changing the Worst Parts of School Culture | Doorstops</title>
+    <meta name="title" content="Social Referents Are the Secret To Changing School Culture">
+    <meta name="description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
+    <meta property="og:url" content="https://doorstopped.org/">
+    <meta property="og:image" content="https://doorstopped.org/og.jpg">
+    <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="Doorstops | Referents">
+    <meta property="og:description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://doorstopped.org/">
+    <meta property="twitter:title" content="Doorstops | Social Referents">
+    <meta property="twitter:description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
+    <link href="./favicon.ico" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="/assets/css/dynamic.css" rel="stylesheet">
+ 
+<style>
+    body {
+  font-family: helvetica;
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat {
+  width: 400px;
+  max-width: 100%;
+  border: solid 1px #EEE;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: auto;
+}
+
+.messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  text-align: left;
+}
+
+.yours {
+  align-items: flex-start;
+}
+
+.yours .message {
+  margin-right: 25%;
+  background-color: #eee;
+  position: relative;
+}
+
+.yours .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: -7px;
+  height: 20px;
+  width: 20px;
+  background: #eee;
+  border-bottom-right-radius: 15px;
+}
+.yours .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: -10px;
+  width: 10px;
+  height: 20px;
+  background: #f5f5f5;
+  border-bottom-right-radius: 10px;
+}
+
+.mine {
+  align-items: flex-end;
+}
+
+.mine .message {
+  color: white;
+  margin-left: 25%;
+  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+.mine .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+  background-attachment: fixed;
+  border-bottom-left-radius: 15px;
+}
+
+.mine .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background: #f5f5f5;
+  border-bottom-left-radius: 10px;
+}
+
+@media screen and (max-width: 620px) {
+    .row {
+        flex-direction: column;
+}
+}
+
+
+</style>
+<!-- source: https://stackoverflow.com/questions/19400183/how-to-style-chat-bubble-in-iphone-classic-style-using-css-only -->
+  </head>
+
+<body >
+  <div class="ref">
+    <br><br>
+    
+      <h1>You feel like something's off? The vibes in the girls group chat are tense? 
+    </h1>
+      <h1><strong style="color: #aa0462">Or someone hurt you and </strong> <strong style="color: #cd6f6f">you don’t know if you should bring it up?</strong> <strong style="color: #d06348">Is it even worth confronting them?</strong></h1>
+      <br><br>
+        <br><br>
+      <h1 style="color: #2804aa">Let’s break it down. </h1>
+      <br><br>
+      <br><br>
+      <h1>Acknowledge how you feel. You don’t need to be perfect! There is nothing wrong with you as a person because conflict is a part of all relationships - yes, even the healthy ones. Instead, think of conflict as an opportunity for change! </h1>
+      <br><br>
+      <br><br>
+        <h1>Ok sweet so conflict is a normal part of life. But what do I do when I get in it? take some time and think about <em>you</em>:</h1>
+      <div style="color: black; max-width: 100%">
+          <p>I'm a...</p>
+          <div class="row">
+            <div id="shark" class="lard row" onclick="act(1)">
+              Shark 🦈
+            </div>
+            <div id="turtle"class="lard row" onclick="act(2)">
+              Turtle 🐢
+            </div>
+            <div id="teddy"class="lard row" onclick="act(3)">
+                Teddy Bear 🧸
+              </div>
+            
+            <div id="boiling" class="lard row" onclick="act(4)">
+                Boiling Pot ♨️
+            </div>
+            <div id="bridge" class="lard row" onclick="act(5)">
+                Bridge 🌉
+            </div>
+          </div>
+
+</div>
+          <br>
+          <br><br>
+          <br><br>
+          <br><br>
+          <br><br>
+
+          <h1>Awesome, let's run through some ~scenarios~</h1>
+          <h2>Each one will get a little spicier as we go. Remember that the goal of this exercise is that whatever the misunderstanding is, you find a good way to communicate your feelings. </h2>
+          <br><br>
+          <br><br>
+          <h1>Mild 🔥</h1>
+          <p style="text-align: left;"><strong>The tea 🍵</strong><br>
+            You have a close friend but she's starting to hang out more and more with another girl. <br>You notice they are bonding a lot and start feeling jealous. 
+          </p>
+<div class="chat">
+  <div class="mine messages">
+    <div class="message last">
+      are you free to hang out saturday? i'm making cookies!
+     </div>
+  </div>
+  <div class="yours messages">
+    <div class="message">
+      maybe
+    </div>
+    <div class="message last">
+      might be busy
+    </div>
+  </div>
+  <div class="mine messages">
+    <div class="message last">
+      okie maybe tuesday we can do hw together then
+    </div> 
+    </div>
+    <div class="yours messages">
+        <div class="message last">
+          yeah hmmm I'll lyk
+        </div>
+      </div>
+      <div class="mine messages">
+        <div class="message last">
+            <div class="textbox" contenteditable="true" flex="5">
+               Respond here...
+              </div>
+         </div>
+        </div>
+
+  </div>
+</div>
+      
+      
+      
+    
+      <br><br>
+      <br><br>   <br><br>
+      <br><br>   <br><br>
+      <br><br>
+    </div>
+      <!-- <div class="lard">
+        <p></p>
+</div> -->
+<!-- <script src="/assets/js/ref.js"></script> -->
+<script>
+
+let currentExplainer = ""
+let last = 7;
+let lastArray = ["shark", "turtle", "teddy", "boiling", "bridge"];
+let closeit = "";
+let div = ""
+function act(n, id) {
+  let p = document.createElement('p');
+  if (currentExplainer) {
+    currentExplainer.remove();
+  }
+  let old = document.getElementById('attachment' + id);
+
+  if (last < 7) {
+    closeit = document.getElementById(lastArray[last]);
+  }
+  if (closeit) {
+    closeit.style.backgroundColor = 'white';
+  }
+  if (n === 1) {
+    div = document.getElementById('shark');
+    p.innerHTML = "<p>Let’s be real, you like it when there’s blood in the water. You enjoy being in the middle of the drama and maybe even like to cause drama, just a little, because hey life is boring without it. <strong>You aren’t afraid to speak your mind.</strong></p>";
+
+    last = 0;
+  } else if (n === 2) {
+    div = document.getElementById('turtle');
+
+    p.innerHTML = "<p>You hate conflict. It’s the worst. It makes you uncomfortable. So you do everything you can to avoid difficult situations and mean people. <strong>You can be in denial, and you might hide in your turtle shell</strong>.</p>";
+
+    last = 1;
+
+  } else if (n===3) {
+    div = document.getElementById('teddy');
+
+    p.innerHTML = "<p>Life is easier when everyone is happy, so you do what it takes to keep your friends together.<strong> But that can come at a cost: a few things get pushed under the rug.</strong>.</p>";
+
+    last = 2;
+     }
+     else if (n===4) {
+    div = document.getElementById('boiling');
+
+    p.innerHTML = "<p>You shoulder things. Let things pile on. And on and on. <strong>Until things boil over and people get hurt</strong>.</p>";
+
+    last = 3;
+     }
+     else if (n===5) {
+    div = document.getElementById('bridge');
+
+    p.innerHTML = "<p>You are always stuck in the middle. Always caught in between two people who are in conflict. This is so tough. <strong>How do you help them both? How do you be the bridge between two friends?</strong></p>";
+
+    last = 4;
+     }
+
+    div.style.backgroundColor = 'hsl(234, 44%, 88%)';
+    div.append(p);
+    currentExplainer = p;
+}
+
+
+    function type(n) {
+      judgey = document.getElementById("judgey");
+      loud = document.getElementById("loud");
+      comp = document.getElementById("comp");
+
+      collab = document.getElementById("collab");
+      man = document.getElementById("mantoman");
+      thanks = document.getElementById("thanks");
+
+
+      if (n === 1) {
+        judgey.style.backgroundColor = "hsl(351, 83%, 88%)";
+        loud.style.backgroundColor = "white";
+        comp.style.backgroundColor = "white";
+
+        thanks.style.display = "block";
+        man.style.display = "none";
+        collab.style.display = "none";
+
+        strategy = 1;
+
+
+      } else if (n === 2) {
+        judgey.style.backgroundColor = "white";
+        loud.style.backgroundColor = "hsl(42, 94%, 88%)";
+        comp.style.backgroundColor = "white";
+
+        man.style.display = "block";
+        thanks.style.display = "none";
+        collab.style.display = "none";
+
+        strategy = 2;
+
+      } else if (n === 3) {
+        judgey.style.backgroundColor = "white";
+        loud.style.backgroundColor = "white";
+        comp.style.backgroundColor = "hsl(234, 44%, 88%)"; 
+
+        collab.style.display = "block";
+        thanks.style.display = "none";
+        man.style.display = "none";
+
+        strategy = 3;
+      }
+    }
+</script>
+<script>
+  
+      </script>
+        <script src="/assets/js/script.js" defer></script>
+
+</body>
+
+</html>
