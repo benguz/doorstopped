@@ -37,7 +37,7 @@
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   </head>
 
-<body>
+<body id="dashboard-body">
     
     <div class="dinkydonk" id="popup" style="display: none;">
         <span class="close" id="closeBtn">&times;</span>
@@ -139,7 +139,7 @@
           <br><br>
       </div>
       <div id="desktop-main" >
-    <div id="container">
+    <div id="card-container">
 <!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
         <div class="card" style="display: none;">
             <h2>More coming soon!</h2>
@@ -834,7 +834,7 @@ document.getElementById('nav5m').addEventListener('click', function() { showSect
 let lastShownSection = 2; // starting page
 iconSrc = ["/assets/svg/Book_check.svg", "/assets/svg/cards-light.svg",  "/assets/svg/Favorite.svg", "/assets/svg/Lamp.svg", "/assets/svg/User_alt.svg"]
 mobileNav = ["", "m"] // mobile check done earlier in script
-sections = ["#swiped-right-section", "#container", "#left-section",  "#bingo-section", "#account-section"]
+sections = ["#swiped-right-section", "#card-container", "#left-section",  "#bingo-section", "#account-section"]
 
 function showSection(n) {
     if (n === 2) {
@@ -843,8 +843,8 @@ function showSection(n) {
         // removeStylesheet("/assets/css/dynamic.css"); - keep an array of current sheets, then remove from there
         // remove more sheets - do this no matter what they click on unless they click 3, so 3 should be the default if.
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
-        console.log("n = 2, LSS: ", lastShownSection)
-        document.querySelector('#container').style.display = 'block';
+        // console.log("n = 2, LSS: ", lastShownSection) unaddressed bug here - lastShownSection is 2 when using swipe on left section
+        document.querySelector('#card-container').style.display = 'block';
         // document.querySelector('#left-section').style.display = 'none';
         // document.querySelector('#bingo-section').style.display = 'none';
         // document.querySelector('#account-section').style.display = 'none';
@@ -854,7 +854,7 @@ function showSection(n) {
 
         lastShownSection = 2;
     } else if (n === 1) {
-        document.querySelector('#container').style.display = 'none';
+        document.querySelector('#card-container').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
         document.querySelector('#bingo-section').style.display = 'none';
         document.querySelector('#account-section').style.display = 'none';

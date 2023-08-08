@@ -1,4 +1,4 @@
-body {
+body, #dashboard-body {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -13,7 +13,7 @@ body {
   /* overflow-y: hidden; */
 }
 
-#container, #swiped-right-section, #left-section, #bingo-section, #account-section {
+#card-container, #swiped-right-section, #left-section, #bingo-section, #account-section {
   position: relative;
   width: 90%; 
   height: 100%;
@@ -22,13 +22,13 @@ body {
   margin: auto;
 }
 
-#container {
+#card-container {
   height: 93%;
   max-height: 93%;
   top: 3.5%;
 }
 
-#container, #swiped-right-section {
+#card-container, #swiped-right-section {
   max-width: 40%;
   /* max-width: 600px;  */
 }
@@ -546,7 +546,7 @@ select {
 
 @media screen and (min-width: 1500px) {
 
-  #container, #swiped-right-section {
+  #card-container, #swiped-right-section {
     max-width: 500px; 
   }
     
@@ -573,7 +573,7 @@ select {
   }
 }
 @media screen and (min-width: 1600px) {
-  #container, #swiped-right-section {
+  #card-container, #swiped-right-section {
     max-width: 600px; 
   }
   
@@ -609,7 +609,7 @@ select {
       height: 70%;
   } */
 
-  #container, #swiped-right-section {
+  #card-container, #swiped-right-section {
     max-width: 750pt; 
   
   }
@@ -673,18 +673,18 @@ select {
       width: 100%;
   }
 
-  #container, #swiped-right-section, #left-section, #bingo-section, #account-section {
+  #card-container, #swiped-right-section, #left-section, #bingo-section, #account-section {
       
       max-width: 100%;
       min-height: 80%;
-      height: 100%;
-      bottom: 1.5em;
+      height: 100%; 
+      bottom: 50px;
       max-height: 100%;
       /* width: 100%;
       height: calc(100% - 50px); Subtract the height of the navbar 
       max-height: initial; */
   }
-  #container {
+  #card-container {
     top: 1.5%;
     height: 96%;
   }
