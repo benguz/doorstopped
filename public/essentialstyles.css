@@ -176,7 +176,7 @@ body, #dashboard-body {
 
 .card {
   width: calc(100% - 40px); /* take full width of the container minus margins */
-  height: calc(100% - 40px); /* take full height of the container minus margins */
+  height: calc(100% - 50px); /* take full height of the container minus margins and a smidge */
 }
 
 
@@ -641,6 +641,15 @@ select {
 
 
 
+#howto {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#howto::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
 
 /* Reset max-width and max-height for mobile devices */
 @media screen and (max-width: 600px) {
@@ -677,26 +686,24 @@ select {
       max-width: 100%;
       min-height: 80%;
       height: 96%; 
-      bottom: 4%;
       max-height: 100%;
 
   }
   #card-container {
     top: 0;
     height: 96%;
-    bottom: 4%;
   }
 
   #navbar {
       max-width: 100%;
       position: absolute;
-      bottom: 5%;
+      bottom: 1%;
   }
 
   .card {
       /* height: 95%;  experimental style - try changing to 95% %*/
       /* margin-top: 15px; experimental style - didn't exist*/
-      width: calc(100% - 30px);
+      width: calc(100% - 24px);
   }
   .card h1, h2 {
     line-height: 1.3;
