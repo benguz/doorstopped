@@ -29,7 +29,8 @@ body {
 }
 
 #container, #swiped-right-section {
-  max-width: 600px; 
+  max-width: 40%;
+  /* max-width: 600px;  */
 }
 
 #swiped-right-section {
@@ -274,54 +275,6 @@ body {
 
 .card a {
   text-decoration: underline;
-}
-
-/* Style adjustments for larger screens */
-@media screen and (min-width: 2000px) {
-  /* #container, #swiped-right-section, #left-section, #bingo-section, #account-section {
-      width: 50%; 
-      height: 70%;
-  } */
-
-  #container, #swiped-right-section {
-    max-width: 750px; 
-  }
-  
-  
-  .card h2 {
-
-    font-size: 30px;
-  }
-  
-  .card h3 {
-    font-size: 26px;
-
-  }
-  
-  .card p {
-    font-size: 22px;
-  }
-}
-
-@media screen and (min-width: 2000px) {
-  #container, #swiped-right-section {
-    max-width: 650px; 
-  }
-  
-  
-  .card h2 {
-
-    font-size: 27px;
-  }
-  
-  .card h3 {
-    font-size: 23px;
-
-  }
-  
-  .card p {
-    font-size: 19px;
-  }
 }
 
 .card:active {
@@ -590,6 +543,103 @@ select {
 #navbar {
   display: none;
 }
+
+@media screen and (min-width: 1500px) {
+
+  #container, #swiped-right-section {
+    max-width: 500px; 
+  }
+    
+  .card h2 {
+
+    font-size: 28pt;
+  }
+  
+  .card h3 {
+    font-size: 25pt;
+
+  }
+  
+  .card p {
+    font-size: 20pt;
+  }
+  
+  .desktop-text {
+    font-size: 25pt;
+  }
+  .nav-icon.desktop {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  #container, #swiped-right-section {
+    max-width: 600px; 
+  }
+  
+  
+  .card h2 {
+
+    font-size: 29pt;
+  }
+  
+  .card h3 {
+    font-size: 26pt;
+
+  }
+  
+  .card p {
+    font-size: 22pt;
+  }
+
+  .desktop-text {
+    font-size: 28pt;
+  }
+  .nav-icon.desktop {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+/* Style adjustments for larger screens */
+@media screen and (min-width: 2000px) {
+  /* #container, #swiped-right-section, #left-section, #bingo-section, #account-section {
+      width: 50%; 
+      height: 70%;
+  } */
+
+  #container, #swiped-right-section {
+    max-width: 750pt; 
+  }
+  
+  
+  .card h2 {
+
+    font-size: 32pt;
+  }
+  
+  .card h3 {
+    font-size: 28pt;
+
+  }
+  
+  .card p {
+    font-size: 24pt;
+  }
+
+
+  .desktop-text {
+    font-size: 40pt;
+  }
+  .nav-icon.desktop {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+
 
 /* Reset max-width and max-height for mobile devices */
 @media screen and (max-width: 600px) {

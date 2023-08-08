@@ -4,6 +4,7 @@ $(".emoji-element").click(function() {
     var tears = ["🤨", "🙄", "😳😳😳", "💅💅", "❤️", "💗", "💖💖💖", "💚", "🧡", "💛", "🤍", "💙"]
     var emoji = $(this).data("emoji");
 
+
     // 😤😠
     // 🤬
     // 😈
@@ -37,7 +38,6 @@ $(".emoji-element").click(function() {
     //   }
     if (emoji === "💤") {
       newElement = $(`<span class='floating-emoji'>${emoji}</span>`);
-
     } else {
       var tear = tears[Math.floor(Math.random() * tears.length)]
       newElement = $(`<span class='floating-emoji'>${tear}</span>`);
