@@ -842,8 +842,9 @@ function showSection(n) {
         removeStylesheet("/assets/css/style.css");
         // removeStylesheet("/assets/css/dynamic.css"); - keep an array of current sheets, then remove from there
         // remove more sheets - do this no matter what they click on unless they click 3, so 3 should be the default if.
-        document.querySelector('#container').style.display = 'block';
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
+        console.log("n = 2, LSS: ", lastShownSection)
+        document.querySelector('#container').style.display = 'block';
         // document.querySelector('#left-section').style.display = 'none';
         // document.querySelector('#bingo-section').style.display = 'none';
         // document.querySelector('#account-section').style.display = 'none';
@@ -885,6 +886,8 @@ function showSection(n) {
 
         // hammer test
         let leftSection = document.getElementById("left-section");
+        // if (isMobile === 1) {
+            //optional, to prevent this effect on mobile} 
         let hammertime = new Hammer(leftSection);
         let initialPos = 0;
         let currentPos = 0;
@@ -924,7 +927,7 @@ function showSection(n) {
                 animate();
                 currentPos = 0;
                 showSection(2);
-                
+
             } else {
             // If you don't swipe enough, the card springs back to center
                 animate();

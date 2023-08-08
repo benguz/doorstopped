@@ -611,6 +611,7 @@ select {
 
   #container, #swiped-right-section {
     max-width: 750pt; 
+  
   }
   
   
@@ -677,17 +678,21 @@ select {
       max-width: 100%;
       min-height: 80%;
       height: 100%;
-      /* bottom: 1.5em; */
+      bottom: 1.5em;
       max-height: 100%;
       /* width: 100%;
       height: calc(100% - 50px); Subtract the height of the navbar 
       max-height: initial; */
   }
+  #container {
+    top: 1.5%;
+    height: 96%;
+  }
 
   #navbar {
       max-width: 100%;
       /* position: absolute; */
-      /* bottom: 15px; */
+      bottom: 5%;
   }
 
   .card {
