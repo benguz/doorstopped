@@ -644,7 +644,6 @@ select {
 
 /* Reset max-width and max-height for mobile devices */
 @media screen and (max-width: 600px) {
-
   #navbar {
     display: flex;
   }
@@ -691,7 +690,7 @@ select {
 
   #navbar {
       max-width: 100%;
-      /* position: absolute; */
+      position: absolute;
       bottom: 5%;
   }
 
