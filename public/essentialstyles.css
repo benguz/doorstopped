@@ -660,7 +660,7 @@ select {
     width: 100%;
     max-width: 100%;
   }
-  body {
+  body, #dashboard-body {
       /* align-items: flex-start; Aligns items to the top on mobile */
       height: 95vh;
       flex-direction: column;
@@ -790,7 +790,7 @@ select {
 @media screen and (max-width: 700px) {
   
   /* attempted android back swipe fix */
-  html, body {
+  html, body, #dashboard-body {
     overscroll-behavior-x: none;
   } 
   
