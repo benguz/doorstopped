@@ -662,7 +662,7 @@ select {
   }
   body {
       /* align-items: flex-start; Aligns items to the top on mobile */
-      height: 100vh;
+      height: 95vh;
       flex-direction: column;
   }
   #howto {
