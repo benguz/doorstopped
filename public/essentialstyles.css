@@ -677,15 +677,14 @@ select {
       max-width: 100%;
       min-height: 80%;
       height: 100%; 
-      bottom: 50px;
+      bottom: 4%;
       max-height: 100%;
-      /* width: 100%;
-      height: calc(100% - 50px); Subtract the height of the navbar 
-      max-height: initial; */
+
   }
   #card-container {
-    top: 1.5%;
+    top: 0;
     height: 96%;
+    bottom: 4%;
   }
 
   #navbar {
