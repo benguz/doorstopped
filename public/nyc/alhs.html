@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Your Analytics | Doorstop Education</title>
+  <meta name="title" content="Your Analytics | Doorstop Education">
+  <meta name="description" content="See data-driven analysis on how your students interact with Doorstops. Customize and create doorstops for your students.">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+      -->
+
+  <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+  <style>
+    body {
+        display: flex;
+  justify-content: center;
+  align-items: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 130vh; */
+        background: #F0DDF0;
+        font-family: Poppins;
+    }
+
+    #main-container {
+  display: flex;
+  width: 100%;
+  box-sizing: inherit;
+}
+
+#content {
+  flex-basis: 100%;
+  transition: flex-basis 0.3s ease; /* add this for smooth transition */
+}
+
+#map {
+  flex-basis: 00%;
+  background: #ccc; /* set this to your map's background color */
+  transition: flex-basis 0.3s ease; /* smooth transition when resizing */
+}
+
+.hidden {
+  flex-basis: 0% !important;
+}
+
+/* Map takes full width on small screens */
+@media (max-width: 720px) {
+  #content, #map {
+    flex-basis: 100%;
+  }
+  #main-container {
+    flex-direction: column;
+  }
+  #toggle-map-button {
+    display: hidden;
+  }
+}
+    
+
+    .box, .new-elements .square, .new-elements .rectangle {
+            border-radius: 10px;
+            background: #FFF;
+            box-shadow: 2px 5px 5px 1px rgba(0, 0, 0, 0.25);
+            padding: 10px;
+            margin: 20px;
+            text-align: left;
+        }
+
+    .square {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      overflow: auto;
+    }
+
+    .square.grown {
+        flex-grow: 2;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .box {  
+        max-width: 90%;
+        width: 650px;
+        position: absolute;
+        top: 200px;
+        padding: 30px;
+    }
+
+    .button {
+            border-radius: 10px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            padding: 10px 20px;
+            background: #ccc;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+        }
+
+        .new-elements {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 90%;
+            margin: auto;
+            width: 100%;
+            flex-basis: auto;
+        }
+
+        .new-elements .square {
+            width: calc((100% / 3) - 40px);
+            min-width: 150px;
+            height: 250px;
+        }
+
+        .new-elements .rectangle {
+            width: calc(100% - 40px);
+            min-height: 300px;
+        }
+
+        .fade-in {
+        animation: fadeIn .3s ease-in forwards;
+        }
+
+        .fade-out {
+        animation: fadeOut .4s ease-out forwards;
+        }
+
+
+        .wrapper {
+        display: flex;
+        }
+
+        nav {
+        width: 16.67%; /* 1/6th of the width */
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        }
+
+        .main {
+        flex-grow: 1;
+        background: #E6EDFD;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-around;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            flex-basis: auto;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .number {
+          font-size: 5em;
+          font-weight: bold;
+      }
+
+.icon {
+    position: absolute;
+    top: 20px;
+    right: -60px;
+    display: flex;
+    max-height: 40px;
+}
+
+.icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.icon img.positive {
+  color: green;
+}
+
+.icon img.negative {
+    color: red;
+}
+.top-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.percentage {
+    margin-left: 5px;
+    font-size: 1em;
+    align-self: flex-start;
+}
+
+.percentage.positive {
+    color: green;
+}
+
+.percentage.negative {
+    color: red;
+}
+
+.label {
+    font-size: 1.3em;
+    /* font-weight: bold; */
+    text-align: center;
+}
+
+.header-spacer {
+    height: 5em;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+canvas {
+  width: 100%;
+  min-height: 200px;
+}
+
+#intro-img {
+  width: 150px;
+  height: 150px;
+}
+
+    @media (max-width: 720px) {
+        body {
+          height: 170vh;
+          align-items: flex-start;
+        }
+        .box {
+            max-width: 85%;
+            margin: auto;
+        }
+        .new-elements {
+            flex-direction: column;
+        }
+        .row {
+            flex-direction: column;
+        }
+        .new-elements .square {
+            width: 90%;
+        }
+        .header-spacer {
+            height: 2.5em;
+        }
+    }
+
+    
+#search-container {
+  position: relative;
+  width: 95%;
+  margin: auto;
+}
+
+#search-input {
+    width: 100%;
+    height: 37px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #FFF;
+  padding: 15px;  
+  font-size: 12pt;
+  transition: box-shadow 0.3s ease-in-out;  /* add this for smooth transition */
+  padding-left: 30px; /* add this to prevent text overlap with the icon */
+}
+
+#search-input:focus {
+  box-shadow: 2px 5px 5px 1px rgba(0, 0, 0, 0.25);  /* add this for drop shadow on focus */
+  outline: none;  /* add this to remove the black outline */
+}
+
+#results-container {
+  position: absolute;
+  width: 100%;
+  max-height: 200px; /* adjust as needed */
+  overflow-y: auto;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background-color: white;
+  /* padding: 10px; */
+  text-align: left;
+  z-index: 2;
+}
+
+#results-container div {
+  padding: 5px;
+  cursor: pointer;
+}
+
+#results-container div:hover {
+  background-color: #f5f5f5;
+}
+
+#search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px; /* adjust the size as per your requirements */
+  width: 20px;  /* adjust the size as per your requirements */
+  pointer-events: none;
+}
+
+</style>
+
+</head>
+<body>
+
+
+      <div id="main-container">
+        <div id="content">
+<div class="new-elements fade-in" id="second" >
+  <div class="header-spacer" id="spacer">
+
+  </div>
+
+  <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search Schools..." autocomplete="off">
+            <img src="/assets/svg/search.svg" alt="Search" id="search-icon">
+
+    <div id="results-container"></div>         
+</div>
+    <div class="row">
+        <div id="survey" class="square grown">
+        <h1 id="main-info">Abraham Lincoln high school has <strong style="color: #2804aa">great food</strong> and <strong style="color: #2804aa">better sports teams</strong>. </h1>
+          <div class="label">
+              <span>But students say class is <strong style="color: #aa0462">WAY more boring</strong> than other schools.</span>
+          </div>
+        </div>
+        <div id="culture" class="square">
+          <div class="top-section">
+            <span class="number" id="excitedsurvey">1</span>
+            <div class="icon positive">
+                <img src="/assets/svg/downicon.svg" alt="up-icon" />
+                <span class="percentage negative">50%</span>
+            </div>
+          </div>
+          <div class="label">
+              <span>Counselors for 150 students. Mental health is... okay.</span>
+          </div>
+        </div>
+    </div>
+    <div class="rectangle">
+        <h2 id="main-info">💅💅 "Most students <strong style="color: #2804aa">disrespect each other</strong>." </h2>
+        <div class="label" style="text-align: left;">
+            <span>and teachers care <strong style="color: #aa0462">less</strong> than at other schools... and a lot of the teachers are on the older side.</span>
+        </div>
+        <h2 id="main-info">You mentioned you have a physical disability: This school is disability friendly - disabled students report feeling included! 💖💖💖 </h2>
+        <div class="label" style="text-align: left;">
+            <span>This school's graduation rate is <strong style="color: #a63374">similar</strong> to other schools with large low income student populations.</span>
+        </div>
+      </div>
+    </div>
+    <div style="width: 40%; margin: auto; text-align: center;"><span style="color: rgb(131, 166, 232)" id="#inputform">Go to school here? Spill the tea.</span> </div>
+    <br><br>
+</div>
+<button id="toggle-map-button" style="position: absolute; top: 20px; right: 20px; background: #ccc; color: #000; border-radius: 5px; border: none; cursor: pointer;">Toggle Map</button>
+
+</div>
+
+<div id="map" class="hidden">
+    <!-- Map here -->
+  </div>
+
+</div>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="/assets/js/script.js" defer></script>
+  <script> 
+    document.querySelector("#toggle-map-button").addEventListener("click", function () {
+        // const spacer = document.querySelector("#spacer");
+        const contentElement = document.querySelector("#content");
+        const mapElement = document.querySelector("#map");
+        if (mapElement.classList.contains("hidden")) {
+            mapElement.classList.remove("hidden");
+            contentElement.style.flexBasis = "50%";
+            mapElement.style.flexBasis = "50%";
+            // spacer.style.height = "5em";
+        } else {
+            mapElement.classList.add("hidden");
+            contentElement.style.flexBasis = "100%";
+            // spacer.style.height = "5em";
+        }
+    });
+
+    let searchInput = document.getElementById('search-input');
+    let resultsContainer = document.getElementById('results-container');
+    searchInput.addEventListener('focus', function() {
+        resultsContainer.style.display = 'block';
+    });
+
+    searchInput.addEventListener('blur', function() {
+        resultsContainer.style.display = 'none';
+    });
+    searchInput.addEventListener('keyup', function(e) {
+        let searchQuery = e.target.value;
+    
+        // Fetch matching pages
+        if (searchQuery) {fetch('schools.json')
+            .then(response => response.json())
+            .then(data => {
+                let matches = data.filter(page => {
+                    // Check if any word in the search query is included in the h1 string
+                    let h1Match = searchQuery.toLowerCase().split(" ").some(queryWord => 
+                    page.name.toLowerCase().includes(queryWord)
+                );
+    
+                // Check if any word in the search query is included in any of the keywords
+                let keywordMatch = searchQuery.toLowerCase().split(" ").some(queryWord => 
+                    page.keywords.some(keyword => 
+                        keyword.toLowerCase().includes(queryWord)
+                    )
+                );
+    
+                return h1Match || keywordMatch; // Return true if either match is found
+            });
+    
+            displayResults(matches);
+            });
+        } else {
+            clearResults();
+        }
+    });
+    
+    function clearResults() {
+        while (resultsContainer.firstChild) {
+            resultsContainer.firstChild.remove();
+        }
+    }
+    
+    function displayResults(matches) {
+        // Clear any existing results
+        while (resultsContainer.firstChild) {
+            resultsContainer.firstChild.remove();
+        }
+        // Add new results
+        matches.forEach(match => {
+            let resultOption = document.createElement('div');
+            resultOption.textContent = match.name + " - " + match.DBN;
+            resultOption.addEventListener('mousedown', generateHandler(match));
+            resultsContainer.appendChild(resultOption);
+        });
+    }
+    function generateHandler(match) {
+    return function() {
+        console.log("started")
+        if (match.keywords.includes("good-sports")) {
+            document.getElementById("main-info").innerHTML  = match.name + " SUCKS, but has <strong style='color: red'>good sports.</strong>";
+            console.log("here");
+        } else {
+            document.getElementById("main-info").innerHTML  = match.name + "SUCKS, and <strong style='color: red'> the sports suck too.</strong>";
+            console.log("here");
+        }
+    };
+}
+    
+        </script>
+
+
+<!-- 
+- ionicon link
+-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

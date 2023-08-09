@@ -22,5 +22,92 @@
         "DBN": "12345",
         "keywords": ["boring", "bullying", "bad-sports"],
         "counselors": 1
+    },
+    {
+        "name": "Abraham Lincoln High School",
+        
+            "basic_data": {
+              "dbn": "21K410",
+              "name": "Abraham Lincoln High School",
+              "address": "2800 Ocean Parkway, Brooklyn, NY, 11235",
+              "website": "www.alhs.nyc",
+              "email": "admissions@alhs.nyc",
+              "phone": "718-333-7400",
+              "grade_range_start": 9,
+              "grade_range_end": 12,
+              "student_population": 1817,
+              "start_time": "07:48:00",
+              "end_time": "15:28:00"
+            },
+            "budget_info": {
+              "year": 2023,
+              "mental_health_positions": 13,
+              "teaching_positions": 118,
+              "teaching_budget": 11379056,
+              "otps_spending": 4241484
+            },
+            "attendance_results": {
+              "year": "2021-22",
+              "chronic_absenteeism_rate": 54.2
+            },
+            "accountability_results": {
+              "year": "2019-2020",
+              "graduation_rate": "Level 2",
+              "ELA_Math_Progress": "Level 1"
+            },
+            
+            "survey_data": {
+              "year": 2022,
+              "parent_response_percent": 16,
+              "questions": [
+                {
+                      "question_text": "Most students at this school treat each other with respect.",
+                      "responses": {
+                          "Strongly disagree": 7,
+                          "Disagree": 17,
+                          "Agree": 53,
+                          "Strongly Agree": 10,
+                          "I don't know": 12
+                      }
+                  },
+                  {
+                      "question_text": "At this school, students with disabilities are included in all school activities.",
+                      "responses": {
+                          "Strongly disagree": 3,
+                          "Disagree": 5,
+                          "Agree": 59,
+                          "Strongly Agree": 33
+                      }
+                  },
+                  {
+                      "question_text": "During the school year, I have felt worried when learning.",
+                      "responses": {
+                          "Strongly disagree": 11,
+                          "Disagree": 41,
+                          "Agree": 37,
+                          "Strongly Agree": 11
+                      }
+                  },
+                  {
+                      "question_text": "In how many of your classes, this school year, do YOU feel the following statement is true? My teachers…explain things a different way if I don't understand something in class.",
+                      "responses": {
+                          "None": 6,
+                          "A few": 31,
+                          "Most": 41,
+                          "All": 21
+                      }
+                  }
+              ]
+            },
+            "school_performance": {
+              "year":"2021-22",
+              "6_year_graduation_rate": 83
+            },
+            "diversity_in_admissions": {
+              "%_low_income_priority": "None"
+            },
+            "standardized_testing": {
+              "SAT_score": "None"
+            }
     }
 ]

@@ -39,89 +39,9 @@
 
 <body id="dashboard-body">
     
-    <div class="dinkydonk" id="popup" style="display: none;">
+    <!-- <div class="dinkydonk" id="popup" style="display: none;">
         <span class="close" id="closeBtn">&times;</span>
-        <div class="content" id="content">
-          <!-- <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" /> -->
-          <h1>Get personalized Doorstops.</h1>
-          <form id="myForm">
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
-                <label for="identity">I identify as:</label><br>
-                <div style="display: flex; flex-direction: column; justify-content: center;">
-                <div style="display: flex; flex-direction: row; justify-content: center;">
-                <input type="checkbox" id="identity1" name="identity" value="Male">
-                <label for="identity1"> Male</label><br>
-                <input type="checkbox" id="identity2" name="identity" value="Female">
-                <label for="identity2"> Female</label><br>
-                <input type="checkbox" id="identity3" name="identity" value="Non-Binary">
-                <label for="identity3"> Non-Binary</label><br>
-            </div>
-            <div style="display: flex; flex-direction: row; justify-content: center">
-                <input type="checkbox" id="L" name="identity" value="L">
-                <label for="L"> L</label><br>
-                <input type="checkbox" id="G" name="identity" value="G">
-                <label for="G"> G</label><br>
-                <input type="checkbox" id="B" name="identity" value="B">
-                <label for="B"> B</label><br>
-                <input type="checkbox" id="T" name="identity" value="T">
-                <label for="T"> T</label><br>
-                <input type="checkbox" id="Q" name="identity" value="Q">
-                <label for="Q"> Q</label><br>
-                <input type="checkbox" id="identity8" name="identity" value="I">
-                <label for="identity8"> I</label><br>
-                <input type="checkbox" id="identity9" name="identity" value="A">
-                <label for="identity9"> A</label><br>
-                <input type="checkbox" id="identity10" name="identity" value="+">
-                <label for="identity10"> +</label><br>
-            </div>
-        </div>
-
-    </div>
-
-            <br>
-            <div style="display: flex; flex-direction: row; justify-content: center;">
-                <label for="minority">I'm a minority in my school:</label><br>
-                <div style="display: flex; flex-direction: row; justify-content: center;">
-
-                <input type="radio" id="minority1" name="minority" value="Yes">
-                <label for="minority1"> Yes</label><br>
-                <input type="radio" id="minority2" name="minority" value="No">
-                <label for="minority2"> No</label><br>
-                </div>
-            </div>
-
-            <br>
-
-            <label for="clubs">I'm in clubs/sports:</label><br>
-            <div style="display: flex; flex-direction: row; justify-content: center;">
-
-            <input type="radio" id="clubs1" name="clubs" value="Yes">
-            <label for="clubs1"> Yes</label><br>
-            <input type="radio" id="clubs2" name="clubs" value="No">
-            <label for="clubs2"> No</label><br>
-            </div>
-            <br>
-            <label for="mood">I'm usually:</label><br>
-            
-                <div style="display: flex; flex-direction: row; justify-content: center;">
-                <input type="checkbox" id="identity11" name="mood" value="I">
-                <label for="identity11"> Stressed</label><br>
-                <input type="checkbox" id="frustrated" name="mood" value="Frustrated">
-                <label for="frustrated"> Frustrated</label><br>
-                <input type="checkbox" id="Bored" name="mood" value="Bored">
-                <label for="Bored"> Bored</label><br>
-                <input type="checkbox" id="Angry" name="mood" value="Angry">
-                <label for="Angry"> Angry</label><br>
-                <input type="checkbox" id="Anxious" name="mood" value="Anxious">
-                <label for="Anxious"> Anxious</label><br>
-            </div>
-
-          
-            <br><br>
-            <input class="button modal-toggle" id="subtn" type="submit" value="Submit">
-        </form>
-        </div>
-      </div>
+      </div> -->
       <div id="desktop-sidenav">
         <a >            
             <img src="/assets/images/doors.svg" width="200" height="auto" alt="Doorstopped logo">
@@ -554,6 +474,63 @@
     </div>
     <div id="account-section" class="account" style="display: none;"> 
         <!-- Customization survey -->
+        <br><br>
+  
+
+        <div class="content" id="content">
+
+            <!-- <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" /> -->
+            <h1>Get personalized Doorstops.</h1>
+
+                <div id="question-container" class="question">
+                    <div id="question-1" class="question-content active">
+                        <p>I'm usually:</p>
+                        <div class="options">
+                            <label><input type="checkbox" name="mood" value="Stressed"> Stressed</label>
+                            <label><input type="checkbox" name="mood" value="Frustrated"> Frustrated</label>
+                            <label><input type="checkbox" name="mood" value="Disrespected"> Disrespected</label>
+                            <label><input type="checkbox" name="mood" value="Bored"> Bored</label>
+                            <label><input type="checkbox" name="mood" value="Angry"> Angry</label>
+                            <label><input type="checkbox" name="mood" value="Anxious"> Anxious</label>
+                            <label><input type="checkbox" name="mood" value="Lonely"> Lonely</label>
+                            <label><input type="checkbox" name="mood" value="Powerless"> Powerless</label>
+                        </div>
+                        <button class="form-button" onclick="nextQuestion(1)">Answer</button>
+                        <button class="form-button" onclick="nextQuestion(1)">Skip</button>
+                    </div>
+                    <div id="question-2" class="question-content">
+                        <p>I'm in clubs/sports:</p>
+                        <div class="options">
+                            <label><input type="radio" name="clubs-sports" value="Yes"> Yes</label>
+                            <label><input type="radio" name="clubs-sports" value="No"> No</label>
+                        </div>
+                        <button class="form-button" onclick="nextQuestion(2)">Answer</button>
+                        <button class="form-button" onclick="nextQuestion(2)">Skip</button>
+                    </div>
+                    <div id="question-3" class="question-content">
+                        <p>I'm a minority in my school:</p>
+                        <div class="options">
+                            <label><input type="radio" name="minority" value="Yes"> Yes</label>
+                            <label><input type="radio" name="minority" value="No"> No</label>
+                        </div>
+                        <button class="form-button" onclick="nextQuestion(3)">Answer</button>
+                        <button class="form-button" onclick="nextQuestion(3)">Skip</button>
+                    </div>
+                    <div id="question-4" class="question-content">
+                        <p>I my school doesn't fully understand or respect my gender or sex identity:</p>
+                        <div class="options">
+                            <label><input type="radio" name="gender-identity" value="Yes"> Yes</label>
+                            <label><input type="radio" name="gender-identity" value="No"> No</label>
+                        </div>
+                        <button class="form-button"  onclick="nextQuestion(4)">Answer</button>
+                        <button class="form-button" onclick="nextQuestion(4)">Skip</button>
+                    </div>
+                </div>
+                <div id="completion-message" class="question-content">
+                    <p>Completed!</p>
+                </div>
+              <!-- <input class="button modal-toggle" id="subtn" type="submit" value="Submit"> -->
+          </div>
         <!-- Add "I want to see the how-to guide again." -->
         <ul id="swiped-right-list"></ul>
 
@@ -567,6 +544,20 @@
         <button id="nav5m"><img class="nav-icon" id="img5m" src="/assets/svg/User_alt.svg" alt="Icon 5" /></button> <!--Account Icon-->
     </div>
 
+    <script>
+      function nextQuestion(currentQuestion) {
+    var questionContainer = document.getElementById('question-' + currentQuestion);
+    questionContainer.classList.remove('active');
+
+    var nextQuestionContainer = document.getElementById('question-' + (currentQuestion + 1));
+    if (nextQuestionContainer) {
+        nextQuestionContainer.classList.add('active');
+    } else {
+        document.getElementById('completion-message').style.display = 'block';
+        saveAnswers();
+    }
+}
+      </script>
     <script>
 let searchInput = document.getElementById('search-input');
 let resultsContainer = document.getElementById('results-container');
@@ -1016,29 +1007,26 @@ function showSection(n) {
 
     </script>
     <script>
-    document.getElementById('closeBtn').addEventListener('click', function() {
-        document.getElementById('popup').style.display = 'none';
-        document.getElementById('content').style.display = 'none';
-    });
-    document.getElementById('subtn').addEventListener('click', function() {
-        document.getElementById('popup').style.display = 'none';
-        document.getElementById('content').style.display = 'none';
-    });
+    // document.getElementById('closeBtn').addEventListener('click', function() {
+    //     document.getElementById('popup').style.display = 'none';
+    //     document.getElementById('content').style.display = 'none';
+    // });
+    // document.getElementById('subtn').addEventListener('click', function() {
+    //     document.getElementById('popup').style.display = 'none';
+    //     document.getElementById('content').style.display = 'none';
+    // });
 
-document.getElementById('myForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-  
-    let identity = Array.from(document.querySelectorAll('input[name="identity"]:checked'), input => input.value);
-    let minority = document.querySelector('input[name="minority"]:checked').value;
-    let clubs = document.querySelector('input[name="clubs"]:checked').value;
-    let mood = Array.from(document.querySelectorAll('input[name="mood"]:checked'), input => input.value);
-  
-    localStorage.setItem('identity', JSON.stringify(identity));
-    localStorage.setItem('minority', minority);
-    localStorage.setItem('clubs', clubs);
-    localStorage.setItem('mood', mood);
+    function saveAnswers() {
+  let mood = Array.from(document.querySelectorAll('input[name="mood"]:checked'), input => input.value);
+  let clubsSports = document.querySelector('input[name="clubs-sports"]:checked')?.value || "";
+  let minority = document.querySelector('input[name="minority"]:checked')?.value || "";
+  let genderIdentity = document.querySelector('input[name="gender-identity"]:checked')?.value || "";
 
-});
+  localStorage.setItem('mood', JSON.stringify(mood));
+  localStorage.setItem('clubsSports', clubsSports);
+  localStorage.setItem('minority', minority);
+  localStorage.setItem('genderIdentity', genderIdentity);
+}
 
     </script>
 
