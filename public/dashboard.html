@@ -575,8 +575,6 @@
     <script>
 const videos = document.getElementsByTagName('video');
 let currentVideoIndex = 0;
-
-
 function loadNextVideo() {
     if (currentVideoIndex < videos.length) {
         const video = videos[videos.length - 1 - currentVideoIndex];
@@ -587,13 +585,10 @@ function loadNextVideo() {
             source.setAttribute('src', src);
             video.load(); // This is needed to reload the video with the new source
         }
-
         currentVideoIndex += 1;
-        
     }
-
 }
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function(event) { // this line is probably redundant
   loadNextVideo();
   loadNextVideo();
   loadNextVideo();
