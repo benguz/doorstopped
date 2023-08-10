@@ -124,6 +124,37 @@ body, #dashboard-body {
 }
 
 
+.form-button {
+    padding: 12px 20px 10px;
+    letter-spacing: -0.5px;
+    display: inline-block;
+    font-family: "colfax-medium", sans-serif;    
+    border-radius: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    text-align: center;
+    position: relative;
+    background: #333;
+    cursor: pointer;
+    color: #fff;
+    width: auto;
+    z-index: 2;
+}
+
+.form-button:before {
+  -webkit-animation: pulse 2s ease infinite;
+  animation: pulse 2s ease infinite;
+  background: rgba(54, 54, 54, 0.4);
+  border-radius: 20px;
+  position: absolute;
+  content: "";
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
 /**
 * COPY-PASTE
 */
@@ -735,9 +766,8 @@ input {
 
 .liked {
   display: block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 92%;
+  margin: auto;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
