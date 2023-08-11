@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +12,7 @@
   -->
   <title>Selfie Diplomacy | School 101</title>
   <meta name="title" content="Selfie Diplomacy | School 101">
-  <meta name="description" content="Inspiring students nationwide with research-tested strategies">
+  <meta name="description" content="How students can achieve statewide policy change - three core strategies you can apply at the local, district, and state level.">
 
   <!-- 
     - favicon
@@ -22,6 +23,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/school/school.css">
 
   <!-- 
     - google font link
@@ -32,116 +34,47 @@
     href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
     rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
-  <style>
-      @media screen and (max-width: 1023px){
-.framebox {
-height: 34000em;
-}
-.sidenavtotal {
-display:none;
-padding: 0em;
-}
-#sidenav{
-display:none;
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
-}
-#toc {
-  display:none;
-}
-.desktop {
-  display: none;
-}
-}
-.yonk {
-  width: 97%;
-  margin-left: 1.5%;
-}
+  <style>
+
+
 @media (min-width: 1024px) {
 /* main {
   display:flex; 
   justify-content:center;
-} 
+} */
 .yonk {
-            width: 55%;  
-            margin-left: 22.5%; 
-            padding: 0 10px;
-            box-sizing: border-box;
-        }*/
+            width: 100%;  
+            justify-content: center; 
+            flex: 3;
+        }
 
-.yonk {
-  flex: 3;
-}
-.sidenavtotal {
-  flex: 1;
 }
 
-.framebox {
-  height: 15500em;
+h1 {
+  font-size: 25pt;
+  text-decoration: none;
 }
-}
-
-.copy-paste-element {
-  position: relative;
-  background-color: #f6f9fc;
-  border-radius: 3px;
-  border: 1px solid #dce6e9;
-  padding: 15px;
-  margin-bottom: 1rem;
+h2 {
+  margin-top: 1em;
+  font-size: 20pt;
 }
 
-.copy-paste-element p {
-  margin: 0;
-  /* margin-bottom: 0.5em; */
-  line-height: 1.5;
-}
+@media screen and (max-width: 1023px){
 
-.copy-icon {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.copy-icon:focus {
-  outline: none;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.hidden {
+.desktop {
   display: none;
 }
-
-.svg2 path {
-  stroke-dasharray: 477;
-  stroke-dashoffset: 477;
-  animation: draw 150ms ease-out forwards;
+.yonk {
+  width: 98%;
+  margin: auto;
+  flex: none;
 }
-
-/* flexbox shit  
-.sidenavtotal {
-  flex: 1;
-  margin-right: 1rem;
+h1 {
+  font-size: 20pt;
 }
-
-article {
-  flex: 3;
 }
-
-.toc {
-  flex: 1;
-  /*max-width:60%;
-  /*word-wrap: break-word;
-  /* Add your toc styles here
-}
-*/
 
 .yonk p {
   margin-bottom: 0.5em;
@@ -157,14 +90,13 @@ article {
   text-decoration: underline;
   display: inline;
 }
-h1 {
-  font-size: 25pt;
-  text-decoration: none;
+a.nav-button {
+    text-decoration: none;
 }
-h2 {
-  margin-top: 1em;
-  font-size: 20pt;
+.nav-button {
+    border: 2px solid #e9eaeb;
 }
+
 
 .badonk {
   list-style-type: disc; /* or circle or square, depending on the bullet style you want */
@@ -175,173 +107,114 @@ h2 {
 .honk {
   list-style-type: disc !important; 
 }
-.bingo-item {
-  position: relative;
-  /* width: 45%;
-  display: inline-block; */
-  margin-bottom: 10px;
-  height: 50px;
-  perspective: 1000px;
-  overflow: hidden;
-  cursor: pointer;
+
+body {
+    background-color: #f5f5f5;
 }
 
-.aesthetic-tab {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  /* padding: 5px; */
-  background-color: #f2f2f2;
-  text-align: center;
-  border-radius: 5px;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  font-size: 18px;
-  backface-visibility: hidden;
-  transition: transform 0.6s;
-}
-.bingo-item:hover .front {
-  transform: rotateX(180deg);
-  cursor: pointer;
-  z-index: -1;
+.sidesection {
+    padding: 3em; 
+    flex: 1;
 }
 
-.bingo-item:hover .back {
-  transform: rotateX(0);
-  z-index: 1;
+@media screen and (max-width: 1023px){
+    .sidesection {
+    display: none; 
+    flex: 0;
 }
-
-.front {
-  z-index: 1;
 }
-
-.back {
-  transform: rotateX(180deg);
-  z-index: -1;
-}
-
-.aesthetic-icon {
-  width: 18px;
-  height: 18px;
-  margin-right: 5px;
-}
-
 </style>
 
 
   </style>
-  <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
   </head>
 
 <body id="top">
 
-  <header class="header" data-header>
-    <div class="container" min-width="620em">
 
-      <a href="/index.html" class="logo">
-        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
-      </a>
-
-      <nav class="navbar" data-navbar>
-
-        <div class="wrapper">
-          <a href="/index.html" class="logo">
-            <img src="/assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
-          </a>
-
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a href="/mission.html" class="navbar-link" data-nav-link>Mission</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/doorstops/index.html" class="navbar-link" data-nav-link>Doorstops</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/programs/index.html" class="navbar-link" data-nav-link>Programs</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/research/index.html" class="navbar-link" data-nav-link>Research</a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <div class="header-actions">
-
-        <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
-          <span class="span">Try us out</span>
-
-          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-        </a>
-
-        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
-          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
-    </div>
-  
-  </header>
 
       
-    <main>
-      <div style="display: flex; flex-direction: row;">
-      <!-- --><div class="sidenavtotal" style="padding:3em;"> <!-- centered -->
+    <main style="display: flex; flex-direction: row;">
+      <!-- <div class="sidenavtotal" style="padding:3em;">
       
           <br class="desktop"><br class="desktop">
           <br class="desktop"><br class="desktop">
-          <br class="desktop">
       <div id="sidenav"></div>
-      </div> 
-      <!-- centered -->
-<article>          <br class="desktop"><br class="desktop">
-    <br>
-
-    <div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
-        <iframe class="framebox" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="620em" max-width="calc(100% - 10em)" height="15500em" 
-        src="https://docs.google.com/document/d/e/2PACX-1vT4DyRxbNjUxMYXplgLVghZkcoNpwRdQeIpeVGm5R3iOfmEGNq05EHpF3bRhuxuVEyLyygO5QrTc_Vf/pub?embedded=true"></iframe>    
+      </div> -->
+      <div class="sidesection">
+        <br class="desktop"><br class="desktop">
+      <div id="extraspace">
+          </div>
       </div>
-    <!-- -->
-<p>
-  </p>
-  
-</article>
-            <div class="sidenavtotal" style="padding:3em;">
+        <div class="yonk" width="620px">
+          <br class="desktop"><br>
+
+<h1>Successfully changing statewide policy on the school-to-prison pipeline </h1>
+<!-- <p class="subtitle" style="font-family: League Spartan; color: #989aa2; font-size: 15pt;">Subtitle</p> -->
+<span class="aesthetic-button blue" style="color: black" >Pitching yourself</span><span class="aesthetic-button pale" style="color: black" >Comfort under stress</span><span class="aesthetic-button green" style="color: black">Building relationships</span>
+<p>You cut a class, you&rsquo;re expelled. Start a fight, you&rsquo;re expelled. Cross any line, expelled. Welcome to the world of <strong>Zero Tolerance Policies</strong>, implemented by school districts nationwide in the 90s. These wouldn&rsquo;t just affect &ldquo;bad&rdquo; students&mdash;anyone accused of &ldquo;insubordination&rdquo; could be forced out of school. Permanently.</p>
+<p>By 2011, 3 million students were suspended and 100,000+ were expelled, disproportionately impacting black and brown students. People finally started acting rationally: Parent advocacy groups got these policies overturned in a few districts, education researchers came out to demonstrate the flaws, and a national coalition of 120 grassroots advocacy groups started pressing for federal-level reform. But this wasn&rsquo;t enough.</p>
+<div class="warning-box">
+  <button class="warning-icon">
+    <!-- <svg class="svg3"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="11" stroke="black" fill="transparent"/>
+      <path d="M12 8v4M12 16h.01" />
+    </svg> -->
+  </button>
+  <div>
+    <p>&ldquo;My sophomore year of high school, I was dropped from school &lsquo;cause I got caught cutting a class. I had found out my girlfriend was pregnant, and being fifteen years old, hearing that, I didn&rsquo;t know how to act. So I sat in the lunchroom. After my lunch period, I stayed there, and security saw me and he took me down to the office. They asked to see my grades. They said, &ldquo;Okay, just drop him.&rdquo; So it was just that. I&rsquo;[d] never been suspended before. [The school] just dropped me&hellip; I was home for about two and a half months because I couldn&rsquo;t find another high school.&rdquo;</p>
+  </div>
+</div>
+<p>Let&rsquo;s go to 2012 Chicago, where students <em>went directly to state legislators</em> to ban zero tolerance. By 2015, they succeeded.</p>
+<p>They knew better than to fight the district, even though the policy was implemented at the district level. The Chicago Public School system went through three superintendents in 2009, along with a teacher strike, school closures, and a federal investigation. The Chicago state legislature was a little conservative, but they were passing laws. Which group would you rather work with? <strong>Working with a functional institution is easier than reforming a dysfunctional one</strong>. More importantly, many state senators had never heard directly from students before, and NEVER heard from 50 at once. Once they had an understanding of <em>what their policies were actually doing,</em> fixing things was a lot easier.</p>
+<p>They used three STRATEGIES:</p>
+
+<h2 id="selfie"><img  style="display: inline" width="24px" height="24px" src="/assets/images/spazz.png"><strong>Storytelling and Selfie Diplomacy</strong></h2>
+<p>This wasn&rsquo;t easy. Once a week, students woke up at five in the morning for the three hour drive to Springfield, &ldquo;chasing legislators, just for a second to be able to tell their story.&rdquo; They used <strong>selfie diplomacy</strong>, asking to take pictures with senators and post them on Instagram&mdash;an easy win for a senator looking for publicity and votes&mdash;as a way to start conversations about zero-tolerance. [[[Hearing each others&rsquo; stories, students realized they weren&rsquo;t alone in their awful experiences. Create spaces for storytelling like this in your school. &ndash;-link]]]</p>
+<p id="big"><img  style="display: inline" width="24px" height="24px" src="/assets/images/monkey.png"> <strong>Building a Big Coalition to Create Pressure</strong></p>
+<p>On top of personal meetings with legislators, advocacy groups got the support of other key players: parents and teachers unions. Students also joined a nationwide coalition working to end zero tolerance, copying strategies from successful student-led movements in other states. They made connections with the chair of the senate&rsquo;s education committee and the Advancement Project, a DC lobbying group. <strong>If you&rsquo;re not the best in the business at something, in this case passing legislation, don&rsquo;t try to do it yourself: partner with the best.</strong></p>
+<p id="data"><img  style="display: inline" width="24px" height="24px" src="/assets/images/microscope.png"><strong>Collecting and Leveraging Data</strong></p>
+<p>In 2013, students passed a bill mandating schools to collect data on discipline broken down by race. That proved racial bias in zero-tolerance discipline policies. No surprise. That data gave students the momentum to pass legislation banning zero-tolerance discipline. <strong>Students didn&rsquo;t start with asking for a big ban.</strong> Governments work slowly and need data to be persuaded to change policy.&nbsp;</p>
+<div class="warning-box" style="background-color: rgb(205, 255, 220); border-color: rgb(70, 215, 114)">
+
+  <div>
+    <p>Not ready to wake up at 5am to hit up your state capital? Take away these <strong>key strategies</strong> for policy problems of any size.</p>
+    <ul>
+    <li>Find other <em>incentives</em> like selfie diplomacy. What do the people <a href="/school/incentives">in your school</em> want in exchange for change?.</li>
+    <li>Learn to <a href="/school/allies">make powerful allies</a></li>
+    <li><a href="/school/data">Lead with data:</a> &ldquo;If we had conclusive proof that [INSERT YOUR LEAST FAV POLICY HERE] hurt student wellbeing, would you change it?&rdquo; Don&rsquo;t go straight for the big ask.</li>
+    </ul>
+  </div>
+</div>
+
+
+ 
+  <br>
+<div id="nav-button-container"></div>
+<br><br>
+<br><br>
+<a href="https://www.hepg.org/her-home/issues/harvard-educational-review-volume-90,-issue-2/her-article/our-stories-are-powerful%e2%80%9d">Source: Harvard Education Review</a>
+<br><br><br>
+</div>
       
-                <br class="desktop"><br class="desktop">
-                <br class="desktop"><br class="desktop">
-                <br class="desktop">
-              <div id="toc"></div>
-              </div>
+
+      <div class="sidesection">
+        <br class="desktop"><br class="desktop">
+      <div id="toc">
+          </div>
+      </div>
+   
       
     </main>
 
 
-<div id="footer-placeholder">
 
-</div>
-<script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
     
+
+    <script src="/components/sidenavschool.js">
     </script>
+     
 
 
 
@@ -358,9 +231,8 @@ h2 {
     - custom js link
   -->
   <script src="/assets/js/script.js" defer></script>
-  <script src="/components/sidenavschool.js">
-</script>
 
+ 
 
   <!-- 
     - ionicon link
@@ -369,8 +241,3 @@ h2 {
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
-<footer>
-
-</footer>
-
-

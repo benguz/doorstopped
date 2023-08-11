@@ -17,8 +17,9 @@ const toc = document.querySelector('#toc');
       links: [
         { href: '/school/money', children: 'Controlling $100k' },
         { href: '/school/data', children: 'Leveraging Data' },
-        { href: '/school/corp', children: 'Deciphering Corporate-Speak' },
+        { href: '/school/corp', children: 'Decipher Corporate-Speak' },
         { href: '/school/selfie', children: 'Selfie Diplomacy' },
+        { href: '/school/allies', children: 'Make Powerful Allies' },
         { href: '/school/dress', children: 'Changing the Dress Code' },
         { href: '/school/takeover', children: 'State Takeover' },
         { href: '/school/waffle', children: 'Playing the Waffle Game' },
