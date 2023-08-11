@@ -13,185 +13,552 @@
   <meta name="title" content="Dominance: The Secret Recipe Teachers Use to Control Students">
   <meta name="description" content="Read at your own risk.">
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
-    rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 
+      - favicon
+    -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   
-  <style>
-      @media screen and (max-width: 1023px){
-.framebox {
-height: 34000em;
-}
-.sidenavtotal {
-display:none;
-padding: 0em;
-}
-#sidenav{
-display:none;
+    <!-- 
+      - custom css link
+    -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/emoji.css">
+  
+    <!-- 
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+  
+    <style>
+        @media screen and (max-width: 1023px){
 
-}
-#toc {
+  .sidenavtotal {
   display:none;
+  padding: 0em;
+  }
+  #sidenav{
+  display:none;
+  
+  }
+  #toc {
+    display:none;
+  }
+  .desktop {
+    display: none;
+  }
+  }
+  .yonk {
+    width: 97%;
+    margin-left: 1.5%;
+  }
+  @media (min-width: 1024px) {
+
+  
+  .yonk {
+    flex: 3;
+  }
+  .sidenavtotal {
+    flex: 1;
+  }
+
+  }
+
+  
+  .yonk p {
+    margin-bottom: 0.5em;
+    margin-top: 0.7em;
+    font-size: 14pt;
+  }
+  
+  .yonk p, h1, h2, h3, li {
+    color: black;
+  }
+  
+  .yonk a {
+    text-decoration: underline;
+    display: inline;
+  }
+  h1 {
+    font-size: 27pt;
+    text-decoration: none;
+  }
+  h2 {
+    margin-top: 1em;
+    font-size: 20pt;
+  }
+  
+  .badonk {
+    list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+    padding-left: 30px;
+    font-size: 14pt;
+  
+  }
+  .honk {
+    list-style-type: disc !important; 
+  }
+  
+  
+.lard {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+    cursor: pointer;
 }
-.desktop {
-  display: none;
+
+.lard:hover {
+  box-shadow: 4px 12px 26px rgba(0, 0, 0, 0.3);
 }
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
-@media (min-width: 1024px) {
-main {
-  display:flex; 
-  justify-content:center;
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-.framebox {
-  height: 15500em;
+
+.choices li:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.15)
+  /* border: 2px dashed blueviolet; */
 }
+
+.choices li.active {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.15);
+  border: 2px dashed blueviolet;
 }
   </style>
-  <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
-
-  </head>
-
-<body id="top">
-
-  <header class="header" data-header>
-    <div class="container" min-width="620em">
-
-      <a href="/index.html" class="logo">
-        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
-      </a>
-
-      <nav class="navbar" data-navbar>
-
-        <div class="wrapper">
-          <a href="/index.html" class="logo">
-            <img src="/assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
+  
+    </head>
+  
+  <body id="top">
+  
+    <header class="header" data-header>
+      <div class="container" min-width="620em">
+  
+        <a href="/student" class="logo">
+          <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+        </a>
+  
+        <nav class="navbar" data-navbar>
+  
+          <div class="wrapper">
+            <a href="/student" class="logo">
+              <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+            </a>
+  
+            <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+            </div>
+               <ul class="navbar-list">
+  
+            <li class="navbar-item">
+              <a href="/mission" class="navbar-link" data-nav-link>Mission</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="/dashboard" class="navbar-link" data-nav-link>Doorstops</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="/programs/" class="navbar-link" data-nav-link>Programs</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="/time" class="navbar-link" data-nav-link>Data</a>
+            </li>
+  
+          </ul>
+  
+        </nav>
+  
+        <div class="header-actions">
+  
+          <a href="/yourschool" class="btn has-before">
+            <span class="span">Get the Fellas</span>
+  
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
           </a>
-
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+  
+          <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
           </button>
         </div>
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a href="/mission.html" class="navbar-link" data-nav-link>Mission</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/doorstops/index.html" class="navbar-link" data-nav-link>Doorstops</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/programs/index.html" class="navbar-link" data-nav-link>Programs</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/research/index.html" class="navbar-link" data-nav-link>Research</a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <div class="header-actions">
-
-        <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
-          <span class="span">Try us out</span>
-
-          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-        </a>
-
-        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
-          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-        </button>
-
+  
+          <div class="overlay" data-nav-toggler data-overlay></div>
+  
       </div>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
-    </div>
-  </header>
-
-      
-    <main>
-      <div class="sidenavtotal" style="padding:3em;">
-      
-          <br class="desktop"><br class="desktop">
-          <br class="desktop"><br class="desktop">
-      <div id="sidenav"></div>
-      </div>
-        <article>
-          <br class="desktop"><br class="desktop">
-          <div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
-              <iframe class="framebox" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="620px" max-width="calc(100% - 10em)" height="15500em" 
-              src="">
-              <!--https://docs.google.com/document/d/e/2PACX-1vS4DshxqyR3QlqhzjgFKIZJTUHJytgiyXESarRGZxMyTKgYwEBQ-IwwGxCwi8NeKSPJTr-amBvNYR-s/pub?embedded=true-->
-              </iframe>    
-            </div>
-            
-          
-      </article>
-      <div style="padding:3em;">
-          <br><br>
-          <br><br>
-          <div id="toc" ></div>
-      </div>
-      
-    </main>
-
-
-<div id="footer-placeholder">
-
-</div>
-<script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
     
-    </script>
-    <script src="/components/sidenavcustom.js">
-    </script>
+    </header>
+  
+        
+      <main>
+        <div style="display: flex; flex-direction: row;">
+        <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
+        
+            <br class="desktop"><br class="desktop">
+            <br class="desktop"><br class="desktop">
+            <br class="desktop">
+        <div id="sidenav"></div>
+        </div> 
+          <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center;">
+            <br class="desktop"><br class="desktop">
+            <br><br>
+            <br><br>
+            <!-- <strong style="color: hsl(351, 83%, 61%)">Way Better</strong> -->
+            <h1>This is Dominance: The Strategy Teachers Use to Manage Students.</h1>
+            <p class="subtitle" style="margin: 0; color: #989aa2;">Learn how “classroom managers” operate and how to fight them.</p>
+            <br>
+            <div class="warning-box">
 
+              <div>
+                <p><strong>Disclaimer:</strong> Great teachers use Dominance for good&mdash;they keep rowdy classes on track without putting anyone down, they build close relationships with students through behavioral psychology&mdash;our goal is not to expose them. We&rsquo;re to expose teachers who <em>misuse</em> these strategies to make students uncomfortable, unsafe, and deeply unhappy&hellip; and show students how they can respond.&nbsp;</p>
+                <p>Not sure if your teacher fits? Find out <a href="/doorstops/care">here</a>.</p>
 
+              </div>
+            </div>
+<p>In 1993, when <a href="/school/selfie">zero-tolerance discipline policies</a> nationwide were getting students suspended for &ldquo;insubordination,&rdquo; education researchers decided the key to reducing &ldquo;behavior issues&rdquo; in classrooms was <strong>Dominance.</strong></p>
+<p><strong>1. Understand how your teacher sees you 👇👇</strong></p>
 
-<!-- 
-  - #BACK TO TOP
--->
+<p>They didn&rsquo;t mean stand-on-your-neck dominance or spank-your-bum dominance: they defined it as &ldquo;the teacher's ability to provide clear purpose and strong guidance regarding both academics and student behavior.&rdquo;</p>
 
-<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
-  <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
-</a>
+<p>That means rewards, punishments, and rules&mdash;plus hidden tactics to earn your trust or keep you stuck at your desk:</p>
+<img src="/assets/images/dominance/policies.png" width="700px" style="max-width: 98%; margin: auto; border: 2px dashed sandybrown;" height="auto">
+<p>EMPLOYING &ldquo;GROUP CONTINGENCY POLICIES,&rdquo; THAT&rsquo;S A NICE WAY OF SAYING <strong>COLLECTIVE PUNISHMENT</strong>, WHICH IS A <strong>WAR CRIME</strong> UNDER THE GENEVA CONVENTION.</p>
+<p>This was published in 2003 as the gold standard of teaching... </p>
+<!-- <p>Spanking kids was only banned in the 80s (and only in 2009 in Ohio), meaning your older teachers might&rsquo;ve been <em>told </em>that spanking was OK when they started teaching. In the 90s, everybody thought curriculum (what to teach) was the hard part, and how to teach was easy. They were wrong.&nbsp;</p> -->
+<p>Not every idea was bad, even if one of them is the *sole reason* your teachers are always making eye contact with you:</p>
+<img src="/assets/images/dominance/contact.png" width="700px" style="max-width: 98%; margin: auto; border: 2px dashed sandybrown;" height="auto">
+<p>Dominance enables teachers to abuse their power as the classroom boss, with an arsenal of small physical cues, barely acknowledging you when they put a finger on their lip or raise an eyebrow at you, creating routines and patterns, training you to behave. <strong>The root of dominance is fear.</strong> Your teacher can write home, suspend you, make you sit outside... kindergarten stuff.</p>
+<img src="/assets/images/dominance/reactions.png" width="700px" style="max-width: 98%; margin: auto; border: 2px dashed sandybrown;" height="auto">
+<p>Dominance makes it <em>seem</em> like there's nothing you can do about your teacher's power.</p>
+<p>It almost feels like you have to act up just to show how you feel. </p>
 
+<p><strong>1. Understand how your teacher sees you ✅</strong></p>
+<p><strong>2. Tag yourself 👇👇</strong></p>
+<img src="/assets/images/dominance/needs.png" width="700px" style="max-width: 98%; margin: auto; " height="auto">
+
+<div style="color: black; max-width: 100%">
+  <div class="row">
+    <div id="shark" class="lard row" onclick="need(1)">
+      Aggressive 🦈
+    </div>
+    <div id="turtle"class="lard row" onclick="need(2)">
+      Passive 🐢
+    </div>
+    <div id="teddy"class="lard row" onclick="need(3)">
+        Attention Problems 🧸
+      </div>
+    <div id="boiling" class="lard row" onclick="need(4)">
+        Perfectionist 💅
+    </div>
+    <div id="bridge" class="lard row" onclick="need(5)">
+        Socially inept 😰
+    </div>
+  </div>
+  </div>
+  <p id="description" style="color: blueviolet; text-align: center">Click on a category!</p>
+  <br>
+  <p>Are these descriptions accurate for you? Do they understand how you act?</p>
+  <p>These are the strategies suggested for dealing with the category you selected:</p>
+  <p id="strategy" style="color: blueviolet;">Choose a category above!</p>
+  <p>Reading that either gave you some ideas ways your teacher could make class more chill or made you think, "Woah, this SUCKS. THAT'S WHY my teacher's been trying to treat me this way?!"</p>
+  <p>Good teachers handle every student differently. Bad teachers treat every student the same, no matter what they need. Bad teachers might also treat you differently... in a bad way.</p>
+  <img src="/assets/images/dominance/different.png" width="700px" style="max-width: 98%; margin: auto; " height="auto">
+  <p>Your job is to understand <em>how you want to be treated</em> and make it a reality.</p>
+  <p><strong>1. Understand how your teacher sees you ✅</strong></p>
+  <p><strong>2. Tag yourself ✅</strong></p>
+  <p><strong>3. Call your teacher out for "managing" you and negotiate change 👇👇</strong></p>
+<p>Choose <strong>one thing that will make your life easier:</strong></p>
+<ul class="choices" style="cursor: pointer">
+  <li id="gas" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>Gas you up when you succeed</p></li>
+  <li id="empathy" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>stop punishing you with zero empathy</p></li>
+  <li id="time" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>help you build time management skills</p></li>
+  <li id="reward" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>reward you for doing well</p></li>
+  <li id="frustrating" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>Anything frustrating about class: boring lectures, huge amounts of homework, stressful tests, too much participation points.</p></li>
+  <li id="different" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>Stop treating me exactly like every other student when I need different things</p></li>
+  <li id="gas" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>Respond to my emails/follow up more consistently</p></li>
+  <li id="edit" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p contenteditable="true" >Anything from your strategies list above or another problem you have in class (double tap edit this textbox!)</p></li>
+
+</ul>
+  <p>Choose <strong>one thing that will make your teacher's life easier</strong></p>
+  <div style="color: black; max-width: 100%">
+    <div class="row">
+      <div id="busy" class="lard row" onclick="negotiate(1)">
+        Less busy work 🤦
+      </div><!-- (offer to help them set up before class) -->
+
+      <div id="off"class="lard row" onclick="negotiate(2)">
+        A day off 💤
+      </div><!-- commit to being productive with a sub and getting other people to be -->
+      <div id="rowdy"class="lard row" onclick="negotiate(3)">
+          less rowdy classes 🤬
+        </div> 
+      <div id="idk" class="lard row" onclick="negotiate(4)">
+          I don't know what they want 🙄
+      </div><!-- ask -->
+      <!-- <div id="bridge" class="lard row" onclick="negotiate(5)">
+          Socially inept 😰
+      </div> -->
+    </div>
+    </div>
+
+<p><strong>Start a conversation</strong>. Here's a personalized script based on the options you suggested: </p>
+            <div class="copy-paste-element">
+              <div>
+                <p id="personalized-script">Make sure to select options above for a personalized script! Here's a generic template:</p>
+              </div>
+              <button class="copy-icon" onclick="copyText(event)">
+                <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                  <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+                </svg>
+              </button>
+            </div>     
+            <p>Most teachers prefer feedback from a friend or colleague, so you can ask another teacher to send the message if you're nervous. Or you can <a href='/doorstops/feedback'>email your techer anonymously here</a>.</p>     
+            <p>This script is <strong>emotionally available:</strong> it honestly says what you do wrong in class. That honesty will build trust with the teacher. This script is <strong>empathetic</strong>: it doesn't force change on the teacher, instead making sure they get something they want in exchange.</p>
+            <p><strong>1. Understand how your teacher sees you ✅</strong></p>
+            <p><strong>2. Tag yourself ✅</strong></p>
+            <p><strong>3. Call your teacher out for "managing" you and negotiate change ✅✅✅</strong></p>
+            <div class="warning-box" onclick="window.location.href='/school/stories'">
+              <button class="warning-icon">
+                <img style="display: inline" width="24px" height="24px" src="/assets/images/cowboy.png">
+              </button>
+              <div>
+                <p>Need more help to make change happen? Reach out to <a href='mailto:ben@fix.school'>ben [@] fix.school</a> or text 781-three-three-zero-6849. We're always free to talk :)</p>
+              </div>
+              </div>
+            <br><br>
+              </div>
+              <div class="sidenavtotal" style="padding:3em;">
+        
+                  <br class="desktop"><br class="desktop">
+                  <br class="desktop"><br class="desktop">
+                  <br class="desktop">
+                <div id="toc"></div>
+                </div>
+        
+      </main>
+  
+  
+  <div id="footer-placeholder">
+  
+  </div>
+  <script>
+      $(function(){
+        $("#footer-placeholder").load("/footer.html");
+      });
+      
+      </script>
+
+  
   <!-- 
-    - custom js link
+    - #BACK TO TOP
   -->
-  <script src="/assets/js/script.js" defer></script>
+  
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+  <script>
+let last = 7;
+let lastArray = ["shark", "turtle", "teddy", "boiling", "bridge"];
+let closeit = "";
+let div = ""
 
+    function need(n, id) {
+     let p = document.getElementById('description');
+     let strategy = document.getElementById('strategy');
 
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+     if (last < 7) {
+    closeit = document.getElementById(lastArray[last]);
+  }
+  if (closeit) {
+    closeit.style.backgroundColor = 'white';
+  }
 
-</body>
- 
+     if (n === 1) {
+      div = document.getElementById('shark');
+       p.innerHTML = "\"<em>Aggressive</em> students are <em>hostile, oppositional, or covert</em>. Hostile students often have poor anger control, low capacity for empathy, and inability to see the consequences of their actions. <br>Oppositional students exhibit milder forms of behavioral problems, but they consistently resist following the rules, argue with adults, use harsh language, and tend to annoy others. Covert students may be quite pleasant, but they are often nearby when trouble starts and never quite do what authority figures tell them.\"";
+       strategy.innerHTML = "\"Describe student's behavior clearly. Encourage and acknowledge extracurricular activities. Give student responsibilities to help teacher or other students. Create <a href='/doorstops/contracts'>behavior contracts</a> and provide consistent, immediate rewards and punishments. Most of all, teachers must keep in mind that aggressive students are still children who are experiencing a significant amount of fear and pain.\""       
+       last = 0;
+     } else if (n === 2) {
+       div = document.getElementById('turtle');
+      
+       p.innerHTML = "\"<em>Passive</em> students fear <em>relationships</em> or fear <em>failure</em>.\"";
+       strategy.innerHTML = "\"Teachers can build strong relationships with these students by refraining from criticism, rewarding small successes, and creating a classroom climate wher students feel safe from aggressive people. Providing assertiveness and positive self-talk training. Reward small successes quickly.\""
 
+       last = 1;
+   
+     } else if (n===3) {
+       div = document.getElementById('teddy');
+   
+       p.innerHTML = "\"Students with <em>attention</em> problems are <em>hyperactive</em> or <em>inattentive</em>. These students may respond well when teachers <em>contract with them to manage behaviors</em>.\"";
+       strategy.innerHTML = "\"<a href='/doorstops/contracts'>Contract</a> with them to manage behaviors; teach them basic concentration, study, and thinking skills; help them divide tasks into manageable parts/list each step; reward successes; and assign them a peer tutor.\""
 
+       last = 2;
+        }
+        else if (n===4) {
+       div = document.getElementById('boiling');
+   
+       p.innerHTML = "\"<em>Perfectionists</em> are driven to succeed at unattainable levels. They are self-critical, have low self esteem, and feel inferior.\"";
+       strategy.innerHTML = "\"Encourage them to develop more realistic standards, help them accept mistakes (Ask the student to make mistakes on purpose, then show acceptance.) give them opportunities to tutor other students.\""
+
+       last = 3;
+        }
+        else if (n===5) {
+       div = document.getElementById('bridge');
+   
+       p.innerHTML = "\"<em>Socially inept</em> students have difficulty making friends. They may stand too close and touch others in annoying ways, talk too much, and misread others' comments.\"";
+       strategy.innerHTML = "\"Teachers can help socially inept students by counseling them about social behaviors: appropriate physical distance, the meaning of facial expressions, hygeine, dress, manerism, and posture suggestions.\""
+
+       last = 4;
+        }
+   
+       div.style.backgroundColor = 'hsl(234, 44%, 88%)';
+
+   } 
+
+   script = document.getElementById("personalized-script")
+   let prev = 7;
+   let prevArray = ["busy", "off", "rowdy", "idk"]
+   function negotiate(n) {
+    if (prev < 7) {
+    closeit = document.getElementById(prevArray[prev]);
+  }
+  if (closeit) {
+    closeit.style.backgroundColor = 'white';
+  }
+  let active = document.getElementsByClassName('active')[0];  
+
+     if (n === 1) { // busy work
+      prev = 0;
+       script.innerHTML = "";
+       if (last === 0 ) {
+        // aggressive
+        script.innerHTML = "";
+
+       } else if (last === 1 ) {
+        // passive
+        script.innerHTML = "";
+
+       } else if (last === 2 ) {
+        // attention
+        script.innerHTML = "";
+
+       } else if (last === 3 ) {
+        // perfectionist
+        script.innerHTML = "";
+
+       } else if (last === 4 ) {
+        // socially inept
+        script.innerHTML = "";
+       }
+     } else if (n === 2) { // day off
+
+       prev = 1;
+       if (last === 0 ) {
+        // aggressive
+        script.innerHTML = "";
+
+       } else if (last === 1 ) {
+        // passive
+        script.innerHTML = "";
+
+       } else if (last === 2 ) {
+        // attention
+        script.innerHTML = "";
+
+       } else if (last === 3 ) {
+        // perfectionist
+        script.innerHTML = "";
+
+       } else if (last === 4 ) {
+        // socially inept
+        script.innerHTML = "";
+       }
+     } else if (n===3) { // rowdy classes
+      if (last === 0 ) {
+        // aggressive
+        script.innerHTML = "";
+
+       } else if (last === 1 ) {
+        // passive
+        script.innerHTML = "";
+
+       } else if (last === 2 ) {
+        // attention
+        script.innerHTML = "";
+
+       } else if (last === 3 ) {
+        // perfectionist
+        script.innerHTML = "";
+
+       } else if (last === 4 ) {
+        // socially inept
+        script.innerHTML = "";
+       }
+       prev = 2;
+        }
+        else if (n===4) { // don't know
+          if (last === 0 ) {
+        // aggressive
+        script.innerHTML = "";
+
+       } else if (last === 1 ) {
+        // passive
+        script.innerHTML = "";
+
+       } else if (last === 2 ) {
+        // attention
+        script.innerHTML = "";
+
+       } else if (last === 3 ) {
+        // perfectionist
+        script.innerHTML = "";
+
+       } else if (last === 4 ) {
+        // socially inept
+        script.innerHTML = "";
+       }
+       prev = 3;
+        }
+   
+       div.style.backgroundColor = 'hsl(234, 44%, 88%)';
+
+   } 
+     </script>
+    <script src="/assets/js/script.js" defer></script>
+    <script src="/assets/js/emoji.js"></script>
+  
+    <script src="/components/sidenaveh.js"> 
+  </script>
+  
+  
+    <!-- 
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  </body>
+  <footer>
+  
+  </footer>
+  
+  
+  
