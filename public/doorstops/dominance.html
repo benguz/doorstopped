@@ -137,7 +137,7 @@
   /* border: 2px dashed blueviolet; */
 }
 
-.choices li.active {
+.choices li.activated {
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.15);
   border: 2px dashed blueviolet;
 }
@@ -228,7 +228,7 @@
 
               <div>
                 <p><strong>Disclaimer:</strong> Great teachers use Dominance for good&mdash;they keep rowdy classes on track without putting anyone down, they build close relationships with students through behavioral psychology&mdash;our goal is not to expose them. We&rsquo;re to expose teachers who <em>misuse</em> these strategies to make students uncomfortable, unsafe, and deeply unhappy&hellip; and show students how they can respond.&nbsp;</p>
-                <p>Not sure if your teacher fits? Find out <a href="/doorstops/care">here</a>.</p>
+                <p>Not sure if your teacher fits? Find out <a href="/doorstops/care">here</a>. Have an issue with a nice teacher? <a href="/doorstops/hard">Try this</a>.</p>
 
               </div>
             </div>
@@ -284,19 +284,20 @@
   <p><strong>1. Understand how your teacher sees you ✅</strong></p>
   <p><strong>2. Tag yourself ✅</strong></p>
   <p><strong>3. Call your teacher out for "managing" you and negotiate change 👇👇</strong></p>
-<p>Choose <strong>one thing that will make your life easier:</strong></p>
+  <br>
+<p>Click <strong>one thing that will make your life easier:</strong></p>
 <ul class="choices" style="cursor: pointer">
-  <li id="gas" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>Gas you up when you succeed</p></li>
-  <li id="empathy" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>stop punishing you with zero empathy</p></li>
-  <li id="time" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>help you build time management skills</p></li>
-  <li id="reward" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>reward you for doing well</p></li>
-  <li id="frustrating" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>Anything frustrating about class: boring lectures, huge amounts of homework, stressful tests, too much participation points.</p></li>
-  <li id="different" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>Stop treating me exactly like every other student when I need different things</p></li>
-  <li id="gas" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p>Respond to my emails/follow up more consistently</p></li>
-  <li id="edit" onclick="{$('li').removeClass('active'); $(this).addClass('active')}"><p contenteditable="true" >Anything from your strategies list above or another problem you have in class (double tap edit this textbox!)</p></li>
+  <li id="gas" onclick="bonk(this)"><p>Gas me up when I succeed</p></li>
+  <li id="empathy" onclick="bonk(this)"><p>have more empathy when you punish me</p></li>
+  <li id="time" onclick="bonk(this)"><p>help me build time management skills</p></li>
+  <li id="negative" onclick="bonk(this)"><p>stop just frowning at me/eyeing me when I mess up</p></li>
+  <li id="down" onclick="bonk(this)"><p>stop talking down to me when I don't understand something</p></li>
+  <li id="ignore" onclick="bonk(this)"><p>don't pretend I don't exist when I do something wrong </p></li>
+  <li id="different" onclick="bonk(this)"><p>Stop treating me exactly like every other student when I need different things</p></li>
+  <li id="edit" onclick="bonk(this)"><p contenteditable="true" >Anything from your strategies list above or another problem you have in class (double tap edit this textbox!)</p></li>
 
 </ul>
-  <p>Choose <strong>one thing that will make your teacher's life easier</strong></p>
+  <p>Click <strong>one thing that will make your teacher's life easier</strong></p>
   <div style="color: black; max-width: 100%">
     <div class="row">
       <div id="busy" class="lard row" onclick="negotiate(1)">
@@ -317,11 +318,14 @@
       </div> -->
     </div>
     </div>
+    <p id="warning" style="color: blueviolet; text-align: center; display: none;">You haven't clicked something that'll make your life easier yet!</p>
 
 <p><strong>Start a conversation</strong>. Here's a personalized script based on the options you suggested: </p>
             <div class="copy-paste-element">
               <div>
-                <p id="personalized-script">Make sure to select options above for a personalized script! Here's a generic template:</p>
+                <p id="personalized-script">Make sure to select options above for a personalized script! Here's a generic template:<br><br>
+                  "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>
+                  Is there a way I could earn your trust first so both of us are more comfortable with suggestions? Maybe you have some feedback for me I could try to use first?"</p>
               </div>
               <button class="copy-icon" onclick="copyText(event)">
                 <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -332,6 +336,7 @@
             </div>     
             <p>Most teachers prefer feedback from a friend or colleague, so you can ask another teacher to send the message if you're nervous. Or you can <a href='/doorstops/feedback'>email your techer anonymously here</a>.</p>     
             <p>This script is <strong>emotionally available:</strong> it honestly says what you do wrong in class. That honesty will build trust with the teacher. This script is <strong>empathetic</strong>: it doesn't force change on the teacher, instead making sure they get something they want in exchange.</p>
+            <p style="color: blueviolet; text-align: center; display: none;" id="extra-info"></p>
             <p><strong>1. Understand how your teacher sees you ✅</strong></p>
             <p><strong>2. Tag yourself ✅</strong></p>
             <p><strong>3. Call your teacher out for "managing" you and negotiate change ✅✅✅</strong></p>
@@ -343,6 +348,11 @@
                 <p>Need more help to make change happen? Reach out to <a href='mailto:ben@fix.school'>ben [@] fix.school</a> or text 781-three-three-zero-6849. We're always free to talk :)</p>
               </div>
               </div>
+            <h2>Bonus strategy: Classwide challenge.</h2>
+            <p>If more than half the class is <em>pressed</em> about the teacher, usually when the teacher has <strong>really crossed a line</strong> but you're too scared to say something alone... </p>
+            <p>Put all their ig handles into <a href="https://forms.gle/ENgeTctKMDrw8wRM6">this form</a> and we'll make an IG account like "fix-mrs.frizzle's-class" and send all of them follow requests.</p>
+            <p>You'll get a handmade webpage that lets you put all your feedback together into one google doc and choose to <a href="/doorstops/feedback">anonymously send it</a> to your assistant principal or have Doorstop Education the teacher ourselves - that way, they won't get into any trouble with the school.</p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfdqdI5ZEj0cjlgnyRBG1cs7avU1xp9jB4RCnLjRjov9czL0g/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             <br><br>
               </div>
               <div class="sidenavtotal" style="padding:3em;">
@@ -379,7 +389,11 @@ let last = 7;
 let lastArray = ["shark", "turtle", "teddy", "boiling", "bridge"];
 let closeit = "";
 let div = ""
-
+    function bonk(item) {
+      $('li').removeClass('activated'); 
+      $(item).addClass('activated');
+      document.getElementById("warning").style.display = "none";
+    }
     function need(n, id) {
      let p = document.getElementById('description');
      let strategy = document.getElementById('strategy');
@@ -416,7 +430,7 @@ let div = ""
        div = document.getElementById('boiling');
    
        p.innerHTML = "\"<em>Perfectionists</em> are driven to succeed at unattainable levels. They are self-critical, have low self esteem, and feel inferior.\"";
-       strategy.innerHTML = "\"Encourage them to develop more realistic standards, help them accept mistakes (Ask the student to make mistakes on purpose, then show acceptance.) give them opportunities to tutor other students.\""
+       strategy.innerHTML = "\"Encourage them to develop more realistic standards, help them accept mistakes (ask them to make mistakes on purpose, then show acceptance) and give them opportunities to tutor other students.\""
 
        last = 3;
         }
@@ -443,103 +457,128 @@ let div = ""
   if (closeit) {
     closeit.style.backgroundColor = 'white';
   }
-  let active = document.getElementsByClassName('active')[0];  
-
+  let active = document.getElementsByClassName('activated')[0];  
+  if (!active) {
+    document.getElementById("warning").style.display = "block"
+  }
+  let activeText = active.textContent;
+  let extraInfo = document.getElementById("extra-info"); // future feature - redirects students to more resources based on their answer
+  if (active.id === "gas") {
+    activeText = "encourage me when I've had a small success, and [mentioning/not mentioning - choose your preference!] my name when I add something valuable to class discussion"
+  } else if (active.id === "empathy"){
+    activeText = "have more empathy when you punish me? I understand my actions have consequences, but making me feel like I'm inherently evil when I'm just a kid sucks. And <a href='https://psycnet.apa.org/record/2019-25333-001'>academic research shows over-punishment causes my disillusionment with school</a>, leading to worse career outcomes"
+  } else if (active.id === "down"){
+    activeText = "handle responses to my questions when I'm confused differently? I know it's not your intention, but the way you do it is hurtful."
+  } else if (active.id === "time"){
+    activeText = "help me learn to be more successful in class, and give me more space to build my time management and critical thinking skills. That way, I'll feel safer and more comfortable, which will make class less distracting for my classmates, too"
+  } else if (active.id === "ignore"){
+    activeText = "find a different way to handle my disruptive behavior - the current way makes me feel less than, and humiliates me in front of my friends - you don't have to treat me like your best friend, but this goes beyond even what a boss would do to an employee [optional: and you're not my boss!]"
+  } else if (active.id === "different"){
+    activeText = "can you find a way to - I know you already have a lot on your plate, but <a href='https://www.researchgate.net/profile/Robert-Marzano/publication/283749466_The_Key_to_Classroom_Management/links/56f26c0908aed354e57293d3/The-Key-to-Classroom-Management.pdf'>academic research shows it improves student learning</a>"
+  } else if (active.id === "negative"){
+    activeText = "find a different way to handle my disruptive behavior - the current way makes me feel less than, and humiliates me in front of my friends - you don't have to treat me like your best friend, but this goes beyond even what a boss would do to an employee [optional: and you're not my boss!]"
+  }
      if (n === 1) { // busy work
       prev = 0;
-       script.innerHTML = "";
        if (last === 0 ) {
         // aggressive
-        script.innerHTML = "";
+        script.innerHTML = "Are you free to talk about how I've been acting in class?<br><br>First off, I want to commit to helping you take care of some busy work. On [time you're free - eg. mondays, before 3rd period] I can come in a little early to help you set up.<br><br> I know I'm not an easy student to have, but I think I could be easier if you treated me a little differently: " + activeText + ".<br><br>This was scary to bring up. Thank you for listening!";
 
        } else if (last === 1 ) {
         // passive
-        script.innerHTML = "";
+        script.innerHTML = "I'm really [shy, anxious, stressed - choose an emotion word] in class, and I think it has as much of a negative affect on me as it does on the classroom space.<br><br> Would you be open to trying " + activeText + "? I'd also feel more comfortable if we built up more trust.<br><br> Maybe I could come in early [time you're free - eg. mondays, before 3rd period] to help you set up? This was stressful to bring up, I've never had a conversation like this before, so thanks so much for listening!";
 
        } else if (last === 2 ) {
         // attention
-        script.innerHTML = "";
+        script.innerHTML = "I know my attention issues can be a bit of a burden on you - they're a burden on me, too.<br><br>I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey. Is there a way I could earn your trust first, maybe by helping you clean the room or set up for class?<br><br> I'm hoping that by helping out, I'll earn your respect and you'd be able to " + activeText + ".";
 
        } else if (last === 3 ) {
         // perfectionist
-        script.innerHTML = "";
-
+        script.innerHTML = "I feel like I can be a perfectionist, and it's something I want to work on: when you don't " + activeText + ", I can get even more nervous.<br><br>Could we work together to make class a little safer for me?<br><br>If you're not ready to try something like this yet, I'm ready to earn your trust first - maybe I could stay late/come early to help you clean up/set up class?";
        } else if (last === 4 ) {
         // socially inept
-        script.innerHTML = "";
+        script.innerHTML = "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>Is there a way I could earn your trust first so both of us are more comfortable with suggestions?<br><br>Maybe you have some feedback for me I could try to use first, or could you do a little work to " + activeText + "?<br><br>I know it's a lot to ask and you're really busy, and this was really stressful to bring up, so thanks so much for just listening. <br><br>[Comprehensive resources for socially struggling students and students on the spectrum coming soon!]";
+       } else {
+        // add a generic script for students who didn't select a strategy
        }
      } else if (n === 2) { // day off
 
        prev = 1;
        if (last === 0 ) {
         // aggressive
-        script.innerHTML = "";
+        script.innerHTML = "I feel like I can come off [aggressive/disruptive/angry] during class, and this can be tough for other students - I had a thought for a way to make the learning environment better.<br><br>Maybe you could give me some more responsibilities - if you wanted to take a sick day, I'd promise to make sure the class is super productive even with a sub, and maybe you could consider " + activeText + ", too?<br><br>This was hard to bring up because I didn't want to come off disrespectful, so thanks for listening.";
 
        } else if (last === 1 ) {
-        // passive
-        script.innerHTML = "";
+        // passive <br><br>
+        script.innerHTML = "I'm really [shy, anxious, stressed - choose an emotion word] in class, and I think it has as much of a negative affect on me as it does on the classroom space.<br><br> Would you be open to trying " + activeText + "? I'd also feel more comfortable if we built up more trust, and maybe that would make helping me out easier for you as well.<br><br>Anyways, if you're worried about taking a sick day because we'd fall behind, I could commit to helping the sub run the class productively that day, and get students on board with taking it seriously<br><br>This was stressful to bring up, I've never had a conversation like this before, so thanks so much for listening!";
 
        } else if (last === 2 ) {
         // attention
-        script.innerHTML = "";
+        script.innerHTML = "I know my attention issues can be a bit of a burden on you - they're a burden on me, too.<br><br>I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey. Is there a way I could earn your trust first? If you wanted to take a sick day, I'd promise to make sure the class is super productive even with a sub!<br><br>[Then in the second conversation, say: I'm hoping that by helping out, I'll earn your respect and you'd be able to " + activeText + ".]";
 
        } else if (last === 3 ) {
         // perfectionist
-        script.innerHTML = "";
+        script.innerHTML = "I feel like I can be a perfectionist, and it's something I want to work on: when you don't " + activeText + ", I can get even more nervous.<br><br>Could we work together to make class a little safer for me?<br><br>If you're not ready to try something like this yet, I'm ready to earn your trust first - I'd be happy to make sure the class is super productive even with a sub, that way you wouldn't be stressed about taking a sick day! Or anything else you need help with :)";
 
        } else if (last === 4 ) {
         // socially inept
-        script.innerHTML = "";
+        script.innerHTML = "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>Is there a way I could earn your trust first so both of us are more comfortable with suggestions?<br><br>Maybe you have some feedback for me I could try to use first, or could you " + activeText + "?<br><br>I know it's a lot to ask and you're really busy, and this was really stressful to bring up, so thanks so much for just listening. <br><br>[Comprehensive resources for socially struggling students and students on the spectrum coming soon!]";
+       } else {
+        // add a generic script for students who didn't select a strategy
        }
      } else if (n===3) { // rowdy classes
       if (last === 0 ) {
         // aggressive
-        script.innerHTML = "";
+        script.innerHTML = "These rowdy classes disrespectful to you and to the students trying to focus, but I don't feel [energized/respected/safe] enough to call anyone out.<br><br>I know you must be as tired and frustrated - I will call people out and turn the classroom around if the classroom becomes a better learning environment for me, too - could you " + activeText + "?<br><br>It's hard for me to admit, but I think that's what I need to be successful.";
 
        } else if (last === 1 ) {
         // passive
-        script.innerHTML = "";
+        script.innerHTML = "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>Is there a way I could earn your trust first so both of us are more comfortable with suggestions?<br><br>Maybe you have some feedback for me I could try to use first, or could you " + activeText + "?<br><br>I'll feel so much safer in the classroom, and if it helps, I'd be so ready to call people out who are disruptive and rowdy.";
 
        } else if (last === 2 ) {
         // attention
-        script.innerHTML = "";
+        script.innerHTML = "These rowdy classes disrespectful to you and to the students trying to focus, but I don't feel [energized/respected/safe] enough to call anyone out.<br><br>I know you must be as tired and frustrated - I will call people out and turn the classroom around if the classroom becomes a better learning environment for me, too - could you " + activeText + "?<br><br>It's hard for me to admit, but I think that's what I need to be successful.";
 
        } else if (last === 3 ) {
         // perfectionist
-        script.innerHTML = "";
+        script.innerHTML = "I feel like I can be a perfectionist, and it's something I want to work on: when you don't " + activeText + ", I can get even more nervous.<br><br>Could we work together to make class a little safer for me?<br><br> I'm 100% ready to call people out for being rowdy and disruptive during class, and persuade other students to do the same. I think we could change the class culture together - would that help make it easier for you to spend time helping me with my challenges?";
 
        } else if (last === 4 ) {
         // socially inept
-        script.innerHTML = "";
+        script.innerHTML = "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>Is there a way I could earn your trust first so both of us are more comfortable with suggestions?<br><br>Maybe you have some feedback for me I could try to use first, or could you do a little work to " + activeText + "?<br><br>I know it's a lot to ask and you're really busy, and this was really stressful to bring up, so thanks so much for just listening. <br><br>[Comprehensive resources for socially struggling students and students on the spectrum coming soon!]";
+       } else {
+        // add a generic script for students who didn't select a strategy
        }
        prev = 2;
         }
-        else if (n===4) { // don't know
+        else if (n===4) { // don't know - ALL SCRIPTS THE SAME FOR NOW
           if (last === 0 ) {
         // aggressive
-        script.innerHTML = "";
+        script.innerHTML = "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>I realize that while I know what I need, I have no idea what challenges you face as a teacher, so it's unfair of me to just ask for help. Is there any way I could make your job easier, or any feedback you have for me? [Then in the second conversation, say: I'm hoping that by helping out, I'll earn your respect and you'd be able to " + activeText + ". Would you consider that?]";;
 
        } else if (last === 1 ) {
         // passive
-        script.innerHTML = "";
+        script.innerHTML = "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>I realize that while I know what I need, I have no idea what challenges you face as a teacher, so it's unfair of me to just ask for help. Is there any way I could make your job easier, or any feedback you have for me? [Then in the second conversation, say: I'm hoping that by helping out, I'll earn your respect and you'd be able to " + activeText + ". Would you consider that?]";;
 
        } else if (last === 2 ) {
         // attention
-        script.innerHTML = "";
+        script.innerHTML = "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>I realize that while I know what I need, I have no idea what challenges you face as a teacher, so it's unfair of me to just ask for help. Is there any way I could make your job easier, or any feedback you have for me? [Then in the second conversation, say: I'm hoping that by helping out, I'll earn your respect and you'd be able to " + activeText + ". Would you consider that?]";;
 
        } else if (last === 3 ) {
         // perfectionist
-        script.innerHTML = "";
+        script.innerHTML = "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>I realize that while I know what I need, I have no idea what challenges you face as a teacher, so it's unfair of me to just ask for help. Is there any way I could make your job easier, or any feedback you have for me? [Then in the second conversation, say: I'm hoping that by helping out, I'll earn your respect and you'd be able to " + activeText + ". Would you consider that?]";;
 
        } else if (last === 4 ) {
         // socially inept
-        script.innerHTML = "";
+        script.innerHTML = "I have feedback on ways the class could be a better learning environment, but I’m afraid to come off as rude or judgey.<br><br>I realize that while I know what I need, I have no idea what challenges you face as a teacher, so it's unfair of me to just ask for help. Is there any way I could make your job easier, or any feedback you have for me? [Then in the second conversation, say: I'm hoping that by helping out, I'll earn your respect and you'd be able to " + activeText + ". Would you consider that?]";;
+       } else {
+        // add a generic script for students who didn't select a strategy
        }
        prev = 3;
         }
    
        div.style.backgroundColor = 'hsl(234, 44%, 88%)';
-
+      //  extraInfo.style.display = "block"
    } 
      </script>
     <script src="/assets/js/script.js" defer></script>
