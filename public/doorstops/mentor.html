@@ -6,11 +6,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--
-    temp redirect 
-  -->
-  <meta http-equiv="refresh" content="0; URL=https://docs.google.com/document/d/1kzTgGI-jeVUlSw9UZw8zr0jRksl6wE6sRGd7QC7aK70/edit?usp=sharing" />
-
 
   <!-- 
     - primary meta tag
@@ -19,180 +14,586 @@
   <meta name="title" content="How High Schoolers Can Find Awesome Mentors | Doorstops">
   <meta name="description" content="Mentors save you time because they’ve done exactly what you’re about to do. They help you the way a coach or a (friendly) older sibling does. You can get one for free.">
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <!-- 
+      - favicon
+    -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  
+    <!-- 
+      - custom css link
+    -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/emoji.css">
+  
+    <!-- 
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+  
+    <style>
+        @media screen and (max-width: 1023px){
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
-    rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
-
-  <style>
-      @media screen and (max-width: 1023px){
-.framebox {
-height: 34000em;
-}
-.sidenavtotal {
-display:none;
-padding: 0em;
-}
-#sidenav{
-display:none;
-
-}
-#toc {
+  .sidenavtotal {
   display:none;
+  padding: 0em;
+  }
+  #sidenav{
+  display:none;
+  
+  }
+  #toc {
+    display:none;
+  }
+  .desktop {
+    display: none;
+  }
+  }
+  .yonk {
+    width: 97%;
+    margin-left: 1.5%;
+  }
+  @media (min-width: 1024px) {
+
+  
+  .yonk {
+    flex: 3;
+  }
+  .sidenavtotal {
+    flex: 1;
+  }
+  
+  
+  }
+  
+  
+  .yonk p {
+    margin-bottom: 0.5em;
+    margin-top: 0.7em;
+    font-size: 14pt;
+  }
+  
+  .yonk p, h1, h2, h3, li {
+    color: black;
+  }
+  
+  .yonk a {
+    text-decoration: underline;
+    display: inline;
+  }
+  h1 {
+    font-size: 27pt;
+    text-decoration: none;
+  }
+  h2 {
+    margin-top: 1em;
+    font-size: 20pt;
+  }
+  
+  .badonk {
+    list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+    padding-left: 30px;
+    font-size: 14pt;
+  
+  }
+  .honk {
+    list-style-type: disc !important; 
+  }
+  
+  
+.lard {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+    cursor: pointer;
 }
-.desktop {
-  display: none;
+
+.tard {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+    color: #989aa2; 
+    margin: auto; 
+    text-align: center;
 }
+
+.lard:hover {
+  box-shadow: 4px 12px 26px rgba(0, 0, 0, 0.3);
 }
-@media (min-width: 1024px) {
-main {
-  display:flex; 
-  justify-content:center;
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
-.framebox {
-  height: 15500em;
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
+
+.choices li:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.15)
+  /* border: 2px dashed blueviolet; */
+}
+
+.choices li.activated {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.15);
+  border: 2px dashed blueviolet;
 }
   </style>
-
-  </head>
-
-<body id="top">
-
-  <header class="header" data-header>
-    <div class="container" min-width="620em">
-
-      <a href="/index.html" class="logo">
-        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
-      </a>
-
-      <nav class="navbar" data-navbar>
-
-        <div class="wrapper">
-          <a href="/index.html" class="logo">
-            <img src="/assets/images/doors.svg" width="162" height="50" alt="EduWeb logo">
+  
+    </head>
+  
+  <body id="top">
+  
+    <header class="header" data-header>
+      <div class="container" min-width="620em">
+  
+        <a href="/student" class="logo">
+          <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+        </a>
+  
+        <nav class="navbar" data-navbar>
+  
+          <div class="wrapper">
+            <a href="/student" class="logo">
+              <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+            </a>
+  
+            <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+            </div>
+               <ul class="navbar-list">
+  
+            <li class="navbar-item">
+              <a href="/mission" class="navbar-link" data-nav-link>Mission</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="/dashboard" class="navbar-link" data-nav-link>Doorstops</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="/programs/" class="navbar-link" data-nav-link>Programs</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="/time" class="navbar-link" data-nav-link>Data</a>
+            </li>
+  
+          </ul>
+  
+        </nav>
+  
+        <div class="header-actions">
+  
+          <a href="/yourschool" class="btn has-before">
+            <span class="span">Get the Fellas</span>
+  
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
           </a>
-
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+  
+          <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
           </button>
         </div>
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a href="/mission.html" class="navbar-link" data-nav-link>Mission</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/doorstops/index.html" class="navbar-link" data-nav-link>Doorstops</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/programs/index.html" class="navbar-link" data-nav-link>Programs</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/research/index.html" class="navbar-link" data-nav-link>Research</a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <div class="header-actions">
-
-        <a href="mailto:guzovsky@princeton.edu" class="btn has-before">
-          <span class="span">Try us out</span>
-
-          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-        </a>
-
-        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
-          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-        </button>
-
+  
+          <div class="overlay" data-nav-toggler data-overlay></div>
+  
       </div>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
-    </div>
-  </header>
-
-      
-    <main>
-      <div class="sidenavtotal" style="padding:3em;">
-      
-          <br class="desktop"><br class="desktop">
-          <br class="desktop"><br class="desktop">
-      <div id="sidenav"></div>
-      </div>
-        <article>
-          <br class="desktop"><br class="desktop">
-          <div style="display: flex; justify-content: center; margin-top: 2em; overflow: hidden;" >
-              <iframe class="framebox" style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="620em" max-width="calc(100% - 10em)" height="15500em" 
-              src=""></iframe>    
-            </div>
-            
-          
-      </article>
-      <div style="padding:3em;">
-          <br><br>
-          <br><br>
-          <div id="toc" ></div>
-      </div>
-      
-    </main>
-
-
-<div id="footer-placeholder">
-
-</div>
-<script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
     
-    </script>
-    <script src="/components/sidenav.js">
-    </script>
+    </header>
+  
+        
+      <main>
+        <div style="display: flex; flex-direction: row;">
+        <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
+        
+            <br class="desktop"><br class="desktop">
+            <br class="desktop"><br class="desktop">
+            <br class="desktop">
+        <div id="sidenav"></div>
+        </div> 
+          <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center;">
+            <br class="desktop"><br class="desktop">
+            <br><br>
+            <br><br>
+            <!-- <strong style="color: hsl(351, 83%, 61%)">Way Better</strong> -->
+            <h1>Find your life sherpa.</h1>
+            <p class="subtitle" style="margin: 0; color: #989aa2;">How to get a free #1 fan, life coach, and career shortcut.</p>
+            <span class="aesthetic-button blue" style="color: black">Cold Emailing</span><span class="aesthetic-button pale" style="color: black" >Networking</span><span class="aesthetic-button green" style="color: black">Power Plays</span>
+            <p>Mentors save you time because they’ve done exactly what you’re about to do. They help you the way a coach or a (friendly) older sibling does.</p>
+            <span  class="tard" style="width: 50%" ><span id="count" style="display: inline">147</span><button style="display: inline" onclick=quonk()>❤️</button> &nbsp;&nbsp;&nbsp; 17 verified success stories</span>
+            <p>They tell you about all their terrible life choices&mdash;from chats about careers and employers to stories about eating ice cream for lunch every day without realizing they&rsquo;re lactose intolerant&mdash;they put you in touch with other smart people, and they vouch for you. <strong>Growth. Emotional support. Free food.</strong></p>
+            <p>Let&rsquo;s find you a fucking sherpa.</p>
+<div style="color: black; max-width: 100%">
+  <div class="row">
 
+    <div id="turtle"class="lard row" onclick="need(2)">
+      I want to learn from people with cool jobs 💖
+    </div>
+    <div id="shark" class="lard row" onclick="need(1)">
+      I want to do research 🔬
+    </div>
+    <div id="teddy"class="lard row" onclick="need(3)">
+        I'm not really sure if I can do this 🧸
+      </div>
+  </div>
+  </div>
+  <p id="description" style="color: blueviolet; text-align: center">Click on a category!</p>
 
+  <div id="research" style="display: none">
+    <p><strong>Get research opportunities by emailing postdocs, not professors.</strong> Professors are old, tired, and bored. Postdocs need to give mentorship for their career progress. Their CVs get much stronger when they list “last author” publications, or publications where they advise the “first author,” the person driving the research. You can be that first author! Search up “[college name] research labs” or “[college name] [topic] postdoctoral researcher,” find their emails, and reach out!</p>
+    <div class="copy-paste-element">
+      <div>
+        <p>Hi [name],
+<br><br>I'm a(n) [#]th grader passionate about [research topic the postdoc is involved in] with [quick pitch - explained in the <a href="#pitch">next section!</a>]. Are there any opportunities for me to contribute at [name of the lab]?
+          
+<br><br>[optional: "I come from an under-resourced high school where I don’t have opportunities to pursue research outside the classroom, so the opportunity to learn from you would be invaluable."]"
+                        
+<br><br>[optional sentence about your skillset]
 
-<!-- 
-  - #BACK TO TOP
--->
+<br><br>Regardless, I would really value the opportunity to talk more - maybe we could zoom/call if you're free!
+          
+<br><br>With hope and gratitude,<br>
+[your name]</p>
+      </div>
+      <button class="copy-icon" onclick="copyText(event)">
+        <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+          <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+        </svg>
+      </button>
+    </div>  
+    <p>Read papers the postdoc has published - even just the abstract if the content is confusing, and mention it in the email!</p>
+    <p><strong>Bad:</strong>  "I was particularly struck by Professor Kays' publication on the effects of cystic fibrosis sputum on the passage of adeno-associated virus (AAV) gene vectors and the strategies outlined for improving AAV diffusion through sputum."" </p>
+    <p style="color: blueviolet; text-align: center">What do these words mean?? Does the student writing this understand them?</p>
+    <p><strong>Mid:</strong> "I was struck by the mechanical engineering necessary for Professor Kays' publication on identifying and combating cystic fibrosis sputum, a type of mucus, as the blocker adeno-associated virus vectors, which are the main path for providing gene therapy treatment."</p>
+        <p style="color: blueviolet; text-align: center">Way too complicated. Way too formal language.</p>
+    <p><strong>Good:</strong> "You're using so much mechanical engineering to fight the cystic fribrosis sputum, which I thought would be a biochemistry problem. Even just reading your abstract about this, I feel like there's so much for me to learn!"</p>
+            <p style="color: blueviolet; text-align: center">Admits you don't fully understand everything, but shows what you did understand. Shows you are interested!</p>
 
-<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
-  <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
-</a>
+  </div>
+  <div id="cooljobs" style="display: none">
+    <h2>Choosing a mentor
+      </h2>
+      <p>Your ideal mentor will be a confident college student (junior or senior), a recent grad (working in an industry you’re interested in).</p>
+      <p>Ask your teacher if they know anyone in the industry you're interested in. Teachers are adults and have adult friends who can help!</p>
+      <p>Send them an email (<a href="#faq">jump here</a> if you can't find the address) like:</p>
 
+    <div class="copy-paste-element">
+      <div>
+        <p>Hi [name],
+<br><br>Do you know anyone who might be open to mentoring a(n) [#]th grader passionate about [topic]? 
+          
+<br><br>I come from an under-resourced high school where I don’t have opportunities to explore [topic] outside the classroom, and I’m curious to learn more about it.
+                        
+<br><br>[optional sentence about skillset, bio]
+          
+<br><br>With hope and gratitude,<br>
+[your name]</p>
+      </div>
+      <button class="copy-icon" onclick="copyText(event)">
+        <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+          <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+        </svg>
+      </button>
+    </div>          
+    <p>Or...</p>
+    <div class="copy-paste-element">
+      <div>
+        <p>Hi [name],
+<br><br>Do you know anybody at [their organization] who might be open to mentoring me for an hour a week/month? If yes, 30 seconds of your time to forward this email would be invaluable. 
+          
+<br><br>[a two sentence pitch, one about you and another sentence about what you’re interested in/passionate about — amazing emails will also pitch a project and specify time commitment, e.g. “One hour a week sharing insight on [industry] and [answering my questions about it // helping with my XYZ project] would be a 10% increase [<a href='/time'>measure yourself!</a>] to my average instructional time/week — I measured it.”]
+
+<br><br>With hope and gratitude,<br>
+[your name]</p>
+      </div>
+      <button class="copy-icon" onclick="copyText(event)">
+        <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+          <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+        </svg>
+      </button>
+    </div>
+    <p>Even better, <strong>just pick someone you read about online</strong>. Could be a journalist who wrote something you like or a video editor who works for a YouTuber you follow.</p>
+    <p>You can find cool people doing cool stuff by...</p>
+    <!-- Search for cool people on news.ycombinator.com + your topic, read their article, and reach out to them
+ -->
+</div>
+  <div id="notsure" style="display: none">
+    <p>If you can’t think of a career, here’s a great, regularly updated list of cool people:</p>
+    <ul class="badonk">
+      <li class="honk"><p>Paul Graham</p></li>
+      <li class="honk"><p></p></li>
+      <!-- List the peeps from the princeton twitter feed you were gonna reach out to a looong time ago -->
+      <li class="honk"><p></p></li>
+      <li class="honk"><p></p></li>
+    </ul>
+    <p>Send them an email like:</p>
+    
+    <div class="copy-paste-element">
+      <div>
+        <p>Hi [name],
+<br><br>Do you know anyone who might be open to mentoring a(n) [#]th grader passionate about [topic]? 
+          
+<br><br>I come from an under-resourced high school where I don’t have opportunities to explore [topic] outside the classroom, and I’m curious to learn more about it.
+                        
+<br><br>[optional sentence about skillset, bio]
+          
+<br><br>With hope and gratitude,<br>
+[your name]</p>
+      </div>
+      <button class="copy-icon" onclick="copyText(event)">
+        <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+          <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+        </svg>
+      </button>
+    </div>          
+    <p>Or...</p>
+    <div class="copy-paste-element">
+      <div>
+        <p>Hi [name],
+<br><br>Do you know anybody at [their organization] who might be open to mentoring me for an hour a week/month? If yes, 30 seconds of your time to forward this email would be invaluable. 
+          
+<br><br>[a two sentence pitch, one about you and another sentence about what you’re interested in/passionate about — amazing emails will also pitch a project and specify time commitment, e.g. “One hour a week sharing insight on [industry] and [answering my questions about it // helping with my XYZ project] would be a 10% increase [<a href='/time'>measure yourself!</a>] to my average instructional time/week — I measured it.”]
+
+<br><br>With hope and gratitude,<br>
+[your name]</p>
+      </div>
+      <button class="copy-icon" onclick="copyText(event)">
+        <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+          <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+        </svg>
+      </button>
+    </div>
+    <p>If you're not sure where to go for mentorship, try to find a local mentorship in your area (by google searching "youth mentorship [my city]") or use an online program like <a href="https://adplist.org/">adplist.org</a> or <a href="https://matriculate.org/high-school-fellows-application/">Matriculate</a>.</p>
+  <p>Even better, <strong>just pick someone you read about online</strong>. Could be a journalist who wrote something you like or a video editor who works for a YouTuber you follow.</p>
+  <p>You can find cool people doing cool stuff by...</p>
+  <!-- Search for cool people on news.ycombinator.com + your topic, read their article, and reach out to them
+ -->
+  </div>
+            <div class="warning-box">
+              <button class="warning-icon" onclick="window.location.href = '/doorstops/points'">
+                  <img width="24px" height="24px" src="/assets/images/cowboy.png">
+              </button>
+              <div>
+                  <p>If your high school has a lot of successful grads, try googling:</p>
+                             
+            <div class="copy-paste-element">
+              <div>
+                <p>site:linkedin.com “[your high school name]” “[a topic you’re vaguely interested in]”</p>
+              </div>
+              <button class="copy-icon" onclick="copyText(event)">
+                <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                  <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+                </svg>
+              </button>
+            </div> 
+            <p>The results will be people who use LinkedIn, a job-finding site, who went to your high school. Reach out to them! You already have something in common!</p>
+            <p>Even if you don't see anyone, you can <strong>ask your teachers if they keep in touch with any cool former students</strong>.</p>
+              </div>
+              </div>
+           
+
+            <p id="pitch"><strong>Write an amazing one-sentence self-pitch</strong></p>
+            <p>Allison is a sophomore in college. She&rsquo;s worked at a lab for a year now, but doesn&rsquo;t feel like she&rsquo;s achieved much. She hasn&rsquo;t published any papers or done a lot of anything. But she loves the lab work and commits a lot of time for it. Here&rsquo;s her one sentence pitch:</p>
+            <p>Allison is a UC Berkeley sophomore with 300 hours in an imaging systems lab; 50 hours in 1:1 conversation with biomed PIs, professors, and founders; and 100+ iterations of nanoparticle synthesis.</p>
+            <p>She focused on <strong>what she&rsquo;s done the most of</strong>, and readers will realize that&rsquo;s a lot of hours for a sophomore.</p>
+            <div class="warning-box">
+              <button class="warning-icon" onclick="window.location.href = '/doorstops/points'">
+                  <img width="24px" height="24px" src="/assets/images/cowboy.png">
+              </button>
+              <div>
+                  <p>For cool phrases, look at the back of books and steal them from reviewers talking about the author. That’s where Allison got the idea for another sentence about her, part of a longer bio she uses in intro/networking emails: “When energy levels are low, she is a one-woman defibrillator."</p>
+              </div>
+              </div>
+              <p>Say you want to do cancer research. Even if you've only taken one chemistry class, phrase it like:</p>
+              <div class="copy-paste-element">
+                <div>
+                  <p>I'm an 11th grader interested in cancer research. In my chemistry class, I stay late to ask my teacher questions and help clean up.</p>
+                </div>
+                <button class="copy-icon" onclick="copyText(event)">
+                  <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                    <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+                  </svg>
+                </button>
+              </div>
+              <p>Or do a little math and say something like...</p>
+                <div class="copy-paste-element">
+                <div>
+                  <p>I'm an 11th grader interested in cancer research with 300 hours invested in learning chemistry and biology, 50 hours practicing experimental design in class activites, and (not that it's relevant) a really cute dog.</p>
+                </div>
+                <button class="copy-icon" onclick="copyText(event)">
+                  <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                    <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+                  </svg>
+                </button>
+              </div>
+              <p><strong>A good mentor lets you learn for yourself</strong>, guiding you, but not telling you what to do. <strong>They answer questions and give good advice</strong>, they do not do your homework.</strong></p>
+              <div class="warning-box">
+                <button class="warning-icon" onclick="window.location.href = '/doorstops/points'">
+                    <img width="24px" height="24px" src="/assets/images/cowboy.png">
+                </button>
+                <div>
+                  <p>If you&rsquo;re nervous about your email, send it to us first to proofread: <a href="http://ben@fix.school" target="_blank" rel="noopener">ben@fix.school</a></p>
+                  <p>If you&rsquo;re passionate about education, I&rsquo;ll mentor you: <a href="http://ben@fix.school" target="_blank" rel="noopener">ben@fix.school</a>, use the same strategies to pitch me :)</p>
+                </div>
+                </div>
+
+              <h3 id="faq">FAQ</h3>
+              <div class="accordion-menu">
+                <div class="accordion-section">
+                  <div class="accordion-header">I can't find their email</div>
+                  <div class="accordion-content">
+                    <ol class="badonk">
+                      <li class="honk">Try googling &ldquo;[person&rsquo;s name] email&rdquo; and poke around.</li>
+                      <li class="honk">If you get results from a site like Apollo or Rocketreach, it&rsquo;s fine to make a free account there to see emails&ndash;those sites are legit.</li>
+                      <li class="honk">If they work at a company, find <em>someone&rsquo;s</em> email at the company: all emails will be in the same format, like <a href="mailto:firstinitial.lastname@company.com" target="_blank" rel="noopener">firstinitial.lastname@company.com</a>.</li>
+                      </ol>
+                  </div>
+                </div>
+                <div class="accordion-section last">
+                  <div class="accordion-header">I don't know what careers I'm interested in</div>
+                  <div class="accordion-content">
+                    <p>We have a Doorstop on finding cool careers coming soon: you&rsquo;ll find it at /doorstops/othercareers. Want to get notified when it comes out?&nbsp;<a href="mailto:ben@fix.school?subject=Let me know when /doorstops/othercareers goes live&amp;body=thanks so much!" target="_blank" rel="noopener">Ping us!</a></p>
+                  </div>
+                </div>
+                </div>
+              <br><br>
+            <br><br>
+
+              </div>
+              <div class="sidenavtotal" style="padding:3em;">
+        
+                  <br class="desktop"><br class="desktop">
+                  <br class="desktop"><br class="desktop">
+                  <br class="desktop">
+                <div id="toc">
+                  <!-- <span  class="tard" >147 ❤️<br> 17 verified success stories</span> -->
+
+                </div>
+                </div>
+        
+      </main>
+  
+  
+  <div id="footer-placeholder">
+  
+  </div>
+  <script>
+      $(function(){
+        $("#footer-placeholder").load("/footer.html");
+      });
+      
+      </script>
+  
+  
+  
+  
   <!-- 
-    - custom js link
+    - #BACK TO TOP
   -->
-  <script src="/assets/js/script.js" defer></script>
+  
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+  <script>
+    function quonk() {
+      let likes = document.getElementById('count'); 
+      console.log(likes.textContent);
+      if (likes.textContent === '147') {likes.textContent = '148'} else {likes.textContent = '147'}
+    }
+    let last = 7;
+let lastArray = ["shark", "turtle", "teddy"];
+let closeit = "";
+let div = ""
+
+    function need(n, id) {
+     let p = document.getElementById('description');
+
+     if (last < 7) {
+    closeit = document.getElementById(lastArray[last]);
+  }
+  if (closeit) {
+    closeit.style.backgroundColor = 'white';
+  }
+
+     if (n === 1) {
+      div = document.getElementById('shark');
+       p.style.display = "none";
+       document.getElementById('research').style.display ="block";
+       document.getElementById('notsure').style.display ="none";
+       document.getElementById('cooljobs').style.display ="none";
+
+       last = 0;
+     } else if (n === 2) {
+       div = document.getElementById('turtle');
+       p.style.display = "none";
+       document.getElementById('cooljobs').style.display ="block";
+       document.getElementById('research').style.display ="none";
+       document.getElementById('notsure').style.display ="none";
 
 
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+       last = 1;
+   
+     } else if (n===3) {
+       div = document.getElementById('teddy');
+       p.style.display = "none";
+       document.getElementById('notsure').style.display ="block";
+       document.getElementById('research').style.display ="none";
+       document.getElementById('cooljobs').style.display ="none";
 
-</body>
+       last = 2;
+        }
+        div.style.backgroundColor = 'hsl(234, 44%, 88%)';
+
+} 
+  </script>
+    <script src="/assets/js/script.js" defer></script>
+    <script src="/assets/js/emoji.js"></script>
+    <script src="/assets/js/skill.js"></script>
+
+    <script src="/components/sidenaveh.js"> 
+  </script>
+  
+  
+    <!-- 
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  </body>
+  <footer>
+  
+  </footer>
+  
+  
+  

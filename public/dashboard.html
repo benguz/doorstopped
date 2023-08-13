@@ -66,7 +66,13 @@
             <!-- <img src="/assets/cards/badfood.webp" alt="image2" /> -->
             <p></p>
         </div>
-
+        <div class="card" style="display: none;" data-category="50-swipes-survey-yes">
+            <h2>You've swiped through 50 Doorstops! Have we helped you feel happier in school?</h2>
+            <video autoplay muted loop id="myVideo" width="100%" style="object-fit: contain;">
+                <source data-src="/assets/cards/whatever-shrug.webm" type="video/webm">
+              </video>               
+              <p>Swipe right for yes, swipe left for no.</p>
+        </div>
               <!-- <div class="card" data-link="/time" style="display: none;">
             <h2>Nobody shows up</h2>
             <p>because the school is awful</p>
@@ -142,12 +148,7 @@
             <h2>HS feels like a dead end</h2>
             <p>It’s McDonalds or fame</p>
         </div>
-              <div class="card" data-link="/doorstops/dominance" style="display: none;" data-category="STR">
-            <h2>Strictness</h2>
-            <!-- Good gif actually -->
-            <!-- <div class="tenor-gif-embed" data-postid="5848993" data-share-method="host" data-aspect-ratio="1.495" data-width="100%"></div>  -->
-            <p>Trapped at your desk?</p>
-        </div>
+
         <div class="card" data-link="/doorstops/shift#outlet" style="display: none;" data-category="culture">
             <h2>Violence</h2>
             <p>People hiding in the bathroom</p>
@@ -350,6 +351,13 @@
               </video>              
               <p>RESPOND TO PEOPLE CROSSING YOUR BOUNDARIES. Anonymous emails... all the way up to changing school policy.</p>
         </div>
+        <div class="card" data-link="/doorstops/dominance" style="display: none;" data-category="STR">
+            <h2>Strictness, old teachers, mean teachers... we got you.</h2>
+            <video autoplay muted loop id="eating" width="100%" style="object-fit: contain;">
+                <source data-src="/assets/cards/eye-roll-meme.webm" type="video/webm">
+              </video> 
+            <p>Trapped at your desk?</p>
+        </div>
         <div class="card" data-link="/doorstops/othercareers" style="display: none;" data-category="culture">
             <h2>No idea what you want to do when you graduate?</h2>
             <video id="careers" autoplay muted loop width="100%" style="object-fit: contain;">
@@ -425,6 +433,7 @@
             <img src="/assets/cards/badfood.webp" width="100%" style="object-fit: contain;">            
             <p>Pull out your mini waffle maker, or we'll buy one for you. Work your way up to your own food truck.</p> <h3>Become a school lunch entrepreneur.</h3></p>
         </div>
+
         <div class="card" data-link="/doorstops/food" style="display: none;" data-category="peers">
             <h2>Toxic comments about eating</h2>
             <video autoplay muted loop id="eating" width="100%" style="object-fit: contain;">
@@ -457,6 +466,7 @@
             <h3>Me? I don’t need an extension. You must not be familiar with my game.</h3>
             <p>Someday your boss is gonna say, "Bestie, can you work 'til 10pm today?"<br>Don't say "Sure, Bestie!" <strong>Learn to set boundaries now.</strong></p>
         </div>
+
         <!--
         <div class="card" data-link="/doorstops/points">
         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ahsokka_/video/7207198809548492037" data-video-id="7207198809548492037"  data-autoplay="true" style="min-width: 100%"> <section> <a target="_blank" title="@ahsokka_" href="https://www.tiktok.com/@ahsokka_?refer=embed">@ahsokka_</a> </section></blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
@@ -814,10 +824,16 @@ document.querySelectorAll('.card').forEach((card, index) => {
                 else if (card.dataset.category === "50-swipes-survey-yes") {
                     plausible("50-swipes-survey-yes");
                     console.log("yes! ", cardCategory);
+                } else if (card.dataset.category === "25-swipes-survey-yes") {
+                    plausible("25-swipes-survey-yes");
+                    console.log("yes! ", cardCategory);
                 }
                 
             } else if (card.dataset.category === "50-swipes-survey-yes") {
                 plausible("50-swipes-survey-no");
+                console.log("no!");
+            } else if (card.dataset.category === "25-swipes-survey-yes") {
+                plausible("25-swipes-survey-no");
                 console.log("no!");
             }
             loadNextVideo();

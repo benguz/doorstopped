@@ -19,6 +19,10 @@ document.querySelectorAll('.aesthetic-button').forEach((button, index) => {
         window.location.href = "/skills/relationships";
       } else if (button.textContent === "Subversion") {
         window.location.href = "/skills/subversion";
-      }
+      } else if (button.textContent === "Power Plays") {
+        window.location.href = "/skills/plays";
+      } else if (button.textContent === "Cold Emailing") {
+        window.location.href = "/skills/coldemail";
+      } 
     });
   });
