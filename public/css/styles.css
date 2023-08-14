@@ -817,7 +817,7 @@ button {
 
 .hero {
     /* padding: 240px 0 140px; */
-    padding: 120px 0 140px;
+    padding: 90px 0 140px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -826,14 +826,18 @@ button {
 }
 
 .hero .button {
-    margin-top: 30px
+    /* margin-top: 30px */
 }
 
 .logo {
-    height: 100px;
+    /* height: 100px;
     width: 100px;
     z-index: 2;
-    top: 0
+    top: 0 */
+    height: 70px;
+    width: 100px;
+    z-index: 2;
+    top: 10px;
 }
 
 .logo img {
@@ -1023,7 +1027,8 @@ button {
 
 @media (max-width: 900px) {
     .hero {
-        padding: 140px 0 60px
+        /* padding: 140px 0 60px */
+        padding: 90px 0 60px
     }
 
     .screen-wrapper .screen {
@@ -1075,7 +1080,8 @@ button {
 }
 
 .features {
-    padding: 80px 0 100px;
+    /* padding: 80px 0 100px; */
+    padding: 55px 0 60px;
     position: relative;
     overflow: hidden;
     width: 100%

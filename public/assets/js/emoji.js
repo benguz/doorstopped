@@ -38,6 +38,10 @@ $(".emoji-element").click(function() {
     //   }
     if (emoji === "💤") {
       newElement = $(`<span class='floating-emoji'>${emoji}</span>`);
+    } else if (emoji === "❤️") {
+          tears = ["LOVE THIS", "❤️", "💗", "💖💖💖", "ILYYY", "💚", "🧡", "💛", "🤍", "💙"]
+          var tear = tears[Math.floor(Math.random() * tears.length)];
+          newElement = $(`<span class='floating-emoji'>${tear}</span>`);
     } else {
       var tear = tears[Math.floor(Math.random() * tears.length)]
       newElement = $(`<span class='floating-emoji'>${tear}</span>`);

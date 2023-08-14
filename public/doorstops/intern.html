@@ -12,7 +12,7 @@
   -->
   <title>How to get an internship as a high schooler | Doorstops</title>
   <meta name="title" content="How to get an internship as a high schooler | Doorstops">
-  <meta name="description" content="">
+  <meta name="description" content="A three-step guide to finding and landing cool internships you didn't know existed, plus email templates and examples.">
 
     <!-- 
       - favicon
@@ -158,6 +158,14 @@
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.15);
   border: 2px dashed blueviolet;
 }
+
+ 
+.floating-emoji {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
   </style>
   
     </head>
@@ -243,7 +251,7 @@
             <span class="aesthetic-button blue" style="color: black">Cold Emailing</span><span class="aesthetic-button pale" style="color: black" >Networking</span><span class="aesthetic-button green" style="color: black">Power Plays</span>
             <p>Other online guides will tell you to ask your teachers and neighbors for anyone they know that would hire you, or google "intership for high schoolers [your city name]."</p>
             <p>This isn't a bad place to start, but there's an easy email you can send to a company that'll get you an internship ASAP.</p>
-            <span  class="tard" style="width: 50%" ><span id="count" style="display: inline">147</span><button style="display: inline" onclick=quonk()>❤️</button> &nbsp;&nbsp;&nbsp; 17 verified success stories</span>
+            <span  class="tard emoji-element" style="width: 50%" ><span id="count" style="display: inline">147</span><button style="display: inline" onclick=quonk()>❤️</button> &nbsp;&nbsp;&nbsp; 17 verified success stories</span>
             <h2>1. Choose a company near you, or find one you like online</h2>
             <p>If you're not sure where to look, try the <a href="https://www.ycombinator.com/companies">Y Combinator list of companies</a>. Y Combinator is the place where innovative new companies go to raise money, so there are a lot of awesome places to work listed there. A lot of these companies would <strong>take high school interns</strong> because they're new companies: they just need smart people who are happy to help, they don't care if you have a college degree.</p>
             <p>Let's go through an example from Y Combinator:</p>
@@ -300,8 +308,6 @@ Hey [name],
 <br><br>- You guys could have a huge presence on YouTube: I've been making videos for my school's journalism club for years w/ 50,000 views.
 <br>- You've built TOO MANY awesome features, and as a first-time user it was hard to know what was what. I can create explainer videos for your landing page and onboarding.
 <br>- Money is super confusing for young entrepreneurs, and I could help you build interactive blog posts that make sure you win at SEO
-
-<br><br>[optional: "I come from an under-resourced high school where I don’t have opportunities to pursue work outside the classroom, so the opportunity to work with and learn from you would be invaluable."]"
           
 <br><br>Are you free to talk about how I could contribute? I'm free Mondays and Tuesdays after 3pm and any time Fridays.
 
@@ -507,7 +513,6 @@ With hope and gratitude,<br>
   <script>
     function quonk() {
       let likes = document.getElementById('count'); 
-      console.log(likes.textContent);
       if (likes.textContent === '147') {likes.textContent = '148'} else {likes.textContent = '147'}
     }
  
