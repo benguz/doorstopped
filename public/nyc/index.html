@@ -184,7 +184,7 @@ body {
 .progress-bar-container {
     display: flex;
     width: 100%;
-    height: 50px;
+    height: 100px;
     background: lightgrey;
 }
 
@@ -229,6 +229,43 @@ background-color: #FFD4B8;
 .pale {
 background-color: #FEB7B3;
 }
+
+
+.lard {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.lard:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+  .row {
+    flex-direction: column;
+  }
+}
 </style>
 
 </head>
@@ -270,27 +307,31 @@ background-color: #FEB7B3;
       <div class="progress-bar-container">
         <div class="progress-bar" style="width: 0%; transition: width 0.5s ease-out;"></div>
       </div>
-<!-- 
-    <div class="reset-styles slider-wrapper noswipe" id="noswipe">
-      <div class="reset-styles nard">
-      <p class="reset-styles" id="slider-text">I’m happy with what’s on my plate right now — all the food looks great! We might have different cultural values around what a healthy body looks like.</p>
-  </div>
-      <input type="range" min="1" max="9" value="5" class="reset-styles slider noswipe" id="myRange" step="1">
-      <div class="reset-styles slider-labels">
-        <label class="reset-styles slider-label-left"><strong>safe, clear, good boundaries</strong></label>
-        <label class="reset-styles slider-label-right"><strong>woke up and chose violence</strong></label>
-      </div>
-    </div> -->
-      <p class="reset-styles">I live in</p>
-      <p>Borough choice</p>
+      <p style="text-align: center; width: 98%; margin: auto; color: blueviolet; cursor: pointer;" onclick=reset()>reset progress bar</p>
+      <br><br>
+      <p>I live in...</p>
+      <div style="color: black; max-width: 100%">
+        <div class="row">
+      
+          <div id="brook"class="lard row" onclick="need(1, 'brook')">
+           Brooklyn
+          </div>
+          <div id="man" class="lard row" onclick="need(2, 'man')">
+            Manhattan
+          </div>
+          <div id="queens"class="lard row" onclick="need(3, 'queens')">
+              Queens
+            </div>
+            <div id="bronx"class="lard row" onclick="need(4, 'bronx')">
+              The Bronx
+            </div>
+            <div id="stat"class="lard row" onclick="need(5, 'stat')">
+              Staten Island
+            </div>
+        </div>
+        </div>
       <br><br>
         <!--Inspired by Artur Bień https://expensive.toys/toys/reactions-->
-
-
- 
-
-
-
 <br><br>
 
 <script>
@@ -312,6 +353,7 @@ let colorTexts = {
     F7A9A8: "😆😆😆",
     EF798A: "❤️❤️❤️"
 };
+
 $(".emoji-button").click(function() {
   let color = $(this).data('color');
     
@@ -381,8 +423,25 @@ $(".emoji-button").click(function() {
   }, 2000); // Remove the emoji after the animation completes (2 seconds)
 });
   
+function reset() {
+  
+}
   
 
+</script>
+<script>
+  let borough = 0 
+  let lastArray = ["brook", "man", "queens", "bronx", "stat"];
+  function need(n, id) {
+    if (borough > 0) {
+      document.getElementById(lastArray[borough - 1]).style.backgroundColor = 'white';
+      document.getElementById(lastArray[borough - 1]).style.flexGrow = '1';
+
+    }
+    document.getElementById(id).style.flexGrow = 2;
+    document.getElementById(id).style.backgroundColor = 'hsl(234, 44%, 88%)';
+    borough = n;
+  }
 </script>
 </body>
 
