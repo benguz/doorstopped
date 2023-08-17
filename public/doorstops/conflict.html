@@ -30,6 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <link href="/assets/css/dynamic.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/emoji.css">
  
 <style>
     body {
@@ -134,9 +135,44 @@
   border-bottom-left-radius: 10px;
 }
 
+.emoji-element {
+  width: 10%;
+  display: inline;
+}
+
+.emoji-box {
+  position: relative;
+  width: 100%;
+}
+/* .floating-emoji {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    opacity: 1;
+  } */
+
+ 
+p {
+  text-align: left;
+  max-width: 75%;
+  margin: auto;
+}
+
+.lard p {
+  max-width: 100%;
+
+}
 @media screen and (max-width: 620px) {
     .row {
         flex-direction: column;
+}
+.chat {
+  width: 99%;
+  margin: auto;
+  max-width: 100%;
+}
+p {
+  max-width: 100%;
 }
 }
 
@@ -153,7 +189,9 @@
     </h1>
       <h1><strong style="color: #aa0462">Or someone hurt you and </strong> <strong style="color: #cd6f6f">you don’t know if you should bring it up?</strong> <strong style="color: #d06348">Is it even worth confronting them?</strong></h1>
       <br><br>
-        <br><br>
+      <video id="badvibes"  autoplay muted loop width="400px" style="object-fit: contain; max-width: 98%; margin: auto;">
+        <source src="/assets/cards/mean/undercover-suspecting.webm" alt="mean girls funny" type="video/webm">
+      </video>    
       <h1 style="color: #2804aa">Let’s break it down. </h1>
       <br><br>
       <br><br>
@@ -162,7 +200,7 @@
       <br><br>
         <h1>Ok sweet so conflict is a normal part of life. But what do I do when I get in it? take some time and think about <em>you:</em></h1>
       <div style="color: black; max-width: 100%">
-          <p>I'm a...</p>
+          <p style="text-align: center;">I'm a...</p>
           <div class="row">
             <div id="shark" class="lard row" onclick="act(1)">
               Shark 🦈
@@ -194,9 +232,33 @@
           <br><br>
           <br><br>
           <h1>Mild 🔥</h1>
-          <p style="text-align: left;"><strong>The tea 🍵</strong><br>
+          <p style="text-align: left;" id="mild-main-scenario"><strong>The tea 🍵</strong><br>
             You have a close friend but she's starting to hang out more and more with another girl. <br>You notice they are bonding a lot and start feeling jealous. 
           </p>
+          <p id="mild-bridge-scenario" style="display: none;">
+            <strong>The tea 🍵</strong><br>
+            You're stuck watching your two close friends drift apart: one is jealous that the other isn't spending as much time with her.
+            </p>
+          <p id="mild-shark-goal" style="display: none;">
+            <strong>🦈 Goal</strong><br>
+            How can you be direct while still communicating that you care? 
+            This does not need to be a conflict! Don’t make it one! This isn’t beef, it's dino chicken nuggets! 🦕🍗
+            </p>
+            <p id="mild-turtle-goal" style="display: none;">
+              <strong>🐢 Goal</strong><br>
+              DO address how you are feeling because you are uncomfortable and hurt. Your feelings deserve to be heard.
+              </p>
+              <p id="mild-teddy-goal" style="display: none;">
+                <strong>🧸 Goal</strong><br>
+You can handle this convo :) don't laugh it off and pretend everything is totally fine! 
+                </p>
+                <p id="mild-boiling-goal" style="display: none;">
+                  <strong>♨️ Goal</strong><br>
+                  Face the conversation! DON’T let this pile on or ignore the pain of a friend growing distant.                 </p>
+                  <p id="mild-bridge-goal" style="display: none;">
+                    <strong>🌉 Goal</strong><br>
+                    Be honest with how their drifting apart is making YOU feel without starting drama!
+                    </p>
 <div class="chat" id="mild-chat">
   <div class="mine messages">
     <div class="message last">
@@ -221,41 +283,128 @@
           yeah hmmm I'll lyk
         </div>
       </div>
+      
       <div class="mine messages">
+        
         <div class="message last">
-            <div class="textbox" contenteditable="true" flex="5">
+            <div class="textbox" id="mild" contenteditable="true" flex="5">
                Respond here...
               </div>
+              <div class="emoji-box">
+                <div class="emoji-element"></div>
+                </div>  
+                <div class="emoji-box">
+                  <div class="emoji-element"></div>
+                  </div>  
          </div>
+
         </div>
-<!--           <p>Regina dissed Gretchen when she was talking to Karen and, instead of keeping this to herself or confronting Regina, both of which Karen is incapable of, Karen tells Gretchen, reigniting 18 years of violent, silent warfare between Gretchen and Regina.</p>
+        
+      <div class="lard" style="opacity: 0; transition-property: opacity;transition-duration: 0.5s" id="mild-feedback">
+
+      </div>
+      
+
+      <!--           <p>Regina dissed Gretchen when she was talking to Karen and, instead of keeping this to herself or confronting Regina, both of which Karen is incapable of, Karen tells Gretchen, reigniting 18 years of violent, silent warfare between Gretchen and Regina.</p>
           <p>Regina is *really* in the wrong and Karen is <em>kinda</em> in the wrong. Karen is worse than an innocent bystander but not quite a criminal.</p> -->
   </div>
-</div>
+  <div id="mild-second">
+
+  </div>
+  <div class="lard" style="opacity: 0; transition-property: opacity;transition-duration: 0.5s" id="mild-cont-feedback"></div>
+  <br><br>
+  <h2 style="display: none;" id="mild-closing">friendships come and go, but don't lose a good one over what could just be a miscommunication!</h2>
+  <br><br>
+  <br><br>   <br><br>
 <h1>Medium 🔥🔥</h1>
-<p style="text-align: left;"><strong>The tea 🍵</strong><br>
-  You and a friend take cute pics after school. She wants to post this one photo of the two of you but you tell her that you do not like the way you look in that photo.<br>A few hours later, she posts it anyway. 
+<p style="text-align: left;" id="medium-main-scenario"><strong>The tea 🍵</strong><br>
+  You and a friend take cute pics after school.<br>She wants to post this one photo of the two of you but you tell her that you do not like the way you look in that photo.<br>A few hours later, she posts it anyway. 
 </p>
+<p style="text-align: left; display: none;" id="medium-bridge-scenario">
+  <strong>The tea 🍵</strong><br>Your two friends are in a fight over the photos that they posted and you are watching it all go down. Your friend is hurting. 
+
+</p>
+<p id="medium-shark-goal" style="display: none;">
+  <strong>🦈 Goal</strong><br>
+  Call her out without criticizing her character.<br>If you're thinking, "ugh you always post pics where only you look good because all you care about is yourself," try the oreo sandwich strategy 🍞🍦🍞<br>
+  nice, challenge, nice.
+  </p>
+  <p id="medium-turtle-goal" style="display: none;">
+    <strong>🐢 Goal</strong><br>
+    DO address how you are feeling because you are uncomfortable and hurt. Your feelings deserve to be heard.
+    </p>
+    <p id="medium-teddy-goal" style="display: none;">
+      <strong>🧸 Goal</strong><br>
+You spam her post with funny comments. You laugh it off. Make your feelings heard, bestie!      </p>
+      <p id="medium-boiling-goal" style="display: none;">
+        <strong>♨️ Goal</strong><br>
+        DON’T just hold it in. Admit to yourself that she hurt ya (unintentionally!) and find a way to admit it to her, too.    <p id="medium-bridge-goal" style="display: none;">
+          <strong>🌉 Goal</strong><br>
+          Encourage the hurt friend to text or talk to the post-er.
+          If they are uncomfortable with confrontation, text the post-er!
+                    </p>
 <div class="chat" id="medium-chat">
   <div class="yours messages">
     <div class="message">
       posted!
     </div>
+    <div class="message">
+      spent so long on the caption haha
+    </div>
     </div>
       <div class="mine messages">
         <div class="message last">
-            <div class="textbox" contenteditable="true" flex="5">
+            <div class="textbox" id="medium" contenteditable="true" flex="5">
                Respond here...
               </div>
+              <div class="emoji-box">
+                <div class="emoji-element"></div>
+                </div> 
+                <div class="emoji-box">
+                  <div class="emoji-element"></div>
+                  </div>   
          </div>
         </div>   
-        </div>  
+        <div class="lard" style="opacity: 0; transition-property: opacity;transition-duration: 0.5s" id="medium-feedback"></div>
+ 
+          </div>  
 
-        <h1>Spicy 🔥🔥🔥</h1>
-        <p style="text-align: left;"><strong>The tea 🍵</strong><br>
+        <div id="medium-second">
+        
+        </div>
+        <div class="lard" style="opacity: 0; transition-property: opacity;transition-duration: 0.5s" id="medium-cont-feedback"></div>
+        <video id="medium-closing"  autoplay muted loop width="400px" style="object-fit: contain; max-width: 98%; margin: auto;">
+          <source src="/assets/cards/mean/ew-mean-girls.webm" alt="mean girls funny" type="video/webm">
+        </video>    
+        <br><br>
+        <br><br>   <br><br>
+        <h1>Spicyyy 🔥🔥🔥</h1>
+        <p style="text-align: left;" id="spicy-main-scenario"><strong>The tea 🍵</strong><br>
           You hung out with the guy you like from chemistry class 🧪🧑‍🔬 this past Saturday. But 🧪🧑‍🔬and Gretchen were a thing a few weeks ago. On Sunday Gretchen angrily texted you because how could you hang out with 🧪🧑‍🔬 - it breaks girl code!!
         </p> 
-        <div class="chat" id="medium-chat">
+        <p style="text-align: left; display: none;" id="spicy-bridge-scenario"><strong>The tea 🍵</strong><br>One of your friends is flirting with your other friend’s ex. This other friend got super mad and now things are really tense. 
+        </p>
+        <p id="spicy-shark-goal" style="display: none;">
+          <strong>🦈 Goal</strong><br>
+          How to respond to the mean text?          
+          Just bc you were attacked first doesn't mean you have to attack back. You win fights by keeping your hands clean, not by 
+          </p>
+          <p id="spicy-turtle-goal" style="display: none;">
+            <strong>🐢 Goal</strong><br>
+            DO address how you are feeling because you are uncomfortable and hurt. Your feelings deserve to be heard.
+            </p>
+            <p id="spicy-teddy-goal" style="display: none;">
+              <strong>🧸 Goal</strong><br>
+You can handle this convo :) don't laugh it off and pretend everything is totally fine! 
+              </p>
+              <p id="spicy-boiling-goal" style="display: none;">
+                <strong>♨️ Goal</strong><br>
+                Face the conversation! DON’T let this pile on or ignore the pain of a friend growing distant.                 </p>
+                <p id="spicy-bridge-goal" style="display: none;">
+                  <strong>🌉 Goal</strong><br>
+                  Be honest with how their drifting apart is making YOU feel without starting drama!
+                  </p>
+        <div class="chat" id="spicy-chat">
           <div class="yours messages">
             <div class="message">
               you hung out with 🧪🧑‍🔬 on saturday - what’s up with you?? what were you thinking?!? yk that breaks girl code
@@ -263,12 +412,38 @@
             </div>
               <div class="mine messages">
                 <div class="message last">
-                    <div class="textbox" contenteditable="true" flex="5">
+                    <div class="textbox"  id="spicy" contenteditable="true" flex="5">
                        Respond here...
                       </div>
+                      <div class="emoji-box">
+                        <div class="emoji-element"></div>
+                        </div>  
+                        <div class="emoji-box">
+                          <div class="emoji-element"></div>
+                          </div>  
                  </div>
                 </div>   
-                </div>  
+                <div class="lard" style="opacity: 0; transition-property: opacity;transition-duration: 0.5s" id="spicy-feedback"></div>
+   
+    
+                  </div> 
+
+                <div id="spicy-second">
+
+                </div>
+                <div class="lard" style="opacity: 0; transition-property: opacity;transition-duration: 0.5s" id="spicy-cont-feedback"></div>
+                <div id="spicy-closing"></div>
+
+                <h2>You made it 🎉🎊 whatcha gonna do next time there's beef?</h2>
+                <ul style="text-align: left">
+
+                  <li>Face conflict in the face. Don't pretend it doesn't exist 🧸❤️.</li>
+                  <li>We talk about people behind their backs to vent. Keeping everyone involved is harder, but more ~healing~ long term🩹🩹</li>
+                  <li>Sometimes you gotta take a lil blame for conflict 🙄🙄</li>
+                  <li>Don't 😤👊 attack the other peoples' character in anger</li>
+                  </ul>
+              </div>
+
       <br><br>
       <br><br>   <br><br>
       <br><br>   <br><br>
@@ -297,16 +472,33 @@ function act(n, id) {
   }
   if (closeit) {
     closeit.style.backgroundColor = 'white';
+    document.getElementById("mild-" + lastArray[last] + "-goal").style.display="none";
+    document.getElementById("medium-" + lastArray[last] + "-goal").style.display="none";
+    document.getElementById("spicy-" + lastArray[last] + "-goal").style.display="none";
+    if (last === 4) {
+      document.getElementById('mild-bridge-scenario').style.display="none";
+    document.getElementById('mild-main-scenario').style.display="block";
+    document.getElementById('medium-bridge-scenario').style.display="none";
+    document.getElementById('medium-main-scenario').style.display="block";
+    document.getElementById('spicy-bridge-scenario').style.display="none";
+    document.getElementById('spicy-main-scenario').style.display="block";
+    }
   }
   if (n === 1) {
     div = document.getElementById('shark');
     p.innerHTML = "<p>Let’s be real, you like it when there’s blood in the water. You enjoy being in the middle of the drama and maybe even like to cause drama, just a little, because hey life is boring without it. <strong>You aren’t afraid to speak your mind.</strong></p>";
+    document.getElementById('mild-shark-goal').style.display="block";
+    document.getElementById('medium-shark-goal').style.display="block";
+    document.getElementById('spicy-shark-goal').style.display="block";
 
     last = 0;
   } else if (n === 2) {
     div = document.getElementById('turtle');
 
     p.innerHTML = "<p>You hate conflict. It’s the worst. It makes you uncomfortable. So you do everything you can to avoid difficult situations and mean people. <strong>You can be in denial, and you might hide in your turtle shell</strong>.</p>";
+    document.getElementById('mild-turtle-goal').style.display="block";
+    document.getElementById('medium-turtle-goal').style.display="block";
+    document.getElementById('spicy-turtle-goal').style.display="block";
 
     last = 1;
 
@@ -314,6 +506,9 @@ function act(n, id) {
     div = document.getElementById('teddy');
 
     p.innerHTML = "<p>Life is easier when everyone is happy, so you do what it takes to keep your friends together.<strong> But that can come at a cost: a few things get pushed under the rug.</strong>.</p>";
+    document.getElementById('mild-teddy-goal').style.display="block";
+    document.getElementById('medium-teddy-goal').style.display="block";
+    document.getElementById('spicy-teddy-goal').style.display="block";
 
     last = 2;
      }
@@ -321,6 +516,9 @@ function act(n, id) {
     div = document.getElementById('boiling');
 
     p.innerHTML = "<p>You shoulder things. Let things pile on. And on and on. <strong>Until things boil over and people get hurt</strong>.</p>";
+    document.getElementById('mild-boiling-goal').style.display="block";
+    document.getElementById('medium-boiling-goal').style.display="block";
+    document.getElementById('spicy-boiling-goal').style.display="block";
 
     last = 3;
      }
@@ -328,72 +526,313 @@ function act(n, id) {
     div = document.getElementById('bridge');
 
     p.innerHTML = "<p>You are always stuck in the middle. Always caught in between two people who are in conflict. This is so tough. <strong>How do you help them both? How do you be the bridge between two friends?</strong></p>";
-
+    document.getElementById('mild-bridge-goal').style.display="block";
+    document.getElementById('medium-bridge-goal').style.display="block";
+    document.getElementById('spicy-bridge-goal').style.display="block";
+    document.getElementById('mild-bridge-scenario').style.display="block";
+    document.getElementById('mild-main-scenario').style.display="none";
+    document.getElementById('medium-bridge-scenario').style.display="block";
+    document.getElementById('medium-main-scenario').style.display="none";
+    document.getElementById('spicy-bridge-scenario').style.display="block";
+    document.getElementById('spicy-main-scenario').style.display="none";
     last = 4;
      }
 
     div.style.backgroundColor = 'hsl(234, 44%, 88%)';
+    p.style.marginLeft = "3px";
     div.append(p);
     currentExplainer = p;
 }
 
 
-    function type(n) {
-      judgey = document.getElementById("judgey");
-      loud = document.getElementById("loud");
-      comp = document.getElementById("comp");
-
-      collab = document.getElementById("collab");
-      man = document.getElementById("mantoman");
-      thanks = document.getElementById("thanks");
 
 
-      if (n === 1) {
-        judgey.style.backgroundColor = "hsl(351, 83%, 88%)";
-        loud.style.backgroundColor = "white";
-        comp.style.backgroundColor = "white";
-
-        thanks.style.display = "block";
-        man.style.display = "none";
-        collab.style.display = "none";
-
-        strategy = 1;
-
-
-      } else if (n === 2) {
-        judgey.style.backgroundColor = "white";
-        loud.style.backgroundColor = "hsl(42, 94%, 88%)";
-        comp.style.backgroundColor = "white";
-
-        man.style.display = "block";
-        thanks.style.display = "none";
-        collab.style.display = "none";
-
-        strategy = 2;
-
-      } else if (n === 3) {
-        judgey.style.backgroundColor = "white";
-        loud.style.backgroundColor = "white";
-        comp.style.backgroundColor = "hsl(234, 44%, 88%)"; 
-
-        collab.style.display = "block";
-        thanks.style.display = "none";
-        man.style.display = "none";
-
-        strategy = 3;
-      }
-    }
-
-    $(".textbox").on('keyup', function (e) {
-    if (e.key === 'Enter' || e.keyCode === 13) {
-      
-    }
-});
 </script>
 <script>
-  
+
+  let words = "";
+  var animations = ['floatPath2', 'floatPath3', 'floatPath4'];
+  fetch('/assets/data/emotionwords.txt')
+    .then(response => response.text())
+    .then(data => {
+        words = new Set(data.trim().toLowerCase().split('\n').map(word => word.trim()));
+      });
+        // Get the form and add a submit event listener
+        $(".textbox").on('keyup', function (e) {
+            if (e.key === 'Enter' || e.keyCode === 13) {
+              let input = this.textContent;
+              processText(input, this.id);
+              this.blur();
+            }
+        });
+
+          function processText(text, category) {
+            // https://www.tutorialspoint.com/how-to-convert-speech-to-text-using-javascript
+            // Remove punctuation and newlines and split the text into words
+            let tokens = text.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\n\r\t]/g," ").split(' ').filter(Boolean);;
+            let emotionwords = 0;
+            let but = 0;
+            // Count the occurrences
+            let wordCounts = {};
+            for (let token of tokens) {
+                if (words.has(token.trim())) {
+                  emotionwords++;
+                    if (token in wordCounts) {
+                        wordCounts[token]++;
+                    } else {
+                        wordCounts[token] = 1;
+                    }
+                } else if (token.trim() === "but") {
+                  but++;
+                }
+            }
+          
+            let feedback = document.getElementById(category + "-feedback")
+            feedback.textContent = "";
+            if (emotionwords === 0 && category != "medium-cont") {
+              let p = document.createElement("p");
+              p.textContent = `Awesome work! Try adding some emotion words like "hurt" or "frustrated" to your text :) it's OK to be honest about how you're doing`;
+              feedback.append(p);
+            }
+            if (but > 0) {
+              let q = document.createElement("p");
+              q.textContent = `Don't say "but" - use "and" or rephrase instead. "But" can seem confrontational and negative, like you're being nice, but... you're angry`;
+              feedback.append(q);
+            }
+            Array.from(document.querySelectorAll('.emoji-element')).forEach((element) =>
+            {
+              var animation = animations[Math.floor(Math.random() * animations.length)];
+              var tears = ["😳", "💅💅", "❤️", "💗", "💖💖", "💚", "🧡", "💛", "🤍", "💙"]
+              var tear = tears[Math.floor(Math.random() * tears.length)];
+              let newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+              
+              /* Apply the animation */
+              newElement.css('animation', `${animation} 1s forwards`);
+              newElement.css('left', `${Math.random()*100}%`);
+              newElement.css('top', `50%`);
+              $(element).parent().append(newElement);
+              setTimeout(function() {
+                newElement.remove();
+              }, 2000);
+            });
+          
+             
+            let r = document.createElement("p");
+            let cont = document.createElement("div");
+            let addtl = "";
+            let addtlChat = "";
+            cont.className = "chat"
+            if (category === "mild") {
+              r.innerHTML =`<p>We would've said:</p>
+              <div class="mine messages">
+            <div class="message last">
+              okie well i feel like i don't see much of u anymore so i would love to hang sometime soon              </div>
+              </div>
+              </div>
+              <p>Let's turn up the spice-o-meter a lil bit 🔥🔥 what if she turns into a slow texter? <strong>Hold her to hanging out on Wednesday!</strong></p>`
+              cont.innerHTML =`         
+              ~ 14 hrs later ~ 
+              <div class="yours messages">
+            <div class="message">
+              yea maybe nxt week?
+            </div>
+            </div>
+            <div class="mine messages">
+              <div class="message">
+                ok sweet! wyd weds night?
+            </div>
+            </div>
+            <br>
+            ~ 26 hrs later ~
+            <div class="yours messages">
+            <div class="message last">
+              i should be free
+            </div>
+            </div>
+              <div class="mine messages">
+                <div class="message last">
+                    <div class="textbox"  id="mild-cont" contenteditable="true" flex="5">
+                       Respond here...
+                      </div>
+                                <div class="emoji-box">
+                    <div class="emoji-element"></div>
+                  </div>  
+
+                    <div class="emoji-box">
+                <div class="emoji-element"></div>
+                </div>  
+                 </div>
+                </div>
+              `
+              document.getElementById("mild-second").append(cont);
+              addEventByID("mild-cont");
+            } else if (category === "medium") {
+            
+              r.textContent ="We would've said:"
+              if (last === 1)  {
+                r.innerHTML =`<p>You might think ignoring it is the only thing to do. She won’t do this again right?</p>
+                <p>You can let it slide the first time. Give her the benefit of the doubt. But if it does happen a second time you should think about saying to her:</p>`
+                  // turtle
+              }
+              cont.innerHTML =`         
+              <div class="mine messages">
+            <div class="message">
+              “hey i really didn’t like that u posted that photo of us together even though i told you that i didn’t like the way i looked in it. I love taking and posting pics together but next time please only post a pic with me in it that i am comfortable with”              </div>
+              </div> 
+              </div>
+              <br>
+              or...
+              <div class="mine messages">
+            <div class="message">
+              haha idk that i look good in this photo
+              </div>
+                          <div class="message">
+              idk sometimes insta stresses me out
+              </div>
+              </div>`
+              addtl = document.createElement("div");
+              addtl.className = "lard";
+              addtlChat= document.createElement("div");
+              addtlChat.className = "chat";
+              addtlChat.innerHTML =              `<div class="yours messages">
+            <div class="message">
+              nooo you look so good! i can archive it tho if you want
+            </div>
+            </div>
+            <div class="mine messages">
+                <div class="message last">
+                    <div class="textbox"  id="medium-cont" contenteditable="true" flex="5">
+                       Respond here...
+                      </div>
+                                <div class="emoji-box">
+                    <div class="emoji-element"></div>
+                  </div>  
+
+                    <div class="emoji-box">
+                <div class="emoji-element"></div>
+                </div>  
+                 </div>
+                </div>
+              
+              `
+              if (last === 3) {
+                addtl.textContent = `Hold up!! Feelings and emotions are normal!!!  
+What do you want to change? Do you want an apology? For them to not do it again? For them to ask your permission before posting? Take a sec to think ab it. 
+`
+              } else if (last === 2) {
+                addtl.innerHTML = `<p><strong>Try the oreo sandwich strategy 🍞🍦🍞</strong><br>Say three things: one nice thing, one challenge, one nice thing!`
+                addtlChat.innerHTML = `<div class="mine messages">
+                <div class="message last">
+                    <div class="textbox"  id="medium-cont" contenteditable="true" flex="5">
+                       Respond here...
+                      </div>
+                                <div class="emoji-box">
+                    <div class="emoji-element"></div>
+                  </div>  
+
+                    <div class="emoji-box">
+                <div class="emoji-element"></div>
+                </div>  
+                 </div>
+                </div>`
+
+              } else {
+                addtl.textContent = `What do you want to change? Do you want an apology? For them to not do it again? For them to ask your permission before posting? Take a sec to think ab it.`
+             
+              }
+
+
+              document.getElementById("medium-second").append(cont);
+              document.getElementById("medium-second").append(addtl);
+              document.getElementById("medium-second").append(addtlChat);
+              addEventByID("medium-cont");
+            } else if (category === "spicy") {
+              r.textContent ="But Awesome work! Here's what we would've said:"
+              cont.innerHTML =`          <div class="yours messages">
+            <div class="message">
+             mmmmmmm
+            </div>
+            </div>
+              <div class="mine messages">
+                <div class="message last">
+                    <div class="textbox"  id="spicy-cont" contenteditable="true" flex="5">
+                       Respond here...
+                      </div>
+                      <div class="emoji-box">
+                    <div class="emoji-element"></div>
+                    </div>
+                    <div class="emoji-box">
+                                        <div class="emoji-element"></div>
+
+                    </div>  
+                 </div>
+                </div>
+              `
+              document.getElementById("spicy-second").append(cont);
+              addEventByID("spicy-cont");
+            } else if (category === "mild-cont") {
+              r.innerHTML = `<p>This is scary! What if she doesn’t like me anymore? Or are we drifting apart? How can I know?</p>
+              <p>Short, slow text messages could come from *anything* - she might be totally excited!</p>
+              <div class="mine messages">
+                <div class="message">
+                  hey i miss you!                 </div>
+                <div class="message last">
+                  are u free to hang just us on friday night? we could watch a rom com and do face masks :)
+                 </div>
+                 </div>
+              <p><strong>✨💫Magical response:</strong><br>*bring this up later when you're hanging out* </p>
+              <div class="mine messages">
+                <div class="message last">
+                  hey i feel like we've been drifting apart a little - i just wanna ask, is there anything i can do differently as a friend so we have more fun when we do hang out? weird question ik, this youtuber told me to ask it
+                 </div>
+                 
+                </div>
+                This is also a great message to send if your friend responds more like "idk im kind of busy these days"`
+                let closing = document.getElementById('mild-closing').style.display="block";
+                if (last === 2) { // teddy 
+                }
+              } else if (category === "medium-cont") {
+                r.innerHTML = `
+                <p>Your response 100% depends on if you think that's a good solution for you! We said:</p>
+                <div class="mine messages">
+                <div class="message">
+                  tbh i kinda would like that but if not no worries
+                  
+                 </div>
+                 <div class="message">
+                  maybe nxt time ill look better                  
+                 </div>
+                </div>
+                <div class="yours messages">
+            <div class="message">
+              aww no u always look good! 
+            </div>
+                        <div class="message">
+                          maybe we can get more pics after practice tomm?
+            </div>
+            </div>
+            <div class="mine messages">
+                <div class="message last">
+                  im down! hopefully this time we both look 🔥
+                 </div>
+            </div>`
+              }
+            feedback.append(r);
+            
+            feedback.style.opacity = "1";
+          }
+        function addEventByID(id) {
+          $("#" + id).on('keyup', function (e) {
+            if (e.key === 'Enter' || e.keyCode === 13) {
+              let input = this.textContent;
+              processText(input, this.id);
+              this.blur();
+            }
+        });
+        }
       </script>
         <script src="/assets/js/script.js" defer></script>
+        <script src="/assets/js/emoji.js"></script>
 
 </body>
 
