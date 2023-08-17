@@ -197,7 +197,7 @@
           <p style="text-align: left;"><strong>The tea 🍵</strong><br>
             You have a close friend but she's starting to hang out more and more with another girl. <br>You notice they are bonding a lot and start feeling jealous. 
           </p>
-<div class="chat">
+<div class="chat" id="mild-chat">
   <div class="mine messages">
     <div class="message last">
       are you free to hang out saturday? i'm making cookies!
@@ -232,10 +232,43 @@
           <p>Regina is *really* in the wrong and Karen is <em>kinda</em> in the wrong. Karen is worse than an innocent bystander but not quite a criminal.</p> -->
   </div>
 </div>
-      
-      
-      
-    
+<h1>Medium 🔥🔥</h1>
+<p style="text-align: left;"><strong>The tea 🍵</strong><br>
+  You and a friend take cute pics after school. She wants to post this one photo of the two of you but you tell her that you do not like the way you look in that photo.<br>A few hours later, she posts it anyway. 
+</p>
+<div class="chat" id="medium-chat">
+  <div class="yours messages">
+    <div class="message">
+      posted!
+    </div>
+    </div>
+      <div class="mine messages">
+        <div class="message last">
+            <div class="textbox" contenteditable="true" flex="5">
+               Respond here...
+              </div>
+         </div>
+        </div>   
+        </div>  
+
+        <h1>Spicy 🔥🔥🔥</h1>
+        <p style="text-align: left;"><strong>The tea 🍵</strong><br>
+          You hung out with the guy you like from chemistry class 🧪🧑‍🔬 this past Saturday. But 🧪🧑‍🔬and Gretchen were a thing a few weeks ago. On Sunday Gretchen angrily texted you because how could you hang out with 🧪🧑‍🔬 - it breaks girl code!!
+        </p> 
+        <div class="chat" id="medium-chat">
+          <div class="yours messages">
+            <div class="message">
+              you hung out with 🧪🧑‍🔬 on saturday - what’s up with you?? what were you thinking?!? yk that breaks girl code
+            </div>
+            </div>
+              <div class="mine messages">
+                <div class="message last">
+                    <div class="textbox" contenteditable="true" flex="5">
+                       Respond here...
+                      </div>
+                 </div>
+                </div>   
+                </div>  
       <br><br>
       <br><br>   <br><br>
       <br><br>   <br><br>
@@ -350,6 +383,12 @@ function act(n, id) {
         strategy = 3;
       }
     }
+
+    $(".textbox").on('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      
+    }
+});
 </script>
 <script>
   
