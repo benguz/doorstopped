@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Negotiate a better school day with data | Doorstops</title>
+  <meta name="title" content="Negotiate a better school day with data | Doorstops">
+  <meta name="description" content="">
+  <meta property="og:url" content="https://doorstopped.org/">
+  <meta property="og:image" content="https://doorstopped.org/assets/images/og/og-leverage.png">
+  <meta name="twitter:image" content="https://doorstopped.org/assets/images/og/og-leverage.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/emoji.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+  <style>
+      @media screen and (max-width: 1023px){
+.framebox {
+height: 34000em;
+}
+.sidenavtotal {
+display:none;
+padding: 0em;
+}
+#sidenav{
+display:none;
+
+}
+#toc {
+  display:none;
+}
+.desktop {
+  display: none;
+}
+}
+.yonk {
+  width: 97%;
+  margin-left: 1.5%;
+}
+@media (min-width: 1024px) {
+/* main {
+  display:flex; 
+  justify-content:center;
+} 
+.yonk {
+            width: 55%;  
+            margin-left: 22.5%; 
+            padding: 0 10px;
+            box-sizing: border-box;
+        }*/
+
+.yonk {
+  flex: 3;
+}
+.sidenavtotal {
+  flex: 1;
+}
+
+
+}
+
+
+.yonk p {
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+  font-size: 14pt;
+}
+
+.yonk p, h1, h2, h3, li {
+  color: black;
+}
+
+.yonk a {
+  text-decoration: underline;
+  display: inline;
+}
+h1 {
+  font-size: 27pt;
+  text-decoration: none;
+}
+h2 {
+  margin-top: 1em;
+  font-size: 20pt;
+}
+
+.badonk {
+  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+  padding-left: 30px;
+  font-size: 14pt;
+
+}
+.honk {
+  list-style-type: disc !important; 
+}
+
+</style>
+
+  </head>
+
+<body id="top">
+
+  <header class="header" data-header>
+    <div class="container" min-width="620em">
+
+      <a href="/student" class="logo">
+        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="/student" class="logo">
+            <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+          </div>
+             <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="/mission" class="navbar-link" data-nav-link>Mission</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/dashboard" class="navbar-link" data-nav-link>Doorstops</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/programs/" class="navbar-link" data-nav-link>Programs</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/time" class="navbar-link" data-nav-link>Data</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <a href="/yourschool" class="btn has-before">
+          <span class="span">Get the Fellas</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  
+  </header>
+
+      
+    <main>
+      <div style="display: flex; flex-direction: row;">
+      <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
+      
+          <br class="desktop"><br class="desktop">
+          <br class="desktop"><br class="desktop">
+          <br class="desktop">
+      <div id="sidenav"></div>
+      </div> 
+        <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center;">
+          <br class="desktop"><br class="desktop">
+          <br><br>
+          <br><br>
+          <h1 style="line-height: 1.4em">Your school owes you. <strong style="color: rgb(99, 70, 215)">Prove they're letting you down.</strong></h1>
+          <p class="subtitle" style="margin: 0; color: #989aa2;">That'll give you the leverage you need to change the system</p>
+
+          <h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/cowboy.png">The "student information system" market is worth <em>$10.2 billion</em>... why?</h2>
+          <p>Your <strong>data</strong>—grades, attendance, emotions, anything that could be in a survey—is valuable because it's used to <strong>fund schools, rate schools, and promote or fire teachers and administrators</strong>.</p>
+          <div class="warning-box" style="background-color: rgb(205, 255, 220); border-color: rgb(70, 215, 114)">
+            <button class="warning-icon" onclick="window.location.href = '/research/metrics'">
+                <img width="24px" height="24px" src="/assets/images/praise.png">
+            </button>
+            <div>
+                <p>Schools pay education technology companies millions: NYC schools pay $10.5 million <a href="https://www.openthebooks.com/assets/1/6/Panorama_Education_School_District_Payment_Survey_2017-2020.pdf">to a company that runs surveys and organizes the results</a>.</p>
+                <p>They need all this because their info is <a href="/research/metrics">disorganized and super hard to use</a>, even with these expensive services.</p>
+                <p>Many of these companies then <em>sell your data</em> to other companies, making money off you.</p>
+            </div>
+            </div>
+          <h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/cowboy.png">Unproductive classes can be <em>way</em> less boring</h2>
+          <!-- <p class="subtitle" style="margin: 0; color: #989aa2;">Data is powerful because it's hard to argue with.</p> -->
+          <div class="warning-box" style="background-color: #FF5E7E; border-color: #9C0B29;">
+            <button class="warning-icon emoji-element" >
+                😡
+            </button>
+            <div>
+              <p><strong>Broke:</strong> "UGH THIS CLASS IS SO BORING." *takes out phone during class, complains to everyone during lunch*</p>
+            </div>
+            <video   autoplay muted loop width="20%" style="object-fit: contain; margin: auto; padding-left: 3px;">
+                <source src="/assets/cards/depressed-bored.webm" alt="panda shaking its bum" type="video/webm">
+              </video>   
+          </div>
+          <div class="warning-box" style="background-color: #9ce1a8; border-color: #8dd4b2; margin-top: 0.5em;">
+            <button class="warning-icon emoji-element" >
+                🙌
+            </button>
+            <div>
+              <p><strong>Yoked:</strong> *tracks what % of class time is productive on phone and shows data to the teacher*</p>
+ 
+            </div>
+            <video   autoplay muted loop width="20%" style="object-fit: contain; margin: auto; padding-left: 3px;">
+                <source src="/assets/cards/panda-dancing.webm" alt="panda shaking its bum" type="video/webm">
+              </video>              
+            </div>
+
+          <p>When you show your teacher that you timed how much class time you spent learning, and when that number is... low, your teacher <strong>has to take you seriously</strong>.</p>
+          <p>That's your chance to ask for different material, different types of teaching (less lecture!), more breaks, or <a href="/doorstops/care">just showing that they care</a>.</p>
+          <p><strong>Example:</strong> (send this anonymously <a href="/doorstops/feedback">here</a>)</p>
+          <div class="copy-paste-element">
+            <p>Hi </p>
+            <button class="copy-icon" onclick="copyText(event)">
+              <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+              </svg>
+            </button>
+          </div>
+          <!-- <p>Se</p> -->
+        <div class="warning-box" style="background-color: rgb(211, 205, 255); border-color: rgb(99, 70, 215)">
+            <button class="warning-icon" onclick="window.location.href = '/doorstops/dominance'">
+                <img width="24px" height="24px" src="/assets/images/zzz.png">
+            </button>
+            <div>
+                <p>Not sure what's wrong with class, or don't think there's anything you could change? Check out <a href="/doorstops/dominance">this page for strict teachers</a> and <a href="/doorstops/hard">this page for nice ones</a>, and <a href="/doorstops/awful">this page for an example of changing curriculum and bad policy</a>.</p>
+            </div>
+            </div>
+            <h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/spazz.png"> Data is the first step to everything from making lunch edible to statewide policy change</h2>
+            <p>Collecting data can get you <a href="/programs/eat">better school lunches</a>, <a href="/doorstops/poop">get cleaner bathrooms</a>, or help <a href="/doorstops/naptime">bring back naptime</a>.</p>
+            <p>In Illinois, students got a law passed that ended Zero Tolerance, a racist policy that suspended and expelled students for insubordination, by first <a href="/school/selfie">fighting for the state congress to collect data</a> on suspension rates by race.</p>
+            <p>Data is the first step to half our Doorstops!</p>
+            <div class="warning-box" style="background-color: rgb(255, 205, 213); border-color: rgb(215, 70, 94)">
+                <button class="warning-icon" >
+                    <img width="24px" height="24px" src="/assets/images/monkey.png">
+                </button>
+                <div>
+                    <p><strong>Find a problem &rarr; Collect Data &rarr; Use it to pitch a solution</strong></p>
+                </div>
+                </div>
+            <p></p>
+          <h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/spy.png"> Hold your school accountable with simple surveys</h2>
+          <p><strong>Find statements your schools made about improving school</strong>. These statements always use the phrase "we're taking steps to..." on important changes. Google this:</p>
+
+          <div class="copy-paste-element">
+            <div>
+              <p>[your school's name] "taking steps" after:2019</p>
+            </div>
+            <button class="copy-icon" onclick="copyText(event)">
+              <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+              </svg>
+            </button>
+          </div>          
+          <p>No results? try:</p>
+          <div class="copy-paste-element">
+            <p>[your school's name] "taking steps" after:2019 filetype:pdf</p>
+            <button class="copy-icon" onclick="copyText(event)">
+              <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+              </svg>
+            </button>
+          </div>
+          <p>Are they following through on these promises? If not, you've found <em>leverage</em> you can bring to the negotiating table with administrators.</p>
+          <p><strong>Example: a teacher harasses you for your identity</strong></p>
+          
+          <div class="copy-paste-element">
+            <div>
+            <p>The school promised it was "taking steps to make sure LGBTQ+ youth have safe spaces at school" in its October press release.<br><br>
+I hope to hold the school accountable for this promise, as I have not seen changes since it was made.<br><br>
+
+20% of LGBTQ students I surveyed felt this promise had not been upheld. 75% voiced the desire for a dedicated classroom they can go to when they feel uncomfortable in class.<br><br>
+
+We suggest the library, as it is already a quiet space with study rooms that are rarely used.
+</p>
+            </div>
+            <button class="copy-icon" onclick="copyText(event)">
+              <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="warning-box">
+            <button class="warning-icon" >
+                <img width="24px" height="24px" src="/assets/images/cowboy.png">
+            </button>
+            <div>
+                <p><strong>Keys:</strong></p>
+                <ul class="badonk">
+                    <li class="honk"><p>don't say "you did..." say "the school did..." You'll come off less confrontational.</p></li>
+                    <li class="honk"><p>Lead with the big numbers. Don't say "We surveyed X students on Tuesday the 21st, then analyzed the data..." Get to it.</p></li>
+                </ul>
+            </div>
+            </div>
+
+            <p>Here's a template:</p>
+          <div class="copy-paste-element">
+            <p>The school promised it was [quote the source: "taking steps to..."] in its [name of source].<br><br>
+I hope to hold the school accountable to this promise, as [I/my friends] have [not seen changes // describe specific negative experiences]<br><br>
+
+[If you collected survey data, pitch it fast here.]
+
+We suggest [solution/change - doesn't have to be a big, complicated idea, but it can be!]
+</p>
+            <button class="copy-icon" onclick="copyText(event)">
+              <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+              </svg>
+            </button>
+          </div>
+          <p>Collecting data is easy. Send out a survey or ask people in the halls for a quick yes/no. Make sure to get at least 20-30 responses, and the more you get, the better.</p>  
+          <p>Don't just show data to your principal. Share it with the community: parents, teachers, and even school board members <a href="/school/allies">can be your biggest supporters</a>, and you'll need them to make change. We're always here to help! Email us at <a href="mailto:ben@fix.school">ben@fix.school</a> with questions or <a href="https://instagram.com/doorstopeducation">DM us on IG</a>.</p>      
+          <h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/trophy.png"> Join thousands of students nationwide building *pristine* data</h2>
+          <p>We're doing a nationwide experiment on learning time (<a href="/time">send us your numbers!</a>). On average, less than 50% of class time is spent learning.</p>
+          <p>Join in, then use our dataset to change your school. Stay tuned for a guide to making claims like:</p>
+            <div class="copy-paste-element">
+                <div>
+                  <p>"We are below average for learning time compared to similar schools, and I think it's because [problem]. What if instead we tried [solution]?"</p>
+                </div>
+                <button class="copy-icon" onclick="copyText(event)">
+                  <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                    <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+                  </svg>
+                </button>
+              </div> 
+              <p>Filled in Example:</p>
+              <div class="copy-paste-element">
+                <div>
+                  <p>"We are below average for learning time compared to similar schools, and I think it's because lectures are scripted. What if instead we tried having teachers write their own lesson plans, maybe collaborating with former students? We could try it for one week of classes next month and see if learning time improves!"</p>
+                </div>
+                <button class="copy-icon" onclick="copyText(event)">
+                  <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                    <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+                  </svg>
+                </button>
+              </div>   
+         <br><br>
+          <br><br>
+            </div>
+            <div class="sidenavtotal" style="padding:3em;">
+      
+                <br class="desktop"><br class="desktop">
+                <br class="desktop"><br class="desktop">
+                <br class="desktop">
+              <div id="toc"></div>
+              </div>
+      
+    </main>
+
+
+<div id="footer-placeholder">
+
+</div>
+<script>
+    $(function(){
+      $("#footer-placeholder").load("/footer.html");
+    });
+    
+    </script>
+
+
+
+
+<!-- 
+  - #BACK TO TOP
+-->
+
+<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+  <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+</a>
+
+  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/emoji.js"></script>
+
+  <script src="/components/sidenaveh.js"> 
+</script>
+
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+<footer>
+
+</footer>
+
+
