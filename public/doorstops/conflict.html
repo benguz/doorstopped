@@ -162,9 +162,16 @@ p {
   max-width: 100%;
 
 }
+#spicy-second > .lard, #medium-second > .lard {
+  width: 70%;
+  margin: auto;
+}
 @media screen and (max-width: 620px) {
     .row {
         flex-direction: column;
+}
+#spicy-second > .lard, #medium-second > .lard {
+  width: 99%;
 }
 .chat {
   width: 99%;
@@ -233,12 +240,14 @@ p {
           <br><br>
           <h1>Mild 🔥</h1>
           <p style="text-align: left;" id="mild-main-scenario"><strong>The tea 🍵</strong><br>
-            You have a close friend but she's starting to hang out more and more with another girl. <br>You notice they are bonding a lot and start feeling jealous. 
+            You have a close friend but she's starting to hang out more and more with another girl. You notice they are bonding a lot and start feeling jealous. 
           </p>
+
           <p id="mild-bridge-scenario" style="display: none;">
             <strong>The tea 🍵</strong><br>
             You're stuck watching your two close friends drift apart: one is jealous that the other isn't spending as much time with her.
             </p>
+            <br>
           <p id="mild-shark-goal" style="display: none;">
             <strong>🦈 Goal</strong><br>
             How can you be direct while still communicating that you care? 
@@ -246,7 +255,7 @@ p {
             </p>
             <p id="mild-turtle-goal" style="display: none;">
               <strong>🐢 Goal</strong><br>
-              DO address how you are feeling because you are uncomfortable and hurt. Your feelings deserve to be heard.
+              Your feelings deserve to be heard :) share that you are uncomfortable and hurt. 
               </p>
               <p id="mild-teddy-goal" style="display: none;">
                 <strong>🧸 Goal</strong><br>
@@ -308,7 +317,7 @@ You can handle this convo :) don't laugh it off and pretend everything is totall
       <!--           <p>Regina dissed Gretchen when she was talking to Karen and, instead of keeping this to herself or confronting Regina, both of which Karen is incapable of, Karen tells Gretchen, reigniting 18 years of violent, silent warfare between Gretchen and Regina.</p>
           <p>Regina is *really* in the wrong and Karen is <em>kinda</em> in the wrong. Karen is worse than an innocent bystander but not quite a criminal.</p> -->
   </div>
-  <div id="mild-second">
+  <div id="mild-second" style="width: 100%;">
 
   </div>
   <div class="lard" style="opacity: 0; transition-property: opacity;transition-duration: 0.5s" id="mild-cont-feedback"></div>
@@ -318,15 +327,17 @@ You can handle this convo :) don't laugh it off and pretend everything is totall
   <br><br>   <br><br>
 <h1>Medium 🔥🔥</h1>
 <p style="text-align: left;" id="medium-main-scenario"><strong>The tea 🍵</strong><br>
-  You and a friend take cute pics after school.<br>She wants to post this one photo of the two of you but you tell her that you do not like the way you look in that photo.<br>A few hours later, she posts it anyway. 
+  You and a friend take cute pics after school. She wants to post this one photo of the two of you but you tell her that you do not like the way you look in that photo.<br><br>A few hours later, she posts it anyway. 
 </p>
+
 <p style="text-align: left; display: none;" id="medium-bridge-scenario">
   <strong>The tea 🍵</strong><br>Your two friends are in a fight over the photos that they posted and you are watching it all go down. Your friend is hurting. 
 
 </p>
+<br>
 <p id="medium-shark-goal" style="display: none;">
   <strong>🦈 Goal</strong><br>
-  Call her out without criticizing her character.<br>If you're thinking, "ugh you always post pics where only you look good because all you care about is yourself," try the oreo sandwich strategy 🍞🍦🍞<br>
+  Call her out without criticizing her character.<br><br>If you're thinking, "ugh you always post pics where only you look good because all you care about is yourself," try the oreo sandwich strategy 🍞🍦🍞<br>
   nice, challenge, nice.
   </p>
   <p id="medium-turtle-goal" style="display: none;">
@@ -380,27 +391,44 @@ You spam her post with funny comments. You laugh it off. Make your feelings hear
         <br><br>   <br><br>
         <h1>Spicyyy 🔥🔥🔥</h1>
         <p style="text-align: left;" id="spicy-main-scenario"><strong>The tea 🍵</strong><br>
-          You hung out with the guy you like from chemistry class 🧪🧑‍🔬 this past Saturday. But 🧪🧑‍🔬and Gretchen were a thing a few weeks ago. On Sunday Gretchen angrily texted you because how could you hang out with 🧪🧑‍🔬 - it breaks girl code!!
+          You hung out with the guy you like from chemistry class 🧪🧑‍🔬 this past Saturday. But 🧪🧑‍🔬and Gretchen were a thing a few weeks ago. On Sunday Gretchen angrily texted you because how could you hang out with 🧪🧑‍🔬 - it breaks girl code!!<br><br><strong>You *don't* think you waaaaaaay broke girl code</strong>, you were gonna ask her for permission and just... didn't bring it up to her before the first hang out. You didn't even kiss!
         </p> 
         <p style="text-align: left; display: none;" id="spicy-bridge-scenario"><strong>The tea 🍵</strong><br>One of your friends is flirting with your other friend’s ex. This other friend got super mad and now things are really tense. 
         </p>
+        <br>
         <p id="spicy-shark-goal" style="display: none;">
           <strong>🦈 Goal</strong><br>
-          How to respond to the mean text?          
-          Just bc you were attacked first doesn't mean you have to attack back. You win fights by keeping your hands clean, not by 
+          Don't bite! What's gonna change her mind: yelling at her or listening to her side of the story and finding common ground?
           </p>
-          <p id="spicy-turtle-goal" style="display: none;">
-            <strong>🐢 Goal</strong><br>
-            DO address how you are feeling because you are uncomfortable and hurt. Your feelings deserve to be heard.
-            </p>
+          <div id="spicy-turtle-goal" style="display: none;">
+            <p><strong>🐢 Goal</strong><br>
+            This feels like a minefield. Maybe it feels like everything you say will be misinterpreted or turned against you. Diffuse the mines by:</p>
+            <ul style="margin: auto;">
+              <li><p style="max-width: none"><strong>Acknowledging how hard this is</strong> ("I'm anxious about how you'll read this")</p>
+              </li>
+              <li><p style="max-width: none"><strong>Speaking slow</strong> ("From my perspective, it looks like...")</p>
+              </li>
+              <li><p style="max-width: none"><strong>Asking questions</strong> (listening beats fighting!)</p>
+              </li>
+            </ul>
+          </div>
             <p id="spicy-teddy-goal" style="display: none;">
               <strong>🧸 Goal</strong><br>
-You can handle this convo :) don't laugh it off and pretend everything is totally fine! 
-              </p>
-              <p id="spicy-boiling-goal" style="display: none;">
-                <strong>♨️ Goal</strong><br>
-                Face the conversation! DON’T let this pile on or ignore the pain of a friend growing distant.                 </p>
-                <p id="spicy-bridge-goal" style="display: none;">
+              DONT try to patch things over at the expense of your own feelings. Honestly communicate how you feel! 
+            </p>
+              <div id="spicy-boiling-goal" style="display: none;">
+                <p><strong>♨️ Goal</strong><br>
+Clearing the air from all that steam ya got boiling! If you're worried whatcha say'll be misinterpreted, try: </p>
+<ul style="margin: auto;">
+  <li><p style="max-width: none"><strong>Acknowledging how hard this is</strong> ("I'm anxious about how you'll read this")</p>
+  </li>
+  <li><p style="max-width: none"><strong>Speaking slow</strong> ("From my perspective, it looks like...")</p>
+  </li>
+  <li><p style="max-width: none"><strong>Asking questions</strong> (listening beats fighting!)</p>
+  </li>
+</ul>
+</div>              
+<p id="spicy-bridge-goal" style="display: none;">
                   <strong>🌉 Goal</strong><br>
                   Be honest with how their drifting apart is making YOU feel without starting drama!
                   </p>
@@ -424,16 +452,16 @@ You can handle this convo :) don't laugh it off and pretend everything is totall
                  </div>
                 </div>   
                 <div class="lard" style="opacity: 0; transition-property: opacity;transition-duration: 0.5s" id="spicy-feedback"></div>
-   
-    
                   </div> 
 
-                <div id="spicy-second">
+                <div id="spicy-second" style="width: 100%;">
 
                 </div>
                 <div class="lard" style="opacity: 0; transition-property: opacity;transition-duration: 0.5s" id="spicy-cont-feedback"></div>
-                <div id="spicy-closing"></div>
-
+                <video id="spicy-closing"  autoplay muted loop width="400px" style="object-fit: contain; max-width: 98%; margin: auto;">
+                  <source src="/assets/cards/mean/postop-recovery.webm" alt="mean girls funny" type="video/webm">
+                </video>    
+                <br><br>
                 <h2>You made it 🎉🎊 whatcha gonna do next time there's beef?</h2>
                 <ul style="text-align: left">
 
@@ -441,6 +469,7 @@ You can handle this convo :) don't laugh it off and pretend everything is totall
                   <li>We talk about people behind their backs to vent. Keeping everyone involved is harder, but more ~healing~ long term🩹🩹</li>
                   <li>Sometimes you gotta take a lil blame for conflict 🙄🙄</li>
                   <li>Don't 😤👊 attack the other peoples' character in anger</li>
+                  <li>💖Share💖Feelings💖 even if they're about how anxious you are to have *this* convo! It makes your 💅💅 positive intentions clear.</li>
                   </ul>
               </div>
 
@@ -589,7 +618,7 @@ function act(n, id) {
           
             let feedback = document.getElementById(category + "-feedback")
             feedback.textContent = "";
-            if (emotionwords === 0 && category != "medium-cont") {
+            if (emotionwords === 0 && category != "medium-cont" && category != "spicy") {
               let p = document.createElement("p");
               p.textContent = `Awesome work! Try adding some emotion words like "hurt" or "frustrated" to your text :) it's OK to be honest about how you're doing`;
               feedback.append(p);
@@ -657,6 +686,9 @@ function act(n, id) {
                                 <div class="emoji-box">
                     <div class="emoji-element"></div>
                   </div>  
+                  <div class="emoji-box">
+                    <div class="emoji-element"></div>
+                  </div>  
 
                     <div class="emoji-box">
                 <div class="emoji-element"></div>
@@ -707,6 +739,9 @@ function act(n, id) {
                                 <div class="emoji-box">
                     <div class="emoji-element"></div>
                   </div>  
+                  <div class="emoji-box">
+                    <div class="emoji-element"></div>
+                  </div>  
 
                     <div class="emoji-box">
                 <div class="emoji-element"></div>
@@ -747,28 +782,54 @@ What do you want to change? Do you want an apology? For them to not do it again?
               document.getElementById("medium-second").append(addtlChat);
               addEventByID("medium-cont");
             } else if (category === "spicy") {
-              r.textContent ="But Awesome work! Here's what we would've said:"
-              cont.innerHTML =`          <div class="yours messages">
+              r.textContent ="Spicy response 🌶️🥵 Here's what we would've said:"
+              cont.innerHTML =`          <div class="mine messages">
             <div class="message">
-             mmmmmmm
+              hey can we talk ab this after class tomm?
             </div>
             </div>
+            <br>
+              or...
               <div class="mine messages">
+            <div class="message last">
+              hey im sorry i didn’t talk about this with you earlier. i honestly started liking him rlly recently, i still should have told you. i care about you and i also rlly like him and want to hang w him. if u want to talk ab it tomm after school/at lunch im down
+            </div>
+            </div>
+              `
+              addtl = document.createElement("div");
+              addtl.className = "lard";
+              addtlChat= document.createElement("div");
+              addtlChat.className = "chat";
+              addtlChat.innerHTML =              `<div class="yours messages">
+            <div class="message">
+              no i dont wanna talk later u better fucking explain yourself rn
+            </div>
+            </div>
+            <div class="mine messages">
                 <div class="message last">
                     <div class="textbox"  id="spicy-cont" contenteditable="true" flex="5">
                        Respond here...
                       </div>
-                      <div class="emoji-box">
+                                <div class="emoji-box">
                     <div class="emoji-element"></div>
-                    </div>
-                    <div class="emoji-box">
-                                        <div class="emoji-element"></div>
+                  </div>  
 
-                    </div>  
+                    <div class="emoji-box">
+                <div class="emoji-element"></div>
+                </div>  
                  </div>
                 </div>
+              
               `
+              addtl.innerHTML = "<p>It’s easy for fights to get heated over text. De-escalate by asking to talk in person!</p><p><strong>What if Gretchen forces the issue?</strong></p>"
+              if (last === 0 || last === 2) {
+                addtl.innerHTML = `<p>It’s easy for fights to get heated over text. De-escalate by asking to talk in person!</p>
+                <p>How much do you value your friendship with Gretchen? If you keep hanging out with 🧪🧑‍🔬 it may hurt your friendship. Is that worth it to you?</p>
+                <p><strong>What if Gretchen forces the issue?</strong></p>`
+              }
               document.getElementById("spicy-second").append(cont);
+              document.getElementById("spicy-second").append(addtl);
+              document.getElementById("spicy-second").append(addtlChat);
               addEventByID("spicy-cont");
             } else if (category === "mild-cont") {
               r.innerHTML = `<p>This is scary! What if she doesn’t like me anymore? Or are we drifting apart? How can I know?</p>
@@ -816,6 +877,23 @@ What do you want to change? Do you want an apology? For them to not do it again?
                   im down! hopefully this time we both look 🔥
                  </div>
             </div>`
+              } else if (category === "spicy-cont") {
+                r.innerHTML = `
+                <p>We used the <strong>"story in my head" trick</strong> to find common ground:
+                  <div class="mine messages">
+                <div class="message">
+                the story in my head is that you see me as a backstabber and never want to talk to me again, so this convo is super scary             
+                 </div>
+                 <div class="message">
+                  u would never do anything like this, i totally crossed a line, im sorry and here to listen to ur feelings
+                 </div>
+                 <div class="message">
+                  🧪🧑‍🔬 and i didn't kiss - i woulda asked ur permission before it got serious
+                 </div>
+
+                </div>
+                <p>We opened up about why we did it. We used emotion words to *avoid* Gretchen thinking we want beef and cut out words that <em>could</em> sound judgey ("🧪🧑‍🔬 and i didn't <s>even</s> kiss <s>soooo</s>")</p>
+                `
               }
             feedback.append(r);
             
