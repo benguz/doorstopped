@@ -326,7 +326,7 @@ tbody td:first-child {
     
     </script>
 <script>
-  fetch("privacy.json")
+  fetch("/assets/data/privacy.json")
     .then((response) => response.json())
     .then((data) => {
         const tableBody = document.getElementById("privacy-table").getElementsByTagName("tbody")[0];

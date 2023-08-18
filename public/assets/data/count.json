@@ -1,0 +1,308 @@
+[
+    {
+        "state": "Alabama",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Ala. Code § 16-13-232"
+    },
+    {
+        "state": "Alaska",
+        "count": "Enrollment count period",
+        "attendance": "No",
+        "source": "AK ST § 14.17.60"
+    },
+    {
+        "state": "Arizona",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "A.R.S. § 15-901"
+    },
+    {
+        "state": "Arkansas",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "A.C.A. § 6-20-2303"
+    },
+    {
+        "state": "California",
+        "count": "Attendance average",
+        "attendance": "Yes",
+        "source": "CA EDUC § 42238.05"
+    },
+    {
+        "state": "Colorado",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "Colo. Rev. Stat. Ann. § 22-54-103"
+    },
+    {
+        "state": "Connecticut",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "Conn. Gen. Stat. Ann. § 10-261"
+    },
+    {
+        "state": "Delaware",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "Del. Code Ann. tit. 14, § 1704"
+    },
+    {
+        "state": "District of Columbia",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "D.C. Code Ann. § 38-1804.02"
+    },
+    {
+        "state": "Florida",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Fla. Stat. Ann. § 1011.62"
+    },
+    {
+        "state": "Georgia",
+        "count": "Multiple counts",
+        "attendance": "Unsure",
+        "source": "Ga. Code Ann. § 20-2-160"
+    },
+    {
+        "state": "Hawaii",
+        "count": "Multiple counts",
+        "attendance": "Unsure",
+        "source": "Hawaii Department of Education"
+    },
+    {
+        "state": "Idaho",
+        "count": "Attendance average",
+        "attendance": "Yes",
+        "source": "Idaho Code Ann. § 33-1003A"
+    },
+    {
+        "state": "Illinois",
+        "count": "Multiple counts",
+        "attendance": "Unsure",
+        "source": "105 Ill. Comp. Stat. Ann. 5/18-8.15"
+    },
+    {
+        "state": "Indiana",
+        "count": "Multiple counts",
+        "attendance": "Unsure",
+        "source": "Ind. Code Ann. § 20-43-4-2"
+    },
+    {
+        "state": "Iowa",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "Iowa Code Ann. § 257.6"
+    },
+    {
+        "state": "Kansas",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "Kan. Stat. Ann. § 72-5132"
+    },
+    {
+        "state": "Kentucky",
+        "count": "Attendance average",
+        "attendance": "Yes",
+        "source": "Ky. Rev. Stat. Ann. § 157.360"
+    },
+    {
+        "state": "Louisiana",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "SCR 2 (2021 legislative session)\nLa. Const. Ann. art. VIII, § 13"
+    },
+    {
+        "state": "Maine",
+        "count": "Multiple counts",
+        "attendance": "Unsure",
+        "source": "Me. Rev. Stat. tit. 20-A, § 15674"
+    },
+    {
+        "state": "Maryland",
+        "count": "Single count (greater of the single count for the current year and the single count average of the previous three years)",
+        "attendance": "Unsure",
+        "source": "Md. Code Ann., Educ. § 5-201"
+    },
+    {
+        "state": "Massachusetts",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "Mass. Gen. Laws Ann. ch. 70, § 2"
+    },
+    {
+        "state": "Michigan",
+        "count": "Multiple counts",
+        "attendance": "Yes",
+        "source": "Mich. Comp. Laws Ann. § 388.1606"
+    },
+    {
+        "state": "Minnesota",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Minn. Stat. Ann. § 126C.05"
+    },
+    {
+        "state": "Mississippi",
+        "count": "Attendance average",
+        "attendance": "Yes",
+        "source": "Miss. Code. Ann. § 37-151-7"
+    },
+    {
+        "state": "Missouri",
+        "count": "Attendance average",
+        "attendance": "Yes",
+        "source": "Mo. Ann. Stat. § 163.031"
+    },
+    {
+        "state": "Montana",
+        "count": "Multiple counts (either current or 3-year average)",
+        "attendance": "Unsure",
+        "source": "Mont. Code Ann. § 20-9-311"
+    },
+    {
+        "state": "Nebraska",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Neb.Rev.St. § 79-1003"
+    },
+    {
+        "state": "Nevada",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Nev. Rev. Stat. Ann. § 387.123"
+    },
+    {
+        "state": "New Hampshire",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "N.H. Rev. Stat. Ann. § 198:38"
+    },
+    {
+        "state": "New Jersey",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "N.J. Stat. Ann. § 18A:7F-45"
+    },
+    {
+        "state": "New Mexico",
+        "count": "Multiple counts",
+        "attendance": "Unsure",
+        "source": "N.M. Stat. Ann. § 22-8-25\nN.M. Stat. Ann. § 22-8-13"
+    },
+    {
+        "state": "New York",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "N.Y. Educ. Law § 3602"
+    },
+    {
+        "state": "North Carolina",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "N.C. Gen. Stat. Ann. § 115C-430"
+    },
+    {
+        "state": "North Dakota",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "N.D. Cent. Code Ann. § 15.1-27-03.1"
+    },
+    {
+        "state": "Ohio",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Ohio Rev. Code Ann. § 3317.03\nOhio Rev. Code Ann. § 3317.022"
+    },
+    {
+        "state": "Oklahoma",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Okla. Stat. Ann. tit. 70, § 18-107"
+    },
+    {
+        "state": "Oregon",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Or. Rev. Stat. Ann. § 327.006"
+    },
+    {
+        "state": "Pennsylvania",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "24 Pa. Stat. Ann. § 25-2501"
+    },
+    {
+        "state": "Rhode Island",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "16 R.I. Gen. Laws Ann. § 16-7-22"
+    },
+    {
+        "state": "South Carolina",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "S.C. Code Ann. § 59-20-40"
+    },
+    {
+        "state": "South Dakota",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "S.D. Codified Laws § 13-13-1\nS.D. Codified Laws § 13-13-1.1"
+    },
+    {
+        "state": "Tennessee",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Tenn. Code Ann. § 49-3-302\nTenn. Code Ann. § 49-3-307"
+    },
+    {
+        "state": "Texas",
+        "count": "Attendance average",
+        "attendance": "Yes",
+        "source": "Tex. Educ. Code Ann. § 48.005"
+    },
+    {
+        "state": "Utah",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Utah Code Ann. § 53F-2-302"
+    },
+    {
+        "state": "Vermont",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Vt. Stat. Ann. tit. 16, § 4010"
+    },
+    {
+        "state": "Virginia",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Va. Code Ann. § 22.1-70.1\nVa. Code Ann. § 22.1-253.13:2"
+    },
+    {
+        "state": "Washington",
+        "count": "Multiple counts",
+        "attendance": "Unsure",
+        "source": "Wash. Rev. Code Ann. § 392-121-119\nWash. Rev. Code Ann. §392-121-133"
+    },
+    {
+        "state": "West Virginia",
+        "count": "Single count (count from the first day of the second month of the preceding school year)",
+        "attendance": "Unsure",
+        "source": "W. Va. Code Ann. § 18-9A-2"
+    },
+    {
+        "state": "Wisconsin",
+        "count": "Single count",
+        "attendance": "Unsure",
+        "source": "Wis. Stat. Ann. § 121.90(1)"
+    },
+    {
+        "state": "Wyoming",
+        "count": "Membership average",
+        "attendance": "No",
+        "source": "Wyo. Stat. Ann. § 21-13-101(a)(i)\nWyo. Stat. Ann. § 21-13-309(m)(iv)"
+    }
+]
