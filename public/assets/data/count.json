@@ -38,14 +38,16 @@
     {
         "state": "Connecticut",
         "count": "Single count",
-        "attendance": "Unsure",
-        "source": "Conn. Gen. Stat. Ann. § 10-261"
+        "attendance": "No",
+        "source": "Conn. Gen. Stat. Ann. § 10-261",
+        "date": "October 1"
     },
     {
         "state": "Delaware",
         "count": "Single count",
-        "attendance": "Unsure",
-        "source": "Del. Code Ann. tit. 14, § 1704"
+        "attendance": "Yes",
+        "source": "Del. Code Ann. tit. 14, § 1704",
+        "date": "around September 30"
     },
     {
         "state": "District of Columbia",
@@ -135,7 +137,8 @@
         "state": "Michigan",
         "count": "Multiple counts",
         "attendance": "Yes",
-        "source": "Mich. Comp. Laws Ann. § 388.1606"
+        "source": "Mich. Comp. Laws Ann. § 388.1606",
+        "date": "90% allocated on first Weds. of October"
     },
     {
         "state": "Minnesota",
