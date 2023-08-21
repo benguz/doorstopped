@@ -18,6 +18,12 @@
         "foe": ["Meanies"]
     },
     {
+        "name": "/school/takeover",
+        "ally": ["The Principal", "The Parents", "The Locals"],
+        "key": "The District",
+        "foe": ["The State"]
+    },
+    {
         "name": "/school/dress",
         "ally": ["The Parents", "The Good Teachers", "The Locals"],
         "key": "Students",

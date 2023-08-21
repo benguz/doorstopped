@@ -38,7 +38,7 @@ const toc = document.querySelector('#toc');
     {
       title: 'Case Studies and Wild Stories',
       links: [
-        { href: '/school/sleep', children: 'Unused Classrooms -> Homeless Shelter' },
+        { href: '/school/sleep', children: 'Unused Buildings' },
         { href: '/school/takeover', children: 'State Takeover' },
         { href: '/school/curriculum', children: 'Curriculum Change' },
       ]
