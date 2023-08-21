@@ -25,7 +25,6 @@ const toc = document.querySelector('#toc');
         { href: '/school/comms', children: 'Forcing Communication' },
         { href: '/school/dayoff', children: 'Getting a day off' },
         { href: '/school/interns', children: 'Starting New Programs' },
-        { href: '/school/takeover', children: 'State Takeover' },
         { href: '/school/waffle', children: 'Playing the Waffle Game' },
         { href: '/school/change', children: 'Change 101' },
         { href: '/school/whypolicy', children: 'Why Policy Change Falls Short' },
@@ -33,8 +32,17 @@ const toc = document.querySelector('#toc');
         { href: '/school/stories', children: 'Telling True Stories' },
         { href: '/school/stuco', children: 'Making Student Council Work' },
         { href: '/school/scare', children: 'Fighting Scare tactics' },
+        { href: '/school/minutes', children: 'Reading School Board Meeting Minutes' },
       ]
     },
+    {
+      title: 'Case Studies and Wild Stories',
+      links: [
+        { href: '/school/sleep', children: 'Unused Classrooms -> Homeless Shelter' },
+        { href: '/school/takeover', children: 'State Takeover' },
+        { href: '/school/curriculum', children: 'Curriculum Change' },
+      ]
+    }
   ];
 
   // Generate the HTML for the side navigation and append it to the sidenav element
