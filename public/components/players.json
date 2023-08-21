@@ -12,6 +12,18 @@
         "foe": ["The District"]
     },
     {
+        "name": "/school/newhire",
+        "ally": ["Students", "The District", "The Parents", "The Locals"],
+        "key": "The Principal",
+        "foe": ["Meanies"]
+    },
+    {
+        "name": "/school/allies",
+        "ally": ["District Staff", "Librarians", "The Best Teachers", "Custodians", "Parents"],
+        "key": "Starting convos",
+        "foe": ["Your social anxiety"]
+    },
+    {
         "name": "/school/selfie",
         "ally": [["The Principal", "chooses budget"], "Students", "Federal Gov", "The Parents", "The Locals", "Advocacy Groups"],
         "key": "The State",

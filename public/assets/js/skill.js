@@ -23,6 +23,8 @@ document.querySelectorAll('.aesthetic-button').forEach((button, index) => {
         window.location.href = "/skills/plays";
       } else if (button.textContent === "Cold Emailing") {
         window.location.href = "/skills/coldemail";
+      } else if (button.textContent === "Small asks") {
+        window.location.href = "/skills/smallasks";
       } 
     });
   });

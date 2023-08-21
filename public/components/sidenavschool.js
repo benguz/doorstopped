@@ -7,8 +7,8 @@ const toc = document.querySelector('#toc');
       title: 'School 101',
       links: [
         { href: '/school/', children: 'Intro: The System' },
-        { href: '/school/money', children: 'Money' },
-        { href: '/school/gridlock', children: 'Gridlock'},
+        { href: '/school/flow', children: 'Flow'},
+        { href: '/school/audit', children: 'Incentives' }, 
         { href: '/school/audit', children: 'Your School' }, 
       ]
     },
@@ -17,16 +17,22 @@ const toc = document.querySelector('#toc');
       links: [
         { href: '/school/money', children: 'Controlling $100k' },
         { href: '/school/data', children: 'Leveraging Data' },
-        { href: '/school/corp', children: 'Decipher Corporate-Speak' },
         { href: '/school/selfie', children: 'Selfie Diplomacy' },
         { href: '/school/allies', children: 'Make Powerful Allies' },
+        { href: '/school/newhire', children: 'Predict Principal Hiring' },
+        { href: '/school/corp', children: 'Decipher Corporate-Speak' },
         { href: '/school/dress', children: 'Changing the Dress Code' },
-        { href: '/school/takeover', children: 'State Takeover' },
-        { href: '/school/waffle', children: 'Playing the Waffle Game' },
-        { href: '/school/schedule', children: 'Schedule Change' },
         { href: '/school/comms', children: 'Forcing Communication' },
         { href: '/school/dayoff', children: 'Getting a day off' },
-        { href: '/school/interns', children: 'Starting New Programs' }
+        { href: '/school/interns', children: 'Starting New Programs' },
+        { href: '/school/takeover', children: 'State Takeover' },
+        { href: '/school/waffle', children: 'Playing the Waffle Game' },
+        { href: '/school/change', children: 'Change 101' },
+        { href: '/school/whypolicy', children: 'Why Policy Change Falls Short' },
+        { href: '/school/awful', children: 'Fighting Awful Policy' },
+        { href: '/school/stories', children: 'Telling True Stories' },
+        { href: '/school/stuco', children: 'Making Student Council Work' },
+        { href: '/school/scare', children: 'Fighting Scare tactics' },
       ]
     },
   ];
