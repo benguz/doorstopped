@@ -24,6 +24,12 @@
         "foe": ["The State"]
     },
     {
+        "name": "/school/takeover",
+        "ally": ["The Principal", "Involved Teachers"],
+        "key": "The Locals",
+        "foe": ["The Parents"]
+    },
+    {
         "name": "/school/dress",
         "ally": ["The Parents", "The Good Teachers", "The Locals"],
         "key": "Students",
