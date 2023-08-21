@@ -18,6 +18,12 @@
         "foe": ["Meanies"]
     },
     {
+        "name": "/school/dress",
+        "ally": ["The Parents", "The Good Teachers", "The Locals"],
+        "key": "Students",
+        "foe": ["The Principal"]
+    },
+    {
         "name": "/school/corp",
         "ally": ["Students"],
         "key": "The Principal",
