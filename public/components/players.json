@@ -18,6 +18,12 @@
         "foe": ["Meanies"]
     },
     {
+        "name": "/school/corp",
+        "ally": ["Students"],
+        "key": "The Principal",
+        "foe": ["The District"]
+    },
+    {
         "name": "/school/allies",
         "ally": ["District Staff", "Librarians", "The Best Teachers", "Custodians", "Parents"],
         "key": "Starting convos",
