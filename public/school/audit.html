@@ -313,7 +313,17 @@ svg {
                 document.getElementById("bonus-info").textContent = "more if you're ESL, low-income, or have a learning disability"
             })
         } else if (!item) {
-            document.getElementById("state-info").textContent = "item not found";
+            if (state.textContent.toLowerCase() === "disarray" || state.textContent.toLowerCase() === "distress" || state.textContent.toLowerCase() === "unrest")
+            {
+                document.getElementById("state-info").textContent = "haha";
+                document.getElementById("bonus-info").innerHTML = "try one of our <a href='/doorstops/listen'>mental health doorstops</a>?"
+
+
+            }
+            else {
+                document.getElementById("state-info").textContent = "item not found";
+
+            }
 
         } else {
             document.getElementById("state-info").textContent = item.count;
