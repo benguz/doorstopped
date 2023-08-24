@@ -52,7 +52,7 @@
     {
         "state": "District of Columbia",
         "count": "Single count",
-        "attendance": "Unsure",
+        "attendance": "No",
         "source": "D.C. Code Ann. § 38-1804.02"
     },
     {
@@ -64,13 +64,15 @@
     {
         "state": "Georgia",
         "count": "Multiple counts",
-        "attendance": "Unsure",
-        "source": "Ga. Code Ann. § 20-2-160"
+        "attendance": "Yes",
+        "source": "Ga. Code Ann. § 20-2-160",
+        "date": "must attend one of ten days before count day"
+
     },
     {
         "state": "Hawaii",
         "count": "Multiple counts",
-        "attendance": "Unsure",
+        "attendance": "No",
         "source": "Hawaii Department of Education"
     },
     {
@@ -81,27 +83,29 @@
     },
     {
         "state": "Illinois",
-        "count": "Multiple counts",
-        "attendance": "Unsure",
+        "count": "Average Daily Attendance",
+        "attendance": "Yes",
         "source": "105 Ill. Comp. Stat. Ann. 5/18-8.15"
     },
     {
         "state": "Indiana",
         "count": "Multiple counts",
-        "attendance": "Unsure",
+        "attendance": "No",
         "source": "Ind. Code Ann. § 20-43-4-2"
     },
     {
         "state": "Iowa",
         "count": "Single count",
-        "attendance": "Unsure",
-        "source": "Iowa Code Ann. § 257.6"
+        "attendance": "No",
+        "source": "Iowa Code Ann. § 257.6",
+        "date": "definitely October 1"
     },
     {
         "state": "Kansas",
         "count": "Single count",
-        "attendance": "Unsure",
-        "source": "Kan. Stat. Ann. § 72-5132"
+        "attendance": "No",
+        "source": "Kan. Stat. Ann. § 72-5132",
+        "date": "September 20"
     },
     {
         "state": "Kentucky",
@@ -112,8 +116,9 @@
     {
         "state": "Louisiana",
         "count": "Single count",
-        "attendance": "Unsure",
-        "source": "SCR 2 (2021 legislative session)\nLa. Const. Ann. art. VIII, § 13"
+        "attendance": "No",
+        "source": "SCR 2 (2021 legislative session)\nLa. Const. Ann. art. VIII, § 13",
+        "membership": "Yes"
     },
     {
         "state": "Maine",
@@ -124,14 +129,15 @@
     {
         "state": "Maryland",
         "count": "Single count (greater of the single count for the current year and the single count average of the previous three years)",
-        "attendance": "Unsure",
+        "attendance": "No",
         "source": "Md. Code Ann., Educ. § 5-201"
     },
     {
         "state": "Massachusetts",
         "count": "Single count",
-        "attendance": "Unsure",
-        "source": "Mass. Gen. Laws Ann. ch. 70, § 2"
+        "attendance": "No",
+        "source": "Mass. Gen. Laws Ann. ch. 70, § 2",
+        "date": "October 1"
     },
     {
         "state": "Michigan",
@@ -161,7 +167,7 @@
     {
         "state": "Montana",
         "count": "Multiple counts (either current or 3-year average)",
-        "attendance": "Unsure",
+        "attendance": "No",
         "source": "Mont. Code Ann. § 20-9-311"
     },
     {
@@ -185,13 +191,13 @@
     {
         "state": "New Jersey",
         "count": "Single count",
-        "attendance": "Unsure",
+        "attendance": "No",
         "source": "N.J. Stat. Ann. § 18A:7F-45"
     },
     {
         "state": "New Mexico",
         "count": "Multiple counts",
-        "attendance": "Unsure",
+        "attendance": "No",
         "source": "N.M. Stat. Ann. § 22-8-25\nN.M. Stat. Ann. § 22-8-13"
     },
     {
@@ -287,20 +293,21 @@
     {
         "state": "Washington",
         "count": "Multiple counts",
-        "attendance": "Unsure",
+        "attendance": "Yes",
         "source": "Wash. Rev. Code Ann. § 392-121-119\nWash. Rev. Code Ann. §392-121-133"
     },
     {
         "state": "West Virginia",
         "count": "Single count (count from the first day of the second month of the preceding school year)",
-        "attendance": "Unsure",
-        "source": "W. Va. Code Ann. § 18-9A-2"
+        "attendance": "No",
+        "source": "W. Va. Code Ann. § 18-9A-2 - actually a completely reasonable system"
     },
     {
         "state": "Wisconsin",
         "count": "Single count",
-        "attendance": "Unsure",
-        "source": "Wis. Stat. Ann. § 121.90(1)"
+        "attendance": "No",
+        "source": "Wis. Stat. Ann. § 121.90(1)",
+        "date": "but if you're absent on count day, they can't count you until you show up"
     },
     {
         "state": "Wyoming",

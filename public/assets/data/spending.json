@@ -1,0 +1,461 @@
+[
+  {
+    "state": "New York",
+    "PublicSpendPerK12Student": 24881,
+    "PublicFundingPerK-12Student": 28625,
+    "CostOfLivingIndex": 125.1,
+    "K-12SpendingAsPercTaxpayerIncome": 4.65,
+    "TeachersAsAPercentOfStaffSalaries": 55.3,
+    "PublicEducationAveragePostSecondary": 33760
+  },
+  {
+    "state": "District of Columbia",
+    "PublicSpendPerK12Student": 22832,
+    "PublicFundingPerK-12Student": 29121,
+    "CostOfLivingIndex": 148.7,
+    "K-12SpendingAsPercTaxpayerIncome": 3.4,
+    "TeachersAsAPercentOfStaffSalaries": 48.1,
+    "PublicEducationAveragePostSecondary": 27142
+  },
+  {
+    "state": "New Jersey",
+    "PublicSpendPerK12Student": 21334,
+    "PublicFundingPerK-12Student": 23613,
+    "CostOfLivingIndex": 114.1,
+    "K-12SpendingAsPercTaxpayerIncome": 4.73,
+    "TeachersAsAPercentOfStaffSalaries": 48.6,
+    "PublicEducationAveragePostSecondary": 32421
+  },
+  {
+    "state": "Vermont",
+    "PublicSpendPerK12Student": 21219,
+    "PublicFundingPerK-12Student": 20820,
+    "CostOfLivingIndex": 114.9,
+    "K-12SpendingAsPercTaxpayerIncome": 5.33,
+    "TeachersAsAPercentOfStaffSalaries": 45.9,
+    "PublicEducationAveragePostSecondary": 31103
+  },
+  {
+    "state": "Connecticut",
+    "PublicSpendPerK12Student": 21146,
+    "PublicFundingPerK-12Student": 22703,
+    "CostOfLivingIndex": 113.1,
+    "K-12SpendingAsPercTaxpayerIncome": 4.9,
+    "TeachersAsAPercentOfStaffSalaries": 44.6,
+    "PublicEducationAveragePostSecondary": 20284
+  },
+  {
+    "state": "Massachusetts",
+    "PublicSpendPerK12Student": 19193,
+    "PublicFundingPerK-12Student": 19734,
+    "CostOfLivingIndex": 148.4,
+    "K-12SpendingAsPercTaxpayerIncome": 3.6,
+    "TeachersAsAPercentOfStaffSalaries": 56.1,
+    "PublicEducationAveragePostSecondary": 18813
+  },
+  {
+    "state": "Alaska",
+    "PublicSpendPerK12Student": 18392,
+    "PublicFundingPerK-12Student": 19553,
+    "CostOfLivingIndex": 124.4,
+    "K-12SpendingAsPercTaxpayerIncome": 5.2,
+    "TeachersAsAPercentOfStaffSalaries": 46.1,
+    "PublicEducationAveragePostSecondary": 27266
+  },
+  {
+    "state": "Rhode Island",
+    "PublicSpendPerK12Student": 17539,
+    "PublicFundingPerK-12Student": 18732,
+    "CostOfLivingIndex": 110.5,
+    "K-12SpendingAsPercTaxpayerIncome": 4.18,
+    "TeachersAsAPercentOfStaffSalaries": 54.6,
+    "PublicEducationAveragePostSecondary": 18524
+  },
+  {
+    "state": "New Hampshire",
+    "PublicSpendPerK12Student": 17456,
+    "PublicFundingPerK-12Student": 18758,
+    "CostOfLivingIndex": 115,
+    "K-12SpendingAsPercTaxpayerIncome": 3.51,
+    "TeachersAsAPercentOfStaffSalaries": 46.2,
+    "PublicEducationAveragePostSecondary": 36914
+  },
+  {
+    "state": "Pennsylvania",
+    "PublicSpendPerK12Student": 16897,
+    "PublicFundingPerK-12Student": 19369,
+    "CostOfLivingIndex": 99,
+    "K-12SpendingAsPercTaxpayerIncome": 3.9,
+    "TeachersAsAPercentOfStaffSalaries": 50,
+    "PublicEducationAveragePostSecondary": 18141
+  },
+  {
+    "state": "Illinois",
+    "PublicSpendPerK12Student": 16277,
+    "PublicFundingPerK-12Student": 15746,
+    "CostOfLivingIndex": 90.8,
+    "K-12SpendingAsPercTaxpayerIncome": 4.29,
+    "TeachersAsAPercentOfStaffSalaries": 49.9,
+    "PublicEducationAveragePostSecondary": 32881
+  },
+  {
+    "state": "Wyoming",
+    "PublicSpendPerK12Student": 16231,
+    "PublicFundingPerK-12Student": 19152,
+    "CostOfLivingIndex": 92.8,
+    "K-12SpendingAsPercTaxpayerIncome": 4.23,
+    "TeachersAsAPercentOfStaffSalaries": 44.3,
+    "PublicEducationAveragePostSecondary": 33111
+  },
+  {
+    "state": "Hawaii",
+    "PublicSpendPerK12Student": 16128,
+    "PublicFundingPerK-12Student": 17233,
+    "CostOfLivingIndex": 118.4,
+    "K-12SpendingAsPercTaxpayerIncome": 3.58,
+    "TeachersAsAPercentOfStaffSalaries": 52,
+    "PublicEducationAveragePostSecondary": 39372
+  },
+  {
+    "state": "Delaware",
+    "PublicSpendPerK12Student": 15931,
+    "PublicFundingPerK-12Student": 16522,
+    "CostOfLivingIndex": 102.6,
+    "K-12SpendingAsPercTaxpayerIncome": 4.12,
+    "TeachersAsAPercentOfStaffSalaries": 52.4,
+    "PublicEducationAveragePostSecondary": 23146
+  },
+  {
+    "state": "Maine",
+    "PublicSpendPerK12Student": 15691,
+    "PublicFundingPerK-12Student": 16772,
+    "CostOfLivingIndex": 111.5,
+    "K-12SpendingAsPercTaxpayerIncome": 4.11,
+    "TeachersAsAPercentOfStaffSalaries": 42.2,
+    "PublicEducationAveragePostSecondary": 30293
+  },
+  {
+    "state": "Maryland",
+    "PublicSpendPerK12Student": 15582,
+    "PublicFundingPerK-12Student": 18049,
+    "CostOfLivingIndex": 119.5,
+    "K-12SpendingAsPercTaxpayerIncome": 3.54,
+    "TeachersAsAPercentOfStaffSalaries": 51.4,
+    "PublicEducationAveragePostSecondary": 38453
+  },
+  {
+    "state": "Washington",
+    "PublicSpendPerK12Student": 14348,
+    "PublicFundingPerK-12Student": 17276,
+    "CostOfLivingIndex": 115.1,
+    "K-12SpendingAsPercTaxpayerIncome": 3.22,
+    "TeachersAsAPercentOfStaffSalaries": 61.1,
+    "PublicEducationAveragePostSecondary": 38416
+  },
+  {
+    "state": "North Dakota",
+    "PublicSpendPerK12Student": 14037,
+    "PublicFundingPerK-12Student": 16361,
+    "CostOfLivingIndex": 94.6,
+    "K-12SpendingAsPercTaxpayerIncome": 3.62,
+    "TeachersAsAPercentOfStaffSalaries": 51.1,
+    "PublicEducationAveragePostSecondary": 21746
+  },
+  {
+    "state": "California",
+    "PublicSpendPerK12Student": 13642,
+    "PublicFundingPerK-12Student": 16015,
+    "CostOfLivingIndex": 134.5,
+    "K-12SpendingAsPercTaxpayerIncome": 3.2,
+    "TeachersAsAPercentOfStaffSalaries": 45.6,
+    "PublicEducationAveragePostSecondary": 17946
+  },
+  {
+    "state": "Ohio",
+    "PublicSpendPerK12Student": 13437,
+    "PublicFundingPerK-12Student": 15214,
+    "CostOfLivingIndex": 94,
+    "K-12SpendingAsPercTaxpayerIncome": 3.84,
+    "TeachersAsAPercentOfStaffSalaries": 31.5,
+    "PublicEducationAveragePostSecondary": 31465
+  },
+  {
+    "state": "Minnesota",
+    "PublicSpendPerK12Student": 13302,
+    "PublicFundingPerK-12Student": 16205,
+    "CostOfLivingIndex": 94.1,
+    "K-12SpendingAsPercTaxpayerIncome": 3.53,
+    "TeachersAsAPercentOfStaffSalaries": 47.8,
+    "PublicEducationAveragePostSecondary": 26646
+  },
+  {
+    "state": "Nebraska",
+    "PublicSpendPerK12Student": 12741,
+    "PublicFundingPerK-12Student": 14270,
+    "CostOfLivingIndex": 90.1,
+    "K-12SpendingAsPercTaxpayerIncome": 3.89,
+    "TeachersAsAPercentOfStaffSalaries": 49.3,
+    "PublicEducationAveragePostSecondary": 24316
+  },
+  {
+    "state": "Wisconsin",
+    "PublicSpendPerK12Student": 12694,
+    "PublicFundingPerK-12Student": 14793,
+    "CostOfLivingIndex": 95,
+    "K-12SpendingAsPercTaxpayerIncome": 3.49,
+    "TeachersAsAPercentOfStaffSalaries": 57.5,
+    "PublicEducationAveragePostSecondary": 40038
+  },
+  {
+    "state": "Virginia",
+    "PublicSpendPerK12Student": 12638,
+    "PublicFundingPerK-12Student": 13656,
+    "CostOfLivingIndex": 103.1,
+    "K-12SpendingAsPercTaxpayerIncome": 3.16,
+    "TeachersAsAPercentOfStaffSalaries": 50.5,
+    "PublicEducationAveragePostSecondary": 26561
+  },
+  {
+    "state": "Oregon",
+    "PublicSpendPerK12Student": 12460,
+    "PublicFundingPerK-12Student": 15309,
+    "CostOfLivingIndex": 115.1,
+    "K-12SpendingAsPercTaxpayerIncome": 3.18,
+    "TeachersAsAPercentOfStaffSalaries": 44.1,
+    "PublicEducationAveragePostSecondary": 33289
+  },
+  {
+    "state": "West Virginia",
+    "PublicSpendPerK12Student": 12266,
+    "PublicFundingPerK-12Student": 13499,
+    "CostOfLivingIndex": 90.3,
+    "K-12SpendingAsPercTaxpayerIncome": 4.35,
+    "TeachersAsAPercentOfStaffSalaries": 51.1,
+    "PublicEducationAveragePostSecondary": 20519
+  },
+  {
+    "state": "Michigan",
+    "PublicSpendPerK12Student": 12053,
+    "PublicFundingPerK-12Student": 14321,
+    "CostOfLivingIndex": 92.7,
+    "K-12SpendingAsPercTaxpayerIncome": 3.65,
+    "TeachersAsAPercentOfStaffSalaries": 46.4,
+    "PublicEducationAveragePostSecondary": 22316
+  },
+  {
+    "state": "Montana",
+    "PublicSpendPerK12Student": 11983,
+    "PublicFundingPerK-12Student": 13739,
+    "CostOfLivingIndex": 103.7,
+    "K-12SpendingAsPercTaxpayerIncome": 3.3,
+    "TeachersAsAPercentOfStaffSalaries": 48.8,
+    "PublicEducationAveragePostSecondary": 25055
+  },
+  {
+    "state": "Iowa",
+    "PublicSpendPerK12Student": 11935,
+    "PublicFundingPerK-12Student": 14129,
+    "CostOfLivingIndex": 89.7,
+    "K-12SpendingAsPercTaxpayerIncome": 3.72,
+    "TeachersAsAPercentOfStaffSalaries": 49,
+    "PublicEducationAveragePostSecondary": 28380
+  },
+  {
+    "state": "Louisiana",
+    "PublicSpendPerK12Student": 11917,
+    "PublicFundingPerK-12Student": 13235,
+    "CostOfLivingIndex": 92,
+    "K-12SpendingAsPercTaxpayerIncome": 3.81,
+    "TeachersAsAPercentOfStaffSalaries": 54.3,
+    "PublicEducationAveragePostSecondary": 30196
+  },
+  {
+    "state": "Missouri",
+    "PublicSpendPerK12Student": 11349,
+    "PublicFundingPerK-12Student": 13297,
+    "CostOfLivingIndex": 88.4,
+    "K-12SpendingAsPercTaxpayerIncome": 3.44,
+    "TeachersAsAPercentOfStaffSalaries": 52.5,
+    "PublicEducationAveragePostSecondary": 27160
+  },
+  {
+    "state": "Kansas",
+    "PublicSpendPerK12Student": 11327,
+    "PublicFundingPerK-12Student": 13937,
+    "CostOfLivingIndex": 87.7,
+    "K-12SpendingAsPercTaxpayerIncome": 3.58,
+    "TeachersAsAPercentOfStaffSalaries": 54.6,
+    "PublicEducationAveragePostSecondary": 25958
+  },
+  {
+    "state": "Kentucky",
+    "PublicSpendPerK12Student": 11278,
+    "PublicFundingPerK-12Student": 12762,
+    "CostOfLivingIndex": 93.8,
+    "K-12SpendingAsPercTaxpayerIncome": 3.87,
+    "TeachersAsAPercentOfStaffSalaries": 42.9,
+    "PublicEducationAveragePostSecondary": 27277
+  },
+  {
+    "state": "Georgia",
+    "PublicSpendPerK12Student": 11203,
+    "PublicFundingPerK-12Student": 12766,
+    "CostOfLivingIndex": 91,
+    "K-12SpendingAsPercTaxpayerIncome": 3.83,
+    "TeachersAsAPercentOfStaffSalaries": 50.4,
+    "PublicEducationAveragePostSecondary": 43420
+  },
+  {
+    "state": "Colorado",
+    "PublicSpendPerK12Student": 11070,
+    "PublicFundingPerK-12Student": 13559,
+    "CostOfLivingIndex": 105.5,
+    "K-12SpendingAsPercTaxpayerIncome": 2.84,
+    "TeachersAsAPercentOfStaffSalaries": 46.3,
+    "PublicEducationAveragePostSecondary": 25203
+  },
+  {
+    "state": "South Carolina",
+    "PublicSpendPerK12Student": 10991,
+    "PublicFundingPerK-12Student": 14149,
+    "CostOfLivingIndex": 96.5,
+    "K-12SpendingAsPercTaxpayerIncome": 3.62,
+    "TeachersAsAPercentOfStaffSalaries": 64.3,
+    "PublicEducationAveragePostSecondary": 29045
+  },
+  {
+    "state": "New Mexico",
+    "PublicSpendPerK12Student": 10469,
+    "PublicFundingPerK-12Student": 12362,
+    "CostOfLivingIndex": 94.2,
+    "K-12SpendingAsPercTaxpayerIncome": 3.8,
+    "TeachersAsAPercentOfStaffSalaries": 57.8,
+    "PublicEducationAveragePostSecondary": 38516
+  },
+  {
+    "state": "Arkansas",
+    "PublicSpendPerK12Student": 10414,
+    "PublicFundingPerK-12Student": 11736,
+    "CostOfLivingIndex": 90.3,
+    "K-12SpendingAsPercTaxpayerIncome": 3.79,
+    "TeachersAsAPercentOfStaffSalaries": 48.6,
+    "PublicEducationAveragePostSecondary": 26246
+  },
+  {
+    "state": "South Dakota",
+    "PublicSpendPerK12Student": 10326,
+    "PublicFundingPerK-12Student": 12269,
+    "CostOfLivingIndex": 93.8,
+    "K-12SpendingAsPercTaxpayerIncome": 2.96,
+    "TeachersAsAPercentOfStaffSalaries": 49.3,
+    "PublicEducationAveragePostSecondary": 21522
+  },
+  {
+    "state": "Indiana",
+    "PublicSpendPerK12Student": 10256,
+    "PublicFundingPerK-12Student": 12810,
+    "CostOfLivingIndex": 91.5,
+    "K-12SpendingAsPercTaxpayerIncome": 3.27,
+    "TeachersAsAPercentOfStaffSalaries": 37.7,
+    "PublicEducationAveragePostSecondary": 41705
+  },
+  {
+    "state": "Alabama",
+    "PublicSpendPerK12Student": 10108,
+    "PublicFundingPerK-12Student": 11377,
+    "CostOfLivingIndex": 88.8,
+    "K-12SpendingAsPercTaxpayerIncome": 3.42,
+    "TeachersAsAPercentOfStaffSalaries": 56.9,
+    "PublicEducationAveragePostSecondary": 21760
+  },
+  {
+    "state": "Florida",
+    "PublicSpendPerK12Student": 9983,
+    "PublicFundingPerK-12Student": 11109,
+    "CostOfLivingIndex": 102.3,
+    "K-12SpendingAsPercTaxpayerIncome": 2.5,
+    "TeachersAsAPercentOfStaffSalaries": 52.8,
+    "PublicEducationAveragePostSecondary": 23834
+  },
+  {
+    "state": "Tennessee",
+    "PublicSpendPerK12Student": 9942,
+    "PublicFundingPerK-12Student": 10881,
+    "CostOfLivingIndex": 90.4,
+    "K-12SpendingAsPercTaxpayerIncome": 2.98,
+    "TeachersAsAPercentOfStaffSalaries": 51.8,
+    "PublicEducationAveragePostSecondary": 29665
+  },
+  {
+    "state": "Texas",
+    "PublicSpendPerK12Student": 9871,
+    "PublicFundingPerK-12Student": 12324,
+    "CostOfLivingIndex": 93,
+    "K-12SpendingAsPercTaxpayerIncome": 3.46,
+    "TeachersAsAPercentOfStaffSalaries": 50.3,
+    "PublicEducationAveragePostSecondary": 26102
+  },
+  {
+    "state": "North Carolina",
+    "PublicSpendPerK12Student": 9798,
+    "PublicFundingPerK-12Student": 10298,
+    "CostOfLivingIndex": 96.1,
+    "K-12SpendingAsPercTaxpayerIncome": 3,
+    "TeachersAsAPercentOfStaffSalaries": 52.1,
+    "PublicEducationAveragePostSecondary": 27505
+  },
+  {
+    "state": "Mississippi",
+    "PublicSpendPerK12Student": 9255,
+    "PublicFundingPerK-12Student": 10398,
+    "CostOfLivingIndex": 85.3,
+    "K-12SpendingAsPercTaxpayerIncome": 3.73,
+    "TeachersAsAPercentOfStaffSalaries": 47.5,
+    "PublicEducationAveragePostSecondary": 26423
+  },
+  {
+    "state": "Oklahoma",
+    "PublicSpendPerK12Student": 9200,
+    "PublicFundingPerK-12Student": 10479,
+    "CostOfLivingIndex": 86,
+    "K-12SpendingAsPercTaxpayerIncome": 3.42,
+    "TeachersAsAPercentOfStaffSalaries": 49.4,
+    "PublicEducationAveragePostSecondary": 39061
+  },
+  {
+    "state": "Nevada",
+    "PublicSpendPerK12Student": 9124,
+    "PublicFundingPerK-12Student": 11017,
+    "CostOfLivingIndex": 101.3,
+    "K-12SpendingAsPercTaxpayerIncome": 2.81,
+    "TeachersAsAPercentOfStaffSalaries": 85.9,
+    "PublicEducationAveragePostSecondary": 34646
+  },
+  {
+    "state": "Arizona",
+    "PublicSpendPerK12Student": 8770,
+    "PublicFundingPerK-12Student": 10392,
+    "CostOfLivingIndex": 107.2,
+    "K-12SpendingAsPercTaxpayerIncome": 2.88,
+    "TeachersAsAPercentOfStaffSalaries": 46.5,
+    "PublicEducationAveragePostSecondary": 25166
+  },
+  {
+    "state": "Idaho",
+    "PublicSpendPerK12Student": 8041,
+    "PublicFundingPerK-12Student": 9369,
+    "CostOfLivingIndex": 106.1,
+    "K-12SpendingAsPercTaxpayerIncome": 2.99,
+    "TeachersAsAPercentOfStaffSalaries": 57.6,
+    "PublicEducationAveragePostSecondary": 27760
+  },
+  {
+    "state": "Utah",
+    "PublicSpendPerK12Student": 7951,
+    "PublicFundingPerK-12Student": 9673,
+    "CostOfLivingIndex": 101.5,
+    "K-12SpendingAsPercTaxpayerIncome": 3.37,
+    "TeachersAsAPercentOfStaffSalaries": 50.5,
+    "PublicEducationAveragePostSecondary": 22187
+  }
+]
