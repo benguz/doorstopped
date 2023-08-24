@@ -301,7 +301,7 @@ svg {
         let item = data.filter(
             function(data){ return data.state.toLowerCase() == state.textContent.toLowerCase() }
         );
-        if (item && item[0].count === "Attendance average") {
+        if (item[0] && item[0].count === "Attendance average") {
             fetch("/assets/data/spending.json")
             .then((response) => response.json())
             .then((spending) => {
@@ -309,7 +309,7 @@ svg {
                     function(spending){ return spending.state.toLowerCase() == state.textContent.toLowerCase() }
                 );
                 console.log(spendingState);
-                document.getElementById("state-info").textContent = "you cost your school $" + (spendingState[0].PublicSpendPerK12Student / 180).toFixed(2) + " every time you're absent";
+                document.getElementById("state-info").innerHTML = "you cost your school <strong style='color: #2804aa'>$" + (spendingState[0].PublicSpendPerK12Student / 180).toFixed(2) + "</strong> every time you're absent";
                 document.getElementById("bonus-info").textContent = "more if you're ESL, low-income, or have a learning disability"
             })
         } else if (!item) {
