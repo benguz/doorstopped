@@ -57,6 +57,57 @@ display:none;
   width: 97%;
   margin-left: 1.5%;
 }
+
+
+.lard {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.tard {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+    color: #989aa2; 
+    margin: auto; 
+    text-align: center;
+}
+
+.lard:hover {
+  box-shadow: 4px 12px 26px rgba(0, 0, 0, 0.3);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+  .row {
+  display: flex;
+  flex-direction: column;
+        }
+}
 @media (min-width: 1024px) {
 
 .yonk {
@@ -183,40 +234,51 @@ h2 {
           <br><br>
           <h1>What's wrong with your school bathrooms?</h1>
           <div style="color: black; max-width: 100%">
-            <p style="text-align: center;">I'm a...</p>
             <div class="row">
-              <div id="shark" class="lard row" onclick="act('dividers')">
+              <div id="dividers-label" class="lard row" onclick="act('dividers')">
                 No Urinal Dividers 🦨
               </div>
-              <div id="turtle"class="lard row" onclick="act('2')">
+              <div id="hygiene-label"class="lard row" onclick="act('hygiene')">
                 No hygiene products 🧻
               </div>
-              <div id="teddy"class="lard row" onclick="act('3')">
+              <div id="gross-label"class="lard row" onclick="act('gross')">
                   Just gross 🤮
                 </div>
-              
-              <div id="boiling" class="lard row" onclick="act('4')">
-                 Vandalism 🛠️
+              <div id="vandal-label" class="lard row" onclick="act('vandal')">
+                Vandalism 🛠️
               </div>
             </div>
             <div class="row">
-              <div id="shark" class="lard row" onclick="act('dividers')">
+              <div id="vaping-label" class="lard row" onclick="act('vaping')">
                 Vaping 🚬
               </div>
-              <div id="turtle"class="lard row" onclick="act('2')">
-                No time to poo  🏃💨
+              <div id="time-label" class="lard row" onclick="act('time')">
+                No time to poo 🏃💨
               </div>
-              <div id="teddy"class="lard row" onclick="act('3')">
-                  Just gross 🤮
-                </div>
               
-              <div id="bridge" class="lard row" onclick="act('5')">
+              <div id="nuclear-label" class="lard row" onclick="act('nuclear')">
                 ☢️ The Nuclear Option
               </div>
             </div>
   
   </div>
-          <div id="dividers">
+  <div id="vaping" style="display:none;">
+    <h2>Vaping</h2>
+  </div>
+  <div id="time" style="display:none;">
+    <h2>No Time</h2>
+  </div>
+  <div id="gross" style="display:none;">
+    <h2>Gross</h2>
+  </div>
+  <div id="hygiene" style="display:none;">
+    <h2>Hygiene</h2>
+  </div>
+  <div id="vandal" style="display:none;">
+    <h2>Vandalism</h2>
+  </div>
+  <div id="nuclear" style="display:none;"></div>
+          <div id="dividers" style="display:none;">
  
 <h2>Start with urinal dividers</h2>
 
@@ -381,6 +443,30 @@ Search for schools with gross bathrooms articles in their school newspaper
     });
     
     </script>
+    <script>
+    let last;
+let lastArray = ["dividers", "hygiene", "gross", "vandal", "vaping", "time", "nuclear"];
+let closeit = "";
+let div = ""
+    function act(section) {
+ 
+      if (last) {
+     closeit = document.getElementById(last + "-label");
+     document.getElementById(last).style.display = "none";
+   }
+   if (closeit) {
+     closeit.style.backgroundColor = 'white';
+   }
+ 
+       div = document.getElementById(section + "-label");
+        document.getElementById(section).style.display ="block";
+ 
+        last = section;
+
+         div.style.backgroundColor = 'hsl(234, 44%, 88%)';
+ 
+ } 
+   </script>
     <!-- 
 
     <script src="/components/sidenavsmall.js">
