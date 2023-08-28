@@ -201,11 +201,24 @@ max-width: 98%;
 margin: auto;
 
 }
+.desktoponly {
+  display: none;
+}
 h1.toobig, a.toobig {
-font-size: 2em;
+font-size: 1.5em;
+}
+.reduce {
+  font-size: 1em
+}
+a.toobig {
+  margin-bottom: 0;
 }
 h3.toobig {
-font-size: 1.5em;
+font-size: 1.2em;
+}
+h3 a {
+  font-size: 1.2em;
+
 }
 .row {
 flex-direction: column; 
@@ -229,7 +242,7 @@ opacity: 1;
 } */
 section, .section {
 padding: 5px;
-height: 70vh;
+height: 75vh;
 }
 .text-and-image {
 flex-direction: column;
