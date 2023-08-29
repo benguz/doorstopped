@@ -59,6 +59,8 @@
           <br><br>
       </div>
       <div id="desktop-main" >
+        <div id="streak-notif" class="content" style="opacity: 0; position: absolute; right: 1em; width: 20%; margin: 0; text-align: left; bottom: 1em; z-index: 3;">Streak notif!</div>
+
     <div id="card-container">
 <!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
         <div class="card" style="display: none;">
@@ -480,7 +482,7 @@
             <h3>Me? I don’t need an extension. You must not be familiar with my game.</h3>
             <p>Someday your boss is gonna say, "Bestie, can you work 'til 10pm today?"<br>Don't say "Sure, Bestie!" <strong>Learn to set boundaries now.</strong></p>
         </div>
-
+        
         <!--
         <div class="card" data-link="/doorstops/points">
         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ahsokka_/video/7207198809548492037" data-video-id="7207198809548492037"  data-autoplay="true" style="min-width: 100%"> <section> <a target="_blank" title="@ahsokka_" href="https://www.tiktok.com/@ahsokka_?refer=embed">@ahsokka_</a> </section></blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
@@ -582,6 +584,7 @@
         <br>
         <div class="content" id="content">
             <h1>See the Doorstops you swiped right on:</h1>
+            <h3 id="streak"><img style="width: 16px; height: 16px; display: inline; margin-right: 3px;" src="/assets/svg/finished.svg"><img style="width: 16px; height: 16px; display: inline; margin-right: 3px;" src="/assets/svg/unfinished.svg"></h3>
         </div>
         <br>
         <ul id="swiped-right-list"></ul>
@@ -892,6 +895,35 @@ function removeStylesheet(href) {
     }
 }
 
+// notify streak - BETA FEATURE
+// let streak = 0; 
+// streak = localStorage.getItem('days');
+// var today = new Date();
+// if (streak > 0) {
+//     var ONE_DAY = 1000 * 60 * 60 * 24; // (localStorage.getItem('date').getTime() + ONE_DAY)
+//     if (today.getTime() > 1) {
+//         streak++;
+//         localStorage.setItem('days', streak);
+//         if (streak === 10) {
+
+//         } else if (streak > 10) {
+
+//         } else {
+//             document.getElementById("streak-notif").textContent = streak + " Doorstop days in a row!! Stay for 10 for a surprise 🏆🏆";
+//             setTimeout(() => {
+//                 document.getElementById("streak-notif").classList.add('fade-in');
+//             }, 500);
+//         }
+
+//         setTimeout(() => {
+//             document.querySelector('#streak-notif').style.display = "none";
+//         }, 2000);
+//     } 
+// } else {
+//     localStorage.setItem('days', 1);
+// }
+// localStorage.setItem('date', today);
+
 
 // Add event listeners to navbar icons
 // document.getElementById('nav1').addEventListener('click', function() { showSection(1); }); separate get the fellas CTA
@@ -1086,14 +1118,6 @@ function showSection(n) {
 
     </script>
     <script>
-    // document.getElementById('closeBtn').addEventListener('click', function() {
-    //     document.getElementById('popup').style.display = 'none';
-    //     document.getElementById('content').style.display = 'none';
-    // });
-    // document.getElementById('subtn').addEventListener('click', function() {
-    //     document.getElementById('popup').style.display = 'none';
-    //     document.getElementById('content').style.display = 'none';
-    // });
 
     function saveAnswers() {
   let mood = Array.from(document.querySelectorAll('input[name="mood"]:checked'), input => input.value);
