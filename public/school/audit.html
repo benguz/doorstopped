@@ -55,9 +55,10 @@
           h3 {
             font-weight: 400;
           }
-          p {
+          p, a {
               color: black; /* Light Grey */
               font-weight: 500;
+              font-size: 16px;
               
           }
         body {
@@ -72,40 +73,7 @@
   font-family: 'Poppins';
 }
 
-#section1 {
-    background-image: url(/assets/images/classroomempty.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}
 
-#section2 {
-    background-image: url(/assets/images/Doorstopfit.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}
-
-
-#section3 {
-  background-image: url(/assets/images/childbehind.jpg);;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
-  /* background: #63ACE5;  */
-}
-
-.svg-container {
-  position: fixed;
-  top: 50%;
-  left: 75%;
-  transform: translate(-75%, -50%);
-}
-
-.dynamic {
-  display: none;
-  z-index: 3;
-}
 
 .fade-in {
   animation: fadeIn .7s ease-in forwards;
@@ -153,16 +121,6 @@
 
 
 
-#special {
-  width: 0;
-  height: 0;
-}
-
-/* img {
-    flex: 2;
-    width: 200px;
-    height: auto;
-} */
 .column {
   display: flex;
   flex-direction: column;
@@ -233,7 +191,7 @@
         font-size: 1.2em
     }
 
-    p {
+    p, a {
         font-size: 1em;
         font-weight: 400;
     }
@@ -273,11 +231,11 @@ svg {
             <!-- auditing your school, "taking steps", last time zero tolerance used" -->
         <section class="section column">
             <div class="demo">
-                <br><br><br>
+                <br><br><br><br><br>
             <h1>Choose your state</h1>
             <h2 contenteditable="true" id="state-choice" autofocus ></h2>
             <button class="bard" onclick="getStateInfo()" style="color: black; background-color: hsl(234, 44%, 88%); margin-left: 0; margin-top: 30px; box-shadow: none; padding: 12px 30px;">Submit</button>
-            <h2 id="state-info" style="height: 65px"></h2>
+            <h2 id="state-info" style="height: 115px"></h2>
             <p id="bonus-info" style="height: 40px"></p>
         </div>
     </div>
@@ -309,24 +267,32 @@ svg {
                     function(spending){ return spending.state.toLowerCase() == state.textContent.toLowerCase() }
                 );
                 console.log(spendingState);
-                document.getElementById("state-info").innerHTML = "you cost your school <strong style='color: #2804aa'>$" + (spendingState[0].PublicSpendPerK12Student / 180).toFixed(2) + "</strong> every time you're absent";
+                document.getElementById("state-info").innerHTML = "You cost your school <strong style='color: #2804aa'>$" + (spendingState[0].PublicSpendPerK12Student / 180).toFixed(2) + "</strong> every time you're absent";
                 document.getElementById("bonus-info").textContent = "more if you're ESL, low-income, or have a learning disability"
             })
-        } else if (!item) {
-            if (state.textContent.toLowerCase() === "disarray" || state.textContent.toLowerCase() === "distress" || state.textContent.toLowerCase() === "unrest")
+        } else if (!item[0]) {
+            if (state.textContent.toLowerCase() === "disarray" || state.textContent.toLowerCase() === "distress" || state.textContent.toLowerCase() === "unrest" || state.textContent.toLowerCase() === "chaos")
             {
                 document.getElementById("state-info").textContent = "haha";
                 document.getElementById("bonus-info").innerHTML = "try one of our <a href='/doorstops/listen'>mental health doorstops</a>?"
-
-
             }
             else {
-                document.getElementById("state-info").textContent = "item not found";
+                document.getElementById("state-info").textContent = "state not found";
 
             }
 
+        } else if (item[0].attendance === "Yes") {
+            document.getElementById("state-info").innerHTML = "You cost your school <strong style='color: #2804aa'>$7,500-15,000</strong> if you're absent on the right day:" ;
+            if(item[0].date) {
+              document.getElementById("bonus-info").innerHTML = item[0].date + ". Turn this into <a style='display: inline; text-decoration: underline;' href='/doorstops/leverage/data'>negotiating leverage</a>.";
+            }
+            else {
+              document.getElementById("bonus-info").innerHTML = "Usually in early October. Turn this into <a style='display: inline; text-decoration: underline;' href='/doorstops/leverage/data'>negotiating leverage</a>.";
+    
+            }
         } else {
-            document.getElementById("state-info").textContent = item.count;
+          document.getElementById("state-info").innerHTML = "You can earn your principal up to <strong style='color: #2804aa'>$150,000</strong> if you start showing up more." ;
+          document.getElementById("bonus-info").innerHTML = "Turn that into <a style='display: inline; text-decoration: underline;' href='/doorstops/leverage/data'>negotiating leverage</a>.";
 
         }
       })
