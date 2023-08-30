@@ -512,6 +512,89 @@ input {
   cursor: pointer;
 }
 
+.triangle {
+  position: absolute;
+  right: -40px;  
+  top: 50%;
+  transform: rotate(90deg);
+  z-index: 2;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.triangle-main {
+  position: absolute;
+  right: -25px;  
+  top: 50%;
+  transform: rotate(90deg);
+  z-index: 4;
+  box-shadow: 0 20px 30px -10px rgba(54, 54, 54, 0.2);
+  padding: 12px 30px 10px;
+  display: inline-block;
+  border-radius: 100px;
+  color: #fff;
+    width: auto;
+    background: rgba(255, 255, 255, 0.8);
+    animation: right-pulse 2s ease infinite;
+}
+.triangle path, .triangle-main path {
+  stroke-width: 10;
+  stroke: rgba(160, 189, 255);
+  fill: rgba(160, 189, 255);
+  stroke-linejoin: round;
+  stroke-linecap:round;
+
+}
+.triangle-main:hover {
+  cursor: pointer;
+}
+
+
+
+.triangle-left {
+  left: -25px;  
+  transform: rotate(-90deg);
+  animation: left-pulse 2s ease infinite;
+
+}
+
+.triangle-left path {
+  stroke: #D9D9D9;
+  fill: #D9D9D9;
+}
+
+@keyframes right-pulse {
+  0% {
+      -webkit-transform: rotate(90deg) scale(1);
+      transform: rotate(90deg) scale(1)
+  }
+
+  50% {
+      opacity: 0.2
+  }
+
+  100% {
+      -webkit-transform: rotate(90deg) scale(1.2, 1.4);
+      transform: rotate(90deg) scale(1.2, 1.4);
+      opacity: 0
+  }
+}
+@keyframes left-pulse {
+  0% {
+      -webkit-transform: rotate(-90deg) scale(1);
+      transform: rotate(-90deg) scale(1)
+  }
+
+  50% {
+      opacity: 0.2
+  }
+
+  100% {
+      -webkit-transform: rotate(-90deg) scale(1.2, 1.4);
+      transform: rotate(-90deg) scale(1.2, 1.4);
+      opacity: 0
+  }
+}
 /* Swiping right transition */
 
 .fade-in {
@@ -522,6 +605,10 @@ input {
   animation: fadeOut .1s ease-out forwards;
 }
 
+.fade-out-slow {
+  animation: fadeOutSlow 5s ease-out forwards;
+}
+
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -530,6 +617,12 @@ input {
 @keyframes fadeOut {
   0% { opacity: 1; }
   100% { opacity: 0; }
+}
+@keyframes fadeOutSlow {
+  0% { opacity: 1; }
+  10% { opacity: 1; }
+  70% { opacity: 0.8}
+  100% { opacity: 0; display: none;}
 }
 
 #desktop-sidenav {
