@@ -21,6 +21,8 @@
     <link href="./favicon.ico" rel="apple-touch-icon">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link href="/css/styles.css" rel="stylesheet">
+    <link href="/assets/css/emoji.css" rel="stylesheet">
+
     <link href="/assets/css/texting.css" rel="stylesheet">
     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
     <style>
@@ -43,6 +45,15 @@
 @keyframes fadeOut {
   0% { opacity: 1; }
   100% { opacity: 0; }
+}
+h1  {
+    font-size: 30px;
+}
+@media screen and (max-width: 900px) {
+    .features .feature {
+        padding: 10px 4px 4px;
+        font-size: 11px;
+    }
 }
     </style>
   </head>
@@ -82,34 +93,28 @@ a little busy    </div>
       
       <br><br>
       <br><br>
-      <br><br>
-      <br><br>
-      <div>EXPLAINER TEXT HERE...</div>
-      <br><br>
-      <div>THEN A SMALL ASK SCENARIO</div>
       <div class="mine messages fade-in-extra">
-        
-        <div class="message last fade-in-extra">
-            <div class="textbox" id="mild" contenteditable="true" flex="5">
-               Respond here...
-              </div>
-              <div class="emoji-box">
-                <div class="emoji-element"></div>
-                </div>  
-                <div class="emoji-box">
-                  <div class="emoji-element"></div>
-                  </div>  
-         </div>
-
+        <div class="message">
+            small asks are nbd - you'll always get a yes
+        </div>
+        <div class="message last">
+           and when ya bring up a big ask later...
+          </div>
+        </div>
+        <div class="yours messages">
+            <!-- <div class="message">
+        uhhhh no    </div> -->
+            <div class="message last">
+         you're more likely to get a yes bc you've built some trust!    </div>
+          </div>
         </div>
               
 
       <!--           <p>Regina dissed Gretchen when she was talking to Karen and, instead of keeping this to herself or confronting Regina, both of which Karen is incapable of, Karen tells Gretchen, reigniting 18 years of violent, silent warfare between Gretchen and Regina.</p>
           <p>Regina is *really* in the wrong and Karen is <em>kinda</em> in the wrong. Karen is worse than an innocent bystander but not quite a criminal.</p> -->
   </div>
-    <div class="hero">
-        <!-- how starting with small asks leads to building a long term relationship -->
-      <h1 class="title wide" style="padding-bottom:10px">Networking advances your career: it's how you meet people that might hire you.</h1>
+    <div class="hero" style="padding-top: 0; padding-bottom: 0;">
+      <!-- <h1 class="title wide" style="padding-bottom:10px">Networking advances your career: it's how you meet people that might hire you.</h1> -->
       <h1 class="title shift clip">
         <div class="features">
           <img src="/images/overlay-left.svg" class="overlay-left hide-mobile" alt="overlay"/>
@@ -118,53 +123,74 @@ a little busy    </div>
           <img src="/images/overlay-bottom.svg" class="overlay-bottom show-mobile" alt="overlay"/>
           <div class="row donts">
             <!-- each feature can have onClick="window.open('/doorstops/extension.html');" -->
-            <div class="feature" ><i class="icon" data-feather="check"></i> Entrepreneurs</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Engineers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Nonprofits</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Educators</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> PhDs</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Consultants</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> CEOs</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Product Managers</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Can you explain problem 3 again?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Can I come 2 mins late to class?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Is there a day we can talk after class?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Where's the best place for hw help?</div>
+
             <!-- Repeat-->
-            <div class="feature" ><i class="icon" data-feather="check"></i> Entrepreneurs</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Engineers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Nonprofits</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Educators</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> PhDs</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Consultants</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> CEOs</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Product Managers</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Can you explain problem 3 again?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Can I come 2 mins late to class?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Is there a day we can talk after class?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Where's the best place for hw help?</div>
+
           </div>
           <div class="row dos">
-            <div class="feature" ><i class="icon" data-feather="check"></i> Managers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> TikTokers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Actors</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Comedians</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Bankers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Marketers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Designers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Financial Analysts</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Wdyt of my ig caption idea?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Are you free to give 10 mins of advice?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Can I have a bite of your snack?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Do yk anyone working in [career]?</div>
             <!-- Repeat-->
-            <div class="feature" ><i class="icon" data-feather="check"></i> Managers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> TikTokers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Actors</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Comedians</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Bankers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Marketers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Designers</div>
-            <div class="feature" ><i class="icon" data-feather="check"></i> Financial Analysts</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Wdyt of my ig caption idea?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Are you free to give 10 mins of advice?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Can I have a bite of your snack?</div>
+            <div class="feature" ><i class="icon" data-feather="check"></i> Do yk anyone working in [career]?</div>
           </div>
         </div>
       <!--<p class="subtitle">Available soon for Mac <img src="images/logo-apple.svg" alt="apple"/></p>-->
     </div>
-
+<!-- 
     <section class="section imagery">
         <h2 class="title wide">You build the skill by TALKING TO PEOPLE, making jokes, telling stories, and getting better at conversation.</h2>
         <h2 class="title wide">You'll end up in cool careers by meeting 100's of cool people and making a good impression</h2>
         <h2 class="title wide">Start with your teachers, <strong>the first adults who can vouch for you to get a job!</strong></h2>
-</section>
-
+</section> -->
+<div class="chat" style="font-family: 'helvetica';" id="medium-chat">
+    <div class="yours messages">
+        <div class="message">
+            wanna practice?
+        </div>
+        <div class="message">
+            pretend I'm your teacher and you want weekly extra help on assignments
+        </div>
+        <div class="message last">
+what should you ask for before saying I NEED YOUR TIME EVERY WEEK FOR THE REST OF YOUR LIFE
+        </div>
+    </div>
+    <div class="mine messages">
+      <div class="message last">
+          <div class="textbox" id="mild" contenteditable="true" flex="5">
+             Respond here...
+            </div>
+            <div class="emoji-box">
+              <div class="emoji-element"></div>
+              </div>  
+              <div class="emoji-box">
+                <div class="emoji-element"></div>
+                </div>  
+                <div class="emoji-box">
+                    <div class="emoji-element"></div>
+                    </div>  
+       </div>
+    </div>
+    <div class="yours messages" id="feedback" style="display: none">
+        <div class="message">
+            let's do it!
+        </div>
+        <div class="message last">
+            awesome message :)        </div>
+    </div>
+</div>
 <section>
     <!--EMAIL TEMPLATE-->
 </section>
@@ -182,9 +208,39 @@ a little busy    </div>
     </footer>
     </div>
   </div>
-  <script src="./js/jquery/3.4.1/jquery.min.js"></script>
-<script src="js/scripts.min.js"></script>
+  <script src="/js/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/scripts.min.js"></script>
+<script>
+            $(".textbox").on('keyup', function (e) {
+            if (e.key === 'Enter' || e.keyCode === 13) {
+              let input = this.textContent;
+              processText(input, this.id);
+              this.blur();
+            }
+        });
+        var animations = ['floatPath2', 'floatPath3', 'floatPath4'];
+        function processText(input, id) {
+            Array.from(document.querySelectorAll('.emoji-element')).forEach((element) =>
+            {
+              var animation = animations[Math.floor(Math.random() * animations.length)];
+              var tears = ["😳", "💅💅", "❤️", "💗", "💖💖", "💚", "🧡", "💛", "🤍", "💙"]
+              var tear = tears[Math.floor(Math.random() * tears.length)];
+              let newElement = $(`<span class='floating-emoji'>${tear}</span>`);
+              
+              /* Apply the animation */
+              newElement.css('animation', `${animation} 1s forwards`);
+              newElement.css('left', `${Math.random()*100}%`);
+              newElement.css('top', `50%`);
+              $(element).parent().append(newElement);
+              setTimeout(function() {
+                newElement.remove();
+              }, 2000);
+            });
+            document.getElementById("feedback").classList.add("fade-in");
+            document.getElementById("feedback").style.display = "flex";
 
+        }
+</script>
 </body>
 
 </html>
