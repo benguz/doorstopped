@@ -4,7 +4,7 @@ exports.handler = async function(event, context) {
     const API_KEY = process.env.TESTING_KEY;    
     const payload = JSON.parse(event.body);
     const { page } = payload;
-    let request = 'https://plausible.io/api/v1/stats/breakdown?site_id=doorstopped.org&property=event:props:' + page + '-likes';
+    let request = 'https://plausible.io/api/v1/stats/breakdown?site_id=doorstopped.org&property=event:name&filters=event:name==' + page + '-likes&metrics=visitors,events';
     console.log(page);
     try {
       const response = await axios.get(request, {

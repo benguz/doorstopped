@@ -10,13 +10,17 @@ function getLike(currentPage) {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        likes.textContent = data.results[0]['visitors']; //currentPage + '-likes'
+        likes.textContent = data.results[0]["events"];
       });
 }
 
 let clicked = 0;
 function hitLike(page) {
-    if ((clicked % 2) === 0) {likes.textContent = likes.textContent++; } else {likes.textContent = likes.textContent--;}
+    likesInt = parseInt(likes.textContent)
+    if ((clicked % 2) === 0) {
+        likesInt++; 
+    } else {likesInt--;}
+    likes.textContent = likesInt;
     if (clicked === 0) {
         plausible(page + "-likes");
     }
