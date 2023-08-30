@@ -632,10 +632,12 @@ function loadNextVideo() {
         currentVideoIndex += 1;
     }
 }
+document.addEventListener("DOMContentLoaded", function(event) {
 loadNextVideo();
 loadNextVideo();
 loadNextVideo();
-
+loadNextVideo();
+});
     function nextQuestion(currentQuestion) {
     var questionContainer = document.getElementById('question-' + currentQuestion);
     questionContainer.classList.remove('active');
