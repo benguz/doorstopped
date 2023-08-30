@@ -477,17 +477,13 @@
         <div class="card" data-link="/doorstops/extension#i-just-want-to-email" data-height="300000px" data-category="SEL-skills">
             <h2>Essay due in two days? Haven’t started?</h2>
 
-            <p>We can help—not, like, plagiarism. Ask for an extension!<br>
-                <video autoplay muted loop id="extension" width="100%" style="object-fit: contain; width: calc(100% + 40px); position: absolute; left: -20px;">
+            <p>We can help—not, like, plagiarism. Ask for an extension!<br></p>
+            <br><br>
+                <video autoplay muted loop id="extension" width="100%" style="object-fit: cover; width: calc(100% + 40px); position: absolute; left: -20px;">
                     <source data-src="/assets/cards/panda-sad.webm" alt="sad panda" type="video/webm">
                   </video>  
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main" width='50' height='50' viewbox="0 0 50 60">
-            <path d="M 25,5 45,45 5,45 Z"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main triangle-left" width='50' height='50' viewbox="0 0 50 60">
-            <path d="M 25,5 45,45 5,45 Z"/>
-          </svg>
+
         <!--
         <div class="card" data-link="/doorstops/points">
         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ahsokka_/video/7207198809548492037" data-video-id="7207198809548492037"  data-autoplay="true" style="min-width: 100%"> <section> <a target="_blank" title="@ahsokka_" href="https://www.tiktok.com/@ahsokka_?refer=embed">@ahsokka_</a> </section></blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
@@ -495,11 +491,20 @@
         -->
         <div id="first" class="card special">
             <h2 style="font-size: 35pt; line-height: 1.2em; text-align: center">Swipe right to change school</h2>
-            <h2 style="text-align: center">Swipe left to see another strategy</h2>
-            <video autoplay muted loop id="extension" width="100%" style="object-fit: contain; width: calc(100% + 40px); position: absolute; left: -20px;">
-                <source data-src="/assets/cards/dancing-panda.webm" alt="sad panda" type="video/webm">
+            <br>
+            <video autoplay muted loop id="extension" width="100%" style="object-fit: contain; width: calc(100% + 60px); position: absolute; left: -20px;">
+                <source data-src="/assets/cards/panda-fat.webm" alt="sad panda" type="video/webm">
               </video>  
+              <br>
+              <h2 style="text-align: center; position: absolute; padding: 0px 20px; left: 0px; bottom: 10px;">Swipe left to see another strategy</h2>
+
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main" width='50' height='50' viewbox="0 0 50 60" onclick="handleSwipeRight(currentCard); showNextCard(currentCard);">
+            <path d="M 25,5 45,45 5,45 Z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main triangle-left" width='50' height='50' viewbox="0 0 50 60" onclick="handleSwipeLeft(currentCard); showNextCard(currentCard);">
+            <path d="M 25,5 45,45 5,45 Z"/>
+          </svg>
     </div>
     <div id="swiped-right-section" style="display: none;">
     </div>
@@ -627,11 +632,9 @@ function loadNextVideo() {
         currentVideoIndex += 1;
     }
 }
-document.addEventListener("DOMContentLoaded", function(event) { // this line is probably redundant
-  loadNextVideo();
-  loadNextVideo();
-  loadNextVideo();
-});
+loadNextVideo();
+loadNextVideo();
+loadNextVideo();
 
     function nextQuestion(currentQuestion) {
     var questionContainer = document.getElementById('question-' + currentQuestion);
@@ -720,6 +723,7 @@ if (window.innerWidth < 1000) {
     isMobile = 1;
 }
 
+var currentCard = document.getElementById("first");
 document.querySelectorAll('.card').forEach((card, index) => {
     let hammertime = new Hammer(card);
     let initialPos = 0;
@@ -759,122 +763,11 @@ document.querySelectorAll('.card').forEach((card, index) => {
             // If you swipe more than 100px to the right or left, take action
             card.classList.add('out');
             if (e.deltaX > 0) {
-                let cardLink = card.dataset.link;
-                let cardCategory = card.dataset.category;
-                // let cardHeight = card.dataset.height;
-                let cardid;
-                if (cardLink) {
-                    if (cardLink.includes("#")) {
-                        cardid = cardLink.split('#')[1];
-                    }
-                    // if (cardLink === "PERSONALIZED") {
-                    //     let dinky = document.getElementById('popup');
-                    //     dinky.style.display = "flex";
-                    // }
-                    if (cardLink.startsWith('https://')) {
-                        // Open external link in the same tab
-                        window.location.href = cardLink;
-                    } 
-                    else {
-                        // let bang = document.getElementById("main");
-                        // bang.src = cardLink;
-                        // bang.height = cardHeight;
-                    setTimeout(() => {
-                        fetch(cardLink)
-                    .then(response => response.text())
-                    .then(html => {
-                        // create a new DOMParser
-                        let parser = new DOMParser();
-                        // parse the text to a new document
-                        let doc = parser.parseFromString(html, 'text/html');
-                        // select the element with class 'yonk'
-                        let yonkElement = doc.querySelector(".yonk");
-
-                        let aboutElement = doc.querySelector(".about-content");
-                        let article = doc.querySelector("article");
-                        let body = doc.querySelector("body");
-                        let content = document.querySelector("#content-placeholder");
-                        window.location.hash ="#content-placeholder";
-                        if (yonkElement) {
-                            // put the content of 'yonk' element inside the placeholder
-                            loadStylesheet("/assets/css/style.css");
-                            content.innerHTML = yonkElement.outerHTML;
-                            // Remove the first five <br> tags
-                            let brTags = document.querySelectorAll(".yonk > br");
-                            for (let i = 0; i < 5 && i < brTags.length; i++) {
-                                brTags[i].remove();
-                            }
-                            if (cardid) { // scroll to #ID
-                                window.location.hash = cardid;
-                                // bang.onload = function() {
-                                //     bang.contentWindow.document.getElementById(cardid).scrollIntoView();
-                                // };                            
-                                }
-                        } else if (article) {
-                            // loadStylesheet("/assets/css/style.css");
-                            content.innerHTML = article.outerHTML;
-                        } else if (aboutElement) {
-                            // content.innerHTML = "";
-                            loadStylesheet("/assets/css/style.css");
-                            content.innerHTML = aboutElement.outerHTML;
-                        } else if (doc.querySelector(".slider-wrapper")){
-                            loadStylesheet("/doorstops/food.css");
-                            // content.innerHTML = "";
-                            // content.appendChild(body);
-                            content.innerHTML = body.outerHTML;
-                            loadScript("/assets/js/food.js");
-                        } else if (doc.querySelector(".ref")) {
-                            loadStylesheet("/assets/css/dynamic.css");
-                            // const bodyElement = body.cloneNode(true);
-                            content.innerHTML = doc.querySelector(".ref").outerHTML;
-                            loadScript("/assets/js/ref.js");
-                            loadScript("/assets/js/ref-dashboard.js");
-                            setTimeout(() => callthis(), 200);
-                        }
-                        else {
-                            content.innerHTML = body.outerHTML;
-                            // not sure if I need a stylesheet here.
-                        }
-                        showSection(3);
-                    })
-                    .catch(err => console.log('Failed to load page: ', err));
-                                
-                    });
-                }
-                    swipedRight.push({
-                    title: card.querySelector('h2').textContent,
-                    link: card.dataset.link
-                    });
-                    localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
-                    document.querySelector('#howto').style.display = 'none'; // hides howto
-
-                    plausible(cardCategory);
-                }
-                else if (card.dataset.category === "50-swipes-survey-yes") {
-                    plausible("50-swipes-survey-yes");
-                    console.log("yes! ", cardCategory);
-                } else if (card.dataset.category === "25-swipes-survey-yes") {
-                    plausible("25-swipes-survey-yes");
-                    console.log("yes! ", cardCategory);
-                }
-                
-            } else if (card.dataset.category === "50-swipes-survey-yes") {
-                plausible("50-swipes-survey-no");
-                console.log("no!");
-            } else if (card.dataset.category === "25-swipes-survey-yes") {
-                plausible("25-swipes-survey-no");
-                console.log("no!");
+                handleSwipeRight(card);
+            } else {
+                handleSwipeLeft(card);
             }
-            loadNextVideo();
-            let nextCard = card.previousElementSibling;
-            let followingCard = nextCard.previousElementSibling;
-            if (followingCard) {
-                followingCard.style.display = 'block';
-            }
-            
-            card.style.opacity = '0';
-            // After the transition ends, remove the card
-            setTimeout(() => {card.style.display = 'none'; }, 100);
+            showNextCard(card);
         } else {
             // If you don't swipe enough, the card springs back to center
             animate();
@@ -884,6 +777,130 @@ document.querySelectorAll('.card').forEach((card, index) => {
         rafId = null;
     });
 });
+function handleSwipeLeft(card) {
+    if (card.dataset.category === "50-swipes-survey-yes") {
+                plausible("50-swipes-survey-no");
+                console.log("no!");
+    } else if (card.dataset.category === "25-swipes-survey-yes") {
+        plausible("25-swipes-survey-no");
+        console.log("no!");
+    }
+}
+ 
+function handleSwipeRight(card) {
+    let cardLink = card.dataset.link;
+    let cardCategory = card.dataset.category;
+    // let cardHeight = card.dataset.height;
+    let cardid;
+    if (cardLink) {
+        if (cardLink.includes("#")) {
+            cardid = cardLink.split('#')[1];
+        }
+        // if (cardLink === "PERSONALIZED") {
+        //     let dinky = document.getElementById('popup');
+        //     dinky.style.display = "flex";
+        // }
+        if (cardLink.startsWith('https://')) {
+            // Open external link in the same tab
+            window.location.href = cardLink;
+        } 
+        else {
+            // let bang = document.getElementById("main");
+            // bang.src = cardLink;
+            // bang.height = cardHeight;
+        setTimeout(() => {
+            fetch(cardLink)
+        .then(response => response.text())
+        .then(html => {
+            // create a new DOMParser
+            let parser = new DOMParser();
+            // parse the text to a new document
+            let doc = parser.parseFromString(html, 'text/html');
+            // select the element with class 'yonk'
+            let yonkElement = doc.querySelector(".yonk");
+
+            let aboutElement = doc.querySelector(".about-content");
+            let article = doc.querySelector("article");
+            let body = doc.querySelector("body");
+            let content = document.querySelector("#content-placeholder");
+            window.location.hash ="#content-placeholder";
+            if (yonkElement) {
+                // put the content of 'yonk' element inside the placeholder
+                loadStylesheet("/assets/css/style.css");
+                content.innerHTML = yonkElement.outerHTML;
+                // Remove the first five <br> tags
+                let brTags = document.querySelectorAll(".yonk > br");
+                for (let i = 0; i < 5 && i < brTags.length; i++) {
+                    brTags[i].remove();
+                }
+                if (cardid) { // scroll to #ID
+                    window.location.hash = cardid;
+                    // bang.onload = function() {
+                    //     bang.contentWindow.document.getElementById(cardid).scrollIntoView();
+                    // };                            
+                    }
+            } else if (article) {
+                // loadStylesheet("/assets/css/style.css");
+                content.innerHTML = article.outerHTML;
+            } else if (aboutElement) {
+                // content.innerHTML = "";
+                loadStylesheet("/assets/css/style.css");
+                content.innerHTML = aboutElement.outerHTML;
+            } else if (doc.querySelector(".slider-wrapper")){
+                loadStylesheet("/doorstops/food.css");
+                // content.innerHTML = "";
+                // content.appendChild(body);
+                content.innerHTML = body.outerHTML;
+                loadScript("/assets/js/food.js");
+            } else if (doc.querySelector(".ref")) {
+                loadStylesheet("/assets/css/dynamic.css");
+                // const bodyElement = body.cloneNode(true);
+                content.innerHTML = doc.querySelector(".ref").outerHTML;
+                loadScript("/assets/js/ref.js");
+                loadScript("/assets/js/ref-dashboard.js");
+                setTimeout(() => callthis(), 200);
+            }
+            else {
+                content.innerHTML = body.outerHTML;
+                // not sure if I need a stylesheet here.
+            }
+            showSection(3);
+        })
+        .catch(err => console.log('Failed to load page: ', err));
+                    
+        });
+    }
+        swipedRight.push({
+        title: card.querySelector('h2').textContent,
+        link: card.dataset.link
+        });
+        localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
+        document.querySelector('#howto').style.display = 'none'; // hides howto
+
+        plausible(cardCategory);
+    }
+    else if (card.dataset.category === "50-swipes-survey-yes") {
+        plausible("50-swipes-survey-yes");
+        console.log("yes! ", cardCategory);
+    } else if (card.dataset.category === "25-swipes-survey-yes") {
+        plausible("25-swipes-survey-yes");
+        console.log("yes! ", cardCategory);
+    }
+}
+function showNextCard(card) {
+    loadNextVideo();
+    let nextCard = card.previousElementSibling;
+    let followingCard = nextCard.previousElementSibling;
+    if (followingCard) {
+        followingCard.style.display = 'block';
+    }
+    console.log(currentCard + " <- cur next -> " + nextCard)
+    currentCard = nextCard;
+    
+    card.style.opacity = '0';
+    // After the transition ends, remove the card
+    setTimeout(() => {card.style.display = 'none'; }, 100);
+}
 
 function loadScript(src) {
     let script = document.createElement('script');
