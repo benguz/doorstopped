@@ -60,6 +60,7 @@
       </div>
       <div id="desktop-main" >
         <div id="streak-notif" class="content" style="opacity: 0; position: absolute; right: 1em; width: 20%; margin: 0; text-align: left; bottom: 1em; z-index: 3;">Streak notif!</div>
+        <div onload="loadOtherContent()"></div>
 
     <div id="card-container">
 <!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
@@ -475,23 +476,29 @@
         </div> 
         <div class="card" data-link="/doorstops/extension#i-just-want-to-email" data-height="300000px" data-category="SEL-skills">
             <h2>Essay due in two days? Haven’t started?</h2>
-            <video autoplay muted loop id="extension" width="100%" style="object-fit: contain;">
-                <source data-src="/assets/images/extension-half.webm" alt="extension email workflow" type="video/webm">
-              </video>  
-            <p>We can help—not, like, in a plagiarism way. Ask for an extension!<br>
-            <h3>Me? I don’t need an extension. You must not be familiar with my game.</h3>
-            <p>Someday your boss is gonna say, "Bestie, can you work 'til 10pm today?"<br>Don't say "Sure, Bestie!" <strong>Learn to set boundaries now.</strong></p>
+
+            <p>We can help—not, like, plagiarism. Ask for an extension!<br>
+                <video autoplay muted loop id="extension" width="100%" style="object-fit: contain; width: calc(100% + 40px); position: absolute; left: -20px;">
+                    <source data-src="/assets/cards/panda-sad.webm" alt="sad panda" type="video/webm">
+                  </video>  
         </div>
-        
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main" width='50' height='50' viewbox="0 0 50 60">
+            <path d="M 25,5 45,45 5,45 Z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main triangle-left" width='50' height='50' viewbox="0 0 50 60">
+            <path d="M 25,5 45,45 5,45 Z"/>
+          </svg>
         <!--
         <div class="card" data-link="/doorstops/points">
         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ahsokka_/video/7207198809548492037" data-video-id="7207198809548492037"  data-autoplay="true" style="min-width: 100%"> <section> <a target="_blank" title="@ahsokka_" href="https://www.tiktok.com/@ahsokka_?refer=embed">@ahsokka_</a> </section></blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
         </div>
         -->
-        <div class="card special">
-            <h2>Swipe to change school</h2>
-            <img src="/assets/images/moon.webp" alt="image1"/>
-            <p>Swipe left (not interested) and right (yes PLEASE) until you find the perfect strategy/cash grant/vibe check for being happier in school.<br>
+        <div id="first" class="card special">
+            <h2 style="font-size: 35pt; line-height: 1.2em; text-align: center">Swipe right to change school</h2>
+            <h2 style="text-align: center">Swipe left to see another strategy</h2>
+            <video autoplay muted loop id="extension" width="100%" style="object-fit: contain; width: calc(100% + 40px); position: absolute; left: -20px;">
+                <source data-src="/assets/cards/dancing-panda.webm" alt="sad panda" type="video/webm">
+              </video>  
         </div>
     </div>
     <div id="swiped-right-section" style="display: none;">
@@ -598,7 +605,12 @@
         <button id="nav3m"><img class="nav-icon" id="img3m" src="/assets/svg/Favorite.svg" alt="Icon 3" /></button>
         <button id="nav5m"><img class="nav-icon" id="img5m" src="/assets/svg/User_alt.svg" alt="Icon 5" /></button> <!--Account Icon-->
     </div>
-
+<script>
+    const loadOtherContent = () => {
+    document.getElementById("first").innerHTML = `            <h2 font-size="80pt">Swipe right to change school</h2>
+            <h2>Swipe left to see another strategy</h2>`;
+}
+</script>
     <script>
 const videos = document.getElementsByTagName('video');
 let currentVideoIndex = 0;
@@ -952,10 +964,6 @@ function showSection(n) {
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
         // console.log("n = 2, LSS: ", lastShownSection) unaddressed bug here - lastShownSection is 2 when using swipe on left section
         document.querySelector('#card-container').style.display = 'block';
-        // document.querySelector('#left-section').style.display = 'none';
-        // document.querySelector('#bingo-section').style.display = 'none';
-        // document.querySelector('#account-section').style.display = 'none';
-
         document.getElementById('img' + lastShownSection + mobileNav[isMobile]).src= iconSrc[lastShownSection - 1];
         document.getElementById('img2' + mobileNav[isMobile]).src = "/assets/svg/cards-dark.svg";
 
@@ -970,9 +978,6 @@ function showSection(n) {
         document.querySelector('#swiped-right-section').style.display = 'block';
         document.getElementById('img' + lastShownSection + mobileNav[isMobile]).src = iconSrc[lastShownSection - 1];
         document.getElementById('img1' + mobileNav[isMobile]).src = "/assets/svg/Book_check_fill.svg";
-        // document.getElementById('img3').src = "/assets/svg/Favorite.svg";
-        // document.getElementById('img5').src = "/assets/svg/User_alt.svg";
-        // document.getElementById('img4').src= "/assets/svg/Lamp.svg";
         lastShownSection = 1;
 
     } else if (n === 3) {
@@ -984,11 +989,8 @@ function showSection(n) {
         setTimeout(() => {
             document.querySelector('#left-section').classList.remove("fade-in");
         }, 500);
-        // document.getElementById('img2').src = "/assets/svg/cards-light.svg";
         document.getElementById('img' + lastShownSection + mobileNav[isMobile]).src = iconSrc[lastShownSection - 1];
         document.getElementById('img3' + mobileNav[isMobile]).src = "/assets/svg/Favorite_fill.svg";
-        // document.getElementById('img5').src = "/assets/svg/User_alt.svg";
-        // document.getElementById('img4').src= "/assets/svg/Lamp.svg";
         lastShownSection = 3;
 
         // hammer test
@@ -1021,7 +1023,6 @@ function showSection(n) {
         });
 
         hammertime.on('panstart', function() {
-
             initialPos = currentPos;
             leftSection.classList.remove('out');
         });
