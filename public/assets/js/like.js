@@ -10,7 +10,7 @@ function getLike(currentPage) {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        likes.textContent = data.results[0]['mentor-likes'];
+        likes.textContent = data.results[0]['visitors']; //currentPage + '-likes'
       });
 }
 
