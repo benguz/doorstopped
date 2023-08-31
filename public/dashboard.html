@@ -50,8 +50,6 @@
           <button id="nav2" class="desktop-button"><img class="nav-icon desktop" id="img2" src="/assets/svg/cards-dark.svg" alt="Icon 2" /><h2 class="desktop-text">&nbsp;Home</h2></button>
           <button id="nav3" class="desktop-button"><img class="nav-icon desktop" id="img3" src="/assets/svg/Favorite.svg" alt="Icon 3" /><h2 class="desktop-text">&nbsp;Doorstops</h2></button>
           <button id="nav4" class="desktop-button"><img class="nav-icon desktop" id="img4" src="/assets/svg/Lamp.svg" alt="Icon 4" /><h2 class="desktop-text">&nbsp;Explore</h2></button>
-
-          <!-- <button id="nav1"><img class="nav-icon" id="img1" src="/assets/svg/cards-dark.svg" alt="Icon 1" />Explore</button> -->
           <button id="nav5" class="desktop-button"><img class="nav-icon desktop" id="img5" src="/assets/svg/User_alt.svg" alt="Icon 5" /><h2 class="desktop-text">&nbsp;Account</h2></button>
           <button id="nav1" class="desktop-button"><img class="nav-icon desktop" id="img1" src="/assets/svg/Book_check.svg" alt="Icon 1" /><h2 class="desktop-text">&nbsp;Get the Fellas</h2></button>
 
@@ -59,7 +57,7 @@
           <br><br>
       </div>
       <div id="desktop-main" >
-        <div id="streak-notif" class="content" style="opacity: 0; position: absolute; right: 1em; width: 20%; margin: 0; text-align: left; bottom: 1em; z-index: 3;">Streak notif!</div>
+        <!-- <div id="streak-notif" class="content" style="opacity: 0; position: absolute; right: 1em; width: 20%; margin: 0; text-align: left; bottom: 1em; z-index: 3;">Streak notif!</div> -->
         <div onload="loadOtherContent()"></div>
 
     <div id="card-container">
@@ -140,7 +138,7 @@
             <h2>"You're a try-hard"</h2>
             <p>You get put down for caring.</p>
         </div>
-        <div class="card" data-link="https://blog.benguzovsky.com/college" style="display: none;" data-category="college-career">
+        <div class="card" data-link="/doorstops/college" style="display: none;" data-category="college-career">
             <h2>COLLEGE APPLICATION STRESS</h2>
             <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
                 <source data-src-mp4="/assets/cards/mp4/no-stress.mp4" data-src-webm="/assets/cards/no-stress.webm" >
@@ -546,7 +544,7 @@
         </div>
     </div>
     <div id="left-section" style="display: none;">
-        <br><br>
+        <br><br id="scrollToHere">
         <iframe id="howto" src="/doorstops/howto-embed" width="100%" height="600vh"></iframe>
         <div id="content-placeholder">
         <!-- for iframe imports <iframe id="main" width="100%" height="300000px"></iframe> -->
@@ -614,7 +612,7 @@
                         <button class="form-button" onclick="nextQuestion(3)">Next →</button>
                     </div>
                     <div id="question-4" class="question-content">
-                        <p>I my school doesn't fully understand or respect my gender or sex identity:</p>
+                        <p>My school doesn't fully understand/respect my gender or sex identity:</p>
                         <div class="options">
                             <label><input type="radio" name="gender-identity" value="Yes"> Yes</label>
                             <label><input type="radio" name="gender-identity" value="No"> No</label>
@@ -633,7 +631,7 @@
         <br>
         <div class="content" id="content">
             <h1>See the Doorstops you swiped right on:</h1>
-            <h3 id="streak"><img style="width: 16px; height: 16px; display: inline; margin-right: 3px;" src="/assets/svg/finished.svg"><img style="width: 16px; height: 16px; display: inline; margin-right: 3px;" src="/assets/svg/unfinished.svg"></h3>
+            <!-- <h3 id="streak"><img style="width: 16px; height: 16px; display: inline; margin-right: 3px;" src="/assets/svg/finished.svg"><img style="width: 16px; height: 16px; display: inline; margin-right: 3px;" src="/assets/svg/unfinished.svg"></h3> -->
         </div>
         <br>
         <ul id="swiped-right-list"></ul>
@@ -654,6 +652,27 @@
 }
 </script>
     <script>
+// picks you up where you left off in the swipe feed
+// currently picks up cards by link, which could break if two have the same link, function somewhat inefficient by not breaking
+let foundCard = 0; 
+let lastSession = localStorage.getItem("nextItemLink");
+console.log(lastSession);
+if (lastSession.includes("/")) {
+    const cards = Array.from(document.querySelectorAll('.card')).reverse();
+    cards.forEach((card) => {
+        if (card.dataset.link === lastSession) { 
+            card.style.display = 'block'; 
+            foundCard++;
+        }
+        if (foundCard === 0) {
+            card.remove(); 
+        } else if (foundCard < 4) {
+            card.style.display = 'block'; 
+            foundCard++;
+        } 
+    });
+}
+
 const videos = document.getElementsByTagName('video');
 let currentVideoIndex = 0;
 function loadNextVideo() {
@@ -884,7 +903,7 @@ function handleSwipeRight(card) {
                     // bang.onload = function() {
                     //     bang.contentWindow.document.getElementById(cardid).scrollIntoView();
                     // };                            
-                    }
+                } 
             } else if (article) {
                 // loadStylesheet("/assets/css/style.css");
                 content.innerHTML = article.outerHTML;
@@ -910,7 +929,12 @@ function handleSwipeRight(card) {
                 content.innerHTML = body.outerHTML;
                 // not sure if I need a stylesheet here.
             }
+            if (!cardid) {
+                window.location.hash = '#scrollToHere' // causes slight hitch on load
+            }
             showSection(3);
+            
+            
         })
         .catch(err => console.log('Failed to load page: ', err));
                     
@@ -939,7 +963,7 @@ function showNextCard(card) {
         followingCard.style.display = 'block';
     }
     currentCard = nextCard;
-    
+    localStorage.setItem("nextItemLink", nextCard.dataset.link);
     card.style.opacity = '0';
     // After the transition ends, remove the card
     setTimeout(() => {card.style.display = 'none'; }, 100);
@@ -967,7 +991,7 @@ function removeStylesheet(href) {
     }
 }
 
-// notify streak - BETA FEATURE // TODO: make desktop only. 
+// notify streak - BETA FEATURE // TODO: make desktop only. if (isMobile === 0)
 // let streak = 0; 
 // streak = localStorage.getItem('days');
 // var today = new Date();
