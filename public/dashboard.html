@@ -454,21 +454,21 @@
         <div class="card" data-link="/doorstops/food" style="display: none;" data-category="peers">
             <h2>Toxic comments about eating</h2>
             <video autoplay muted loop id="eating" width="100%" style="object-fit: contain;">
-                <source data-src-mp4="/assets/cards/mp4/" data-src-webm="/assets/cards/eye-roll-meme.webm" type="video/webm">
+                <source data-src-mp4="/assets/cards/mp4/eye-roll-meme.mp4" data-src-webm="/assets/cards/eye-roll-meme.webm" type="video/webm">
               </video>                 <br>
             <p>Respond and change the culture without causing drama!</p>
         </div>
         <div class="card" data-link="/doorstops/feedback" style="display: none;" data-height="3000px" data-category="STR">
             <h2>Boring classes?</h2>
             <video autoplay muted loop id="boring" width="100%" style="object-fit: contain;">
-                <source data-src-mp4="/assets/cards/mp4/" data-src-webm="/assets/cards/depressed-bored.webm" type="video/webm">
+                <source data-src-mp4="/assets/cards/mp4/depressed-bored.mp4" data-src-webm="/assets/cards/depressed-bored.webm" type="video/webm">
               </video>              <br>
             <p>Give your teacher anonymous, constructive feedback that will make class better.</p>
         </div>
         <div class="card" data-link="/doorstops/points" data-height="30000px" data-category="culture">
             <h2>If people <span class="loud">arm wrestle</span> for participation points:</h2>
             <video autoplay muted loop id="armwrestle" width="100%" style="object-fit: contain;">
-                <source data-src-mp4="/assets/cards/mp4/" data-src-webm="/assets/cards/panda-tumbles-down.webm" alt="pandas falling over each other" type="video/webm">
+                <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" alt="pandas falling over each other" type="video/webm">
               </video>  
             <br>
             <h3>End the GPA obsession with a schoolwide participation point boycott.</h3>
@@ -644,7 +644,6 @@ function loadNextVideo() {
             source.setAttribute('src', srcMp4);
             source.setAttribute('type', 'video/mp4');
             }
-            console.log(src);
             video.load(); // This is needed to reload the video with the new source
         }
         currentVideoIndex += 1;
