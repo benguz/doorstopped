@@ -512,61 +512,49 @@ input {
   cursor: pointer;
 }
 
-.triangle {
-  position: absolute;
-  right: -40px;  
-  top: 50%;
-  transform: rotate(90deg);
-  z-index: 2;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
 
-.triangle-main {
+
+.triangle-main, .triangle-left {
   position: absolute;
-  right: -25px;  
-  top: 50%;
-  transform: rotate(90deg);
+  right: -10px;  
+  bottom: 10%;
   z-index: 4;
   box-shadow: 0 20px 30px -10px rgba(54, 54, 54, 0.2);
-  padding: 12px 30px 10px;
+  padding: 20px;
   display: inline-block;
-  border-radius: 100px;
-  color: #fff;
+  border-radius: 50px;
     width: auto;
     background: rgba(255, 255, 255, 0.8);
     animation: right-pulse 2s ease infinite;
 }
-.triangle path, .triangle-main path {
-  stroke-width: 10;
+
+.triangle-main path {
+  /* stroke-width: 10; */
   stroke: rgba(160, 189, 255);
   fill: rgba(160, 189, 255);
-  stroke-linejoin: round;
-  stroke-linecap:round;
-
-}
-.triangle-main:hover {
-  cursor: pointer;
-}
-
-
-
-.triangle-left {
-  left: -25px;  
-  transform: rotate(-90deg);
-  animation: left-pulse 2s ease infinite;
+  /* stroke-linejoin: round; */
+  /* stroke-linecap:round; */
 
 }
 
 .triangle-left path {
-  stroke: #D9D9D9;
-  fill: #D9D9D9;
+  stroke: #EF4E6D;
 }
+.triangle-main:hover, .triangle-left:hover {
+  cursor: pointer;
+}
+
+.triangle-left {
+  left: -10px;  
+  animation: left-pulse 2s ease infinite;
+
+}
+
 
 @keyframes right-pulse {
   0% {
-      -webkit-transform: rotate(90deg) scale(1);
-      transform: rotate(90deg) scale(1)
+      -webkit-transform: scale(1);
+      transform: scale(1)
   }
 
   50% {
@@ -574,15 +562,15 @@ input {
   }
 
   100% {
-      -webkit-transform: rotate(90deg) scale(1.2, 1.4);
-      transform: rotate(90deg) scale(1.2, 1.4);
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
       opacity: 0
   }
 }
 @keyframes left-pulse {
   0% {
-      -webkit-transform: rotate(-90deg) scale(1);
-      transform: rotate(-90deg) scale(1)
+      -webkit-transform: scale(1);
+      transform: scale(1)
   }
 
   50% {
@@ -590,8 +578,8 @@ input {
   }
 
   100% {
-      -webkit-transform: rotate(-90deg) scale(1.2, 1.4);
-      transform: rotate(-90deg) scale(1.2, 1.4);
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
       opacity: 0
   }
 }
@@ -830,13 +818,16 @@ input {
   #navbar {
       max-width: 100%;
       position: absolute;
-      bottom: 1%;
+      bottom: 0px;
   }
 
   .card {
       /* height: 95%;  experimental style - try changing to 95% %*/
       /* margin-top: 15px; experimental style - didn't exist*/
       width: calc(100% - 24px);
+      height: calc(100% - 51px);
+      margin-left: 15px;
+      
   }
   .card h1, h2 {
     line-height: 1.3;

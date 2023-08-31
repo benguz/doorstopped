@@ -492,17 +492,27 @@
         <div id="first" class="card special">
             <h2 style="font-size: 35pt; line-height: 1.2em; text-align: center">Swipe right to change school</h2>
             <br>
-            <video autoplay muted loop id="extension" width="100%" style="object-fit: contain; width: calc(100% + 60px); position: absolute; left: -20px;">
+            <video autoplay muted loop id="extension" width="100%" style="object-fit: contain; box-sizing: border-box;
+            width: calc(100% + 100px); width: calc(100% + 60px);margin-left: -50px;
+      margin-right: -50px;">
                 <source data-src="/assets/cards/panda-fat.webm" alt="sad panda" type="video/webm">
               </video>  
               <br>
-              <h2 style="text-align: center; position: absolute; padding: 0px 20px; left: 0px; bottom: 10px;">Swipe left to see another strategy</h2>
+              <h2 style="text-align: center; ">Swipe left to see another strategy</h2>
 
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main" width='50' height='50' viewbox="0 0 50 60" onclick="handleSwipeRight(currentCard); showNextCard(currentCard);">
-            <path d="M 25,5 45,45 5,45 Z"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main triangle-left" width='50' height='50' viewbox="0 0 50 60" onclick="handleSwipeLeft(currentCard); showNextCard(currentCard);">
+            <!--  -->
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main" width='75' height='75' viewbox="0 0 24 24" onclick="handleSwipeRight(currentCard); showNextCard(currentCard)">
+                <path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" fill="#68A2F8" stroke="#68A2F8" stroke-width="2"/>
+                </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-left" width='75' height='75' viewbox="0 0 24 24" fill="none" onclick="handleSwipeLeft(currentCard); showNextCard(currentCard)">
+                    <path d="M12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C13.1819 3 14.3522 3.23279 15.4442 3.68508C16.5361 4.13738 17.5282 4.80031 18.364 5.63604C19.1997 6.47177 19.8626 7.46392 20.3149 8.55585C20.7672 9.64778 21 10.8181 21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4441 20.3149C14.3522 20.7672 13.1819 21 12 21L12 21Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 9L15 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M15 9L9 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    
+                        <!-- handleSwipeLeft(currentCard); showNextCard(currentCard) -->
+
             <path d="M 25,5 45,45 5,45 Z"/>
           </svg>
     </div>
@@ -782,10 +792,8 @@ document.querySelectorAll('.card').forEach((card, index) => {
 function handleSwipeLeft(card) {
     if (card.dataset.category === "50-swipes-survey-yes") {
                 plausible("50-swipes-survey-no");
-                console.log("no!");
     } else if (card.dataset.category === "25-swipes-survey-yes") {
         plausible("25-swipes-survey-no");
-        console.log("no!");
     }
 }
  
@@ -883,10 +891,8 @@ function handleSwipeRight(card) {
     }
     else if (card.dataset.category === "50-swipes-survey-yes") {
         plausible("50-swipes-survey-yes");
-        console.log("yes! ", cardCategory);
     } else if (card.dataset.category === "25-swipes-survey-yes") {
         plausible("25-swipes-survey-yes");
-        console.log("yes! ", cardCategory);
     }
 }
 function showNextCard(card) {
@@ -896,7 +902,6 @@ function showNextCard(card) {
     if (followingCard) {
         followingCard.style.display = 'block';
     }
-    console.log(currentCard + " <- cur next -> " + nextCard)
     currentCard = nextCard;
     
     card.style.opacity = '0';
