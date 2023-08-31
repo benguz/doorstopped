@@ -525,7 +525,7 @@ input {
   border-radius: 50px;
     width: auto;
     background: rgba(255, 255, 255, 0.8);
-    animation: right-pulse 2s ease infinite;
+    animation: right-pulse 1.8s ease infinite;
 }
 
 .triangle-main path {
@@ -546,7 +546,7 @@ input {
 
 .triangle-left {
   left: -10px;  
-  animation: left-pulse 2s ease infinite;
+  animation: left-pulse 1.8s ease infinite;
 
 }
 
