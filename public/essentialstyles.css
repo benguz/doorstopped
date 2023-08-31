@@ -258,9 +258,6 @@ body, #dashboard-body {
 
 .card {
   display: block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(160, 189, 255, 0.15);
@@ -279,7 +276,7 @@ body, #dashboard-body {
 }
 
 .card h2 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-family: 'colfax-medium';
   font-size: 25px;
   color: #333;
@@ -288,7 +285,7 @@ body, #dashboard-body {
 
 .card h3 {
   margin-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-family: 'colfax-medium';
   font-size: 20px;
   color: #333;
@@ -868,6 +865,14 @@ input {
 
 #myVideo, .tenor-gif-embed {
   pointer-events: none;
+}
+
+video {
+  object-fit: contain; 
+  box-sizing: border-box;
+  width: calc(100% + 80px);
+  margin-left: -40px;
+  margin-right: -40px;
 }
 
 
