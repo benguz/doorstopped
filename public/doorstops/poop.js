@@ -27,7 +27,7 @@ $(".poop-element").click(function() {
 var newElement ="";
 var tears = ["GUYS I POOPED", "febreze time", "everybody poops 💖", "successful poo 💅💅", "wipe it down WIPE", "time 2 poo 🏃💨",  "🧻🧻🧻"]
 var tear = tears[Math.floor(Math.random() * tears.length)]
-newElement = $(`<span class='floFating-emoji'>${tear}</span>`);
+newElement = $(`<span class='floating-emoji'>${tear}</span>`);
 $(this).parent().append(newElement);
 animatePoop(newElement);
 
