@@ -240,6 +240,11 @@ svg {
         </div>
     </div>
         </section>
+        <section class="section column">
+          <div class="demo">
+            <h2 contenteditable="true" id="result" ></h2>
+            </div>
+          </section>
 
 <script>
     $("#state-choice").keydown(function(event) {
@@ -269,6 +274,7 @@ svg {
                 console.log(spendingState);
                 document.getElementById("state-info").innerHTML = "You cost your school <strong style='color: #2804aa'>$" + (spendingState[0].PublicSpendPerK12Student / 180).toFixed(2) + "</strong> every time you're absent";
                 document.getElementById("bonus-info").textContent = "more if you're ESL, low-income, or have a learning disability"
+                document.getElementById("result").textContent = `Tell your principal: "[school problem] is costing you more than it's worth. Students don't show up to school because of that, costing the school` + (spendingState[0].PublicSpendPerK12Student / 180).toFixed(2) + ` per student, per day absent. Fixing [school problem] would only cost [estimated cost], making it a net benefit because of the value gained from students showing up more.`
             })
         } else if (!item[0]) {
             if (state.textContent.toLowerCase() === "disarray" || state.textContent.toLowerCase() === "distress" || state.textContent.toLowerCase() === "unrest" || state.textContent.toLowerCase() === "chaos")
