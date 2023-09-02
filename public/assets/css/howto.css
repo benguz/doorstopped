@@ -78,6 +78,9 @@ animation: fadeIn .7s ease-in forwards;
 .fade-in-slow {
 animation: fadeInSlow 1.4s ease-in forwards;
 }
+.fade-in-turtle {
+  animation: fadeInSlow 1.9s ease-in forwards;
+  }
 
 .fade-out {
 animation: fadeOut .7s ease-out forwards;
@@ -96,6 +99,7 @@ transform: translateY(0);
 }
 }
 
+
 @keyframes fadeIn {
 from {
 opacity: 0;
@@ -108,7 +112,9 @@ transform: translateY(0);
 
 }
 }
-
+iframe {
+  max-width: 100%;
+}
 @keyframes fadeOut {
 from {
 opacity: 1;
@@ -201,6 +207,14 @@ max-width: 98%;
 margin: auto;
 
 }
+
+.bard {
+  font-size: 1em;
+}
+
+iframe {
+  height: calc(100% / 0.7777);
+}
 .desktoponly {
   display: none;
 }
@@ -235,6 +249,9 @@ font-size: 1.5em;
 } */
 .big {
 font-size: 3em;
+}
+.lilbig {
+  font-size: 2.5em;
 }
 /* .bringin {
 opacity: 1;
