@@ -24,16 +24,15 @@
 
     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
     <script src="./js/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+.hero, .features {
+    opacity: 0;
+}
+
+
+    </style>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-    ScrollReveal().reveal('.hero, .title, .screen, .features, .cards, .zero-slider, p, .videoWrapper', {
-        distance: '40px',
-        duration: 2000,
-        mobile: false,
-        reset: false,
-        opacity: 0
-    });
-});
+
     </script>
     <style>
       .show-mobile-flex {
@@ -48,6 +47,23 @@
     display: flex;
     }
   }
+  .fade-in {
+    opacity: 0; /* Initial state: transparent */
+    transform: translateY(30px); /* Initial state: 30px down from its original position */
+    animation: fadeInAndMoveUp 1s forwards; /* 2 seconds animation */
+}
+
+@keyframes fadeInAndMoveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Final state: original position */
+    }
+}
+
     </style>
   </head>
 
@@ -58,9 +74,9 @@
     
       <!--      <h2 class="title">Personalized strategies for every unmet need.</h1>
 -->
-    <div class="hero">
-      <h1 class="title" style="padding-bottom:10px">What if...</h1>
-        <h1 class="title shift clip">
+    <div class="hero fade-in" id="hero-section">
+      <h1 class="title-mod" id="first-title" style="padding-bottom:10px">What if...</h1>
+        <h1 class="title-mod shift clip" id="second-title">
           <span class="word-shift">
             <!-- <b class="is-visible">life hack&nbsp;</b>
             <b>step-by-step script</b>
@@ -75,7 +91,7 @@
               <b>a class-cutter</b>
             </span>
           </h1>
-      <h1 class="title"> could fix school?</h1>
+      <h1 class="title-mod" id="third-title"> could fix school?</h1>
 
       <!-- <h1 class="title shift clip">
         <span class="word-shift">
@@ -89,7 +105,7 @@
         </span>
       </h1> -->
       <!-- <h1 class="title"> we show you how.</h1> -->
-        <div class="features">
+        <div class="features fade-in">
           <img src="images/overlay-left.svg" class="overlay-left hide-mobile" alt="overlay"/>
           <img src="images/overlay-right.svg" class="overlay-right hide-mobile" alt="overlay"/>
           <img src="images/overlay-top.svg" class="overlay-top show-mobile" alt="overlay"/>
@@ -313,7 +329,13 @@
 
     // Feather icons
     feather.replace()
-
+    ScrollReveal().reveal('.hero, .title, .features, .cards, .zero-slider, p, .videoWrapper', {
+        distance: '40px',
+        duration: 2000,
+        mobile: false,
+        reset: false,
+        opacity: 0
+    });
   });
 </script>
 

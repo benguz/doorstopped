@@ -873,6 +873,13 @@ button {
     width: 400px
 }
 
+.title-mod {
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+    width: 400px
+}
+
 .subtitle {
     margin: 16px 0 0 -4px;
     font-size: 12px
