@@ -75,12 +75,14 @@
   font-size: 20px;
 }
 
-
+.section {
+  height: 55em;
+}
     </style>
     </head>
     <body>
     
-        <section class="section column" style="height: 100vh">
+        <section class="section column" style="height: 37em">
             <!-- <div class="text-and-image"> -->
       
             <div class="demo" style="max-width: 100%; margin: auto; text-align: center;">
@@ -92,7 +94,6 @@
         </div>-->
           </section>
     <section class="section" style="background-image: url(/assets/images/lock.jpg); background-size: cover; background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center; ">
                 <div class="demo" style="max-width: 100%; margin: auto; text-align: center;">
 <!-- style="color: #cd6f6f" -->
@@ -163,7 +164,7 @@
   <!-- <div class="text-and-image"> -->
 
   <div class="demo" style="max-width: 100%; margin: auto; text-align: center;">
-  <h1 class="big bringin" >If you're stuck, <strong style="color:  #aa0462;">reach out directly </strong><strong style="color:#cd6f6f; opacity: 0;" class="bringin delay">at help@fix.school or 781-330-6849.</strong></h1>
+  <h1 class="big bringin" >If you're stuck, <strong style="color:  #aa0462;">reach out directly </strong><strong style="color:#cd6f6f;" >at help@fix.school or 781-330-6849.</strong></h1>
     </div>
     <!-- <video autoplay muted loop style="opacity: 0;" class="video-simple bringin"> 
       <source src="/assets/images/swipe-demo.webm" type="video/webm">
@@ -178,6 +179,11 @@
     </section> -->
  
 <script>
+  document.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() === 'a') {
+        window.parent.postMessage('linkClicked', '*');
+    }
+});
   document.addEventListener("DOMContentLoaded", function() {
 
     var targets = document.getElementsByClassName("bringin");

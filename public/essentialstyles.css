@@ -325,7 +325,15 @@ iframe {
   text-align: center;
   width: 100%;
   text-color: black;
-  overflow: scroll;
+}
+
+#doorstop-frame {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#doorstop-frame::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 

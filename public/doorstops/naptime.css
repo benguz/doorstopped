@@ -1,0 +1,22 @@
+
+.floating-emoji {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+
+ 
+.badonk {
+  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+  padding-left: 30px;
+  font-size: 14pt;
+
+}
+.honk {
+  list-style-type: disc !important; 
+}
+
+.sleepbox {
+  position: relative; height: 20px;
+}

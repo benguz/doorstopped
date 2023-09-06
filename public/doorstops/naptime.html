@@ -24,6 +24,7 @@
   -->
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/emoji.css">
+  <link rel="stylesheet" href="/doorstops/naptime.css">
 
   <!-- 
     - google font link
@@ -82,15 +83,7 @@ display:none;
 }
 }
 
-.hidden {
-  display: none;
-}
 
-.svg2 path {
-  stroke-dasharray: 477;
-  stroke-dashoffset: 477;
-  animation: draw 150ms ease-out forwards;
-}
 
 /* flexbox shit  
 .sidenavtotal {
@@ -138,29 +131,9 @@ h2 {
 }
 
  
-.floating-emoji {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    opacity: 1;
-  }
-
- 
-.badonk {
-  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
-  padding-left: 30px;
-  font-size: 14pt;
-
-}
-.honk {
-  list-style-type: disc !important; 
-}
-
-.sleepbox {
-  position: relative; height: 20px;
-}
 
 </style>
+
 
   </head>
 
@@ -364,32 +337,37 @@ h2 {
 </a>
 
   <script src="/assets/js/script.js" defer></script>
-  <!-- <script src="/assets/js/emoji.js"></script> -->
-  <script>
-          var animations = ['floatPath2', 'floatPath3', 'floatPath4']; // Add more animations as needed
+  <!-- <script src="/doorstops/naptime.js"></script> -->
+<!-- Naptime.js is a modified version for dashboard -->
+<script>
 
-    $(window).scroll(function() {
+var animations = ['floatPath2', 'floatPath3', 'floatPath4']; // Add more animations as needed
+            $(window).scroll(function() {    
+                console.log("scrolling!");
 
-    if (Math.random() < 0.22) {
-    
-    /* Apply the animation */
-    Array.from(document.querySelectorAll('.emoji-element')).forEach((element) =>
-      {
-        var animation = animations[Math.floor(Math.random() * animations.length)];
-        let newElement = $(`<span class='floating-emoji'>💤</span>`);
-  
-        /* Apply the animation */
-        newElement.css('animation', `${animation} 1s forwards`);
-        
-        $(element).parent().append(newElement);
-        setTimeout(function() {
-          newElement.remove();
-        }, 2000);
-      });
-    }
-  
-  });
-  </script>
+            if (Math.random() < 0.22) {
+
+            /* Apply the animation */
+            Array.from(document.querySelectorAll('.emoji-element')).forEach((element) =>
+            {
+                var animation = animations[Math.floor(Math.random() * animations.length)];
+                let newElement = $(`<span class='floating-emoji'>💤</span>`);
+
+                /* Apply the animation */
+                newElement.css('animation', `${animation} 1s forwards`);
+                
+                $(element).parent().append(newElement);
+                setTimeout(function() {
+                newElement.remove();
+                }, 2000);
+            });
+        }
+
+            });
+
+
+</script>
+
   <script src="/components/sidenaveh.js"> 
 </script>
 
