@@ -21,11 +21,12 @@
     <link href="./favicon.ico" rel="apple-touch-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link href="css/styles.css" rel="stylesheet">
+
     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
     <script src="./js/jquery/3.4.1/jquery.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-    ScrollReveal().reveal('.hero, .title, .screen, .features, .cards, .zero-slider, p', {
+    ScrollReveal().reveal('.hero, .title, .screen, .features, .cards, .zero-slider, p, .videoWrapper', {
         distance: '40px',
         duration: 2000,
         mobile: false,
@@ -101,8 +102,7 @@
             <div class="feature" onClick="window.open('/doorstops/money');"><i class="icon" data-feather="check"></i> fundraising 101</div>
             <div class="feature" onClick="window.open('/doorstops/better');"><i class="icon" data-feather="check"></i> school life hacks</div>
             <div class="feature" onClick="window.open('/doorstops/ref');"><i class="icon" data-feather="check"></i> delete toxic group chats</div>
-            <div class="feature" onClick="window.open('/doorstops/extension#i-just-want-to-email');"><i class="icon" data-feather="check"></i> asking for an extension</div>
-            <!-- Repeat-->
+            <div class="feature" onClick="window.open('/doorstops/extension#i-just-want-to-email');"><i class="icon" data-feather="check"></i> asking for an extension</div><!-- Repeat-->
             <div class="feature" onClick="window.open('/programs/eat');"><i class="icon" data-feather="check"></i> cash grants for better lunch</div>
             <div class="feature" onClick="window.open('/doorstops/mentor');"><i class="icon" data-feather="check"></i> finding a mentor</div>
             <div class="feature" onClick="window.open('/doorstops/care');"><i class="icon" data-feather="check"></i> proof your teacher cares</div>
@@ -113,45 +113,43 @@
             <div class="feature" onClick="window.open('/doorstops/extension#i-just-want-to-email');"><i class="icon" data-feather="check"></i> asking for an extension</div>
           </div>
           <div class="row dos">
-            <div class="feature" onClick="window.open('/doorstops/poop');"><i class="icon" data-feather="check"></i>Fixing the bathrooms</div>
-            <div class="feature" onClick="window.open('/programs/waffle');"><i class="icon" data-feather="check"></i>Waffle Maker Politics</div>
-            <div class="feature" onClick="window.open('/doorstops/leverage');"><i class="icon" data-feather="check"></i>Your Leverage</div>
-            <div class="feature" onClick="window.open('https://doorstopfellows.org');"><i class="icon" data-feather="check"></i>Doorstop Fellows</div>
-            <div class="feature" onClick="window.open('/school/money');"><i class="icon" data-feather="check"></i>Control $100k</div>
-            <div class="feature" onClick="window.open('/doorstops/listen');"><i class="icon" data-feather="check"></i>Active Listening</div>
-            <div class="feature" onClick="window.open('/school/selfie');"><i class="icon" data-feather="check"></i>Selfie diplomacy</div>
-            <div class="feature" onClick="window.open('/doorstops/microwave');"><i class="icon" data-feather="check"></i>Getting a microwave</div>
-
+            <div class="feature" onClick="window.open('/doorstops/poop');"><i class="icon" data-feather="check"></i> fixing the bathrooms</div>
+            <div class="feature" onClick="window.open('/programs/waffle');"><i class="icon" data-feather="check"></i> waffle maker politics</div>
+            <div class="feature" onClick="window.open('/doorstops/leverage');"><i class="icon" data-feather="check"></i> your leverage</div>
+            <div class="feature" onClick="window.open('https://doorstopfellows.org');"><i class="icon" data-feather="check"></i> doorstop fellows</div>
+            <div class="feature" onClick="window.open('/school/money');"><i class="icon" data-feather="check"></i> control $100k</div>
+            <div class="feature" onClick="window.open('/doorstops/listen');"><i class="icon" data-feather="check"></i> active listening</div>
+            <div class="feature" onClick="window.open('/school/selfie');"><i class="icon" data-feather="check"></i> selfie diplomacy</div>
+            <div class="feature" onClick="window.open('/doorstops/microwave');"><i class="icon" data-feather="check"></i> getting a microwave</div>
             <!-- Repeat-->
-            <div class="feature" onClick="window.open('/doorstops/poop');"><i class="icon" data-feather="check"></i>Fixing the bathrooms</div>
-            <div class="feature" onClick="window.open('/programs/waffle');"><i class="icon" data-feather="check"></i>Waffle Maker Politics</div>
-            <div class="feature" onClick="window.open('/doorstops/leverage');"><i class="icon" data-feather="check"></i>Your Leverage</div>
-            <div class="feature" onClick="window.open('https://doorstopfellows.org');"><i class="icon" data-feather="check"></i>Doorstop Fellows</div>
-            <div class="feature" onClick="window.open('/school/money');"><i class="icon" data-feather="check"></i>Control $100k</div>
-            <div class="feature" onClick="window.open('/doorstops/listen');"><i class="icon" data-feather="check"></i>Active Listening</div>
-            <div class="feature" onClick="window.open('/school/selfie');"><i class="icon" data-feather="check"></i>Selfie diplomacy</div>
-            <div class="feature" onClick="window.open('/doorstops/microwave');"><i class="icon" data-feather="check"></i>Getting a microwave</div>
+            <div class="feature" onClick="window.open('/doorstops/poop');"><i class="icon" data-feather="check"></i>fixing the bathrooms</div>
+            <div class="feature" onClick="window.open('/programs/waffle');"><i class="icon" data-feather="check"></i>waffle maker politics</div>
+            <div class="feature" onClick="window.open('/doorstops/leverage');"><i class="icon" data-feather="check"></i>your leverage</div>
+            <div class="feature" onClick="window.open('https://doorstopfellows.org');"><i class="icon" data-feather="check"></i>doorstop fellows</div>
+            <div class="feature" onClick="window.open('/school/money');"><i class="icon" data-feather="check"></i>control $100k</div>
+            <div class="feature" onClick="window.open('/doorstops/listen');"><i class="icon" data-feather="check"></i>active listening</div>
+            <div class="feature" onClick="window.open('/school/selfie');"><i class="icon" data-feather="check"></i>selfie diplomacy</div>
+            <div class="feature" onClick="window.open('/doorstops/microwave');"><i class="icon" data-feather="check"></i>getting a microwave</div>
 
           </div>
         <div class="row donts show-mobile-flex">
-          <div class="feature" onClick="window.open('/doorstops/doorstops/leverage/attendance');"><i class="icon" data-feather="check"></i> cutting class RIGHT</div>
-          <div class="feature" onClick="window.open('/dashboard#bingo-board');"><i class="icon" data-feather="check"></i> Toxic vibes bingo</div>
-          <div class="feature" onClick="window.open('/doorstops/better');"><i class="icon" data-feather="check"></i> Hydroflask Hacks</div>
-          <div class="feature" onClick="window.open('/school/dayoff');"><i class="icon" data-feather="check"></i> Schoolwide day off</div>
+          <div class="feature" onClick="window.open('/doorstops/doorstops/leverage/attendance');"><i class="icon" data-feather="check"></i> cutting class right</div>
+          <div class="feature" onClick="window.open('/dashboard#bingo-board');"><i class="icon" data-feather="check"></i> toxic vibes bingo</div>
+          <div class="feature" onClick="window.open('/doorstops/better');"><i class="icon" data-feather="check"></i> hydroflask hacks</div>
+          <div class="feature" onClick="window.open('/school/dayoff');"><i class="icon" data-feather="check"></i> schoolwide day off</div>
           <div class="feature" onClick="window.open('/doorstops/introuble');"><i class="icon" data-feather="check"></i> getting out of trouble</div>
           <div class="feature" onClick="window.open('/doorstops/college');"><i class="icon" data-feather="check"></i> de-stress about college</div>
-          <div class="feature" onClick="window.open('/doorstops/intern');"><i class="icon" data-feather="check"></i> Get an internship</div>
-          <div class="feature" onClick="window.open('/doorstops/conflict');"><i class="icon" data-feather="check"></i> End beef with the besties</div>
+          <div class="feature" onClick="window.open('/doorstops/intern');"><i class="icon" data-feather="check"></i> get an internship</div>
+          <div class="feature" onClick="window.open('/doorstops/conflict');"><i class="icon" data-feather="check"></i> end beef with the besties</div>
           <!-- Repeat-->
-          <div class="feature" onClick="window.open('/doorstops/doorstops/leverage/attendance');"><i class="icon" data-feather="check"></i> cutting class RIGHT</div>
-          <div class="feature" onClick="window.open('/dashboard#bingo-board');"><i class="icon" data-feather="check"></i> Toxic vibes bingo</div>
-          <div class="feature" onClick="window.open('/doorstops/better');"><i class="icon" data-feather="check"></i> Hydroflask Hacks</div>
-          <div class="feature" onClick="window.open('/school/dayoff');"><i class="icon" data-feather="check"></i> Schoolwide day off</div>
+          <div class="feature" onClick="window.open('/doorstops/doorstops/leverage/attendance');"><i class="icon" data-feather="check"></i> cutting class right</div>
+          <div class="feature" onClick="window.open('/dashboard#bingo-board');"><i class="icon" data-feather="check"></i> toxic vibes bingo</div>
+          <div class="feature" onClick="window.open('/doorstops/better');"><i class="icon" data-feather="check"></i> hydroflask hacks</div>
+          <div class="feature" onClick="window.open('/school/dayoff');"><i class="icon" data-feather="check"></i> schoolwide day off</div>
           <div class="feature" onClick="window.open('/doorstops/introuble');"><i class="icon" data-feather="check"></i> getting out of trouble</div>
           <div class="feature" onClick="window.open('/doorstops/college');"><i class="icon" data-feather="check"></i> de-stress about college</div>
-          <div class="feature" onClick="window.open('/doorstops/intern');"><i class="icon" data-feather="check"></i> Get an internship</div>
-          <div class="feature" onClick="window.open('/doorstops/conflict');"><i class="icon" data-feather="check"></i> End beef with the besties</div>
-
+          <div class="feature" onClick="window.open('/doorstops/intern');"><i class="icon" data-feather="check"></i> get an internship</div>
+          <div class="feature" onClick="window.open('/doorstops/conflict');"><i class="icon" data-feather="check"></i> end beef with the besties</div>
         </div>
 
       </div>
@@ -164,15 +162,16 @@
     </div> -->
     <div class="screen-wrapper">
       <div class="outerVideoWrapper2">
-      <div class="videoWrapper video">
-          <div class="videoPadding">
+      <div class="videoWrapper video" style="width: 98%; margin: auto;">
+          <div class="videoPadding" style>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/p3RDCYOvMzI?si=EG6IyvVri49v9sWj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>          </div>
       </div>
       </div>
-    </div>
-    <h2 class="title wide">Swipe through 1,000s of change-making strategies.</h2>
-    <p>Or play <a href="/dashboard#bingo-board">toxic vibes bingo</a>. Either way, you pick your problem—gross bathrooms, conflict with a teacher, competitive school culture, or just an assignment you’re stressed about—we give you a Doorstop, a step-by-step solution.
+    <h2 class="title wide">Swipe through <strong>Doorstops: </strong>1,000s of change-making strategies.</h2>
+    <p>Or play <a href="/dashboard#bingo-board" style="text-decoration: underline;">toxic vibes bingo</a>. Either way, you pick your problem—gross bathrooms, conflict with a teacher, competitive school culture, or just an assignment you’re stressed about—we give you a Doorstop, a step-by-step solution.
     </p>
+  </div>
+
     <div class="screen-wrapper">
       <!-- <img src="images/screen.png" class="screen" alt="screen"/> -->
       <div class="outerVideoWrapper2">
@@ -190,7 +189,7 @@
 
 
     <section class="section imagery">
-      <h2 class="title">We traveled nationwide listening to students.</h2>
+      <h2 class="title">We talked to 200 students in 15 states. All of them felt powerless.</h2>
       <img src="images/overlay-bottom.svg" class="overlay-bottom hide-mobile" alt="overlay"/>
       <div class="zero-slider">
         <div class="slide"><img src="images/school.jpg" alt="inboxzero"/></div>
@@ -199,10 +198,13 @@
         <!-- <div class="slide"><img src="images/albert.jpg" alt="inboxzero"/></div> -->
       </div>
     </section>
+
     <section class="section imagery">
-      <h2 class="title wide">They felt powerless.</h2>
       <h2 class="title wide">But if y'all walk out of school tomorrow, it breaks.</h2>
       <h2 class="title wide">You have more leverage than you think.</h2>
+      <h2 class="title wide">And if you just want class to suck a little less,</h2>
+      <h2 class="title wide">people to be less judgey,</h2>
+      <h2 class="title wide">or school to be less competitive...</h2>
       <!-- add button for mission redirect, or add mission text here -->
       <br><br>
       <br><br>
@@ -217,10 +219,7 @@
       </div> -->
     </section>
     <section class="section imagery">
-      <h2 class="title wide">And if you just want class to suck a little less,</h2>
-      <h2 class="title wide">people to be less judgey,</h2>
-      <h2 class="title wide">or school to be less competitive...</h2>
-      <br></br>
+
       <h2 class="title wide">We've got a team of hostage negotiators, helicopter salesmen, and people who care building <strong>Doorstops</strong>,</h2>
       <br></br>
       <h2 class="title wide">hundreds of individualized strategies that help you change school, feel happier, eat a less gross lunch...</h2>
@@ -271,7 +270,9 @@
 
 <script>
   if (window.innerWidth < 720) {
-    document.getElementById("video-demo-source").src = document.getElementById("video-demo-source").dataset.src;
+    videoMobile = document.getElementById("video-demo-source");
+    videoMobile.setAttribute('src', videoMobile.dataset.src);
+    video.load(); 
   }
 
   // Close modal on escape key
