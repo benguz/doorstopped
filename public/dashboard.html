@@ -35,7 +35,21 @@
 
     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-  </head>
+    <script>
+        var sectionId = window.location.hash.substring(1); // Get the section ID from the URL
+        if (sectionId) {
+            // Since showSection is loaded at the bottom of the body, we need to ensure it's loaded.
+            if (sectionId === "bingo-section") {
+                var checkFunctionInterval = setInterval(function() {
+                if (typeof showSection === 'function') {
+                    showSection(4);
+                    clearInterval(checkFunctionInterval);
+                }
+            }, 100);
+            }
+        }
+    </script>
+</head>
 
 <body id="dashboard-body">
     

@@ -196,7 +196,7 @@ input:-webkit-autofill {
     .show-mobile {
         display: block !important
     }
-}
+    }
 
 @font-face {
     font-family: 'colfax-light';
@@ -386,7 +386,7 @@ input:-webkit-autofill {
     .show-mobile {
         display: block !important
     }
-}
+    }
 
 @font-face {
     font-family: 'colfax-light';
@@ -576,7 +576,7 @@ input:-webkit-autofill {
     .show-mobile {
         display: block !important
     }
-}
+    }
 
 h1,
 .h1,
@@ -1228,7 +1228,7 @@ button {
 }
 
 @media (max-width: 900px) {
-    .features {
+    /* .features {
         -ms-flex-pack: distribute;
         justify-content: space-around;
         margin: 20px auto 0;
@@ -1242,15 +1242,26 @@ button {
         display: -ms-flexbox;
         display: flex;
         width: 90%
-    }
+    }*/
 
     .features .feature {
-        padding: 10px 12px 8px;
-        text-align: left;
-        font-size: 12px;
-        margin: 6px 0
+        padding: 16px 12px 14px;/* 
+        text-align: left;*/
+        font-size: 15px;
+        margin: 6px 2px;
+        border-radius: 0px;
+        /*margin: 6px 0*/
     }
 
+    .features .donts {
+        -webkit-animation: scrollLeft 20s linear infinite;
+        animation: scrollLeft 20s linear infinite
+    }
+    .features .dos {
+        -webkit-animation: scrollRight 20s linear infinite;
+        animation: scrollRight 20s linear infinite
+    }
+/*
     .features .row {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -1269,8 +1280,8 @@ button {
     .dos {
         -webkit-animation: scrollDown 20s linear infinite !important;
         animation: scrollDown 20s linear infinite !important
-    }
-}
+    } */
+} 
 
 // ADDED
 .left span {
@@ -1766,7 +1777,7 @@ input:-webkit-autofill {
     .show-mobile {
         display: block !important
     }
-}
+    }
 
 h1,
 .h1,
@@ -1857,6 +1868,21 @@ a:hover {
     overflow: hidden;
     background: #dcddde;
     padding-bottom: 56.25%;
+}
+.videoWrapper.webm {
+    padding-bottom: 49.25%; 
+}
+#video-demo {
+    object-fit: contain; width: 100%;
+}
+
+@media screen and (max-width: 720px) {
+    .videoWrapper.webm {
+        padding-bottom: 140.25%;
+        max-width: 80%;
+        margin:auto;
+    }
+
 }
 .videoWrapper iframe {
     position: absolute;
