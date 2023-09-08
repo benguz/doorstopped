@@ -896,6 +896,7 @@ function handleSwipeRight(card) {
     let cardCategory = card.dataset.category;
     // let cardHeight = card.dataset.height;
     let cardid;
+    removeScript("/doorstops/naptime.js")
     if (cardLink) {
         if (cardLink.includes("#")) {
             cardid = cardLink.split('#')[1];
@@ -957,6 +958,7 @@ function handleSwipeRight(card) {
                 }
                 if (doc.querySelector("#dividers-label")) {
                     loadStylesheet("/doorstops/poop.css");
+                    loadStylesheet("/assets/css/emoji.css");
                     loadScript("/doorstops/poop.js");
                 } else if (doc.querySelector(".sleepbox")){
                     loadStylesheet("/doorstops/naptime.css");
@@ -1041,6 +1043,13 @@ function loadScript(src) {
     script.src = src;
     script.async = true;
     document.head.appendChild(script);
+}
+
+function removeScript(src) {
+    let link = document.querySelector(`link[src='${src}']`);
+    if (link) {
+        link.parentNode.removeChild(link);
+    }
 }
 
 function loadStylesheet(url) {

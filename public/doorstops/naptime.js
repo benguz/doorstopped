@@ -1,11 +1,9 @@
 
 $(document).ready(function() {
-    console.log("ready!");
     var animations = ['floatPath2', 'floatPath3', 'floatPath4']; // Add more animations as needed
     $('*').each(function() {
         if ($(this).height() < $(this)[0].scrollHeight) {
             $(this).scroll(function() {    
-                console.log("scrolling!");
 
             if (Math.random() < 0.22) {
 
