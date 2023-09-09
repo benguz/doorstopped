@@ -183,8 +183,8 @@
               <iframe width="560" height="315" src="https://www.youtube.com/embed/p3RDCYOvMzI?si=EG6IyvVri49v9sWj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>          </div>
       </div>
       </div>
-    <h2 class="title wide mobile-left">Swipe through <strong>Doorstops: </strong>1,000s of change-making strategies.</h2>
-    <p class="mobile-left">Or play <a href="/dashboard#bingo-board" style="text-decoration: underline;">toxic vibes bingo</a>. Either way, you pick your problem—gross bathrooms, conflict with a teacher, competitive school culture, or just an assignment you’re stressed about—we give you a Doorstop, a step-by-step solution.
+    <h2 class="title wide">Swipe through <strong>Doorstops: </strong>1,000s of change-making strategies.</h2>
+    <p>Or play <a href="/dashboard#bingo-board" style="text-decoration: underline;">toxic vibes bingo</a>. Either way, you pick your problem—gross bathrooms, conflict with a teacher, competitive school culture, or just an assignment you’re stressed about—we give you a Doorstop, a step-by-step solution.
     </p>
   </div>
 
@@ -194,7 +194,7 @@
       <div class="videoWrapper video webm">
           <div class="videoPadding">
             <video playsinline autoplay muted loop id="video-demo"> 
-              <source data-src="/assets/videos/doorstopmobile.webm" id="video-demo-source" src="/assets/videos/doorstoplatest.webm" type="video/webm">
+              <source data-mobile="/assets/videos/doorstopmobile.webm" id="video-demo-source" data-desktop="/assets/videos/doorstoplatest.webm" type="video/webm">
             </video>
           </div>
       </div>
@@ -285,15 +285,22 @@
   <script src="js/scripts.min.js"></script>
 
 <script>
-$(document).ready(function() {
+function loadNextVideo() {
+
     if (window.innerWidth < 720) {
     videoMobile = document.getElementById("video-demo-source");
-    videoMobile.setAttribute('src', videoMobile.dataset.src);
-    video.load(); 
+    videoMobile.setAttribute('src', videoMobile.dataset.mobile);
   }
+  else {
+    videoMobile.setAttribute('src', videoMobile.dataset.desktop);
+
+  }
+  video.load(); 
+
+  }
+  document.addEventListener("DOMContentLoaded", function(event) {
+loadNextVideo();
   });
-
-
   // Close modal on escape key
   $(document).keyup(function(e) {
     if (e.key === "Escape") {

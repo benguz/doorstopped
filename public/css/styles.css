@@ -1784,9 +1784,6 @@ input:-webkit-autofill {
     .show-mobile {
         display: block !important
     }
-    .mobile-left {
-        text-align: left;
-    }
     }
 
 h1,
