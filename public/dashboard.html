@@ -209,7 +209,7 @@
             <h2>someone with a cool career who'll help you ~thrive~</h2>
             <p></p>
         </div>
-        <div class="card" style="display: none;" data-category="50-swipes-survey-yes">
+        <div class="card" style="display: none;" data-category="25-swipes-survey-yes">
             <h2>You've swiped through 25 Doorstops! Have we helped you feel happier in school?</h2>
             <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
                 <source data-src-mp4="/assets/cards/mp4/taylor-swift.mp4" data-src-webm="/assets/cards/whatever-shrug.webm" >
@@ -1134,7 +1134,6 @@ function showSection(n) {
         document.querySelector('#card-container').style.display = 'block';
         document.getElementById('img' + lastShownSection + mobileNav[isMobile]).src= iconSrc[lastShownSection - 1];
         document.getElementById('img2' + mobileNav[isMobile]).src = "/assets/svg/cards-dark.svg";
-
         lastShownSection = 2;
     } else if (n === 1) {
         document.querySelector('#card-container').style.display = 'none';
