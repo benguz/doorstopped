@@ -926,7 +926,8 @@ button {
 
 .section.imagery .zero-slider .slide {
     max-width: 90%;
-    width: 900px
+    width: 900px;
+    margin: auto
 }
 
 .section.imagery .zero-slider .slide.is-selected img {
