@@ -1,6 +1,6 @@
 const referents = ["Class Prez", "Chief Stoner", "Highest Snap Score", "Guy who starts random convos with the teacher during class", "Basketball team captain", "Most Social Guy on Math Team", "Couple together since pre-k", "Diva", "Trend-setter"];
 
-  let idTracker = 0;
+  var idTracker = 0;
   $(document).ready(function() {
   $('#addCard').on('click', function() {
     var newCard = '<div class="lard" style="display: flex; flex-direction: row;">'+
@@ -26,50 +26,44 @@ const referents = ["Class Prez", "Chief Stoner", "Highest Snap Score", "Guy who 
       var textExists = false;
 
       $('#strategies .lard').each(function() {
-        if ($(this).text() === text) {
+        if ($(this).text().indexOf(text) != -1) {
           textExists = true;
+          console.log("found match!")
           return false; // break the loop
         }
+        console.log($(this).attr('id'))
       });
-
+      console.log(textExists);
       if (!textExists) {
-        var newStrategyCard = '<div class="lard"><strong>' + 
-          text + 
-          '</strong><br>' +
-          '<div>choose a strategy, change their mind</div>' +
-          '<div class="row" id="select' + idTracker +
-          '"">' +
-            '<div id="talk' + idTracker +
-            '" class="lard row" onclick="act(1, ' + idTracker +
-            ')" style="background-color: hsl(351, 83%, 88%)">' +
-              'Man-to-man</div><div id="empathy' + idTracker +
-              '" class="lard row" onclick="act(2, ' + idTracker +
-              ')" style="background-color: hsl(42, 94%, 88%)">' +
-              'Open Heart Surgery</div>' +
-            '<div id="cafeteria' + idTracker +
-            '" class="lard row" onclick="act(3, ' + idTracker +
-            ')" style="background-color: hsl(234, 44%, 88%)">Group Hug</div></div>' +
-          '</div>';
-        $('#strategies').append(newStrategyCard);
-        // selection = document.getElementById("select" + idTracker)
-        // selection.addEventListener('change', function() {
-        //   const selectedValue = this.value;
+        appendCard(text, idTracker);
 
-        //   Array.from(this.options).forEach(function(option) {
-        //     if (option.value === selectedValue) {
-        //       option.classList.add('darker-bg');
-        //       option.style.display = 'block';
-        //     } else {
-        //       option.classList.remove('darker-bg');
-        //       option.style.display = 'none';
-        //     }
-        //   });
-        // });
-        idTracker++;
       } 
     });
   });
 });
+
+function appendCard(text, id) {
+  var newStrategyCard = '<div class="lard"><strong>' + 
+  text + 
+  '</strong><br>' +
+  '<div>choose a strategy, change their mind</div>' +
+  '<div class="row" id="select' + id +
+  '"">' +
+    '<div id="talk' + id +
+    '" class="lard row" onclick="act(1, ' + id +
+    ')" style="background-color: hsl(351, 83%, 88%)">' +
+      'Man-to-man</div><div id="empathy' + id +
+      '" class="lard row" onclick="act(2, ' + id +
+      ')" style="background-color: hsl(42, 94%, 88%)">' +
+      'Open Heart Surgery</div>' +
+    '<div id="cafeteria' + id +
+    '" class="lard row" onclick="act(3, ' + id +
+    ')" style="background-color: hsl(234, 44%, 88%)">Group Hug</div></div>' +
+  '</div>';
+  $('#strategies').append(newStrategyCard);
+  idTracker++;
+
+}
 
 function act(n, id) {
   let p = document.createElement('p');
@@ -269,7 +263,7 @@ function act(n, id) {
     strategyContents.innerHTML = newApproach;
 
     let l = null;
-    if (l = document.getElementById("address" + id)) {
+    if (l = document.getElementById("address" + id)) { // this line def doesn't do what it's supposed to
       l.remove();
       document.getElementById("explainer" + id).remove();
     }
@@ -293,10 +287,21 @@ for (let i = 0; i < closeButtons.length; i++) {
   });
 }
 
-
     let strategy = 0;
 
     function type(n) {
+      if (strategy === 0) {
+        document.getElementById("not-chosen").style.display = "none";
+        appendCard(document.getElementById("initBox1").textContent, idTracker);
+        console.log(idTracker);
+        appendCard(document.getElementById("initBox2").textContent, idTracker);
+        console.log(idTracker);
+        appendCard(document.getElementById("initBox3").textContent, idTracker);
+        console.log(idTracker);
+
+
+      }
+
       judgey = document.getElementById("judgey");
       loud = document.getElementById("loud");
       comp = document.getElementById("comp");
@@ -305,7 +310,7 @@ for (let i = 0; i < closeButtons.length; i++) {
       man = document.getElementById("mantoman");
       thanks = document.getElementById("thanks");
 
-
+      strategy = n;
       if (n === 1) {
         judgey.style.backgroundColor = "hsl(351, 83%, 88%)";
         loud.style.backgroundColor = "white";
@@ -314,9 +319,6 @@ for (let i = 0; i < closeButtons.length; i++) {
         thanks.style.display = "block";
         man.style.display = "none";
         collab.style.display = "none";
-
-        strategy = 1;
-
 
       } else if (n === 2) {
         judgey.style.backgroundColor = "white";
@@ -327,8 +329,6 @@ for (let i = 0; i < closeButtons.length; i++) {
         thanks.style.display = "none";
         collab.style.display = "none";
 
-        strategy = 2;
-
       } else if (n === 3) {
         judgey.style.backgroundColor = "white";
         loud.style.backgroundColor = "white";
@@ -337,8 +337,6 @@ for (let i = 0; i < closeButtons.length; i++) {
         collab.style.display = "block";
         thanks.style.display = "none";
         man.style.display = "none";
-
-        strategy = 3;
       }
     }
 

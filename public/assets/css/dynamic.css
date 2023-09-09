@@ -377,6 +377,7 @@ body {
     }
     #strategies {
       max-width: 98%;
+      margin: auto;
     }
 }
 

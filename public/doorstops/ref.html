@@ -91,7 +91,7 @@
           <p style="margin-block-end: 0.1em;">Make a List of Your Referents
           <p style="font-size: 14px; color: grey; margin-block-start: 0em;">Click a card to edit!</p></p>
           <div class="lard" style="display: flex; flex-direction: row;">
-            <div class="textbox" contenteditable="true" flex="5">
+            <div class="textbox" id="initBox1" contenteditable="true" flex="5">
               Isaac - Football team captain
             </div>
             <button id="closeButton" class="close-button">
@@ -99,7 +99,7 @@
             </button>       
           </div>
           <div class="lard" style="display: flex; flex-direction: row;">
-            <div class="textbox" contenteditable="true" flex="5">
+            <div class="textbox" id="initBox2" contenteditable="true" flex="5">
               Maya - Newspaper Editor-in-Chief
             </div>
             <button id="closeButton" class="close-button">
@@ -107,7 +107,7 @@
             </button>       
           </div>
           <div class="lard" style="display: flex; flex-direction: row;">
-            <div class="textbox" contenteditable="true" flex="5">
+            <div class="textbox" id="initBox3" contenteditable="true" flex="5">
               Stan - Class Clown
             </div>
             <button id="closeButton" class="close-button">
@@ -128,29 +128,8 @@
           <div id="donkey">
           <p>Convince them to change</p>
           <div id="strategies" width="100%">
-        <div id="thanks" style="display: none">
-          <!-- <h2>
-            THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU 
-          </h2>
-          <br>
-          <h2 >
-            THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU 
-          </h2>
-          <br>
-          <h2 >
-            THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU 
-          </h2>
-          <h2>
-            THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU 
-          </h2>
-          <br>
-          <h2>
-            THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU 
-          </h2>
-          <br>
-
-           -->
-        </div>
+            <div id="not-chosen" style="color:#2804aa">Click on one of the problems to see personalized scripts!</div>
+        <div id="thanks" style="display: none"></div>
 
    
         <div id="mantoman" class="lard" style="display: none">Handling disruptive people and harrasment</div>
