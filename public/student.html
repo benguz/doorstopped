@@ -286,16 +286,16 @@
 
 <script>
 function loadNextVideo() {
+  videoMobile = document.getElementById("video-demo-source");
 
     if (window.innerWidth < 720) {
-    videoMobile = document.getElementById("video-demo-source");
     videoMobile.setAttribute('src', videoMobile.dataset.mobile);
   }
   else {
     videoMobile.setAttribute('src', videoMobile.dataset.desktop);
 
   }
-  video.load(); 
+  document.getElementById("video-demo").load(); 
 
   }
   document.addEventListener("DOMContentLoaded", function(event) {
