@@ -913,7 +913,7 @@ function handleSwipeRight(card) {
             iframe.src = url.pathname + url.search;
             document.getElementById("content-placeholder").innerHTML = "";
             document.getElementById("left-section").style.width = "100%";
-
+            iframe.style.height = "400px";
             iframe.onload = function() {
                 if (url.pathname === "/school") {
                     iframe.style.height = "862px";
