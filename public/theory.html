@@ -15,23 +15,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <style>
-a {
-    color: black;
-  }
-
-a:hover {
-    color: blue;
-}
 
 body {
     background-color: white;
 }
 
-@media screen and (max-width: 1023px){
-     #container {
-     width: 100%;
-     }
-}
 
 iframe {
     font-size: 1.125rem; 
@@ -40,10 +28,6 @@ iframe {
     border-style: none; 
 }
 
-ul {
-    list-style-type: none;
-    text-align: left;
-}
 
 .container { 
     position: relative;
@@ -52,108 +36,24 @@ ul {
     font-size: 1.15rem;
   }
 
-.appear {
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    text-align: center; 
-    border-width: 0px; 
-    border-style: none;
-    animation: showIt 4.5s linear forwards;
-    -webkit-animation: showIt 4.5s forwards;
-    -moz-animation: showIt 4.5s linear forwards;
-    -o-animation:  showIt 4.5s linear forwards;
-    -ms-animation:  showIt 4.5s linear forwards;
-}
-
-input {
-    font-family: Georgia, 'Times New Roman', Times, serif; 
-    font-weight: bold;
-    font-size: 1.15rem;
-}
-
-@keyframes showIt {
-    0%, 90% { opacity: 0 }
-  100% { opacity: 1 }
-
-  }
-  
-  @-moz-keyframes showIt {
-    0%, 90% { opacity: 0 }
-  100% { opacity: 1 }
-
-  }
-  
-  @-webkit-keyframes showIt {
-    0%, 90% { opacity: 0 }
-  100% { opacity: 1 }
-  }
-  
-  @-o-keyframes showIt {
-    0%, 90% { opacity: 0 }
-  100% { opacity: 1 }
-  }
-  
-  @-ms-keyframes showIt {
-    0%, 90% { opacity: 0 }
-  100% { opacity: 1 }
-
-  }
-
-.fade-in-text {
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    text-align: center; 
-    border-width: 0px; 
-    border-style: none;
-    animation: fadeIn 4s linear forwards;
-    -webkit-animation: fadeIn 4s linear forwards;
-    -moz-animation: fadeIn 4s linear forwards;
-    -o-animation: fadeIn 4s linear forwards;
-    -ms-animation: fadeIn 4s linear forwards;
-  }
-  
-  @keyframes fadeIn {
-    0%,100% { opacity: 0 }
-  90% { opacity: 1 }
-
-  }
-  
-  @-moz-keyframes fadeIn {
-    0%,100% { opacity: 0 }
-  90% { opacity: 1 }
-
-  }
-  
-  @-webkit-keyframes fadeIn {
-    0%,100% { opacity: 0 }
-  90% { opacity: 1 }
-
-  }
-  
-  @-o-keyframes fadeIn {
-    0%,100% { opacity: 0 }
-  90% { opacity: 1 }
-
-  }
-  
-  @-ms-keyframes fadeIn {
-    0%,100% { opacity: 0 }
-  90% { opacity: 1 }
-
-  }
-
  
   a {
     color: black;
   }
-     @media screen and (max-width: 1023px){
-     #container {
+
+#text {
+  width: 55%;
+  margin: auto;
+
+}
+
+@media (max-width: 1023px) {
+  #text {
+width: 65%;
+  }
+}
+     @media screen and (max-width: 720px){
+     #text {
      width: 100%;
      }
      }
@@ -162,17 +62,9 @@ input {
     </style>
   </head> 
   <body style="background-color: white;">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXE7C5EQFM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-QXE7C5EQFM');
-</script>
     <div id="text" style="display: flex; justify-content: center; margin-top: 1em; overflow: hidden;">
-     <iframe style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="600em" max-width="calc(100% - 10em)" height="13000em" src="https://docs.google.com/document/d/e/2PACX-1vTCe3gBI3vlcfYeGnX_KHCZS8ZlkJTQHK8ZQJG8i6uQtYSIeGdqZ406CU1KmXCaZtT2ZWVx6sn7uQ6a/pub?embedded=true" class="container"></iframe>
+     <iframe style="font-size: 1.125rem; text-align: center; border-width: 0px; border-style: none;" width="100%" height="13000em" src="https://docs.google.com/document/d/e/2PACX-1vTCe3gBI3vlcfYeGnX_KHCZS8ZlkJTQHK8ZQJG8i6uQtYSIeGdqZ406CU1KmXCaZtT2ZWVx6sn7uQ6a/pub?embedded=true" class="container"></iframe>
         </div>
         <script>
             if (matchMedia('screen and (max-width: 480px)').matches) {
