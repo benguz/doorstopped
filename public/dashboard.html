@@ -57,7 +57,8 @@
     <!-- <div class="dinkydonk" id="popup" style="display: none;">
         <span class="close" id="closeBtn">&times;</span>
       </div> -->
-      <div id="onboarding-element" style="position: absolute; z-index: 10; width: 100vw; height: 100vh; display: none; background-color: white; font-family: Poppins;  transition: opacity 1s; opacity: 1;">
+      <div id="onboarding-element" style="position: absolute; z-index: 10;     pointer-events: none;
+      width: 100vw; height: 100vh; display: none; background-color: white; font-family: Poppins;  transition: opacity 1s; opacity: 1;">
         <div style="max-width: 100%; margin: auto; text-align: center;">
             <h1 class="big fade-in-med" >There are <strong style="color:  #aa0462;">1,000's of ways</strong> you can change school, <strong style="color:#cd6f6f; opacity: 0;" class="fade-in-slow">no matter what you're struggling with.</strong></h1>
               </div>
@@ -547,7 +548,8 @@
               <video autoplay playsinline muted loop id="eating" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/eye-roll-meme.mp4" data-src-webm="/assets/cards/eye-roll-meme.webm" >
               </video> 
-        <div class="card-caption" style="z-index: 3;"> 
+        <div class="card-caption" > 
+            <!-- style="z-index: 3;" -->
                             <h2>Toxic comments about eating</h2>
             <p>Respond without causing drama!</p>
 
@@ -717,18 +719,31 @@
 </script> -->
     <script>
     // onboarding flow on first load
-    let onboardingDone = localStorage.getItem("onboardingDone");
-    if (!onboardingDone) {
-        document.getElementById("onboarding-element").style.display = "flex";
-        localStorage.setItem("onboardingDone", "true")
-    }
-    document.getElementById("dashboard-body").style.display = "flex";
-    document.getElementsByClassName("triangle-main")[0].style.display = "none";
-    document.getElementsByClassName("triangle-left")[0].style.display = "none";
-    setTimeout(function() {
-        document.getElementById("onboarding-element").classList.add("fade-out-med");
-    }, 3000);
+        let onboardingDone = localStorage.getItem("onboardingDone");
+        if (!onboardingDone) {
+            let start = document.getElementById("onboarding-element")
+            if (start) {
+                start.style.display = "flex";
+                document.getElementsByClassName("triangle-main")[0].style.display = "none";
+                document.getElementsByClassName("triangle-left")[0].style.display = "none";
+                start.style.zIndex ="-1";
+            } else {
+                document.addEventListener("DOMContentLoaded", function() {
+                    document.getElementById("onboarding-element").style.display = "flex";
+                    document.getElementsByClassName("triangle-main")[0].style.display = "none";
+                    document.getElementsByClassName("triangle-left")[0].style.display = "none";
+                    start.style.zIndex ="-1";
 
+                });
+            }
+            localStorage.setItem("onboardingDone", "true")
+        }
+        document.getElementById("dashboard-body").style.display = "flex";
+
+        setTimeout(function() {
+            document.getElementById("onboarding-element").classList.add("fade-out-med");
+        }, 3000);
+    
     // document.getElementById("dashboard-body").style.background = "#f5f5f5";
     // document.getElementById("desktop-main").style.background = "#f5f5f5";
     // document.getElementById("desktop-sidenav").style.backgroundColor = "rgba(255, 255, 255, 0.2)";

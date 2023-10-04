@@ -532,6 +532,8 @@ input {
   position: relative; 
   flex-direction: column; 
   height: 100%; 
+  pointer-events: none;
+
 }
 
 .card-caption h2 {
@@ -835,7 +837,7 @@ input {
 @media screen and (max-width: 600px) {
   #navbar {
     display: flex;
-    /* z-index: 4; */
+    z-index: 4;
   }
   #desktop-sidenav {
     flex: 0;
