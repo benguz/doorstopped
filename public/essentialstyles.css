@@ -835,6 +835,7 @@ input {
 @media screen and (max-width: 600px) {
   #navbar {
     display: flex;
+    z-index: 4;
   }
   #desktop-sidenav {
     flex: 0;
