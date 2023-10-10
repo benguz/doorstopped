@@ -783,9 +783,11 @@ input {
   }
 }
 #onboarding-survey {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto;
+  max-width: 100%;
 }
 #onboarding-survey h2 {
   color: black; 
