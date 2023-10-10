@@ -867,6 +867,8 @@
                 document.getElementById("first").dataset.link = placeHolderStart.dataset.link;
                 document.getElementById("first").dataset.category = placeHolderStart.dataset.category;
                 placeHolderStart.remove();
+            } else {
+                document.getElementById("first").display = "none";
             }
             loadNextVideo();
 loadNextVideo();
@@ -1433,60 +1435,6 @@ function showSection(n) {
         document.getElementById('img' + lastShownSection + mobileNav[isMobile]).src = iconSrc[lastShownSection - 1];
         document.getElementById('img3' + mobileNav[isMobile]).src = "/assets/svg/Favorite_fill.svg";
         lastShownSection = 3;
-
-        // hammer to go back to swipe
-        let leftSection = document.getElementById("left-section");
-        // if (isMobile === 1) {
-            //optional, to prevent this effect on mobile} 
-        let hammertime = new Hammer(leftSection);
-        let initialPos = 0;
-        let currentPos = 0;
-        let rafId = null;
-
-        function animate() {
-            leftSection.style.transform = `translateX(0px)`;
-            currentPos = 0;
-        }
-
-        hammertime.on('pan', function(e) {
-            if (e.target.classList.contains('noswipe')) {
-                return;
-            }
-
-            if (e.direction === Hammer.DIRECTION_RIGHT && Math.abs(e.deltaX) > Math.abs(e.deltaY)) { 
-                // Only respond to swipes right and mostly horizontal movements
-                currentPos = initialPos + e.deltaX;
-                let transform = `translateX(${currentPos}px)`;
-                leftSection.style.transform = transform;
-            } else {
-                currentPos = 0;
-            }
-        });
-
-        hammertime.on('panstart', function() {
-            initialPos = currentPos;
-            leftSection.classList.remove('out');
-        });
-
-        hammertime.on('panend', function(e) {
-
-            initialPos = currentPos;
-
-            if (Math.abs(e.deltaX) > deltaSwipe && e.direction === Hammer.DIRECTION_RIGHT) {
-                animate();
-                currentPos = 0;
-                showSection(2);
-
-            } else {
-            // If you don't swipe enough, the card springs back to center
-                animate();
-            }
-            // Remove the transition property so it doesn't affect other transformations
-            setTimeout(() => {
-                leftSection.style.transition = '';
-            }, 500);
-
-            });
 
     } 
     else if (n === 4) {
