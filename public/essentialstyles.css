@@ -782,8 +782,33 @@ input {
     height: 40px;
   }
 }
-
-
+#onboarding-survey {
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+#onboarding-survey h2 {
+  color: black; 
+  margin: initial;
+  font-weight: 500;
+}
+.onboarding-choice {
+  background-color: white;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  margin: auto;
+  color: black; 
+  width: 60%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Poppins";
+  padding: 7px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 18px;
+}
+.onboarding-choice:hover {
+  box-shadow: 4px 12px 26px rgba(0, 0, 0, 0.3);
+}
 /* Style adjustments for larger screens */
 @media screen and (min-width: 2000px) {
   /* #container, #swiped-right-section, #left-section, #bingo-section, #account-section {

@@ -57,11 +57,28 @@
     <!-- <div class="dinkydonk" id="popup" style="display: none;">
         <span class="close" id="closeBtn">&times;</span>
       </div> -->
-      <div id="onboarding-element" style="position: absolute; z-index: 10;     pointer-events: none;
+      <div id="onboarding-element" style="position: absolute; z-index: 10;
       width: 100vw; height: 100vh; display: none; background-color: white; font-family: Poppins;  transition: opacity 1s; opacity: 1;">
-        <div style="max-width: 100%; margin: auto; text-align: center;">
+        <div id="onboarding-hero" style="max-width: 100%; margin: auto; text-align: center;">
             <h1 class="big fade-in-med" >There are <strong style="color:  #aa0462;">1,000's of ways</strong> you can change school, <strong style="color:#cd6f6f; opacity: 0;" class="fade-in-slow">no matter what you're struggling with.</strong></h1>
               </div>
+        <div id="onboarding-survey" style="display: none;"> 
+            <br>
+            <h2>What sucks about high school?</h2>
+            <div style="display: inline-block">
+            <p class="onboarding-choice" id="drama" onclick="toggleClick('drama')">The drama 💅</p>
+            <!-- <p class="onboarding-choice" id="food" onclick="toggleClick('food')">The food 🤮</p> -->
+            <p class="onboarding-choice" id="policy" onclick="toggleClick('policy')">The rules 🤬</p>
+            <p class="onboarding-choice" id="teacher" onclick="toggleClick('teacher')">This teacher 📚</p>
+            <p class="onboarding-choice" id="money" onclick="toggleClick('money')">No money 💰</p>
+            <p class="onboarding-choice" id="boring" onclick="toggleClick('boring')">Boring classes 💤</p>
+            <p class="onboarding-choice" id="mental" onclick="toggleClick('mental')">Mental Health 📉</p>
+        </div>
+            <!-- <p class="onboarding-choice" id="vibes" onclick="toggleClick('vibes')">Toxic Vibes 🙄</p> -->
+            <button id="onboarding-button" class="onboarding-choice" style="background-color: rgba(170, 4, 98, 0.2);" onclick="moveOn()">
+                <p style="color: white;">Fix school <img width="24px" height="24px" style="vertical-align: middle;" src="/assets/svg/Send_hor.svg"></p>
+            </button>
+        </div>
       </div>
       <div id="desktop-sidenav">
         <a>            
@@ -88,9 +105,9 @@
             <!-- <img src="/assets/cards/badfood.webp" alt="image2" /> -->
             <p></p>
         </div>
-        <div class="card" style="display: none;" data-category="50-swipes-survey-yes">
+        <div id="survey-card-50" class="card" style="display: none;" data-category="50-swipes-survey-yes">
             <h2>You've swiped through 50 Doorstops! Have we helped you feel happier in school?</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/taylor-swift.mp4" data-src-webm="/assets/cards/whatever-shrug.webm" >
               </video>               
               <p>Swipe right for yes, swipe left for no.</p>
@@ -107,20 +124,20 @@
             <h2>Boredom</h2>
             <p>Window-Staring 101</p>
         </div> -->
-              <div class="card" data-link="doorstops/shift#enemy" style="display: none;"> 
+              <div id="unfinished1" class="card" data-link="doorstops/shift#enemy" style="display: none;"> 
                 <!--link to doorstopfellows in the future-->
             <h2>Apathy</h2>
             <p>Nobody gives a fuck.</p>
         </div>
-              <div class="card" data-link="/programs/conversations" style="display: none;">
+              <div id="unfinished2" class="card" data-link="/programs/conversations" style="display: none;">
             <h2>Nobody respects teachers</h2>
             <p>So class gets loud</p>
         </div>
-              <div class="card" data-link="/doorstops/listen" style="display: none;">
+              <div id="unfinished3" class="card" data-link="/doorstops/listen" style="display: none;">
             <h2>Anxiety</h2>
             <p>Feet tapping all class</p>
         </div>
-              <div class="card" data-link="/doorstops/care" style="display: none;">
+              <div id="unfinished4" class="card" data-link="/doorstops/care" style="display: none;">
             <h2>Insecurity</h2>
             <p>Smart people think they’re dumb</p>
         </div>
@@ -128,7 +145,7 @@
             <h2>Students are all {negative emotion}</h2>
             <p>Straight up.</p>
         </div> -->
-              <div class="card" data-link="/doorstops/ref" style="display: none;" data-category="culture">
+              <div id="unfinished5" class="card" data-link="/doorstops/ref" style="display: none;" data-category="culture">
             <h2>Competitiveness</h2>
             <p>wha- wha- whadidya get?!</p>
         </div>
@@ -147,9 +164,9 @@
             <div class="tenor-gif-embed" data-postid="20464269" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"></div> 
             <p>Nobody poopin.</p>
         </div> -->
-              <div class="card" data-link="/programs/conversations" style="display: none;" data-category="wellbeing">
+        <div id="mental-card-5" class="card" data-link="/programs/conversations" style="display: none;" data-category="wellbeing">
             <h2>No mental health help</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/cute-animals-goat.mp4" data-src-webm="/assets/cards/cute-animals-goat.webm" >
               </video>  
             <p>"Guidance" counselors</p>
@@ -159,25 +176,29 @@
             <h2>"You're a try-hard"</h2>
             <p>You get put down for caring.</p>
         </div> -->
-        <div class="card" data-link="/doorstops/college" style="display: none;" data-category="college-career">
-            <h2>COLLEGE APPLICATION STRESS</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+        <div id="mental-card-4" class="card" data-link="/doorstops/college" style="display: none;" data-category="college-career">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/no-stress.mp4" data-src-webm="/assets/cards/no-stress.webm" >
-              </video>              
+              </video>
+              <div class="card-caption" > 
+                <h2>COLLEGE APPLICATION STRESS</h2>
+
               <p>Swipe for some resources on how to navigate college applications! <br> Unless you're a freshman. What are you doing still reading, freshman.</p>
         </div>
+    </div>
+
               <!-- <div class="card" data-link="/doorstops/othercareers" style="display: none;" data-category="college-career">
             <h2>HS feels like a dead end</h2>
             <p>It’s McDonalds or fame</p>
         </div> -->
 
-        <div class="card" data-link="/doorstops/shift#outlet" style="display: none;" data-category="culture">
+        <div id="vibes-card-6" class="card" data-link="/doorstops/shift#outlet" style="display: none;" data-category="culture">
             <h2>Decreasing Violence</h2>
             <p>People hiding in the bathroom, too scared to go to lunch.</p>
         </div>
         <!-- <div class="card" data-link="https://blog.benguzovsky.com/why" style="display: none;" data-category="self-advocacy">
             <h2>What's the point of ____ class?</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-wrestling.mp4" data-src-webm="/assets/cards/whatever-shrug.webm" >
               </video>             <p>We're not learning what matters</p>
         </div> -->
@@ -185,14 +206,17 @@
             <h2>Social divides</h2>
             <p>rich/poor, black/white</p>
         </div> -->
-        <div class="card" data-link="/doorstops/intern" style="display: none;" data-category="college-career">
-            <h2>Get a COOL INTERNSHIP as a HIGH SCHOOLER</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+        <div id="career-card-2" class="card" data-link="/doorstops/intern" style="display: none;" data-category="college-career">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/cute-animals-goat.mp4" data-src-webm="/assets/cards/cute-animals-goat.webm" >
-              </video>  
-            <p>1. Find a cool company 2. Look up what they do and 3. Wow them with a five sentence email.</p>
+              </video>
+              <div class="card-caption" > 
+                <h2>Get a COOL INTERNSHIP as a HIGH SCHOOLER</h2>
+                <p>1. Find a cool company 2. Look up what they do and 3. Wow them with a five sentence email.</p>
         </div>
-        <div class="card" data-link="https://www.teenagegriefsucks.com/" style="display: none;" data-category="SEL-skills">
+    </div>
+
+        <div id="mental-card-3" class="card" data-link="https://www.teenagegriefsucks.com/" style="display: none;" data-category="SEL-skills">
             <h2>Living with losing a friend or loved one</h2>
             <img src="/assets/images/teengrief.png" alt="image1"/>
             <br>
@@ -208,80 +232,113 @@
             
             <p>Ever been injured where you can kind of play but it hurts more every game? You know you should stop but the season seems so close.<br><strong>School can feel the same way</strong>: you’re stuck on an assignment or you have no idea what’s going on in class, but stick it out, head down, and make it to the end of the semester.<br>But school’s different. If you <strong>ask for help</strong>, you don’t get taken out of the game, <strong>you get back in</strong>. You get better. Your teacher respects you more.<br>Everyone's struggled like this. Wanna hear professional athletes say it?</p>
         </div> -->
-        <div class="card" style="display: none;" data-link="/doorstops/mentor" data-category="college-career">
-            <h2>Find a mentor:</h2>
-            <video autoplay playsinline muted loop id="mentor" width="100%" style="object-fit: contain;">
+        <div id="career-card" class="card" style="display: none;" data-link="/doorstops/mentor" data-category="college-career">
+            <video autoplay playsinline muted loop id="mentor" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" >
-              </video>     
-            <h2>someone with a cool career who'll help you ~thrive~</h2>
-            <p></p>
+              </video>
+              <div class="card-caption" > 
+                <h2>Find a mentor:</h2>
+
+            <p>someone with a cool career who'll help you ~thrive~</p>
         </div>
-        <div class="card" style="display: none;" data-category="25-swipes-survey-yes">
-            <h2>You've swiped through 25 Doorstops! Have we helped you feel happier in school?</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+    </div>
+
+        <div id="survey-card-25" class="card" style="display: none;" data-category="25-swipes-survey-yes">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/taylor-swift.mp4" data-src-webm="/assets/cards/whatever-shrug.webm" >
-              </video>               
+              </video>
+              <div class="card-caption" > 
+                <h2>You've swiped through 25 Doorstops! Have we helped you feel happier in school?</h2>
+
               <p>Swipe right for yes, swipe left for no.</p>
         </div>
-        <div class="card" data-link="/doorstops/shift" style="display: none;" data-category="culture">
-            <h2>REAL TIME VIDEO OF YOUR ENEMIES COLLAPSING</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
-                <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" >
-              </video>                 
-              <p>If your school has cliques and drama to an extreme, you deserve a better culture.</p>
-        </div>
+    </div>
 
-        <div class="card" data-link="/doorstops/introuble#mainscript" style="display: none;" data-category="self-advocacy">
-            <h2>WHAT TO SAY WHEN YOU'RE IN TROUBLE</h2>
-            <video autoplay playsinline muted loop width="100%" style="object-fit: contain;">
+        <div id="drama-card-3" class="card" data-link="/doorstops/shift" style="display: none;" data-category="culture">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
+                <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" >
+              </video>
+              <div class="card-caption" > 
+                <h2>REAL TIME VIDEO OF YOUR ENEMIES COLLAPSING</h2>
+                <p>If your school has cliques and drama to an extreme, you deserve a better culture.</p>
+        </div>
+    </div>
+
+
+        <div id="policy-card-4" class="card" data-link="/doorstops/introuble#mainscript" style="display: none;" data-category="self-advocacy">
+            <video autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" alt="pandas falling over each other" >
-              </video>  
+              </video>
+              <div class="card-caption" > 
+                <h2>WHAT TO SAY WHEN YOU'RE IN TROUBLE</h2>
             <p>Here's how to be in... less trouble.</p>
         </div>
+    </div>
 
-      <div class="card" data-link="/doorstops/shift#clout" style="display: none;" data-category="culture">
-            <h2>End the Small jabs</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+      <div id="vibes-card-5" class="card" data-link="/doorstops/shift#clout" style="display: none;" data-category="culture">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-wrestling.mp4" data-src-webm="/assets/cards/panda-punch.webm" >
-              </video>             
+              </video>
+              <div class="card-caption" > 
+                <h2>End the Small jabs</h2>
+
               <p>No more insults in the halls and middle school shit</p>
         </div>
-              <div class="card" data-link="/doorstops/shift#referent" style="display: none;" data-category="culture"> 
-            <h2>Fighting Harrassment Culture</h2>
+    </div>
+
+              <div id="harass-card-2" class="card" data-link="/doorstops/shift#referent" style="display: none;" data-category="culture"> 
             <!-- https://www.youtube.com/watch?v=OqXC6tcmW_U -->
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-wrestling.mp4" data-src-webm="/assets/cards/panda-wrestling.webm" >
-              </video>                
-              <p>Guys do awful stuff to girls, nobody says anything.</p>
+              </video>
+              <div class="card-caption" > 
+                <h2>Fighting Harrassment Culture</h2>
+
+                <p>Guys do awful stuff to girls, nobody says anything.</p>
+
+            </div>
+
         </div>
-        <div class="card" data-link="/doorstops/harassment" style="display: none;" data-category="culture">
+        <div id="drama-card-2" class="card" data-link="/doorstops/harassment" style="display: none;" data-category="culture">
             <h2>Anonymously Report Harassment, Cyber-bullying, or SA</h2>
             <!-- <div class="tenor-gif-embed" data-postid="17224602" data-share-method="host" data-aspect-ratio="1.22605" data-width="100%"></div> -->
             <br>
             <p>100% private, we don't collect your email address. And we help you write the message!</p>
         </div>
-        <div class="card" data-link="https://fix.school/doorstops/name" style="display: none;" data-category="self-advocacy">
-            <h2>Get your name pronounced right</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+        <div id="vibes-card-4" class="card" data-link="https://fix.school/doorstops/name" style="display: none;" data-category="self-advocacy">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/theoffice-stevecarell.mp4" data-src-webm="/assets/cards/mama-chase.webm" >
-              </video>    
-            <p>DON'T LET TEACHERS CALL YOU BY THE WRONG NAME ALL YEAR, IT DOESN'T HAVE TO BE THIS WAY.</p>
+              </video>
+              <div class="card-caption" > 
+                <h2>Get your name pronounced right</h2>
+
+                <p>DON'T LET TEACHERS CALL YOU BY THE WRONG NAME ALL YEAR, IT DOESN'T HAVE TO BE THIS WAY.</p>
+
+            </div>
+
         </div>
-        <div class="card" data-link="/doorstops/talkdown" style="display: none;" data-category="self-advocacy"> 
-            <h2>Adults talking to you like you're five years old.</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+        <div id="teacher-card-5" class="card" data-link="/doorstops/talkdown" style="display: none;" data-category="self-advocacy"> 
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-slide.mp4" data-src-webm="/assets/cards/baby-yoda-mandalorian.webm" >
-              </video>    
-            <p>Recognize and respond when people act like you can't think or do for yourself. You can, bestie.</p>
+              </video>
+              <div class="card-caption" > 
+                <h2>Adults talking to you like you're five years old.</h2>
+                <p>Recognize and respond when people act like you can't think or do for yourself. You can, bestie.</p>
+
+            </div>
+
         </div>
-        <div class="card" data-link="/doorstops/getout" style="display: none;" data-category="self-advocacy">
-            <h2>Feel stuck in class?</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+        <div id="boring-card-5" class="card" data-link="/doorstops/getout" style="display: none;" data-category="self-advocacy">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/depressed-bored.mp4" data-src-webm="/assets/cards/depressed-bored.webm" >
-              </video>  
-            <p>Get consistent free time during class WHILE fixing the vibes with your teacher.</p>
+              </video>
+              <div class="card-caption" > 
+                <h2>Feel stuck in class?</h2>
+                <p>Get consistent free time during class WHILE fixing the vibes with your teacher.</p>
+            </div>
+
         </div>
-        <div class="card" data-link="/programs/phones" style="display: none;" data-category="policy">
+        <div id="policy-card-3" class="card" data-link="/programs/phones" style="display: none;" data-category="policy">
             <h2>Admin don't communicate</h2>
             <img src="/assets/images/sadcat.jpg" style="max-width: 100%;" alt="sad cat"/><!--Creds to sari https://www.sari.studio/store/p/print-sad-cat-->
             <p>They literally don't ask you for advice, don't tell you before they change something, and when shit goes down, they don't say <em>anything.</em></p>
@@ -294,7 +351,7 @@
         </div> -->
         <!-- <div class="card" data-link="/doorstops/escape" style="display: none;" data-category="STR">
             <h2>You have rights, actually.</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/depressed-bored.mp4" data-src-webm="/assets/cards/depressed-bored.webm" >
               </video>              
               <br>
@@ -302,27 +359,37 @@
             <span class="envy">Renegotiate how punishment works.</span></p>
         </div> -->
 
-        <div class="card" data-link="/doorstops/parents" style="display: none;" data-category="external">
-            <h2>Take 2 minutes to 2x your GPA </h2>
+        <div id="stress-card-2" class="card" data-link="/doorstops/parents" style="display: none;" data-category="external">
             <!-- <div class="tenor-gif-embed" data-postid="16251810" data-share-method="host" data-aspect-ratio="1.2749" data-width="100%"></div> -->
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/theoffice-stevecarell.mp4" data-src-webm="/assets/cards/tenor-panda-chase.webm" >
-              </video>            
-            <p>The one question your parents never ask you could help you do better and feel safer in school</p>
+              </video>
+              <div class="card-caption" > 
+                <h2>Take 2 minutes to 2x your GPA </h2>
+                <p>The Q your parents never ask could help you do better</p>
+            </div>
+
         </div>
-        <div class="card" data-link="/doorstops/lifehacks" style="display: none;" data-category="culture">
-            <h2>EVEN MORE School Life Hacks</h2>
-            <video autoplay playsinline muted loop width="100%" style="object-fit: contain;">
+        <div id="boring-card-4" class="card" data-link="/doorstops/lifehacks" style="display: none;" data-category="culture">
+            <video autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-fat.mp4" data-src-webm="/assets/cards/panda-fat.webm" alt="panda shaking its bum" >
-              </video>              <br>
+              </video>
+              <div class="card-caption" > 
+                <h2>EVEN MORE School Life Hacks</h2>
+
             <p>Don't worry, we got you.</p>
+            </div>
         </div>
-        <div class="card" data-link="/doorstops/money" style="display: none;" data-category="policy">
-            <h2>No money in the district</h2>
-            <video autoplay playsinline muted loop id="myVideo" width="100%" style="object-fit: contain;">
+        <div id="money-card" class="card" data-link="/doorstops/money" style="display: none;" data-category="policy">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/bank-banking.mp4" data-src-webm="/assets/cards/bank-banking.webm" >
-              </video> 
+              </video>
+              <div class="card-caption" > 
+                <h2>No money in the district</h2>
+
             <p>Fundraise with proven strats</p>
+        </div>
+
         </div>
 
         <!-- <div class="card" style="display: none;">
@@ -330,17 +397,20 @@
             <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> 
             <br>
         </div> -->
-        <div class="card" data-link="/doorstops/hard" data-category="culture">
-            <h2>Conflict is <span class="loud">*okay*</span> stop avoiding telling your teacher something's wrong</h2>  
-            <video autoplay playsinline muted loop class="flipped" width="100%" style="object-fit: contain;">
+        <div id="teacher-card" class="card" data-link="/doorstops/hard" data-category="culture">
+            <video autoplay playsinline muted loop class="flipped" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/taylor-swift.mp4" data-src-webm="/assets/cards/panda-punch.webm" alt="pandas punching but failing" >
               </video>
-              <p>Having a hard conversation with a teacher starts with a pastrami sandwich and a bloodborne pathogen test. Swipe and it'll make sense.</p>
+              <div class="card-caption" > 
+                <h2>Conflict is <span class="loud">*okay*</span> stop avoiding telling your teacher something's wrong</h2>  
+                <p>Having a hard conversation with a teacher starts with a pastrami sandwich and a bloodborne pathogen test. Swipe and it'll make sense.</p>
+
+                </div>
         </div> 
-        <div class="card" data-link="/doorstops/poop" style="display: none;" data-category="wellbeing">
+        <div id="money-card-3" class="card" data-link="/doorstops/poop" style="display: none;" data-category="wellbeing">
             <h2>No urinal dividers?</h2>
             <div style="display: flex; justify-content: center;">
-                <video autoplay playsinline muted loop width="75%" style="object-fit: contain;">
+                <video autoplay playsinline muted loop width="75%" class="card-video">
                     <source data-src-mp4="/assets/cards/mp4/funny-fail.mp4" data-src-webm="/assets/cards/funny-fail.webm" alt="panda shaking its bum" >
                   </video>          
                 </div><br>
@@ -348,10 +418,10 @@
             <p>Don't worry, we got you.</p> -->
         </div>
 
-        <div class="card" data-link="/doorstops/teachit" style="display: none;" data-category="STR">
+        <div id="boring-card-3" class="card" data-link="/doorstops/teachit" style="display: none;" data-category="STR">
             <h2>No good classes? Teach one yourself.</h2>
             <div style="display: flex; justify-content: center;">
-                <video autoplay playsinline muted loop width="75%" style="object-fit: contain;">
+                <video autoplay playsinline muted loop width="75%" class="card-video">
                     <source data-src-mp4="/assets/cards/mp4/professor-prova.mp4" data-src-webm="/assets/cards/professor-prova.webm" alt="teacher grading" >
                   </video>              
                 </div>
@@ -360,133 +430,165 @@
         </div>
         <!-- <div class="card" data-link="/doorstops/othercareers" style="display: none;" data-category="culture">
             <h2>No idea what you want to do when you graduate?</h2>
-            <video id="careers" autoplay playsinline muted loop width="100%" style="object-fit: contain;">
+            <video id="careers" autoplay playsinline muted loop width="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-relaxing.mp4" data-src-webm="/assets/cards/dancing-panda-2.webm" alt="panda shaking its bum" >
               </video>              
               <br>
             <p>THERE ARE OTHER CAREERS BESIDES ATHLETE AND ACTOR AND SOME OF THEM ARE COOL.</p>
         </div> -->
-      <div class="card" data-link="/doorstops/shift" style="display: none;" data-category="culture">
+      <div id="vibes-card-3" class="card" data-link="/doorstops/shift" style="display: none;" data-category="culture">
             <h2>Seriously, End the Bad Vibes. No bullying. No toxic groupchats.</h2>
-            <video id="badvibes"  autoplay playsinline muted loop width="100%" style="object-fit: contain;">
+            <video id="badvibes"  autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-dancing.mp4" data-src-webm="/assets/cards/panda-dancing.webm" alt="panda shaking its bum" >
               </video>              
               <p>Even MORE Strategies perfect for your school.</p>
         </div>
-        <div class="card" data-link="/doorstops/boundaries" style="display: none;" data-category="STR">
+        <div id="harass-card" class="card" data-link="/doorstops/boundaries" style="display: none;" data-category="STR">
             <h2>Do your male teachers make a lil too much eye contact?</h2>
-            <video id="eyes" autoplay playsinline muted loop width="100%" style="object-fit: contain;">
+            <video id="eyes" autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/no-stress.mp4" data-src-webm="/assets/cards/dancing-panda.webm" alt="panda shaking its bum" >
               </video>              
               <p>RESPOND TO PEOPLE CROSSING YOUR BOUNDARIES.</p>
         </div>
-        <div class="card" data-link="/doorstops/dominance" style="display: none;" data-category="STR">
+        <div id="teacher-card-4" class="card" data-link="/doorstops/dominance" style="display: none;" data-category="STR">
             <h2>Strictness, old teachers, mean teachers... we got you.</h2>
-            <video autoplay playsinline muted loop id="eating" width="100%" style="object-fit: contain;">
+            <video autoplay playsinline muted loop id="eating" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/eye-roll-meme.mp4" data-src-webm="/assets/cards/eye-roll-meme.webm" >
               </video> 
             <p>Trapped at your desk?</p>
         </div>
 
 
-        <div class="card" data-link="/doorstops/mean" data-category="culture">
+        <div id="teacher-card-3" class="card" data-link="/doorstops/mean" data-category="culture">
             <h2>Are your teachers <span class="loud">bullies?</span></h2>
-            <video id="punch1" autoplay playsinline muted loop  width="100%" style="object-fit: contain;">
+            <video id="punch1" autoplay playsinline muted loop  height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-wrestling.mp4" data-src-webm="/assets/cards/panda-punch.webm" alt="pandas punching but failing" >
               </video>  
 
               <h3>Choose from three solutions that hold your teachers accountable and change the culture.</h3>
         </div> 
-        <div class="card" data-link="/programs/eat" style="display: none;" data-category="wellbeing">
+        <div id="food-card" class="card" data-link="/programs/eat" style="display: none;" data-category="wellbeing">
             <h2>Lunch awful?</h2>
-            <img src="/assets/cards/badfood.webp" width="100%" style="object-fit: contain; max-width: 100%;">            
+            <img src="/assets/cards/badfood.webp" height="100%" style="object-fit: contain; max-width: 100%;">            
             <!-- <p>Pull out your mini waffle maker, or we'll buy one for you. Work your way up to your own food truck.</p>  -->
             <p>Become a school lunch entrepreneur.</p>
         </div>
+        <div id="policy-card-2" class="card" data-link="https://fix.school/school/dayoff" style="display: none;" data-category="policy">
+            <video id="50mil" autoplay playsinline muted loop height="100%" class="card-video">
+                <source data-src-mp4="/assets/cards/mp4/bank-banking.mp4" data-src-webm="/assets/cards/bank-banking.webm" alt="dog working" >
+            </video>  
+            <div class="card-caption"> 
+                <h2>Get a schoolwide day off</h2>
 
-        <div class="card" data-link="https://fix.school/school" style="display: none;" data-category="policy">
-            <h2>Schools manage $50 million a year. How do they work?</h2>
-            <video id="50mil" autoplay playsinline muted loop width="100%" style="object-fit: contain;">
+            <p>Show them who's boss</p>
+            </div>
+        </div>
+
+        <div id="policy-card" class="card" data-link="https://fix.school/school" style="display: none;" data-category="policy">
+            <video id="50mil" autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/bank-banking.mp4" data-src-webm="/assets/cards/bank-banking.webm" alt="dog working" >
               </video>  
-            <br>
-            <p></p>
-            <p>How to take control of <strong>100k of the school budget.</strong>  <br>
-            Win at selfie diplomacy. <br>
-            Execute a <strong>hostile takeover.</strong> <br>
-            Change school policy (or just the schedule).</p>
-            
-        </div>
-        <div class="card" data-link="https://fix.school/time" style="display: none;" data-category="culture">
-            <h2>Is class a waste of time? Prove it and change it.</h2>
-            <video id="rage" autoplay playsinline muted loop width="100%" style="object-fit: contain;">
-                <source data-src-mp4="/assets/cards/mp4/angry-panda.mp4" data-src-webm="/assets/cards/angry-panda.webm" alt="pandas waking up" >
-              </video>                
-              <p>All it takes is pulling out your phone timer... and using our nationwide dataset to prove there's room for growth.</p>
-        </div>
+              <div class="card-caption"> 
 
-        <div class="card" data-link="/doorstops/points" data-height="30000px" data-category="culture">
-            <h2>If people <span class="loud">arm wrestle</span> for participation points:</h2>
-            <video autoplay playsinline muted loop id="armwrestle" width="100%" style="object-fit: contain;">
+              <h2>Schools manage $50 million a year. How do they work?</h2>
+
+            <p>Control <strong>100k</strong>, selfie diplomacy, hostile takeover, policy change.</p>
+            </div>
+        </div>
+        <div id="boring-card-2" class="card" data-link="https://fix.school/time" style="display: none;" data-category="culture">
+            <video id="rage" autoplay playsinline muted loop height="100%" class="card-video">
+                <source data-src-mp4="/assets/cards/mp4/angry-panda.mp4" data-src-webm="/assets/cards/angry-panda.webm" alt="pandas waking up" >
+              </video>   
+              <div class="card-caption"> 
+                <h2>Is class a waste of time? Prove it and change it.</h2>
+              <p>All it takes is pulling out your phone timer... and using our nationwide dataset to prove there's room for growth.</p>
+        </div>        
+    </div>
+
+
+        <div id="vibes-card-2" class="card" data-link="/doorstops/points" data-height="30000px" data-category="culture">
+            <video autoplay playsinline muted loop id="armwrestle" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" alt="pandas falling over each other" >
               </video>  
             <br>
+            <div class="card-caption"> 
+                <h2>If people arm wrestle for participation points</h2>
             <h3>End the GPA obsession with a participation point boycott.</h3>
+            </div>
             <!-- <p>Nobody speaks in class until participation grading is equitable.</p> -->
         </div> 
-        <div class="card" data-link="https://fix.school/doorstops/ref" style="display: none;" data-category="culture">
-            <h2>Clean up the toxic vibes</h2>
-            <video id="tvibes" autoplay playsinline muted loop width="100%" style="object-fit: contain;">
+        <div id="vibes-card" class="card" data-link="https://fix.school/doorstops/ref" style="display: none;" data-category="culture">
+            <video id="tvibes" autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-fat.mp4" data-src-webm="/assets/cards/pandastic-panda.webm" alt="panda shaking its bum" >
               </video>  
+              <div class="card-caption"> 
+                <h2>Clean up the toxic vibes</h2>
+
             <p>Use the best behavioral psych research in the GAME to fix it all: from toxic groupchats to bathroom vaping.</p>
         </div>
-        <div class="card" data-link="/doorstops/better" style="display: none;" data-category="policy">
-            <h2>12 ways to be way happier in school</h2>
-            <video autoplay playsinline muted loop class="flipped" width="100%" style="object-fit: contain;">
+    </div>
+        <div id="mental-card-2" class="card" data-link="/doorstops/better" style="display: none;" data-category="policy">
+            <video autoplay playsinline muted loop class="flipped" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-dancing.mp4" data-src-webm="/assets/cards/dancing-panda-2.webm" alt="pandas punching but failing" >
-              </video>            
+              </video>     
+              <div class="card-caption"> 
+       
+              <h2>12 ways to be way happier in school</h2>
               <p>Alll the life hacks you didn't know you needed</p>
+              </div>
         </div>
-        <div class="card" data-link="/doorstops/naptime" style="display: block;" data-category="STR">
-            <h2>Bring back nap time</h2>
-            <video id="naptime" autoplay playsinline muted loop width="100%" style="object-fit: contain;">
+        <div id="mental-card" class="card" data-link="/doorstops/naptime" style="display: block;" data-category="STR">
+            <video id="naptime" autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/cute-animals-goat.mp4" data-src-webm="/assets/cards/panda-wakeup.webm" alt="pandas waking up" >
               </video>              
-              <br>
-            <h3>Sleep during school. And not *just* in your boring classes.</h3>
-        </div>
-        <div class="card" data-link="/doorstops/extension#i-just-want-to-email" data-height="300000px" data-category="SEL-skills">
-            <h2>Essay due in two days? Haven’t started?</h2>
+              <div class="card-caption"> 
+                <h2>Bring back nap time</h2>
 
-            <p>We can help—not, like, plagiarism. Ask for an extension!<br></p>
-            <br><br>
-                <video autoplay playsinline muted loop id="extension" width="100%" style="object-fit: cover; width: calc(100% + 40px); position: absolute; left: -20px;">
+                <p>Sleep during school. And not *just* in your boring classes.</p>
+                </div>
+        </div>
+        <div id="stress-card" class="card" data-link="/doorstops/extension#i-just-want-to-email" data-height="300000px" data-category="SEL-skills">
+
+                <video autoplay playsinline muted loop id="extension" height="100%" class="card-video">
                     <source data-src-mp4="/assets/cards/mp4/panda-sad.mp4" data-src-webm="/assets/cards/panda-sad.webm" alt="sad panda" >
                   </video>  
+                  <div class="card-caption">
+                    <h2>Essay due in two days? Haven’t started?</h2>
+                    <p>We can help—all you have to do is copy-paste.</p>
+                  </div>
         </div>
-        <div class="card" data-link="/doorstops/microwave" style="display: none;" data-category="wellbeing">
-            <h2>Get a microwave.</h2>
-            <video autoplay playsinline muted loop id="microwave" width="100%" style="object-fit: contain;">
+        <div id="food-card-3" class="card" data-link="/doorstops/microwave" style="display: none;" data-category="wellbeing">
+            <video autoplay playsinline muted loop id="microwave" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-fat.mp4" data-src-webm="/assets/cards/dancing-panda-2.webm" >
-              </video>               
+              </video>        
+              <div class="card-caption"> 
+                <h2>Get a microwave.</h2>
+
             <p>Stop eating cold sandwiches, bestie.</p>
+            </div>
         </div>
-        <div class="card" data-link="/doorstops/feedback" style="display: none;" data-height="3000px" data-category="STR">
-            <h2>Boring classes?</h2>
-            <video autoplay playsinline muted loop id="boring" width="100%" style="object-fit: contain;">
+        <div id="teacher-card-2" class="card" data-link="/doorstops/feedback" style="display: none;" data-height="3000px" data-category="STR">
+            <video autoplay playsinline muted loop id="boring" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/depressed-bored.mp4" data-src-webm="/assets/cards/depressed-bored.webm" >
               </video>              <br>
-            <p>Give your teacher anonymous, constructive feedback that will make class better.</p>
+            
+              <div class="card-caption"> 
+                <h2>Boring classes?</h2>
+
+                <p>Give your teacher anonymous, constructive feedback that will make class better.</p>
+                </div>
         </div>
 
-        <div class="card" data-link="https://fix.school/doorstops/conflict" data-category="peers">
-            <h2>Beef with a bestie? Conflict doesn't have to be *bad*</h2>
-            <video id="tumbles" autoplay playsinline muted loop width="100%" style="object-fit: contain;">
+        <div id="drama-card" class="card" data-link="https://fix.school/doorstops/conflict" data-category="peers">
+            <video id="tumbles" autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" alt="pandas falling over each other" >
               </video>  
             <br>
-            <p>Did they post a pic where they looked great and you looked like a gremlin? We got you.</p>
+            <div class="card-caption" > 
+                <h2>Beef with a bestie? Conflict doesn't have to be *bad*</h2>
+                <p>Did they post a pic where they looked great and you looked like a gremlin? We got you.</p>
+
+                </div>
             <!-- <p>If you don't know what to say or how to handle a tough situation, we got you.</p> -->
         </div> 
 <!--         
@@ -496,18 +598,21 @@
             <br>
         </div> -->
 
-        <div class="card" data-link="/doorstops/poop" style="display: none;" data-category="wellbeing">
-            <h2>Bathrooms plain... gross?</h2>
-            <div style="display: flex; justify-content: center;">
-                <video autoplay playsinline muted loop width="75%" style="object-fit: contain;">
+        <div id="money-card-2" class="card" data-link="/doorstops/poop" style="display: none;" data-category="wellbeing">
+            <div style="display: flex; justify-content: center;" class="card-video">
+                <video autoplay playsinline muted loop width="75%" class="card-video">
                     <source data-src-mp4="/assets/cards/mp4/funny-fail.mp4" data-src-webm="/assets/cards/funny-fail.webm" alt="panda shaking its bum" >
                   </video>          
                 </div><br>
+                <div class="card-caption" > 
+                    <h2>Bathrooms plain... gross?</h2>
+
+                    </div>
             <!-- <p>Why is nobody poopin' at your school?</p>
             <p>Don't worry, we got you.</p> -->
         </div>
         
-        <div class="card" data-link="https://fix.school/doorstops/leverage" style="display: block;" data-category="self-advocacy">
+        <div id="boring-card" class="card" data-link="https://fix.school/doorstops/leverage" style="display: block;" data-category="self-advocacy">
 
             <video autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-dancing.mp4" data-src-webm="/assets/cards/panda-wrestling.webm" >
@@ -518,12 +623,21 @@
                 <p style="color: #FFF7F7">Use that as negotiating leverage.</p>
             </div>
         </div>
+        <div id="food-card-2" class="card" data-link="https://fix.school/doorstops/food" data-category="peers">
+            <video autoplay playsinline muted loop id="eating" height="100%" class="card-video">
+                <source data-src-mp4="/assets/cards/mp4/eye-roll-meme.mp4" data-src-webm="/assets/cards/eye-roll-meme.webm" >
+              </video> 
+                    <div class="card-caption" > 
+                        <h2>Toxic comments about eating</h2>
+                        <p>Respond without causing drama!</p>
+                    </div>
+                </div>
         <!--
         <div class="card" data-link="/doorstops/points">
         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ahsokka_/video/7207198809548492037" data-video-id="7207198809548492037"  data-autoplay playsinline="true" style="min-width: 100%"> <section> <a target="_blank" title="@ahsokka_" href="https://www.tiktok.com/@ahsokka_?refer=embed">@ahsokka_</a> </section></blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
         </div>
         -->
-        <div id="first" class="card" data-link="https://fix.school/doorstops/food" data-category="peers">
+        <div id="first" class="card">
                 <div id="overlay">
                 <h2 class="overlay-text" style="text-align: center; max-width: 80%; padding-bottom: 10px;">Swipe through problems you might have at school</h2>
                 <br>
@@ -544,18 +658,12 @@
                 </div>
                 <br><br><br>
             </div> 
- 
-              <video autoplay playsinline muted loop id="eating" height="100%" class="card-video">
-                <source data-src-mp4="/assets/cards/mp4/eye-roll-meme.mp4" data-src-webm="/assets/cards/eye-roll-meme.webm" >
-              </video> 
-        <div class="card-caption" > 
-            <!-- style="z-index: 3;" -->
-                            <h2>Toxic comments about eating</h2>
-            <p>Respond without causing drama!</p>
+            <div id="firstElemContent">
+                                    <!-- style="z-index: 3;" -->
 
         </div>
         </div>
-            <!--  -->
+            <!-- 
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="triangle-main" width='75' height='75' viewbox="0 0 24 24" onclick="handleSwipeRight(currentCard); showNextCard(currentCard)">
                 <path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" fill="#68A2F8" stroke="#68A2F8" stroke-width="2"/>
                 </svg>
@@ -564,11 +672,11 @@
                     <path d="M9 9L15 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
                     <path d="M15 9L9 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
                     </svg>
-                    
+                     -->
                         <!-- handleSwipeLeft(currentCard); showNextCard(currentCard) -->
 
-            <path d="M 25,5 45,45 5,45 Z"/>
-          </svg>
+            <!-- <path d="M 25,5 45,45 5,45 Z"/> 
+          </svg>-->
     </div>
     <div id="swiped-right-section" style="display: none;">
         <div class="content">
@@ -720,28 +828,58 @@
     <script>
     // onboarding flow on first load
         let onboardingDone = localStorage.getItem("onboardingDone");
+        let currentVideoIndex = 0;
+
         if (!onboardingDone) {
             let start = document.getElementById("onboarding-element")
             if (start) {
                 start.style.display = "flex";
-                document.getElementsByClassName("triangle-main")[0].style.display = "none";
-                document.getElementsByClassName("triangle-left")[0].style.display = "none";
+                // document.getElementsByClassName("triangle-main")[0].style.display = "none";
+                // document.getElementsByClassName("triangle-left")[0].style.display = "none";
             } else {
                 document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById("onboarding-element").style.display = "flex";
-                    document.getElementsByClassName("triangle-main")[0].style.display = "none";
-                    document.getElementsByClassName("triangle-left")[0].style.display = "none";
+                    // document.getElementsByClassName("triangle-main")[0].style.display = "none";
+                    // document.getElementsByClassName("triangle-left")[0].style.display = "none";
                 });
             }
             localStorage.setItem("onboardingDone", "true")
+        } else {
+            let prevLeft = localStorage.getItem('swipedLeft');
+            let prevRight = localStorage.getItem('swipedRight');
+
+            prevLeft = prevLeft ? JSON.parse(prevLeft) : [];
+            prevRight = prevRight ? JSON.parse(prevRight) : [];
+
+            let pastSwipes = prevLeft.concat(prevRight);
+            for (let i = 0; i < pastSwipes.length; i++) {
+                let usedCard = document.getElementById(pastSwipes[i].id)
+                if (usedCard) {
+                    usedCard.remove();
+                } else {
+                    console.log(pastSwipes[i].id)
+                }
+            }
+            // if onboarding is completed but user hasn't started swiping:
+            if (pastSwipes.length = 0) {
+                placeHolderStart = document.getElementById("policy-card");
+                document.getElementById("firstElemContent").innerHTML = placeHolderStart.innerHTML;
+                document.getElementById("first").dataset.link = placeHolderStart.dataset.link;
+                document.getElementById("first").dataset.category = placeHolderStart.dataset.category;
+                placeHolderStart.remove();
+            }
+            loadNextVideo();
+loadNextVideo();
+loadNextVideo();
+loadNextVideo();
         }
         document.getElementById("dashboard-body").style.display = "flex";
 
         setTimeout(function() {
-            document.getElementById("onboarding-element").classList.add("fade-out-med");
+            document.getElementById("onboarding-hero").classList.add("fade-out-med");
         }, 3000);
         setTimeout(function() {
-            document.getElementById("onboarding-element").style.zIndex = "-1";
+            document.getElementById("onboarding-survey").style.display = "flex";
         }, 4000)
     
     // document.getElementById("dashboard-body").style.background = "#f5f5f5";
@@ -753,29 +891,71 @@
 
     // after first swipe, reset styles regardless
 
-// picks you up where you left off in the swipe feed
-// currently picks up cards by link, which could break if two have the same link, function somewhat inefficient by not breaking
-let foundCard = 0; 
-let lastSession = localStorage.getItem("nextItemLink");
-if (lastSession && lastSession.includes("/")) {
-    const cards = Array.from(document.querySelectorAll('.card')).reverse();
-    cards.forEach((card) => {
-        if (card.dataset.link === lastSession) { 
-            card.style.display = 'block'; 
-            foundCard++;
-        }
-        if (foundCard === 0) {
-            card.remove(); 
-        } else if (foundCard < 4) {
-            card.style.display = 'block'; 
-            foundCard++;
-        } 
-    });
+let selectedCategories = [];
+function toggleClick(elementId)  {
+    let clicked = document.getElementById(elementId);
+    if (!selectedCategories.includes(elementId)) {
+        clicked.style.backgroundColor = 'hsl(234, 44%, 88%)';
+        selectedCategories.push(elementId);
+    } else {
+        clicked.style.backgroundColor = 'white';
+        selectedCategories.pop(elementId);
+    }
+    document.getElementById("onboarding-button").style.backgroundColor = 'rgba(170, 4, 98, 0.7)';
+}
+function moveOn() {
+  let parentElement = document.getElementById('card-container');
+  for (let i = 0; i < selectedCategories.length; i++) {
+
+        let elementToMove = document.getElementById(selectedCategories[i] + "-card");
+
+    let elementToMove2 = document.getElementById(selectedCategories[i] + "-card-2");
+    if (elementToMove) {
+      parentElement.appendChild(elementToMove2);    
+      if (i === selectedCategories.length - 1) {
+        document.getElementById("firstElemContent").innerHTML = (elementToMove.innerHTML);
+        document.getElementById("first").dataset.link = elementToMove.dataset.link;
+        document.getElementById("first").dataset.category = elementToMove.dataset.category;
+        elementToMove.remove();
+        elementToMove2.style.display = "block"; // may need to display one more hidden card as well
+      } else {
+        parentElement.appendChild(elementToMove);
+    }
+    }
+  }
+  loadNextVideo();
+    loadNextVideo();
+    loadNextVideo();
+    loadNextVideo();
+    document.getElementById("dashboard-body").style.display = "flex";
+    document.getElementById("onboarding-element").classList.add("fade-out-med");
+    setTimeout(function() {
+        document.getElementById("onboarding-element").style.zIndex = "-1";
+    }, 1000)
 }
 
-const videos = document.getElementsByTagName('video');
-let currentVideoIndex = 0;
+// picks you up where you left off in the swipe feed
+// currently picks up cards by link, which could break if two have the same link, function somewhat inefficient by not breaking
+// let foundCard = 0; 
+// let lastSession = localStorage.getItem("nextItemLink");
+// if (lastSession && lastSession.includes("/")) {
+//     const cards = Array.from(document.querySelectorAll('.card')).reverse();
+//     cards.forEach((card) => {
+//         if (card.dataset.link === lastSession) { 
+//             card.style.display = 'block'; 
+//             foundCard++;
+//         }
+//         if (foundCard === 0) {
+//             card.remove(); 
+//         } else if (foundCard < 4) {
+//             card.style.display = 'block'; 
+//             foundCard++;
+//         } 
+//     });
+// }
+
 function loadNextVideo() {
+    let videos = document.getElementsByTagName('video');
     if (currentVideoIndex < videos.length) {
         const video = videos[videos.length - 1 - currentVideoIndex];
         const source = video.getElementsByTagName('source')[0];
@@ -797,12 +977,7 @@ function loadNextVideo() {
         currentVideoIndex += 1;
     }
 }
-document.addEventListener("DOMContentLoaded", function(event) {
-loadNextVideo();
-loadNextVideo();
-loadNextVideo();
-loadNextVideo();
-});
+
 function nextQuestion(currentQuestion) {
     var questionContainer = document.getElementById('question-' + currentQuestion);
     questionContainer.classList.remove('active');
@@ -880,6 +1055,7 @@ function displayResults(matches) {
     <script>
 // For each card
 let swipedRight = JSON.parse(localStorage.getItem('swipedRight')) || [];  // load swiped right cards from localStorage
+let swipedLeft = JSON.parse(localStorage.getItem('swipedLeft')) || [];  // load swiped right cards from localStorage
 
 let deltaSwipe = 100;
 let isMobile = 0;
@@ -949,6 +1125,12 @@ function handleSwipeLeft(card) {
     } else if (card.dataset.category === "25-swipes-survey-yes") {
         plausible("25-swipes-survey-no");
     }
+    swipedLeft.push({
+        title: card.querySelector('h2').textContent,
+        link: card.dataset.link,
+        id: card.id
+    });
+    localStorage.setItem('swipedLeft', JSON.stringify(swipedLeft));
 }
 
 let iframe = document.getElementById("doorstop-frame");
@@ -982,7 +1164,6 @@ function handleSwipeRight(card) {
                 iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20 ) + "px";
             }
             }
-
             showSection(3);
 
         } 
@@ -1070,7 +1251,8 @@ function handleSwipeRight(card) {
     }
         swipedRight.push({
         title: card.querySelector('h2').textContent,
-        link: card.dataset.link
+        link: card.dataset.link,
+        id: card.id
         });
         localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
         document.querySelector('#howto').style.display = 'none'; // hides howto
@@ -1241,8 +1423,8 @@ function showSection(n) {
             document.querySelector('#left-section').style.backgroundColor = "white";
             document.getElementById("nav2").classList.remove("desktop-button-onboard");
             document.getElementById("nav4").classList.remove("desktop-button-onboard");
-            document.getElementsByClassName("triangle-main")[0].style.display = "inline-block";
-            document.getElementsByClassName("triangle-left")[0].style.display = "inline-block";
+            // document.getElementsByClassName("triangle-main")[0].style.display = "inline-block";
+            // document.getElementsByClassName("triangle-left")[0].style.display = "inline-block";
         }
         document.querySelector('#left-section').style.display = 'block';
         setTimeout(() => {
