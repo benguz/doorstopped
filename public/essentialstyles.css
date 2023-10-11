@@ -789,7 +789,6 @@ input {
   justify-content: center;
   margin: auto;
   max-width: 100%;
-  z-index: 2;
 }
 #onboarding-survey h2 {
   color: black; 
@@ -801,7 +800,7 @@ input {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   margin: auto;
   color: black; 
-  width: 60%;
+  width: 30%;
   margin-top: 8px;
   margin-bottom: 8px;
   font-family: "Poppins";
@@ -809,6 +808,11 @@ input {
   position: relative;
   cursor: pointer;
   border-radius: 18px;
+}
+@media screen and (max-width: 720px) {
+  .onboarding-choice {
+    width: 50%;
+  }
 }
 .onboarding-choice:hover {
   box-shadow: 4px 12px 26px rgba(0, 0, 0, 0.3);
