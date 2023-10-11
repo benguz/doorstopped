@@ -5,6 +5,7 @@ body, #dashboard-body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  overflow-x: hidden; /* new */
   padding: 0;
   background: white; /* #f5f5f5 breaks gdocs pages. do we care? */
   /* background-image: url("/doorstops/swoosh.svg");  */
@@ -788,6 +789,7 @@ input {
   justify-content: center;
   margin: auto;
   max-width: 100%;
+  z-index: 2;
 }
 #onboarding-survey h2 {
   color: black; 

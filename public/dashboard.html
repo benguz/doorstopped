@@ -904,6 +904,8 @@ function toggleClick(elementId)  {
     document.getElementById("onboarding-button").style.backgroundColor = 'rgba(170, 4, 98, 0.7)';
 }
 function moveOn() {
+  if (selectedCategories.length > 0) {
+
   let parentElement = document.getElementById('card-container');
   for (let i = 0; i < selectedCategories.length; i++) {
 
@@ -938,6 +940,7 @@ function moveOn() {
     setTimeout(function() {
         document.getElementById("onboarding-element").style.zIndex = "-1";
     }, 1000)
+}
 }
 
 // picks you up where you left off in the swipe feed
