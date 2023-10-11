@@ -81,7 +81,7 @@
                 <p style="color: white;">Fix school <img width="24px" height="24px" style="vertical-align: middle;" src="/assets/svg/Send_hor.svg"></p>
             </button>
         </div>
-      <div id="desktop-sidenav">
+      <div id="desktop-sidenav" style="display: none">
         <a>            
             <img src="/assets/images/doors.svg" width="200" height="auto" alt="Doorstopped logo">
           </a>
@@ -876,7 +876,9 @@
                 }
             }
             document.getElementById("desktop-main").style.display = "block";
-
+            if (window.innerWidth < 720) {
+                document.getElementById("desktop-sidenav").style.display = "flex";
+            }
             loadNextVideo();
 loadNextVideo();
 loadNextVideo();
@@ -936,6 +938,9 @@ function moveOn() {
     loadNextVideo();
     loadNextVideo();
     loadNextVideo();
+    if (window.innerWidth < 720) {
+        document.getElementById("desktop-sidenav").style.display = "flex";
+    }
     document.getElementById("desktop-main").style.display = "block";
     document.getElementById("onboarding-survey").classList.add("fade-out-med");
     setTimeout(function() {
