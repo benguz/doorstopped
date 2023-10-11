@@ -876,7 +876,7 @@
                 }
             }
             document.getElementById("desktop-main").style.display = "block";
-            if (window.innerWidth < 720) {
+            if (window.innerWidth > 720) {
                 document.getElementById("desktop-sidenav").style.display = "flex";
             }
             loadNextVideo();
@@ -938,7 +938,7 @@ function moveOn() {
     loadNextVideo();
     loadNextVideo();
     loadNextVideo();
-    if (window.innerWidth < 720) {
+    if (window.innerWidth > 720) {
         document.getElementById("desktop-sidenav").style.display = "flex";
     }
     document.getElementById("desktop-main").style.display = "block";
