@@ -827,6 +827,14 @@
                     // document.getElementsByClassName("triangle-left")[0].style.display = "none";
                 });
             }
+            setTimeout(function() {
+            document.getElementById("onboarding-element").classList.add("fade-out-med");
+        }, 3000);
+        setTimeout(function() {
+            document.getElementById("onboarding-element").style.zIndex = "-1";
+            document.getElementById("onboarding-survey").style.display = "flex";
+        }, 4000)
+
             localStorage.setItem("onboardingDone", "true")
         } else {
             let prevLeft = localStorage.getItem('swipedLeft');
@@ -876,14 +884,6 @@ loadNextVideo();
         }
         document.getElementById("dashboard-body").style.display = "flex";
 
-        setTimeout(function() {
-            document.getElementById("onboarding-element").classList.add("fade-out-med");
-        }, 3000);
-        setTimeout(function() {
-            document.getElementById("onboarding-element").style.zIndex = "-1";
-            document.getElementById("onboarding-survey").style.display = "flex";
-        }, 4100)
-    
     // document.getElementById("dashboard-body").style.background = "#f5f5f5";
     // document.getElementById("desktop-main").style.background = "#f5f5f5";
     // document.getElementById("desktop-sidenav").style.backgroundColor = "rgba(255, 255, 255, 0.2)";
@@ -929,7 +929,6 @@ function moveOn() {
         elementToMove.style.display = "block";
     } else {
         parentElement.appendChild(elementToMove);
-
     }
     }
   }
@@ -941,6 +940,7 @@ function moveOn() {
     document.getElementById("onboarding-survey").classList.add("fade-out-med");
     setTimeout(function() {
         document.getElementById("onboarding-survey").style.zIndex = "-1";
+        document.getElementById("onboarding-survey").style.display = "none";
     }, 1000)
 }
 }
