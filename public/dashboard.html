@@ -94,7 +94,7 @@
           <br>
           <br><br>
       </div>
-      <div id="desktop-main" >
+      <div id="desktop-main" style="display: none;">
         <!-- <div id="streak-notif" class="content" style="opacity: 0; position: absolute; right: 1em; width: 20%; margin: 0; text-align: left; bottom: 1em; z-index: 3;">Streak notif!</div> -->
         <!-- <div onload="loadOtherContent()"></div> -->
 
@@ -853,11 +853,11 @@
                 document.getElementById("firstElemContent").innerHTML = placeHolderStart.innerHTML;
                 first.dataset.link = placeHolderStart.dataset.link;
                 first.dataset.category = placeHolderStart.dataset.category;
-                document.getElementById("desktop-main").style.display = "none";
                 placeHolderStart.remove();
             } else {
                 // Function to set the last three children to display: block
                 var parent = document.getElementById("card-container");
+
                 var totalChildren = parent.children.length;
                 var firstChildIndexToChange = totalChildren - 3;
                 for (var i = firstChildIndexToChange; i < totalChildren; i++) {
@@ -867,6 +867,8 @@
                     first.style.display = 'none';
                 }
             }
+            document.getElementById("desktop-main").style.display = "block";
+
             loadNextVideo();
 loadNextVideo();
 loadNextVideo();
