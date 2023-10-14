@@ -103,8 +103,6 @@
 <!-- https://docs.google.com/document/d/11P4QWkMnrIncEmLfpRdEkfbRcX5yBMJOPBnduFPxgGE/edit -->
         <div class="card" style="display: none;">
             <h2>More coming soon!</h2>
-            <!-- <img src="/assets/cards/badfood.webp" alt="image2" /> -->
-            <p></p>
         </div>
         <div id="survey-card-50" class="card" style="display: none;" data-category="50-swipes-survey-yes">
             <h2>You've swiped through 50 Doorstops! Have we helped you feel happier in school?</h2>
@@ -624,7 +622,7 @@
             <video autoplay playsinline muted loop id="eating" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/eye-roll-meme.mp4" data-src-webm="/assets/cards/eye-roll-meme.webm" >
               </video> 
-                    <div class="card-caption" > 
+                    <div class="card-caption"> 
                         <h2>Toxic comments about eating</h2>
                         <p>Respond without causing drama!</p>
                     </div>
@@ -660,8 +658,21 @@
 
         </div>
         </div>
-
+      
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="leftm" class="triangle-main" width='90' height='90' viewbox="0 0 24 24" onclick="handleSwipeRight(currentCard); showNextCard(currentCard)">
+        <path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" fill="#68A2F8" stroke="#68A2F8" stroke-width="2"/>
+        </svg>
+        <img src="/assets/svg/Lamp.svg" id="nav4m" width="90" height="90" class="triangle-center" onclick="if (lastShownSection === 2){showSection(4)} else {showSection(2)}"/>
+        <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.14377 15.6858L8.21957 16.0677L9.14377 15.6858ZM8.91839 15.2337L8.12816 15.8465L8.91839 15.2337ZM15.0816 15.2337L15.8718 15.8465L15.0816 15.2337ZM17 10C17 11.6366 16.2147 13.0895 14.9962 14.0033L16.1961 15.6034C17.8966 14.3282 19 12.2928 19 10H17ZM12 5C14.7614 5 17 7.23858 17 10H19C19 6.13401 15.866 3 12 3V5ZM7 10C7 7.23858 9.23858 5 12 5V3C8.13401 3 5 6.13401 5 10H7ZM9.0038 14.0033C7.78526 13.0895 7 11.6366 7 10H5C5 12.2928 6.1034 14.3282 7.80393 15.6034L9.0038 14.0033ZM10.9973 19.743C10.9654 18.2148 10.6489 16.7097 10.068 15.3039L8.21957 16.0677C8.70598 17.2449 8.97101 18.5051 8.99775 19.7848L10.9973 19.743ZM13.3416 19.2111C12.4971 19.6334 11.5029 19.6334 10.6584 19.2111L9.76393 21C11.1716 21.7038 12.8284 21.7038 14.2361 21L13.3416 19.2111ZM13.932 15.3039C13.3511 16.7097 13.0346 18.2148 13.0027 19.743L15.0022 19.7848C15.029 18.5051 15.294 17.2449 15.7804 16.0677L13.932 15.3039ZM14.2361 21C14.708 20.764 14.9917 20.2888 15.0022 19.7848L13.0027 19.743C13.0072 19.5284 13.1285 19.3177 13.3416 19.2111L14.2361 21ZM8.99775 19.7848C9.00828 20.2888 9.29199 20.764 9.76393 21L10.6584 19.2111C10.8715 19.3177 10.9928 19.5284 10.9973 19.743L8.99775 19.7848ZM7.80393 15.6034C7.95483 15.7165 8.04298 15.7829 8.10525 15.8338C8.16783 15.885 8.15598 15.8824 8.12816 15.8465L9.70862 14.6209C9.52146 14.3795 9.23067 14.1734 9.0038 14.0033L7.80393 15.6034ZM10.068 15.3039C9.98964 15.1144 9.89131 14.8565 9.70862 14.6209L8.12816 15.8465C8.11465 15.8291 8.11215 15.8197 8.12521 15.8469C8.13306 15.8632 8.14391 15.8872 8.1602 15.9253C8.17665 15.9639 8.19514 16.0086 8.21957 16.0677L10.068 15.3039ZM14.9962 14.0033C14.7693 14.1734 14.4785 14.3795 14.2914 14.6209L15.8718 15.8465C15.844 15.8824 15.8322 15.885 15.8948 15.8338C15.957 15.7829 16.0452 15.7165 16.1961 15.6034L14.9962 14.0033ZM15.7804 16.0677C15.8049 16.0086 15.8233 15.9639 15.8398 15.9253C15.8561 15.8872 15.8669 15.8632 15.8748 15.8469C15.8879 15.8197 15.8853 15.8291 15.8718 15.8465L14.2914 14.6209C14.1087 14.8565 14.0104 15.1144 13.932 15.3039L15.7804 16.0677Z" fill="#68A2F8"/>
+            <path d="M14.9923 16V16C13.1812 17.2106 10.8191 17.2106 9.00806 16V16" stroke="#68A2F8" stroke-width="2"/>
+            </svg> -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="rightm" class="triangle-left" width='90' height='90' viewbox="0 0 24 24" fill="none" onclick="if (lastShownSection === 2){handleSwipeLeft(currentCard); showNextCard(currentCard)} else {showSection(2)}">
+            <path d="M12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C13.1819 3 14.3522 3.23279 15.4442 3.68508C16.5361 4.13738 17.5282 4.80031 18.364 5.63604C19.1997 6.47177 19.8626 7.46392 20.3149 8.55585C20.7672 9.64778 21 10.8181 21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4441 20.3149C14.3522 20.7672 13.1819 21 12 21L12 21Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 9L15 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M15 9L9 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            </svg>
     <div id="swiped-right-section" style="display: none;">
         <div class="content">
             <h1>Doorstop Fellows</h1>
@@ -797,11 +808,12 @@
     </div>
 </div>
     <div id="navbar">
-        <button id="nav1m"><img class="nav-icon" id="img1m" src="/assets/svg/Book_check.svg" alt="Icon 1" /></button>
-        <button id="nav4m"><img class="nav-icon" id="img4m" src="/assets/svg/Lamp.svg" alt="Icon 4" /></button>
+        <!-- <button id="nav1m"><img class="nav-icon" id="img1m" src="/assets/svg/Book_check.svg" alt="Icon 1" /></button> -->
+        <!-- <button id="nav4m"><img class="nav-icon" id="img4m" src="/assets/svg/Lamp.svg" alt="Icon 4" /></button>
         <button id="nav2m"><img class="nav-icon" id="img2m" src="/assets/svg/cards-dark.svg" alt="Icon 2" /></button>
-        <button id="nav3m"><img class="nav-icon" id="img3m" src="/assets/svg/Favorite.svg" alt="Icon 3" /></button>
-        <button id="nav5m"><img class="nav-icon" id="img5m" src="/assets/svg/User_alt.svg" alt="Icon 5" /></button> <!--Account Icon-->
+        <button id="nav3m"><img class="nav-icon" id="img3m" src="/assets/svg/Favorite.svg" alt="Icon 3" /></button> -->
+        <!-- <button id="nav5m"><img class="nav-icon" id="img5m" src="/assets/svg/User_alt.svg" alt="Icon 5" /></button>  -->
+        <!--Account Icon-->
     </div>
 <!-- <script>
     const loadOtherContent = () => {
@@ -880,9 +892,9 @@
                 document.getElementById("desktop-sidenav").style.display = "flex";
             }
             loadNextVideo();
-loadNextVideo();
-loadNextVideo();
-loadNextVideo();
+            loadNextVideo();
+            loadNextVideo();
+            loadNextVideo();
         }
         document.getElementById("dashboard-body").style.display = "flex";
 
@@ -1082,7 +1094,8 @@ if (window.innerWidth < 1000) {
     isMobile = 1;
 }
 
-var currentCard = document.getElementById("first");
+var cardArray = document.getElementsByClassName("card");
+var currentCard = cardArray[cardArray.length - 1]
 document.querySelectorAll('.card').forEach((card, index) => {
     let hammertime = new Hammer(card);
     let initialPos = 0;
@@ -1371,11 +1384,11 @@ document.getElementById('nav3').addEventListener('click', function() { showSecti
 document.getElementById('nav4').addEventListener('click', function() { showSection(4); });
 document.getElementById('nav5').addEventListener('click', function() { showSection(5); });
 
-document.getElementById('nav1m').addEventListener('click', function() { showSection(1); });
-document.getElementById('nav2m').addEventListener('click', function() { showSection(2); });
-document.getElementById('nav3m').addEventListener('click', function() { showSection(3); });
-document.getElementById('nav4m').addEventListener('click', function() { showSection(4); });
-document.getElementById('nav5m').addEventListener('click', function() { showSection(5); });
+// document.getElementById('nav1m').addEventListener('click', function() { showSection(1); });
+// document.getElementById('nav2m').addEventListener('click', function() { showSection(2); });
+// document.getElementById('nav3m').addEventListener('click', function() { showSection(3); });
+// document.getElementById('nav4m').addEventListener('click', function() { showSection(4); });
+// document.getElementById('nav5m').addEventListener('click', function() { showSection(5); });
 
 let lastShownSection = 2; // starting page
 iconSrc = ["/assets/svg/Book_check.svg", "/assets/svg/cards-light.svg",  "/assets/svg/Favorite.svg", "/assets/svg/Lamp.svg", "/assets/svg/User_alt.svg"]
@@ -1385,14 +1398,18 @@ sections = ["#swiped-right-section", "#card-container", "#left-section",  "#bing
 function showSection(n) {
     if (n === 2) {
 
-        removeStylesheet("/assets/css/style.css");
-        // removeStylesheet("/assets/css/dynamic.css"); - keep an array of current sheets, then remove from there
-        // remove more sheets - do this no matter what they click on unless they click 3, so 3 should be the default if.
+        // removeStylesheet("/assets/css/style.css");
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
         // console.log("n = 2, LSS: ", lastShownSection) unaddressed bug here - lastShownSection is 2 when using swipe on left section
         document.querySelector('#card-container').style.display = 'block';
-        document.getElementById('img' + lastShownSection + mobileNav[isMobile]).src= iconSrc[lastShownSection - 1];
-        document.getElementById('img2' + mobileNav[isMobile]).src = "/assets/svg/cards-dark.svg";
+        document.getElementById('img' + lastShownSection).src= iconSrc[lastShownSection - 1]; //  + mobileNav[isMobile]
+        document.getElementById('img2').src = "/assets/svg/cards-dark.svg"; // + mobileNav[isMobile]
+        if (isMobile === 1) {
+            document.getElementById('nav4m').src = "/assets/svg/Lamp.svg";
+            document.getElementById('nav4m').style.display = "inline-block";
+            document.getElementById('rightm').style.display = "inline-block";
+            document.getElementById('leftm').style.display = "inline-block";
+        }
         lastShownSection = 2;
     } else if (n === 1) {
         document.querySelector('#card-container').style.display = 'none';
@@ -1402,10 +1419,11 @@ function showSection(n) {
 
         removeStylesheet("/assets/css/style.css");
         document.querySelector('#swiped-right-section').style.display = 'block';
-        document.getElementById('img' + lastShownSection + mobileNav[isMobile]).src = iconSrc[lastShownSection - 1];
-        document.getElementById('img1' + mobileNav[isMobile]).src = "/assets/svg/Book_check_fill.svg";
+        document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; // + mobileNav[isMobile]
+        document.getElementById('img1').src = "/assets/svg/Book_check_fill.svg"; // + mobileNav[isMobile]
         lastShownSection = 1;
 
+      
     } else if (n === 3) {
         document.querySelector('#left-section').classList.add("fade-in");
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
@@ -1446,10 +1464,15 @@ function showSection(n) {
         setTimeout(() => {
             document.querySelector('#left-section').classList.remove("fade-in");
         }, 500);
-        document.getElementById('img' + lastShownSection + mobileNav[isMobile]).src = iconSrc[lastShownSection - 1];
-        document.getElementById('img3' + mobileNav[isMobile]).src = "/assets/svg/Favorite_fill.svg";
-        lastShownSection = 3;
+        document.getElementById('img' + lastShownSection ).src = iconSrc[lastShownSection - 1]; //  + mobileNav[isMobile]
+        document.getElementById('img3').src = "/assets/svg/Favorite_fill.svg"; // + mobileNav[isMobile]
 
+        if (isMobile === 1) {
+            document.getElementById('nav4m').style.display = "none";
+            document.getElementById('leftm').style.display = "none";
+            document.getElementById('rightm').style.display = "inline-block";
+        }
+        lastShownSection = 3;
     } 
     else if (n === 4) {
         document.querySelector('#bingo-section').classList.add("fade-in");
@@ -1476,9 +1499,11 @@ function showSection(n) {
         // document.getElementById('img1').src = "/assets/svg/Book_check.svg";
         // document.getElementById('img3').src = "/assets/svg/Favorite.svg";
         // document.getElementById('img5').src = "/assets/svg/User_alt.svg";
-        document.getElementById('img' + lastShownSection  + mobileNav[isMobile]).src = iconSrc[lastShownSection - 1];
-
-        document.getElementById('img4' + mobileNav[isMobile]).src= "/assets/svg/Lamp_fill.svg";
+        document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; // + mobileNav[isMobile]
+        document.getElementById('nav4m').src = "/assets/svg/cards-light.svg";
+        document.getElementById('rightm').style.display = "none";
+        document.getElementById('leftm').style.display = "none";
+        document.getElementById('img4').src= "/assets/svg/Lamp_fill.svg"; // + mobileNav[isMobile]
         lastShownSection = 4;
 
     } else if (n === 5) {
@@ -1511,11 +1536,9 @@ function showSection(n) {
             // }
             // listItem.appendChild(dropdown);
         });
-        document.getElementById('img' + lastShownSection + mobileNav[isMobile]).src = iconSrc[lastShownSection - 1];
-        // document.getElementById('img1').src = "/assets/svg/Book_check.svg";
-        // document.getElementById('img3').src = "/assets/svg/Favorite.svg";
-        document.getElementById('img5' + mobileNav[isMobile]).src = "/assets/svg/User_alt_fill.svg";
-        // document.getElementById('img4').src= "/assets/svg/Lamp.svg";
+        document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; //+ mobileNav[isMobile]
+
+        document.getElementById('img5').src = "/assets/svg/User_alt_fill.svg"; //+ mobileNav[isMobile]
         lastShownSection = 5;
     }
 }

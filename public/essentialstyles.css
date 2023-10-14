@@ -545,45 +545,62 @@ input {
   margin-bottom: 0;
 }
 .card-caption p {
-  color: #FFF7F7
+  color: #FFF7F7;
+  font-weight: bold
 }
 
-.triangle-main, .triangle-left {
+.triangle-main, .triangle-left, .triangle-center {
   position: absolute;
-  right: -10px;  
-  bottom: 10%;
+  right: 25px;  
+  bottom: 2%;
   z-index: 4;
   box-shadow: 0 20px 30px -10px rgba(54, 54, 54, 0.2);
-  padding: 20px;
-  display: inline-block;
+  padding: 24px;
   border-radius: 50px;
     width: auto;
     background: rgba(255, 255, 255, 0.8);
-    animation: right-pulse 1.8s ease infinite;
+    /* animation: right-pulse 1.8s ease infinite; */
+    display: none;
+
 }
 
+
 .triangle-main path {
-  /* stroke-width: 10; */
   stroke: rgba(160, 189, 255);
   fill: rgba(160, 189, 255);
-  /* stroke-linejoin: round; */
-  /* stroke-linecap:round; */
-
 }
 
 .triangle-left path {
   stroke: #EF4E6D;
 }
-.triangle-main:hover, .triangle-left:hover {
+.triangle-main:hover, .triangle-left:hover, .triangle-center:hover {
   cursor: pointer;
+}
+.triangle-main {
+  transform: rotate(20deg);
 }
 
 .triangle-left {
-  left: -10px;  
-  animation: left-pulse 1.8s ease infinite;
+  left: 25px;  
+  transform: rotate(-20deg);
+  /* animation: left-pulse 1.8s ease infinite; */
 
 }
+.triangle-center {
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 90px;  /* manually overrides img settings, should change to button tbh */
+  pointer-events: auto;
+}
 
+@media screen and (max-width: 720px) {
+  .triangle-main, .triangle-left, .triangle-center {
+    display: inline-block;
+
+  }
+
+}
 
 @keyframes right-pulse {
   0% {
@@ -871,10 +888,10 @@ input {
 
 /* Reset max-width and max-height for mobile devices */
 @media screen and (max-width: 600px) {
-  #navbar {
+  /* #navbar {
     display: flex;
     z-index: 4;
-  }
+  } */
   #desktop-sidenav {
     flex: 0;
     display: none;
@@ -911,7 +928,7 @@ input {
   }
   #card-container {
     top: 0;
-    height: 96%;
+    height: 99%; /* EXPERIMENTALLY MOVED FROM 99*/
   }
 
   #navbar {
@@ -921,8 +938,6 @@ input {
   }
 
   .card {
-      /* height: 95%;  experimental style - try changing to 95% %*/
-      /* margin-top: 15px; experimental style - didn't exist*/
       width: calc(100% - 24px);
       height: calc(100% - 51px);
       margin-left: 15px;
