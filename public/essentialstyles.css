@@ -850,10 +850,10 @@ input {
   }
   
   
-  .card h2 {
+  /* .card h2 {
 
     font-size: 32pt;
-  }
+  } 
   
   .card h3 {
     font-size: 28pt;
@@ -864,7 +864,7 @@ input {
     font-size: 24pt;
   }
 
-
+*/
   .desktop-text {
     font-size: 40pt;
   }
