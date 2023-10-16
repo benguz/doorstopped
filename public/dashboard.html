@@ -1216,15 +1216,7 @@ function moveOn() {
     }, 1000)
 }
 }
-function isMobileDevice() {
-    // Check for common mobile devices
-    let mobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    // Exclude common tablet keywords
-    let notTablet = !/iPad|Tablet|Tab/i.test(navigator.userAgent);
 
-    return mobile && notTablet;
-}
 function loadNextVideo() {
     if (currentVideoIndex < videos.length) {
         const video = videos[videos.length - 1 - currentVideoIndex];
@@ -1677,14 +1669,15 @@ function showSection(n) {
         // onboarding!
         let firstRightSwipeDone = localStorage.getItem("firstRightSwipeDone");
         if (!firstRightSwipeDone) {
-            if (isMobile === 1) {
-                $('.tooltip').each(function() {
-                    var currentHTML = $(this).html();
-                    var modifiedHTML = '👇' + currentHTML.substring(1);
-                    $(this).html(modifiedHTML);
-                });
-            } 
-            setTimeout(() => {
+            // if (isMobile === 1) {
+            //     $('.tooltip').each(function() {
+            //         var currentHTML = $(this).html();
+            //         var modifiedHTML = '👇' + currentHTML.substring(1);
+            //         $(this).html(modifiedHTML);
+            //     });
+            // } 
+            if (isMobile === 0) {
+                setTimeout(() => {
                 document.getElementById('doorstop-onboarding').style.display = "block";
                 document.getElementById("nav2").classList.add("desktop-button-onboard");
                 document.getElementById("nav4").classList.add("desktop-button-onboard");
@@ -1695,6 +1688,7 @@ function showSection(n) {
                     removeOnboarding()
                 });
             }, 3000);
+            }
             localStorage.setItem("firstRightSwipeDone", "true");
 
         }

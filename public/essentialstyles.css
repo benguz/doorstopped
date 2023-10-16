@@ -594,7 +594,7 @@ input {
   pointer-events: auto;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 720px) {
   .triangle-main, .triangle-left, .triangle-center {
     display: inline-block;
   }
@@ -829,7 +829,7 @@ input {
   cursor: pointer;
   border-radius: 18px;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 720px) {
   .onboarding-choice {
     width: 50%;
   }
@@ -887,7 +887,7 @@ input {
 
 
 /* Reset max-width and max-height for mobile devices */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 720px) {
   /* #navbar {
     display: flex;
     z-index: 4;
@@ -942,7 +942,7 @@ input {
       width: calc(100% - 24px); /* width: calc(100% - 24px); */
       height: calc(100% - 100px); /* height: calc(100% - 51px); */
       margin-left: 15px;
-      
+      max-height: calc(100% - 100px);
   }
   .card h1, h2 {
     line-height: 1.3;
@@ -1282,8 +1282,3 @@ h2.tooltip {
       left: 17%;
     }
   }
-
-  @media (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
-    /* iPhone X and below */
-    /* Add any iPhone specific tweaks here */
-}
