@@ -1,6 +1,5 @@
 html, body {
   overflow-x: hidden; /* new needs https://stackoverflow.com/questions/14270084/overflow-xhidden-doesnt-prevent-content-from-overflowing-in-mobile-browsers */
-
 }
 body, #dashboard-body {
   display: flex;
@@ -928,7 +927,7 @@ input {
   }
   #card-container {
     top: 0;
-    height: 99%; 
+    height: 99%; /* HEIGHT IS WHAT TO CHANGE FOR IPHONE FIX - CAN WE CHANGE IT ON IPHONE ONLY? */
     width: 95%;
   }
 
@@ -959,6 +958,19 @@ input {
   .card p {
     font-size: 18px;
     line-height: 1.7;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices - NOT GUARANTEED TO WORK FOREVER */ 
+  html {
+    height: 100%;
+  }
+  body {
+    height: 95%;
+  }
+  #card-container {
+    height: 91%;
   }
 }
 
