@@ -823,7 +823,7 @@ input {
   width: 25%;
   margin-top: 8px;
   margin-bottom: 8px;
-  font-family: "Poppins";
+  font-family: 'Poppins', sans-serif;
   padding: 7px;
   position: relative;
   cursor: pointer;
@@ -898,7 +898,7 @@ input {
   }
   #desktop-main {
     width: 100%;
-    height: 95vh;
+    height: 95%;
     background-image: none; 
   }
   #content-placeholder {
@@ -1038,24 +1038,26 @@ video {
   font-size: 12pt;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
   
-  /* attempted android back swipe fix */
-  html, body, #dashboard-body {
+  body {
+    min-height: -webkit-fill-available;
+  }
+  html {
+    height: -webkit-fill-available;
+  }
+  html, body {
     overscroll-behavior-x: none;
   } 
   
   .accordion-menu {
-    max-width: 100% - 20px;
+    max-width: calc(100% - 20px);
   }
-
 
   .accordion-menu p {
     /* ADD STYLES FOR MOBILE */
   }
 }
-
-
 
 /* BINGO
 */
@@ -1066,18 +1068,18 @@ video {
   padding: 15px 0;
 }
 
-header {
+.bingo header {
   text-align: center;
   margin-bottom: 30px;
 }
 
-h1 {
+.bingo h1 {
   font-size: 2rem;
   font-weight: 400;
   margin: 0;
 }
     
-h2 {
+.bingo h2 {
   font-size: 1.2rem;
   font-weight: 300;
   color: #666;

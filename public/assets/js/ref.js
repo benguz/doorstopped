@@ -347,7 +347,6 @@ var deskStates2 = Array(20).fill(null); // null, 'boredom', 'anxiety', 'disrupti
 window.onload = function() {
 
   var desksDiv = document.getElementsByClassName('deskrows');
-  console.log("here!")
   var desks1 = Array(20).fill().map((_, i) => {
     var desk = document.createElement('div');
     desk.className = 'desk';
