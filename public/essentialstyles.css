@@ -929,7 +929,7 @@ input {
   }
   #card-container {
     top: 0;
-    height: 99%; /* EXPERIMENTALLY MOVED FROM 99*/
+    height: 99%; 
   }
 
   #navbar {
@@ -940,7 +940,7 @@ input {
 
   .card {
       width: calc(100% - 24px);
-      height: calc(100% - 51px);
+      height: calc(100% - 100px); /* height: calc(100% - 51px); */
       margin-left: 15px;
       
   }
@@ -1265,7 +1265,7 @@ h2.tooltip {
       margin: auto;
       }
     .card h2.overlay-text {
-      font-size: 16pt;
+      font-size: 15pt;
     }
     h2.tooltip {
       text-align: center;
