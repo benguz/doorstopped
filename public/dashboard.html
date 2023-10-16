@@ -400,9 +400,9 @@
                 <source data-src-mp4="/assets/cards/mp4/taylor-swift.mp4" data-src-webm="/assets/cards/panda-punch.webm" alt="pandas punching but failing" >
               </video>
               <div class="card-caption" > 
-                <h2>Conflict is <span class="loud">*okay*</span> stop avoiding telling your teacher something's wrong</h2>  
-                <p>Having a hard conversation with a teacher starts with a pastrami sandwich and a bloodborne pathogen test. Swipe and it'll make sense.</p>
-
+                <h2>Conflict is <span class="loud">*okay*</span></h2>  
+                <p>stop avoiding telling your teacher something's wrong... start with a bloodborne pathogen test</p>
+                <!-- <p>Having a hard conversation with a teacher starts with a pastrami sandwich and a bloodborne pathogen test. Swipe and it'll make sense.</p> -->
                 </div>
         </div> 
         <div id="money-card-3" class="card" data-link="/doorstops/poop" style="display: none;" data-category="wellbeing">
@@ -727,8 +727,264 @@
             <input type="text" id="search-input" placeholder='Search Doorstops... try "class is boring"' autocomplete="off">
             <div id="results-container"></div>         
         </div>
-        <div id="bingo-action" class="bingo"></div>
-
+        <div class="bingo" id="bingo">
+            <header>
+            <h1>Toxic Vibes Bingo</h1>
+            <h2>Click your school's problem, we'll take you to a solution</h2>
+        </header>
+    
+        
+        <div class="bingo-board">
+            <!-- Add your bingo board items here -->
+            <div class="bingo-item" data-link="/doorstops/ref" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Judgy People</div>
+                <div class="bingo-face back">Cliques and drama to an extreme</div>
+            </div>
+          <div class="bingo-item" data-link="/doorstops/shift" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Bullying</div>
+                <div class="bingo-face back">Straight up.</div>
+            </div>
+          <div class="bingo-item" data-link="/doorstops/shift#outlet" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Violence</div>
+                <div class="bingo-face back">People hiding in the bathroom</div>
+            </div>
+          <div class="bingo-item" data-link="/doorstops/shift#clout" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Small jabs</div>
+                <div class="bingo-face back">insults in the halls, middle school shit</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/shift#referent" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Harassment</div>
+                <div class="bingo-face back">Guys do awful shit to girls, nobody says anything.</div>
+            </div>
+                  <div class="bingo-item" data-link="/time" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Nobody shows up</div>
+                <div class="bingo-face back">because the school is awful</div>
+            </div>
+                  <div class="bingo-item" data-link="/emotionwords" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Emotional unavailability</div>
+                <div class="bingo-face back">*cough* men</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/teachit" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Boredom</div>
+                <div class="bingo-face back">Window-Staring 101</div>
+            </div>
+                  <div class="bingo-item" data-link="doorstops/shift#enemy" onclick="handleSwipeRight(this)"> 
+                    <!--link to doorstopfellows in the future-->
+                <div class="bingo-face front">Apathy</div>
+                <div class="bingo-face back">Nobody gives a fuck.</div>
+            </div>
+                  <div class="bingo-item" data-link="/programs/conversations" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Nobody respects teachers</div>
+                <div class="bingo-face back">So class gets loud</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/listen" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Anxiety</div>
+                <div class="bingo-face back">Feet tapping all class</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/care" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Insecurity</div>
+                <div class="bingo-face back">Smart people think they’re dumb</div>
+            </div>
+            <div class="bingo-item" data-link="/doorstops/shift" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Discipline is HARSH</div>
+                <div class="bingo-face back">Straight up.</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/points" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Extreme Competition</div>
+                <div class="bingo-face back">wha- wha- whadidya get?!</div>
+            </div>
+                
+                  <div class="bingo-item" data-link="/doorstops/radical" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">We feel powerless</div>
+                <div class="bingo-face back">Trapped at your desk</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/shift" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Racism tolerated or endorsed.</div>
+                <div class="bingo-face back">People transfer schools because of it.</div>
+            </div>
+                  <div class="bingo-item" data-link="/programs/phones" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Admin don't communicate</div>
+                <div class="bingo-face back">What's their name, even?</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/poop" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Gross bathrooms</div>
+                <div class="bingo-face back">Nobody poopin.</div>
+            </div>
+                  <div class="bingo-item" data-link="/programs/conversations" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">No mental health help</div>
+                <div class="bingo-face back">"Guidance" counselors</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/money" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">No money in the district</div>
+                <div class="bingo-face back">teachers are burnt out</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/shift" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">"You're a try-hard"</div>
+                <div class="bingo-face back">You get put down for caring.</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/othercareers" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">HS feels like a dead end</div>
+                <div class="bingo-face back">It’s McDonalds or fame</div>
+            </div>
+                  <div class="bingo-item" data-link="doorstops/dominance" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Strictness</div>
+                <div class="bingo-face back">Trapped at your desk?</div>
+            </div>
+            <div class="bingo-item" data-link="https://blog.benguzovsky.com/why" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">What's the point of ____ class?</div>
+                <div class="bingo-face back">We're not learning what matters</div>
+            </div>
+                  <div class="bingo-item" data-link="/doorstops/shift#enemy" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Social divides</div>
+                <div class="bingo-face back">rich/poor, black/white</div>
+            </div>
+            <!-- Repeat the above div for each bingo board item -->
+        </div>
+        <br><br>
+        <header>
+        <h2 style="text-align: left;    max-width: 800px;
+        margin: 0 auto;">College and Career</h2>
+        </header>
+        <div class="bingo-board">
+            <!-- Add your bingo board items here -->
+            <div class="bingo-item" data-link="/doorstops/intern" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Internship!</div>
+                <div class="bingo-face back">3-step guide for students</div>
+            </div>
+            <div class="bingo-item" data-link="/doorstops/mentor" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Find a mentor</div>
+                <div class="bingo-face back">Research + career help</div>
+            </div>
+            <div class="bingo-item" data-link="/doorstops/college" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Win at college apps</div>
+                <div class="bingo-face back">Everything you need</div>
+            </div>
+            <!-- <div class="bingo-item" data-link="/doorstops/immigrant" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Immigrant parents</div>
+                <div class="bingo-face back">dealing with pressure</div>
+            </div> -->
+            </div>
+            <h2 style="text-align: left;    max-width: 800px;
+        margin: 0 auto; padding: 40px 0;">Feel Better</h2>
+        <div class="bingo-board">
+            <div class="bingo-item" data-link="/doorstops/naptime" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Bring back naptime</div>
+                <div class="bingo-face back">policy change 101</div>
+            </div>
+            <div class="bingo-item" data-link="/programs/eat" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Fix school lunch</div>
+                <div class="bingo-face back">eat something.</div>
+            </div>
+            <!-- <div class="bingo-item" data-link="/doorstops/college" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Win at college apps</div>
+                <div class="bingo-face back">Everything you need</div>
+            </div>
+            <div class="bingo-item" data-link="/doorstops/immigrant" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Immigrant parents</div>
+                <div class="bingo-face back">dealing with pressure</div>
+            </div> -->
+            </div>
+            <h2 style="text-align: left;    max-width: 800px;
+        margin: 0 auto; padding: 40px 0;">Teacher Relationships</h2>
+        <div class="bingo-board">
+            <!-- Add your bingo board items here -->
+            <div class="bingo-item" data-link="/doorstops/feedback" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Anonymous Feedback</div>
+                <div class="bingo-face back">Anonymous Feedback</div>
+            </div>
+            <div class="bingo-item" data-link="/doorstops/hard" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Hard convos</div>
+                <div class="bingo-face back">facing teachers</div>
+            </div>
+            <div class="bingo-item" data-link="/doorstops/dominance" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Strict Teachers</div>
+                <div class="bingo-face back">Fight back</div>
+            </div>
+            <div class="bingo-item" data-link="/doorstops/care" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Proof they care</div>
+                <div class="bingo-face back">your teachers care</div>
+            </div>
+            </div>
+            <h2 style="text-align: left;    max-width: 800px;
+        margin: 0 auto; padding: 40px 0">Life Skills</h2>
+        <div class="bingo-board">
+            <div class="bingo-item" data-link="/skills/coldemail" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Cold Email</div>
+                <div class="bingo-face back">3-step guide for students</div>
+            </div>
+            <div class="bingo-item" data-link="/skills/pitch" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Pitch Yourself</div>
+                <div class="bingo-face back">Research + career help</div>
+            </div>
+            <!-- <div class="bingo-item" data-link="/skills/relationships" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Building trust</div>
+                <div class="bingo-face back">Everything you need</div>
+            </div> -->
+            <div class="bingo-item" data-link="/skills/networking" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Networking</div>
+                <div class="bingo-face back">dealing with pressure</div>
+            </div>
+            <div class="bingo-item" data-link="/skills/resist" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Fighting power</div>
+                <div class="bingo-face back">it builds your resume</div>
+            </div>
+            <div class="bingo-item" data-link="/skills/smallasks" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Small asks</div>
+                <div class="bingo-face back">getting leverage</div>
+            </div>
+            <!-- <div class="bingo-item" data-link="/skills/subversion" onclick="handleSwipeRight(this)">
+                <div class="bingo-face front">Subversion</div>
+                <div class="bingo-face back">turn school upside down</div>
+            </div> -->
+            </div>
+            <h2 style="text-align: left;    max-width: 800px;
+            margin: 0 auto; padding: 40px 0">How school works</h2>
+            <div class="bingo-board">
+                <div class="bingo-item" data-link="/school/" onclick="handleSwipeRight(this)">
+                    <div class="bingo-face front">School 101</div>
+                    <div class="bingo-face back">The basics</div>
+                </div>
+                <div class="bingo-item" data-link="/school/flow" onclick="handleSwipeRight(this)">
+                    <div class="bingo-face front">Power</div>
+                    <div class="bingo-face back">who controls what?</div>
+                </div>
+                <div class="bingo-item" data-link="/school/dayoff" onclick="handleSwipeRight(this)">
+                    <div class="bingo-face front">Schoolwide day off</div>
+                    <div class="bingo-face back">Tested at public schools</div>
+                </div>
+                <div class="bingo-item" data-link="/school/money" onclick="handleSwipeRight(this)">
+                    <div class="bingo-face front">Money</div>
+                    <div class="bingo-face back">$50 million budget</div>
+                </div>
+                </div>
+                <h2 style="text-align: left;    max-width: 800px;
+            margin: 0 auto; padding: 40px 0">Kill the mean girls vibes</h2>
+            <div class="bingo-board">
+                <div class="bingo-item" data-link="/doorstops/conflict" onclick="handleSwipeRight(this)">
+                    <div class="bingo-face front">Conflict is OK</div>
+                    <div class="bingo-face back">The tea + the basics</div>
+                </div>
+                <div class="bingo-item" data-link="/doorstops/food" onclick="handleSwipeRight(this)">
+                    <div class="bingo-face front">Girl talk 101</div>
+                    <div class="bingo-face back">how to handle it</div>
+                </div>
+                <div class="bingo-item" data-link="/doorstops/ref" onclick="handleSwipeRight(this)">
+                    <div class="bingo-face front">Fix school culture</div>
+                    <div class="bingo-face back">Tested at 56 public schools</div>
+                </div>
+                <div class="bingo-item" data-link="/doorstops/ref" onclick="handleSwipeRight(this)">
+                    <div class="bingo-face front">Fix school culture</div>
+                    <div class="bingo-face back">Tested at 56 public schools</div>
+                </div>
+                <div class="bingo-item" data-link="/doorstops/harassment" onclick="handleSwipeRight(this)">
+                    <div class="bingo-face front">Report Harassment</div>
+                    <div class="bingo-face back">100% private</div>
+                </div>
+                
+                </div>
+                <h2 style="text-align: center;    max-width: 800px;
+            margin: 0 auto; padding: 40px 0">We're adding more Doorstops every week!</h2>
+    </div>
     </div>
     <div id="account-section" class="account" style="display: none;"> 
         <!-- Customization survey -->
@@ -815,88 +1071,83 @@
         <!-- <button id="nav5m"><img class="nav-icon" id="img5m" src="/assets/svg/User_alt.svg" alt="Icon 5" /></button>  -->
         <!--Account Icon-->
     </div>
-<!-- <script>
-    const loadOtherContent = () => {
-    document.getElementById("first").innerHTML = `            <h2 font-size="80pt">Swipe right to change school</h2>
-            <h2>Swipe left to see another strategy</h2>`;
-}
-</script> -->
     <script>
-    // onboarding flow on first load
-        let onboardingDone = localStorage.getItem("onboardingDone");
-        let currentVideoIndex = 0;
-
-        if (!onboardingDone) {
-            let start = document.getElementById("onboarding-element")
-            if (start) {
-                start.style.display = "flex";
+        // onboarding flow on first load
+    let onboardingDone = localStorage.getItem("onboardingDone");
+    let currentVideoIndex = 0;
+    let videos;
+    if (!onboardingDone) {
+        let start = document.getElementById("onboarding-element")
+        if (start) {
+            start.style.display = "flex";
+            // document.getElementsByClassName("triangle-main")[0].style.display = "none";
+            // document.getElementsByClassName("triangle-left")[0].style.display = "none";
+        } else {
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("onboarding-element").style.display = "flex";
                 // document.getElementsByClassName("triangle-main")[0].style.display = "none";
                 // document.getElementsByClassName("triangle-left")[0].style.display = "none";
-            } else {
-                document.addEventListener("DOMContentLoaded", function() {
-                    document.getElementById("onboarding-element").style.display = "flex";
-                    // document.getElementsByClassName("triangle-main")[0].style.display = "none";
-                    // document.getElementsByClassName("triangle-left")[0].style.display = "none";
-                });
-            }
-            setTimeout(function() {
-            document.getElementById("onboarding-element").classList.add("fade-out-med");
+            });
+        }
+        setTimeout(function() {
+        document.getElementById("onboarding-element").classList.add("fade-out-med");
         }, 3000);
         setTimeout(function() {
             document.getElementById("onboarding-element").style.zIndex = "-1";
             document.getElementById("onboarding-survey").style.display = "flex";
         }, 4000)
 
-            localStorage.setItem("onboardingDone", "true")
-        } else {
-            let prevLeft = localStorage.getItem('swipedLeft');
-            let prevRight = localStorage.getItem('swipedRight');
+        localStorage.setItem("onboardingDone", "true")
+    } else {
+        let prevLeft = localStorage.getItem('swipedLeft');
+        let prevRight = localStorage.getItem('swipedRight');
 
-            prevLeft = prevLeft ? JSON.parse(prevLeft) : [];
-            prevRight = prevRight ? JSON.parse(prevRight) : [];
+        prevLeft = prevLeft ? JSON.parse(prevLeft) : [];
+        prevRight = prevRight ? JSON.parse(prevRight) : [];
 
-            let pastSwipes = prevLeft.concat(prevRight);
-            for (let i = 0; i < pastSwipes.length; i++) {
-                console.log(pastSwipes.length);
-                let usedCard = document.getElementById(pastSwipes[i].id)
-                if (usedCard) {
-                    usedCard.remove();
-                } else {
-                    console.log(pastSwipes[i].id)
-                }
-            }
-
-            // if onboarding is completed but user hasn't started swiping:
-            let first = document.getElementById("first");
-            if (pastSwipes.length = 0) {
-                placeHolderStart = document.getElementById("policy-card");
-                document.getElementById("firstElemContent").innerHTML = placeHolderStart.innerHTML;
-                first.dataset.link = placeHolderStart.dataset.link;
-                first.dataset.category = placeHolderStart.dataset.category;
-                placeHolderStart.remove();
+        let pastSwipes = prevLeft.concat(prevRight);
+        for (let i = 0; i < pastSwipes.length; i++) {
+            console.log(pastSwipes.length);
+            let usedCard = document.getElementById(pastSwipes[i].id)
+            if (usedCard) {
+                usedCard.remove();
             } else {
-                // Function to set the last three children to display: block
-                var parent = document.getElementById("card-container");
-
-                var totalChildren = parent.children.length;
-                var firstChildIndexToChange = totalChildren - 3;
-                for (var i = firstChildIndexToChange; i < totalChildren; i++) {
-                    parent.children[i].style.display = 'block';
-                }
-                if (first) {
-                    first.style.display = 'none';
-                }
+                console.log(pastSwipes[i].id)
             }
-            document.getElementById("desktop-main").style.display = "block";
-            if (window.innerWidth > 720) {
-                document.getElementById("desktop-sidenav").style.display = "flex";
-            }
-            loadNextVideo();
-            loadNextVideo();
-            loadNextVideo();
-            loadNextVideo();
         }
-        document.getElementById("dashboard-body").style.display = "flex";
+
+        // if onboarding is completed but user hasn't started swiping:
+        let first = document.getElementById("first");
+        if (pastSwipes.length === 0) {
+            placeHolderStart = document.getElementById("policy-card");
+            document.getElementById("firstElemContent").innerHTML = placeHolderStart.innerHTML;
+            first.dataset.link = placeHolderStart.dataset.link;
+            first.dataset.category = placeHolderStart.dataset.category;
+            placeHolderStart.remove();
+        } else {
+            // Function to set the last three children to display: block
+            var parent = document.getElementById("card-container");
+
+            var totalChildren = parent.children.length;
+            var firstChildIndexToChange = totalChildren - 3;
+            for (var i = firstChildIndexToChange; i < totalChildren; i++) {
+                parent.children[i].style.display = 'block';
+            }
+            if (first) {
+                first.style.display = 'none';
+            }
+        }
+        videos = document.getElementsByTagName('video');
+        loadNextVideo();
+        loadNextVideo();
+        loadNextVideo();
+        loadNextVideo();
+        document.getElementById("desktop-main").style.display = "block";
+        if (window.innerWidth > 720) {
+            document.getElementById("desktop-sidenav").style.display = "flex";
+        }
+    }
+    document.getElementById("dashboard-body").style.display = "flex";
 
     // document.getElementById("dashboard-body").style.background = "#f5f5f5";
     // document.getElementById("desktop-main").style.background = "#f5f5f5";
@@ -925,9 +1176,9 @@ function moveOn() {
   let parentElement = document.getElementById('card-container');
   for (let i = 0; i < selectedCategories.length; i++) {
 
-        let elementToMove = document.getElementById(selectedCategories[i] + "-card");
-
+    let elementToMove = document.getElementById(selectedCategories[i] + "-card");
     let elementToMove2 = document.getElementById(selectedCategories[i] + "-card-2");
+
     if (elementToMove) {
       parentElement.appendChild(elementToMove2);    
       if (i === selectedCategories.length - 1) {
@@ -946,7 +1197,8 @@ function moveOn() {
     }
     }
   }
-  loadNextVideo();
+  videos = document.getElementsByTagName('video');
+    loadNextVideo();
     loadNextVideo();
     loadNextVideo();
     loadNextVideo();
@@ -962,28 +1214,7 @@ function moveOn() {
 }
 }
 
-// picks you up where you left off in the swipe feed
-// currently picks up cards by link, which could break if two have the same link, function somewhat inefficient by not breaking
-// let foundCard = 0; 
-// let lastSession = localStorage.getItem("nextItemLink");
-// if (lastSession && lastSession.includes("/")) {
-//     const cards = Array.from(document.querySelectorAll('.card')).reverse();
-//     cards.forEach((card) => {
-//         if (card.dataset.link === lastSession) { 
-//             card.style.display = 'block'; 
-//             foundCard++;
-//         }
-//         if (foundCard === 0) {
-//             card.remove(); 
-//         } else if (foundCard < 4) {
-//             card.style.display = 'block'; 
-//             foundCard++;
-//         } 
-//     });
-// }
-
 function loadNextVideo() {
-    let videos = document.getElementsByTagName('video');
     if (currentVideoIndex < videos.length) {
         const video = videos[videos.length - 1 - currentVideoIndex];
         const source = video.getElementsByTagName('source')[0];
@@ -1178,23 +1409,7 @@ function handleSwipeRight(card) {
         //     dinky.style.display = "flex";
         // }
         if (cardLink.startsWith('https://')) {
-            // Open external link in the same tab with window.location.href = cardLink;
-            // 
-            let url = new URL(cardLink);
-            console.log(url + " URL")
-            iframe.src = url.pathname + url.search;
-            document.getElementById("content-placeholder").innerHTML = "";
-            document.getElementById("left-section").style.width = "100%";
-            iframe.style.height = "400px";
-            iframe.onload = function() {
-                if (url.pathname === "/school") {
-                    iframe.style.height = "862px";
-            } else {
-                iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20 ) + "px";
-            }
-            }
-            showSection(3);
-
+            loadiframe(cardLink);
         } 
         else {
             document.getElementById("left-section").style.width = "90%";
@@ -1277,16 +1492,20 @@ function handleSwipeRight(card) {
         .catch(err => console.log('Failed to load page: ', err));
                     
         });
-    }
-        swipedRight.push({
-        title: card.querySelector('h2').textContent,
-        link: card.dataset.link,
-        id: card.id
-        });
-        localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
+    }   
+        let titleElement = card.querySelector('h2');
+        if (titleElement) {
+            // not run for bingo elements
+            swipedRight.push({
+                title: titleElement.textContent,
+                link: card.dataset.link,
+                id: card.id
+            });
+            localStorage.setItem('swipedRight', JSON.stringify(swipedRight));  // save to localStorage
+            plausible(cardCategory);
+        }
         document.querySelector('#howto').style.display = 'none'; // hides howto
 
-        plausible(cardCategory);
     }
     else if (card.dataset.category === "50-swipes-survey-yes") {
         plausible("50-swipes-survey-yes");
@@ -1294,6 +1513,22 @@ function handleSwipeRight(card) {
         plausible("25-swipes-survey-yes");
     }
 }
+function loadiframe(cardLink) {
+    let url = new URL(cardLink);
+    iframe.src = url.pathname + url.search;
+    document.getElementById("content-placeholder").innerHTML = "";
+    document.getElementById("left-section").style.width = "100%";
+    iframe.style.height = "400px";
+    iframe.onload = function() {
+        if (url.pathname === "/school") {
+            iframe.style.height = "862px";
+    } else {
+        iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20 ) + "px";
+    }
+    }
+    showSection(3);
+}
+
 function showNextCard(card) {
     loadNextVideo();
     let nextCard = card.previousElementSibling;
@@ -1478,27 +1713,12 @@ function showSection(n) {
         document.querySelector('#bingo-section').classList.add("fade-in");
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
  
-            fetch("/bingo")
-        .then(response => response.text())
-        .then(html => {
-            // create a new DOMParser
-            let parser = new DOMParser();
-            // parse the text to a new document
-            let doc = parser.parseFromString(html, 'text/html');
-            
-            let body = doc.querySelector("#bingo");
-            document.querySelector("#bingo-action").innerHTML = body.outerHTML;
-        });
-
         document.querySelector('#bingo-section').style.display = 'block';
         document.querySelector("#bingo-section").style.backgroundColor = 'transparent';
         setTimeout(() => {
             document.querySelector('#bingo-section').classList.remove("fade-in");
         }, 500);
-        // document.getElementById('img2').src = "/assets/svg/cards-light.svg";
-        // document.getElementById('img1').src = "/assets/svg/Book_check.svg";
-        // document.getElementById('img3').src = "/assets/svg/Favorite.svg";
-        // document.getElementById('img5').src = "/assets/svg/User_alt.svg";
+
         document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; // + mobileNav[isMobile]
         document.getElementById('nav4m').src = "/assets/svg/cards-light.svg";
         document.getElementById('rightm').style.display = "none";
