@@ -930,6 +930,7 @@ input {
   #card-container {
     top: 0;
     height: 99%; 
+    width: 95%;
   }
 
   #navbar {
@@ -939,7 +940,7 @@ input {
   }
 
   .card {
-      width: calc(100% - 24px);
+      width: calc(100% - 24px); /* width: calc(100% - 24px); */
       height: calc(100% - 100px); /* height: calc(100% - 51px); */
       margin-left: 15px;
       
