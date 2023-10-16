@@ -594,10 +594,9 @@ input {
   pointer-events: auto;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1000px) {
   .triangle-main, .triangle-left, .triangle-center {
     display: inline-block;
-
   }
 
 }
@@ -830,7 +829,7 @@ input {
   cursor: pointer;
   border-radius: 18px;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1000px) {
   .onboarding-choice {
     width: 50%;
   }
@@ -888,7 +887,7 @@ input {
 
 
 /* Reset max-width and max-height for mobile devices */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   /* #navbar {
     display: flex;
     z-index: 4;
@@ -1283,3 +1282,8 @@ h2.tooltip {
       left: 17%;
     }
   }
+
+  @media (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* iPhone X and below */
+    /* Add any iPhone specific tweaks here */
+}

@@ -530,7 +530,7 @@
     </div>
         <div id="mental-card-2" class="card" data-link="/doorstops/better" style="display: none;" data-category="policy">
             <video autoplay playsinline muted loop height="100%" class="card-video">
-                <source data-src-mp4="/assets/cards/mp4/panda-dancing.mp4" data-src-webm="/assets/cards/dancing-panda-2.webm" alt="pandas punching but failing" >
+                <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/dancing-panda-2.webm" alt="pandas punching but failing" >
               </video>     
               <div class="card-caption"> 
        
@@ -613,7 +613,7 @@
         <div id="boring-card" class="card" data-link="https://fix.school/doorstops/leverage" style="display: block;" data-category="self-advocacy">
 
             <video autoplay playsinline muted loop height="100%" class="card-video">
-                <source data-src-mp4="/assets/cards/mp4/panda-dancing.mp4" data-src-webm="/assets/cards/panda-wrestling.webm" >
+                <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-wrestling.webm" >
               </video> 
               <div class="card-caption"> 
                 <h2 style="color: #FFF7F7">Cutting class costs your school 💰💰</h2>
@@ -1146,7 +1146,7 @@
         loadNextVideo();
         loadNextVideo();
         document.getElementById("desktop-main").style.display = "block";
-        if (window.innerWidth > 720) {
+        if (window.innerWidth > 1000) {
             document.getElementById("desktop-sidenav").style.display = "flex";
         }
     }
@@ -1205,7 +1205,7 @@ function moveOn() {
     loadNextVideo();
     loadNextVideo();
     loadNextVideo();
-    if (window.innerWidth > 720) {
+    if (window.innerWidth > 1000) {
         document.getElementById("desktop-sidenav").style.display = "flex";
     }
     document.getElementById("desktop-main").style.display = "block";
@@ -1216,7 +1216,15 @@ function moveOn() {
     }, 1000)
 }
 }
+function isMobileDevice() {
+    // Check for common mobile devices
+    let mobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Exclude common tablet keywords
+    let notTablet = !/iPad|Tablet|Tab/i.test(navigator.userAgent);
 
+    return mobile && notTablet;
+}
 function loadNextVideo() {
     if (currentVideoIndex < videos.length) {
         const video = videos[videos.length - 1 - currentVideoIndex];
