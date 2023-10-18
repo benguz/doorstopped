@@ -1,5 +1,6 @@
 body {
   background: #f5f5f5;
+  -webkit-overflow-scrolling: touch; /* fixes iframe scrolling issues on ios */
 }
 
 .ref {

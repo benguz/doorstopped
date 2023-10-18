@@ -38,6 +38,10 @@
     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
   <style>
+
+    body {
+      -webkit-overflow-scrolling: touch; /* fixes iframe scrolling issues on ios */
+    }
       @media screen and (max-width: 1023px){
 
 .sidenavtotal {
@@ -335,6 +339,8 @@ h2 {
 <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
   <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
 </a>
+<div id="padding" style="height: 500px">
+</div>
 
   <script src="/assets/js/script.js" defer></script>
   <!-- <script src="/doorstops/naptime.js"></script> -->

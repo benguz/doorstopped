@@ -1260,6 +1260,9 @@ h2.tooltip.top {
   line-height: 1.2;
   opacity: 0;
   }
+strong.big {
+  font-weight: 600;
+}
 h2.tooltip {
   background-color: #f5f5f5;
   padding: 8px;

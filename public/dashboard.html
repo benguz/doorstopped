@@ -742,7 +742,7 @@
         <!-- for iframe imports <iframe id="main" width="100%" height="300000px"></iframe> -->
             
         </div>
-        <iframe width="100%" height="200px" style="min-height: 400px" id="doorstop-frame"></iframe>
+        <iframe width="100%" height="300px" style="min-height: 400px; overflow-x: hidden;" id="doorstop-frame"></iframe>
 
 
      
@@ -1142,7 +1142,6 @@
 
         let pastSwipes = prevLeft.concat(prevRight);
         for (let i = 0; i < pastSwipes.length; i++) {
-            console.log(pastSwipes.length);
             let usedCard = document.getElementById(pastSwipes[i].id)
             if (usedCard) {
                 usedCard.remove();
@@ -1555,13 +1554,13 @@ function loadIframe(cardLink) {
             iframe.style.height = "862px";
     } else {
         iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20 ) + "px";
-        setTimeout(adjustIframeHeight, 200);
+        setInterval(adjustIframeHeight, 200);
     }
     }
     showSection(3);
 }
 function adjustIframeHeight() {
-    iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20 ) + "px";
+    iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight) + "px";
 }
 
 function showNextCard(card) {
