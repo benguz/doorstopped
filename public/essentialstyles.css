@@ -922,6 +922,9 @@ input {
       max-height: 100%;
 
   }
+  #left-section {
+    -webkit-overflow-scrolling: touch; /* for iframe scrolling */
+  }
   #card-container {
     top: 0;
     height: 99%; /* HEIGHT IS WHAT TO CHANGE FOR IPHONE FIX - CAN WE CHANGE IT ON IPHONE ONLY? */

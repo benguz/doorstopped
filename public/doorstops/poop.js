@@ -42,6 +42,8 @@ function actPoop(section) {
 if (last) {
 closeit = document.getElementById(last + "-label");
 document.getElementById(last).style.display = "none";
+} else {
+  document.getElementById("padding").style.display = "none"; // fixes ios scroll prevention
 }
 if (closeit) {
 closeit.style.backgroundColor = 'white';

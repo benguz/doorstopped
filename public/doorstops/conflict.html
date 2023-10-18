@@ -159,7 +159,8 @@ p {
 }
 
 .lard p {
-  max-width: 100%;
+  max-width: 99%;
+  margin: auto;
 
 }
 #spicy-second > .lard, #medium-second > .lard {
@@ -183,7 +184,14 @@ p {
 }
 }
 
+* {max-width: 98%;}
+/* .mine.messages {
+  display: none;
+} */
 
+body {
+  max-width: 100%;
+}
 </style>
 <!-- source: https://stackoverflow.com/questions/19400183/how-to-style-chat-bubble-in-iphone-classic-style-using-css-only -->
   </head>
@@ -203,9 +211,9 @@ p {
       <br><br>
 
         <h1>How do <em>you</em> do conflict?</h1>
-      <div style="color: black; max-width: 100%">
+      <div style="color: black; width: 99%; max-width: 99%; margin: auto;">
           <p style="text-align: center;">I'm a...</p>
-          <div class="row">
+          <div class="row" style="max-width: 99%; margin: auto;">
             <div id="shark" class="lard row" onclick="act(1)">
               Shark 🦈
             </div>

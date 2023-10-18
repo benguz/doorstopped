@@ -496,7 +496,7 @@
             </div>
 
         </div>
-        <div id="policy-card-2" class="card" data-link="https://fix.school/school/dayoff" style="display: none;" data-category="policy">
+        <div id="policy-card-2" class="card" data-link="/school/dayoff" style="display: none;" data-category="policy">
             <video id="50mil" autoplay playsinline muted loop height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/bank-banking.mp4" data-src-webm="/assets/cards/bank-banking.webm" alt="dog working" >
             </video>  
@@ -1536,29 +1536,35 @@ function handleSwipeRight(card) {
         plausible("25-swipes-survey-yes");
     }
 }
+dynamicCards = ["/doorstops/ref", "/doorstops/conflict", "/doorstops/name", "/school/flow"]
+dynamicCardsHttp = ["https://fix.school/doorstops/ref", "https://fix.school/doorstops/conflict", "https://fix.school/doorstops/name", "https://fix.school/school/flow"]
+dynamicCardsLocal = ["http://localhost:8888/doorstops/ref", "http://localhost:8888/doorstops/conflict", "http://localhost:8888/doorstops/name", "http://localhost:8888/school/flow"]
+
 iframe.addEventListener('load', function() {
-    document.getElementById("content-placeholder").innerHTML = "<p> reached load </p>";
+    // document.getElementById("content-placeholder").innerHTML = "<p> reached load </p>";
     if (iframe.src === "/school") {
             iframe.style.height = "862px";
     } 
     else {
         iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20) + "px";
+        setTimeout(adjustIframeHeight, 500)
         // manually adjusting ios heights
         if (iOS()) {
-            document.getElementById("content-placeholder").innerHTML = "<p>" + iframe.style.height + "</p>";
+            // document.getElementById("content-placeholder").innerHTML = "<p>" + iframe.style.height + "</p>";
             if (iframe.src === "/doorstops/poop")  {
                 iframe.style.height = "6000px";
-            } else {
-                setInterval(adjustIframeHeight, 200);
-            }
-
-        } else {
-            setTimeout(adjustIframeHeight, 200);
-            setInterval(adjustIframeHeight, 1000);
+            } 
+        } 
+        if (dynamicCards.includes(iframe.src) || dynamicCardsHttp.includes(iframe.src) || dynamicCardsLocal.includes(iframe.src) ) {
+            let iframeDocument = iframe.contentWindow.document;
+            // Add an event listener for clicks
+            iframeDocument.body.addEventListener('click', function(event) {
+                adjustIframeHeight();            
+            });            
         }
     }
-
 });
+
 
 function loadIframe(cardLink) {
     let url = new URL(cardLink);
@@ -1571,7 +1577,7 @@ function loadIframe(cardLink) {
 }
 function adjustIframeHeight() {
     let innerHeight = document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight;
-    if (iframe.style.height != (innerHeight + 20)) {
+    if (iframe.style.height < (innerHeight + 20)) {
         iframe.style.height = innerHeight + 20;
     }
 }
