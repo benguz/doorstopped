@@ -1486,23 +1486,18 @@ function handleSwipeRight(card) {
                 } 
                 if (cardid) { // scroll to #ID
                     window.location.hash = cardid;            
-                } 
+                }
             } else if (article) {
-                // loadStylesheet("/assets/css/style.css");
                 content.innerHTML = article.outerHTML;
             } else if (aboutElement) {
-                // content.innerHTML = "";
                 loadStylesheet("/assets/css/style.css");
                 content.innerHTML = aboutElement.outerHTML;
             } else if (doc.querySelector(".slider-wrapper")){
                 loadStylesheet("/doorstops/food.css");
-                // content.innerHTML = "";
-                // content.appendChild(body);
                 content.innerHTML = body.outerHTML;
                 loadScript("/assets/js/food.js");
             } else if (doc.querySelector(".ref")) {
                 loadStylesheet("/assets/css/dynamic.css");
-                // const bodyElement = body.cloneNode(true);
                 content.innerHTML = doc.querySelector(".ref").outerHTML;
                 loadScript("/assets/js/ref.js");
                 loadScript("/assets/js/ref-dashboard.js");
@@ -1516,8 +1511,6 @@ function handleSwipeRight(card) {
                 window.location.hash = '#scrollToHere' // causes slight hitch on load
             }
             showSection(3);
-            
-            
         })
         .catch(err => console.log('Failed to load page: ', err));
                     
@@ -1543,32 +1536,21 @@ function handleSwipeRight(card) {
         plausible("25-swipes-survey-yes");
     }
 }
-
-function loadIframe(cardLink) {
-    let url = new URL(cardLink);
-    document.getElementById("content-placeholder").innerHTML = "";
-    document.getElementById("left-section").style.width = "100%";
-    // iframe.style.height = "400px";
-    document.getElementById("rightm").src = "/assets/svg/User_alt.svg"; // temp testing to ensure code is reached
-    iframe.contentWindow.onload = function() {
-        document.getElementById("rightm").src = "/assets/svg/upicon.svg"; // temp testing to ensure code is reached
-    if (url.pathname === "/school") {
+iframe.addEventListener('load', function() {
+    document.getElementById("content-placeholder").innerHTML = "<p> reached load </p>";
+    if (iframe.src === "/school") {
             iframe.style.height = "862px";
     } 
     else {
-        iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20 ) + "px";
+        iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20) + "px";
         // manually adjusting ios heights
         if (iOS()) {
-            document.getElementById("rightm").src = "/assets/svg/User_alt_fill.svg"; // temp testing to ensure code is reached
-            document.getElementById("onboarding-element").innerHTML = "<p>" + iframe.style.height + "</p>";
-            document.getElementById("onboarding-element").display = "flex";
-            if (url.pathname === "/doorstops/poop")  {
+            document.getElementById("content-placeholder").innerHTML = "<p>" + iframe.style.height + "</p>";
+            if (iframe.src === "/doorstops/poop")  {
                 iframe.style.height = "6000px";
             } else {
                 setInterval(adjustIframeHeight, 200);
             }
-            document.getElementById("onboarding-element").innerHTML = "<p>" + iframe.style.height + "</p>";
-            document.getElementById("onboarding-element").style.display = "flex";
 
         } else {
             setTimeout(adjustIframeHeight, 200);
@@ -1576,8 +1558,15 @@ function loadIframe(cardLink) {
         }
     }
 
-    }
-    iframe.src = url.pathname + url.search;
+});
+
+function loadIframe(cardLink) {
+    let url = new URL(cardLink);
+    document.getElementById("content-placeholder").innerHTML = "";
+    document.getElementById("left-section").style.width = "100%";
+    iframe.style.height = "800px";
+    document.getElementById("rightm").src = "/assets/svg/User_alt.svg"; // temp testing to ensure code is reached
+    iframe.src = url.pathname + url.search; // maybe I shouldn't use a relative path like this?
     showSection(3);
 }
 function adjustIframeHeight() {
