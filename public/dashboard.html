@@ -1546,20 +1546,17 @@ function handleSwipeRight(card) {
 
 function loadIframe(cardLink) {
     let url = new URL(cardLink);
-    iframe.src = url.pathname + url.search;
     document.getElementById("content-placeholder").innerHTML = "";
     document.getElementById("left-section").style.width = "100%";
     // iframe.style.height = "400px";
-    iframe.onload = function() {   
-        document.getElementById("rightm").src = "/assets/svg/User_alt.svg"; // temp testing to ensure code is reached
+    document.getElementById("rightm").src = "/assets/svg/User_alt.svg"; // temp testing to ensure code is reached
+    iframe.contentWindow.onload = function() {
+        document.getElementById("rightm").src = "/assets/svg/upicon.svg"; // temp testing to ensure code is reached
     if (url.pathname === "/school") {
             iframe.style.height = "862px";
-    } else if (url.pathname === "/doorstops/food") {
-        iframe.style.height = "400px";
-    }
+    } 
     else {
         iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20 ) + "px";
-        console.log(iframe.style.height);
         // manually adjusting ios heights
         if (iOS()) {
             document.getElementById("rightm").src = "/assets/svg/User_alt_fill.svg"; // temp testing to ensure code is reached
@@ -1580,11 +1577,14 @@ function loadIframe(cardLink) {
     }
 
     }
+    iframe.src = url.pathname + url.search;
     showSection(3);
 }
 function adjustIframeHeight() {
-    iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight) + 20 + "px";
-    console.log(iframe.style.height);
+    let innerHeight = document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight;
+    if (iframe.style.height != (innerHeight + 20)) {
+        iframe.style.height = innerHeight + 20;
+    }
 }
 
 // could try code like this as well to ensure full load
