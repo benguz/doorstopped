@@ -970,7 +970,7 @@ input {
     height: 95%;
   }
   #card-container {
-    height: 91%;
+    height: 90%;
   }
 }
 
@@ -1253,7 +1253,7 @@ h2.tooltip.top {
 }
 .big {
   font-size: 4.5em; 
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   margin-top: 0;
   letter-spacing: -1px;

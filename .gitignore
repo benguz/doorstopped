@@ -12,3 +12,4 @@ sitemap*.xml
 robots.txt
 # Local Netlify folder
 .netlify
+data_analysis
