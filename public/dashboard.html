@@ -414,7 +414,7 @@
                 <!-- <p>Having a hard conversation with a teacher starts with a pastrami sandwich and a bloodborne pathogen test. Swipe and it'll make sense.</p> -->
                 </div>
         </div> 
-        <div id="money-card-3" class="card" data-link="https://fix.school/doorstops/poop" style="display: none;" data-category="wellbeing">
+        <div id="money-card-3" class="card" data-link="/doorstops/poop" style="display: none;" data-category="wellbeing">
             <div style="display: flex; justify-content: center;">
                 <video autoplay playsinline muted loop width="75%" class="card-video">
                     <source data-src-mp4="/assets/cards/mp4/funny-fail.mp4" data-src-webm="/assets/cards/funny-fail.webm" alt="panda shaking its bum" >
@@ -1548,13 +1548,12 @@ iframe.addEventListener('load', function() {
     else {
         iframe.style.height = (document.getElementById("doorstop-frame").contentWindow.document.body.scrollHeight + 20) + "px";
         setTimeout(adjustIframeHeight, 500)
-        // manually adjusting ios heights
-        if (iOS()) {
-            // document.getElementById("content-placeholder").innerHTML = "<p>" + iframe.style.height + "</p>";
-            if (iframe.src === "/doorstops/poop")  {
-                iframe.style.height = "6000px";
-            } 
-        } 
+        // if (iOS()) {
+            // manually adjusting ios heights if needed
+            // if (iframe.src === "/doorstops/poop" || iframe.src === "https://fix.school/doorstops/poop")  {
+            //     iframe.style.height = "6000px";
+            // } 
+        // } 
         if (dynamicCards.includes(iframe.src) || dynamicCardsHttp.includes(iframe.src) || dynamicCardsLocal.includes(iframe.src) ) {
             let iframeDocument = iframe.contentWindow.document;
             // Add an event listener for clicks
