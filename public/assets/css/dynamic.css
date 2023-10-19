@@ -320,6 +320,17 @@ display: "inline"}
   margin-bottom: 1rem;
 }
 
+#club-doorstop .copy-paste-element {
+  max-width: 50%; 
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  #club-doorstop .copy-paste-element {
+    max-width: 98%; 
+  }
+}
+
 .copy-paste-element p {
   margin: 0;
   /* margin-bottom: 0.5em; */
