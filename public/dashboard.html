@@ -786,11 +786,40 @@
             
         </div>
         <iframe width="100%" height="300px" style="min-height: 400px; overflow-x: hidden;" id="doorstop-frame"></iframe>
-
+        
 
      
         <br><br>
     </div>
+    <div class="share-container" style="display: none; position: fixed; bottom: 0; width: 100%;">
+        <div id="background" style="position: absolute; bottom: 0; width: 100%;">
+            <div class="share-dome" style="width: 100%; height: 70px; padding-bottom: 2px; border-radius: 60% 60% 0 0; background-color: #FFFCFB;"></div>
+            <div class="share-rectangle" style="width: 100%; height: 170px; background-color: #FFFCFB;"></div>
+        </div>
+        <div id="content" style="position: relative;">
+            <div id="top-row" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; padding-bottom: 20px;">
+                <div class="share-icon" onclick="">
+                    <img src="/assets/images/message.png" width="50px" height="50px">
+                    <p style="text-align: center; font-family: 'Poppins', sans-serif;line-height: 1.4;">SMS</p>
+                </div>
+                <div class="share-icon" onclick="">
+                    <img src="/assets/images/instagram.png" width="50px" height="50px">
+                    <p style="text-align: center; font-family: 'Poppins', sans-serif; line-height: 1.4;">IG</p>
+                </div>
+                <div class="share-icon" onclick="let currentLink = currentDoorstop; if(!currentLink.includes('fix.school')) {currentLink = 'https://fix.school' + currentLink}; navigator.clipboard.writeText(currentLink); console.log(currentLink)"> 
+                    <img src="/assets/images/link.png" width="50px" height="50px">
+                    <p style="text-align: center;font-family: 'Poppins', sans-serif;line-height: 1.4;">Link</p>
+                </div>
+            </div>
+            <div id="progress-bar" style="width: 70%; background-color: #E9D0F4; border-radius: 30px; height: 20px; margin: auto;">
+                <div id="bar" style="width: 60%; background-color: #7B3DAE; border-radius: 30px; height: 100%;">
+                </div>
+            </div>
+            <p style="font-weight: 500; max-width: 90%; margin: auto; font-family: 'Poppins', sans-serif; line-height: 1.3; margin-top: 10px;">Share 5 Doorstops to see ~drama~ about your school.</p>
+            <br><br>
+
+        </div>
+      </div>
     <div id="bingo-section" style="display: none;"> 
         <br><br>
         <div id="search-container" style="max-width: 90%; margin: auto;">
@@ -1067,8 +1096,6 @@
     <div id="account-section" class="account" style="display: none;"> 
         <!-- Customization survey -->
         <br><br>
-  
-
         <div class="content" id="content">
 
             <!-- <img src="/assets/images/childbehind.jpg" alt="Descriptive image alt text" /> -->
@@ -1141,14 +1168,6 @@
 
     </div>
 </div>
-    <div id="navbar">
-        <!-- <button id="nav1m"><img class="nav-icon" id="img1m" src="/assets/svg/Book_check.svg" alt="Icon 1" /></button> -->
-        <!-- <button id="nav4m"><img class="nav-icon" id="img4m" src="/assets/svg/Lamp.svg" alt="Icon 4" /></button>
-        <button id="nav2m"><img class="nav-icon" id="img2m" src="/assets/svg/cards-dark.svg" alt="Icon 2" /></button>
-        <button id="nav3m"><img class="nav-icon" id="img3m" src="/assets/svg/Favorite.svg" alt="Icon 3" /></button> -->
-        <!-- <button id="nav5m"><img class="nav-icon" id="img5m" src="/assets/svg/User_alt.svg" alt="Icon 5" /></button>  -->
-        <!--Account Icon-->
-    </div>
     <script>
     // onboarding flow on first load
     let onboardingDone = localStorage.getItem("onboardingDone");
@@ -1202,8 +1221,10 @@
 
             var totalChildren = parent.children.length;
             var firstChildIndexToChange = totalChildren - 3;
-            for (var i = firstChildIndexToChange; i < totalChildren; i++) {
-                parent.children[i].style.display = 'block';
+            if (firstChildIndexToChange > 0) {
+                for (var i = firstChildIndexToChange; i < totalChildren; i++) {
+                    parent.children[i].style.display = 'block';
+                }
             }
             if (first) {
                 first.style.display = 'none';
@@ -1474,6 +1495,7 @@ function handleSwipeLeft(card) {
     localStorage.setItem('swipedLeft', JSON.stringify(swipedLeft));
 }
 
+let currentDoorstop;
 let iframe = document.getElementById("doorstop-frame");
 function handleSwipeRight(card) {
     let cardLink = card.dataset.link;
@@ -1482,6 +1504,7 @@ function handleSwipeRight(card) {
     let cardid;
     removeScript("/doorstops/naptime.js")
     if (cardLink) {
+        currentDoorstop = cardLink;
         if (cardLink.includes("#")) {
             cardid = cardLink.split('#')[1];
         }
@@ -1587,7 +1610,7 @@ dynamicCardsLocal = ["http://localhost:8888/doorstops/ref", "http://localhost:88
 
 iframe.addEventListener('load', function() {
     // document.getElementById("content-placeholder").innerHTML = "<p> reached load </p>";
-    if (iframe.src === "/school") {
+    if (iframe.src === "/school" || iframe.src === "https://fix.school/school" || iframe.src === "http://localhost:8888/school") {
             iframe.style.height = "862px";
     } 
     else {
@@ -1721,12 +1744,6 @@ document.getElementById('nav2').addEventListener('click', function() { showSecti
 document.getElementById('nav3').addEventListener('click', function() { showSection(3); });
 document.getElementById('nav4').addEventListener('click', function() { showSection(4); });
 document.getElementById('nav5').addEventListener('click', function() { showSection(5); });
-
-// document.getElementById('nav1m').addEventListener('click', function() { showSection(1); });
-// document.getElementById('nav2m').addEventListener('click', function() { showSection(2); });
-// document.getElementById('nav3m').addEventListener('click', function() { showSection(3); });
-// document.getElementById('nav4m').addEventListener('click', function() { showSection(4); });
-// document.getElementById('nav5m').addEventListener('click', function() { showSection(5); });
 
 let lastShownSection = 2; // starting page
 iconSrc = ["/assets/svg/Book_check.svg", "/assets/svg/cards-light.svg",  "/assets/svg/Favorite.svg", "/assets/svg/Lamp.svg", "/assets/svg/User_alt.svg"]
