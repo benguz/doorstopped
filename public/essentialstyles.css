@@ -547,7 +547,6 @@ input {
 
 .triangle-main, .triangle-left, .triangle-center {
   position: absolute;
-  right: 25px;  
   bottom: 2%;
   z-index: 4;
   box-shadow: 0 20px 30px -10px rgba(54, 54, 54, 0.2);
@@ -560,11 +559,11 @@ input {
 
 }
 
-
+/* 
 .triangle-main path {
   stroke: rgba(160, 189, 255);
   fill: rgba(160, 189, 255);
-}
+} */
 
 .triangle-left path {
   stroke: #EF4E6D;
@@ -574,6 +573,7 @@ input {
 }
 .triangle-main {
   transform: rotate(20deg);
+  right: 25px;  
 }
 
 .triangle-left {
@@ -585,10 +585,14 @@ input {
 .triangle-center {
   left: 0;
   right: 0;
+}
+
+.triangle-center, .triangle-main {
   margin: auto;
   height: 90px;  /* manually overrides img settings, should change to button tbh */
   pointer-events: auto;
 }
+
 
 @media screen and (max-width: 720px) {
   .triangle-main, .triangle-left, .triangle-center {
@@ -684,6 +688,48 @@ input {
   0% { opacity: 0; }
   50% { opacity: 0; }
   100% { opacity: 1;}
+}
+
+#share-container {
+  display: none; 
+  position: relative; 
+  bottom: 0; 
+  width: 100%; 
+  opacity: 0;
+}
+@keyframes slideUpBounce {
+  0% {
+    bottom: -100px;
+    opacity: 1;
+  }
+  90% {
+    bottom: 10px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+    position: fixed;
+  }
+}
+@keyframes grow {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+#share-container.visible {
+  opacity: 1;
+  animation: slideUpBounce 0.5s ease-in-out forwards;
+}
+.visible #bar {
+  animation: grow 1s ease-in forwards;
 }
 
 #desktop-sidenav {
@@ -1251,7 +1297,7 @@ h2.tooltip.top {
 .card h2.overlay-text {
   font-size: 12pt; color: white; line-height: 1.2em; 
 }
-.big {
+h1.big {
   font-size: 4.5em; 
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -1259,6 +1305,7 @@ h2.tooltip.top {
   letter-spacing: -1px;
   line-height: 1.2;
   opacity: 0;
+  display: inline;
   }
 
 h2.tooltip {
@@ -1273,7 +1320,7 @@ h2.tooltip {
       margin-top: 5px;
     }
     
-    .big {
+    h1.big {
       font-size: 2.8em;
       text-align: left;
       width: 98%;
