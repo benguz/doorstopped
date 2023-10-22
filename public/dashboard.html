@@ -810,22 +810,22 @@
                     <img src="/assets/images/message.png" width="65px" height="65px">
                     <p style="text-align: center; font-family: 'Poppins', sans-serif;line-height: 1.4;">SMS</p>
                 </div>
-                <a class="share-icon" style="padding-bottom: 10px;" href="/assets/images/igstory.png" onclick="shareIG(); return true" download>
+                <a class="share-icon" style="padding-bottom: 10px;" onclick="shareIG('/assets/images/igstory.png', 'www.fix.school has the most devious licks');">
                     <img src="/assets/images/instagram.png" width="65px" height="65px">
                     <p style="text-align: center; font-family: 'Poppins', sans-serif; line-height: 1.4;">IG</p>
                 </a>
-                <div class="share-icon" onclick="let currentLink = 'https://fix.school/dashboard#' + currentDoorstop.replace('#', '%23'); navigator.clipboard.writeText(currentLink); console.log(currentLink)"> 
+                <div class="share-icon" onclick="let currentLink = 'https://fix.school/dashboard#' + currentDoorstop.replace('#', '%23'); navigator.clipboard.writeText(currentLink); updateDrama();"> 
                     <img src="/assets/images/link.png" width="65px" height="65px">
                     <p style="text-align: center;font-family: 'Poppins', sans-serif;line-height: 1.4;">Link</p>
                 </div>  
             </div>
             <div id="progress-bar" style="width: 70%; background-color: #E9D0F4; border-radius: 30px; height: 20px; margin: auto;">
-                <div id="bar-allocation" style="width: 60%; height: 100%; border-radius: 30px;">
+                <div id="bar-allocation" style="width: 5%; height: 100%; border-radius: 30px;">
                     <div id="bar" style="width: 100%; background-color: #7B3DAE; border-radius: 30px; height: 100%;">
                     </div>
                 </div>
             </div>
-            <p style="font-weight: 500; max-width: 90%; margin: auto; font-family: 'Poppins', sans-serif; line-height: 1.3; margin-top: 10px;">Share 5 Doorstops to see ~drama~ about your school.</p>
+            <p id="drama-challenge" style="font-weight: 500; max-width: 90%; margin: auto; font-family: 'Poppins', sans-serif; line-height: 1.3; margin-top: 10px;">Share 5 Doorstops to see ~drama~ about your school.</p>
             <br>
 
         </div>
@@ -1740,10 +1740,19 @@ function removeStylesheet(href) {
 // }
 // localStorage.setItem('date', today);
 let dramaReward = localStorage.getItem('num-shared');
+if (!dramaReward) {
+    dramaReward = 0;
+}
 let sharing = document.getElementById("share-container");
 function enableSharing() {
     document.getElementById("rightm").style.display = "none";
     document.getElementById("leftm").style.display = "none";
+    if (dramaReward != 0) {
+        document.getElementById("bar-allocation").style.width = (20 * dramaReward) + "%";
+    }
+    if (dramaReward === 5) {
+        document.getElementById("drama-challenge").innerHTML = "<a style='text-decoration: underline' href='mailto:ben@fix.school?subject=my school is:'>click and put your school name in the subject line to get TEA</a>"
+    } 
     sharing.style.display = "block";
     sharing.classList.add("visible");
     setTimeout(() => {
@@ -1768,10 +1777,41 @@ function handleClickOutside(e) {
 
   document.removeEventListener("click", handleClickOutside);
 }
-
-function shareIG() {
-    window.location.href = "instagram-stories://share";
+function updateDrama() {
+    if (dramaReward == 5) {
+        document.getElementById("drama-challenge").innerHTML = "<a style='text-decoration: underline' href='mailto:ben@fix.school?subject=my school is:'>click and put your school name in the subject line to get TEA</a>"
+    } else {
+        dramaReward = dramaReward + 1;
+    }
+    localStorage.setItem("num-shared", dramaReward);
 }
+const shareIG = async (imageUrl, title) => {
+    // Fetch the image and convert it into a blob
+    const response = await fetch(imageUrl);
+    const blobImageAsset = await response.blob();
+
+    const filesArray = [
+      new File([blobImageAsset], `${title}.png`, {
+        type: 'image/png',
+        lastModified: new Date().getTime(),
+      }),
+    ];
+
+    const shareData = {
+      title: `${title}`,
+      files: filesArray,
+    };
+
+    // Use the Web Share API to share the image
+    if (navigator.canShare && navigator.canShare(shareData)) {
+      await navigator.share(shareData).then(() => {
+        console.log('Successful share');
+        updateDrama()
+      }).catch((error) => {
+        console.log('Error sharing:', error);
+      });
+    }
+};
 
 function webShare() {
     // Check if the Web Share API is available
@@ -1787,6 +1827,7 @@ function webShare() {
         })
         .then(() => {
             console.log('Successful share');
+            updateDrama();
         })
         .catch((error) => {
             console.log('Error sharing:', error);
@@ -1811,7 +1852,6 @@ sections = ["#swiped-right-section", "#card-container", "#left-section",  "#bing
 
 function showSection(n) {
     if (n === 2) {
-
         // removeStylesheet("/assets/css/style.css");
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
         // console.log("n = 2, LSS: ", lastShownSection) unaddressed bug here - lastShownSection is 2 when using swipe on left section
@@ -1826,6 +1866,7 @@ function showSection(n) {
             document.getElementById('leftm').src = "/assets/svg/Favorite_fill.svg";
         }
         lastShownSection = 2;
+        window.location.hash = ""; // do I want this tho?
     } else if (n === 1) {
         document.querySelector('#card-container').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
@@ -1879,8 +1920,16 @@ function showSection(n) {
 
         if (isMobile === 1) {
             document.getElementById('nav4m').style.display = "none";
-            document.getElementById('leftm').src = "/assets/images/share.png"; // was none
+            document.getElementById('leftm').style.display = "none";
             document.getElementById('rightm').style.display = "inline-block";
+            setTimeout(() => {
+                if (document.querySelector('#left-section').style.display === "block") {
+                    // document.getElementById('leftm').classList.add("fade-in");
+                    document.getElementById('leftm').src = "/assets/images/share.png"; 
+                    document.getElementById('leftm').style.display = "inline-block";
+                }
+            }, 4000);
+
         }
         lastShownSection = 3;
     } 
