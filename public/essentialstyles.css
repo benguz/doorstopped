@@ -1326,9 +1326,8 @@ h2.tooltip {
       width: 98%;
       margin: auto;
       }
-    .big {
+    #hero-text {
       text-align: left;
-
     }
     .card h2.overlay-text {
       font-size: 15pt;
