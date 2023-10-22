@@ -71,7 +71,7 @@
       <div id="onboarding-element" style="position: absolute; z-index: 10;
       width: 100vw; height: 100vh; display: none; background-color: white; font-family: 'Poppins';  transition: opacity 1s; opacity: 1;">
         <div id="onboarding-hero" style="max-width: 100%; margin: auto; text-align: center;">
-            <h1 class="big fade-in-med" >There are <span style="color:  #aa0462; display: inline;">1,000's of ways</span> you can change school, <span style="color:#cd6f6f; opacity: 0; display: inline;" class="fade-in-slow">no matter what you're struggling with.</span></h1>
+            <h1 id="hero-text" class="big fade-in-med" >There are <span style="color:  #aa0462; display: inline;">1,000's of ways</span> you can change school, <span style="color:#cd6f6f; opacity: 0; display: inline;" class="fade-in-slow">no matter what you're struggling with.</span></h1>
               </div>
             </div>
         
@@ -1944,7 +1944,10 @@ function showSection(n) {
         }, 500);
 
         document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; // + mobileNav[isMobile]
-        document.getElementById('nav4m').src = "/assets/svg/cards-light.svg";
+        // document.getElementById('nav4m').src = "/assets/svg/cards-light.svg";
+        if (isMobile === 1) {
+            document.getElementById('nav4m').src = "/assets/svg/cards-mobile.svg"
+        }
         document.getElementById('rightm').style.display = "none";
         document.getElementById('leftm').style.display = "none";
         document.getElementById('img4').src= "/assets/svg/Lamp_fill.svg"; // + mobileNav[isMobile]
