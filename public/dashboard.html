@@ -814,8 +814,8 @@
                     <img src="/assets/images/instagram.png" width="65px" height="65px">
                     <p style="text-align: center; font-family: 'Poppins', sans-serif; line-height: 1.4;">IG</p>
                 </a>
-                <div class="share-icon" onclick="let currentLink = 'https://fix.school/dashboard#' + currentDoorstop.replace('#', '%23'); navigator.clipboard.writeText(currentLink); updateDrama();"> 
-                    <img src="/assets/images/link.png" width="65px" height="65px">
+                <div class="share-icon" onclick="copyLink(this.firstElementChild)"> 
+                    <img src="/assets/images/link.png" width="65px" height="65px" style="transition: transform 0.5s ease-in-out;" >
                     <p style="text-align: center;font-family: 'Poppins', sans-serif;line-height: 1.4;">Link</p>
                 </div>  
             </div>
@@ -1785,6 +1785,14 @@ function updateDrama() {
     }
     localStorage.setItem("num-shared", dramaReward);
 }
+let angle = 0;
+function copyLink(element) {
+    angle += 360; 
+    let currentLink = 'https://fix.school/dashboard#' + currentDoorstop.replace('#', '%23'); 
+    navigator.clipboard.writeText(currentLink); 
+    updateDrama(); 
+    element.style.transform = `rotate(${angle}deg)`;
+}
 const shareIG = async (imageUrl, title) => {
     // Fetch the image and convert it into a blob
     const response = await fetch(imageUrl);
@@ -1879,7 +1887,6 @@ function showSection(n) {
         document.getElementById('img1').src = "/assets/svg/Book_check_fill.svg"; // + mobileNav[isMobile]
         lastShownSection = 1;
 
-      
     } else if (n === 3) {
         document.querySelector('#left-section').classList.add("fade-in");
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';

@@ -84,11 +84,10 @@ function copyText(event) {
 
 
 let shareButton = document.getElementById("share-button");
-if (shareButton && (window.innerWidth > 1000)) {
-
+if (shareButton) { // && (window.innerWidth > 1000
   navigator.clipboard.writeText(window.location.href);
   console.log("link copied!") 
-  // need to replace with some indication of success and expand functionality
+  // need to replace with some indication of success (animation!) and expand functionality
 }
 
 
