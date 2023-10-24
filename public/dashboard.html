@@ -48,6 +48,16 @@
                     clearInterval(checkFunctionInterval);
                 }
             }, 100);
+            } else if (sectionId.includes("/")) {
+                sectionId = sectionId.replace("%23", "#"); 
+                var checkFunctionInterval = setInterval(function() {
+                if (typeof handleSwipeRight === 'function') {
+                    let redirectCard = document.createElement("div");
+                    redirectCard.dataset.link = sectionId;
+                    handleSwipeRight(redirectCard);
+                    clearInterval(checkFunctionInterval);
+                }
+            }, 50);
             }
         }
     </script>
@@ -61,7 +71,7 @@
       <div id="onboarding-element" style="position: absolute; z-index: 10;
       width: 100vw; height: 100vh; display: none; background-color: white; font-family: 'Poppins';  transition: opacity 1s; opacity: 1;">
         <div id="onboarding-hero" style="max-width: 100%; margin: auto; text-align: center;">
-            <h1 class="big fade-in-med" >There are <span style="color:  #aa0462;">1,000's of ways</span> you can change school, <span style="color:#cd6f6f; opacity: 0;" class="fade-in-slow">no matter what you're struggling with.</span></h1>
+            <h1 id="hero-text" class="big fade-in-med" >There are <span style="color:  #aa0462; display: inline;">1,000's of ways</span> you can change school, <span style="color:#cd6f6f; opacity: 0; display: inline;" class="fade-in-slow">no matter what you're struggling with.</span></h1>
               </div>
             </div>
         
@@ -79,7 +89,7 @@
         </div>
             <!-- <p class="onboarding-choice" id="vibes" onclick="toggleClick('vibes')">Toxic Vibes 🙄</p> -->
             <button id="onboarding-button" class="onboarding-choice" style="background-color: rgba(170, 4, 98, 0.2);" onclick="moveOn()">
-                <p style="color: white;">Fix school <img width="24px" height="24px" style="vertical-align: middle;" src="/assets/svg/Send_hor.svg"></p>
+                <p style="color: white;">Fix school <img width="24px" height="24px" style="vertical-align: middle; display: inline;" src="/assets/svg/Send_hor.svg"></p>
             </button>
         </div>
       <div id="desktop-sidenav" style="display: none">
@@ -460,7 +470,7 @@
         </div> 
         <div id="money-card-3" class="card" data-link="/doorstops/poop" style="display: none;" data-category="wellbeing">
             <div style="display: flex; justify-content: center;">
-                <video autoplay playsinline muted loop width="75%" class="card-video">
+                <video autoplay playsinline muted loop height="100%" class="card-video">
                     <source data-src-mp4="/assets/cards/mp4/funny-fail.mp4" data-src-webm="/assets/cards/funny-fail.webm" alt="panda shaking its bum" >
                   </video>          
                 </div>
@@ -509,7 +519,7 @@
                 <p>RESPOND TO PEOPLE CROSSING YOUR BOUNDARIES.</p>
 </div>         
         </div>
-        <div id="teacher-card-4" class="card" data-link="/doorstops/dominance" style="display: none;" data-category="STR">
+        <div id="teacher-card-4" class="card" data-link="https://fix.school/doorstops/dominance" style="display: none;" data-category="STR">
             <video autoplay playsinline muted loop id="eating" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/eye-roll-meme.mp4" data-src-webm="/assets/cards/eye-roll-meme.webm" >
               </video> 
@@ -730,14 +740,12 @@
         </div>
       
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="leftm" class="triangle-main" width='90' height='90' viewbox="0 0 24 24" onclick="handleSwipeRight(currentCard); showNextCard(currentCard)">
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="leftm" class="triangle-main" width='90' height='90' viewbox="0 0 24 24" onclick="handleSwipeRight(currentCard); showNextCard(currentCard)">
         <path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" fill="#68A2F8" stroke="#68A2F8" stroke-width="2"/>
-        </svg>
+        </svg> -->
+         <img src="/assets/svg/Favorite_fill.svg" id="leftm" class="triangle-main" width='90' height='90' onclick="if (lastShownSection === 2){handleSwipeRight(currentCard); showNextCard(currentCard)} else {enableSharing()}"/>
         <img src="/assets/svg/Lamp.svg" id="nav4m" width="90" height="90" class="triangle-center" onclick="if (lastShownSection === 2){showSection(4)} else {showSection(2)}"/>
-        <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.14377 15.6858L8.21957 16.0677L9.14377 15.6858ZM8.91839 15.2337L8.12816 15.8465L8.91839 15.2337ZM15.0816 15.2337L15.8718 15.8465L15.0816 15.2337ZM17 10C17 11.6366 16.2147 13.0895 14.9962 14.0033L16.1961 15.6034C17.8966 14.3282 19 12.2928 19 10H17ZM12 5C14.7614 5 17 7.23858 17 10H19C19 6.13401 15.866 3 12 3V5ZM7 10C7 7.23858 9.23858 5 12 5V3C8.13401 3 5 6.13401 5 10H7ZM9.0038 14.0033C7.78526 13.0895 7 11.6366 7 10H5C5 12.2928 6.1034 14.3282 7.80393 15.6034L9.0038 14.0033ZM10.9973 19.743C10.9654 18.2148 10.6489 16.7097 10.068 15.3039L8.21957 16.0677C8.70598 17.2449 8.97101 18.5051 8.99775 19.7848L10.9973 19.743ZM13.3416 19.2111C12.4971 19.6334 11.5029 19.6334 10.6584 19.2111L9.76393 21C11.1716 21.7038 12.8284 21.7038 14.2361 21L13.3416 19.2111ZM13.932 15.3039C13.3511 16.7097 13.0346 18.2148 13.0027 19.743L15.0022 19.7848C15.029 18.5051 15.294 17.2449 15.7804 16.0677L13.932 15.3039ZM14.2361 21C14.708 20.764 14.9917 20.2888 15.0022 19.7848L13.0027 19.743C13.0072 19.5284 13.1285 19.3177 13.3416 19.2111L14.2361 21ZM8.99775 19.7848C9.00828 20.2888 9.29199 20.764 9.76393 21L10.6584 19.2111C10.8715 19.3177 10.9928 19.5284 10.9973 19.743L8.99775 19.7848ZM7.80393 15.6034C7.95483 15.7165 8.04298 15.7829 8.10525 15.8338C8.16783 15.885 8.15598 15.8824 8.12816 15.8465L9.70862 14.6209C9.52146 14.3795 9.23067 14.1734 9.0038 14.0033L7.80393 15.6034ZM10.068 15.3039C9.98964 15.1144 9.89131 14.8565 9.70862 14.6209L8.12816 15.8465C8.11465 15.8291 8.11215 15.8197 8.12521 15.8469C8.13306 15.8632 8.14391 15.8872 8.1602 15.9253C8.17665 15.9639 8.19514 16.0086 8.21957 16.0677L10.068 15.3039ZM14.9962 14.0033C14.7693 14.1734 14.4785 14.3795 14.2914 14.6209L15.8718 15.8465C15.844 15.8824 15.8322 15.885 15.8948 15.8338C15.957 15.7829 16.0452 15.7165 16.1961 15.6034L14.9962 14.0033ZM15.7804 16.0677C15.8049 16.0086 15.8233 15.9639 15.8398 15.9253C15.8561 15.8872 15.8669 15.8632 15.8748 15.8469C15.8879 15.8197 15.8853 15.8291 15.8718 15.8465L14.2914 14.6209C14.1087 14.8565 14.0104 15.1144 13.932 15.3039L15.7804 16.0677Z" fill="#68A2F8"/>
-            <path d="M14.9923 16V16C13.1812 17.2106 10.8191 17.2106 9.00806 16V16" stroke="#68A2F8" stroke-width="2"/>
-            </svg> -->
+
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="rightm" class="triangle-left" width='90' height='90' viewbox="0 0 24 24" fill="none" onclick="if (lastShownSection === 2){handleSwipeLeft(currentCard); showNextCard(currentCard)} else {showSection(2)}">
             <path d="M12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C13.1819 3 14.3522 3.23279 15.4442 3.68508C16.5361 4.13738 17.5282 4.80031 18.364 5.63604C19.1997 6.47177 19.8626 7.46392 20.3149 8.55585C20.7672 9.64778 21 10.8181 21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4441 20.3149C14.3522 20.7672 13.1819 21 12 21L12 21Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
             <path d="M9 9L15 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
@@ -791,32 +799,34 @@
      
         <br><br>
     </div>
-    <div class="share-container" style="display: none; position: fixed; bottom: 0; width: 100%;">
+    <div id="share-container" class="share-container">
         <div id="background" style="position: absolute; bottom: 0; width: 100%;">
-            <div class="share-dome" style="width: 100%; height: 70px; padding-bottom: 2px; border-radius: 60% 60% 0 0; background-color: #FFFCFB;"></div>
-            <div class="share-rectangle" style="width: 100%; height: 170px; background-color: #FFFCFB;"></div>
+            <div class="share-dome" style="width: 100%; height: 100px; margin-bottom: -1px; border-radius: 80% 80% 0 0; background-color: #FFFCFB;"></div>
+            <div class="share-rectangle" style="width: 100%; height: 140px; background-color: #FFFCFB;"></div>
         </div>
         <div id="content" style="position: relative;">
-            <div id="top-row" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; padding-bottom: 20px;">
-                <div class="share-icon" onclick="">
-                    <img src="/assets/images/message.png" width="50px" height="50px">
+            <div id="top-row" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; padding-bottom: 10px;">
+                <div class="share-icon" onclick="webShare()">
+                    <img src="/assets/images/message.png" width="65px" height="65px">
                     <p style="text-align: center; font-family: 'Poppins', sans-serif;line-height: 1.4;">SMS</p>
                 </div>
-                <div class="share-icon" onclick="">
-                    <img src="/assets/images/instagram.png" width="50px" height="50px">
+                <a class="share-icon" style="padding-bottom: 10px;" onclick="shareIG('/assets/images/igstory.png', 'www.fix.school has the most devious licks');">
+                    <img src="/assets/images/instagram.png" width="65px" height="65px">
                     <p style="text-align: center; font-family: 'Poppins', sans-serif; line-height: 1.4;">IG</p>
-                </div>
-                <div class="share-icon" onclick="let currentLink = currentDoorstop; if(!currentLink.includes('fix.school')) {currentLink = 'https://fix.school' + currentLink}; navigator.clipboard.writeText(currentLink); console.log(currentLink)"> 
-                    <img src="/assets/images/link.png" width="50px" height="50px">
+                </a>
+                <div class="share-icon" onclick="copyLink(this.firstElementChild)"> 
+                    <img src="/assets/images/link.png" width="65px" height="65px" style="transition: transform 0.5s ease-in-out;" >
                     <p style="text-align: center;font-family: 'Poppins', sans-serif;line-height: 1.4;">Link</p>
-                </div>
+                </div>  
             </div>
             <div id="progress-bar" style="width: 70%; background-color: #E9D0F4; border-radius: 30px; height: 20px; margin: auto;">
-                <div id="bar" style="width: 60%; background-color: #7B3DAE; border-radius: 30px; height: 100%;">
+                <div id="bar-allocation" style="width: 5%; height: 100%; border-radius: 30px;">
+                    <div id="bar" style="width: 100%; background-color: #7B3DAE; border-radius: 30px; height: 100%;">
+                    </div>
                 </div>
             </div>
-            <p style="font-weight: 500; max-width: 90%; margin: auto; font-family: 'Poppins', sans-serif; line-height: 1.3; margin-top: 10px;">Share 5 Doorstops to see ~drama~ about your school.</p>
-            <br><br>
+            <p id="drama-challenge" style="font-weight: 500; max-width: 90%; margin: auto; font-family: 'Poppins', sans-serif; line-height: 1.3; margin-top: 10px;">Share 5 Doorstops to see ~drama~ about your school.</p>
+            <br>
 
         </div>
       </div>
@@ -884,7 +894,7 @@
                 <div class="bingo-face front">Insecurity</div>
                 <div class="bingo-face back">Smart people think they’re dumb</div>
             </div>
-            <div class="bingo-item" data-link="/doorstops/dominance" onclick="handleSwipeRight(this)">
+            <div class="bingo-item" data-link="https://fix.school/doorstops/dominance" onclick="handleSwipeRight(this)">
                 <div class="bingo-face front">Discipline is HARSH</div>
                 <div class="bingo-face back">Straight up.</div>
             </div>
@@ -925,7 +935,7 @@
                 <div class="bingo-face front">HS feels like a dead end</div>
                 <div class="bingo-face back">It’s McDonalds or fame</div>
             </div>
-                  <div class="bingo-item" data-link="doorstops/dominance" onclick="handleSwipeRight(this)">
+                  <div class="bingo-item" data-link="https://fix.school/doorstops/dominance" onclick="handleSwipeRight(this)">
                 <div class="bingo-face front">Strictness</div>
                 <div class="bingo-face back">Trapped at your desk?</div>
             </div>
@@ -995,7 +1005,7 @@
                 <div class="bingo-face front">Hard convos</div>
                 <div class="bingo-face back">facing teachers</div>
             </div>
-            <div class="bingo-item" data-link="/doorstops/dominance" onclick="handleSwipeRight(this)">
+            <div class="bingo-item" data-link="https://fix.school/doorstops/dominance" onclick="handleSwipeRight(this)">
                 <div class="bingo-face front">Strict Teachers</div>
                 <div class="bingo-face back">Fight back</div>
             </div>
@@ -1204,7 +1214,7 @@
             if (usedCard) {
                 usedCard.remove();
             } else {
-                console.log(pastSwipes[i].id)
+                // console.log(pastSwipes[i].id)
             }
         }
         // if onboarding is completed but user hasn't started swiping:
@@ -1221,8 +1231,8 @@
 
             var totalChildren = parent.children.length;
             var firstChildIndexToChange = totalChildren - 3;
-            if (firstChildIndexToChange > 0) {
-                for (var i = firstChildIndexToChange; i < totalChildren; i++) {
+            for (var i = firstChildIndexToChange; i < totalChildren; i++) {
+                if (i > 0) {
                     parent.children[i].style.display = 'block';
                 }
             }
@@ -1500,7 +1510,6 @@ let iframe = document.getElementById("doorstop-frame");
 function handleSwipeRight(card) {
     let cardLink = card.dataset.link;
     let cardCategory = card.dataset.category;
-    // let cardHeight = card.dataset.height;
     let cardid;
     removeScript("/doorstops/naptime.js")
     if (cardLink) {
@@ -1513,7 +1522,7 @@ function handleSwipeRight(card) {
         //     dinky.style.display = "flex";
         // }
         if (cardLink.startsWith('https://')) {
-            loadIframe(cardLink);
+            loadIframe(cardLink); // not currently handling cards with external links
         } 
         else {
             document.getElementById("left-section").style.width = "90%";
@@ -1579,11 +1588,22 @@ function handleSwipeRight(card) {
                 window.location.hash = '#scrollToHere' // causes slight hitch on load
             }
             showSection(3);
+
+
         })
         .catch(err => console.log('Failed to load page: ', err));
                     
         });
     }   
+        // after load completed, update hash for sharing purposes and to preserve state on reload
+        let newHash = cardLink
+        if (newHash.includes("#")) {
+            newHash = newHash.replace("#", "%23")
+        } 
+        setTimeout(() => { // this code is run before showSection is completed, at times causing #scrolltohere to be called second
+            window.location.hash = newHash;
+        }, 200); 
+
         let titleElement = card.querySelector('h2');
         if (titleElement) {
             // not run for bingo elements
@@ -1596,7 +1616,6 @@ function handleSwipeRight(card) {
             plausible(cardCategory);
         }
         document.querySelector('#howto').style.display = 'none'; // hides howto
-
     }
     else if (card.dataset.category === "50-swipes-survey-yes") {
         plausible("50-swipes-survey-yes");
@@ -1604,9 +1623,9 @@ function handleSwipeRight(card) {
         plausible("25-swipes-survey-yes");
     }
 }
-dynamicCards = ["/doorstops/ref", "/doorstops/conflict", "/doorstops/name", "/school/flow"]
-dynamicCardsHttp = ["https://fix.school/doorstops/ref", "https://fix.school/doorstops/conflict", "https://fix.school/doorstops/name", "https://fix.school/school/flow"]
-dynamicCardsLocal = ["http://localhost:8888/doorstops/ref", "http://localhost:8888/doorstops/conflict", "http://localhost:8888/doorstops/name", "http://localhost:8888/school/flow"]
+dynamicCards = ["/doorstops/ref", "/doorstops/conflict", "/doorstops/name", "/school/flow", "/doorstops/dominance"]
+dynamicCardsHttp = ["https://fix.school/doorstops/ref", "https://fix.school/doorstops/conflict", "https://fix.school/doorstops/name", "https://fix.school/school/flow", "https://fix.school/doorstops/dominance"]
+dynamicCardsLocal = ["http://localhost:8888/doorstops/ref", "http://localhost:8888/doorstops/conflict", "http://localhost:8888/doorstops/name", "http://localhost:8888/school/flow", "http://localhost:8888/doorstops/dominance"]
 
 iframe.addEventListener('load', function() {
     // document.getElementById("content-placeholder").innerHTML = "<p> reached load </p>";
@@ -1638,8 +1657,7 @@ function loadIframe(cardLink) {
     document.getElementById("content-placeholder").innerHTML = "";
     document.getElementById("left-section").style.width = "100%";
     iframe.style.height = "800px";
-    document.getElementById("rightm").src = "/assets/svg/User_alt.svg"; // temp testing to ensure code is reached
-    iframe.src = url.pathname + url.search; // maybe I shouldn't use a relative path like this?
+    iframe.src = url.pathname + url.search; 
     showSection(3);
 }
 function adjustIframeHeight() {
@@ -1648,21 +1666,6 @@ function adjustIframeHeight() {
         iframe.style.height = innerHeight + 20;
     }
 }
-
-// could try code like this as well to ensure full load
-// let images = document.images;
-// let loadedImagesCount = 0;
-
-// for (let img of images) {
-//     img.onload = function() {
-//         loadedImagesCount++;
-//         if (loadedImagesCount === images.length) {
-//             // All images are loaded, now compute the height and post the message
-//             let height = document.body.scrollHeight;
-//         }
-//     };
-// }
-
 
 function showNextCard(card) {
     loadNextVideo();
@@ -1736,7 +1739,112 @@ function removeStylesheet(href) {
 //     localStorage.setItem('days', 1);
 // }
 // localStorage.setItem('date', today);
+let dramaReward = localStorage.getItem('num-shared');
+if (!dramaReward) {
+    dramaReward = 0;
+}
+let sharing = document.getElementById("share-container");
+function enableSharing() {
+    document.getElementById("rightm").style.display = "none";
+    document.getElementById("leftm").style.display = "none";
+    if (dramaReward != 0) {
+        document.getElementById("bar-allocation").style.width = (20 * dramaReward) + "%";
+    }
+    if (dramaReward === 5) {
+        document.getElementById("drama-challenge").innerHTML = "<a style='text-decoration: underline' href='mailto:ben@fix.school?subject=my school is:'>click and put your school name in the subject line to get TEA</a>"
+    } 
+    sharing.style.display = "block";
+    sharing.classList.add("visible");
+    setTimeout(() => {
+        document.addEventListener("click", handleClickOutside);
+        iframe.contentWindow.document.addEventListener("click", handleClickOutside);
+    }, 300)
+}
 
+function handleClickOutside(e) {
+  let targetElement = e.target;
+
+  while (targetElement != null) {
+    if (targetElement.id === "share-container") {
+      return; 
+    }
+    targetElement = targetElement.parentElement;
+  }
+  sharing.style.display = "none";
+  sharing.classList.remove("visible");
+  document.getElementById("rightm").style.display = "inline-block";
+  document.getElementById("leftm").style.display = "inline-block";
+
+  document.removeEventListener("click", handleClickOutside);
+}
+function updateDrama() {
+    if (dramaReward == 5) {
+        document.getElementById("drama-challenge").innerHTML = "<a style='text-decoration: underline' href='mailto:ben@fix.school?subject=my school is:'>click and put your school name in the subject line to get TEA</a>"
+    } else {
+        dramaReward = dramaReward + 1;
+    }
+    localStorage.setItem("num-shared", dramaReward);
+}
+let angle = 0;
+function copyLink(element) {
+    angle += 360; 
+    let currentLink = 'https://fix.school/dashboard#' + currentDoorstop.replace('#', '%23'); 
+    navigator.clipboard.writeText(currentLink); 
+    updateDrama(); 
+    element.style.transform = `rotate(${angle}deg)`;
+}
+const shareIG = async (imageUrl, title) => {
+    // Fetch the image and convert it into a blob
+    const response = await fetch(imageUrl);
+    const blobImageAsset = await response.blob();
+
+    const filesArray = [
+      new File([blobImageAsset], `${title}.png`, {
+        type: 'image/png',
+        lastModified: new Date().getTime(),
+      }),
+    ];
+
+    const shareData = {
+      title: `${title}`,
+      files: filesArray,
+    };
+
+    // Use the Web Share API to share the image
+    if (navigator.canShare && navigator.canShare(shareData)) {
+      await navigator.share(shareData).then(() => {
+        console.log('Successful share');
+        updateDrama()
+      }).catch((error) => {
+        console.log('Error sharing:', error);
+      });
+    }
+};
+
+function webShare() {
+    // Check if the Web Share API is available
+    //    if (navigator.canShare && navigator.canShare(shareData)) {
+        // do this as async function when you do images
+
+    if (navigator.share) {
+        let shareLink = "https://fix.school/dashboard#" + currentDoorstop.replace('#', '%23');
+        navigator.share({
+            title: 'yo... this lick is so devious',
+            // text: 'Here is an interesting website I found, take a look.',
+            url: shareLink,  // replace with your website URL
+        })
+        .then(() => {
+            console.log('Successful share');
+            updateDrama();
+        })
+        .catch((error) => {
+            console.log('Error sharing:', error);
+        });
+    } else {
+        console.log('Web Share API not supported.');
+    }
+    
+}
 
 // Add event listeners to navbar icons
 document.getElementById('nav1').addEventListener('click', function() { showSection(1); });
@@ -1752,7 +1860,6 @@ sections = ["#swiped-right-section", "#card-container", "#left-section",  "#bing
 
 function showSection(n) {
     if (n === 2) {
-
         // removeStylesheet("/assets/css/style.css");
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
         // console.log("n = 2, LSS: ", lastShownSection) unaddressed bug here - lastShownSection is 2 when using swipe on left section
@@ -1764,8 +1871,10 @@ function showSection(n) {
             document.getElementById('nav4m').style.display = "inline-block";
             document.getElementById('rightm').style.display = "inline-block";
             document.getElementById('leftm').style.display = "inline-block";
+            document.getElementById('leftm').src = "/assets/svg/Favorite_fill.svg";
         }
         lastShownSection = 2;
+        window.location.hash = ""; // do I want this tho?
     } else if (n === 1) {
         document.querySelector('#card-container').style.display = 'none';
         document.querySelector('#left-section').style.display = 'none';
@@ -1778,7 +1887,6 @@ function showSection(n) {
         document.getElementById('img1').src = "/assets/svg/Book_check_fill.svg"; // + mobileNav[isMobile]
         lastShownSection = 1;
 
-      
     } else if (n === 3) {
         document.querySelector('#left-section').classList.add("fade-in");
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
@@ -1786,13 +1894,6 @@ function showSection(n) {
         // onboarding!
         let firstRightSwipeDone = localStorage.getItem("firstRightSwipeDone");
         if (!firstRightSwipeDone) {
-            // if (isMobile === 1) {
-            //     $('.tooltip').each(function() {
-            //         var currentHTML = $(this).html();
-            //         var modifiedHTML = '👇' + currentHTML.substring(1);
-            //         $(this).html(modifiedHTML);
-            //     });
-            // } 
             if (isMobile === 0) {
                 setTimeout(() => {
                 document.getElementById('doorstop-onboarding').style.display = "block";
@@ -1821,20 +1922,28 @@ function showSection(n) {
         setTimeout(() => {
             document.querySelector('#left-section').classList.remove("fade-in");
         }, 500);
-        document.getElementById('img' + lastShownSection ).src = iconSrc[lastShownSection - 1]; //  + mobileNav[isMobile]
-        document.getElementById('img3').src = "/assets/svg/Favorite_fill.svg"; // + mobileNav[isMobile]
+        document.getElementById('img' + lastShownSection ).src = iconSrc[lastShownSection - 1]; 
+        document.getElementById('img3').src = "/assets/svg/Favorite_fill.svg"; 
 
         if (isMobile === 1) {
             document.getElementById('nav4m').style.display = "none";
             document.getElementById('leftm').style.display = "none";
             document.getElementById('rightm').style.display = "inline-block";
+            setTimeout(() => {
+                if (document.querySelector('#left-section').style.display === "block") {
+                    // document.getElementById('leftm').classList.add("fade-in");
+                    document.getElementById('leftm').src = "/assets/images/share.png"; 
+                    document.getElementById('leftm').style.display = "inline-block";
+                }
+            }, 4000);
+
         }
         lastShownSection = 3;
     } 
     else if (n === 4) {
         document.querySelector('#bingo-section').classList.add("fade-in");
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
- 
+        window.location.hash = "#bingo-section";
         document.querySelector('#bingo-section').style.display = 'block';
         document.querySelector("#bingo-section").style.backgroundColor = 'transparent';
         setTimeout(() => {
@@ -1842,7 +1951,10 @@ function showSection(n) {
         }, 500);
 
         document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; // + mobileNav[isMobile]
-        document.getElementById('nav4m').src = "/assets/svg/cards-light.svg";
+        // document.getElementById('nav4m').src = "/assets/svg/cards-light.svg";
+        if (isMobile === 1) {
+            document.getElementById('nav4m').src = "/assets/svg/cards-mobile.svg"
+        }
         document.getElementById('rightm').style.display = "none";
         document.getElementById('leftm').style.display = "none";
         document.getElementById('img4').src= "/assets/svg/Lamp_fill.svg"; // + mobileNav[isMobile]
