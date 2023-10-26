@@ -1061,14 +1061,14 @@ input {
   body {
     height: 95%;
   }
-  #card-container {
-    height: 90%;
+  /* #card-container {
+    height: 80%;
   }
   .card {
       height: calc(100% - 100px); 
       max-height: calc(100% - 100px);
-  }
-  
+  } */
+ 
   .triangle-main, .triangle-left, .triangle-center {
     margin-top: 10px;
   }
@@ -1381,6 +1381,9 @@ h2.tooltip {
       margin: auto;
       }
     #hero-text {
+      text-align: left;
+    }
+    #onboarding-hero {
       text-align: left;
     }
     .card h2.overlay-text {
