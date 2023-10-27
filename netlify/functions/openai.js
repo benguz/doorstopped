@@ -10,9 +10,9 @@ exports.handler = async function(event, context) {
     // Parse the JSON body of the request
     const body = JSON.parse(event.body);
     inputChat = body.input; // Get inputChat from the request body
-    console.log(body)
   } else {
-    console.log('not PoST')
+    return({statusCode: 
+      500, body: 'not PoST'})
   }
   try {
     const completion = await openai.chat.completions.create({
@@ -27,7 +27,7 @@ exports.handler = async function(event, context) {
         }
       ],
       model: "gpt-3.5-turbo",
-      max_tokens: "200",
+      max_tokens: 200,
     });
 
     return {
@@ -37,7 +37,7 @@ exports.handler = async function(event, context) {
   } catch (error) {
     return {
       statusCode: 500,
-      body: `Error: ${error.message}`
+      body: JSON.stringify(`Error: ${error.message}`)
     };
   }
 };
