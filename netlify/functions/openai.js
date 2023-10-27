@@ -4,9 +4,16 @@ const axios = require("axios");
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 exports.handler = async function(event, context) {
-  const inputChat = event.queryStringParameters.inputChat; // Get the input chat from query parameters or default to "Hello, world!"
+  let inputChat;
 
-
+  if (event.httpMethod === 'POST') {
+    // Parse the JSON body of the request
+    const body = JSON.parse(event.body);
+    inputChat = body.input; // Get inputChat from the request body
+    console.log(body)
+  } else {
+    console.log('not PoST')
+  }
   try {
     const completion = await openai.chat.completions.create({
       messages: [
@@ -20,6 +27,7 @@ exports.handler = async function(event, context) {
         }
       ],
       model: "gpt-3.5-turbo",
+      max_tokens: "200",
     });
 
     return {

@@ -38,9 +38,7 @@
  
    <style>
        @media screen and (max-width: 1023px){
- .framebox {
- height: 34000em;
- }
+
  .sidenavtotal {
  display:none;
  padding: 0em;
@@ -61,17 +59,7 @@
    margin-left: 1.5%;
  }
  @media (min-width: 1024px) {
- /* main {
-   display:flex; 
-   justify-content:center;
- } 
- .yonk {
-             width: 55%;  
-             margin-left: 22.5%; 
-             padding: 0 10px;
-             box-sizing: border-box;
-         }*/
- 
+
  .yonk {
    flex: 3;
  }
@@ -79,9 +67,6 @@
    flex: 1;
  }
  
- .framebox {
-   height: 15500em;
- }
  }
  
  
@@ -222,10 +207,7 @@
     transform: rotate(360deg);
   }
 }
-
-
- 
- </style>
+</style>
  
    </head>
  
@@ -390,13 +372,35 @@ With hope and gratitude,<br>
   </div> 
 <p>Try to find <em>anyone</em> who knows them. Maybe they're a student' parent, or they run a local business.</p>
 <p>Ask them to introduce you :)</p>
+<!-- MORE HERE -->
         </div>
         </div>
         <div class="accordion-section">
           <div class="accordion-header">My school is hiring a new principal/superintendent, what does that mean?</div>
           <div class="accordion-content">
-            <p>You've found out early, that's awesome.</p>
+            <p>You've found out early, that's awesome. Two options:</p>
+            <strong>DIY</strong>
             <!-- Ask for a chance to be involved in the process OR ask for participatory ways students can be involved. Eg we want an HOUR with each final round candidate. -->
+            <div class="copy-paste-element">
+                <div>
+                  <p><strong>Subject:</strong> [Student/Parent] survey results show strong opposition to [policy name]<br><br>
+Hi [Principal's Name],<br><br>
+
+We collected data showing [X percent] of [students/parents] about participation grading, with [# surveyed - you don't have to mention this if it's small].<br><br>
+
+Can you help me constructively bring this up at the next school board meeting, or navigate informing the school board members?<br><br> 
+
+With hope and gratitude,<br>
+[Your name]</p>
+</div>
+                <button class="copy-icon" onclick="copyText(event)">
+                  <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+                    <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+                  </svg>
+                </button>
+              </div>
+            <strong>Get the whole gang</strong>
           </div>
           </div>
             <div class="accordion-section last">
@@ -465,7 +469,13 @@ With hope and gratitude,<br>
 
         } else if (inputChat) {
             document.getElementById("openAI-loading").style.display = "inline-block"
-            fetch(`/.netlify/functions/openai?inputChat=${encodeURIComponent(inputChat)}`)
+            fetch(`/.netlify/functions/openai`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({input: inputChat})
+            })
             .then(response => response.json())  // Parse the JSON from the response
             .then(data => {
                 document.getElementById("openAI-loading").style.display = "none";
@@ -476,7 +486,7 @@ With hope and gratitude,<br>
             .catch(error => {
                 console.error("Error:", error);
                 document.getElementById("openAI-loading").style.display = "none";
-                document.getElementById("openAI-response").textContent = "Ran into an error, sorry! Try again with a shorter prompt or if you want a free OpenAI membership, email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a>.";
+                document.getElementById("openAI-response").innerHTML = "Ran into an error, sorry! Try again with a shorter prompt or if you want a free OpenAI membership, email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a>.";
             }); 
         }
     }
