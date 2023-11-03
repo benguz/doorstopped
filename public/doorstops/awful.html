@@ -468,8 +468,9 @@ With hope and gratitude,<br>
             document.getElementById("openAI-response").innerHTML = "Sorry, you've reached our submission limit. If you want a free OpenAI membership, email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a>. We're working to get more funding ASAP!";
 
         } else if (inputChat) {
+            
             document.getElementById("openAI-loading").style.display = "inline-block"
-            fetch(`/.netlify/functions/openai`, {
+            fetch(`https://ai.fix.school/`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

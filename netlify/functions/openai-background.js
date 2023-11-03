@@ -11,8 +11,10 @@ exports.handler = async function(event, context) {
     const body = JSON.parse(event.body);
     inputChat = body.input; // Get inputChat from the request body
   } else {
-    return({statusCode: 
-      500, body: 'not PoST'})
+    // return({statusCode: 
+      // 500, 
+      // body: JSON.stringify(`Error: not POST}`)
+  // })
   }
   try {
     const completion = await openai.chat.completions.create({
@@ -37,7 +39,7 @@ exports.handler = async function(event, context) {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify(`Error: ${error.message}`)
+      body: `Error: ${error.message}`
     };
   }
 };
