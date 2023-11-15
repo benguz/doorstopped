@@ -1577,7 +1577,12 @@ function handleSwipeRight(card) {
         //     dinky.style.display = "flex";
         // }
         if (cardLink.startsWith('https://')) {
-            loadIframe(cardLink); // not currently handling cards with external links
+            // FOR AN IFRAME-FREE WORKLOAD
+            // if (iOS && cardLink.includes()) {
+
+            // } else {
+                loadIframe(cardLink); // not currently handling cards with external links
+            // }
         } 
         else {
             document.getElementById("left-section").style.width = "90%";
@@ -1601,6 +1606,7 @@ function handleSwipeRight(card) {
             if (yonkElement) {
                 // put the content of 'yonk' element inside the placeholder
                 loadStylesheet("/assets/css/style.css");
+                stylesheets.push("/assets/css/style.css");
                 content.innerHTML = yonkElement.outerHTML;
                 // Remove the first five <br> tags
                 let brTags = document.querySelectorAll(".yonk > br");
@@ -1738,11 +1744,14 @@ function showNextCard(card) {
     setTimeout(() => {card.style.display = 'none'; }, 100);
 }
 
+let scripts = [];
+let stylesheets = []
 function loadScript(src) {
     let script = document.createElement('script');
     script.src = src;
     script.async = true;
     document.head.appendChild(script);
+    scripts.push(src)
 }
 
 function removeScript(src) {
@@ -1758,6 +1767,7 @@ function loadStylesheet(url) {
     link.rel = "stylesheet";
     link.href = url;
     document.getElementsByTagName("head")[0].appendChild(link);
+    stylesheets.push(url)
 } 
 
 function removeStylesheet(href) {
@@ -1981,6 +1991,14 @@ function showSection(n) {
             document.getElementById('rightm').classList.remove("absolute");
             document.getElementById('leftm').src = "/assets/svg/Favorite_fill.svg";
         }
+        stylesheets.forEach(element => {
+            removeStylesheet(element);
+        });
+        stylesheets.length = 0;
+        scripts.forEach(element => {
+            removeScript(element);
+        });
+        scripts.length = 0;
         lastShownSection = 2;
         window.location.hash = ""; // do I want this tho?
     } else if (n === 1) {
