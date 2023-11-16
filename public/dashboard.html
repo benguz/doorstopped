@@ -70,7 +70,7 @@
       </div> -->
       <div id="onboarding-element" style="position: absolute; z-index: 10;
       width: 100vw; height: 100vh; display: none; background-color: white; font-family: 'Poppins';  transition: opacity 1s; opacity: 1;">
-        <div id="onboarding-hero" style="max-width: 100%; margin: auto; text-align: center;">
+        <div id="onboarding-hero">
             <h1 id="hero-text" class="big fade-in-med" >There are <span style="color:  #aa0462; display: inline;">1,000's of ways</span> you can change school, <span style="color:#cd6f6f; opacity: 0; display: inline;" class="fade-in-slow">no matter what you're struggling with.</span></h1>
               </div>
             </div>
@@ -404,12 +404,6 @@
             <img src="/assets/images/sadcat.jpg" style="max-width: 100%;" alt="sad cat"/><!--Creds to sari https://www.sari.studio/store/p/print-sad-cat-->
             <p>They literally don't ask you for advice, don't tell you before they change something, and when shit goes down, they don't say <em>anything.</em></p>
         </div>
-        <!-- <div class="card" data-link="PERSONALIZED" style="display: none;">
-            <h2>Want personalized suggestions?</h2>
-                <div class="tenor-gif-embed" data-postid="13813979" data-share-method="host" data-aspect-ratio="1.71724" data-width="100%"></div> 
-            <br>
-            <p>We never see your data: it's only saved on your own device (so don't clear cache!)</p>
-        </div> -->
         <!-- <div class="card" data-link="/doorstops/escape" style="display: none;" data-category="STR">
             <h2>You have rights, actually.</h2>
             <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
@@ -740,17 +734,17 @@
         </div>
       
     </div>
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="leftm" class="triangle-main" width='90' height='90' viewbox="0 0 24 24" onclick="handleSwipeRight(currentCard); showNextCard(currentCard)">
-        <path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" fill="#68A2F8" stroke="#68A2F8" stroke-width="2"/>
-        </svg> -->
-         <img src="/assets/svg/Favorite_fill.svg" id="leftm" class="triangle-main" width='90' height='90' onclick="if (lastShownSection === 2){handleSwipeRight(currentCard); showNextCard(currentCard)} else {enableSharing()}"/>
-        <img src="/assets/svg/Lamp.svg" id="nav4m" width="90" height="90" class="triangle-center" onclick="if (lastShownSection === 2){showSection(4)} else {showSection(2)}"/>
-
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="rightm" class="triangle-left" width='90' height='90' viewbox="0 0 24 24" fill="none" onclick="if (lastShownSection === 2){handleSwipeLeft(currentCard); showNextCard(currentCard)} else {showSection(2)}">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="rightm" class="triangle-left" width='90' height='90' viewbox="0 0 24 24" fill="none" onclick="if (lastShownSection === 2){handleSwipeLeft(currentCard); showNextCard(currentCard)} else {showSection(2)}">
             <path d="M12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C13.1819 3 14.3522 3.23279 15.4442 3.68508C16.5361 4.13738 17.5282 4.80031 18.364 5.63604C19.1997 6.47177 19.8626 7.46392 20.3149 8.55585C20.7672 9.64778 21 10.8181 21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4441 20.3149C14.3522 20.7672 13.1819 21 12 21L12 21Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
             <path d="M9 9L15 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
             <path d="M15 9L9 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+        </svg>
+
+    <img src="/assets/svg/Lamp.svg" id="nav4m" width="90" height="90" class="triangle-center" onclick="if (lastShownSection === 2){showSection(4)} else {showSection(2)}"/>
+    <img src="/assets/svg/Favorite_fill.svg" id="leftm" class="triangle-main" width='90' height='90' onclick="if (lastShownSection === 2){handleSwipeRight(currentCard); showNextCard(currentCard)} else {toggleBurger()}"/>
+    <img src="/assets/svg/pastswipes.svg" onclick="mobileSwipeRewind()" id="rewind" class="triangle-main absolute hamburger-menu menu-button-1" style="display: none;"/>
+    <img src="/assets/images/share.png" onclick="enableSharing()" id="share" class="triangle-main absolute hamburger-menu menu-button-2" style="display: none;"/>
+
     <div id="swiped-right-section" style="display: none;">
         <div class="content">
             <h1>Doorstop Fellows</h1>
@@ -789,14 +783,11 @@
         </div>
         <br><br id="scrollToHere">
         <iframe id="howto" src="/doorstops/howto-embed" width="100%" height="600vh"></iframe>
-        <div id="content-placeholder">
-        <!-- for iframe imports <iframe id="main" width="100%" height="300000px"></iframe> -->
+        <div id="content-placeholder" class="content-placeholder">
             
         </div>
         <iframe width="100%" height="300px" style="min-height: 400px; overflow-x: hidden;" id="doorstop-frame"></iframe>
         
-
-     
         <br><br>
     </div>
     <div id="share-container" class="share-container">
@@ -1511,22 +1502,27 @@ function handleSwipeRight(card) {
     let cardLink = card.dataset.link;
     let cardCategory = card.dataset.category;
     let cardid;
-    removeScript("/doorstops/naptime.js")
+    // removeScript("/doorstops/naptime.js")
     if (cardLink) {
         currentDoorstop = cardLink;
         if (cardLink.includes("#")) {
             cardid = cardLink.split('#')[1];
         }
-        // if (cardLink === "PERSONALIZED") {
-        //     let dinky = document.getElementById('popup');
-        //     dinky.style.display = "flex";
-        // }
-        if (cardLink.startsWith('https://')) {
-            loadIframe(cardLink); // not currently handling cards with external links
-        } 
+        if (cardLink.startsWith('https://') && !cardLink.includes('ref')) {
+            // FOR AN IFRAME-FREE WORKLOAD
+            // if (iOS && cardLink.includes()) {
+
+            // } else {
+            
+                loadIframe(cardLink); // not currently handling cards with external links
+            // }
+        }  
         else {
             document.getElementById("left-section").style.width = "90%";
             iframe.src = "";
+            if (cardLink.includes('ref')) {
+                cardLink = "/doorstops/ref"
+            }
         setTimeout(() => {
             fetch(cardLink)
         .then(response => response.text())
@@ -1560,6 +1556,9 @@ function handleSwipeRight(card) {
                     loadStylesheet("/doorstops/naptime.css");
                     loadStylesheet("/assets/css/emoji.css");
                     loadScript("/doorstops/naptime.js");
+                } else if (doc.querySelector(".text-api-input")) {
+                    loadStylesheet("/doorstops/awful.css");
+                    loadScript("/doorstops/awful.js");
                 } 
                 if (cardid) { // scroll to #ID
                     window.location.hash = cardid;            
@@ -1575,10 +1574,14 @@ function handleSwipeRight(card) {
                 loadScript("/assets/js/food.js");
             } else if (doc.querySelector(".ref")) {
                 loadStylesheet("/assets/css/dynamic.css");
-                content.innerHTML = doc.querySelector(".ref").outerHTML;
+                content.innerHTML = body.outerHTML;
                 loadScript("/assets/js/ref.js");
                 loadScript("/assets/js/ref-dashboard.js");
-                setTimeout(() => callthis(), 200);
+                setTimeout(() => {
+                    if (!document.getElementById("desk7")) {
+                        callthis()
+                    }
+                }, 300);
             }
             else {
                 content.innerHTML = body.outerHTML;
@@ -1650,7 +1653,6 @@ iframe.addEventListener('load', function() {
         }
     }
 });
-
 
 function loadIframe(cardLink) {
     let url = new URL(cardLink);
