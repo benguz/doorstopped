@@ -63,11 +63,17 @@
         background: #68A2F8;
     }
     @keyframes swing {
-  0% { transform: rotate(270deg) rotate(-90deg); }
-  50% { transform: rotate(360deg) rotate(90deg); }
-  100% { transform: rotate(270deg) rotate(-90deg); }
+        0% { transform: rotate(0deg); }
+  50% { transform: rotate(-200deg); }
+  100% { transform: rotate(0deg);}
 }
-    .split img {
+
+@keyframes superSwing {
+        0% { transform: rotate(0deg); }
+  50% { transform: rotate(-2000deg); }
+  100% { transform: rotate(0deg);}
+}
+    .split .rotate {
         width: 200px;
         max-width: 70%;
         height: auto; 
@@ -76,6 +82,39 @@
         animation: swing 2s infinite ease-in-out;
         transform-origin: top center;
     }
+
+    .question-container {
+  text-align: center;
+}
+
+.question {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.answer-button {
+  background-color: #FFD1DC; /* Light pink */
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition-duration: 0.4s;
+}
+
+.answer-button:hover {
+  background-color: #F76C6C; /* A darker shade of pink */
+  color: white;
+}
+.centered {
+    max-width: 70%; padding: 20px 20px 0px 20px
+}
 
 </style>
   </head>
@@ -88,22 +127,47 @@ Validation from your friends that something’s wrong allows you to take the nex
 Graph from /getout. 2 minutes building relationships changes school.
 
 There is no accountability on school rules. So adults will enforce them (on students they don’t like)... unless they see a reason not to (mutual trust). -->
-
+    <p id="#top" class="scrollToTop"></p>
     <div id="scoop-section" class="trustSection" style="display: none">
         <div class="split">
-            <p style="max-width: 70%; padding: 20px 20px 0px 20px">Get extra food at lunch by making friends with the lunch person</p>
-            <img src="/assets/images/trust/scoop-empty.png">
+            <p class="centered">Get extra food at lunch by making friends with the lunch lady</p>
+            <br><br><br>
+            <img class="rotate" src="/assets/images/trust/scoop-empty.png">
         </div>
-        <h2></h2>
+        <div class="split">
+            <br>
+            <p class="centered">All it takes is saying "hey, how are ya?"</p>
+            <p class="centered">Let's practice:</p>
+            <div class="question-container">
+                <p class="question">What do you say?</p>
+                <button class="answer-button" onclick="document.getElementById('answer-scoop').style.animationName = 'superSwing'; document.getElementById('wrong').style.display = 'block'">GIVE ME FOOD NOW, FOOL</button>
+                <button class="answer-button" onclick="document.getElementById('answer-scoop').src = '/assets/images/trust/scoop-full.png'; document.getElementById('answer-scoop').style.animationName = 'swing'; document.getElementById('right').style.display = 'block'; document.getElementById('wrong').style.display = 'none'    ">Thanks so much, how are you today!</button>
+                <button class="answer-button" onclick="document.getElementById('answer-scoop').style.animationName = 'superSwing'; document.getElementById('wrong').style.display = 'block'">*grunt*</button>
+              </div>
+              <p style="width: 100%; height: 100px"></p>
+              <img class="rotate" id="answer-scoop" style="margin: auto" src="/assets/images/trust/scoop-empty.png">
+              <br>
+              <p class="centered" id="wrong" style="display: none">no! look what you did! try again</p>
+              <p class="centered" id="right" style="display: none">awesome! tomorrow all you gotta do is ask for more food, they'll say yes. soon they'll give you the extra scoop without you even asking!</p>
+        </div>
+        <p style="width: 100%; height: 50px"></p>
+
     </div>
     <div id="worst-section" class="trustSection" style="display: none">
         <div class="split">
             <p>Turn your worst class into your best in 2 minutes</p>
-            <img src="/assets/images/trust/scoop-empty.png">
+            <!-- <img  src="/assets/images/trust/scoop-empty.png"> -->
         </div>
+        <p style="width: 100%; height: 100px"></p>
+
     </div>
     <div id="jail-section" class="trustSection" style="display: none">
+        <div class="split">
 
+        <p>Ever notice that the smart kids get away with everything?</p>
+        <img width="75%" style="margin: auto;" src="/assets/images/gpagetaway.png">
+        </div>
+        <p style="width: 100%; height: 100px"></p>
     </div>
     <div id="breakfast-section" class="trustSection" style="display: none">
 
@@ -117,7 +181,7 @@ There is no accountability on school rules. So adults will enforce them (on stud
 <script src="/assets/js/script.js" defer></script>
 <script>
     $(document).ready(function() {
-    $('button').on('click', function() {
+    $('.intro-question').on('click', function() {
         var buttonId = this.id; 
         showTrustSection(buttonId); 
     });
@@ -127,6 +191,7 @@ function showTrustSection(id) {
     $('.trustSection').css('display', 'none');
     var section = '#' + id + "-section"
     $(section).css('display', 'block');
+    $(".scrollToTop").get(0).scrollIntoView({behavior: 'smooth'});
 }
 
 </script>
