@@ -55,16 +55,16 @@ body, #dashboard-body {
   font-size: 14px;
 }
 
-#content-placeholder {
+.content-placeholder {
   text-align: left;
   width: 80%;
   margin: auto;
 }
 
-#content-placeholder .yonk {
+.content-placeholder .yonk {
   font-family: 'Poppins', sans-serif;
 }
-#content-placeholder .yonk p {
+.content-placeholder .yonk p {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   margin-bottom: 0.5em; 
@@ -72,56 +72,56 @@ body, #dashboard-body {
   font-size: 14pt;
 }
 
-#content-placeholder .yonk p, h1, h2, h3, li {
+.content-placeholder .yonk p, h1, h2, h3, li {
   font-family: 'Poppins', sans-serif;
   color: black;
 }
 
-#content-placeholder .yonk a {
+.content-placeholder .yonk a {
   font-family: 'Poppins', sans-serif;
   text-decoration: underline;
   display: inline;
   font-size: 14pt;
   line-height: 1.6;
 }
-#content-placeholder h1 {
+.content-placeholder h1 {
   font-size: 25pt;
   line-height: 1;
   font-weight: 600;
   text-decoration: none;
 }
-#content-placeholder h2 {
+.content-placeholder h2 {
   margin-top: 1em;
   font-weight: 600;
   font-size: 20pt;
 }
 
-#content-placeholder h3 {
+.content-placeholder h3 {
   margin-top: 5px;
   font-weight: 600;
   font-size: 20pt;
 }
 
-#content-placeholder .yonk ul {
+.content-placeholder .yonk ul {
   list-style-type: disc; /* or circle or square, depending on the bullet style you want */
   padding-left: 30px;
   font-size: 14pt;
 }
 
-#content-placeholder .yonk li {
+.content-placeholder .yonk li {
   list-style-type: disc !important; 
 }
-#content-placeholder .badonk {
+.content-placeholder .badonk {
   list-style-type: disc; /* or circle or square, depending on the bullet style you want */
   padding-left: 30px;
   font-size: 14pt;
 
 }
-#content-placeholder .badonk li {
+.content-placeholder .badonk li {
   list-style-type: disc !important; 
 
 }
-#content-placeholder .honk {
+.content-placeholder .honk {
   list-style-type: disc !important; 
 }
 
@@ -988,7 +988,7 @@ input {
     height: 95%;
     background-image: none; 
   }
-  #content-placeholder {
+  .content-placeholder {
     width: 100%;
     max-width: 100%;
   }
@@ -1367,6 +1367,10 @@ h2.tooltip {
   padding: 8px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
+}
+
+#onboarding-hero {
+  max-width: 100%; margin: auto; text-align: center;
 }
   @media screen and (max-width: 620px) {
     .floating { 
