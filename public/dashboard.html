@@ -283,16 +283,7 @@
             
             <p>Ever been injured where you can kind of play but it hurts more every game? You know you should stop but the season seems so close.<br><strong>School can feel the same way</strong>: you’re stuck on an assignment or you have no idea what’s going on in class, but stick it out, head down, and make it to the end of the semester.<br>But school’s different. If you <strong>ask for help</strong>, you don’t get taken out of the game, <strong>you get back in</strong>. You get better. Your teacher respects you more.<br>Everyone's struggled like this. Wanna hear professional athletes say it?</p>
         </div> -->
-        <div id="policy-card-7" class="card" data-link="/doorstops/awful" style="display: none;" data-category="policy">
-            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
-                <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" >
-              </video>
-              <div class="card-caption"> 
-                <h2>Fight awful policy</h2>
-                <p>Prevent it before it happens with AI</p>
-        </div>
-        </div>
-        <div id="policy-card-5" class="card" data-link="/doorstops/leverage/phones" style="display: none;" data-category="policy">
+        <div id="policy-card-5" class="card" data-link="/doorstops/leverage/phones" style="display: none;" data-category="culture">
             <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" >
               </video>
@@ -301,7 +292,7 @@
                 <p>for the same reason your teachers hate them...</p>
         </div>
         </div>
-        <div id="career-card" class="card" style="display: none;" data-link="https://fix.school/doorstops/mentor" data-category="college-career">
+        <div id="career-card" class="card" style="display: none;" data-link="/doorstops/mentor" data-category="college-career">
             <video autoplay playsinline muted loop id="mentor" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" >
               </video>
@@ -413,7 +404,6 @@
             <img src="/assets/images/sadcat.jpg" style="max-width: 100%;" alt="sad cat"/><!--Creds to sari https://www.sari.studio/store/p/print-sad-cat-->
             <p>They literally don't ask you for advice, don't tell you before they change something, and when shit goes down, they don't say <em>anything.</em></p>
         </div>
-
         <!-- <div class="card" data-link="/doorstops/escape" style="display: none;" data-category="STR">
             <h2>You have rights, actually.</h2>
             <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
@@ -720,7 +710,7 @@
                 <div id="overlay">
                 <h2 class="overlay-text" style="text-align: center; max-width: 80%; padding-bottom: 10px;">Swipe through problems you might have at school</h2>
                 <br>
-                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center;">
+                <div style="display: flex; flex-direction: row; justify-content: center;">
                     <div>
                         <h2 class="overlay-text" style="text-align: left; max-width: 90%;">Swipe right for a solution </h2>
                         <br>
@@ -729,7 +719,7 @@
                     <img width="90px" src="/assets/svg/swiperight.svg">
                 </div>
                 <br>
-                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center;">
+                <div style="display: flex; flex-direction: row; justify-content: center;">
                     <img width="90px" src="/assets/svg/swipeleft.svg">                   
                     <div>
                         <h2  class="overlay-text" style="text-align: left; max-width: 90%;">Swipe left to see another problem</h2>
@@ -752,8 +742,6 @@
 
     <img src="/assets/svg/Lamp.svg" id="nav4m" width="90" height="90" class="triangle-center" onclick="if (lastShownSection === 2){showSection(4)} else {showSection(2)}"/>
     <img src="/assets/svg/Favorite_fill.svg" id="leftm" class="triangle-main" width='90' height='90' onclick="if (lastShownSection === 2){handleSwipeRight(currentCard); showNextCard(currentCard)} else {toggleBurger()}"/>
-
-    <!-- <img src="/assets/svg/hamburger.svg" id="hamburger" class="triangle-main" style="bottom: calc(2% + 70px); transform: rotate(0deg); height: 70px; padding: 18px;" /> -->
     <img src="/assets/svg/pastswipes.svg" onclick="mobileSwipeRewind()" id="rewind" class="triangle-main absolute hamburger-menu menu-button-1" style="display: none;"/>
     <img src="/assets/images/share.png" onclick="enableSharing()" id="share" class="triangle-main absolute hamburger-menu menu-button-2" style="display: none;"/>
 
@@ -800,20 +788,8 @@
         </div>
         <iframe width="100%" height="300px" style="min-height: 400px; overflow-x: hidden;" id="doorstop-frame"></iframe>
         
-
-     
         <br><br>
     </div>
-    <div id="rewind-container" class="share-container" style="overflow-y: hidden">
-        <div id="background" style="position: absolute; bottom: 0; width: 100%;">
-            <div class="share-dome" style="width: 100%; height: 100px; margin-bottom: -1px; border-radius: 80% 80% 0 0; background-color: #FFFCFB;"></div>
-            <div class="share-rectangle" style="width: 100%; height: 240px; background-color: #FFFCFB;"></div>
-        </div>
-        <br><br>
-        <div id="swiped-right-list-mobile" style="position: relative; overflow-y: auto; height: 300px">
-
-        </div>
-      </div>
     <div id="share-container" class="share-container">
         <div id="background" style="position: absolute; bottom: 0; width: 100%;">
             <div class="share-dome" style="width: 100%; height: 100px; margin-bottom: -1px; border-radius: 80% 80% 0 0; background-color: #FFFCFB;"></div>
@@ -975,7 +951,7 @@
                 <div class="bingo-face front">Internship!</div>
                 <div class="bingo-face back">3-step guide for students</div>
             </div>
-            <div class="bingo-item" data-link="https://fix.school/doorstops/mentor" onclick="handleSwipeRight(this)">
+            <div class="bingo-item" data-link="/doorstops/mentor" onclick="handleSwipeRight(this)">
                 <div class="bingo-face front">Find a mentor</div>
                 <div class="bingo-face back">Research + career help</div>
             </div>
@@ -1214,9 +1190,6 @@
             document.getElementById("onboarding-element").style.zIndex = "-1";
             document.getElementById("onboarding-survey").style.display = "flex";
         }, 4000)
-        if (iOS()) {
-            iOSOverlay();
-        }
 
         localStorage.setItem("onboardingDone", "true")
     } else {
@@ -1243,10 +1216,6 @@
             first.dataset.link = placeHolderStart.dataset.link;
             first.dataset.category = placeHolderStart.dataset.category;
             placeHolderStart.remove();
-            if (iOS()) {
-                iOSOverlay();
-            }
-
         } else {
             // Function to set the last three children to display: block
             var parent = document.getElementById("card-container");
@@ -1278,28 +1247,6 @@
         }
     }
     document.getElementById("dashboard-body").style.display = "flex";
-
-function iOSOverlay() {
-    document.getElementById("overlay").innerHTML = `
-                <h2 class="overlay-text" style="text-align: center; max-width: 80%; padding-bottom: 10px;">Look through problems you have at school</h2>
-                <br>
-                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center;">
-                    <div>
-                        <h2 class="overlay-text" style="text-align: left; max-width: 90%;">Tap the heart to see a solution</h2>
-                        <br>
-                    </div>
-                    <img style="transform: rotate(20deg)" width="90px" src="/assets/svg/Favorite_fill.svg">
-                </div>
-                <br>
-                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center">
-                    <img style="transform: rotate(-20deg)" width="90px" src="/assets/svg/close_ring.svg">                   
-                    <div>
-                        <h2 class="overlay-text" style="text-align: right; max-width: 90%;">Tap the X to see another problem</h2>
-                    </div>
-                </div>
-                <br><br><br>
-    `
-}
 
 let selectedCategories = [];
 function toggleClick(elementId)  {
@@ -1483,7 +1430,6 @@ if (window.innerWidth < 1000) {
 
 var cardArray = document.getElementsByClassName("card");
 var currentCard = cardArray[cardArray.length - 1]
-if (!iOS()) {
 document.querySelectorAll('.card').forEach((card, index) => {
     let hammertime = new Hammer(card);
     let initialPos = 0;
@@ -1536,7 +1482,6 @@ document.querySelectorAll('.card').forEach((card, index) => {
         rafId = null;
     });
 });
-}
 function handleSwipeLeft(card) {
     if (card.dataset.category === "50-swipes-survey-yes") {
                 plausible("50-swipes-survey-no");
@@ -1557,7 +1502,7 @@ function handleSwipeRight(card) {
     let cardLink = card.dataset.link;
     let cardCategory = card.dataset.category;
     let cardid;
-    removeScript("/doorstops/naptime.js")
+    // removeScript("/doorstops/naptime.js")
     if (cardLink) {
         currentDoorstop = cardLink;
         if (cardLink.includes("#")) {
@@ -1569,9 +1514,10 @@ function handleSwipeRight(card) {
             // if (iOS && cardLink.includes()) {
 
             // } else {
+            
                 loadIframe(cardLink); // not currently handling cards with external links
             // }
-        } 
+        }  
         else {
             document.getElementById("left-section").style.width = "90%";
             iframe.src = "";
@@ -1597,7 +1543,6 @@ function handleSwipeRight(card) {
             if (yonkElement) {
                 // put the content of 'yonk' element inside the placeholder
                 loadStylesheet("/assets/css/style.css");
-                stylesheets.push("/assets/css/style.css");
                 content.innerHTML = yonkElement.outerHTML;
                 // Remove the first five <br> tags
                 let brTags = document.querySelectorAll(".yonk > br");
@@ -1616,6 +1561,7 @@ function handleSwipeRight(card) {
                     loadStylesheet("/doorstops/awful.css");
                     loadScript("/doorstops/awful.js");
                 }
+
                 if (cardid) { // scroll to #ID
                     window.location.hash = cardid;            
                 }
@@ -1640,6 +1586,7 @@ function handleSwipeRight(card) {
                         } else {
                             // handle exception
                         }
+
                     }
                 }, 300);
             }
@@ -1712,7 +1659,6 @@ iframe.addEventListener('load', function() {
     }
 });
 
-
 function loadIframe(cardLink) {
     let url = new URL(cardLink);
     document.getElementById("content-placeholder").innerHTML = "";
@@ -1744,14 +1690,11 @@ function showNextCard(card) {
     setTimeout(() => {card.style.display = 'none'; }, 100);
 }
 
-let scripts = [];
-let stylesheets = []
 function loadScript(src) {
     let script = document.createElement('script');
     script.src = src;
     script.async = true;
     document.head.appendChild(script);
-    scripts.push(src)
 }
 
 function removeScript(src) {
@@ -1767,7 +1710,6 @@ function loadStylesheet(url) {
     link.rel = "stylesheet";
     link.href = url;
     document.getElementsByTagName("head")[0].appendChild(link);
-    stylesheets.push(url)
 } 
 
 function removeStylesheet(href) {
@@ -1809,12 +1751,9 @@ if (!dramaReward) {
     dramaReward = 0;
 }
 let sharing = document.getElementById("share-container");
-let rewind = document.getElementById("rewind-container");
 function enableSharing() {
     document.getElementById("rightm").style.display = "none";
     document.getElementById("leftm").style.display = "none";
-    document.getElementById("share").style.display = "none";
-    document.getElementById("rewind").style.display = "none";
     if (dramaReward != 0) {
         document.getElementById("bar-allocation").style.width = (20 * dramaReward) + "%";
     }
@@ -1828,24 +1767,7 @@ function enableSharing() {
         iframe.contentWindow.document.addEventListener("click", handleClickOutside);
     }, 300)
 }
-function mobileSwipeRewind() {
-    let swipeList = document.getElementById('swiped-right-list-mobile'); 
-    showPastSwipes(swipeList); 
-    let rewindExplainer = document.createElement("h2");
-    rewindExplainer.textContent = "See past swipes right";
-    swipeList.insertBefore(rewindExplainer, swipeList.firstChild);
-    rewind.style.display = "block";
-    rewind.classList.add('visible');
-    document.getElementById("rightm").style.display = "none";
-    document.getElementById("leftm").style.display = "none";
-    document.getElementById("share").style.display = "none";
-    document.getElementById("rewind").style.display = "none";
 
-    setTimeout(() => {
-        document.addEventListener("click", handleClickOutside);
-        iframe.contentWindow.document.addEventListener("click", handleClickOutside);
-    }, 300)
-}
 function handleClickOutside(e) {
   let targetElement = e.target;
 
@@ -1857,12 +1779,9 @@ function handleClickOutside(e) {
   }
   sharing.style.display = "none";
   sharing.classList.remove("visible");
-  rewind.style.display = "none";
-  rewind.classList.remove("visible");
   document.getElementById("rightm").style.display = "inline-block";
   document.getElementById("leftm").style.display = "inline-block";
-  document.getElementById("share").style.display = "inline-block";
-  document.getElementById("rewind").style.display = "inline-block";
+
   document.removeEventListener("click", handleClickOutside);
 }
 function updateDrama() {
@@ -1930,32 +1849,8 @@ function webShare() {
         });
     } else {
         console.log('Web Share API not supported.');
-    } 
-}
-
-function toggleBurger() {
-    if (document.getElementById("share").style.display === "inline-block") {
-        document.getElementById("share").style.display = "none";
-        document.getElementById("rewind").style.display = "none";
-    } else {
-        document.getElementById("share").style.display = "inline-block";
-        document.getElementById("rewind").style.display = "inline-block";
     }
-}
-
-
-function showPastSwipes(list) {
-    list.innerHTML = '';
-        let l = 0;
-        swipedRight.forEach(card => {
-            let listItem = document.createElement('li');
-            let link = document.createElement('a');
-            link.href = 'https://fix.school/dashboard#' + card.link.replace("%23", "#");
-            link.textContent = card.title;
-            listItem.className = 'liked'
-            listItem.appendChild(link);
-            list.appendChild(listItem);
-        });
+    
 }
 
 // Add event listeners to navbar icons
@@ -1981,24 +1876,10 @@ function showSection(n) {
         if (isMobile === 1) {
             document.getElementById('nav4m').src = "/assets/svg/Lamp.svg";
             document.getElementById('nav4m').style.display = "inline-block";
-            document.getElementById('nav4m').classList.remove("absolute");
             document.getElementById('rightm').style.display = "inline-block";
             document.getElementById('leftm').style.display = "inline-block";
-            document.getElementById('leftm').classList.remove("hamburger-menu");
-            document.getElementById('share').style.display = "none";
-            document.getElementById('rewind').style.display = "none";
-            document.getElementById('leftm').classList.remove("absolute");
-            document.getElementById('rightm').classList.remove("absolute");
             document.getElementById('leftm').src = "/assets/svg/Favorite_fill.svg";
         }
-        stylesheets.forEach(element => {
-            removeStylesheet(element);
-        });
-        stylesheets.length = 0;
-        scripts.forEach(element => {
-            removeScript(element);
-        });
-        scripts.length = 0;
         lastShownSection = 2;
         window.location.hash = ""; // do I want this tho?
     } else if (n === 1) {
@@ -2022,17 +1903,17 @@ function showSection(n) {
         if (!firstRightSwipeDone) {
             if (isMobile === 0) {
                 setTimeout(() => {
-                    document.getElementById('doorstop-onboarding').style.display = "block";
-                    document.getElementById("nav2").classList.add("desktop-button-onboard");
-                    document.getElementById("nav4").classList.add("desktop-button-onboard");
-                    document.addEventListener('click', function(event) {
-                        removeOnboarding()
-                    });
-                    document.addEventListener('keydown', function(event) {
-                        removeOnboarding()
-                    });
-                }, 3000);
-            } 
+                document.getElementById('doorstop-onboarding').style.display = "block";
+                document.getElementById("nav2").classList.add("desktop-button-onboard");
+                document.getElementById("nav4").classList.add("desktop-button-onboard");
+                document.addEventListener('click', function(event) {
+                    removeOnboarding()
+                });
+                document.addEventListener('keydown', function(event) {
+                    removeOnboarding()
+                });
+            }, 3000);
+            }
             localStorage.setItem("firstRightSwipeDone", "true");
 
         }
@@ -2055,25 +1936,14 @@ function showSection(n) {
             document.getElementById('nav4m').style.display = "none";
             document.getElementById('leftm').style.display = "none";
             document.getElementById('rightm').style.display = "inline-block";
-            document.getElementById('leftm').classList.add("absolute")
-            document.getElementById('rightm').classList.add("absolute");
-            document.getElementById('leftm').src = "/assets/svg/hamburger.svg"; 
-            document.getElementById('leftm').classList.add("hamburger-menu");
-            let onboardingProgress = localStorage.getItem('swipedRight');
-            if (!onboardingProgress) {
-                setTimeout(() => {
-                    if (document.querySelector('#left-section').style.display === "block") {
-                        document.getElementById('leftm').style.display = "inline-block";
-                        toggleBurger()
-                    }
-                }, 2000);
-            } else {
-                setTimeout(() => {
-                    if (document.querySelector('#left-section').style.display === "block") {
-                        document.getElementById('leftm').style.display = "inline-block";        
-                    }
-                }, 4000);
-            }
+            setTimeout(() => {
+                if (document.querySelector('#left-section').style.display === "block") {
+                    // document.getElementById('leftm').classList.add("fade-in");
+                    document.getElementById('leftm').src = "/assets/images/share.png"; 
+                    document.getElementById('leftm').style.display = "inline-block";
+                }
+            }, 4000);
+
         }
         lastShownSection = 3;
     } 
@@ -2090,8 +1960,7 @@ function showSection(n) {
         document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; // + mobileNav[isMobile]
         // document.getElementById('nav4m').src = "/assets/svg/cards-light.svg";
         if (isMobile === 1) {
-            document.getElementById('nav4m').src = "/assets/svg/cards-mobile.svg";
-            document.getElementById('nav4m').classList.add("absolute");
+            document.getElementById('nav4m').src = "/assets/svg/cards-mobile.svg"
         }
         document.getElementById('rightm').style.display = "none";
         document.getElementById('leftm').style.display = "none";
@@ -2102,8 +1971,32 @@ function showSection(n) {
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
         document.querySelector('#account-section').style.display = 'block';
         let list = document.querySelector('#swiped-right-list');
-        showPastSwipes(list)
-        
+        list.innerHTML = '';
+        let l = 0;
+        swipedRight.forEach(card => {
+            let listItem = document.createElement('li');
+            let link = document.createElement('a');
+            // let button = document.createElement('button');
+            link.href = card.link;
+            link.textContent = card.title;
+            link.target = '_blank';
+            listItem.className = 'liked'
+            listItem.appendChild(link);
+            list.appendChild(listItem);
+            // let dropdown = document.createElement('div');
+            // if (l === 0) {
+            //     fetch('pages.json')
+            //     .then(response => response.json())
+            //     .then(data => { data.filter(page => {
+            //             if (page.name === card.contents) {
+            //                 dropdown.textContent = page.html;
+            //             }
+            //         });
+            //     });
+            //     l++;
+            // }
+            // listItem.appendChild(dropdown);
+        });
         document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; //+ mobileNav[isMobile]
 
         document.getElementById('img5').src = "/assets/svg/User_alt_fill.svg"; //+ mobileNav[isMobile]

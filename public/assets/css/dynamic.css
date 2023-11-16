@@ -13,6 +13,7 @@ body {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    /* background: #f5f5f5; */
 }
 
 #container {
@@ -390,8 +391,8 @@ display: "inline"}
     flex-direction: column;
   }
   .desk {
-    width: 56px;
-    height: 37px;
+  width: 56px;
+  height: 37px;
   border-radius: 4px;
   background-color: #a0a0a0;
 }
