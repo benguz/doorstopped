@@ -283,7 +283,16 @@
             
             <p>Ever been injured where you can kind of play but it hurts more every game? You know you should stop but the season seems so close.<br><strong>School can feel the same way</strong>: you’re stuck on an assignment or you have no idea what’s going on in class, but stick it out, head down, and make it to the end of the semester.<br>But school’s different. If you <strong>ask for help</strong>, you don’t get taken out of the game, <strong>you get back in</strong>. You get better. Your teacher respects you more.<br>Everyone's struggled like this. Wanna hear professional athletes say it?</p>
         </div> -->
-        <div id="policy-card-5" class="card" data-link="/doorstops/leverage/phones" style="display: none;" data-category="culture">
+        <div id="policy-card-7" class="card" data-link="/doorstops/awful" style="display: none;" data-category="policy">
+            <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
+                <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" >
+              </video>
+              <div class="card-caption"> 
+                <h2>Fight awful policy</h2>
+                <p>Prevent it before it happens with AI</p>
+        </div>
+        </div>
+        <div id="policy-card-5" class="card" data-link="/doorstops/leverage/phones" style="display: none;" data-category="policy">
             <video autoplay playsinline muted loop id="myVideo" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" >
               </video>
@@ -292,7 +301,7 @@
                 <p>for the same reason your teachers hate them...</p>
         </div>
         </div>
-        <div id="career-card" class="card" style="display: none;" data-link="/doorstops/mentor" data-category="college-career">
+        <div id="career-card" class="card" style="display: none;" data-link="https://fix.school/doorstops/mentor" data-category="college-career">
             <video autoplay playsinline muted loop id="mentor" height="100%" class="card-video">
                 <source data-src-mp4="/assets/cards/mp4/panda-tumbles-down.mp4" data-src-webm="/assets/cards/panda-tumbles-down.webm" >
               </video>
@@ -716,7 +725,7 @@
                 <div id="overlay">
                 <h2 class="overlay-text" style="text-align: center; max-width: 80%; padding-bottom: 10px;">Swipe through problems you might have at school</h2>
                 <br>
-                <div style="display: flex; flex-direction: row; justify-content: center;">
+                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center;">
                     <div>
                         <h2 class="overlay-text" style="text-align: left; max-width: 90%;">Swipe right for a solution </h2>
                         <br>
@@ -725,7 +734,7 @@
                     <img width="90px" src="/assets/svg/swiperight.svg">
                 </div>
                 <br>
-                <div style="display: flex; flex-direction: row; justify-content: center;">
+                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center;">
                     <img width="90px" src="/assets/svg/swipeleft.svg">                   
                     <div>
                         <h2  class="overlay-text" style="text-align: left; max-width: 90%;">Swipe left to see another problem</h2>
@@ -743,14 +752,19 @@
     <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="leftm" class="triangle-main" width='90' height='90' viewbox="0 0 24 24" onclick="handleSwipeRight(currentCard); showNextCard(currentCard)">
         <path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" fill="#68A2F8" stroke="#68A2F8" stroke-width="2"/>
         </svg> -->
-         <img src="/assets/svg/Favorite_fill.svg" id="leftm" class="triangle-main" width='90' height='90' onclick="if (lastShownSection === 2){handleSwipeRight(currentCard); showNextCard(currentCard)} else {enableSharing()}"/>
-        <img src="/assets/svg/Lamp.svg" id="nav4m" width="90" height="90" class="triangle-center" onclick="if (lastShownSection === 2){showSection(4)} else {showSection(2)}"/>
-
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="rightm" class="triangle-left" width='90' height='90' viewbox="0 0 24 24" fill="none" onclick="if (lastShownSection === 2){handleSwipeLeft(currentCard); showNextCard(currentCard)} else {showSection(2)}">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="rightm" class="triangle-left" width='90' height='90' viewbox="0 0 24 24" fill="none" onclick="if (lastShownSection === 2){handleSwipeLeft(currentCard); showNextCard(currentCard)} else {showSection(2)}">
             <path d="M12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 10.8181 3.23279 9.64778 3.68508 8.55585C4.13738 7.46392 4.80031 6.47177 5.63604 5.63604C6.47177 4.80031 7.46392 4.13738 8.55585 3.68508C9.64778 3.23279 10.8181 3 12 3C13.1819 3 14.3522 3.23279 15.4442 3.68508C16.5361 4.13738 17.5282 4.80031 18.364 5.63604C19.1997 6.47177 19.8626 7.46392 20.3149 8.55585C20.7672 9.64778 21 10.8181 21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4441 20.3149C14.3522 20.7672 13.1819 21 12 21L12 21Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
             <path d="M9 9L15 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
             <path d="M15 9L9 15" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+        </svg>
+
+    <img src="/assets/svg/Lamp.svg" id="nav4m" width="90" height="90" class="triangle-center" onclick="if (lastShownSection === 2){showSection(4)} else {showSection(2)}"/>
+    <img src="/assets/svg/Favorite_fill.svg" id="leftm" class="triangle-main" width='90' height='90' onclick="if (lastShownSection === 2){handleSwipeRight(currentCard); showNextCard(currentCard)} else {toggleBurger()}"/>
+
+    <!-- <img src="/assets/svg/hamburger.svg" id="hamburger" class="triangle-main" style="bottom: calc(2% + 70px); transform: rotate(0deg); height: 70px; padding: 18px;" /> -->
+    <img src="/assets/svg/pastswipes.svg" onclick="mobileSwipeRewind()" id="rewind" class="triangle-main absolute hamburger-menu menu-button-1" style="display: none;"/>
+    <img src="/assets/images/share.png" onclick="enableSharing()" id="share" class="triangle-main absolute hamburger-menu menu-button-2" style="display: none;"/>
+
     <div id="swiped-right-section" style="display: none;">
         <div class="content">
             <h1>Doorstop Fellows</h1>
@@ -799,6 +813,16 @@
      
         <br><br>
     </div>
+    <div id="rewind-container" class="share-container" style="overflow-y: hidden">
+        <div id="background" style="position: absolute; bottom: 0; width: 100%;">
+            <div class="share-dome" style="width: 100%; height: 100px; margin-bottom: -1px; border-radius: 80% 80% 0 0; background-color: #FFFCFB;"></div>
+            <div class="share-rectangle" style="width: 100%; height: 240px; background-color: #FFFCFB;"></div>
+        </div>
+        <br><br>
+        <div id="swiped-right-list-mobile" style="position: relative; overflow-y: auto; height: 300px">
+
+        </div>
+      </div>
     <div id="share-container" class="share-container">
         <div id="background" style="position: absolute; bottom: 0; width: 100%;">
             <div class="share-dome" style="width: 100%; height: 100px; margin-bottom: -1px; border-radius: 80% 80% 0 0; background-color: #FFFCFB;"></div>
@@ -960,7 +984,7 @@
                 <div class="bingo-face front">Internship!</div>
                 <div class="bingo-face back">3-step guide for students</div>
             </div>
-            <div class="bingo-item" data-link="/doorstops/mentor" onclick="handleSwipeRight(this)">
+            <div class="bingo-item" data-link="https://fix.school/doorstops/mentor" onclick="handleSwipeRight(this)">
                 <div class="bingo-face front">Find a mentor</div>
                 <div class="bingo-face back">Research + career help</div>
             </div>
@@ -1199,6 +1223,9 @@
             document.getElementById("onboarding-element").style.zIndex = "-1";
             document.getElementById("onboarding-survey").style.display = "flex";
         }, 4000)
+        if (iOS()) {
+            iOSOverlay();
+        }
 
         localStorage.setItem("onboardingDone", "true")
     } else {
@@ -1225,6 +1252,10 @@
             first.dataset.link = placeHolderStart.dataset.link;
             first.dataset.category = placeHolderStart.dataset.category;
             placeHolderStart.remove();
+            if (iOS()) {
+                iOSOverlay();
+            }
+
         } else {
             // Function to set the last three children to display: block
             var parent = document.getElementById("card-container");
@@ -1256,6 +1287,28 @@
         }
     }
     document.getElementById("dashboard-body").style.display = "flex";
+
+function iOSOverlay() {
+    document.getElementById("overlay").innerHTML = `
+                <h2 class="overlay-text" style="text-align: center; max-width: 80%; padding-bottom: 10px;">Look through problems you have at school</h2>
+                <br>
+                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center;">
+                    <div>
+                        <h2 class="overlay-text" style="text-align: left; max-width: 90%;">Tap the heart to see a solution</h2>
+                        <br>
+                    </div>
+                    <img style="transform: rotate(20deg)" width="90px" src="/assets/svg/Favorite_fill.svg">
+                </div>
+                <br>
+                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center">
+                    <img style="transform: rotate(-20deg)" width="90px" src="/assets/svg/close_ring.svg">                   
+                    <div>
+                        <h2 class="overlay-text" style="text-align: right; max-width: 90%;">Tap the X to see another problem</h2>
+                    </div>
+                </div>
+                <br><br><br>
+    `
+}
 
 let selectedCategories = [];
 function toggleClick(elementId)  {
@@ -1439,6 +1492,7 @@ if (window.innerWidth < 1000) {
 
 var cardArray = document.getElementsByClassName("card");
 var currentCard = cardArray[cardArray.length - 1]
+if (!iOS()) {
 document.querySelectorAll('.card').forEach((card, index) => {
     let hammertime = new Hammer(card);
     let initialPos = 0;
@@ -1491,6 +1545,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
         rafId = null;
     });
 });
+}
 function handleSwipeLeft(card) {
     if (card.dataset.category === "50-swipes-survey-yes") {
                 plausible("50-swipes-survey-no");
@@ -1522,7 +1577,12 @@ function handleSwipeRight(card) {
         //     dinky.style.display = "flex";
         // }
         if (cardLink.startsWith('https://')) {
-            loadIframe(cardLink); // not currently handling cards with external links
+            // FOR AN IFRAME-FREE WORKLOAD
+            // if (iOS && cardLink.includes()) {
+
+            // } else {
+                loadIframe(cardLink); // not currently handling cards with external links
+            // }
         } 
         else {
             document.getElementById("left-section").style.width = "90%";
@@ -1546,6 +1606,7 @@ function handleSwipeRight(card) {
             if (yonkElement) {
                 // put the content of 'yonk' element inside the placeholder
                 loadStylesheet("/assets/css/style.css");
+                stylesheets.push("/assets/css/style.css");
                 content.innerHTML = yonkElement.outerHTML;
                 // Remove the first five <br> tags
                 let brTags = document.querySelectorAll(".yonk > br");
@@ -1683,11 +1744,14 @@ function showNextCard(card) {
     setTimeout(() => {card.style.display = 'none'; }, 100);
 }
 
+let scripts = [];
+let stylesheets = []
 function loadScript(src) {
     let script = document.createElement('script');
     script.src = src;
     script.async = true;
     document.head.appendChild(script);
+    scripts.push(src)
 }
 
 function removeScript(src) {
@@ -1703,6 +1767,7 @@ function loadStylesheet(url) {
     link.rel = "stylesheet";
     link.href = url;
     document.getElementsByTagName("head")[0].appendChild(link);
+    stylesheets.push(url)
 } 
 
 function removeStylesheet(href) {
@@ -1744,9 +1809,12 @@ if (!dramaReward) {
     dramaReward = 0;
 }
 let sharing = document.getElementById("share-container");
+let rewind = document.getElementById("rewind-container");
 function enableSharing() {
     document.getElementById("rightm").style.display = "none";
     document.getElementById("leftm").style.display = "none";
+    document.getElementById("share").style.display = "none";
+    document.getElementById("rewind").style.display = "none";
     if (dramaReward != 0) {
         document.getElementById("bar-allocation").style.width = (20 * dramaReward) + "%";
     }
@@ -1760,7 +1828,24 @@ function enableSharing() {
         iframe.contentWindow.document.addEventListener("click", handleClickOutside);
     }, 300)
 }
+function mobileSwipeRewind() {
+    let swipeList = document.getElementById('swiped-right-list-mobile'); 
+    showPastSwipes(swipeList); 
+    let rewindExplainer = document.createElement("h2");
+    rewindExplainer.textContent = "See past swipes right";
+    swipeList.insertBefore(rewindExplainer, swipeList.firstChild);
+    rewind.style.display = "block";
+    rewind.classList.add('visible');
+    document.getElementById("rightm").style.display = "none";
+    document.getElementById("leftm").style.display = "none";
+    document.getElementById("share").style.display = "none";
+    document.getElementById("rewind").style.display = "none";
 
+    setTimeout(() => {
+        document.addEventListener("click", handleClickOutside);
+        iframe.contentWindow.document.addEventListener("click", handleClickOutside);
+    }, 300)
+}
 function handleClickOutside(e) {
   let targetElement = e.target;
 
@@ -1772,9 +1857,12 @@ function handleClickOutside(e) {
   }
   sharing.style.display = "none";
   sharing.classList.remove("visible");
+  rewind.style.display = "none";
+  rewind.classList.remove("visible");
   document.getElementById("rightm").style.display = "inline-block";
   document.getElementById("leftm").style.display = "inline-block";
-
+  document.getElementById("share").style.display = "inline-block";
+  document.getElementById("rewind").style.display = "inline-block";
   document.removeEventListener("click", handleClickOutside);
 }
 function updateDrama() {
@@ -1842,8 +1930,32 @@ function webShare() {
         });
     } else {
         console.log('Web Share API not supported.');
+    } 
+}
+
+function toggleBurger() {
+    if (document.getElementById("share").style.display === "inline-block") {
+        document.getElementById("share").style.display = "none";
+        document.getElementById("rewind").style.display = "none";
+    } else {
+        document.getElementById("share").style.display = "inline-block";
+        document.getElementById("rewind").style.display = "inline-block";
     }
-    
+}
+
+
+function showPastSwipes(list) {
+    list.innerHTML = '';
+        let l = 0;
+        swipedRight.forEach(card => {
+            let listItem = document.createElement('li');
+            let link = document.createElement('a');
+            link.href = 'https://fix.school/dashboard#' + card.link.replace("%23", "#");
+            link.textContent = card.title;
+            listItem.className = 'liked'
+            listItem.appendChild(link);
+            list.appendChild(listItem);
+        });
 }
 
 // Add event listeners to navbar icons
@@ -1869,10 +1981,24 @@ function showSection(n) {
         if (isMobile === 1) {
             document.getElementById('nav4m').src = "/assets/svg/Lamp.svg";
             document.getElementById('nav4m').style.display = "inline-block";
+            document.getElementById('nav4m').classList.remove("absolute");
             document.getElementById('rightm').style.display = "inline-block";
             document.getElementById('leftm').style.display = "inline-block";
+            document.getElementById('leftm').classList.remove("hamburger-menu");
+            document.getElementById('share').style.display = "none";
+            document.getElementById('rewind').style.display = "none";
+            document.getElementById('leftm').classList.remove("absolute");
+            document.getElementById('rightm').classList.remove("absolute");
             document.getElementById('leftm').src = "/assets/svg/Favorite_fill.svg";
         }
+        stylesheets.forEach(element => {
+            removeStylesheet(element);
+        });
+        stylesheets.length = 0;
+        scripts.forEach(element => {
+            removeScript(element);
+        });
+        scripts.length = 0;
         lastShownSection = 2;
         window.location.hash = ""; // do I want this tho?
     } else if (n === 1) {
@@ -1896,17 +2022,17 @@ function showSection(n) {
         if (!firstRightSwipeDone) {
             if (isMobile === 0) {
                 setTimeout(() => {
-                document.getElementById('doorstop-onboarding').style.display = "block";
-                document.getElementById("nav2").classList.add("desktop-button-onboard");
-                document.getElementById("nav4").classList.add("desktop-button-onboard");
-                document.addEventListener('click', function(event) {
-                    removeOnboarding()
-                });
-                document.addEventListener('keydown', function(event) {
-                    removeOnboarding()
-                });
-            }, 3000);
-            }
+                    document.getElementById('doorstop-onboarding').style.display = "block";
+                    document.getElementById("nav2").classList.add("desktop-button-onboard");
+                    document.getElementById("nav4").classList.add("desktop-button-onboard");
+                    document.addEventListener('click', function(event) {
+                        removeOnboarding()
+                    });
+                    document.addEventListener('keydown', function(event) {
+                        removeOnboarding()
+                    });
+                }, 3000);
+            } 
             localStorage.setItem("firstRightSwipeDone", "true");
 
         }
@@ -1929,14 +2055,25 @@ function showSection(n) {
             document.getElementById('nav4m').style.display = "none";
             document.getElementById('leftm').style.display = "none";
             document.getElementById('rightm').style.display = "inline-block";
-            setTimeout(() => {
-                if (document.querySelector('#left-section').style.display === "block") {
-                    // document.getElementById('leftm').classList.add("fade-in");
-                    document.getElementById('leftm').src = "/assets/images/share.png"; 
-                    document.getElementById('leftm').style.display = "inline-block";
-                }
-            }, 4000);
-
+            document.getElementById('leftm').classList.add("absolute")
+            document.getElementById('rightm').classList.add("absolute");
+            document.getElementById('leftm').src = "/assets/svg/hamburger.svg"; 
+            document.getElementById('leftm').classList.add("hamburger-menu");
+            let onboardingProgress = localStorage.getItem('swipedRight');
+            if (!onboardingProgress) {
+                setTimeout(() => {
+                    if (document.querySelector('#left-section').style.display === "block") {
+                        document.getElementById('leftm').style.display = "inline-block";
+                        toggleBurger()
+                    }
+                }, 2000);
+            } else {
+                setTimeout(() => {
+                    if (document.querySelector('#left-section').style.display === "block") {
+                        document.getElementById('leftm').style.display = "inline-block";        
+                    }
+                }, 4000);
+            }
         }
         lastShownSection = 3;
     } 
@@ -1953,7 +2090,8 @@ function showSection(n) {
         document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; // + mobileNav[isMobile]
         // document.getElementById('nav4m').src = "/assets/svg/cards-light.svg";
         if (isMobile === 1) {
-            document.getElementById('nav4m').src = "/assets/svg/cards-mobile.svg"
+            document.getElementById('nav4m').src = "/assets/svg/cards-mobile.svg";
+            document.getElementById('nav4m').classList.add("absolute");
         }
         document.getElementById('rightm').style.display = "none";
         document.getElementById('leftm').style.display = "none";
@@ -1964,32 +2102,8 @@ function showSection(n) {
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
         document.querySelector('#account-section').style.display = 'block';
         let list = document.querySelector('#swiped-right-list');
-        list.innerHTML = '';
-        let l = 0;
-        swipedRight.forEach(card => {
-            let listItem = document.createElement('li');
-            let link = document.createElement('a');
-            // let button = document.createElement('button');
-            link.href = card.link;
-            link.textContent = card.title;
-            link.target = '_blank';
-            listItem.className = 'liked'
-            listItem.appendChild(link);
-            list.appendChild(listItem);
-            // let dropdown = document.createElement('div');
-            // if (l === 0) {
-            //     fetch('pages.json')
-            //     .then(response => response.json())
-            //     .then(data => { data.filter(page => {
-            //             if (page.name === card.contents) {
-            //                 dropdown.textContent = page.html;
-            //             }
-            //         });
-            //     });
-            //     l++;
-            // }
-            // listItem.appendChild(dropdown);
-        });
+        showPastSwipes(list)
+        
         document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; //+ mobileNav[isMobile]
 
         document.getElementById('img5').src = "/assets/svg/User_alt_fill.svg"; //+ mobileNav[isMobile]
