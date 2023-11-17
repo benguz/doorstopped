@@ -1736,6 +1736,8 @@ function showNextCard(card) {
     setTimeout(() => {card.style.display = 'none'; }, 100);
 }
 
+let stylesheets = []
+let scripts = []
 function loadScript(src) {
     let script = document.createElement('script');
     script.src = src;

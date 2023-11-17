@@ -631,6 +631,7 @@ input {
 @media screen and (max-width: 720px) {
   .triangle-main, .triangle-left, .triangle-center {
     display: inline-block;
+    position: relative;
   }
 
 }
