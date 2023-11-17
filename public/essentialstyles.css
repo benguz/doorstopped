@@ -1148,7 +1148,8 @@ video {
   } 
   
   .accordion-menu {
-    max-width: calc(100% - 20px);
+    max-width: calc(100% - 2px);
+    margin: auto;
   }
 
   .accordion-menu p {
@@ -1372,6 +1373,9 @@ h2.tooltip {
       margin: auto;
       }
     #hero-text {
+      text-align: left;
+    }
+    #onboarding-hero {
       text-align: left;
     }
     .card h2.overlay-text {

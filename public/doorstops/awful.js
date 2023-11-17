@@ -10,7 +10,7 @@ let useCount = localStorage.getItem("openAI-usage");
 
         } else if (inputChat) {
             
-            document.getElementById("openAI-loading").style.display = "inline-block"
+            document.getElementById("openAI-loading").style.display = "inline-block";
             fetch(`https://ai.fix.school/parse_minutes`, {
               method: 'POST',
               headers: {
