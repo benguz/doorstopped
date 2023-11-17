@@ -799,6 +799,16 @@
         
         <br><br>
     </div>
+    <div id="rewind-container" class="share-container" style="overflow-y: hidden">	
+        <div id="background" style="position: absolute; bottom: 0; width: 100%;">	
+            <div class="share-dome" style="width: 100%; height: 100px; margin-bottom: -1px; border-radius: 80% 80% 0 0; background-color: #FFFCFB;"></div>	
+            <div class="share-rectangle" style="width: 100%; height: 240px; background-color: #FFFCFB;"></div>	
+        </div>	
+        <br><br>	
+        <div id="swiped-right-list-mobile" style="position: relative; overflow-y: auto; height: 300px">	
+
+        </div>	
+      </div>
     <div id="share-container" class="share-container">
         <div id="background" style="position: absolute; bottom: 0; width: 100%;">
             <div class="share-dome" style="width: 100%; height: 100px; margin-bottom: -1px; border-radius: 80% 80% 0 0; background-color: #FFFCFB;"></div>
@@ -960,7 +970,7 @@
                 <div class="bingo-face front">Internship!</div>
                 <div class="bingo-face back">3-step guide for students</div>
             </div>
-            <div class="bingo-item" data-link="/doorstops/mentor" onclick="handleSwipeRight(this)">
+            <div class="bingo-item" data-link="https://fix.school/doorstops/mentor" onclick="handleSwipeRight(this)">
                 <div class="bingo-face front">Find a mentor</div>
                 <div class="bingo-face back">Research + career help</div>
             </div>
@@ -1199,7 +1209,9 @@
             document.getElementById("onboarding-element").style.zIndex = "-1";
             document.getElementById("onboarding-survey").style.display = "flex";
         }, 4000)
-
+        if (iOS()) {	
+            iOSOverlay();	
+        }
         localStorage.setItem("onboardingDone", "true")
     } else {
         let prevLeft = localStorage.getItem('swipedLeft');
@@ -1225,6 +1237,9 @@
             first.dataset.link = placeHolderStart.dataset.link;
             first.dataset.category = placeHolderStart.dataset.category;
             placeHolderStart.remove();
+            if (iOS()) {	
+            iOSOverlay();	
+        }
         } else {
             // Function to set the last three children to display: block
             var parent = document.getElementById("card-container");
@@ -1257,6 +1272,27 @@
     }
     document.getElementById("dashboard-body").style.display = "flex";
 
+function iOSOverlay() {	
+    document.getElementById("overlay").innerHTML = `	
+                <h2 class="overlay-text" style="text-align: center; max-width: 80%; padding-bottom: 10px;">Look through problems you have at school</h2>	
+                <br>	
+                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center;">	
+                    <div>	
+                        <h2 class="overlay-text" style="text-align: left; max-width: 90%;">Tap the heart to see a solution</h2>	
+                        <br>	
+                    </div>	
+                    <img style="transform: rotate(20deg)" width="90px" src="/assets/svg/Favorite_fill.svg">	
+                </div>	
+                <br>	
+                <div style="display: flex; flex-direction: row; justify-content: center; width: 90%; align-items: center">	
+                    <img style="transform: rotate(-20deg)" width="90px" src="/assets/svg/close_ring.svg">                   	
+                    <div>	
+                        <h2 class="overlay-text" style="text-align: right; max-width: 90%;">Tap the X to see another problem</h2>	
+                    </div>	
+                </div>	
+                <br><br><br>	
+    `	
+}
 let selectedCategories = [];
 function toggleClick(elementId)  {
     let clicked = document.getElementById(elementId);
@@ -1439,6 +1475,7 @@ if (window.innerWidth < 1000) {
 
 var cardArray = document.getElementsByClassName("card");
 var currentCard = cardArray[cardArray.length - 1]
+if (!iOS()) {	
 document.querySelectorAll('.card').forEach((card, index) => {
     let hammertime = new Hammer(card);
     let initialPos = 0;
@@ -1491,6 +1528,7 @@ document.querySelectorAll('.card').forEach((card, index) => {
         rafId = null;
     });
 });
+}
 function handleSwipeLeft(card) {
     if (card.dataset.category === "50-swipes-survey-yes") {
                 plausible("50-swipes-survey-no");
@@ -1588,7 +1626,11 @@ function handleSwipeRight(card) {
                 loadScript("/assets/js/ref-dashboard.js");
                 setTimeout(() => {
                     if (!document.getElementById("desk7")) {
-                        callthis()
+                        if (typeof callthis === 'function') {
+                            callthis()
+                        } else {
+                            // handle exception
+                        }
                     }
                 }, 300);
             }
@@ -1755,9 +1797,12 @@ if (!dramaReward) {
     dramaReward = 0;
 }
 let sharing = document.getElementById("share-container");
+let rewind = document.getElementById("rewind-container");	
 function enableSharing() {
     document.getElementById("rightm").style.display = "none";
     document.getElementById("leftm").style.display = "none";
+    document.getElementById("share").style.display = "none";	
+    document.getElementById("rewind").style.display = "none";
     if (dramaReward != 0) {
         document.getElementById("bar-allocation").style.width = (20 * dramaReward) + "%";
     }
@@ -1771,7 +1816,25 @@ function enableSharing() {
         iframe.contentWindow.document.addEventListener("click", handleClickOutside);
     }, 300)
 }
+function mobileSwipeRewind() {	
+    let swipeList = document.getElementById('swiped-right-list-mobile'); 	
+    showPastSwipes(swipeList); 	
+    let rewindExplainer = document.createElement("h2");	
+    rewindExplainer.textContent = "See past swipes right";	
+    swipeList.insertBefore(rewindExplainer, swipeList.firstChild);	
+    rewind.style.display = "block";	
+    rewind.classList.add('visible');	
+    document.getElementById("rightm").style.display = "none";	
+    document.getElementById("leftm").style.display = "none";	
+    document.getElementById("share").style.display = "none";	
+    document.getElementById("rewind").style.display = "none";	
 
+
+    setTimeout(() => {	
+        document.addEventListener("click", handleClickOutside);	
+        iframe.contentWindow.document.addEventListener("click", handleClickOutside);	
+    }, 300)	
+}
 function handleClickOutside(e) {
   let targetElement = e.target;
 
@@ -1783,9 +1846,12 @@ function handleClickOutside(e) {
   }
   sharing.style.display = "none";
   sharing.classList.remove("visible");
+  rewind.style.display = "none";	
+  rewind.classList.remove("visible");
   document.getElementById("rightm").style.display = "inline-block";
   document.getElementById("leftm").style.display = "inline-block";
-
+  document.getElementById("share").style.display = "inline-block";	
+  document.getElementById("rewind").style.display = "inline-block";
   document.removeEventListener("click", handleClickOutside);
 }
 function updateDrama() {
@@ -1856,6 +1922,29 @@ function webShare() {
     }
     
 }
+function toggleBurger() {	
+    if (document.getElementById("share").style.display === "inline-block") {	
+        document.getElementById("share").style.display = "none";	
+        document.getElementById("rewind").style.display = "none";	
+    } else {	
+        document.getElementById("share").style.display = "inline-block";	
+        document.getElementById("rewind").style.display = "inline-block";	
+    }	    
+}
+
+function showPastSwipes(list) {	
+    list.innerHTML = '';	
+        let l = 0;	
+        swipedRight.forEach(card => {	
+            let listItem = document.createElement('li');	
+            let link = document.createElement('a');	
+            link.href = 'https://fix.school/dashboard#' + card.link.replace("%23", "#");	
+            link.textContent = card.title;	
+            listItem.className = 'liked'	
+            listItem.appendChild(link);	
+            list.appendChild(listItem);	
+        });	
+}
 
 // Add event listeners to navbar icons
 document.getElementById('nav1').addEventListener('click', function() { showSection(1); });
@@ -1880,10 +1969,24 @@ function showSection(n) {
         if (isMobile === 1) {
             document.getElementById('nav4m').src = "/assets/svg/Lamp.svg";
             document.getElementById('nav4m').style.display = "inline-block";
+            document.getElementById('nav4m').classList.remove("absolute");	
             document.getElementById('rightm').style.display = "inline-block";
             document.getElementById('leftm').style.display = "inline-block";
+            document.getElementById('leftm').classList.remove("hamburger-menu");	
+            document.getElementById('share').style.display = "none";	
+            document.getElementById('rewind').style.display = "none";	
+            document.getElementById('leftm').classList.remove("absolute");	
+            document.getElementById('rightm').classList.remove("absolute");
             document.getElementById('leftm').src = "/assets/svg/Favorite_fill.svg";
         }
+        stylesheets.forEach(element => {	
+            removeStylesheet(element);	
+        });	
+        stylesheets.length = 0;	
+        scripts.forEach(element => {	
+            removeScript(element);	
+        });	
+        scripts.length = 0;
         lastShownSection = 2;
         window.location.hash = ""; // do I want this tho?
     } else if (n === 1) {
@@ -1940,13 +2043,25 @@ function showSection(n) {
             document.getElementById('nav4m').style.display = "none";
             document.getElementById('leftm').style.display = "none";
             document.getElementById('rightm').style.display = "inline-block";
-            setTimeout(() => {
-                if (document.querySelector('#left-section').style.display === "block") {
-                    // document.getElementById('leftm').classList.add("fade-in");
-                    document.getElementById('leftm').src = "/assets/images/share.png"; 
-                    document.getElementById('leftm').style.display = "inline-block";
-                }
-            }, 4000);
+            document.getElementById('leftm').classList.add("absolute")	           
+            document.getElementById('rightm').classList.add("absolute");	                
+            document.getElementById('leftm').src = "/assets/svg/hamburger.svg"; 	               
+            document.getElementById('leftm').classList.add("hamburger-menu");	             
+            let onboardingProgress = localStorage.getItem('swipedRight');	  
+            if (!onboardingProgress) {	                
+                setTimeout(() => {	            
+                    if (document.querySelector('#left-section').style.display === "block") {	
+                        document.getElementById('leftm').style.display = "inline-block";	
+                        toggleBurger()	
+                    }	
+                }, 2000);	
+            } else {	
+                setTimeout(() => {	
+                    if (document.querySelector('#left-section').style.display === "block") {	
+                        document.getElementById('leftm').style.display = "inline-block";        	
+                    }	
+                }, 4000);	
+            }
 
         }
         lastShownSection = 3;
@@ -1965,6 +2080,7 @@ function showSection(n) {
         // document.getElementById('nav4m').src = "/assets/svg/cards-light.svg";
         if (isMobile === 1) {
             document.getElementById('nav4m').src = "/assets/svg/cards-mobile.svg"
+            document.getElementById('nav4m').classList.add("absolute");
         }
         document.getElementById('rightm').style.display = "none";
         document.getElementById('leftm').style.display = "none";
@@ -1975,32 +2091,8 @@ function showSection(n) {
         document.querySelector(sections[lastShownSection - 1]).style.display = 'none';
         document.querySelector('#account-section').style.display = 'block';
         let list = document.querySelector('#swiped-right-list');
-        list.innerHTML = '';
-        let l = 0;
-        swipedRight.forEach(card => {
-            let listItem = document.createElement('li');
-            let link = document.createElement('a');
-            // let button = document.createElement('button');
-            link.href = card.link;
-            link.textContent = card.title;
-            link.target = '_blank';
-            listItem.className = 'liked'
-            listItem.appendChild(link);
-            list.appendChild(listItem);
-            // let dropdown = document.createElement('div');
-            // if (l === 0) {
-            //     fetch('pages.json')
-            //     .then(response => response.json())
-            //     .then(data => { data.filter(page => {
-            //             if (page.name === card.contents) {
-            //                 dropdown.textContent = page.html;
-            //             }
-            //         });
-            //     });
-            //     l++;
-            // }
-            // listItem.appendChild(dropdown);
-        });
+
+        showPastSwipes(list)
         document.getElementById('img' + lastShownSection).src = iconSrc[lastShownSection - 1]; //+ mobileNav[isMobile]
 
         document.getElementById('img5').src = "/assets/svg/User_alt_fill.svg"; //+ mobileNav[isMobile]
