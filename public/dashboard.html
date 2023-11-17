@@ -1555,6 +1555,7 @@ function handleSwipeRight(card) {
         if (cardLink.includes("#")) {
             cardid = cardLink.split('#')[1];
         }
+
         if (cardLink.startsWith('https://') && !cardLink.includes('ref')) {
             // FOR AN IFRAME-FREE WORKLOAD
             // if (iOS && cardLink.includes()) {
@@ -1603,10 +1604,11 @@ function handleSwipeRight(card) {
                     loadStylesheet("/doorstops/naptime.css");
                     loadStylesheet("/assets/css/emoji.css");
                     loadScript("/doorstops/naptime.js");
-                } else if (doc.querySelector(".text-api-input")) {
+                }  else if (doc.querySelector(".text-api-input")) {
                     loadStylesheet("/doorstops/awful.css");
                     loadScript("/doorstops/awful.js");
-                } 
+                }
+
                 if (cardid) { // scroll to #ID
                     window.location.hash = cardid;            
                 }
@@ -1642,8 +1644,6 @@ function handleSwipeRight(card) {
                 window.location.hash = '#scrollToHere' // causes slight hitch on load
             }
             showSection(3);
-
-
         })
         .catch(err => console.log('Failed to load page: ', err));
                     
