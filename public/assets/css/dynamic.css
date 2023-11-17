@@ -116,7 +116,7 @@ body {
 
 .ref span {
     font-family: 'Poppins', sans-serif;
-display: "inline"}
+display: inline-block}
 
 .left span {
     text-align: left;
