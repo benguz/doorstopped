@@ -1010,7 +1010,8 @@ input {
   }
   #card-container {
     top: 0;
-    height: 80%; /* HEIGHT IS WHAT TO CHANGE FOR IPHONE FIX - CAN WE CHANGE IT ON IPHONE ONLY? */
+    height: 78%; /* HEIGHT IS WHAT TO CHANGE FOR IPHONE FIX - CAN WE CHANGE IT ON IPHONE ONLY? */
+    min-height: 78%;
     width: 95%;
   }
 
@@ -1055,6 +1056,7 @@ input {
   }
   .triangle-main, .triangle-left, .triangle-center {
     margin-top: 10px;
+    /* additional box shadow settings here */
   }
   
 }

@@ -102,3 +102,28 @@
     transform: rotate(360deg);
   }
 }
+
+.text-field {
+  width: 82%; 
+  max-width: 100%;
+  font-size: 14pt;
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+  line-height: 1.75;
+  border: 1px solid rgb(99, 70, 215);
+  border-radius: 3px;
+  font-family: 'Poppins'
+}
+.no-resize {
+  resize: none;
+}
+
+.wide {
+  width: 98%; 
+
+}
+@media screen and (max-width: 720px) {
+  #lil {
+    font-size: 11px
+  }
+}

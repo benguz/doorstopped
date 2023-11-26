@@ -49,6 +49,7 @@
                 }
             }, 100);
             } else if (sectionId.includes("/")) {
+                localStorage.setItem("onboardingDone", "true") // skips onboarding
                 sectionId = sectionId.replace("%23", "#"); 
                 var checkFunctionInterval = setInterval(function() {
                 if (typeof handleSwipeRight === 'function') {
@@ -791,7 +792,7 @@
                 <h2 class="tooltip bot floating fade-in" id="explore-back">👈 search by<br>problem!</h2>
         </div>
         <br><br id="scrollToHere">
-        <iframe id="howto" src="/doorstops/howto-embed" width="100%" height="600vh"></iframe>
+        <iframe id="howto" src="" width="100%" height="600vh"></iframe>
         <div id="content-placeholder" class="content-placeholder">
             
         </div>
@@ -1238,8 +1239,8 @@
             first.dataset.category = placeHolderStart.dataset.category;
             placeHolderStart.remove();
             if (iOS()) {	
-            iOSOverlay();	
-        }
+                iOSOverlay();	
+            }
         } else {
             // Function to set the last three children to display: block
             var parent = document.getElementById("card-container");
@@ -1270,7 +1271,10 @@
             document.getElementById("desktop-sidenav").style.display = "flex";
         }
     }
-    document.getElementById("dashboard-body").style.display = "flex";
+document.getElementById("dashboard-body").style.display = "flex";
+if (window.innerWidth > 720) {
+    document.getElementById("howto").src = "/doorstops/howto-embed";
+}
 
 function iOSOverlay() {	
     document.getElementById("overlay").innerHTML = `	
@@ -1634,7 +1638,7 @@ function handleSwipeRight(card) {
                             // handle exception
                         }
                     }
-                }, 300);
+                }, 400);
             }
             else {
                 content.innerHTML = body.outerHTML;

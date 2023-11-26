@@ -31,45 +31,218 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
-<style>
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    background: #f5f5f5;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 
-iframe {
-    width: 620px;
-}
+<link rel="stylesheet" href="/assets/css/style.css">
 
+    <link rel="stylesheet" href="/doorstops/awful.css">
+    <style>
+      @media screen and (max-width: 1023px){
 
-@media screen and (max-width: 600px) {
-    iframe {
-    width: 100%;
+.sidenavtotal {
+display:none;
+padding: 0em;
 }
+#sidenav{
+display:none;
 
 }
+#toc {
+  display:none;
+}
+.desktop {
+  display: none;
+}
+}
+.yonk {
+  width: 97%;
+  margin-left: 1.5%;
+}
+@media (min-width: 1024px) {
+
+.yonk {
+  flex: 3;
+}
+.sidenavtotal {
+  flex: 1;
+}
+
+}
 
 
-    </style>
+.yonk p {
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+  font-size: 14pt;
+}
+
+.yonk p, h1, h2, h3, li {
+  color: black;
+}
+
+.yonk a {
+  text-decoration: underline;
+  display: inline;
+}
+h1 {
+  font-size: 25pt;
+  text-decoration: none;
+}
+h2 {
+  margin-top: 1em;
+  font-size: 20pt;
+}
+
+.badonk {
+  list-style-type: disc; /* or circle or square, depending on the bullet style you want */
+  padding-left: 30px;
+  font-size: 14pt;
+
+}
+.honk {
+  list-style-type: disc !important; 
+}
+
+</style>
   </head>
 
 <body>
-    <br><br>
-            <!-- TODO: Buy doorstop email for sending these -->
+  <main>
+    <div style="display: flex; flex-direction: row;">
+    <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
+    
+        <br class="desktop"><br class="desktop">
+        <br class="desktop"><br class="desktop">
+        <br class="desktop">
+    <div id="sidenav"></div>
+    </div> 
+      <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center;">
+        <br class="desktop"><br class="desktop">
+        <br><br>
 
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSehZ8fAR-H_HWN1-jBIIGsXznjydMMeMfZvisojMrSbbWucSQ/viewform?embedded=true" height="2200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+ <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSehZ8fAR-H_HWN1-jBIIGsXznjydMMeMfZvisojMrSbbWucSQ/viewform?embedded=true" height="2200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+        
+        <h1 style="line-height: 1.35em;">Anonymously email a teacher with feedback</h1>
+          <div class="warning-box" style="background-color: rgb(211, 205, 255); border-color: rgb(99, 70, 215)">
 
+
+            <div>
+                <p style="font-family: Poppins">A fix.school email address will email your teacher with subject line: "Anonymous student reaching out with feedback"<br><br>
+                  We have a template you can copy paste! Also: we never see or save any information about you.</p>
+            </div>
+            </div>
+        <h3 >Your teacher's email:</h3>
+        <div class="text-api-input" style="width: 100%">
+          <textarea id="emailInput" rows="1" class="text-field no-resize" ></textarea>
+          </div>
+          <h3>Recommended Template:</h3>
+          <div class="copy-paste-element">
+            <div>
+              <p id="lil">
+Hi [Teacher's Name],<br><br>
+
+Thank you so much for the time you've put into making [Class Name] wonderful. I was hoping to share some feedback about parts of class I've been struggling with. I have huge respect for what you do as a teacher and am giving feedback anonymously because I feel anxious about sharing.<br><br>
+
+[Here, explain your specific concerns or frustrations. For example: "I've noticed that there's a lot of focus on memorizing facts rather than understanding the processes."]<br><br>
+
+[Suggest a solution. For example: "I understand that memorization can be important, but I personally feel that I'd learn more effectively if we could incorporate more opportunities for hands-on or experiential learning."]<br><br>
+
+Thank you for listening. [Optional: I feel that the majority of my peers would agree, and those who don't would be open to finding a compromise if we had a chance to discuss as a class.]<br><br>
+
+Regards,<br>
+Anonymous [High School Name] Student</p></div>
+<button class="copy-icon" onclick="copyText(event)">
+  <svg class="svg2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></rect>
+    <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
+  </svg>
+</button>
+</div>
+<h3>Email body:</h3>
+        <textarea id="bodyInput" class="text-field no-resize wide" rows="10"></textarea>
+          
+          <div class="warning-box" style="background-color: rgb(211, 205, 255); border-color: rgb(99, 70, 215)">
+
+
+            <div>
+                <p style="font-family: Poppins">            <strong>In addition to what you write, the email will end with the following footer text:</strong>
+"This email was sent by doorstopped.org, an education nonprofit building student-teacher trust. If you feel our anonymous feedback tool was misused, please let us know."
+          </p>
+          </div></div>
+          <button id="api-button" onclick="submitToGoogleForm()">Submit</button>
+          <div class="lds-roller" id="openAI-loading" style="display: none;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          <p id="successful-response" style="color: purple; display: none">Sent successfully!</p>
+          <p id="fail-response" style="color: red; display: none">Something went wrong - we're working on fixing this!</p>
+
+      </div>
+      <div class="sidenavtotal" style="padding:3em;">
+
+          <br class="desktop"><br class="desktop">
+          <br class="desktop"><br class="desktop">
+          <br class="desktop">
+        <div id="toc"></div>
+        </div>
+
+</main>
         <!-- Similar version for dept. head -->
-      </script>
-      <script>
+        <script src="/assets/js/script.js" defer></script>
 
+      <script>
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function containsSwearWords(text) {
+    const swearWords = ['fuck', 'shit', 'fag', 'cunt']; // Add more words as needed
+    return swearWords.some(swearWord => text.includes(swearWord));
+}
+
+function submitToGoogleForm() {
+    const email = document.getElementById('emailInput').value;
+    const body = document.getElementById('bodyInput').value;
+
+    // Validate email
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    // Check for swear words in body
+    if (containsSwearWords(body)) {
+        alert('Please remove swear words from the text.');
+        return;
+    }
+    document.getElementById("openAI-loading").style.display = "inline-block";
+
+    // URL of the Google Form
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdj0vJ2i6ysA5VojhihgRsbfOo3QJQt83eIUnY-QfEb7O9LwQ/formResponse"
+
+    // Data to be sent
+    const formData = new FormData();
+    formData.append('entry.1286752894', email);
+    formData.append('entry.1457037727', body);
+
+    // Send POST request
+    fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Important to avoid CORS issues
+        body: formData
+    }).then(response => {
+        console.log('Form submitted successfully');
+        document.getElementById("openAI-loading").style.display = "none";
+        document.getElementById('successful-response').style.display = "block";
+        document.getElementById('fail-response').style.display = "none";
+
+        // Handle successful submission here (e.g., clear the form, display a success message)
+    }).catch(error => {
+        console.error('Error in submitting the form:', error);
+        document.getElementById("openAI-loading").style.display = "none";
+        document.getElementById('successful-response').style.display = "none";
+        document.getElementById('fail-response').style.display = "block";
+
+        // Handle errors here
+    });
+}
       </script>
 
 </body>
