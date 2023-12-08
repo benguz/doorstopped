@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Working alone on things that don't scale</title>
+  <meta name="title" content="Working alone on things that don't scale">
+  <meta name="description" content="We stopped building unscalable things, but our most critical societal problems have unscalable solutions.">
+
+  <meta property="og:title" content="Working alone on things that don't scale">
+  <meta property="og:description" content="We stopped building unscalable things, but our most critical societal problems have unscalable solutions.">
+  <meta property="og:image" content="https://doorstopped.org/og.jpg">
+  <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/emoji.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+  <style>
+      @media screen and (max-width: 1023px){
+
+.sidenavtotal {
+display:none;
+padding: 0em;
+}
+#sidenav{
+display:none;
+
+}
+#toc {
+  display:none;
+}
+.desktop {
+  display: none;
+}
+}
+.yonk {
+  width: 97%;
+  margin-left: 1.5%;
+}
+@media (min-width: 1024px) {
+/* main {
+  display:flex; 
+  justify-content:center;
+} 
+.yonk {
+            width: 55%;  
+            margin-left: 22.5%; 
+            padding: 0 10px;
+            box-sizing: border-box;
+        }*/
+
+.yonk {
+  flex: 3;
+}
+.sidenavtotal {
+  flex: 1;
+}
+
+}
+
+
+::-webkit-scrollbar {
+    width: 1em;
+    height: 1em
+}
+​
+
+.yonk ol {
+   list-style-type: decimal; 
+   list-style-position: inside; 
+
+}
+
+.yonk ol li {
+    list-style-type: decimal !important; 
+    margin-left: 15px; 
+
+}
+
+
+</style>
+
+  </head>
+
+<body id="top">
+
+  <header class="header" data-header>
+    <div class="container" min-width="620em">
+
+      <a href="/student" class="logo">
+        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="/student" class="logo">
+            <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+          </div>
+             <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="/mission" class="navbar-link" data-nav-link>Mission</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/dashboard" class="navbar-link" data-nav-link>Doorstops</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/programs/" class="navbar-link" data-nav-link>Programs</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/time" class="navbar-link" data-nav-link>Data</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <a href="mailto:guzovsky@princeton.edu?subject=Bringing Doorstops to My School" class="btn has-before">
+          <span class="span">Try Doorstops</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  
+  </header>
+
+      
+    <main>
+      <div style="display: flex; flex-direction: row;">
+      <!-- --><div class="sidenavtotal" style="padding:3em 0em 0em 3em;">
+      
+          <br class="desktop"><br class="desktop">
+          <br class="desktop"><br class="desktop">
+          <br class="desktop">
+      <div id="sidenav"></div>
+      </div> 
+        <div class="yonk" width="620em" max-width="calc(100% - 10em)" style="justify-content: center;">
+          <br class="desktop"><br class="desktop">
+          <br><br>
+          <br><br>
+          <h1 style="line-height: 1.45;">Working alone on things that don't scale</h1>
+          <p class="subtitle" style="font-size: 13pt; margin: 0; color: #989aa2;">We stopped building unscalable things, but our most critical societal problems have unscalable solutions.</p>
+          <img src="/assets/images/alone_notext.jpg" style="max-width: 100%; margin: auto; border-radius: 2px" width="100%" height="auto">
+
+          <p>
+            Competitive swimmers have two ways to improve: getting stronger or swimming better.
+            </p>
+            <p>
+            Strength is straightforward. You go to practice, work hard, stretch, eat well, trust your training.
+            </p>
+            <p>
+            Swimming better—improving your technique—is complicated. As a young swimmer, I had to constantly self-advocate for coaches to even look at my stroke. 
+            </p>
+            <p>
+            Growing up and meeting swimmers from across the country, I learned it wasn’t just me: coaches rarely go out of their way to correct an athlete’s technique. I was swimming for a team, but I was working on my stroke alone.<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>
+            </p>
+            <p>
+            To train strength, coaches only have to write one practice—it’ll work well for everyone. To train technique, coaches have to spend one-on-one time with every athlete. It’s unscalable.
+            </p>
+            <p>
+            <strong>We stopped doing unscalable things. </strong>Big Pharma doesn’t develop new antibiotics because they’re only used for two weeks—driving much less revenue than a drug you’d use for life.<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup> Top universities stopped accepting low income students, likely because it took too much remedial coursework and support to catch them up.<sup id="fnref3"><a href="#fn3" rel="footnote">3</a></sup> Email killed the postal service, Amazon killed the bookstore, and 3G killed landlines, which also probably didn’t help the postal service.<sup id="fnref4"><a href="#fn4" rel="footnote">4</a></sup>
+            </p>
+            <p>
+            Can we prove that unscalable things are done less? Let’s look at K12 education. 
+            </p>
+            <p>
+            In 2017, schools spent an average $58 per student on social workers, not much for a role that’s been in schools since the 1920s.<sup id="fnref5"><a href="#fn5" rel="footnote">5</a></sup> This number has been relatively stagnant, even moving a dollar lower in 2023 when adjusted for inflation.<sup id="fnref6"><a href="#fn6" rel="footnote">6</a></sup> Meanwhile, schools are spending between $280 and $800 per-pupil on education technology today, compared to ~$173 yearly between 1993 and 2003, then considered a massive investment to give every classroom internet access.<sup id="fnref7"><a href="#fn7" rel="footnote">7</a></sup> Technology is more scalable (though likely less effective for improving student wellbeing and outcomes) and spending on it has grown faster.<sup id="fnref8"><a href="#fn8" rel="footnote">8</a></sup>
+            </p>
+            <p>
+            But we used to spend more money on unscalable things. 
+            </p>
+            <p>
+            A famous and incredibly successful school intervention in 1968 <em>paid parents</em> of at-risk New Haven schoolchildren to meet daily with researchers. Parents learned how schools operate and how they can influence school decisions.<sup id="fnref9"><a href="#fn9" rel="footnote">9</a></sup> The method took hold in 500+ schools by 1990 and serves as a theoretical baseline for today's Community Schools, but lost one critical component on the way: Community Schools don’t pay parents. 
+            </p>
+            <p>
+            Despite talking to a researcher part of the original study, it’s unclear to me why this got dropped. It’s now illegal to pay research study participants a contract salary—it’s possible paying parents may run into similar legal complications in schools.<sup id="fnref10"><a href="#fn10" rel="footnote">10</a></sup> Regardless of the cause, the high-cost of, well, payments, makes this intervention unscalable.
+            </p>
+            <p>
+            <strong>Many of our most important problems have unscalable solutions.</strong> If we want to improve education or student wellbeing, we have to navigate 14,000 school districts, each with their own internal politics, 50 million students with unique needs, 50 different state policy landscapes…No patterns, no scale. And in a <em>negative sum game </em>like education,<sup id="fnref11"><a href="#fn11" rel="footnote">11</a></sup> school interventions and social work are not only unscalable, but unprofitable.
+            </p>
+            <p>
+            Good thing we have nonprofits, right?
+            </p>
+            <p>
+            <strong>I’m starting an education nonprofit and I’m struggling. </strong>I spent the past year doing field research at high schools in 15 states. I talked to over 100 students one-on-one, then designed, coded and ran another 100 beta tests on <a href="https://fix.school">https://fix.school</a>, a platform that shows high schoolers 1,000's of ways to change their school experience, no matter what they’re struggling with. 
+            </p>
+            <p>
+            You pick your problem—gross bathrooms, conflict with a teacher, competitive school culture, or just an assignment you’re stressed about—we give you a Doorstop, a step-by-step solution. Doorstops are a mix of videos, games, email templates you can copy-paste,  and student-made playbooks.
+            </p>
+            <p>
+            My intention is not to solve education. It’s to inspire student agency. To prove to kids they’re not powerless.
+            </p>
+            <p>
+            The content is free and CC-BY-SA licensed.
+            </p>
+            <p>
+            But I haven’t been able to find help, and my work is unscalable. Student needs are human needs, and just as varied: no two students I’ve talked to face the same challenges. That’s why I create so many Doorstops—each one requires its own coding, research, design, and user feedback. My thesis is that there are 10,000 problems a high schooler can have, not 10 million—and I can slowly build the 10,000 solutions. Unscalable work, until one day it scales.
+            </p>
+            <p>
+            What kind of co-founder would partner with me on a project guaranteed to make $0, few prospects for fundraising, and a marketing budget the size of my limited savings?
+            </p>
+            <p>
+            Struggling with this over the past few months, I’ve been thinking about swimming.
+            </p>
+            <p>
+            My stagnant, middling technique—and corresponding race performance—only turned around when I started swimming alone between practices. I would swim 3000 meters continuously, 100m catch-up freestyle, 100m perfect technique, never thinking about speed. This was the time I needed to focus on my stroke.
+            </p>
+            <p>
+            But I wasn’t alone: I had my dad. He drove me to the pool and walked back and forth on deck every lap, getting my split and stroke count every 100 yards. He wasn’t a swimming expert, but he read and watched everything he could to learn about technique and did his best to give me feedback. 
+            </p>
+            <p>
+             
+            </p>
+            <img src="/assets/images/goofy.jpg" style="max-width: 100%; margin: auto; border-radius: 2px" width="100%" height="auto">
+            <p class="subtitle" style="text-align: center; font-size: 13pt; margin: 0; color: #989aa2;">
+            My Dad and Goofy.
+            </p>
+            <p>
+            My stroke improved. At that season’s New England Championships, I showed my best result yet, placing third in the 1500m for my age. 
+            </p>
+            <p>
+            I don’t think I can find a co-founder or much fundraising.<sup id="fnref12"><a href="#fn12" rel="footnote">12</a></sup>
+            </p>
+            <p>
+            But I’m writing this to ask for support. If this all resonated with you, email and let me know, or tell me what sucked about high school for you. <a href="https://docs.google.com/document/d/1Z8ZH5Eymq73uOCyHtZJxPOAfCySu4j-JrlwKH3h9XeQ/edit?usp=sharing">Leave a comment in the Google doc</a> serving this content. Send me an interesting article you read about education, or share this one with an educator you admire. Put me in touch with a disgruntled teenager near you: I’ll make time to listen to them and help out! 
+            </p>
+            <p>
+            Working on unscalable and unprofitable things usually means working alone. But it doesn’t mean working without support. This is my deepest, most sustaining vocation. I will pursue this rich or poor. Your support would mean the world.
+            </p>
+            <p>
+            My email is <a href="mailto:guzovsky@princeton.edu">guzovsky@princeton.edu</a>. Thank you. 
+            </p>
+            
+            <!-- Footnotes themselves at the bottom. -->
+            
+            <h2>Notes</h2>
+            <div class="footnotes">
+            <hr>
+            <ol><li id="fn1">
+            <p>
+                 You can frame this as a culture problem—guys want to prove they can hang during practice, so they sacrifice technique for speed—but that’s only half the story.&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a><li id="fn2">
+            <p>
+                 See this <a href="https://healthmanagement.org/c/hospital/issuearticle/why-is-the-pharmaceutical-industry-not-developing-new-antibiotics">explainer article</a>&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a><li id="fn3">
+            <p>
+                 <a href="https://www.thecrimson.com/article/2023/5/8/barone-class-harvard-diversity/">See this article from Harvard's student newspaper</a>. 67% of Harvard students are in the top quintile of earners and 4.5% are in the bottom quintile.&nbsp;<a href="#fnref3" rev="footnote">&#8617;</a><li id="fn4">
+            <p>
+                 Even service-based companies like Accenture have scaled by outsourcing development to other countries: growing headcount 21% a year since 2010 while growing revenue 14% a year. Another example: AAA game developers are releasing the same games over and over again while barriers to entry in the space have only grown.&nbsp;<a href="#fnref4" rev="footnote">&#8617;</a><li id="fn5">
+            <p>
+                 See “visiting teachers” for the first school social workers. <a href="https://www.edweek.org/leadership/after-teachers-americas-schools-spend-more-on-security-guards-than-any-other-role/2023/09">https://www.edweek.org/leadership/after-teachers-americas-schools-spend-more-on-security-guards-than-any-other-role/2023/09</a> . This number appears relatively stagnant even as spending on “Student Support Services,” which includes social workers, guidance counselors, school psychologists, plus speech and occupational therapists has grown 55% from 2002 to 2020 (adjusted for inflation). But while occupational therapists come with the massive rise in diagnosed attention disorders, guidance counselors and school psychologists rarely interface with students in the way social workers do.  <a href="https://reason.org/commentary/how-k-12-support-services-spending-can-divert-education-funding-from-instruction/">https://reason.org/commentary/how-k-12-support-services-spending-can-divert-education-funding-from-instruction/</a> &nbsp;<a href="#fnref5" rev="footnote">&#8617;</a><li id="fn6">
+            <p>
+                 <a href="https://www.bls.gov/oes/current/oes211021.htm">Bureau of Labor Stats</a><a href="#fnref6" rev="footnote">&#8617;</a><li id="fn7">
+            <p>
+                 Today’s figure is a combination of various estimates from $14-40 billion. The split is about ⅔ software and ⅓ hardware. The past figure is inflation-adjusted from <a href="https://www2.ed.gov/rschstat/eval/tech/20years.pdf">this source</a>. &nbsp;<a href="#fnref7" rev="footnote">&#8617;</a><li id="fn8">
+            <p>
+                 Arguably independently of any considerations for student outcomes—there’s no evidence education technology has contributed to the marginal growth in student achievement over the past 20-30 years.&nbsp;<a href="#fnref8" rev="footnote">&#8617;</a><li id="fn9">
+            <p>
+                 <em>School Power</em>, James Comer.&nbsp;<a href="#fnref9" rev="footnote">&#8617;</a><li id="fn10">
+            <p>
+                 Though this intervention was replicated many times before then.&nbsp;<a href="#fnref10" rev="footnote">&#8617;</a><li id="fn11">
+            <p>
+                 An underfunded system where there are not even close to enough resources to meet every student’s needs.&nbsp;<a href="#fnref11" rev="footnote">&#8617;</a><li id="fn12">
+            <p>
+                 Maybe I’ll be able to find a video editor or designer that would work a few hours a week pro-bono? If you’re interested, feel free to reach out :)&nbsp;<a href="#fnref12" rev="footnote">&#8617;</a>
+            
+            </ol></div>
+            </div>
+            <div class="sidenavtotal" style="padding:3em;">
+      
+                <br class="desktop"><br class="desktop">
+                <br class="desktop"><br class="desktop">
+                <br class="desktop">
+              <div id="toc"></div>
+              </div>
+      
+    </main>
+
+
+<div id="footer-placeholder">
+
+</div>
+<script>
+    $(function(){
+      $("#footer-placeholder").load("/footer.html");
+    });
+    
+    </script>
+
+<!-- 
+  - #BACK TO TOP
+-->
+
+<a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+  <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+</a>
+
+  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/emoji.js"></script>
+
+  <script src="/components/sidenaveh.js"> 
+</script>
+
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+<footer>
+
+</footer>
+
+
