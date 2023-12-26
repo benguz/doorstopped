@@ -1624,9 +1624,19 @@ function handleSwipeRight(card) {
                 loadStylesheet("/assets/css/style.css");
                 content.innerHTML = aboutElement.outerHTML;
             } else if (doc.querySelector(".slider-wrapper")){
-                loadStylesheet("/doorstops/food.css");
-                content.innerHTML = body.outerHTML;
-                loadScript("/assets/js/food.js");
+
+                if (doc.querySelector(".body-essay")) {
+                    loadStylesheet("/doorstops/awful.css");
+                    loadStylesheet("/doorstops/food.css");
+                    loadStylesheet("/doorstops/grades.css");
+                    content.innerHTML = body.outerHTML;
+                    loadScript("/doorstops/grades.js");
+                } else {
+                    loadStylesheet("/doorstops/food.css");
+                    content.innerHTML = body.outerHTML;
+                    loadScript("/assets/js/food.js");
+                }
+
             } else if (doc.querySelector(".ref")) {
                 loadStylesheet("/assets/css/dynamic.css");
                 content.innerHTML = body.outerHTML;

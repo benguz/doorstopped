@@ -103,7 +103,7 @@ function highlightSentence(sentence, feedback) {
 
         // Find the newly created span and calculate its distance from the top of the page
         const spanElement = document.getElementById(comments);
-        const distanceFromTop = spanElement.getBoundingClientRect().top + window.scrollY;
+        let distanceFromTop = spanElement.getBoundingClientRect().top + window.scrollY;
 
         // Create a new div and position it at the same distance from the top of the page
         const newDiv = document.createElement("div");
