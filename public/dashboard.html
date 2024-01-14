@@ -1580,7 +1580,7 @@ function handleSwipeRight(card) {
                 loadIframe(cardLink); // not currently handling cards with external links
             // }
         }  else if (cardLink.startsWith('https://')) {
-            window.open(url, '_blank').focus();
+            window.open(cardLink, '_blank').focus();
         } else {
             document.getElementById("left-section").style.width = "90%";
             iframe.src = "";
