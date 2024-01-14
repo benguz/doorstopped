@@ -48,6 +48,8 @@
                     clearInterval(checkFunctionInterval);
                 }
             }, 100);
+            } else if(sectionId === "instagram") {
+                localStorage.setItem("onboardingDone", "true");
             } else if (sectionId.includes("/")) {
                 localStorage.setItem("onboardingDone", "true") // skips onboarding
                 sectionId = sectionId.replace("%23", "#"); 
@@ -484,7 +486,15 @@
 
                 </div>
         </div>
-
+        <div id="lgbtq-card" class="card" data-link="https://imi.guide" style="display: none;" data-category="wellbeing">
+            <video id="eyes" autoplay playsinline muted loop height="100%" class="card-video">
+                <source data-src-mp4="/assets/cards/mp4/no-stress.mp4" data-src-webm="/assets/cards/dancing-panda.webm" alt="panda shaking its bum" >
+              </video>     
+              <div class="card-caption">
+                <h2>Stressed & Queer? </h2>
+                <p>Explore interactive guides and LGBTQ+ curated resources for stress, stigma, & identity :)</p>
+</div>         
+        </div>
         <div id="boring-card-3" class="card" data-link="/doorstops/teachit" style="display: none;" data-category="STR">
             <div style="display: flex; justify-content: center;">
                 <video autoplay playsinline muted loop width="75%" class="card-video">
@@ -1561,7 +1571,7 @@ function handleSwipeRight(card) {
             cardid = cardLink.split('#')[1];
         }
 
-        if (cardLink.startsWith('https://') && !cardLink.includes('ref')) {
+        if (cardLink.startsWith('https://fix.school') && !cardLink.includes('ref')) {
             // FOR AN IFRAME-FREE WORKLOAD
             // if (iOS && cardLink.includes()) {
 
@@ -1569,8 +1579,9 @@ function handleSwipeRight(card) {
             
                 loadIframe(cardLink); // not currently handling cards with external links
             // }
-        }  
-        else {
+        }  else if (cardLink.startsWith('https://')) {
+            window.open(url, '_blank').focus();
+        } else {
             document.getElementById("left-section").style.width = "90%";
             iframe.src = "";
             if (cardLink.includes('ref')) {

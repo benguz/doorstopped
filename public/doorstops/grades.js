@@ -4,21 +4,19 @@ let useCount = localStorage.getItem("openAI-usage-essay");
         useCount = 0;
         
     }
-function submitOpenAIQueryEssay() {
-    console.log("running");
-
+function submitOpenAIQueryEssay() {    
     let inputChat = document.getElementById("essay-submission").textContent;
     const submitIndex = inputChat.lastIndexOf("Submit");
     if (submitIndex !== -1 && submitIndex === inputChat.length - "Submit".length) {
         inputChat = inputChat.slice(0, submitIndex);
     }
     let value = document.getElementById("myRange").value;
+
     if (useCount > 4) {
-        document.getElementById("openAI-response").innerHTML = "Sorry, you've reached our submission limit. If you want a free OpenAI membership, email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a>. We're working to get more funding ASAP!";
+        document.getElementById("openAI-response").innerHTML = "Sorry, you've reached our submission limit. If you want a more access, email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a>. We're working to get more funding ASAP!";
         console.log("overuse")
     } else if (inputChat) {
         document.getElementById("openAI-loading").style.display = "inline-block";
-        // document.getElementById("loading-overlay").style.display = "block";
         var overlay = document.createElement('div');
         overlay.className = 'overlay';
         document.getElementById("essay-submission").appendChild(overlay);
@@ -38,11 +36,26 @@ function submitOpenAIQueryEssay() {
             feedback = data.line.replace(/```json/g, '');
             feedback = feedback.replace(/```/g, '');
             feedbackData = JSON.parse(feedback);
+            // remove leftover feedback
+            const feedbackDivs = document.querySelectorAll(".feedback-div");
+            feedbackDivs.forEach(div => {
+                div.parentNode.removeChild(div);
+            });
+            // add new feedback
             feedbackData.forEach(item => {
                 highlightSentence(item.sentence, item.feedback);
-                console.log(item.sentence + " feedback: " + item.feedback)
+                // console.log(item.sentence + " feedback: " + item.feedback)
             });
-            // useCount++;
+            if (data.lengthIssue) {
+                lengthFeedback = JSON.parse(data.lengthIssue);
+                lengthFeedback.forEach(item => {
+                    highlightSentence(item.sentence, item.feedback);
+                    // console.log(item.sentence + " feedback: " + item.feedback)
+                });
+            }
+
+            useCount++;
+            
             localStorage.setItem("openAI-usage", useCount);
         })
         .catch(error => {
