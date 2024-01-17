@@ -89,7 +89,8 @@
     background-color: #edf2fa;
     width: 22%;
     max-width: 22%;
-    right: 1%
+    right: 1%;
+    font-size: 10pt;
 }
 
 .essay.detail {

@@ -5,7 +5,8 @@ let useCount = localStorage.getItem("openAI-usage-essay");
         
     }
 function submitOpenAIQueryEssay() {    
-    let inputChat = document.getElementById("essay-submission").textContent;
+    let inputChat = document.getElementById("essay-submission").innerText;
+    console.log(inputChat)
     const submitIndex = inputChat.lastIndexOf("Submit");
     if (submitIndex !== -1 && submitIndex === inputChat.length - "Submit".length) {
         inputChat = inputChat.slice(0, submitIndex);
@@ -32,7 +33,10 @@ function submitOpenAIQueryEssay() {
             document.getElementById("openAI-loading").style.display = "none";
             overlay.remove();
             summaryResponse = data.summary.replace(/```/g, '');
-            document.getElementById("openAI-response").innerHTML = summaryResponse.replace(/html/g, '');
+            grade = rubric(summaryResponse);
+            fullResponse = '<strong>Grade: ' + grade + '</strong><br>' + summaryResponse.replace(/html/g, '')
+            document.getElementById("openAI-response").innerHTML = fullResponse;
+            
             feedback = data.line.replace(/```json/g, '');
             feedback = feedback.replace(/```/g, '');
             feedbackData = JSON.parse(feedback);
@@ -47,11 +51,10 @@ function submitOpenAIQueryEssay() {
                 // console.log(item.sentence + " feedback: " + item.feedback)
             });
             if (data.lengthIssue) {
-                lengthFeedback = JSON.parse(data.lengthIssue);
-                lengthFeedback.forEach(item => {
-                    highlightSentence(item.sentence, item.feedback);
-                    // console.log(item.sentence + " feedback: " + item.feedback)
-                });
+                console.log("long")
+                whitespaceFree = data.lengthIssue.replace(/^[\s\uFEFF\xA0\u200B\u0009]+|[\s\uFEFF\xA0\u200B\u0009]+$/g, '');
+                lengthFeedback = "This paragraph is a little long - is there a place where you could break it up? Stick to one idea per paragraph...I'm sensing two here!"                
+                highlightSentence(whitespaceFree.trim(), lengthFeedback);
             }
 
             useCount++;
@@ -97,13 +100,47 @@ essaySubmission.addEventListener("focus", function() {
     } 
 });
 
+gradesDict = {
+    4: 'um this is awkward', 4.5: 'D+',
+    5: 'C+', 5.5: 'C+',
+    6: 'B-', 6.5: 'B-',
+    7: 'B', 7.5: 'B',
+    8: 'B', 8.5: 'B',
+    9: 'B+', 9.5: 'B+',
+    10: 'A-', 10.5: 'A-',
+    11: 'A', 11.5: 'A',
+    12: 'A', 12.5: 'A',
+    13: 'A+', 13.5: 'A+'
+}
+function rubric(essayReview) {
+    let scorePattern = /Score: (\d+)/;
+    let match = essayReview.match(scorePattern);
+    let score = 0
+    if (match) {
+        score = parseInt(match[1]);
+        console.log("Score is:", score);
+    } else {
+        console.log("Score not found");
+    }
+    if (gradesDict.hasOwnProperty(score)) {
+        return gradesDict[score];
+    } else if (score > 13.5) {
+        return gradesDict[15];
+    } else if (score < 5) {
+        return "this is awkward"
+    }else {
+        return "Grade not found";
+    }
+
+}
+
 var comments = 0;
 function highlightSentence(sentence, feedback) {
     const essayElement = document.getElementById("essay-submission");
     let essayText = essayElement.innerHTML;
-    essayCompare = essayText.replace(/['"]+/g, '"');
-    const sentenceIndex = essayCompare.indexOf(sentence.replace(/['"]+/g, '"'));
-
+    essayCompare = essayText.replace(/['"“”]+/g, '"');
+    const sentenceIndex = essayCompare.indexOf(sentence.replace(/['"“”]+/g, '"'));
+    console.log(sentence)
     if (sentenceIndex !== -1) {
         // Wrap the sentence in a span with a highlight class
         essayText = essayText.substring(0, sentenceIndex) + 
