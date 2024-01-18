@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>10 Minute Break | Doorstop Education</title>
-    <meta name="title" content="10 Minute Break | Doorstop Education">
+    <title>10 Minute Breaks | Doorstop Education</title>
+    <meta name="title" content="10 Minute Breaks | Doorstop Education">
     <meta name="description" content="Find out what grade you'll get on your essay *before* you submit... and improve your writing!">
     <meta property="og:url" content="https://doorstopped.org/">
     <meta property="og:image" content="https://doorstopped.org/og.jpg">
     <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:title" content=">10 Minute Break | Doorstop Education">
+    <meta property="og:title" content="10 Minute Breaks | Doorstop Education">
     <meta property="og:description" content="Find out what grade you'll get on your essay *before* you submit.">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://doorstopped.org/">
-    <meta property="twitter:title" content=">10 Minute Break | Doorstop Education">
+    <meta property="twitter:title" content="10 Minute Breaks | Doorstop Education">
     <meta property="twitter:description" content="Find out what grade you'll get on your essay *before* you submit.">
-    <link href="/favicon.ico" rel="apple-touch-icon">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link href="favicons/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="favicons/favicon.ico" type="image/x-icon">
 
     <!-- include jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,37 +28,346 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="/doorstops/awful.css">
-<link rel="stylesheet" href="/doorstops/food.css">
-<link rel="stylesheet" href="/doorstops/grades.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
 <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
 <style>
-    .honk:hover {
-        cursor: pointer;
-        color: blueviolet
+        * {
+        box-sizing: border-box;
+        position: relative;
+        min-width: 0;
     }
+
+    body {
+        min-height: 100dvh;
+        max-width: 100%;
+        font-family: Poppins, sans-serif;
+        background-image: linear-gradient(rgba(245, 180, 180, .33), rgba(245, 180, 180, .87));
+    }
+
+    h1, h2, h3, h4 {
+        text-wrap: balance
+    }
+
+    p {
+        text-wrap: pretty;
+        color: black;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    p:hover {
+        cursor: pointer;
+        color: rgb(156, 131, 246)
+    }
+
+    h1, h2 {
+        font-weight:400;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    h1 {
+        font-size: 1.6em;
+        letter-spacing: 0.3px;
+    }
+    
+    h2 {
+        font-size: 1em;
+        letter-spacing: -0.2px;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px;
+        min-height: 16.5vh
+    }
+    .categories {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.5em;
+    }
+    .categories p {
+        padding-right: 20px;
+    }
+    .links {
+        width: 60%;
+        margin: auto;
+        background: white;
+        padding: 2em;
+        margin-top: 2em;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    
+.input-container {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.input-container input[type="text"] {
+    flex-grow: 1; 
+    max-width: 60%;
+    border: 2px solid #ccc; /* Border for the input */
+    padding: 8px; /* Padding inside the input field */
+    border-radius: 4px 0 0 4px; /* Rounded corners on the left side */
+    border-right: none; /* Remove right border to merge with button */
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.input-container input[type="submit"] {
+    padding: 8px 16px; /* Padding inside the button */
+    border: 2px solid #ccc; /* Border for the button */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background-color: rgb(211, 214, 238);
+    border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
+    border-left: none; /* Remove left border to merge with input field */
+    cursor: pointer; /* Cursor changes to pointer when hovering over the button */
+    transition: 0.15s;
+}
+
+.input-container input[type="submit"]:hover {
+    background-color: rgb(211, 214, 255);
+}
+
+.twirl {
+    transition: transform 0.2s;
+    display: inline-block; transform: rotate(15deg); -webkit-transform:rotate(15deg); -ms-transform:rotate(15deg);
+}
+
+.whirl {
+    transition: transform 0.2s;
+    display: inline-block; transform: rotate(-15deg); -webkit-transform:rotate(-15deg); -ms-transform:rotate(-15deg);
+
+}
+
+p:hover .whirl {
+    transform: rotate(30deg);
+}
+
+p:hover .twirl {
+    transform: rotate(-30deg);
+}
+
+p.nohover:hover {
+    color: black;
+    cursor: initial;
+}
+
+h1:hover {
+    cursor: pointer;
+}
+strong {
+    margin-bottom: 0.1em;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .categories {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+    }
+
+    #desktop {
+        display: none;
+    }
+    .nav {
+        flex-direction: column;
+    }
+    .links {
+        margin-top: 0;
+        width: 90%; 
+    }
+}
 </style>
+<link rel="stylesheet" href="/assets/css/emoji.css">
+
 </head>
 
 <body>
-    <p class="honk" onclick="tenMinutes('https://benguzovsky.com')">Ben site</p>
-    <p class="honk" onclick="tenMinutes('https://allisonhartley.com')">Allison site</p>
-    <p class="honk" onclick="tenMinutes('https://instagram.com')">Instagram</p>
+    <div class="nav">
+        <div class="title">
+            <h1 onclick="showCategory('honk')">take a 10 minute break 🏖️</h1>
+            <h2 id="desktop">we auto-close your next tab when time's up!</h2>
+        </div>
+        <div class="categories">
+            <p onclick="showCategory('news')">News</p>
+            <p onclick="showCategory('games')">Games</p>
+            <p onclick="showCategory('gems')">Gems</p>
+            <p onclick="showCategory('reading')">Curated Reading</p>
+        </div>
+    </div>
 
+    <div class="links" id="links">
+        <p class="nohover"><strong id="category">most popular:</strong></p>
+        <p class="honk games" onclick="tenMinutes('https://neal.fun/', 10)">neal.fun - quick, engaging games <span class="whirl">👑</span></p>
+        <p class="honk news" onclick="tenMinutes('https://nytimes.com', 10)">new york times <span class="twirl">📰</span></p>
+        <p class="honk news" onclick="tenMinutes('https://news.ycombinator.com', 10)">hacker news <span class="whirl">🐱‍💻</span></p>
+        <p class="honk gems" onclick="tenMinutes('https://summer-afternoon.vlucendo.com/', 10)">summer afternoon - an immersive experience <span class="twirl">☀️</span></p>
+        <p class="honk gems" onclick="tenMinutes('https://learningmusic.ableton.com/', 10)">learn sound design<span class="whirl">🎵</span></p>
+        <p class="honk reading" onclick="tenMinutes('https://ciechanow.ski/mechanical-watch/', 10)">mechanical watches, visualized <span class="twirl">⌚</span></p>
+        <p class="honk games" onclick="tenMinutes('https://chess.com', 10)">chess.com <span class="whirl">♔♛</span></p>
+        <p class="honk gems" onclick="tenMinutes('https://wayfinder.nfb.ca/', 10)">wayfinder - a calming experience <span class="twirl">🍂</span></p>
+        <p class="honk games" onclick="tenMinutes('https://www.nytimes.com/crosswords/game/mini', 10)">mini crossword <span class="whirl">✏️</span></p>
+        <br>
+        <p class="nohover"><strong>add your own!</strong></p>
+        <div class="input-container">
+            <input type="text" id="create" placeholder="myfavoritesite.com"></input>
+            <!-- <input type="text" id="duration" placeholder="10"></input> -->
+            <input type="submit" onclick="createBreak()"></input>
+        </div>
+
+    </div>
+    <div style="position: relative">
+          <p id="toggle-music" style="text-align: center; font-size: 12pt; font-weight: 300; position: fixed; z-index: 3; bottom: 16px; right: 16px; padding: 0.65em 1em; border-radius: 60px; width: 160px; background: radial-gradient(rgba(252, 230, 230, 0.5), rgba(252, 230, 230, 0.1)); border: none;" onclick="playMusic()">play music <img width="16px" height="16px" style="display: inline-block; vertical-align: middle;" id="on-off-sound" src="/assets/images/sound_max.png"/></p>
+          <!-- <img id="play" src="/assets/images/sound_max.png" width="48px" height="48px" style="margin-left: 6px;"> -->
+        </div>
 
 <script>
-    function tenMinutes(site) {
-        var newTab = window.open(site);
-        setInterval(function () {
-            newTab.close();
-        }, 600000);
+    let classBreak = ['instagram.com', 'youtube.com', 'twitter.com'];
+    let spinSpan = ['whirl', 'twirl']
+    let breakEmojis = ['☕', '🍸', '🛀', '💅', '🏝️', '🍹'];
+
+    function createLink(site) {
+        // let duration = document.querySelector('#duration').value;
+        let link = document.createElement('p');
+        link.className = 'fav';
+        let functionParams = "tenMinutes('" + site + "')"; // "', " + parseFloat(duration) + 
+        link.setAttribute('onclick', functionParams);
+        cleanSite = site.replace("https://", "").replace("http://", "");
+        link.innerHTML = cleanSite + " <span class=" + spinSpan[Math.floor(Math.random()*spinSpan.length)] + ">" + breakEmojis[Math.floor(Math.random()*breakEmojis.length)] +"</span>"; // + " - " + duration + " minutes"; 
+        if (classBreak.includes(cleanSite)) {
+            link.innerHTML = link.innerHTML + " - this site blocks auto-closing - we'll play a chime when 10 minutes is up!"
+        } 
+        document.getElementById('links').prepend(link);
     }
+
+    function loadItems() {
+        const links = JSON.parse(localStorage.getItem('links')) || [];
+
+        if (links.length != 0) {
+            document.getElementById('links').prepend(document.createElement('br'));
+        }
+        links.forEach(site => {
+            createLink(site);
+        });
+        if (links.length != 0) {
+            p = document.createElement('p');
+            p.className = 'nohover';
+            p.innerHTML = '<strong>your favorites:</strong>'
+            document.getElementById('links').prepend(p);
+        }
+    }
+    loadItems();
+
+    function tenMinutes(site, duration = 10) {
+        var newTab = window.open(site);
+        setTimeout(function () {
+            newTab.close();
+            document.title = "Take a break 🏖️";
+        }, 60000 * duration);
+        for (let i = 0; i < parseInt(duration); i++) {
+            setTimeout(function () {
+                document.title = "⏰ " + (duration - i) + " mins left!";
+            }, 60000 * i);
+        }
+
+    }
+    
+
+    function createBreak() {
+        let site = document.querySelector('#create').value;
+        if (!site.startsWith('https://') && !site.startsWith('http://')) {
+            if (site === "paulgraham.com") {
+                site = "http://" + site;
+            } else {
+                site = "https://" + site;
+            }
+        }
+        createLink(site)
+        const links = JSON.parse(localStorage.getItem('links')) || [];
+        if (links.length == 0) {
+            p = document.createElement('p');
+            p.className = 'nohover';
+            p.innerHTML = '<strong>your favorites:</strong>'
+            document.getElementById('links').prepend(p);
+        }
+        links.push(site);
+        localStorage.setItem('links', JSON.stringify(links));
+    }
+    
+    var audio = document.createElement('audio');
+    audio.setAttribute('src', '/assets/mp3/autumnchill.mp3');
+    audio.setAttribute('autoplay', 'autoplay');
+    audio.setAttribute('preload', 'auto');
+    var interval;
+    var firstPlay = true;
+    function playMusic() {
+        if (!audio.paused && audio.duration > 0) {
+            audio.pause();
+            document.getElementById("toggle-music").innerHTML = `play music <img width="16px" height="16px" style="display: inline-block; vertical-align: middle;" id="on-off-sound" src="/assets/images/sound_max.png"/>`;
+        } else {
+            audio.play();
+            document.getElementById("toggle-music").innerHTML = `pause music <img width="16px" height="16px" style="display: inline-block; vertical-align: middle;" id="on-off-sound" src="/assets/images/sound_mute.png"/>`;
+            if (firstPlay) {
+                firstPlay = false;
+                // interval = setInterval(animate, 2500)
+                audio.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                }, false);
+            }
+            
+        }
+    }
+
+    function showCategory(category) {
+        var honkElements = document.getElementsByClassName('honk');
+        for (var i = 0; i < honkElements.length; i++) {
+            honkElements[i].style.display = 'none';
+        }
+
+        // Show all elements with the passed classname
+        var categoryElements = document.getElementsByClassName(category);
+        for (var i = 0; i < categoryElements.length; i++) {
+            categoryElements[i].style.display = 'block'; // or 'inline', 'flex', etc., depending on your layout
+        }
+        if (category != "honk") {
+            document.getElementById('category').textContent = category;
+        } else {
+            document.getElementById('category').textContent = "most popular:";
+        }
+    }
+    // var animations = ['floatPath2', 'floatPath3', 'floatPath4'];
+    // function animate() {
+    //     var animation = animations[Math.floor(Math.random() * animations.length)];
+    //     var tears = ["🎵", "🎶", "🪕🪕", "🎵🎶"]
+    //     var tear = tears[Math.floor(Math.random() * tears.length)];
+    //     let newElement = $(`<span class='floating-emoji' style="font-size: 20px;">${tear}</span>`);
+        
+    //     /* Apply the animation */
+    //     newElement.css('animation', `${animation} 1s forwards`);
+    //     newElement.css('top', `50%`);
+    //     newElement.css('left', `0%`);
+    //     $("#emoji-start").parent().append(newElement);
+    //     setTimeout(function() {
+    //     newElement.remove();
+    //     }, 4000);
+    // }
+    // setInterval(animate, 5000)
+ 
 </script>
-<script src="/assets/js/script.js" defer></script>
 
 </body>
 
