@@ -100,7 +100,7 @@
         margin: auto;
         background: white;
         padding: 2em;
-        margin-top: 2em;
+        margin-top: 1.5em;
         border-radius: 10px;
         -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -128,7 +128,7 @@
     padding: 8px 16px; /* Padding inside the button */
     border: 2px solid #ccc; /* Border for the button */
     font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+    font-weight: 500;
     background-color: rgb(211, 214, 238);
     border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
     border-left: none; /* Remove left border to merge with input field */
@@ -173,6 +173,10 @@ strong {
     font-weight: 500;
 }
 
+
+.hidden {
+        display: none;
+    }
 @media (max-width: 768px) {
     .categories {
         display: grid;
@@ -189,6 +193,7 @@ strong {
         margin-top: 0;
         width: 90%; 
     }
+
 }
 </style>
 <link rel="stylesheet" href="/assets/css/emoji.css">
@@ -198,7 +203,7 @@ strong {
 <body>
     <div class="nav">
         <div class="title">
-            <h1 onclick="showCategory('honk')">take a 10 minute break 🏖️</h1>
+            <h1 onclick="showCategory('popular')">take a 10 minute break 🏖️</h1>
             <h2 id="desktop">we auto-close your next tab when time's up!</h2>
         </div>
         <div class="categories">
@@ -211,15 +216,27 @@ strong {
 
     <div class="links" id="links">
         <p class="nohover"><strong id="category">most popular:</strong></p>
-        <p class="honk games" onclick="tenMinutes('https://neal.fun/', 10)">neal.fun - quick, engaging games <span class="whirl">👑</span></p>
-        <p class="honk news" onclick="tenMinutes('https://nytimes.com', 10)">new york times <span class="twirl">📰</span></p>
-        <p class="honk news" onclick="tenMinutes('https://news.ycombinator.com', 10)">hacker news <span class="whirl">🐱‍💻</span></p>
-        <p class="honk gems" onclick="tenMinutes('https://summer-afternoon.vlucendo.com/', 10)">summer afternoon - an immersive experience <span class="twirl">☀️</span></p>
-        <p class="honk gems" onclick="tenMinutes('https://learningmusic.ableton.com/', 10)">learn sound design<span class="whirl">🎵</span></p>
-        <p class="honk reading" onclick="tenMinutes('https://ciechanow.ski/mechanical-watch/', 10)">mechanical watches, visualized <span class="twirl">⌚</span></p>
-        <p class="honk games" onclick="tenMinutes('https://chess.com', 10)">chess.com <span class="whirl">♔♛</span></p>
-        <p class="honk gems" onclick="tenMinutes('https://wayfinder.nfb.ca/', 10)">wayfinder - a calming experience <span class="twirl">🍂</span></p>
-        <p class="honk games" onclick="tenMinutes('https://www.nytimes.com/crosswords/game/mini', 10)">mini crossword <span class="whirl">✏️</span></p>
+        <p class="honk popular games" onclick="tenMinutes('https://neal.fun/', 10)">neal.fun - quick, engaging games <span class="whirl">👑</span></p>
+        <p class="honk popular gems" onclick="tenMinutes('https://www.montereybayaquarium.org/animals/live-cams', 10)">monterey aquarium live cams <span class="twirl">🦦</span></p>
+        <p class="honk popular news" onclick="tenMinutes('https://news.ycombinator.com', 10)">hacker news <span class="whirl">🐱‍💻</span></p>
+        <p class="honk popular gems" onclick="tenMinutes('https://summer-afternoon.vlucendo.com/', 10)">summer afternoon - an immersive experience <span class="twirl">☀️</span></p>
+        <p class="honk popular gems" onclick="tenMinutes('https://learningmusic.ableton.com/', 10)">learn sound design<span class="whirl">🎵</span></p>
+        <p class="honk popular reading" onclick="tenMinutes('https://nytimes.com/column/modern-love', 10)">the modern love column <span class="whirl">🥰</span></p>
+        <p class="honk popular reading" onclick="tenMinutes('https://ciechanow.ski/mechanical-watch/', 10)">mechanical watches, visualized <span class="twirl">⌚</span></p>
+        <p class="honk popular games" onclick="tenMinutes('https://chess.com', 10)">chess.com <span class="whirl">♔♛</span></p>
+        <p class="honk popular gems" onclick="tenMinutes('https://wayfinder.nfb.ca/', 10)">wayfinder - a calming experience <span class="twirl">🍂</span></p>
+        <p class="honk popular games" onclick="tenMinutes('https://www.nytimes.com/crosswords/game/mini', 10)">mini crossword <span class="whirl">✏️</span></p>
+
+        <p class="honk reading hidden" onclick="tenMinutes(' https://www.jstor.org/stable/20079433', 10)">20,000 cannibals with poison-tipped spears <span class="whirl">🍢</span></p>
+
+<!-- https://onjustonebreath.com/ -->
+<!-- https://everynoise.com/ -->
+        <p class="honk news hidden" onclick="tenMinutes('https://nytimes.com', 10)">new york times <span class="twirl">📰</span></p>
+        <p class="honk news hidden" onclick="tenMinutes('https://cnn.com', 10)">cnn <span class="whirl">🟥</span></p>
+        <p class="honk news hidden" onclick="tenMinutes('https://buzzfeed.com', 10)">buzzfeed <span class="twirl">🐝</span></p>
+        <p class="honk news hidden" onclick="tenMinutes('https://wsj.com', 10)">wall street journal <span class="whirl">📰</span></p>
+
+        <p class="honk gems hidden" onclick="tenMinutes('https://bleuje.com/randomaniations', 10)">random animations <span class="whirl">✨</span></p>
         <br>
         <p class="nohover"><strong>add your own!</strong></p>
         <div class="input-container">
@@ -343,7 +360,7 @@ strong {
         for (var i = 0; i < categoryElements.length; i++) {
             categoryElements[i].style.display = 'block'; // or 'inline', 'flex', etc., depending on your layout
         }
-        if (category != "honk") {
+        if (category != "popular") {
             document.getElementById('category').textContent = category;
         } else {
             document.getElementById('category').textContent = "most popular:";
