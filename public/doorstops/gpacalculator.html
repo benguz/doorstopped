@@ -1,0 +1,30 @@
+<script>
+    GPA = {
+        "A": 4.0,
+        "A-": 3.7,
+        "B+": 3.3,
+        "B": 3,
+        "B-": 2.7,
+        "C+": 2.3,
+        "C": 2,
+        "C-": 1.7,
+        "D+": 1.3,
+        "D": 1,
+        "D-": 0.7,
+        "F": 0
+    }
+    function grades() {
+        let grades = document.getElementsByClassName('grade');
+    var sumPoints = 0;
+    grades.forEach(grade => {
+        pointValue = GPA[grade.textContent];
+        if (pointValue) {
+            sumPoints = sumPoints + pointValue;
+        } else {
+            console.log("flag")
+        }
+    });
+    return (sumPoints / grades.length)
+    }
+    
+</script>

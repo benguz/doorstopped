@@ -18,6 +18,8 @@ function submitOpenAIQueryEssay() {
         console.log("overuse")
     } else if (inputChat) {
         document.getElementById("openAI-loading").style.display = "inline-block";
+        document.getElementById("doorstop-cta").style.display = "block";
+
         var overlay = document.createElement('div');
         overlay.className = 'overlay';
         document.getElementById("essay-submission").appendChild(overlay);
@@ -31,6 +33,7 @@ function submitOpenAIQueryEssay() {
         .then(response => response.json())  // Parse the JSON from the response
         .then(data => {
             document.getElementById("openAI-loading").style.display = "none";
+            document.getElementById("doorstop-cta").style.display = "none";
             overlay.remove();
             summaryResponse = data.summary.replace(/```/g, '');
             grade = rubric(summaryResponse);
@@ -45,11 +48,13 @@ function submitOpenAIQueryEssay() {
             feedbackDivs.forEach(div => {
                 div.parentNode.removeChild(div);
             });
-            // add new feedback
-            feedbackData.forEach(item => {
-                highlightSentence(item.sentence, item.feedback);
-                // console.log(item.sentence + " feedback: " + item.feedback)
-            });
+            if (feedbackData && feedbackData instanceof Array) {
+                // add new feedback
+                feedbackData.forEach(item => {
+                    highlightSentence(item.sentence, item.feedback);
+                });
+            }
+            
             if (data.lengthIssue) {
                 console.log("long")
                 whitespaceFree = data.lengthIssue.replace(/^[\s\uFEFF\xA0\u200B\u0009]+|[\s\uFEFF\xA0\u200B\u0009]+$/g, '');
@@ -64,6 +69,7 @@ function submitOpenAIQueryEssay() {
         .catch(error => {
             console.error("Error:", error);
             document.getElementById("openAI-loading").style.display = "none";
+            document.getElementById("doorstop-cta").style.display = "none";
             overlay.remove();
             document.getElementById("openAI-response").innerHTML = "Ran into an error, sorry! Try again with a shorter prompt or email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a> with a message about your error.";
         }); 

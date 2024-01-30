@@ -30,6 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/assets/css/warning.css">
 <link rel="stylesheet" href="/doorstops/awful.css">
 <link rel="stylesheet" href="/doorstops/food.css">
 <link rel="stylesheet" href="/doorstops/grades.css">
@@ -39,7 +40,9 @@
 </head>
 
 <body class="body-essay">
-    <br>
+    
+    <button id="cta-top" class="essay-button" style="position: absolute; top: 0.5em; right: 0.5em; padding: 1em;" onclick="window.open('https://fix.school/dashboard', '_blank')">Fix anything wrong with school</button>
+    <br><br class="desktop"><br class="desktop">
     <h1 class="essay">Find out what grade you'll get on your essay *before* you submit</h1>
     <!-- <h2 class="essay">Paste it below and choose your school year to get a grade + simple feedback </h2> -->
 
@@ -64,7 +67,22 @@
         &#8203;Paste your essay here...
         <button id="submit-essay" class="essay-button" onclick="submitOpenAIQueryEssay()" contenteditable="false"><strong>Submit</strong></button><div class="overlay" id="loading-overlay" style="display: none;"></div>
       </div>
+      <br>
+      <div class="warning-box extension-cta" style=" background-color: rgb(211, 205, 255); border-color: rgb(99, 70, 215)   ">
+        <button class="warning-icon" onclick="window.location.href = '/doorstops/extension'">
+            <img width="24px" height="24px" src="/assets/images/cowboy.png">
+        </button>
+        <!--emoji list: angry.png zzz.png trophy.png thunder.png spy.png spazz.png (heart) 
+            saint.png praise.png plead.png monkey.png key.png heart.png microscope.png 
+            devil.png cowboy.png diamond.png-->
+        <div>
+            <p>Behind on an essay? Use <a href="/doorstops/extension">this email template</a> to get an extension, fast.</p>
+
+        </div>
+        </div>
+      
       <div class="lds-roller" id="openAI-loading" style="display: none;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <p id="doorstop-cta" class="doorstop-cta">While you wait, check out <a href="https://fix.school/dashboard" target=”_blank” >fix.school</a>, the playbook for changing anything wrong with school</p>
       <br><br>
 
 <script src="/doorstops/grades.js"></script>

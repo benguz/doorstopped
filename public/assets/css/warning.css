@@ -1,0 +1,35 @@
+
+.warning-box {
+    position: relative;
+    background-color: #FCF1DD;
+    border-radius: 3px;
+    border: 1px solid #fecb6a;
+    padding: 15px;
+    margin-bottom: 1rem;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 13pt;
+    display: flex;
+    align-items: center; /* Vertical centering */
+  }
+  
+  .warning-box p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .warning-box a {
+    margin: 0;
+    display: inline;
+    line-height: 1.5;
+  }
+  
+  .warning-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-right: 12px;
+  }
+  
+  .warning-icon:focus {
+    outline: none;
+  }

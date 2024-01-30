@@ -1,0 +1,12 @@
+<script>
+    function finalGrade() {
+        var finalWeight = document.getElementById("final-weight").value;
+        var currentPct = document.getElementById("current-pct").value;
+        var neededPct = document.getElementById("needed-pct").value;
+        // "accidentally used fractions" validation
+        var otherWeight = 100 - finalWeight;
+        // let user input other categories
+        return ((neededPct - (otherWeight * currentPct)) / finalWeight)
+    }
+
+</script>
