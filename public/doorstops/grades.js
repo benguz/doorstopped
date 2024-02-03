@@ -6,7 +6,7 @@ let useCount = localStorage.getItem("openAI-usage-essay");
     }
 function submitOpenAIQueryEssay() {    
     let inputChat = document.getElementById("essay-submission").innerText;
-    console.log(inputChat)
+    
     const submitIndex = inputChat.lastIndexOf("Submit");
     if (submitIndex !== -1 && submitIndex === inputChat.length - "Submit".length) {
         inputChat = inputChat.slice(0, submitIndex);
@@ -17,7 +17,11 @@ function submitOpenAIQueryEssay() {
         document.getElementById("openAI-response").innerHTML = "Sorry, you've reached our submission limit. If you want a more access, email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a>. We're working to get more funding ASAP!";
         console.log("overuse")
     } else if (inputChat) {
-        document.getElementById("openAI-loading").style.display = "inline-block";
+        let wordCount = inputChat.split(' ').filter(function(n) { return n != '' }).length;
+        if (wordCount > 2000) {
+            document.getElementById("openAI-response").innerHTML = "Sorry, your essay is over our length limit of 2000 words right now! We offer this for free and can only do so much right now, but we're working to get more funding!";
+        } else {
+            document.getElementById("openAI-loading").style.display = "inline-block";
         document.getElementById("doorstop-cta").style.display = "block";
 
         var overlay = document.createElement('div');
@@ -73,6 +77,8 @@ function submitOpenAIQueryEssay() {
             overlay.remove();
             document.getElementById("openAI-response").innerHTML = "Ran into an error, sorry! Try again with a shorter prompt or email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a> with a message about your error.";
         }); 
+        }
+        
     } else {
         document.getElementById("openAI-response").innerHTML = "Add text below, then hit submit!";
 
