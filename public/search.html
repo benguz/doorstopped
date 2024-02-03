@@ -115,18 +115,11 @@
         }
 
         input::placeholder {
-            opacity: 0.5;
+            opacity: 0.5; 
+            animation: colorChange 1s infinite;
+            
         }
-        @keyframes placeholderAnimation {
-  0%, 100% {
-    opacity: 1;
-    transform: translate(0%);
-  }
-  50% {
-    opacity: 0;
-    transform: translate(70%);
-  }
-}
+       
 
 
 
@@ -183,8 +176,11 @@
                     .then(response => response.json())  // Parse the JSON from the response
                     .then(data => {
                         document.getElementById("openAI-loading").style.display = "none";
-                        console.log(data);
-                        window.open('https://fix.school' + data);
+                        
+                        if (data.charAt(0) === '/') {
+                            window.open('https://fix.school' + data);
+                        }
+                        
                     })
                     .catch(error => {
                         console.error("Error:", error);
