@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Change School</title>
+    <meta name="title" content="Change School">
+    <meta name="description" content="Swipe through 1,000's of Doorstops, personalized strategies for being happier in school.">
+    <meta property="og:url" content="https://doorstopped.org/">
+    <meta property="og:image" content="https://doorstopped.org/og.jpg">
+    <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="Change School With Doorstops">
+    <meta property="og:description" content="1,000's of personalized strategies for being happier in school. Swipe, play, learn, and find the perfect Doorstop.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://doorstopped.org/dashboard">
+    <meta property="twitter:title" content="Change School">
+    <meta property="twitter:description" content="Swipe through 1,000's of Doorstops, personalized strategies for being happier in school.">
+    <link href="./favicon.ico" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- include jQuery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Hammer JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="/essentialstyles.css" rel="stylesheet">
+    <link href="/doorstops/awful.css" rel="stylesheet">
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <style>
+        * {
+            
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+    padding: 0;
+        }
+        body {
+            font-family: Poppins, sans-serif;
+            display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: white;
+    box-sizing: border-box;
+    max-width: 100%;
+    text-align: center;
+        }
+        h2 {
+            color: black;
+    margin: initial;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.6;
+        }
+        
+
+#onboarding-survey {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    max-width: 100%;
+}
+        p {
+            font-family: "colfax-light", sans-serif;
+            font-size: 16px;
+        }
+        .input-container {
+            position: relative;
+            margin: auto;
+            width: 400px;
+            max-width: 98%;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .submit-arrow {
+            position: absolute;
+            right: 15px;
+            top: calc(50% - 3px);
+
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            cursor: pointer;
+            transform: rotate(-45deg);
+        }
+
+        input::placeholder {
+            opacity: 0.5;
+        }
+        @keyframes placeholderAnimation {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(0%);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(70%);
+  }
+}
+
+
+
+@media (max-width: 900px) {
+    h2 {
+        font-size: 30px;
+    }
+}
+    </style>
+</head>
+
+<body id="dashboard-body" >
+    
+
+              <div id="onboarding-survey" style="background-color: white;"> 
+            <h2 >What sucks about high school?</h2>
+            <p style="margin-bottom: 10px; letter-spacing: 0;">Write any problem, we'll take you to a step-by-step solution</p>
+            <div class="input-container">
+                <input id="input-field" type="text" placeholder="gross bathrooms">
+                <div class="submit-arrow" onclick="submitInput()"></div>
+            </div>
+            <div class="lds-roller" id="openAI-loading" style="display: none; margin: auto;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+            <br><br><br>
+        </div>
+
+    
+        <script>
+            const placeholders = ["The food is gross", "The drama...", "I have an essay due tomorrow", "class is boring", "awful policy", "toxic groupchats", "this one teacher is so mean"];
+            let currentIndex =  Math.floor(Math.random() * (placeholders.length - 1));
+    
+            function updatePlaceholder() {
+                const input = document.getElementById('input-field');
+                
+                input.placeholder = placeholders[currentIndex];
+                currentIndex = (currentIndex + 1) % placeholders.length;
+                
+            }
+    
+            setInterval(updatePlaceholder, 2000); // Change placeholder every 2 seconds
+    
+            function submitInput() {
+                let inputChat = document.getElementById("input-field").value;
+                if (inputChat) {
+                    
+                    document.getElementById("openAI-loading").style.display = "inline-block";
+                    fetch(`https://ai.fix.school/topic-search`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({input: inputChat})
+                    })
+                    .then(response => response.json())  // Parse the JSON from the response
+                    .then(data => {
+                        document.getElementById("openAI-loading").style.display = "none";
+                        console.log(data);
+                        window.open('https://fix.school' + data);
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        document.getElementById("openAI-loading").style.display = "none";
+                        // document.getElementById("openAI-response").innerHTML = "Ran into an error, sorry! Try again with a shorter prompt or if you want a free OpenAI membership, email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a>.";
+                    }); 
+                }
+            }
+    
+            // Trigger submit on Enter key
+            document.getElementById('input-field').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    submitInput();
+                }
+            });
+        </script>
+
+  <script src="/assets/js/script.js" defer></script>
+</body>
+
+</html>
