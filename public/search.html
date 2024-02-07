@@ -74,10 +74,10 @@
     margin: auto;
     max-width: 100%;
 }
-        p {
+        /* p {
             font-family: "colfax-light", sans-serif;
             font-size: 16px;
-        }
+        } */
         .input-container {
             position: relative;
             margin: auto;
@@ -132,8 +132,11 @@
         .balance {
             margin-bottom: 10px; letter-spacing: 0; 
         }
-        p {
-            font-family: "Poppins", sans-serif
+        p, a {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.4;
+            font-size: 16px;
+            letter-spacing: 0px;
         }
 
 
@@ -141,7 +144,7 @@
     h2 {
         font-size: 24pt;
     }
-    .credit {
+    .credit, .credit a {
         font-size: 10pt;
     }
     .balance {
@@ -185,6 +188,7 @@
             setInterval(updatePlaceholder, 2000); // Change placeholder every 2 seconds
             
             var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            console.log(isSafari)
             function submitInput() {
                 let inputChat = document.getElementById("input-field").value;
                 
@@ -206,13 +210,14 @@
                         document.getElementById("openAI-loading").style.display = "none";
                         
                         if (data.charAt(0) === '/') {   
+                            plausible("searched");
                             if (isSafari) {
                                 windowReference.location = 'https://fix.school' + data;
                                 console.log("safari")
                             } else {
                                 window.open('https://fix.school' + data);
                             }
-                            plausible("searched");
+                            
                         }
                         
                     })
