@@ -27,8 +27,6 @@
     <!-- include jQuery UI -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-    <!-- Hammer JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -84,7 +82,7 @@
             position: relative;
             margin: auto;
             width: 400px;
-            max-width: 98%;
+            max-width: 97%;
         }
 
         input {
@@ -114,18 +112,38 @@
             transform: rotate(-45deg);
         }
 
+        .submit-icon {
+            position: absolute;
+            right: 15px;
+            top: calc(50% - 3px);
+            cursor: pointer;
+            display: inline-block;
+        }
+
         input::placeholder {
             opacity: 0.5; 
             animation: colorChange 1s infinite;
             
         }
-       
+        .credit {
+            position: absolute; bottom: 0.5em; right: 0.5em; line-height: 1.4; opacity: 0.7;
+            text-align: left;
+        }
+        .balance {
+            margin-bottom: 10px; letter-spacing: 0; 
+        }
 
 
 
 @media (max-width: 900px) {
     h2 {
-        font-size: 30px;
+        font-size: 24pt;
+    }
+    .credit {
+        font-size: 10pt;
+    }
+    .balance {
+        font-size: 12pt;
     }
 }
     </style>
@@ -136,19 +154,22 @@
 
               <div id="onboarding-survey" style="background-color: white;"> 
             <h2 >What sucks about high school?</h2>
-            <p style="margin-bottom: 10px; letter-spacing: 0;">Write any problem, we'll take you to a step-by-step solution</p>
+            <p class="balance">enter any problem, get a step-by-step solution</p>
             <div class="input-container">
                 <input id="input-field" type="text" placeholder="gross bathrooms">
-                <div class="submit-arrow" onclick="submitInput()"></div>
+                <div class="submit-arrow"  onclick="submitInput()"></div>
+                <div style="position: absolute; padding: 20px; cursor: pointer; display: inline-block; right: 4px;"></div>
             </div>
+            <p style="margin-top: 2px; line-height: 1.4; opacity: 0.7"><a href="/dashboard" style="text-decoration: underline;">i'm not sure what sucks...</a></p>
+            <!-- Suggestions -->
             <div class="lds-roller" id="openAI-loading" style="display: none; margin: auto;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-            <br><br><br>
+            <br><br><br><br>
         </div>
-
+        <p class="credit">built with help from 100s of students at <a href="https://doorstopeducation.org" style="text-decoration: underline;">Doorstop Education</a></p>
     
         <script>
-            const placeholders = ["The food is gross", "The drama...", "I have an essay due tomorrow", "class is boring", "awful policy", "toxic groupchats", "this one teacher is so mean"];
+            const placeholders = ["the food is gross", "the drama...", "i have an essay due tomorrow", "class is boring", "awful policy", "toxic groupchats", "this one teacher is so mean"];
             let currentIndex =  Math.floor(Math.random() * (placeholders.length - 1));
     
             function updatePlaceholder() {
@@ -160,11 +181,13 @@
             }
     
             setInterval(updatePlaceholder, 2000); // Change placeholder every 2 seconds
-    
+            
+            
             function submitInput() {
                 let inputChat = document.getElementById("input-field").value;
-                if (inputChat) {
-                    
+                
+                if (inputChat && inputChat != "") {
+                    var windowReference = window.open();
                     document.getElementById("openAI-loading").style.display = "inline-block";
                     fetch(`https://ai.fix.school/topic-search`, {
                     method: 'POST',
@@ -178,7 +201,8 @@
                         document.getElementById("openAI-loading").style.display = "none";
                         
                         if (data.charAt(0) === '/') {
-                            window.open('https://fix.school' + data);
+                            // window.open('https://fix.school' + data);
+                            windowReference.location = 'https://fix.school' + data;
                         }
                         
                     })
