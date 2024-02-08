@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>PrincetonGPT | College & Job help for Princeton Students</title>
+    <meta name="title" content="PrincetonGPT | College & Job help for Princeton Students">
+    <meta name="description" content="Personalized advice and life hacks vetted by dozens of Princeton seniors and powered by AI.">
+    <!-- <meta property="og:url" content="https://doorstopped.org/"> -->
+    <!-- <meta property="og:image" content="https://doorstopped.org/og.jpg">
+    <meta name="twitter:image" content="https://doorstopped.org/og.jpg"> -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="PrincetonGPT | College & Job help for Princeton Students">
+    <meta property="og:description" content="Personalized advice and life hacks created by Princeton Seniors and powered by AI.">
+    <meta property="twitter:card" content="summary_large_image">
+    <!-- <meta property="twitter:url" content="https://doorstopped.org/"> -->
+    <meta property="twitter:title" content="PrincetonGPT | College & Job help for Princeton Students">
+    <meta property="twitter:description" content="Personalized advice and life hacks created by Princeton seniors and powered by AI.">
+    <link href="favicon/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+
+    <!-- include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- include jQuery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="college-styles.css">
+<script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+<style>
+    #chat-box {
+        width: 60%;
+        max-width: 60%;
+        margin: auto;
+        overflow-y: auto;
+    }
+    @media screen and (max-width: 900px) {
+        #chat-box {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body class="body-octopus" id="document-body">
+    <div class="onboarding-overlay" id="onboarding" style="display: none;">
+        <!-- <button class="essay-button" style="position: absolute; top: 10px; right: 10px;" onclick="this.parentElement.style.display = 'none';">x</button> -->
+        <h1>Welcome to PrincetonGPT 🐯🐯</h1>
+        <p class="subtitle" style="font-size: 13pt; margin-bottom: 0;">All the secrets, advice, and ___ , made by Princeton seniors.</p>
+        <!-- <p>Add an OpenAI API key:</p>
+        <div class="input-container" autocomplete="off">
+                <input autocomplete="false" name="hidden" type="text" style="display:none;">
+                <input type="text" id="key" placeholder="API key here" spellcheck="false" autocapitalize="off">
+                <input id="key-form" type="submit" value="Submit">
+        </div> -->
+        <p>Change model type and number of prompts by clicking the Octopus icon, or self-host on <a href="https://github.com/benguz/prompt-octopus">Github</a>!</p>
+        
+    </div>
+    <div class="button-wrapper" style="
+    position: absolute;
+    top: 0;
+    right: 0;
+">
+
+    <button class="settings-toggle essay-button" id="settings-button" onclick="toggleSettings()">
+    </button>
+    </div>
+    <div class="settings-overlay" id="settings" style="display: none">
+        <button class="essay-button" style="position: absolute; top: 10px; right: 10px;" onclick="toggleSettings()">x</button>
+        <h2 style="text-align: center; margin-bottom: 5px;">Settings</h2>
+        <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; width: 100%;">
+            
+            <div class="vertical">
+                <button id="add-response" class="essay-button" onclick="addResponse()"><strong>Add Column</strong></button>
+                <p>Ctrl+B / ⌘+B</p>
+            </div>
+            <div class="vertical">
+                <button id="add-row" class="essay-button" onclick="addRow()"><strong>Add Row</strong></button>
+                <p>Ctrl+E / ⌘+E</p>
+            </div>
+            <div class="vertical">
+                <button id="show-history" class="essay-button" onclick="showHistory()"><strong>View History</strong></button>
+                <p>Ctrl+M / ⌘+M</p>
+
+            </div>
+        </div>
+        <p style="text-align: center; "><strong>Change Textbox Height</strong></p>
+        <div class="slider-wrapper noswipe" id="noswipe">
+            <input type="range" min="10" max="50" value="22" class="slider noswipe" id="myRange" step="2">
+            <div class="slider-labels">
+              <label class="slider-label-left"><strong>10%</strong></label>
+              <label class="slider-label-right"><strong>50%</strong></label>
+            </div>
+          </div>
+          <br>
+          <p style="text-align: center; margin-bottom: 2px;"><strong>Change Model Type</strong></p>
+          <p class="subtitle" style="text-align: center;" id="model-name">Current is gpt-4-1106-preview.</p>
+
+          <div  class="input-container">
+            <input type="text" id="model-input" placeholder="try gpt-3.5-turbo, gpt-4, or gpt-4-1106-preview" spellcheck="false" autocapitalize="off" autocomplete="false">
+            <input type="submit" id="model-form" value="Submit">
+                <button id="remove-key" class="essay-button"  onclick="removeKey()"><strong>Unsave API Key</strong></button>
+          </div>
+          <p class="subtitle" id="model-status" style="display: none">Changed successfully!</p>
+          <p class="subtitle" id="key-status" style="display: none">Unsaved successfully! Refresh to add a new key.</p>
+
+    </div>
+    <div class="history-overlay" id="prompt-history" style="display: none">
+
+    </div>
+
+    <div id="chat-box">
+
+    </div>
+        
+
+    </div>
+    <div id="openAI-response" style="display: none;">
+        <button class="essay-button" style="position: absolute; top: 10px; right: 10px;" onclick="this.parentElement.style.display = 'none';">x</button>
+        <strong>Error 🐙🐙</strong><p id="error-content"></p>
+      </div>
+    <button id="submit-essay" class="essay-button" onclick="submitMultiplePrompts()" contenteditable="false"><strong>Submit</strong></button>
+      <div class="prompt-entry" id="essay-submission" contenteditable="true" spellcheck="false">
+        &#8203;Write a message here... you'll get a response for each of your prompts
+        <div class="overlay" id="loading-overlay" style="display: none;"></div>
+      </div>
+      
+      <div class="lds-roller" id="openAI-loading" style="display: none;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <br><br>
+
+<script src="college-script.js"></script>
+
+</body>
+
+</html>
