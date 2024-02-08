@@ -138,13 +138,16 @@
             font-size: 16px;
             letter-spacing: 0px;
         }
+        .notsure a {
+            margin-top: 2px; line-height: 1.4; opacity: 0.7; font-size: 14px;
+        }
 
 
 @media (max-width: 900px) {
     h2 {
         font-size: 24pt;
     }
-    .credit, .credit a {
+    .credit, .credit a, .notsure a{
         font-size: 10pt;
     }
     .balance {
@@ -165,14 +168,14 @@
                 <div style="position: absolute; padding: 20px; cursor: pointer; display: inline-block; right: 4px; z-index: 3;" onclick="submitInput()"></div>
                 <div class="submit-arrow"></div>
             </div>
-            <p style="margin-top: 2px; line-height: 1.4; opacity: 0.7"><a href="/dashboard" style="text-decoration: underline;">i'm not sure what sucks...</a></p>
+            <p class="notsure"><a href="/dashboard" style="text-decoration: underline;">i'm not sure what sucks...</a></p>
             <!-- Suggestions -->
             <div class="lds-roller" id="openAI-loading" style="display: none; margin: auto;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
             <br><br><br><br>
         </div>
         <p class="credit">built with help from 100s of students at <a href="https://doorstopeducation.org" style="text-decoration: underline;">Doorstop Education</a></p>
-    
+        
         <script>
             const placeholders = ["the food is gross", "the drama...", "i have an essay due tomorrow", "class is boring", "awful policy", "toxic groupchats", "this one teacher is so mean"];
             let currentIndex =  Math.floor(Math.random() * (placeholders.length - 1));

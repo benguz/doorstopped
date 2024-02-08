@@ -7,7 +7,7 @@ const toc = document.querySelector('#toc');
       title: 'Leveraged',
       links: [
         { href: '/doorstops', children: 'Realities' },
-        { href: '/pdfs/leveraged.pdf', children: 'Agency' },
+        { href: '/research/leveraged.pdf', children: 'Agency' },
         { href: '/stuco', children: 'Leadership'}
       ]
     },

@@ -117,24 +117,61 @@ body {
     flex: 1;
 }
 
+.header {
+  background-color: #f5f5f5
+}
+
+.header .btn {
+  background-color: #97E5D7; color: black;
+}
+
 @media screen and (max-width: 1023px){
     .sidesection {
     display: none; 
     flex: 0;
 }
+
+.header .btn {
+  display: flex;
+  padding: 8px 8px;
+  font-size: var(--fs-5);
+  background-color: var(--kappel);
+  color: var(--white)
+}
 }
 </style>
 
-
-  </style>
 
   </head>
 
 <body id="top">
 
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="/search" class="logo">
+        <img src="/assets/images/doors.svg" width="162" height="50" alt="Doorstopped logo">
+      </a>
 
 
-      
+
+      <div class="header-actions">
+
+        <a href="/search" class="btn has-before" >
+          <span class="span">Change school</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
     <main style="display: flex; flex-direction: row;">
       <!-- <div class="sidenavtotal" style="padding:3em;">
       
@@ -148,7 +185,7 @@ body {
           </div>
       </div>
         <div class="yonk" width="620px">
-          <br class="desktop"><br>
+          <br class="desktop"><br><br class="desktop"><br><br>
 
 <h1>Getting a day off... then fixing the whole schedule</h1>
 <p class="subtitle" style="font-family: League Spartan; color: #989aa2; font-size: 15pt;">A step-by-step guide to getting a schoolwide a day off, plus strategies for even bigger schedule change.</p>
@@ -223,8 +260,8 @@ body {
 </div>
       
 
-      <div class="sidesection">
-        <br class="desktop"><br class="desktop">
+      <div class="sidesection" style="margin-top: 15px;">
+        <br class="desktop"><br class="desktop"><br class="desktop">
       <div id="toc">
           </div>
       </div>

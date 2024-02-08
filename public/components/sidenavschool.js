@@ -24,11 +24,12 @@ const toc = document.querySelector('#toc');
         { href: '/school/dress', children: 'Changing the Dress Code' },
         { href: '/school/comms', children: 'Forcing Communication' },
         { href: '/school/dayoff', children: 'Getting a day off' },
+        { href: '/search', children: 'Fix your school drama' },
         { href: '/school/interns', children: 'Starting New Programs' },
         { href: '/school/waffle', children: 'Playing the Waffle Game' },
         { href: '/school/change', children: 'Change 101' },
         { href: '/school/whypolicy', children: 'Why Policy Change Falls Short' },
-        { href: '/school/awful', children: 'Fighting Awful Policy' },
+        { href: '/doorstops/awful', children: 'Fighting Awful Policy' },
         { href: '/school/stories', children: 'Telling True Stories' },
         { href: '/school/stuco', children: 'Making Student Council Work' },
         { href: '/school/scare', children: 'Fighting Scare tactics' },
@@ -142,10 +143,11 @@ function generateSidebarHtml(currentPlayer) {
   }
   
   // Function to create an individual tab
+  // MODIFIED TEMPORARILY AS LINKS AREN'T WORKING - used to be  onclick="window.location.href='${link}'"
   function createTab(text, link, color, back, img) {
     return `<div class="bingo-item"> 
-    <button class="aesthetic-tab front" style="background-color: ${color};" onclick="window.location.href='${link}'"><img class="aesthetic-icon" src="/assets/images/${img}.png"></img>${text}</button>
-    <button class="aesthetic-tab back" style="background-color: ${color};" onclick="window.location.href='${link}'"><img class="aesthetic-icon" src="/assets/images/${img}.png"></img>${back}</button>
+    <button class="aesthetic-tab front" style="background-color: ${color};" onclick="window.location.href='/school/flow'"><img class="aesthetic-icon" src="/assets/images/${img}.png"></img>${text}</button>
+    <button class="aesthetic-tab back" style="background-color: ${color};" onclick="window.location.href='/school/flow'"><img class="aesthetic-icon" src="/assets/images/${img}.png"></img>${back}</button>
     </div>`;
   }
 

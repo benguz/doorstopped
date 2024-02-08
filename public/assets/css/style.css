@@ -903,7 +903,7 @@ r {
 
 .footer-brand .wrapper .span { font-weight: var(--fw-500); }
 
-.footer-link { transition: var(--transition-1); }
+.footer-link { transition: var(--transition-1); color: var(--gray-x-11)}
 
 .footer-link:is(:hover, :focus) { color: var(--kappel); }
 
@@ -936,7 +936,7 @@ r {
   gap: 25px;
 }
 
-.social-link { font-size: 20px; }
+.social-link { font-size: 20px; color: var(--gray-x-11)}
 
 .footer-bottom {
   border-block-start: 1px solid var(--eerie-black-1);
