@@ -1,3 +1,11 @@
+var usage = localStorage.getItem("usage");
+var lastEmail = "";
+if (!usage) {
+    usage = 0;
+} else {
+    usage = parseInt(usage);
+}
+
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -12,6 +20,8 @@ function containsSwearWords(text) {
 function submitToGoogleForm() {
     const email = document.getElementById('emailInput').value;
     const body = document.getElementById('bodyInput').value;
+    usage++;
+    
     if (localStorage.getItem('swore') === 'true') {
         alert('You submitted a response that contained swear words and have lost access. If you feel this was an error, please email ben@fix.school.');
         return;
@@ -21,9 +31,21 @@ function submitToGoogleForm() {
         alert('Please enter a valid email address.');
         return;
     }
+    if (email == lastEmail) {
+        alert('Please stop spamming.');
+        localStorage.setItem("blocked", "yes");
+        return;
+    } else {
+        lastEmail = email;
+    }
+
+    if (usage > 3) {
+        alert('You have reached a usage limit.');
+        return;
+    }
 
     // Check for swear words in body
-    if (containsSwearWords(body)) {
+    if (containsSwearWords(body) || email == "Petja@stude.cc" || email == "petja@stude.cc") {
         localStorage.setItem('swore', 'true');
         alert('Your response contains swear words, so you will not be allowed to continue using this tool. If you feel this was an error, please email ben@fix.school.');
         return;
