@@ -33,7 +33,7 @@ function submitToGoogleForm() {
         alert('Please enter a valid email address.');
         return;
     }
-    if (email == lastEmail) {
+    if (email === lastEmail || localStorage.getItem("blocked")) {
         alert('Please stop spamming.');
         localStorage.setItem("blocked", "yes");
         return;
