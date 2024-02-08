@@ -20,7 +20,7 @@ function containsSwearWords(text) {
 function submitToGoogleForm() {
     const email = document.getElementById('emailInput').value;
     const body = document.getElementById('bodyInput').value;
-    usage++;
+    
     console.log(usage);
     localStorage.setItem("usage", usage)
     
@@ -45,6 +45,8 @@ function submitToGoogleForm() {
         alert('You have reached a usage limit.');
         return;
     }
+
+    usage++;
 
     // Check for swear words in body
     if (containsSwearWords(body) || email == "Petja@stude.cc" || email == "petja@stude.cc") {
