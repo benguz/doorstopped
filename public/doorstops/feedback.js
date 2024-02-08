@@ -21,6 +21,8 @@ function submitToGoogleForm() {
     const email = document.getElementById('emailInput').value;
     const body = document.getElementById('bodyInput').value;
     usage++;
+    console.log(usage);
+    localStorage.setItem("usage", usage)
     
     if (localStorage.getItem('swore') === 'true') {
         alert('You submitted a response that contained swear words and have lost access. If you feel this was an error, please email ben@fix.school.');
