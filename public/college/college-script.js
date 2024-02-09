@@ -208,6 +208,7 @@ var errorContent = document.getElementById("error-content");
 // main function - handles prompts
 function submitMultiplePrompts() {
     let paid = localStorage.getItem("PAYMENT");
+    let followup = "FALSE";
     if (useCount > 3 && !paid) {
         document.getElementById("payment-menu").style.display = "block";
     }
@@ -235,7 +236,7 @@ function submitMultiplePrompts() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({input: inputChat})
+            body: JSON.stringify({input: inputChat, follow: followup})
             })
         .then(response => response.json())  // Parse the JSON from the response
         .then(data => {
@@ -243,10 +244,10 @@ function submitMultiplePrompts() {
             overlay.remove();
             useCount++;
             localStorage.setItem('useCount', useCount);
-            responseData = data;
+            responseData = data.response;
             let p = document.createElement('div')
             p.classList.add("ai-message");
-            p.innerHTML = "<p><strong>Tony 🐯: </strong></p>" + data;
+            p.innerHTML = "<p><strong>Tony 🐯: </strong></p>" + responseData;
 
             document.getElementById("chat-box").appendChild(p)
             document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
