@@ -45,7 +45,7 @@
     display: inline-block;
     background-color: rgb(211, 214, 238);
     position: absolute;
-    right: calc(15% - 3em);
+    right: calc(20% - 2em);
     bottom: 13.5%;
     box-shadow: none;
     z-index: 3;

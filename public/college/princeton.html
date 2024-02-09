@@ -35,13 +35,13 @@
 
 <style>
     #chat-box {
-        width: 60%;
-        max-width: 60%;
+        width: calc(60% + 4em);
+        max-width: calc(60% + 4em);
         margin: auto;
         overflow-y: scroll;
         max-height: 70vh;
-        height: 70vh;
-        padding-right: 17px;
+        height: 73vh;
+        /* padding-right: 17px; */
         box-sizing: content-box;
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
         scrollbar-width: none;
@@ -73,18 +73,26 @@
         width: 80%;
     }
     .prompt-entry {
-        width: 60%;
+        width: calc(60% - 30px);
     }
     @media screen and (max-width: 900px) {
         #chat-box {
             width: 100%;
             max-width: 100%;
+            /* padding-right: 0; */
         }
         #payment-menu {
             width: 98%;
         }
         .menu {
             flex-direction: column; 
+        }
+        .prompt-entry {
+            width: calc(100% - 5em);
+            padding-right: 3em;
+        }
+        #submit-essay {
+            right: 0.75em;
         }
     }
 </style>
@@ -168,7 +176,7 @@
     <div id="chat-box">
         <div class="onboarding-overlay" id="onboarding" style="display: none;">
             <h1>Welcome to PrincetonGPT 🐯🐯</h1>
-            <p class="subtitle" style="font-size: 13pt; margin-bottom: 0;">All the secrets, advice, and ___ , made by Princeton seniors.</p>
+            <p class="subtitle" style="font-size: 13pt; margin-bottom: 0;">All the secrets, advice, and career help, made by Princeton seniors.</p>
             
             <!-- <p>Add an OpenAI API key:</p>
             <div class="input-container" autocomplete="off">

@@ -206,9 +206,10 @@ function previousQuery(bool) {
 var errorMessage = document.getElementById("openAI-response");
 var errorContent = document.getElementById("error-content");
 // main function - handles prompts
+let followup = "FALSE";
 function submitMultiplePrompts() {
     let paid = localStorage.getItem("PAYMENT");
-    let followup = "FALSE";
+    
     if (useCount > 3 && !paid) {
         document.getElementById("payment-menu").style.display = "block";
     }
@@ -231,6 +232,10 @@ function submitMultiplePrompts() {
         u.innerHTML = "<p><strong>You: </strong>" + inputChat + "</p>";
         document.getElementById("chat-box").appendChild(u)
         
+        if (followup ===  "TRUE") {
+            inputChat = "The conversation so far: student said " + usageArray[1] + "\n Then you said " + usageArray[0] + "\n And the student replied " + inputChat
+        }
+        console.log("about to call")
         fetch(fetchLink, {
             method: 'POST',
             headers: {
@@ -242,19 +247,24 @@ function submitMultiplePrompts() {
         .then(data => {
             document.getElementById("openAI-loading").style.display = "none";
             overlay.remove();
-            useCount++;
+            console.log(data);
             localStorage.setItem('useCount', useCount);
             responseData = data.response;
+            if (data.question === "YES") {
+                followup = "TRUE"
+            } else {
+                followup = "FALSE";
+                useCount++; // only add to usecount if they've gotten a real answer
+            }
             let p = document.createElement('div')
             p.classList.add("ai-message");
-            p.innerHTML = "<p><strong>Tony 🐯: </strong></p>" + responseData;
+            p.innerHTML = "<p style='display: inline-block'><strong>Tony 🐯: </strong></p>" + responseData;
 
             document.getElementById("chat-box").appendChild(p)
             document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
             let usageHistory = localStorage.getItem("usageHistory");
             if (usageHistory) {
                 usageArray = JSON.parse(usageHistory);
-                console.log(usageHistory);
                 
                 usageArray.unshift(inputChat);
                 usageArray.unshift(responseData);
