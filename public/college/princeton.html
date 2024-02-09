@@ -38,31 +38,57 @@
         width: 60%;
         max-width: 60%;
         margin: auto;
-        overflow-y: auto;
+        overflow-y: scroll;
+        max-height: 70vh;
+        height: 70vh;
+        padding-right: 17px;
+        box-sizing: content-box;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;
+    }
+    #chat-box::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+    .user-message, .ai-message {
+        width: calc(100% - 30px);
+        max-width: 100%;
+        font-size: 12pt;
+        text-align: left;
+        color: black;
+        margin: 0;
+        padding: 15px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+    body {
+        overflow: hidden;
+    }
+    .option {
+        padding: 10px;
+    }
+    .menu {
+        display: flex; flex-direction: row; justify-content: center; align-items: center;max-width: 100%;
+    }
+    #payment-menu {
+        width: 80%;
     }
     @media screen and (max-width: 900px) {
         #chat-box {
             width: 100%;
             max-width: 100%;
         }
+        #payment-menu {
+            width: 98%;
+        }
+        .menu {
+            flex-direction: column; 
+        }
     }
 </style>
 </head>
 
 <body class="body-octopus" id="document-body">
-    <div class="onboarding-overlay" id="onboarding" style="display: none;">
-        <!-- <button class="essay-button" style="position: absolute; top: 10px; right: 10px;" onclick="this.parentElement.style.display = 'none';">x</button> -->
-        <h1>Welcome to PrincetonGPT 🐯🐯</h1>
-        <p class="subtitle" style="font-size: 13pt; margin-bottom: 0;">All the secrets, advice, and ___ , made by Princeton seniors.</p>
-        <!-- <p>Add an OpenAI API key:</p>
-        <div class="input-container" autocomplete="off">
-                <input autocomplete="false" name="hidden" type="text" style="display:none;">
-                <input type="text" id="key" placeholder="API key here" spellcheck="false" autocapitalize="off">
-                <input id="key-form" type="submit" value="Submit">
-        </div> -->
-        <p>Change model type and number of prompts by clicking the Octopus icon, or self-host on <a href="https://github.com/benguz/prompt-octopus">Github</a>!</p>
-        
-    </div>
+   
     <div class="button-wrapper" style="
     position: absolute;
     top: 0;
@@ -76,7 +102,7 @@
         <button class="essay-button" style="position: absolute; top: 10px; right: 10px;" onclick="toggleSettings()">x</button>
         <h2 style="text-align: center; margin-bottom: 5px;">Settings</h2>
         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; width: 100%;">
-            
+<!--             
             <div class="vertical">
                 <button id="add-response" class="essay-button" onclick="addResponse()"><strong>Add Column</strong></button>
                 <p>Ctrl+B / ⌘+B</p>
@@ -89,7 +115,7 @@
                 <button id="show-history" class="essay-button" onclick="showHistory()"><strong>View History</strong></button>
                 <p>Ctrl+M / ⌘+M</p>
 
-            </div>
+            </div> -->
         </div>
         <p style="text-align: center; "><strong>Change Textbox Height</strong></p>
         <div class="slider-wrapper noswipe" id="noswipe">
@@ -100,14 +126,7 @@
             </div>
           </div>
           <br>
-          <p style="text-align: center; margin-bottom: 2px;"><strong>Change Model Type</strong></p>
-          <p class="subtitle" style="text-align: center;" id="model-name">Current is gpt-4-1106-preview.</p>
 
-          <div  class="input-container">
-            <input type="text" id="model-input" placeholder="try gpt-3.5-turbo, gpt-4, or gpt-4-1106-preview" spellcheck="false" autocapitalize="off" autocomplete="false">
-            <input type="submit" id="model-form" value="Submit">
-                <button id="remove-key" class="essay-button"  onclick="removeKey()"><strong>Unsave API Key</strong></button>
-          </div>
           <p class="subtitle" id="model-status" style="display: none">Changed successfully!</p>
           <p class="subtitle" id="key-status" style="display: none">Unsaved successfully! Refresh to add a new key.</p>
 
@@ -116,8 +135,47 @@
 
     </div>
 
-    <div id="chat-box">
+    <div id="payment-menu" class="settings-overlay" style="display: none; ">
+            <h2 style="text-align: center; margin-bottom: 5px;">Support PrincetonGPT to keep using it!</h2>
+        <div class="menu">
+<div class="option">
+    <p>If you're on a Pell grant or just can't afford to pay for this right now, use it free</p>
+    <button onclick="document.getElementById('payment-menu').style.display = 'none'; localStorage.setItem('PAYMENT', 'FREE');" class="essay-button" >Keep using free</button>
+</div>
+<div class="option">
+    <p><strong>Moderate: </strong>$5 for 50 more messages</p>
+  <stripe-buy-button onclick="document.getElementById('payment-menu').style.display = 'none'; localStorage.setItem('PAYMENT', 'MODERATE')"
+    buy-button-id="buy_btn_1Ohm43GJLA9kpa7gFlpDrRRK"
+    publishable-key="pk_live_51NW1zYGJLA9kpa7gPj2zbBCmoqKCaiubZY3cRQNdwZzY2yjrkYiv2dSIvWspbA2LBGcq5tlATvKbppyFscprM25F00dXwSKbqh"
+  >
+  </stripe-buy-button>
+</div>
+<div class="option">
+    <p><strong>Hefty: </strong>$10 for 150 more messages</p>
 
+<stripe-buy-button onclick="document.getElementById('payment-menu').style.display = 'none'; localStorage.setItem('PAYMENT', 'HEFTY')"
+  buy-button-id="buy_btn_1OhlrdGJLA9kpa7gtIuEJoRk"
+  publishable-key="pk_live_51NW1zYGJLA9kpa7gPj2zbBCmoqKCaiubZY3cRQNdwZzY2yjrkYiv2dSIvWspbA2LBGcq5tlATvKbppyFscprM25F00dXwSKbqh"
+>
+</stripe-buy-button>
+</div>
+</div>
+    </div>
+
+    <div id="chat-box">
+        <div class="onboarding-overlay" id="onboarding" style="display: none;">
+            <h1>Welcome to PrincetonGPT 🐯🐯</h1>
+            <p class="subtitle" style="font-size: 13pt; margin-bottom: 0;">All the secrets, advice, and ___ , made by Princeton seniors.</p>
+            
+            <!-- <p>Add an OpenAI API key:</p>
+            <div class="input-container" autocomplete="off">
+                    <input autocomplete="false" name="hidden" type="text" style="display:none;">
+                    <input type="text" id="key" placeholder="API key here" spellcheck="false" autocapitalize="off">
+                    <input id="key-form" type="submit" value="Submit">
+            </div> -->
+            <p>Toggle life advice or career advice</p>
+            
+        </div>
     </div>
         
 
@@ -128,7 +186,7 @@
       </div>
     <button id="submit-essay" class="essay-button" onclick="submitMultiplePrompts()" contenteditable="false"><strong>Submit</strong></button>
       <div class="prompt-entry" id="essay-submission" contenteditable="true" spellcheck="false">
-        &#8203;Write a message here... you'll get a response for each of your prompts
+        &#8203;Message PrincetonGPT...
         <div class="overlay" id="loading-overlay" style="display: none;"></div>
       </div>
       
@@ -136,7 +194,9 @@
       <br><br>
 
 <script src="college-script.js"></script>
-
+<script async
+src="https://js.stripe.com/v3/buy-button.js">
+</script>
 </body>
 
 </html>

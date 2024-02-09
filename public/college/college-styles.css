@@ -384,16 +384,9 @@
   background-image: url("../regroup_transparent.png");
 }
 
-.prompt-toggle.covered:hover {
-  background-image: url("../regroup.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: white;
-  background-size: 55%;
-}
 
 .settings-toggle {
-    background-image: url("../favicon/favicon-32x32.png");
+    background-image: url("favicon/favicon-32x32.png");
     /* background-image: url("../settings.png"); */
     top: 0;
     z-index: 3;
@@ -487,7 +480,7 @@
     flex-direction: row;
 }
 
-.onboarding-overlay, .settings-overlay, .history-overlay {
+ .settings-overlay, .history-overlay {
     position: absolute;
     width: 90%; 
     max-height: 80%;
@@ -500,13 +493,20 @@
     overflow-y: auto;
 }
 
-.history-overlay, .settings-overlay, .onboarding-overlay {
+
+
+.history-overlay, .settings-overlay {
     padding: 2em;
     width: 50%;
     margin-top: 10vh;
 }
+
 .onboarding-overlay {
-    margin: auto;
+  width: 90%;
+  max-width: 90%; 
+  margin: auto;
+  margin-top: 20%;
+  text-align: center;
 
 }
 
@@ -527,7 +527,7 @@ p.subtitle {
     font-size: 10pt;
     color: gray;
     margin-top: 0;
-    text-align: left;
+    text-align: center;
 }
 
 @media screen and (max-width: 720px) {

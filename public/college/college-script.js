@@ -1,6 +1,9 @@
-var isSelfHosting = document.getElementById('SELFHOST');
 let essaySubmission = document.getElementById('essay-submission');
-let additionalContent = '<div class="overlay" id="loading-overlay" style="display: none;"></div>'
+let additionalContent = '<div class="overlay" id="loading-overlay" style="display: none;"></div>';
+let useCount = localStorage.getItem("useCount")
+if (useCount) {
+    useCount = parseInt(useCount);
+}
 
 // ensure textbox can always be clicked
 essaySubmission.addEventListener('input', function(event) {
@@ -13,9 +16,9 @@ essaySubmission.addEventListener('input', function(event) {
 });
 
 // remove placeholder text on focus
-const placeholderText = "\u200B" + "Write your message here..."; 
+const placeholderText = "\u200B" + "Message PrincetonGPT..."; 
 // const onboardingPlaceholder = "\u200B" + "Write your message here... try \"What should my new years resolution be as an aspiring prompt engineer?\""
-const onboardingPlaceholder = "\u200B" + "Write a message here... you'll get a response for each of your prompts"
+const onboardingPlaceholder = "\u200B" + "Message PrincetonGPT..."
 essaySubmission.addEventListener("focus", function () {
     let clone = essaySubmission.cloneNode(true);
 
@@ -34,24 +37,19 @@ essaySubmission.addEventListener("focus", function () {
 
 // Reload with last used prompts in place
 let promptHist = localStorage.getItem("usageHistory");
-        if (promptHist) {
-            promptArr = JSON.parse(promptHist);
-            for (let i = 0; i < 3; i++) {
-                if (promptArr[i][0]) {
-                    document.getElementById(`toggle-${3 - i}-prompt`).innerText = "\u200B" + promptArr[i][0];
-                }
-            }
-        }
+if (promptHist) {
+    promptArr = JSON.parse(promptHist);
+
+    // let last = document.createElement('div')
+    // document.appendChild(last)
+}
 
 // Settings menu
 function toggleSettings() {
     let settings = document.getElementById("settings");
     if (settings.style.display === "block") {
         settings.style.display = "none";
-        document.getElementById("key-status").style.display = "none";
-        document.getElementById("model-status").style.display = "none";
     } else {
-        document.getElementById("model-name").textContent = `Current model is ${MODEL_NAME}`;
         settings.style.display = "block";
     }
 }
@@ -71,58 +69,15 @@ var keyInput = document.getElementById('key');
 var modelForm = document.getElementById('model-form');
 var modelInput = document.getElementById('model-input');
 
-var OPENAI_KEY = localStorage.getItem('OPENAI_KEY');
-var MODEL_NAME = localStorage.getItem('MODEL_NAME');
+var ONBOARDING = localStorage.getItem('ONBOARDING');
 
 
 // the onboarding case
-if (!OPENAI_KEY && !MODEL_NAME) {
+if (!ONBOARDING) {
     essaySubmission.style.color = "rgb(96 96 96)";
-    document.querySelectorAll('.prompt-toggle').forEach(toggle => {toggle.classList.add('covered'); toggle.style.display = "none"});
-    
+    document.getElementById("onboarding").style.display = "block"; 
+    // localStorage.setItem("ONBOARDING", "done")   
 }
-
-if (!OPENAI_KEY && !isSelfHosting) {
-    document.getElementById("onboarding").style.display = "block";
-    keyForm.addEventListener('click', function(event) {
-        OPENAI_KEY = keyInput.value; 
-        localStorage.setItem('OPENAI_KEY', OPENAI_KEY);
-        document.getElementById("onboarding").style.display = "none";
-        let firstBox = "response-1";
-        if (window.screen.width < 720) {// if is mobile
-            firstBox = "response-3"
-        } 
-        document.getElementById(firstBox).classList.add('animate-background');
-        document.getElementById(firstBox).addEventListener('click', function(e) {
-            e.currentTarget.classList.remove('animate-background');
-        })
-        settingsHint();
-    });
-}
-if (!MODEL_NAME && !isSelfHosting) {
-    MODEL_NAME = "gpt-3.5-turbo";
-    localStorage.setItem('MODEL_NAME', "gpt-3.5-turbo");
-} else if (!MODEL_NAME && isSelfHosting) {
-    MODEL_NAME = "gpt-4-1106-preview";
-    localStorage.setItem('MODEL_NAME', "gpt-4-1106-preview");
-}
-
-
-if (isSelfHosting) {
-    document.getElementById("remove-key").style.display = "none";
-    
-    if (!MODEL_NAME) {
-        document.getElementById("onboarding").style.display = "block";
-        modelOnboard = document.getElementById("model-form-onboard");
-        modelOnboard.addEventListener('click', function(event) {
-            MODEL_NAME = document.getElementById("model-input-onboard").value; 
-            localStorage.setItem('MODEL_NAME', MODEL_NAME);
-            document.getElementById("model-name").textContent = `Current model is ${MODEL_NAME}`;
-            document.getElementById("onboarding").style.display = "none";
-            settingsHint()
-    });
-    }
-} 
 
 function settingsHint() {
     document.getElementById("settings-button").classList.add("expand");
@@ -153,19 +108,6 @@ function settingsHint() {
     }, 12000)
 }
 
-modelForm.addEventListener('click', function(event) {
-    MODEL_NAME = modelInput.value; 
-    localStorage.setItem('MODEL_NAME', MODEL_NAME);
-    document.getElementById("model-status").style.display = "block";
-    document.getElementById("model-name").textContent = `Current model is ${MODEL_NAME}`;
-});
-
-// unsave key
-function removeKey() {
-    localStorage.removeItem('OPENAI_KEY')
-    OPENAI_KEY = undefined;
-    document.getElementById("key-status").style.display = "block";
-}
 
 // history of usage
 function showHistory() {
@@ -204,61 +146,6 @@ function showHistory() {
     
 }
 
-var numRows = 1;
-var numPrompts = 3; 
-function addRow() {
-    let lastRow = document.getElementById(`row-${numRows}`);
-    let newRow = lastRow.cloneNode(true);
-    lastRow.parentNode.appendChild(newRow);
-    let promptsPerRow = numPrompts/numRows
-    lastResponse = document.getElementById(`response-${numPrompts}`);
-    newResponse = lastResponse.cloneNode(true);
-    Array.from(newRow.querySelectorAll('[id^="toggle-"]')).forEach(child => {
-        child.id = incrementId(child.id, promptsPerRow, true);
-        if (child.classList.contains('prompt-toggle')) {
-            toggleResponse(child);
-        } else if (child.classList.contains('engineered-prompt')) {
-            child.addEventListener("focus", function() {
-                if (promptPlaceholderTexts.includes(child.textContent)) {
-                    child.innerHTML = "\u200B";
-                } 
-                child.parentElement.querySelector('.prompt-toggle').classList.add('covered');
-            });
-            child.addEventListener("focusout", function() {
-                child.parentElement.querySelector('.prompt-toggle').classList.remove('covered')
-            });
-        }
-    });
-    Array.from(newRow.querySelectorAll('[id^="response-"]')).forEach(child => {
-        child.id = incrementId(child.id, promptsPerRow, true);
-
-    });
-    newRow.id = `row-${numRows + 1}`
-    numPrompts = numPrompts + promptsPerRow;
-    numRows++;
-}
-
-// WIP
-function removeRow() {
-    document.getElementById(`row-${numRows}`).remove();
-    renumber();
-    numPrompts = numPrompts - (numPrompts/numRows);
-    numRows--;
-}
-// WIP
-function removeCol() {
-    let promptsPerRow = numPrompts/numRows;
-    for (let i = 1; i <= numRows; i++) {
-        document.getElementById(`response-${i*promptsPerRow}`).remove();
-    }
-    document.getElementById(`row-${numRows}`).remove();
-    renumber();
-    numPrompts = numPrompts - numRows;
-}
-
-function renumber() {
-    
-}
 
 // Hotkeys
 let pastMessage = -1;
@@ -315,95 +202,14 @@ function previousQuery(bool) {
     return "";
 }
 
-function addResponse() {
-    for (let i = 1; i <= numRows; i++) {
-        let thisRow = document.getElementById(`row-${i}`);
-        let lastResponse = document.getElementById(`response-${numPrompts}`);
-        let newResponse = lastResponse.cloneNode(true);
-        Array.from(newResponse.querySelectorAll('[id^="toggle-"]')).forEach(child => {
-            child.id = incrementId(child.id, numPrompts + 1, false);
-            if (child.id===`toggle-${numPrompts + 1}`) {
-                toggleResponse(child);
-            } else if (child.id===`toggle-${numPrompts + 1}-prompt`) {
-                child.addEventListener("focus", function() {
-                    if (promptPlaceholderTexts.includes(child.textContent)) {
-                        child.innerHTML = "\u200B";
-                    } 
-                    child.parentElement.querySelector('.prompt-toggle').classList.add('covered');
-                });
-                child.addEventListener("focusout", function() {
-                    child.parentElement.querySelector('.prompt-toggle').classList.remove('covered')
-                });
-            }
-        });
-        newResponse.id = `response-${numPrompts + 1}`;
-        thisRow.appendChild(newResponse);
-        numPrompts++;
-    }
-}
 
-// either increments by value (if incrementBool) or replaces to be value
-function incrementId(id, value, incrementBool) {
-    if (incrementBool) {
-        return id.replace(/\d+/, match => parseInt(match, 10) + value);
-    } else {
-        return id.replace(/\d+/, value);
-    }
-}
-
-// toggle prompt/response button
-function toggleResponse(button) {
-    button.addEventListener('click', function() {
-        let current = button.id;
-        let prompt = document.getElementById(`${current}-prompt`);
-        if (prompt.style.display === "block") {
-            document.getElementById(`${current}-response`).style.display = 'block';
-            prompt.style.display = 'none';
-        } else {
-            prompt.style.display = 'block';
-            document.getElementById(`${current}-response`).style.display = 'none';
-        }
-    });
-}
-const toggles = document.querySelectorAll('.prompt-toggle');
-toggles.forEach(toggle => {
-    toggleResponse(toggle);
-});
-
-// removes placeholder text on focus
-const engineeredPrompts = document.querySelectorAll('.engineered-prompt');
-let promptPlaceholderTexts = [
-    "\u200B" + "Write a prompt here...",
-    "\u200B" + "Write another prompt here...",
-    "\u200B" + "Write another version of the same prompt here",
-    "\u200B" + "Write another version here...",
-    "\u200B" + "Write a prompt here, like \"Act as an experienced therapist\"",
-    "\u200B" + "Write a prompt here, try \"Answer with specific details\"",
-    "\u200B" + "Write a prompt here, try \"Answer like my mom\"",
-    "\u200B" + "Write a similar one here, like \"Give advice like the Dalai Lama\"",
-    "\u200B" + "Write a prompt here, try \"Answer with specific details\"",
-    "\u200B" + "Write a prompt here, try \"Answer like my mom\""
-]
-engineeredPrompts.forEach(engineeredPrompt => {
-    engineeredPrompt.addEventListener("focus", function() {
-        if (promptPlaceholderTexts.includes(engineeredPrompt.textContent)) {
-            engineeredPrompt.innerHTML = "\u200B";
-        } 
-        engineeredPrompt.parentElement.querySelector('.prompt-toggle').classList.add('covered');
-    });
-    engineeredPrompt.addEventListener("focusout", function() {
-        engineeredPrompt.parentElement.querySelector('.prompt-toggle').classList.remove('covered')
-    });
-});
-
-errorMessage = document.getElementById("openAI-response");
-errorContent = document.getElementById("error-content");
+var errorMessage = document.getElementById("openAI-response");
+var errorContent = document.getElementById("error-content");
 // main function - handles prompts
 function submitMultiplePrompts() {
-    if (!OPENAI_KEY && !isSelfHosting) {
-        errorMessage.style.display = "block";
-        errorContent.innerHTML =  "You haven't added an API key - you can still do it in settings!";
-        return;
+    let paid = localStorage.getItem("PAYMENT");
+    if (useCount > 3 && !paid) {
+        document.getElementById("payment-menu").style.display = "block";
     }
     let inputChat = document.getElementById("essay-submission").innerText;
     const submitIndex = inputChat.lastIndexOf("Submit");
@@ -416,81 +222,49 @@ function submitMultiplePrompts() {
         overlay.className = 'overlay';
         document.getElementById("essay-submission").appendChild(overlay);
 
-        const elements = document.querySelectorAll('.engineered-prompt');
-        let promptData = Array.from(elements).map(element => element.innerText);
+        let fetchLink = "https://ai.fix.school/princeton-gpt";
+        document.getElementById("onboarding").style.display = "none";
 
-        let fetchLink = "https://ai.fix.school/multiple_prompts";
-        if (isSelfHosting) {
-            fetchLink = "/multiple_prompts";
-            OPENAI_KEY = "NA";
-        }
+        let u = document.createElement('div')
+        u.classList.add("user-message");
+        u.innerHTML = "<p><strong>You: </strong>" + inputChat + "</p>";
+        document.getElementById("chat-box").appendChild(u)
+        
         fetch(fetchLink, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({prompts: promptData, input: inputChat, key: OPENAI_KEY, model: MODEL_NAME})
+            body: JSON.stringify({input: inputChat})
             })
         .then(response => response.json())  // Parse the JSON from the response
         .then(data => {
             document.getElementById("openAI-loading").style.display = "none";
             overlay.remove();
-            
+            useCount++;
+            localStorage.setItem('useCount', useCount);
             responseData = data;
-            const responseDivs = document.querySelectorAll(".engineered-response");
+            let p = document.createElement('div')
+            p.classList.add("ai-message");
+            p.innerHTML = "<p><strong>Tony 🐯: </strong></p>" + data;
 
-            let promptsAndResponses = [];
-            let i = 0;
-            responseDivs.forEach(div => {
-                div.innerHTML = responseData[i];
-                promptsAndResponses[i] = [promptData[i], responseData[i], inputChat];
-                i++;
-            });
-
+            document.getElementById("chat-box").appendChild(p)
+            document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
             let usageHistory = localStorage.getItem("usageHistory");
             if (usageHistory) {
                 usageArray = JSON.parse(usageHistory);
                 console.log(usageHistory);
-                for (let j = 0; j < promptsAndResponses.length; j++) {
-                    usageArray.unshift(promptsAndResponses[j]);
-                }
+                
+                usageArray.unshift(inputChat);
+                usageArray.unshift(responseData);
+                
                 localStorage.setItem("usageHistory", JSON.stringify(usageArray));
                 
             } else {
-                localStorage.setItem("usageHistory", JSON.stringify(promptsAndResponses));
-                // onboard toggle back and forth
-                document.getElementById("toggle-1").classList.add("expand");
-
-                info = document.createElement("button");
-                info.id = "toggle-1";
-                info.classList.add("prompt-toggle", "essay-button", "info");
-                info.textContent = "flip back to prompt";
-                info.style.opacity = 0;
-                document.getElementById("response-1").appendChild(info);
-                toggleResponse(info);
-                setTimeout(() => {
-                    info.style.opacity = '1';
-                    info.style.transform = 'translateX(0)';
-                }, 2000);
-                setTimeout(() => {
-                    document.getElementById("toggle-1").classList.remove("expand");
-                    info.style.transition = "opacity 1s, transform 1s;"
-
-                    info.style.opacity = '0';
-                    info.style.transform = 'translateX(50%)';
-                }, 5000)
-                setTimeout(() => {
-                    info.remove();
-                }, 6000)
+                usageArray = [responseData, inputChat];
+                localStorage.setItem("usageHistory", JSON.stringify(usageArray));
             }
-            // flip to responses
-            for (let i = 1; i <= numPrompts; i++) {
-                document.getElementById(`toggle-${i}-response`).style.display = "block";
-                document.getElementById(`toggle-${i}-prompt`).style.display = "none";
-            }
-            // ensure toggle is shown - from initial onboarding
-            document.querySelectorAll('.prompt-toggle').forEach(toggle => {toggle.style.display = "inline-block"});
-    
+            
         })
         .catch(error => {
             console.error("Error:", error);
@@ -507,63 +281,3 @@ function submitMultiplePrompts() {
     }
 }
 
-// difference check
-function pickTwo () {
-    let picked = [];
-    function allowPicking(e) {
-        e.preventDefault();
-        e.currentTarget.classList.remove('animate-background');
-        e.currentTarget.style.backgroundColor = "rgb(211, 214, 238)";
-        picked.push(e.currentTarget.querySelector('.engineered-response'));
-
-        if (picked.length === 2) {
-            diffCheck(picked[0], picked[1]);
-            Array.from(document.querySelectorAll('[id^="response-"]')).forEach(child => {
-                child.removeEventListener("click", allowPicking);
-                child.classList.remove('animate-background');
-            });
-
-            return;
-        }
-    } 
-
-    Array.from(document.querySelectorAll('[id^="response-"]')).forEach(child => {
-        let randomDelay = Math.random() * 500; // Random delay up to 500ms
-        child.style.animationDelay = `${randomDelay}ms`;
-        child.classList.add('animate-background');
-        child.addEventListener("click", allowPicking); 
-    });
-
-}
-function diffCheck(response1, response2) {
-    const data = {
-        text1: response1.textContent,
-        text2: response2.textContent
-    };
-    // Make a POST request
-    let fetchLink = "https://ai.fix.school/difference";
-    if (isSelfHosting) {
-        fetchLink = "/difference";
-    }
-    console.log(fetchLink)
-
-    fetch(fetchLink, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(response1.innerHTML + " " + response2.innerHTML)
-        response1.innerHTML = data.text1;
-        response2.innerHTML = data.text2;
-
-        response1.parentElement.style.backgroundColor = " #f5f5f5";
-        response2.parentElement.style.backgroundColor = " #f5f5f5";
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-}
