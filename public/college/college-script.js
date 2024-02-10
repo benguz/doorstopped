@@ -258,7 +258,7 @@ function submitMultiplePrompts() {
             }
             let p = document.createElement('div')
             p.classList.add("ai-message");
-            p.innerHTML = "<p style='display: inline-block'><strong>Tony 🐯: </strong></p>" + responseData;
+            p.innerHTML = "<p><strong>Tony 🐯: </strong></p>" + responseData;
 
             document.getElementById("chat-box").appendChild(p)
             document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
