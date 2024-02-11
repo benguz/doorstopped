@@ -264,6 +264,10 @@ svg {
 
 }
 
+.nav-button-box {
+  display: flex; flex-direction: row; justify-content: center; width: 100%;
+}
+
 svg {
   width: 24px;
   height: 24px;
@@ -279,6 +283,10 @@ svg {
   .bigger {
     height: 140vh;
   }
+  .nav-button-box {
+  flex-direction: column; 
+}
+
 }
     </style>
     </head>
@@ -360,7 +368,7 @@ svg {
     </video>
       </div>
       <br>
-      <div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
+      <div class="nav-button-box">
         <span id="nav-button-container">
             <a href="/doorstops/points" class="nav-button" style="text-align: center;">Change grading policy  &rarr;</a>
             </span>
@@ -389,7 +397,7 @@ svg {
 </video>
 </div>
 <br>
-<div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
+<div class="nav-button-box">
   <span id="nav-button-container">
       <!-- <h3>- Homework </h3> -->
       <a href="/school/allies" class="nav-button" style="text-align: center;">Make powerful allies  &rarr;</a>
@@ -468,11 +476,11 @@ svg {
           <a href="#state" class="nav-button" style="text-align: center;">Resources coming soon on leveraging town politics!</a>
         </div>
     </div>
-    <video autoplay muted loop style="opacity: 0; max-width: 350px; margin: auto;" class="video-simple bringin"> 
-        <!-- <source src="/assets/cards/dancing-panda.webm" type="video/webm"> -->
-</video>
+     <!-- <video autoplay muted loop style="opacity: 0; max-width: 350px; margin: auto;" class="video-simple bringin"> 
+       <source src="/assets/cards/dancing-panda.webm" type="video/webm"> 
+</video>-->
 </div>
-<div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
+<div class="nav-button-box">
     <span id="nav-button-container">
         <!-- <h3>- Homework </h3> -->
         <a href="/school/money" class="nav-button" style="text-align: center;">How much money does your school have?  &rarr;</a>
@@ -492,7 +500,7 @@ svg {
           <h3><span style="color: olivedrab">Goal:</span> Max out federal funding. Massachusetts took $250 million cash from the feds to make a change they knew would make class worse.</h3>
       </div>
       <br>
-      <div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
+      <div class="nav-button-box">
         <span id="nav-button-container">
             <!-- <h3>- Homework </h3> -->
             <a href="/school/takeover" class="nav-button" style="text-align: center;">Hostile Takeover  &rarr;</a>

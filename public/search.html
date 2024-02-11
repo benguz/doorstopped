@@ -83,6 +83,7 @@
             margin: auto;
             width: 400px;
             max-width: 97%;
+            margin-bottom: 3px;
         }
 
         input {
@@ -141,17 +142,69 @@
         .notsure a {
             margin-top: 2px; line-height: 1.4; opacity: 0.7; font-size: 14px;
         }
+        .onboarding-choice {
+        font-size: 11pt;
+        padding: 8px;
+        margin: 7px 5px;
+    }
+    .blue {
+    background-color: #97E5D7;
+}
+    .green {
+        background-color: #D2EBD8;
+}
+.pale {
+    background-color: #fce5dd;
+}
 
+.light  {
+    background-color: #cad6f7;
+}
+
+.red {
+  background-color: #FEB7B3;
+}
+
+input {
+        border-radius: 16px;
+    }
 
 @media (max-width: 900px) {
-    h2 {
-        font-size: 24pt;
+    #onboarding-survey h2 {
+        font-size: 30pt; 
+        /* 24 */
+        text-align: left;
+        line-height: 1.34;
+        text-wrap: pretty;
+        max-width: 95%; margin-left: 2.5%;
+        
     }
     .credit, .credit a, .notsure a{
         font-size: 10pt;
+        max-width: 95%; 
+    }
+    .notsure {
+        margin-top: 3px;
+    }
+    .input-container {
+        width: 97%;
+
+    }
+    input {
+        border-radius: 16px;
     }
     .balance {
         font-size: 12pt;
+        max-width: 95%; margin-left: 2.5%;
+        text-align: left;
+        text-wrap: pretty;
+        margin-bottom: 11px;
+        margin-top: 5px;
+    }
+    .onboarding-choice {
+        font-size: 10pt;
+        border-radius: 16px;
+        box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.15);
     }
 }
     </style>
@@ -162,12 +215,19 @@
 
               <div id="onboarding-survey" style="background-color: white;"> 
             <h2 >What sucks about high school?</h2>
-            <p class="balance">enter any problem, get a step-by-step solution</p>
+            <p class="balance">get a step-by-step solution to any problem</p>
             <div class="input-container">
                 <input id="input-field" type="text" placeholder="gross bathrooms">
                 <div style="position: absolute; padding: 20px; cursor: pointer; display: inline-block; right: 4px; z-index: 3;" onclick="submitInput()"></div>
                 <div class="submit-arrow"></div>
             </div>
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+                <p class="onboarding-choice pale" id="policy" onclick="window.open('/school/flow')">the rules 🤬</p>
+                <p class="onboarding-choice light" id="policy" onclick="toggleClick('/doorstops/conflict')">other ppl 🙄</p>
+                <p class="onboarding-choice green " id="policy" onclick="toggleClick('/doorstops/extension')">🧠 health</p>
+            </div>
+            
+
             <p class="notsure"><a href="/dashboard" style="text-decoration: underline;">i'm not sure what sucks...</a></p>
             <!-- Suggestions -->
             <div class="lds-roller" id="openAI-loading" style="display: none; margin: auto;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
