@@ -1,9 +1,18 @@
 let useCount = localStorage.getItem("openAI-usage-essay");
-    if (!useCount) {
-        localStorage.setItem("openAI-usage-essay", 0);
-        useCount = 0;
-        
+if (!useCount) {
+    localStorage.setItem("openAI-usage-essay", 0);
+    useCount = 0;
+    
+}
+
+addEventListener("DOMContentLoaded", (event) => {
+    if (window.innerWidth < 720) {
+        setTimeout(() => document.getElementById("cta-top").style.opacity = 1, 3000)
     }
+    
+});
+
+
 function submitOpenAIQueryEssay() {    
     let inputChat = document.getElementById("essay-submission").innerText;
     
@@ -12,10 +21,9 @@ function submitOpenAIQueryEssay() {
         inputChat = inputChat.slice(0, submitIndex);
     }
     let value = document.getElementById("myRange").value;
-
+    console.log(value);
     if (useCount > 4) {
         document.getElementById("openAI-response").innerHTML = "Sorry, you've reached our submission limit. If you want a more access, email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a>. We're working to get more funding ASAP!";
-        console.log("overuse")
     } else if (inputChat) {
         let wordCount = inputChat.split(' ').filter(function(n) { return n != '' }).length;
         if (wordCount > 2000) {
@@ -60,7 +68,6 @@ function submitOpenAIQueryEssay() {
             }
             
             if (data.lengthIssue) {
-                console.log("long")
                 whitespaceFree = data.lengthIssue.replace(/^[\s\uFEFF\xA0\u200B\u0009]+|[\s\uFEFF\xA0\u200B\u0009]+$/g, '');
                 lengthFeedback = "This paragraph is a little long - is there a place where you could break it up? Stick to one idea per paragraph...I'm sensing two here!"                
                 highlightSentence(whitespaceFree.trim(), lengthFeedback);
@@ -68,7 +75,7 @@ function submitOpenAIQueryEssay() {
 
             useCount++;
             
-            localStorage.setItem("openAI-usage", useCount);
+            localStorage.setItem("openAI-usage-essay", useCount);
         })
         .catch(error => {
             console.error("Error:", error);
