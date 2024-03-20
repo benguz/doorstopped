@@ -271,7 +271,7 @@ input {
                     .then(response => response.json())  // Parse the JSON from the response
                     .then(data => {
                         document.getElementById("openAI-loading").style.display = "none";
-                        
+                        console.log(data);
                         if (data.charAt(0) === '/') {   
                             plausible("searched");
                             if (isSafari) {
