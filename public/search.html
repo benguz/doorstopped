@@ -257,9 +257,9 @@ input {
                 
                 if (inputChat && inputChat != "") {
                     var windowReference;
-                    if (isSafari) {
-                        windowReference = window.open();
-                    }
+                    // if (isSafari) {
+                    //     windowReference = window.open();
+                    // }
                     document.getElementById("openAI-loading").style.display = "inline-block";
                     fetch(`https://ai.fix.school/topic-search`, {
                     method: 'POST',
@@ -275,8 +275,9 @@ input {
                         if (data.charAt(0) === '/') {   
                             plausible("searched");
                             if (isSafari) {
-                                windowReference.location = 'https://fix.school' + data;
+                                // windowReference.location = 'https://fix.school' + data;
                                 console.log("safari")
+                                window.location.href = 'https://fix.school' + data;
                             } else {
                                 window.open('https://fix.school' + data);
                             }

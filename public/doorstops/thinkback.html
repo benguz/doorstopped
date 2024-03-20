@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Changing the Worst Parts of School Culture | Doorstops</title>
+    <meta name="title" content="Social Referents Are the Secret To Changing School Culture">
+    <meta name="description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
+    <meta property="og:url" content="https://doorstopped.org/">
+    <meta property="og:image" content="https://doorstopped.org/og.jpg">
+    <meta name="twitter:image" content="https://doorstopped.org/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="Doorstops | Referents">
+    <meta property="og:description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://doorstopped.org/">
+    <meta property="twitter:title" content="Doorstops | Social Referents">
+    <meta property="twitter:description" content="Change your school's culture with cutting edge behavioral psychology that's been tested in classrooms and cafeterias like yours.">
+    <link href="./favicon.ico" rel="apple-touch-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://doorstopped.org/doorstops/conflict" />
+    <!-- include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="/assets/css/dynamic.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/emoji.css">
+ <link rel="stylesheet" href="/assets/css/texting.css">
+<style>    
+.chat {
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: auto;
+}
+
+.messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  text-align: left;
+}
+
+.yours {
+  align-items: flex-start;
+}
+
+.yours .message {
+  margin-right: 25%;
+  background-color: #eee;
+  position: relative;
+}
+
+.yours .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: -7px;
+  height: 20px;
+  width: 20px;
+  background: #eee;
+  border-bottom-right-radius: 15px;
+}
+.yours .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: -10px;
+  width: 10px;
+  height: 20px;
+  background: #f5f5f5; /* change */
+  border-bottom-right-radius: 10px;
+}
+
+.mine {
+  align-items: flex-end;
+}
+
+.mine .message {
+  color: white;
+  margin-left: 25%;
+  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+.mine .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+  background-attachment: fixed;
+  border-bottom-left-radius: 15px;
+}
+
+.message .textbox {
+  min-width: 100%;
+}
+
+.mine .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background: #f5f5f5;
+  border-bottom-left-radius: 10px;
+}
+
+.emoji-element {
+  width: 10%;
+  display: inline;
+}
+
+.emoji-box {
+  position: relative;
+  width: 100%;
+}
+/* .floating-emoji {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    opacity: 1;
+  } */
+
+ 
+p {
+  text-align: left;
+  max-width: 75%;
+  margin: auto;
+}
+
+.lard p {
+  max-width: 99%;
+  margin: auto;
+
+}
+#spicy-second > .lard, #medium-second > .lard {
+  width: 70%;
+  margin: auto;
+}
+@media screen and (max-width: 620px) {
+    .row {
+        flex-direction: column;
+}
+#spicy-second > .lard, #medium-second > .lard {
+  width: 99%;
+}
+.chat {
+  width: 99%;
+  margin: auto;
+  max-width: 100%;
+}
+p {
+  max-width: 100%;
+}
+
+h2 {
+  text-align: left;
+  max-width: 95%;
+
+}
+}
+
+
+
+* {max-width: 98%;}
+/* .mine.messages {
+  display: none;
+} */
+
+body {
+  max-width: 100%;
+  font-family: Helvetica, sans-serif;
+  display: flex; flex-direction: row;
+}
+</style>
+
+</head>
+
+<body>
+    <div style="width: 20%; height: 100vh; background-color: gray; display: flex; flex-direction: column;">
+        <div style="background-color: white; width: 100%; height: 200px; border: 2px solid #eee">
+        <p style="margin: 1px; width: 100%; padding: 0;">Would picking a specific Joan Didion book and thinking about the economic context be a good place to start?</p></div>
+        <div style="background-color: white; width: 100%; height: 200px; border: 2px solid #eee">
+            <p>Idea about essay</p></div>
+            <div style="background-color: white; width: 100%; height: 200px; border: 2px solid #eee">
+                <p>Idea about essay</p></div>
+                <div style="background-color: white; width: 100%; height: 200px; border: 2px solid #eee">
+                    <p>Idea about essay</p></div><div style="background-color: white; width: 100%; height: 200px;">
+                        <p>Idea about essay</p></div><div style="background-color: white; width: 100%; height: 200px;">
+                            <p>Idea about essay</p></div>
+    </div>
+    <div style="width: 80%">
+    <div class="chat" id="mild-chat">
+        <div class="yours messages">
+            <div class="message">
+                Would picking a specific Joan Didion book and thinking about the economic context be a good place to start?
+            </div>
+            <div class="message last">
+              wdyt :)
+            </div>
+          </div>
+        <div class="mine messages">
+          <div class="message last">
+            are you free to hang out saturday? i'm making cookies!
+           </div>
+        </div>
+      
+        <div class="mine messages">
+          <div class="message last">
+            okie maybe tuesday we can do hw together then
+          </div> 
+          </div>
+          <div class="yours messages">
+              <div class="message last">
+                yeah hmmm I'll lyk
+              </div>
+            </div>
+            
+            <div class="mine messages">
+              
+              <div class="message last">
+                  <div class="textbox" id="mild" contenteditable="true" flex="5">
+                     Respond here...
+                    </div>
+                    <div class="emoji-box">
+                      <div class="emoji-element"></div>
+                      </div>  
+                      <div class="emoji-box">
+                        <div class="emoji-element"></div>
+                        </div>  
+               </div>
+      
+              </div>
+              </div>
+            </div>
+
+</body>
