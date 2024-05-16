@@ -11,13 +11,13 @@
     font-weight: normal;
     font-style: normal
 }
-
+/* 
 @font-face {
     font-family: 'colfax-bold';
     src: url("../fonts/colfax-bold.woff") format("woff"), url("../fonts/colfax-bold.woff2") format("woff2");
     font-weight: normal;
     font-style: normal
-}
+} */
 
 @font-face {
     font-family: 'colfax-light';
@@ -32,13 +32,13 @@
     font-weight: normal;
     font-style: normal
 }
-
+/* 
 @font-face {
     font-family: 'colfax-bold';
     src: url("../fonts/colfax-bold.woff") format("woff"), url("../fonts/colfax-bold.woff2") format("woff2");
     font-weight: normal;
     font-style: normal
-}
+} */
 
 * {
     text-decoration: none;
@@ -211,13 +211,13 @@ input:-webkit-autofill {
     font-weight: normal;
     font-style: normal
 }
-
+/* 
 @font-face {
     font-family: 'colfax-bold';
     src: url("../fonts/colfax-bold.woff") format("woff"), url("../fonts/colfax-bold.woff2") format("woff2");
     font-weight: normal;
     font-style: normal
-}
+} */
 
 * {
     text-decoration: none;
@@ -401,13 +401,13 @@ input:-webkit-autofill {
     font-weight: normal;
     font-style: normal
 }
-
+/* 
 @font-face {
     font-family: 'colfax-bold';
     src: url("../fonts/colfax-bold.woff") format("woff"), url("../fonts/colfax-bold.woff2") format("woff2");
     font-weight: normal;
     font-style: normal
-}
+} */
 
 * {
     text-decoration: none;
@@ -601,7 +601,7 @@ h3,
 .h3 {
     letter-spacing: -1px;
     font-weight: normal;
-    font-family: "colfax-bold", sans-serif;
+    font-family: "colfax-medium", sans-serif;
     font-size: 16px;
     color: #000000;
 }
@@ -1621,13 +1621,13 @@ form .button {
     font-weight: normal;
     font-style: normal
 }
-
+/* 
 @font-face {
     font-family: 'colfax-bold';
     src: url("../fonts/colfax-bold.woff") format("woff"), url("../fonts/colfax-bold.woff2") format("woff2");
     font-weight: normal;
     font-style: normal
-}
+} */
 
 * {
     text-decoration: none;
@@ -1808,7 +1808,7 @@ h3,
 .h3 {
     letter-spacing: -1px;
     font-weight: normal;
-    font-family: "colfax-bold", sans-serif;
+    font-family: "colfax-medium", sans-serif;
     font-size: 16px;
     color: #000000;
 }

@@ -22,7 +22,7 @@ function submitOpenAIQueryEssay() {
     }
     let value = document.getElementById("myRange").value;
     console.log(value);
-    if (useCount > 4) {
+    if (useCount > 10) {
         document.getElementById("openAI-response").innerHTML = "Sorry, you've reached our submission limit. If you want a more access, email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a>. We're working to get more funding ASAP!";
     } else if (inputChat) {
         let wordCount = inputChat.split(' ').filter(function(n) { return n != '' }).length;
