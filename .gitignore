@@ -13,3 +13,9 @@ robots.txt
 # Local Netlify folder
 .netlify
 data_analysis
+# Playwright
+test-results/
+playwright-report/
+
+# Next.js
+.next/
