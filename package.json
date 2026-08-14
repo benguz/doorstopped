@@ -15,5 +15,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 4173"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   }
 }
