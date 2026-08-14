@@ -247,8 +247,8 @@ strong {
 
     </div>
     <div style="position: relative">
-          <p id="toggle-music" style="text-align: center; font-size: 12pt; font-weight: 300; position: fixed; z-index: 3; bottom: 16px; right: 16px; padding: 0.65em 1em; border-radius: 60px; width: 160px; background: radial-gradient(rgba(252, 230, 230, 0.5), rgba(252, 230, 230, 0.1)); border: none;" onclick="playMusic()">play music <img width="16px" height="16px" style="display: inline-block; vertical-align: middle;" id="on-off-sound" src="/assets/images/sound_max.png"/></p>
-          <!-- <img id="play" src="/assets/images/sound_max.png" width="48px" height="48px" style="margin-left: 6px;"> -->
+          <p id="toggle-music" style="text-align: center; font-size: 12pt; font-weight: 300; position: fixed; z-index: 3; bottom: 16px; right: 16px; padding: 0.65em 1em; border-radius: 60px; width: 160px; background: radial-gradient(rgba(252, 230, 230, 0.5), rgba(252, 230, 230, 0.1)); border: none;" onclick="playMusic()">play music <img width="16px" height="16px" style="display: inline-block; vertical-align: middle;" id="on-off-sound" src="/assets/images/sound_max.webp"/></p>
+          <!-- <img id="play" src="/assets/images/sound_max.webp" width="48px" height="48px" style="margin-left: 6px;"> -->
         </div>
 
 <script>
@@ -333,10 +333,10 @@ strong {
     function playMusic() {
         if (!audio.paused && audio.duration > 0) {
             audio.pause();
-            document.getElementById("toggle-music").innerHTML = `play music <img width="16px" height="16px" style="display: inline-block; vertical-align: middle;" id="on-off-sound" src="/assets/images/sound_max.png"/>`;
+            document.getElementById("toggle-music").innerHTML = `play music <img width="16px" height="16px" style="display: inline-block; vertical-align: middle;" id="on-off-sound" src="/assets/images/sound_max.webp"/>`;
         } else {
             audio.play();
-            document.getElementById("toggle-music").innerHTML = `pause music <img width="16px" height="16px" style="display: inline-block; vertical-align: middle;" id="on-off-sound" src="/assets/images/sound_mute.png"/>`;
+            document.getElementById("toggle-music").innerHTML = `pause music <img width="16px" height="16px" style="display: inline-block; vertical-align: middle;" id="on-off-sound" src="/assets/images/sound_mute.webp"/>`;
             if (firstPlay) {
                 firstPlay = false;
                 // interval = setInterval(animate, 2500)

@@ -31,17 +31,14 @@
   <link
     href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
     rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    </head>
+</head>
 
 <body id="top">
     <div id="nav-placeholder">
 
     </div>
     <script>
-        $(function(){
-          $("#nav-placeholder").load("/nav.html");
-        });
+        document.addEventListener("DOMContentLoaded",function(){fetch("/nav.html").then(function(r){return r.text()}).then(function(t){document.getElementById("nav-placeholder").innerHTML=t});});
         </script>
 
 <main>
@@ -189,9 +186,7 @@ fetch('/assets/data/emotionwords.txt')
     });
 </script>
 <script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
+    document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
     
     </script>
 </body>

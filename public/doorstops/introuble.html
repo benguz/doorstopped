@@ -32,8 +32,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
     rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+<script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
   <style>
       @media screen and (max-width: 1023px){
@@ -279,7 +278,7 @@ strong {
 <div style="width:75%;height:0.68em;background-color:hsl(170, 75%, 41%); padding-bottom:0.22em"></div>
 
 <div style="display: flex; justify-content: center; flex-direction: column; margin-top: 10px; margin-bottom: 10px;">
-    <img src="/assets/images/superintrouble.jpg">
+    <img src="/assets/images/superintrouble.webp">
     <p style="color: grey; text-align: center;">If you think the punishment is even A LITTLE unfair, you have a (nonviolent) way to fight back.</p>
 </div>
 <p>So, imagine you&apos;re in school and your teacher punishes you every time you do something they don&apos;t like. It&apos;s like they don&apos;t even see you&apos;re trying to stand up for yourself because something isn&apos;t fair. This kind of punishment doesn&apos;t consider your feelings or why you acted out&mdash;and it IGNORES that you want to do better, that you&rsquo;re a good person, and that you have value. Plus, it grows the gap between the AP or &ldquo;gifted&rdquo; kids, who have it easier, and you getting pushed back.</p>
@@ -504,9 +503,7 @@ I take responsibility for what I said, but excessive punishment only perpetuates
 
 </div>
 <script>
-    $(function(){
-      $("#footer-placeholder").load("/footer");
-    });
+    document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
     
     </script>
     <!--       -->

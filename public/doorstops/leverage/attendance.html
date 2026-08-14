@@ -388,7 +388,7 @@ With hope and gratitude,<br>
 <p>if your mom is gonna FREAK, use this <a href="/doorstops/feedback">auto-emailer form</a>, our nonprofit will send an explainer to your mom on why this is important.</p>
 <div class="warning-box" style="background-color: rgb(211, 205, 255); border-color: rgb(99, 70, 215)">
     <button class="warning-icon" onclick="window.location.href = '/doorstops/dominance'">
-        <img width="24px" height="24px" src="/assets/images/zzz.png">
+        <img width="24px" height="24px" src="/assets/images/zzz.webp">
     </button>
     <div>
         <p>Not sure what's wrong with class, or don't think there's anything you could change? Check out <a href="/doorstops/dominance">this page for strict teachers</a> and <a href="/doorstops/hard">this page for nice ones</a>, and <a href="/doorstops/awful">this page for an example of changing curriculum and bad policy</a>.</p>
@@ -404,7 +404,7 @@ With hope and gratitude,<br>
     <p>There&rsquo;s no perfect system to resolve this, and the current per-student-funding system is even pretty good in a lot of states, but the way <em>some states count the number of students at a school makes that system even more broken</em>.&nbsp;</p>
 <div class="warning-box">
             <button class="warning-icon" onclick="window.location.href = 'mailto:guzovsky@princeton.edu'">
-                <img width="24px" height="24px" src="/assets/images/cowboy.png">
+                <img width="24px" height="24px" src="/assets/images/cowboy.webp">
             </button>
             <div>
                 <p>Help make this page better! Contact guzovsky@princeton.edu <a href="https://github.com/benguz/doorstopped/blob/master/public/privacy.html">or submit a pull request</a>.</p>
@@ -428,9 +428,7 @@ With hope and gratitude,<br>
 
 </div>
 <script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
+    document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
     
     </script>
 <script>

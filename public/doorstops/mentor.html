@@ -243,7 +243,7 @@
             <p class="subtitle" style="margin: 0; color: #989aa2;">How to get a free #1 fan, life coach, and career shortcut.</p>
             <span class="aesthetic-button blue" style="color: black">Cold Emailing</span><span class="aesthetic-button pale" style="color: black" >Networking</span><span class="aesthetic-button green" style="color: black">Power Plays</span>
             <p>Mentors save you time because they’ve done exactly what you’re about to do. They help you the way a coach or a (friendly) older sibling does.</p>
-            <span  class="tard" style="width: 70%" ><span id="count" style="display: inline">147</span><button style="display: inline" onclick='hitLike("mentor"); '>❤️</button> &nbsp;&nbsp;&nbsp; 8 verified success stories &nbsp;<a id="share-button"><img src="/assets/images/share.png" width="20" height="20" style="display: inline-block; vertical-align:text-bottom;"> share</a></span>
+            <span  class="tard" style="width: 70%" ><span id="count" style="display: inline">147</span><button style="display: inline" onclick='hitLike("mentor"); '>❤️</button> &nbsp;&nbsp;&nbsp; 8 verified success stories &nbsp;<a id="share-button"><img src="/assets/images/share.webp" width="20" height="20" style="display: inline-block; vertical-align:text-bottom;"> share</a></span>
             <p>They tell you about all their terrible life choices&mdash;from chats about careers and employers to stories about eating ice cream for lunch every day without realizing they&rsquo;re lactose intolerant&mdash;they put you in touch with other smart people, and they vouch for you. <strong>Growth. Emotional support. Free food.</strong></p>
             <p>Let&rsquo;s find you a fucking sherpa.</p>
 <div style="color: black; max-width: 100%">
@@ -404,7 +404,7 @@ Hi [name],
   </div>
             <div class="warning-box">
               <button class="warning-icon" onclick="window.location.href = '/doorstops/points'">
-                  <img width="24px" height="24px" src="/assets/images/cowboy.png">
+                  <img width="24px" height="24px" src="/assets/images/cowboy.webp">
               </button>
               <div>
                   <p>If your high school has a lot of successful grads, try googling:</p>
@@ -432,7 +432,7 @@ Hi [name],
             <p>She focused on <strong>what she&rsquo;s done the most of</strong>, and readers will realize that&rsquo;s a lot of hours for a sophomore.</p>
             <div class="warning-box">
               <button class="warning-icon" onclick="window.location.href = '/doorstops/points'">
-                  <img width="24px" height="24px" src="/assets/images/cowboy.png">
+                  <img width="24px" height="24px" src="/assets/images/cowboy.webp">
               </button>
               <div>
                   <p>For cool phrases, look at the back of books and steal them from reviewers talking about the author. That’s where Allison got the idea for another sentence about her, part of a longer bio she uses in intro/networking emails: “When energy levels are low, she is a one-woman defibrillator."</p>
@@ -466,7 +466,7 @@ Hi [name],
               <p><strong>A good mentor lets you learn for yourself</strong>, guiding you, but not telling you what to do. <strong>They answer questions and give good advice</strong>, they do not do your homework.</strong></p>
               <div class="warning-box">
                 <button class="warning-icon" onclick="window.location.href = '/doorstops/points'">
-                    <img width="24px" height="24px" src="/assets/images/cowboy.png">
+                    <img width="24px" height="24px" src="/assets/images/cowboy.webp">
                 </button>
                 <div>
                   <p>If you&rsquo;re nervous about your email, send it to us first to proofread: <a href="http://ben@fix.school" target="_blank" rel="noopener">ben@fix.school</a></p>
@@ -515,9 +515,7 @@ Hi [name],
   
   </div>
   <script>
-      $(function(){
-        $("#footer-placeholder").load("/footer.html");
-      });
+      document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
       
       </script>
   

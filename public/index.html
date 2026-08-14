@@ -44,10 +44,10 @@
     - preload images
   -->
   <link rel="preload" as="image" href="./assets/images/hero-bg.svg">
-  <!-- <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg"> -->
+  <!-- <link rel="preload" as="image" href="./assets/images/hero-banner-1.webp">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-2.webp"> -->
   <link rel="preload" as="image" href="./assets/images/hero-shape-1.svg">
-  <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
+  <link rel="preload" as="image" href="./assets/images/hero-shape-2.webp">
   <script type="text/javascript">
     // handles redirects for student users coming from fix.school.
     if (window.location.hostname.includes("fix.school")) {
@@ -138,7 +138,7 @@
 
 #step3 {
   width: 80%;
-  /* background-image: url('/assets/images/selection.gif'); 
+  /* background-image: url('/assets/images/selection.webp'); 
   background-size: cover;
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -189,8 +189,6 @@
   color: white;
 }
   </style>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 </head>
 
 <body id="top">
@@ -307,7 +305,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
             <img src="./assets/images/hero-shape-1.svg" width="380" height="190" alt="" class="shape hero-shape-1">
       
 -->
-            <img src="./assets/images/hero-shape-2.png" width="622" height="551" alt="" class="shape hero-shape-2">
+            <img src="./assets/images/hero-shape-2.webp" width="622" height="551" alt="" class="shape hero-shape-2">
 
           </figure>
 
@@ -505,7 +503,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
           <figure class="about-banner">
 
             <div class="img-holder" style="--width: 520; --height: 370;">
-              <img src="./assets/images/class.jpg" width="520" height="370" loading="lazy" alt="about banner"
+              <img src="./assets/images/class.webp" width="520" height="370" loading="lazy" alt="about banner"
                 class="img-cover">
             </div>
 <!--
@@ -588,13 +586,13 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
       
 
       <section class="video has-bg-image" aria-label="video"
-        style="background-image: url('./assets/images/video-bg.png')">
+        style="background-image: url('./assets/images/video-bg.webp')">
         <div class="container">
 
           <div class="video-card">
 
             <div class="video-banner img-holder has-after" style="--width: ; --height: ;">
-              <img src="./assets/images/video-banner.jpg" width="970" height="550" loading="lazy" alt="video banner"
+              <img src="./assets/images/video-banner.webp" width="970" height="550" loading="lazy" alt="video banner"
                 class="img-cover">
 
               <button class="play-btn" aria-label="play video">
@@ -602,10 +600,10 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
               </button>
             </div>
 
-            <img src="./assets/images/video-shape-1.png" width="1089" height="605" loading="lazy" alt=""
+            <img src="./assets/images/video-shape-1.webp" width="1089" height="605" loading="lazy" alt=""
               class="shape video-shape-1">
 
-            <img src="./assets/images/video-shape-2.png" width="158" height="174" loading="lazy" alt=""
+            <img src="./assets/images/video-shape-2.webp" width="158" height="174" loading="lazy" alt=""
               class="shape video-shape-2">
 
           </div>
@@ -681,7 +679,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
               <div class="blog-card">
 
                 <figure class="card-banner img-holder has-after" style="--width: 270; --height: 270;">
-                  <img src="./assets/images/classroomy.jpg" width="270" height="270" loading="lazy"
+                  <img src="./assets/images/classroomy.webp" width="270" height="270" loading="lazy"
                     alt="Become A Better Blogger: Content Planning" class="img-cover">
                 </figure>
 
@@ -720,7 +718,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
               <div class="blog-card">
 
                 <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
-                  <img src="./assets/images/bus.jpg" width="370" height="370" loading="lazy"
+                  <img src="./assets/images/bus.webp" width="370" height="370" loading="lazy"
                     alt="Learning, Leveraged" class="img-cover">
                 </figure>
 
@@ -854,9 +852,7 @@ The biggest stakeholder in education doesn't know they're a stakeholder. We're c
   
 
   <script>
-      $(function(){
-        $("#footer-placeholder").load("/footer");
-      });
+      document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
       </script>
 
 

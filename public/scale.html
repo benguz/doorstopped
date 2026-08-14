@@ -197,7 +197,7 @@ display:none;
           <br><br>
           <h1 style="line-height: 1.45;">Working alone on things that don't scale</h1>
           <p class="subtitle" style="font-size: 13pt; margin: 0; color: #989aa2;">We stopped building unscalable things, but our most critical societal problems have unscalable solutions.</p>
-          <img src="/assets/images/alone_notext.jpg" style="max-width: 100%; margin: auto; border-radius: 2px" width="100%" height="auto">
+          <img src="/assets/images/alone_notext.webp" style="max-width: 100%; margin: auto; border-radius: 2px" width="100%" height="auto">
 
           <p>
             Competitive swimmers have two ways to improve: getting stronger or swimming better.
@@ -268,7 +268,7 @@ display:none;
             <p>
              
             </p>
-            <img src="/assets/images/goofy.jpg" style="max-width: 100%; margin: auto; border-radius: 2px" width="100%" height="auto">
+            <img src="/assets/images/goofy.webp" style="max-width: 100%; margin: auto; border-radius: 2px" width="100%" height="auto">
             <p class="subtitle" style="text-align: center; font-size: 13pt; margin: 0; color: #989aa2;">
             My Dad and Goofy.
             </p>
@@ -336,9 +336,7 @@ display:none;
 
 </div>
 <script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
+    document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
     
     </script>
 

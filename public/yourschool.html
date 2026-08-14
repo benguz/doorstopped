@@ -32,8 +32,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
     rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+<script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
   <style>
       @media screen and (max-width: 1023px){
@@ -263,7 +262,7 @@ h2 {
           <p>Bring us to your school to run culture-changing activities! Email <a style="display: inline" href="mailto:guzovsky@princeton.edu">guzovsky@princeton.edu</a> with one sentence about what sucks at school. I'll reply with a template email you can send to your *favorite* teacher or administrator to get approval for us to come!</p>
           <div class="warning-box">
             <button class="warning-icon" onclick="window.location.href = 'https://ee85jlzhxlk.typeform.com/to/LdXPL6Yr'">
-              <img src="/assets/images/cowboy.png">
+              <img src="/assets/images/cowboy.webp">
             </button>
             <div>
               <p>Or... Get your friends together and start a club <a href="https://ee85jlzhxlk.typeform.com/to/LdXPL6Yr">dedicated to improving your school</a>. You’d get access to 100s of digital resources + face time with education researchers who will listen to your problems and help out! Learn more at <a href=https://doorstopfellows.org.>doorstopfellows.org</a>.</p>
@@ -313,9 +312,7 @@ h2 {
 
 </div>
 <script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
+    document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
     
     </script>
     <script src="/components/sidenaveh.js">

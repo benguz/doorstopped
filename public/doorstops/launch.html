@@ -250,7 +250,7 @@
             <p>Everybody talks about how school doesn't teach you real life skills. Why not start a program in school that <em>does?</em></p>
             <div class="warning-box">
                 <button class="warning-icon" onclick="window.location.href = '/doorstops/mentor'">
-                    <img width="24px" height="24px" src="/assets/images/cowboy.png">
+                    <img width="24px" height="24px" src="/assets/images/cowboy.webp">
                 </button>
                 <div>
                     <p><strong>This doorstop is in beta-mode</strong>, meaning we're helping student groups at a few schools go through the process by hand to learn how to do it.</p>
@@ -328,7 +328,7 @@ With hope and gratitude,<br>
                         </button>
                       </div>
                       <p>Sending out fundraising requests like this can be really scary, and it really hurt <em>our</em> ego when we were starting Doorstop Education. But it works!</p>
-                      <img src="/assets/images/donation.png" width="100%" style="width: 98%; margin: auto;">
+                      <img src="/assets/images/donation.webp" width="100%" style="width: 98%; margin: auto;">
                       <p>Funny story. This email (our first successful donation) actually went to our spam folder at first - we almost missed it.</p>
                     </div>
                   </div>
@@ -381,9 +381,7 @@ With hope and gratitude,<br>
   
   </div>
   <script>
-      $(function(){
-        $("#footer-placeholder").load("/footer.html");
-      });
+      document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
       
       </script>
   

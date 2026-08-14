@@ -8,7 +8,7 @@ export default function SiteFooter() {
           __html: `.footer a { color: hsl(0, 0%, 73%); }`,
         }}
       />
-      <footer className="footer" style={{ backgroundImage: "url('/assets/images/footer-bg.png')" }}>
+      <footer className="footer" style={{ backgroundImage: "url('/assets/images/footer-bg.webp')" }}>
         <div className="footer-top section">
           <div className="container grid-list">
             <div className="footer-brand">

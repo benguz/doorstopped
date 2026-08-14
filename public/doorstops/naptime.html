@@ -272,11 +272,11 @@ h2 {
 <p><strong>2.</strong> If you&rsquo;re using your phone a lot before bed, don&rsquo;t try to cut it out all at once: try to use slightly less addictive apps instead, getting you to bed a little earlier because, well, you get bored, then move down the ladder every week, eliminating one app at a time.</p>
 <div class="warning-box" style="width: 70%; margin: auto; background-color: rgb(205, 255, 220); border-color: rgb(70, 215, 114)">
   <!-- <button class="warning-icon" >
-      <img width="24px" height="24px" src="/assets/images/cowboy.png">
+      <img width="24px" height="24px" src="/assets/images/cowboy.webp">
   </button> -->
-  <!--emoji list: angry.png zzz.png trophy.png thunder.png spy.png spazz.png (heart) 
-      saint.png praise.png plead.png monkey.png key.png heart.png microscope.png 
-      devil.png cowboy.png diamond.png-->
+  <!--emoji list: angry.webp zzz.webp trophy.webp thunder.webp spy.webp spazz.webp (heart) 
+      saint.webp praise.webp plead.webp monkey.webp key.webp heart.webp microscope.webp 
+      devil.webp cowboy.webp diamond.webp-->
                 <!-- 
   background-color: rgb(211, 205, 255); border-color: rgb(99, 70, 215)
   background-color: rgb(255, 205, 213); border-color: rgb(215, 70, 94)
@@ -284,13 +284,13 @@ h2 {
   <div style="text-align: center;">
       <p><img width="24px" height="24px" style="display: inline; transform: rotate(10deg); vertical-align: top; " src="/assets/svg/apps/tiktok.svg"> TikTok</p>
       <p>↓</p>
-      <p><img width="24px" height="24px" style="display: inline; transform: rotate(10deg); vertical-align: top; " src="/assets/svg/apps/youtube.png"> YouTube / Reels / Netflix</p>
+      <p><img width="24px" height="24px" style="display: inline; transform: rotate(10deg); vertical-align: top; " src="/assets/svg/apps/youtube.webp"> YouTube / Reels / Netflix</p>
       <p>↓</p>
-      <p>Chess / <img width="24px" height="24px" style="display: inline; transform: rotate(-10deg); vertical-align: top; " src="/assets/svg/apps/pinterest.png"> Pinterest / Shopping / <img width="24px" height="24px" style="display: inline; transform: rotate(-10deg); vertical-align: top; " src="/assets/svg/apps/facetime.svg"> Facetime</p>
+      <p>Chess / <img width="24px" height="24px" style="display: inline; transform: rotate(-10deg); vertical-align: top; " src="/assets/svg/apps/pinterest.webp"> Pinterest / Shopping / <img width="24px" height="24px" style="display: inline; transform: rotate(-10deg); vertical-align: top; " src="/assets/svg/apps/facetime.svg"> Facetime</p>
       <p>↓</p>
-      <p><img width="24px" height="24px" style="display: inline; transform: rotate(10deg); vertical-align: top; " src="/assets/svg/apps/reddit.png"> Reddit / Blogs / Trashy Celeb Gossip / Nature Documentaries</p>
+      <p><img width="24px" height="24px" style="display: inline; transform: rotate(10deg); vertical-align: top; " src="/assets/svg/apps/reddit.webp"> Reddit / Blogs / Trashy Celeb Gossip / Nature Documentaries</p>
       <p>↓</p>
-      <p>Lofi Beats, Cooking Shows, <img width="24px" height="24px" style="display: inline; transform: rotate(10deg); vertical-align: top; " src="/assets/svg/apps/spotify.png"> Spotify, Satisfying Apps (interior design, gardening, choose your flower)</p>
+      <p>Lofi Beats, Cooking Shows, <img width="24px" height="24px" style="display: inline; transform: rotate(10deg); vertical-align: top; " src="/assets/svg/apps/spotify.webp"> Spotify, Satisfying Apps (interior design, gardening, choose your flower)</p>
       <p>↓</p>
       <p>Read a Book / Knitting</p>
   </div>
@@ -324,9 +324,7 @@ h2 {
 
 </div>
 <script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
+    document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
     
     </script>
 

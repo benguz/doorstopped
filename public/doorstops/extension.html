@@ -32,8 +32,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
     rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+<script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
 
   <style>
       @media screen and (max-width: 1023px){
@@ -370,7 +369,7 @@ April Maddigan
   </button>
 </div>
 
-<h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/saint.png"> But wait! HELP ME.</h2>
+<h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/saint.webp"> But wait! HELP ME.</h2>
 <div class="accordion-menu">
   <div class="accordion-section">
     <div class="accordion-header" id="this-is-slightly-terrifying">This is terrifying</div>
@@ -462,7 +461,7 @@ You can keep your privacy while getting the help you need. Plus, your classmates
     </div>
 
 </div>
-<h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/trophy.png"> mmmm... nah</h2>
+<h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/trophy.webp"> mmmm... nah</h2>
 
 <div class="accordion-menu">
       <div class="accordion-section">
@@ -606,7 +605,7 @@ You can keep your privacy while getting the help you need. Plus, your classmates
                     </div>
                   </div>
 <br>
-<h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/cowboy.png"> What if...</h2>
+<h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/cowboy.webp"> What if...</h2>
 <div class="accordion-menu">
   <div class="accordion-section">
     <div class="accordion-header" id="what-if-it's-due-today-(or-yesterday-or-last-week)">What if it's due today (or yesterday? or last week??)
@@ -741,9 +740,7 @@ You don't have to take exams at the scheduled time. You don't have to <a href="/
 
 </div>
 <script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
+    document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
     
     </script>
     <!--       -->
