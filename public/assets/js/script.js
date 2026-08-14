@@ -17,29 +17,75 @@ const addEventOnElem = function (elem, type, callback) {
 }
 
 /**
- * Accordion
+ * Accordion (vanilla port of the old jQuery slideUp/slideDown behavior)
  */
 
-$(document).ready(function() {
-  // Delegate events from the body element
-  $('body').on('click', '.accordion-header', function() {
-    var content = $(this).next('.accordion-content');
+const SLIDE_MS = 400;
 
-    // If this section is already open, close it
-    if($(this).hasClass('active')) {
-      content.slideUp();
-      $(this).removeClass('active');
-    } else {
-      // Close all sections
-      $('.accordion-content').slideUp();
-      $('.accordion-header').removeClass('active');
+function slideUp(el) {
+  if (!el || el.style.display === 'none') return;
+  el.style.height = el.offsetHeight + 'px';
+  el.offsetHeight; // force reflow so the transition starts from the set height
+  el.style.overflow = 'hidden';
+  el.style.transition = 'height ' + SLIDE_MS + 'ms';
+  el.style.height = '0';
+  setTimeout(function () {
+    el.style.display = 'none';
+    el.style.removeProperty('height');
+    el.style.removeProperty('overflow');
+    el.style.removeProperty('transition');
+  }, SLIDE_MS);
+}
 
-      // Open this section
-      content.slideDown();
-      $(this).addClass('active');
-    }
-  });
+function slideDown(el) {
+  if (!el || el.style.display !== 'none' && el.offsetHeight > 0) return;
+  el.style.removeProperty('display');
+  var display = window.getComputedStyle(el).display;
+  if (display === 'none') display = 'block';
+  el.style.display = display;
+  var height = el.offsetHeight;
+  el.style.overflow = 'hidden';
+  el.style.height = '0';
+  el.offsetHeight; // force reflow
+  el.style.transition = 'height ' + SLIDE_MS + 'ms';
+  el.style.height = height + 'px';
+  setTimeout(function () {
+    el.style.removeProperty('height');
+    el.style.removeProperty('overflow');
+    el.style.removeProperty('transition');
+  }, SLIDE_MS);
+}
+
+document.addEventListener('click', function (event) {
+  var headerElem = event.target.closest('.accordion-header');
+  if (!headerElem) return;
+
+  var content = headerElem.nextElementSibling;
+  if (headerElem.classList.contains('active')) {
+    if (content && content.classList.contains('accordion-content')) slideUp(content);
+    headerElem.classList.remove('active');
+  } else {
+    document.querySelectorAll('.accordion-content').forEach(slideUp);
+    document.querySelectorAll('.accordion-header').forEach(function (h) {
+      h.classList.remove('active');
+    });
+    if (content && content.classList.contains('accordion-content')) slideDown(content);
+    headerElem.classList.add('active');
+  }
 });
+
+/**
+ * Shared footer/nav fragments. Legacy pages used jQuery's .load(); pages now
+ * call this (or keep an empty placeholder div and get it filled here).
+ */
+
+function includeFragment(id, url) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  fetch(url)
+    .then(function (r) { return r.text(); })
+    .then(function (html) { el.innerHTML = html; });
+}
 
 
 

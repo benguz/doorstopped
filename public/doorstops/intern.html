@@ -257,10 +257,10 @@
             <h2>1. Choose a company near you, or find one you like online</h2>
             <p>If you're not sure where to look, try the <a href="https://www.ycombinator.com/companies">Y Combinator list of companies</a>. Y Combinator is the place where innovative new companies go to raise money, so there are a lot of awesome places to work listed there. A lot of these companies would <strong>take high school interns</strong> because they're new companies: they just need smart people who are happy to help, they don't care if you have a college degree.</p>
             <p>Let's go through an example from Y Combinator:</p>
-            <img src="/assets/images/company search.png" width="100%" style="width: 98%; margin: auto;">
+            <img src="/assets/images/company search.webp" width="100%" style="width: 98%; margin: auto;">
             <p class="subtitle" style="margin: 0; color: #989aa2; text-align: center; font-size: 13pt;">You can filter by industry if you know what kind of work you want to do.</p>
             <p>Choose a company that sounds cool, maybe we'll check out Slash. Go to their website, Google around...</p>
-            <img src="/assets/images/linkedinslash.png" width="100%" style="width: 98%; margin: auto;">
+            <img src="/assets/images/linkedinslash.webp" width="100%" style="width: 98%; margin: auto;">
             <p class="subtitle" style="margin: 0; color: #989aa2; text-align: center; font-size: 13pt;">The founders are only 20 or 21, and their business seems to be about helping young people. They won't have a problem with you only being in high school!</p>
             <h2>2. Find <strong style="color: hsl(351, 83%, 61%)">three things</strong> you'd improve about their company</h2>
             <p>This is going to be how you impress them when you reach out asking for a job.</p>
@@ -325,7 +325,7 @@ Hey [name],
               </div>  
               <div class="warning-box">
                 <button class="warning-icon" onclick="window.location.href = '/doorstops/mentor'">
-                    <img width="24px" height="24px" src="/assets/images/cowboy.png">
+                    <img width="24px" height="24px" src="/assets/images/cowboy.webp">
                 </button>
                 <div>
                     <p><strong>Wait... I can identify the problems but I don't know if I have the skills to solve them.</strong></p>
@@ -338,7 +338,7 @@ Hey [name],
       <p><strong>Read something online </strong> could be academic research from <a href="https://scholar.google.com">Google Scholar</a>, a news article, or a thread or blog post you found on <a href="https://twitter.com">Twitter</a> or <a href="https://news.ycombinator.com/">Hacker News</a>. Think of a question for the author, and reach out asking to talk!</p>
       <p>Doesn't have to be someone your mom would love you working for. It could be a video editor who works for a YouTuber you follow or a local Zookeeper.</p>
       <br>
-      <img src="/assets/images/emailingproof.png" width="100%" style="width: 98%; margin: auto;">
+      <img src="/assets/images/emailingproof.webp" width="100%" style="width: 98%; margin: auto;">
       <p class="subtitle" style="margin: 0; color: #989aa2; text-align: center; font-size: 13pt;">This emailing strategy got me my first ever job interview!</p>
                  <br>
       <p>Send them an email (<a href="#faq">jump here</a> if you can't find the address) like:</p>
@@ -365,7 +365,7 @@ Hi [name],
     </div> 
     <div class="warning-box">
         <button class="warning-icon" onclick="window.location.href = '/doorstops/points'">
-            <img width="24px" height="24px" src="/assets/images/cowboy.png">
+            <img width="24px" height="24px" src="/assets/images/cowboy.webp">
         </button>
         <div>
           <p>If you&rsquo;re nervous about your email, send it to us first to proofread: <a href="http://ben@fix.school" target="_blank" rel="noopener">ben@fix.school</a></p>
@@ -378,7 +378,7 @@ Hi [name],
 <p>At the end of the call, hit them with: "Do you know anyone who might need an intern this summer?"
             <div class="warning-box">
               <button class="warning-icon" onclick="window.location.href = '/doorstops/points'">
-                  <img width="24px" height="24px" src="/assets/images/cowboy.png">
+                  <img width="24px" height="24px" src="/assets/images/cowboy.webp">
               </button>
               <div>
                   <p>If your high school has a lot of successful grads, try googling:</p>
@@ -444,7 +444,7 @@ With hope and gratitude,<br>
                         </button>
                       </div>
                       <p>Sending out fundraising requests like this can be really scary, and it really hurt <em>our</em> ego when we were starting Doorstop Education. But it works!</p>
-                      <img src="/assets/images/donation.png" width="100%" style="width: 98%; margin: auto;">
+                      <img src="/assets/images/donation.webp" width="100%" style="width: 98%; margin: auto;">
                       <p>Funny story. This email (our first successful donation) actually went to our spam folder at first - we almost missed it.</p>
                     </div>
                   </div>
@@ -496,9 +496,7 @@ With hope and gratitude,<br>
   
   </div>
   <script>
-      $(function(){
-        $("#footer-placeholder").load("/footer.html");
-      });
+      document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
       
       </script>
   

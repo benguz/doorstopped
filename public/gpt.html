@@ -359,9 +359,7 @@ document.getElementById('change-button').addEventListener('click', function()
 
 </div>
 <script>
-    $(function(){
-      $("#footer-placeholder").load("/footer.html");
-    });
+    document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
     
     </script>
 

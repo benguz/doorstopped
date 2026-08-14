@@ -53,6 +53,10 @@ module.exports = {
     return {
       fallback: [
         { source: '/', destination: '/index.html' },
+        // /images/ was a byte-for-byte duplicate of /assets/images/; the
+        // duplicated files were removed and fall back to the canonical copies
+        // (files still physically in public/images/ are served normally)
+        { source: '/images/:path*', destination: '/assets/images/:path*' },
         ...legacyDirectoryIndexRewrites(),
         // generic pretty-URL fallback: /foo -> /foo.html
         { source: '/:path*', destination: '/:path*.html' },

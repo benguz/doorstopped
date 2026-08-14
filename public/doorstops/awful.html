@@ -34,8 +34,7 @@
    <link
      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
      rel="stylesheet">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+<script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
  
    <style>
        @media screen and (max-width: 1023px){
@@ -218,7 +217,7 @@
      <p>If this was valuable, we'll help you send automatic email updates to every student at your school after every school board meeting.  email <a href='mailto:ben@fix.school?subject=ChatGPT Free Membership' style='display: inline-block'>ben@fix.school</a> to set it up!</p>
    </div>
  </div>
- <h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/heart.png"> <img  style="display: inline" width="24px" height="24px" src="/assets/images/heart.png">  NOW WHAT!?!?</h2>
+ <h2><img  style="display: inline" width="24px" height="24px" src="/assets/images/heart.webp"> <img  style="display: inline" width="24px" height="24px" src="/assets/images/heart.webp">  NOW WHAT!?!?</h2>
  
  
  <div class="accordion-menu">
@@ -359,9 +358,7 @@ With hope and gratitude,<br>
  
  </div>
  <script>
-     $(function(){
-       $("#footer-placeholder").load("/footer.html");
-     });
+     document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
      
      </script>
  

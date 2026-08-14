@@ -13,8 +13,8 @@
   <meta name="title" content="High School Life Hacks | Doorstops">
   <meta name="description" content="Put ice cream in your hydroflask. Get easy extra credit. Reverse psychology your way to a perfect GPA.">
   <meta property="og:url" content="https://doorstopped.org/">
-  <meta property="og:image" content="https://doorstopped.org/assets/images/og/og-lifehacks.png">
-  <meta name="twitter:image" content="https://doorstopped.org/assets/images/og/og-lifehacks.png">
+  <meta property="og:image" content="https://doorstopped.org/assets/images/og/og-lifehacks.webp">
+  <meta name="twitter:image" content="https://doorstopped.org/assets/images/og/og-lifehacks.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
     <!-- 
@@ -210,7 +210,7 @@
   
             <div class="warning-box">
               <button class="warning-icon" onclick="window.location.href = '/programs/eat'">
-                  <img width="24px" height="24px" src="/assets/images/cowboy.png">
+                  <img width="24px" height="24px" src="/assets/images/cowboy.webp">
               </button>
               <div>
                   <p>Have a real food issue where people aren’t eating? <a href="/programs/eat">We can help with that, too</a>.</p>
@@ -223,7 +223,7 @@
             
             <div class="warning-box" style="background-color: rgb(205, 255, 220); border-color: rgb(70, 215, 114)">
               <button class="warning-icon" onclick="window.location.href = '/doorstops/hard'">
-                  <img width="24px" height="24px" src="/assets/images/praise.png">
+                  <img width="24px" height="24px" src="/assets/images/praise.webp">
               </button>
               <div>
                   <p>If your teacher is just a really strict grader, try asking for a favor with <a style="scroll-margin-top: 4.5em;" href="/doorstops/hard">this script</a>.</p>
@@ -232,7 +232,7 @@
               </div>
             <h2>3. Reverse psychology your way to a better GPA</h2>
             <p>Meet Cynthia. </p>
-            <img src="/assets/images/cynthia.jpg" width="100%" style="width: 98%; margin: auto;">
+            <img src="/assets/images/cynthia.webp" width="100%" style="width: 98%; margin: auto;">
 
             <p>Cynthia has a famous turtle.</p>
             <div style="margin-left: 10%;">
@@ -252,7 +252,7 @@
               </button>
             </div> 
             <p>Reverse psychology. <strong>The teacher said he'd raise her grade if she made up some worksheets from class</strong>. Cynthia copy-pasted them from Google and got a B.</p>   
-            <img src="/assets/images/cynthia-convo.png" width="100%" style="width: 98%; margin: auto;">
+            <img src="/assets/images/cynthia-convo.webp" width="100%" style="width: 98%; margin: auto;">
             <p>Be like Cynthia.</p>  
 
             <h2>4. Normalize slippers.</h2> 
@@ -260,7 +260,7 @@
               <p>Ask for quiet chairs that are easy to get up from, ask for open space in the back of classrooms. Make small asks for more comfy vibes until school is actually a chill place to be.</p>
               <div class="warning-box" style="background-color: rgb(211, 205, 255); border-color: rgb(99, 70, 215)">
                 <button class="warning-icon" onclick="window.location.href = '/doorstops/naptime'">
-                    <img width="24px" height="24px" src="/assets/images/zzz.png">
+                    <img width="24px" height="24px" src="/assets/images/zzz.webp">
                 </button>
                 <div>
                     <p>Want to change school policy and bring back nap time? <a style="scroll-margin-top: 4.5em;" href="/doorstops/naptime">Here's how!</a></p>
@@ -276,7 +276,7 @@
             <p>This is amazing. She ABANDONED the class without disrespecting the teacher or her peers. She needed a break, so she took the break. 15 minutes later, she&rsquo;s back in her seat.</p>            
             <div class="warning-box" style="background-color: rgb(255, 205, 213); border-color: rgb(215, 70, 94)">
               <button class="warning-icon" onclick="window.location.href = '/doorstops/getout'">
-                  <img width="24px" height="24px" src="/assets/images/monkey.png">
+                  <img width="24px" height="24px" src="/assets/images/monkey.webp">
               </button>
               <div>
                   <p>Get out of any class, <a href="/doorstops/getout">any time you need with our 20 strategies</a>.</p>
@@ -288,7 +288,7 @@
             <p>What if by spending two minutes fixing your relationship with your teacher, you could spend <em>hours</em> in class less angry/bored/frustrated.</p>
             <div class="warning-box" style="background-color: rgb(205, 255, 220); border-color: rgb(70, 215, 114)">
               <button class="warning-icon" onclick="window.location.href = '/doorstops/dominance'">
-                  <img width="24px" height="24px" src="/assets/images/spy.png">
+                  <img width="24px" height="24px" src="/assets/images/spy.webp">
               </button>
               <div>
                   <p>Here's how teachers are taught to manage you, plus how to <a style="scroll-margin-top: 4.5em;" href="/doorstops/hard">call them out without getting in trouble</a>.</p>
@@ -301,7 +301,7 @@
             <p>The pressure paid off, but there are dozens of other strategies you can try at your school, from asking local plumbers to do repairs for free in exchange for free advertising at football games to changing the culture around takin' a poo.</p>
             <div class="warning-box" style="background-color: rgb(211, 205, 255); border-color: rgb(99, 70, 215)">
               <button class="warning-icon emoji-element" >
-                  <img width="24px" height="24px" src="/assets/images/trophy.png">
+                  <img width="24px" height="24px" src="/assets/images/trophy.webp">
               </button>
               <div>
                 <p>Get the full playbook for <a href="/doorstops/poop">fixing gross school bathrooms</a> here.</p>
@@ -329,9 +329,7 @@
   
   </div>
   <script>
-      $(function(){
-        $("#footer-placeholder").load("/footer.html");
-      });
+      document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
       
       </script>
   

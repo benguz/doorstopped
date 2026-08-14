@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Script from 'next/script';
 
 const PLACEHOLDERS = [
@@ -149,7 +149,6 @@ input { border-radius: 16px; }
 `;
 
 export default function SearchClient() {
-  const [jqueryReady, setJqueryReady] = useState(false);
   const inputRef = useRef(null);
   const loadingRef = useRef(null);
   const placeholderIndex = useRef(Math.floor(Math.random() * (PLACEHOLDERS.length - 1)));
@@ -226,12 +225,7 @@ export default function SearchClient() {
         data-domain="doorstopped.org"
         src="https://plausible.io/js/script.js"
       />
-      <Script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        strategy="afterInteractive"
-        onLoad={() => setJqueryReady(true)}
-      />
-      {jqueryReady && <Script src="/assets/js/script.js" strategy="afterInteractive" />}
+      <Script src="/assets/js/script.js" strategy="afterInteractive" />
 
       <div id="onboarding-survey" style={{ backgroundColor: 'white' }}>
         <h2>What sucks about high school?</h2>

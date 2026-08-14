@@ -224,7 +224,7 @@
             <h1>Fix your least favorite class</h1>
 <p>Teachers are told to handle these five categories of "high need students. Seriously.</p>
 <p><strong>Tag yourself 👇👇</strong></p>
-<img src="/assets/images/dominance/needs.png" width="700px" style="max-width: 98%; margin: auto; " height="auto">
+<img src="/assets/images/dominance/needs.webp" width="700px" style="max-width: 98%; margin: auto; " height="auto">
 
 <div style="color: black; max-width: 100%">
   <div class="row">
@@ -323,9 +323,7 @@
   
   </div>
   <script>
-      $(function(){
-        $("#footer-placeholder").load("/footer.html");
-      });
+      document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
       
       </script>
 

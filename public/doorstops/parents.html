@@ -27,8 +27,7 @@
    <link
      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
      rel="stylesheet">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
+<script defer data-domain="doorstopped.org" src="https://plausible.io/js/script.js"></script>
  
    <style>
        @media screen and (max-width: 1023px){
@@ -192,7 +191,7 @@
            <br class="desktop"><br class="desktop">
            <br><br>
            <br><br>
-           <h1>Take 2 minutes to help your parents help you <img  style="display: inline" width="28px" height="28px" src="/assets/images/spazz.png"> </h1>
+           <h1>Take 2 minutes to help your parents help you <img  style="display: inline" width="28px" height="28px" src="/assets/images/spazz.webp"> </h1>
 
            <div style="width:75%;height:0.68em;background-color:hsl(170, 75%, 41%); padding-bottom:0.22em"></div>
  <p><span style="color: #666666;">THE BIGGEST THING THAT HELPS YOU BE HAPPIER AND MORE SUCCESSFUL IN SCHOOL IS SOMETHING YOU MIGHT HATE.</span></p>
@@ -230,9 +229,7 @@
  
  </div>
  <script>
-     $(function(){
-       $("#footer-placeholder").load("/footer.html");
-     });
+     document.addEventListener("DOMContentLoaded",function(){fetch("/footer.html").then(function(r){return r.text()}).then(function(t){document.getElementById("footer-placeholder").innerHTML=t});});
      
      </script>
  
