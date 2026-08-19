@@ -75,6 +75,28 @@ document.addEventListener('click', function (event) {
 });
 
 /**
+ * Copyright year: keep footer copyright lines on the current year instead of
+ * a hardcoded one. Runs on the static DOM and again when the fetched footer
+ * fragment lands in #footer-placeholder (injected HTML can't run scripts).
+ */
+
+function refreshCopyrightYears(root) {
+  (root || document).querySelectorAll('.copyright').forEach(function (el) {
+    el.innerHTML = el.innerHTML.replace(/Copyright \d{4}/, 'Copyright ' + new Date().getFullYear());
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  refreshCopyrightYears();
+  var footerPlaceholder = document.getElementById('footer-placeholder');
+  if (footerPlaceholder) {
+    new MutationObserver(function () {
+      refreshCopyrightYears(footerPlaceholder);
+    }).observe(footerPlaceholder, { childList: true });
+  }
+});
+
+/**
  * Shared footer/nav fragments. Legacy pages used jQuery's .load(); pages now
  * call this (or keep an empty placeholder div and get it filled here).
  */
