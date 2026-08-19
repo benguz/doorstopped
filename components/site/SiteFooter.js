@@ -75,8 +75,8 @@ export default function SiteFooter() {
 
         <div className="footer-bottom">
           <div className="container">
-            <p className="copyright">
-              Copyright 2026 All Rights Reserved by{' '}
+            <p className="copyright" suppressHydrationWarning>
+              Copyright {new Date().getFullYear()} All Rights Reserved by{' '}
               <a href="#" className="copyright-link">Doorstop Education</a>
             </p>
           </div>

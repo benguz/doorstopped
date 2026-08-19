@@ -26,6 +26,19 @@ test('footer fragment loads via fetch on legacy pages', async ({ page }) => {
   await page.goto('/mission');
   await expect(page.locator('#footer-placeholder .footer')).toBeVisible();
   await expect(page.locator('#footer-placeholder .copyright')).toContainText('Doorstop Education');
+  // copyright year auto-updates rather than being hardcoded
+  await expect(page.locator('#footer-placeholder .copyright')).toContainText(
+    `Copyright ${new Date().getFullYear()}`
+  );
+});
+
+test('inline and React footers show the current copyright year', async ({ page }) => {
+  await mockExternal(page);
+  const year = String(new Date().getFullYear());
+  await page.goto('/research/'); // inline legacy footer
+  await expect(page.locator('.copyright')).toContainText(`Copyright ${year}`);
+  await page.goto('/about'); // React SiteFooter
+  await expect(page.locator('.copyright')).toContainText(`Copyright ${year}`);
 });
 
 for (const path of ['/', '/mission', '/doorstops/', '/empower']) {
