@@ -45,20 +45,21 @@ export default function AboutPage() {
           <br />
           <br />
           <p>Doorstop Education is in the process of incorporating as a 501(c)(3) nonprofit.</p>
-          <p>We will begin our formal application with the IRS in September 2023.</p>
+          <p>We will begin our formal application with the IRS in August 2026.</p>
           <p>
             Ben Guzovsky is currently the only full time staffer, running each initiative in
             partnership with collaborators who assist part time.
           </p>
           <p>
-            Ben is a rising senior and history major at Princeton University. He has done extensive
-            fieldwork in American high schools, conducting over 100 one-on-one conversations with
-            students in 15 states. Doorstop education is the culmination of a lifelong passion for
-            education.
+            Ben is a technologist and education researcher passionate about community engagement
+            and student voice. He previously headed policy at SafetyKit, an AI Trust &amp; Safety
+            platform, and is currently a fellow at Assembly Code, a nonprofit where he builds
+            open-source educational software. Ben has done extensive fieldwork in American high
+            schools, conducting over 100 one-on-one conversations with students in 15 states.
           </p>
           <br />
-          <p>Ben is supported by six passionate volunteers:</p>
-          <p>Emerson Kiefer, Allison Hartley, Lydia Sallade, Mo Oruc, Marko Petrovic, and Yongwei Che.</p>
+          <p>Ben is supported by four passionate volunteers:</p>
+          <p>Emerson Kiefer, Allison Hartley, David Shustin, and Yongwei Che.</p>
         </article>
 
         <div style={{ padding: '3em' }}>
